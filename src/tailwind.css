@@ -1,0 +1,124 @@
+/*
+ * ropa30 — main CSS source file
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ *
+ * This file is processed by Tailwind CSS v4 and compiled to
+ * public/css/ropa30.css via the `npm run build:css` script.
+ *
+ * In Tailwind v4, all configuration (theme tokens, content paths, plugins)
+ * lives inside this CSS file using @theme, @source, and @plugin directives.
+ * There is no tailwind.config.js.
+ */
+
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+ * @source — files scanned for utility class detection.
+ * Tailwind v4 auto-detects most paths, but we declare them explicitly
+ * for clarity and to ensure forward compatibility.
+ * -------------------------------------------------------------------------- */
+@source "../public/**/*.html";
+@source "../public/js/**/*.js";
+
+/* ----------------------------------------------------------------------------
+ * @theme — design tokens for ropa30.
+ * Defines colors, fonts, and spacing used throughout the app.
+ * -------------------------------------------------------------------------- */
+@theme {
+  /* ----- Brand colors -----
+   * Primary: a sober institutional blue/teal, evoking EU public-sector tone.
+   * Accent: emerald green for positive feedback (saved, completed, valid).
+   * Warning: warm amber.
+   * Danger: a desaturated red, never alarming.
+   */
+  --color-brand-50:  oklch(0.97 0.02 220);
+  --color-brand-100: oklch(0.93 0.04 220);
+  --color-brand-200: oklch(0.86 0.07 220);
+  --color-brand-300: oklch(0.76 0.10 220);
+  --color-brand-400: oklch(0.65 0.13 220);
+  --color-brand-500: oklch(0.55 0.14 220);
+  --color-brand-600: oklch(0.45 0.13 220);
+  --color-brand-700: oklch(0.37 0.11 220);
+  --color-brand-800: oklch(0.30 0.08 220);
+  --color-brand-900: oklch(0.23 0.05 220);
+  --color-brand-950: oklch(0.16 0.03 220);
+
+  --color-accent-500: oklch(0.62 0.15 155);
+  --color-accent-600: oklch(0.52 0.14 155);
+
+  --color-warning-500: oklch(0.74 0.15 75);
+  --color-warning-600: oklch(0.63 0.16 75);
+
+  --color-danger-500: oklch(0.60 0.18 25);
+  --color-danger-600: oklch(0.50 0.18 25);
+
+  /* ----- Typography -----
+   * System font stack — no external font files, no network requests.
+   * Each OS shows its native, familiar typeface.
+   */
+  --font-sans:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+
+  --font-mono:
+    ui-monospace,
+    "SF Mono",
+    "Cascadia Mono",
+    "Roboto Mono",
+    Menlo,
+    Consolas,
+    monospace;
+
+  /* ----- Layout -----
+   * Maximum content width for forms and reading.
+   */
+  --container-prose: 65ch;
+}
+
+/* ----------------------------------------------------------------------------
+ * Base layer — global styles applied site-wide.
+ * Kept minimal: most styling happens via utility classes in the HTML.
+ * -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    /* Enables smooth scrolling for anchor links. */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-50 text-brand-900 font-sans antialiased;
+    /* Prevents horizontal scroll on mobile in case of overflow. */
+    overflow-x: hidden;
+  }
+
+  /* Focus ring — always visible for keyboard navigation (a11y).
+   * Required for WCAG 2.1 AA compliance. */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Component layer — reusable building blocks.
+ * Added incrementally as the MVP grows.
+ * -------------------------------------------------------------------------- */
+@layer components {
+  /* Placeholder — components will be added here in later phases. */
+}
+
+/* ----------------------------------------------------------------------------
+ * Utilities layer — custom utilities specific to ropa30.
+ * Added incrementally.
+ * -------------------------------------------------------------------------- */
+@layer utilities {
+  /* Placeholder — utilities will be added here in later phases. */
+}

@@ -1,0 +1,151 @@
+<!doctype html>
+<!--
+  ropa30 — index.html
+  SPDX-License-Identifier: AGPL-3.0-or-later
+
+  Entry point of the ropa30 web application.
+
+  Security posture:
+  - Strict Content Security Policy: default-src 'self' only.
+    No 'unsafe-inline', no 'unsafe-eval'.
+  - Runs under Alpine.js CSP build (@alpinejs/csp), which evaluates
+    bindings without using new Function() or eval(). HTML attributes
+    therefore reference *property names only*, not JavaScript expressions.
+  - No external network requests at runtime (no CDN, no fonts, no analytics).
+
+  Bilingual UI:
+  - Default language: Italian. English available via the switcher in the header.
+  - All translated strings live in public/js/app.js (will move to
+    public/locales/{it,en}.json in Phase 5).
+-->
+<html lang="it" x-data="ropa30App" x-bind:lang="lang">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title x-text="appTitle">ropa30 — Il registro dei trattamenti GDPR, semplice.</title>
+
+    <meta name="description"
+          x-bind:content="appDescription"
+          content="Il registro delle attività di trattamento ex art. 30 GDPR, semplice e gratuito. Applicazione web locale: i tuoi dati non lasciano mai il tuo dispositivo." />
+
+    <meta name="author" content="Nicola Fabiano" />
+    <meta name="license" content="AGPL-3.0-or-later" />
+
+    <!--
+      Content Security Policy: strict.
+      No 'unsafe-inline', no 'unsafe-eval'. Alpine CSP build allows us
+      to keep this posture while retaining declarative reactivity.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self';
+      style-src 'self';
+      img-src 'self' data:;
+      connect-src 'self';
+      font-src 'self';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+    " />
+
+    <meta name="theme-color" content="#1a4d6e" />
+
+    <link rel="stylesheet" href="css/ropa30.css" />
+
+    <!--
+      Script load order:
+      1. app.js   — defines ropa30App and registers it via Alpine.data()
+                    on the 'alpine:init' event.
+      2. alpine   — initializes after DOM ready; uses registered components.
+      Both use defer; deferred scripts execute in document order, so
+      app.js is guaranteed to run before Alpine boots.
+    -->
+    <script src="js/app.js" defer></script>
+    <script src="js/lib/alpine.min.js" defer></script>
+  </head>
+
+  <body class="min-h-dvh flex flex-col">
+
+    <!-- Skip-to-content link for keyboard users (WCAG 2.1 AA). -->
+    <a href="#main"
+       class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50
+              focus:bg-brand-700 focus:text-white focus:px-3 focus:py-2 focus:rounded"
+       x-text="skipToContent">Vai al contenuto principale</a>
+
+    <!-- Header -->
+    <header class="border-b border-brand-200 bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+
+        <div class="flex items-baseline gap-3">
+          <span class="text-2xl font-bold text-brand-700 tracking-tight">ropa30</span>
+          <span class="hidden sm:inline text-sm text-brand-600" x-text="brandTagline">
+            Il registro dei trattamenti GDPR, semplice.
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <label for="lang-switcher"
+                 class="text-sm text-brand-700 sr-only sm:not-sr-only"
+                 x-text="langSwitcherLabel">Lingua</label>
+          <select id="lang-switcher"
+                  class="text-sm border border-brand-300 rounded px-2 py-1 bg-white text-brand-900"
+                  x-on:change="setLang">
+            <option value="it" x-bind:selected="isItalianSelected">Italiano</option>
+            <option value="en" x-bind:selected="isEnglishSelected">English</option>
+          </select>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main id="main" class="flex-1">
+      <div class="max-w-3xl mx-auto px-4 py-12 sm:py-20">
+
+        <section aria-labelledby="hero-title">
+          <h1 id="hero-title"
+              class="text-4xl sm:text-5xl font-bold text-brand-900 tracking-tight"
+              x-text="heroTitle">In costruzione</h1>
+
+          <p class="mt-6 text-lg text-brand-800 leading-relaxed"
+             x-text="heroBody">
+            ropa30 è in fase di sviluppo iniziale. Stiamo costruendo un'applicazione web che ti aiuti a tenere il registro delle attività di trattamento richiesto dall'articolo 30 del GDPR — in modo semplice, locale e privato.
+          </p>
+
+          <div class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1
+                      text-sm text-brand-800">
+            <span class="font-semibold" x-text="statusLabel">Versione</span>
+            <span x-text="statusValue">0.0.0 — scaffolding completato</span>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://codeberg.org/nicfab/ropa30"
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 rounded bg-brand-700 px-4 py-2 text-white
+                      hover:bg-brand-800 focus-visible:outline focus-visible:outline-2
+                      focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+               x-text="ctaCodebergLabel">
+              Vedi il codice su Codeberg
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-200 bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-brand-700
+                  flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div>
+          <span x-text="footerAuthor">Realizzato da</span>
+          <a href="https://nicfab.eu" rel="noopener noreferrer"
+             class="font-semibold text-brand-800 hover:underline">Nicola Fabiano</a>
+        </div>
+        <div x-text="footerLicense">Rilasciato sotto AGPL-3.0-or-later</div>
+      </div>
+    </footer>
+
+  </body>
+</html>
