@@ -96,3 +96,15 @@ function ropa30App() {
 document.addEventListener('alpine:init', () => {
   window.Alpine.data('ropa30App', ropa30App);
 });
+
+// ============================================================================
+// DEVELOPMENT: expose db API for console testing.
+// TODO(v1.0): remove these globals before public release.
+// ============================================================================
+import * as ropa30db from './db.js';
+window.ropa30 = ropa30db;
+console.info(
+  '%c[ropa30 dev]%c db API exposed as window.ropa30',
+  'color: #1a4d6e; font-weight: bold;',
+  'color: inherit;'
+);

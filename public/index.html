@@ -52,17 +52,20 @@
     <meta name="theme-color" content="#1a4d6e" />
 
     <link rel="stylesheet" href="css/ropa30.css" />
-
+    
     <!--
-      Script load order:
-      1. app.js   — defines ropa30App and registers it via Alpine.data()
-                    on the 'alpine:init' event.
-      2. alpine   — initializes after DOM ready; uses registered components.
-      Both use defer; deferred scripts execute in document order, so
-      app.js is guaranteed to run before Alpine boots.
+      Script load order (all use defer; deferred scripts run in document
+      order):
+      1. dexie       — exposes window.Dexie globally (UMD build)
+      2. app.js      — defines ropa30App, imports db.js (ES module)
+      3. alpine      — boots reactivity (CSP-safe build)
+      Modules and classic scripts can coexist; both honor defer ordering
+      relative to other scripts in modern browsers.
     -->
-    <script src="js/app.js" defer></script>
+    <script src="js/lib/dexie.min.js" defer></script>
+    <script src="js/app.js" type="module"></script>
     <script src="js/lib/alpine.min.js" defer></script>
+
   </head>
 
   <body class="min-h-dvh flex flex-col">
