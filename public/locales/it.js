@@ -100,7 +100,17 @@ export default {
     editorColonnaIt: 'Italiano',
     editorColonnaEn: 'English',
     editorEspandiTutto: 'Espandi tutto',
-    editorComprimiTutto: 'Comprimi tutto'
+    editorComprimiTutto: 'Comprimi tutto',
+    restoreImporta: 'Importa / Ripristina',
+    restoreTitoloConferma: 'Confermi il ripristino?',
+    restoreTestoConferma: 'Stai per ripristinare il contenuto dal file di backup. Questa operazione SOSTITUISCE tutti i dati attuali ed è irreversibile. Prima del ripristino verrà scaricato automaticamente un backup dei dati attuali.',
+    restoreRiepilogoTrattamenti: 'Trattamenti nel file:',
+    restoreRiepilogoData: 'Backup creato il:',
+    restoreConferma: 'Ripristina (sostituisci tutto)',
+    restoreAnnulla: 'Annulla',
+    restoreSuccesso: 'Ripristino completato',
+    restoreErroreFile: 'Il file selezionato non è un backup valido di ropa30',
+    restoreErroreRipristino: 'Si è verificato un errore durante il ripristino. I dati non sono stati modificati.'
   },
 
   enums: {

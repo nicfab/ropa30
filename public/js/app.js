@@ -17,13 +17,16 @@ import {
   normalizeBilingualShapes,
   listAvailableTemplates,
   createProcessingActivityFromTemplate,
-  exportAllData
+  exportAllData,
+  importAllData,
+  validateBackupEnvelope
 } from './db.js';
 
 import localeIt from '../locales/it.js';
 import localeEn from '../locales/en.js';
 import { buildDettaglio } from './detail.js';
 import { scaricaBackup } from './exporters/backup.js';
+import { leggiFileBackup } from './importers/restore.js';
 import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo } from './editor.js';
 
 function ropa30App() {
@@ -54,6 +57,13 @@ function ropa30App() {
     // List
     _rawTrattamenti: [],
     trattamenti: [],
+    // ---- Restore (Fase 3) ----
+    restoreEnvelope: null,        // parsed envelope awaiting user confirmation
+    restoreSummary: null,         // { counts, exportedAt } shown in the confirm dialog
+    isRestoreConfirmOpen: false,  // confirmation dialog visibility
+    restoreInCorso: false,        // guard against double submit
+    restoreMessage: '',           // localized outcome message
+    restoreError: false,          // styles the outcome message as error
     trattamentiFiltrati: [],
     queryRicerca: '',
     nuovoTrattamentoId: null,
@@ -149,6 +159,9 @@ function ropa30App() {
     get isViewLista()      { return this.view === 'lista'; },
     get isViewDettaglio() { return this.view === 'dettaglio'; },
     get isViewEditor()    { return this.view === 'editor'; },
+    get restoreCountPA() { return this.restoreSummary ? String(this.restoreSummary.counts.processingActivities) : ''; },
+    get restoreDataExport() { return this.restoreSummary ? (this.restoreSummary.exportedAt || '—') : ''; },
+    get restoreMsgClass() { return this.restoreError ? 'mt-2 text-sm text-danger-600' : 'mt-2 text-sm text-accent-600'; },
     get wrapperClass() { return this.view === 'editor' ? 'max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-14' : 'max-w-3xl mx-auto px-4 py-10 sm:py-14'; },
     get editMostraEn()    { return this.editLingue.indexOf('en') !== -1; },
     get editMostraIt()    { return this.editLingue.indexOf('it') !== -1; },
@@ -373,6 +386,85 @@ function ropa30App() {
         this.backupInCorso = false;
       }
     },
+
+    // ---- Restore from backup file (Fase 3) ----
+    // Opens the hidden <input type="file"> programmatically.
+    apriSelezioneFile() {
+      this.restoreMessage = '';
+      this.restoreError = false;
+      const input = document.getElementById('restore-file-input');
+      if (input) { input.value = ''; input.click(); }
+    },
+
+    // Reads + parses + validates the chosen file. On success, stores the
+    // envelope and opens the confirmation dialog. NEVER touches the DB here.
+    async fileSelezionato(event) {
+      const file = event && event.target && event.target.files && event.target.files[0];
+      if (!file) return;
+      this.restoreMessage = '';
+      this.restoreError = false;
+      try {
+        const envelope = await leggiFileBackup(file);
+        const { ok, errors, summary } = validateBackupEnvelope(envelope);
+        if (!ok) {
+          this.restoreError = true;
+          this.restoreMessage = (this.L.restoreErroreFile || 'File non valido') + ' (' + errors.join(', ') + ')';
+          return;
+        }
+        this.restoreEnvelope = envelope;
+        this.restoreSummary = summary;
+        this.isRestoreConfirmOpen = true;
+      } catch (err) {
+        console.error('[ropa30] fileSelezionato() error:', err);
+        this.restoreError = true;
+        const code = (err && err.message) || 'READ_ERROR';
+        this.restoreMessage = (this.L.restoreErroreFile || 'File non valido') + ' (' + code + ')';
+      }
+    },
+
+    // Confirmed restore: auto-backup current state, then replace, then reload.
+    async confermaRestore() {
+      if (this.restoreInCorso || !this.restoreEnvelope) return;
+      this.restoreInCorso = true;
+      this.restoreError = false;
+      this.restoreMessage = '';
+      try {
+        // 1) Safety net: download a backup of the CURRENT data first.
+        try {
+          const current = await exportAllData();
+          scaricaBackup(current);
+        } catch (e) {
+          console.error('[ropa30] auto-backup before restore failed:', e);
+        }
+        // 2) Replace the database with the imported envelope.
+        // Deep-clone to strip the Alpine Proxy (Dexie cannot structured-clone a Proxy).
+        const plainEnvelope = JSON.parse(JSON.stringify(this.restoreEnvelope));
+        const result = await importAllData(plainEnvelope, { mode: 'replace' });
+        // 3) Refresh the list and close.
+        await this.caricaTrattamenti();
+        this.isRestoreConfirmOpen = false;
+        this.restoreEnvelope = null;
+        this.restoreSummary = null;
+        const n = result.counts.processingActivities;
+        this.restoreMessage = (this.L.restoreSuccesso || 'Ripristino completato') + ' (' + n + ')';
+        this.restoreError = false;
+        this.view = 'lista';
+      } catch (err) {
+        console.error('[ropa30] confermaRestore() error:', err);
+        this.isRestoreConfirmOpen = false;
+        this.restoreError = true;
+        this.restoreMessage = this.L.restoreErroreRipristino || 'Errore durante il ripristino';
+      } finally {
+        this.restoreInCorso = false;
+      }
+    },
+
+    annullaRestore() {
+      this.isRestoreConfirmOpen = false;
+      this.restoreEnvelope = null;
+      this.restoreSummary = null;
+    },
+
 
     // ---- Navigation ----
     vaiAOnboarding() { this.erroreSalvataggio = false; this.view = 'onboarding'; },

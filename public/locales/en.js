@@ -100,7 +100,17 @@ export default {
     editorColonnaIt: 'Italiano',
     editorColonnaEn: 'English',
     editorEspandiTutto: 'Expand all',
-    editorComprimiTutto: 'Collapse all'
+    editorComprimiTutto: 'Collapse all',
+    restoreImporta: 'Import / Restore',
+    restoreTitoloConferma: 'Confirm restore?',
+    restoreTestoConferma: 'You are about to restore content from the backup file. This REPLACES all current data and cannot be undone. A backup of the current data will be downloaded automatically before restoring.',
+    restoreRiepilogoTrattamenti: 'Processing activities in file:',
+    restoreRiepilogoData: 'Backup created on:',
+    restoreConferma: 'Restore (replace everything)',
+    restoreAnnulla: 'Cancel',
+    restoreSuccesso: 'Restore completed',
+    restoreErroreFile: 'The selected file is not a valid ropa30 backup',
+    restoreErroreRipristino: 'An error occurred during the restore. Your data was not modified.'
   },
 
   enums: {

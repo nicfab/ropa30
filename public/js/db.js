@@ -18,6 +18,7 @@ import {
   createDefaultProcessingActivity,
   createAuditEntry
 } from './schema.js';
+import { validateBackupEnvelope } from './importers/validate.js';
 
 // ============================================================================
 // DATABASE INSTANCE
@@ -308,6 +309,80 @@ export async function exportAllData() {
       }
     },
     data: { settings, processingActivities, auditLog }
+  };
+}
+
+// ============================================================================
+// IMPORT / RESTORE  (Fase 3)
+// ============================================================================
+
+
+// Full RESTORE: replace the entire database content with the envelope's data.
+// Validates first; on any validation error THROWS and leaves the DB untouched.
+// Applies v1->v2 migration to legacy records. Atomic via a single rw transaction.
+// After the restore, appends a RESTORE audit event (outside the cleared log).
+// Returns { counts, fromExportedAt }.
+export { validateBackupEnvelope };
+
+export async function importAllData(envelope, { mode = 'replace' } = {}) {
+  if (mode !== 'replace') {
+    throw new Error('IMPORT_MODE_UNSUPPORTED:' + mode);
+  }
+
+  const { ok, errors, summary } = validateBackupEnvelope(envelope);
+  if (!ok) {
+    throw new Error('INVALID_BACKUP:' + errors.join(','));
+  }
+
+  const src = envelope.data;
+
+  let lang = 'it';
+  const srcDefault = src.settings.find((s) => s && s.id === 'default');
+  if (srcDefault && (srcDefault.lingua === 'en' || srcDefault.lingua === 'it')) {
+    lang = srcDefault.lingua;
+  }
+
+  const prepSettings = src.settings.map((s) => {
+    let rec = s;
+    if (!rec || typeof rec.schemaVersion !== 'number' || rec.schemaVersion < SCHEMA_VERSION) {
+      rec = migrateSettingsV1toV2(rec || {}, lang);
+    }
+    return { ...rec, tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION };
+  });
+
+  const prepPAs = src.processingActivities.map((r) => {
+    let rec = r;
+    if (typeof rec.schemaVersion !== 'number' || rec.schemaVersion < SCHEMA_VERSION) {
+      rec = migrateProcessingActivityV1toV2(rec, lang);
+    }
+    return { ...rec, tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION };
+  });
+
+  const prepAudit = src.auditLog.map((a) => ({ ...a, tenantId: DEFAULT_TENANT_ID }));
+
+  await db.transaction('rw', db.settings, db.processingActivities, db.auditLog, async () => {
+    await db.settings.clear();
+    await db.processingActivities.clear();
+    await db.auditLog.clear();
+    if (prepSettings.length) await db.settings.bulkPut(prepSettings);
+    if (prepPAs.length) await db.processingActivities.bulkPut(prepPAs);
+    if (prepAudit.length) await db.auditLog.bulkPut(prepAudit);
+  });
+
+  await logAudit({
+    azione: 'RESTORE',
+    targetType: 'database',
+    targetId: 'all',
+    summary: 'Ripristino da backup: ' + prepPAs.length + ' trattamenti (file del ' + (summary.exportedAt || 'n/d') + ')'
+  });
+
+  return {
+    counts: {
+      settings: prepSettings.length,
+      processingActivities: prepPAs.length,
+      auditLog: prepAudit.length
+    },
+    fromExportedAt: summary.exportedAt || null
   };
 }
 

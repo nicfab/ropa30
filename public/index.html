@@ -124,6 +124,11 @@
         <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
         <path d="M5 20.25h14" />
       </symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 16V4m0 0L7 9m5-5 5 5" />
+        <path d="M4 20h16" />
+      </symbol>
       <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="m6 9 6 6 6-6" />
@@ -352,6 +357,12 @@
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-download" /></svg>
                   <span x-text="L.btnEsporta">Esporta / Backup</span>
                 </button>
+                <button type="button" x-on:click="apriSelezioneFile"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
+                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-upload" /></svg>
+                  <span x-text="L.restoreImporta">Importa / Ripristina</span>
+                </button>
+                <input type="file" id="restore-file-input" accept="application/json" class="hidden" x-on:change="fileSelezionato">
                 <button type="button" x-on:click="vaiAOnboarding"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
@@ -363,6 +374,7 @@
             <p class="mt-4 text-sm text-danger-600" x-show="erroreCreazione" x-text="L.creazioneErrore"></p>
             <p class="mt-2 text-xs text-brand-500" x-text="L.backupAvviso"></p>
             <p class="mt-2 text-sm text-danger-600" x-show="erroreBackup" x-text="L.erroreBackup"></p>
+            <p x-show="restoreMessage" x-bind:class="restoreMsgClass" x-text="restoreMessage"></p>
 
             <!-- Ricerca nella lista (solo se ci sono trattamenti) -->
             <template x-if="haTrattamenti">
@@ -518,6 +530,37 @@
                 </div>
               </div>
             </template>
+
+              <!-- Dialog conferma RESTORE (Fase 3) -->
+              <template x-if="isRestoreConfirmOpen">
+                <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+                     x-on:keydown.escape.window="annullaRestore"
+                     x-on:click.self="annullaRestore">
+                  <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                       role="dialog" aria-modal="true" aria-labelledby="restore-conf-title">
+                    <h2 id="restore-conf-title" class="text-lg font-bold text-brand-900" x-text="L.restoreTitoloConferma">Confermi il ripristino?</h2>
+                    <p class="mt-2 text-sm text-brand-700" x-text="L.restoreTestoConferma"></p>
+                    <dl class="mt-4 rounded-lg bg-brand-50 p-3 text-sm">
+                      <div class="flex justify-between gap-4">
+                        <dt class="text-brand-600" x-text="L.restoreRiepilogoTrattamenti">Trattamenti nel file:</dt>
+                        <dd class="font-semibold text-brand-900" x-text="restoreCountPA"></dd>
+                      </div>
+                      <div class="mt-1 flex justify-between gap-4">
+                        <dt class="text-brand-600" x-text="L.restoreRiepilogoData">Backup creato il:</dt>
+                        <dd class="text-brand-900" x-text="restoreDataExport"></dd>
+                      </div>
+                    </dl>
+                    <div class="mt-5 flex flex-wrap justify-end gap-2">
+                      <button type="button" x-on:click="annullaRestore"
+                              class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                              x-text="L.restoreAnnulla">Annulla</button>
+                      <button type="button" x-on:click="confermaRestore" x-bind:disabled="restoreInCorso"
+                              class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                              x-text="L.restoreConferma">Ripristina (sostituisci tutto)</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
 
           </section>
         </template>
