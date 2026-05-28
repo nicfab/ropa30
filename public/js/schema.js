@@ -107,6 +107,20 @@ export const AZIONE_FINALE_DATI = {
 };
 
 // ============================================================================
+// SETTORE (famiglia di template / ambito del titolare)
+// ============================================================================
+// Usato come metadato dei template per filtrare il catalogo per ambito.
+// Il settore è una caratteristica del titolare, non del singolo trattamento:
+// non va quindi sul singolo processingActivity, ma (in futuro) eventualmente
+// nelle settings del titolare.
+export const SETTORE = {
+  COMUNE:      'comune',      // trasversale (PMI, professionisti, enti generici)
+  PA:          'pa',          // Pubblica Amministrazione
+  UNIVERSITA:  'universita',  // università, istruzione, ricerca
+  CAF:         'caf'          // centri di assistenza fiscale / assistenza fiscale
+};
+
+// ============================================================================
 // TIPI DI AUDIT LOG
 // ============================================================================
 export const AUDIT_AZIONE = {
