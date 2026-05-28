@@ -12,17 +12,20 @@ import {
   getSettings,
   updateSettings,
   listProcessingActivities,
+  getProcessingActivity,
   listAvailableTemplates,
   createProcessingActivityFromTemplate
 } from './db.js';
 
 import localeIt from '../locales/it.js';
 import localeEn from '../locales/en.js';
+import { buildDettaglio } from './detail.js';
 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
   const CATEGORIA_LABEL  = { it: localeIt.enums.categoria, en: localeEn.enums.categoria };
   const ART6_LABEL       = { it: localeIt.enums.art6,      en: localeEn.enums.art6 };
+  const LOCALI = { it: localeIt, en: localeEn };
 
   return {
     // ---- State ----
@@ -49,6 +52,11 @@ function ropa30App() {
     trattamentiFiltrati: [],
     queryRicerca: '',
     nuovoTrattamentoId: null,
+
+    // Detail (read-only)
+    trattamentoCorrente: null,
+    trattamentoVm: null,
+    trattamentoTitolo: '',
 
     // Catalog
     _rawTemplates: [],
@@ -98,7 +106,7 @@ function ropa30App() {
 
         this.view = (this.denominazione.trim() === '') ? 'onboarding' : 'lista';
 
-        this.$watch('lang', () => { this._mappaTrattamenti(); this._mappaTemplates(); });
+        this.$watch('lang', () => { this._mappaTrattamenti(); this._mappaTemplates(); if (this.view === 'dettaglio' && this.trattamentoCorrente) { this.trattamentoVm = this._costruisciVm(this.trattamentoCorrente); } });
         this.$watch('queryRicerca', () => { this._filtra(); });
         this.$watch('queryCatalogo', () => { this._filtraCatalogo(); });
       } catch (err) {
@@ -120,6 +128,7 @@ function ropa30App() {
     // ---- View flags ----
     get isViewOnboarding() { return this.view === 'onboarding'; },
     get isViewLista()      { return this.view === 'lista'; },
+    get isViewDettaglio() { return this.view === 'dettaglio'; },
     get haTrattamenti()    { return this.trattamenti.length > 0; },
     get nonHaTrattamenti() { return this.trattamenti.length === 0; },
     get haRisultati()      { return this.trattamentiFiltrati.length > 0; },
@@ -327,6 +336,35 @@ function ropa30App() {
     // ---- Navigation ----
     vaiAOnboarding() { this.erroreSalvataggio = false; this.view = 'onboarding'; },
     vaiAllaLista()   { this.view = 'lista'; },
+
+    // ---- Detail (read-only) ----
+    _costruisciVm(record) {
+      const loc = LOCALI[this.lang] || localeIt;
+      return buildDettaglio(record, this.lang, { detail: loc.detail, enums: loc.enums });
+    },
+    async apriDettaglio(event) {
+      const id = (event && event.currentTarget && event.currentTarget.dataset)
+        ? event.currentTarget.dataset.id : '';
+      if (!id) return;
+      try {
+        const record = await getProcessingActivity(id);
+        if (!record) { this.view = 'lista'; return; }
+        this.trattamentoCorrente = record;
+        this.trattamentoTitolo = this._loc(record.nome) || this.L.sennaNome;
+        this.trattamentoVm = this._costruisciVm(record);
+        this.view = 'dettaglio';
+        window.scrollTo(0, 0);
+      } catch (err) {
+        console.error('[ropa30] apriDettaglio() error:', err);
+        this.view = 'lista';
+      }
+    },
+    tornaAllaLista() {
+      this.view = 'lista';
+      this.trattamentoCorrente = null;
+      this.trattamentoVm = null;
+      this.trattamentoTitolo = '';
+    },
 
     // UI language switch: change display AND persist uiLanguage (independent
     // from register languages — architecture α).
