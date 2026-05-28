@@ -119,6 +119,11 @@
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M19 12H5M12 19l-7-7 7-7" />
       </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
+        <path d="M5 20.25h14" />
+      </symbol>
     </svg>
 
     <a href="#main"
@@ -334,6 +339,11 @@
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                   <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
                 </button>
+                <button type="button" x-on:click="esportaBackup" x-bind:disabled="backupInCorso"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed">
+                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-download" /></svg>
+                  <span x-text="L.btnEsporta">Esporta / Backup</span>
+                </button>
                 <button type="button" x-on:click="vaiAOnboarding"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
@@ -343,6 +353,8 @@
             </div>
 
             <p class="mt-4 text-sm text-danger-600" x-show="erroreCreazione" x-text="L.creazioneErrore"></p>
+            <p class="mt-2 text-xs text-brand-500" x-text="L.backupAvviso"></p>
+            <p class="mt-2 text-sm text-danger-600" x-show="erroreBackup" x-text="L.erroreBackup"></p>
 
             <!-- Ricerca nella lista (solo se ci sono trattamenti) -->
             <template x-if="haTrattamenti">

@@ -14,12 +14,14 @@ import {
   listProcessingActivities,
   getProcessingActivity,
   listAvailableTemplates,
-  createProcessingActivityFromTemplate
+  createProcessingActivityFromTemplate,
+  exportAllData
 } from './db.js';
 
 import localeIt from '../locales/it.js';
 import localeEn from '../locales/en.js';
 import { buildDettaglio } from './detail.js';
+import { scaricaBackup } from './exporters/backup.js';
 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
@@ -68,6 +70,9 @@ function ropa30App() {
     catalogoAperto: false,
     creazioneInCorso: false,
     erroreCreazione: false,
+    // Backup (export JSON)
+    backupInCorso: false,
+    erroreBackup: false,
 
     async init() {
       try {
@@ -331,6 +336,22 @@ function ropa30App() {
         this.erroreCreazione = true;
       } finally {
         this.creazioneInCorso = false;
+      }
+    },
+
+    // ---- Backup (export JSON) ----
+    async esportaBackup() {
+      if (this.backupInCorso) return;
+      this.backupInCorso = true;
+      this.erroreBackup = false;
+      try {
+        const envelope = await exportAllData();
+        scaricaBackup(envelope);
+      } catch (err) {
+        console.error('[ropa30] esportaBackup() error:', err);
+        this.erroreBackup = true;
+      } finally {
+        this.backupInCorso = false;
       }
     },
 

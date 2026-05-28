@@ -9,6 +9,8 @@
 
 import {
   SCHEMA_VERSION,
+  APP_VERSION,
+  EXPORT_FORMAT_VERSION,
   DEFAULT_TENANT_ID,
   AUDIT_AZIONE,
   AUDIT_TARGET,
@@ -277,6 +279,36 @@ export async function deleteProcessingActivity(id) {
 export async function listAuditLog(limit = 100) {
   const all = await db.auditLog.where('tenantId').equals(DEFAULT_TENANT_ID).toArray();
   return all.sort((a, b) => b.timestamp.localeCompare(a.timestamp)).slice(0, limit);
+}
+
+// ============================================================================
+// FULL BACKUP EXPORT (read-only)
+// ============================================================================
+// Faithful, complete dump of all three tables (NO filtering, NO truncation,
+// NO transformation: bilingual {it,en} objects are preserved as-is). Returns
+// the canonical backup envelope (_meta + data). Pure read: writes nothing,
+// logs nothing (the export operation itself is not part of the data dump).
+export async function exportAllData() {
+  const [settings, processingActivities, auditLog] = await Promise.all([
+    db.settings.toArray(),
+    db.processingActivities.toArray(),
+    db.auditLog.toArray()
+  ]);
+  return {
+    _meta: {
+      app: 'ropa30',
+      exportFormatVersion: EXPORT_FORMAT_VERSION,
+      appVersion: APP_VERSION,
+      schemaVersion: SCHEMA_VERSION,
+      exportedAt: new Date().toISOString(),
+      counts: {
+        settings: settings.length,
+        processingActivities: processingActivities.length,
+        auditLog: auditLog.length
+      }
+    },
+    data: { settings, processingActivities, auditLog }
+  };
 }
 
 // ============================================================================

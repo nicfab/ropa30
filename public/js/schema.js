@@ -26,6 +26,16 @@
 // language slot; the other language is left empty (no automatic translation).
 export const SCHEMA_VERSION = 2;
 
+// ----------------------------------------------------------------------------
+// APP + BACKUP FORMAT VERSIONS
+// ----------------------------------------------------------------------------
+// APP_VERSION: ropa30 application version (single source of truth for the UI
+// and for backup envelopes). Keep in sync with package.json on each release.
+// EXPORT_FORMAT_VERSION: version of the JSON backup envelope shape; it evolves
+// INDEPENDENTLY from SCHEMA_VERSION (the data shape) and from APP_VERSION.
+export const APP_VERSION = '0.0.0';
+export const EXPORT_FORMAT_VERSION = 1;
+
 // ============================================================================
 // TENANT
 // ============================================================================
