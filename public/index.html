@@ -2,20 +2,8 @@
 <!--
   ropa30 — index.html
   SPDX-License-Identifier: AGPL-3.0-or-later
-
-  Entry point of the ropa30 web application.
-
-  Security posture:
-  - Strict Content Security Policy: default-src 'self' only.
-    No 'unsafe-inline', no 'unsafe-eval'.
-  - Runs under Alpine.js CSP build (@alpinejs/csp). HTML attributes therefore
-    reference *property/method names* and simple member paths only.
-  - No external network requests at runtime (no CDN, no fonts, no analytics).
-
-  Bilingual UI:
-  - Default language: Italian. English available via the switcher in the header.
-  - All translated strings live in public/js/app.js (will move to
-    public/locales/{it,en}.json in Phase 5).
+  Strict CSP; Alpine.js CSP build (property/method names only).
+  Icons: inline SVG <symbol> sprite + static <use> (no emoji, no network).
 -->
 <html lang="it" x-data="ropa30App" x-bind:lang="lang">
   <head>
@@ -23,19 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <title x-text="appTitle">ropa30 — Il registro dei trattamenti GDPR, semplice.</title>
-
     <meta name="description"
           x-bind:content="appDescription"
           content="Il registro delle attività di trattamento ex art. 30 GDPR, semplice e gratuito. Applicazione web locale: i tuoi dati non lasciano mai il tuo dispositivo." />
-
     <meta name="author" content="Nicola Fabiano" />
     <meta name="license" content="AGPL-3.0-or-later" />
 
-    <!--
-      Content Security Policy: strict.
-      No 'unsafe-inline', no 'unsafe-eval'. Alpine CSP build allows us
-      to keep this posture while retaining declarative reactivity.
-    -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       script-src 'self';
@@ -49,25 +30,45 @@
     " />
 
     <meta name="theme-color" content="#1a4d6e" />
-
     <link rel="stylesheet" href="css/ropa30.css" />
 
-    <!--
-      Script load order (all use defer; deferred scripts run in document
-      order):
-      1. dexie       — exposes window.Dexie globally (UMD build)
-      2. app.js      — defines ropa30App, imports db.js (ES module)
-      3. alpine      — boots reactivity (CSP-safe build)
-    -->
     <script src="js/lib/dexie.min.js" defer></script>
     <script src="js/app.js" type="module"></script>
     <script src="js/lib/alpine.min.js" defer></script>
-
   </head>
 
   <body class="min-h-dvh flex flex-col">
 
-    <!-- Skip-to-content link for keyboard users (WCAG 2.1 AA). -->
+    <!-- ===================== SVG ICON SPRITE =====================
+         Defined once, referenced via <svg><use href="#icon-…"> (static).
+         Monochrome, inherit color via currentColor. No emoji, no network. -->
+    <svg width="0" height="0" class="hidden" aria-hidden="true" focusable="false">
+      <symbol id="icon-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2.75h7.5L19 8.25V20a1.25 1.25 0 0 1-1.25 1.25H6A1.25 1.25 0 0 1 4.75 20V4A1.25 1.25 0 0 1 6 2.75Z" />
+        <path d="M13.25 3v5.25H18.5" />
+        <path d="M8 12.5h8M8 15.5h8M8 18h5" />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="6.25" />
+        <path d="m20 20-3.5-3.5" />
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 6l12 12M18 6 6 18" />
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+      <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.75 19.25 9 18l9.5-9.5a1.77 1.77 0 0 0-2.5-2.5L6.5 15.5l-1.75 3.75Z" />
+        <path d="m14.5 7.5 2.5 2.5" />
+      </symbol>
+    </svg>
+
     <a href="#main"
        class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50
               focus:bg-brand-700 focus:text-white focus:px-3 focus:py-2 focus:rounded"
@@ -76,17 +77,14 @@
     <!-- Header -->
     <header class="border-b border-brand-200 bg-white">
       <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-
         <div class="flex items-baseline gap-3">
           <span class="text-2xl font-bold text-brand-700 tracking-tight">ropa30</span>
           <span class="hidden sm:inline text-sm text-brand-600" x-text="brandTagline">
             Il registro dei trattamenti GDPR, semplice.
           </span>
         </div>
-
         <div class="flex items-center gap-2">
-          <label for="lang-switcher"
-                 class="text-sm text-brand-700 sr-only sm:not-sr-only"
+          <label for="lang-switcher" class="text-sm text-brand-700 sr-only sm:not-sr-only"
                  x-text="langSwitcherLabel">Lingua</label>
           <select id="lang-switcher"
                   class="text-sm border border-brand-300 rounded px-2 py-1 bg-white text-brand-900"
@@ -95,7 +93,6 @@
             <option value="en" x-bind:selected="isEnglishSelected">English</option>
           </select>
         </div>
-
       </div>
     </header>
 
@@ -106,104 +103,98 @@
         <!-- ===================== ONBOARDING ===================== -->
         <template x-if="isViewOnboarding">
           <section aria-labelledby="onb-title">
-
-            <h1 id="onb-title"
-                class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+            <h1 id="onb-title" class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
                 x-text="L.onbTitolo">Configura il registro</h1>
             <p class="mt-3 text-brand-700 leading-relaxed" x-text="L.onbSottotitolo"></p>
 
-            <!-- Titolare -->
             <fieldset class="mt-8 border-0 p-0 m-0">
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneTitolare"></legend>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="sm:col-span-2">
                   <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDenominazione"></label>
                   <input id="f-denominazione" type="text" x-model="denominazione"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-forma" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblFormaGiuridica"></label>
                   <input id="f-forma" type="text" x-model="formaGiuridica"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-cf" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCodiceFiscale"></label>
                   <input id="f-cf" type="text" x-model="codiceFiscale"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-piva" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPartitaIVA"></label>
                   <input id="f-piva" type="text" x-model="partitaIVA"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-tel" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblTelefono"></label>
                   <input id="f-tel" type="tel" x-model="telefono"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
 
-            <!-- Indirizzo -->
             <fieldset class="mt-6 border-0 p-0 m-0">
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneIndirizzo"></legend>
               <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
                 <div class="sm:col-span-4">
                   <label for="f-via" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblVia"></label>
                   <input id="f-via" type="text" x-model="via"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-2">
                   <label for="f-civico" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCivico"></label>
                   <input id="f-civico" type="text" x-model="civico"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-2">
                   <label for="f-cap" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCap"></label>
                   <input id="f-cap" type="text" x-model="cap"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-4">
                   <label for="f-citta" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCitta"></label>
                   <input id="f-citta" type="text" x-model="citta"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-3">
                   <label for="f-prov" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblProvincia"></label>
                   <input id="f-prov" type="text" x-model="provincia"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-3">
                   <label for="f-paese" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPaese"></label>
                   <input id="f-paese" type="text" x-model="paese"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
 
-            <!-- Contatti -->
             <fieldset class="mt-6 border-0 p-0 m-0">
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneContatti"></legend>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblEmail"></label>
                   <input id="f-email" type="email" x-model="email"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPec"></label>
                   <input id="f-pec" type="email" x-model="pec"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-2">
                   <label for="f-sito" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblSitoWeb"></label>
                   <input id="f-sito" type="url" x-model="sitoWeb"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
 
-            <!-- DPO -->
             <fieldset class="mt-6 border-0 p-0 m-0">
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneDpo"></legend>
               <label class="inline-flex items-center gap-2 text-brand-800">
@@ -214,29 +205,28 @@
                 <div class="sm:col-span-2">
                   <label for="f-dpo-nome" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoNome"></label>
                   <input id="f-dpo-nome" type="text" x-model="dpoNome"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-dpo-email" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoEmail"></label>
                   <input id="f-dpo-email" type="email" x-model="dpoEmail"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-dpo-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoPec"></label>
                   <input id="f-dpo-pec" type="email" x-model="dpoPec"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
 
-            <!-- Registro -->
             <fieldset class="mt-6 border-0 p-0 m-0">
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneRegistro"></legend>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="f-lingua" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblLingua"></label>
                   <select id="f-lingua" x-model="lingua"
-                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500">
+                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
                     <option value="it">Italiano</option>
                     <option value="en">English</option>
                   </select>
@@ -248,43 +238,194 @@
               </div>
             </fieldset>
 
-            <!-- Help + error + save -->
             <p class="mt-6 text-sm text-brand-600" x-text="L.onbObbligatorio"></p>
-            <p class="mt-2 text-sm text-red-700" x-show="erroreSalvataggio" x-text="L.onbErrore"></p>
+            <p class="mt-2 text-sm text-danger-600" x-show="erroreSalvataggio" x-text="L.onbErrore"></p>
 
             <div class="mt-6">
               <button type="button" x-on:click="salvaOnboarding" x-bind:disabled="salvaDisabilitato"
                       class="inline-flex items-center gap-2 rounded bg-brand-700 px-5 py-2.5 text-white
-                             hover:bg-brand-800 focus-visible:outline focus-visible:outline-2
-                             focus-visible:outline-offset-2 focus-visible:outline-brand-500
-                             disabled:opacity-50 disabled:cursor-not-allowed"
+                             hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
                       x-text="L.btnSalva">Salva e continua</button>
             </div>
-
           </section>
         </template>
 
-        <!-- ===================== LISTA (stub) ===================== -->
+        <!-- ===================== LISTA + CATALOGO ===================== -->
         <template x-if="isViewLista">
           <section aria-labelledby="lista-title">
-            <div class="flex items-start justify-between gap-4">
+
+            <!-- Intestazione registro -->
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
-                <h1 id="lista-title"
-                    class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
-                    x-text="L.listaTitolo">Registro dei trattamenti</h1>
-                <p class="mt-2 text-brand-700"><span x-text="denominazione"></span></p>
+                <p class="text-sm font-medium uppercase tracking-wide text-brand-500" x-text="L.listaTitolo">Registro dei trattamenti</p>
+                <h1 id="lista-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+                    x-text="denominazione">UNIFG</h1>
               </div>
-              <button type="button" x-on:click="vaiAOnboarding"
-                      class="shrink-0 text-sm rounded border border-brand-300 px-3 py-1.5 text-brand-700
-                             hover:bg-brand-100 focus-visible:outline focus-visible:outline-2
-                             focus-visible:outline-offset-2 focus-visible:outline-brand-500"
-                      x-text="L.listaModificaTitolare">Modifica dati titolare</button>
+              <div class="flex items-center gap-2 shrink-0">
+                <button type="button" x-on:click="apriCatalogo"
+                        class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium shadow-sm hover:bg-brand-800">
+                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
+                  <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
+                </button>
+                <button type="button" x-on:click="vaiAOnboarding"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
+                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
+                  <span x-text="L.listaModificaTitolare">Modifica dati titolare</span>
+                </button>
+              </div>
             </div>
 
-            <div class="mt-10 rounded-lg border border-dashed border-brand-300 px-6 py-12 text-center">
-              <h2 class="text-lg font-semibold text-brand-800" x-text="L.listaVuotaTitolo">Nessun trattamento</h2>
-              <p class="mt-2 text-brand-600 max-w-prose mx-auto" x-text="L.listaVuotaTesto"></p>
-            </div>
+            <p class="mt-4 text-sm text-danger-600" x-show="erroreCreazione" x-text="L.creazioneErrore"></p>
+
+            <!-- Ricerca nella lista (solo se ci sono trattamenti) -->
+            <template x-if="haTrattamenti">
+              <div class="mt-8">
+                <div class="flex items-center gap-3">
+                  <div class="relative flex-1">
+                    <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-brand-400">
+                      <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-search" /></svg>
+                    </span>
+                    <input type="search" x-model="queryRicerca"
+                           x-bind:placeholder="L.cercaPlaceholder" x-bind:aria-label="L.cercaAria"
+                           class="w-full rounded-lg border border-brand-300 bg-white pl-9 pr-3 py-2.5 text-brand-900" />
+                  </div>
+                  <button type="button" x-on:click="pulisciRicerca" x-show="queryRicerca.length > 0"
+                          class="shrink-0 text-sm rounded-lg border border-brand-300 px-3 py-2.5 text-brand-700 hover:bg-white"
+                          x-text="L.btnPulisci">Pulisci</button>
+                </div>
+                <p class="mt-2 text-xs text-brand-500" x-text="contatoreTesto"></p>
+              </div>
+            </template>
+
+            <!-- Lista risultati -->
+            <template x-if="haRisultati">
+              <ul class="mt-4 space-y-3">
+                <template x-for="tr in trattamentiFiltrati" x-bind:key="tr.id">
+                  <li>
+                    <article class="group rounded-xl border border-brand-200 bg-white p-4 sm:p-5 shadow-sm
+                                    transition hover:shadow-md hover:border-brand-300"
+                             x-bind:class="tr.cssEvidenzia">
+                      <div class="flex items-start gap-4">
+                        <span class="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center
+                                     rounded-lg bg-brand-100 text-brand-700">
+                          <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-doc" /></svg>
+                        </span>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex flex-wrap items-center gap-2">
+                            <h2 class="text-lg font-semibold text-brand-900"><span x-bind:class="tr.cssNome" x-text="tr.nome"></span> <span x-show="tr.nomeMancante" class="ml-1 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600" x-text="tr.badgeMancante"></span></h2>
+                            <span class="shrink-0 rounded-full bg-brand-100 px-2 py-0.5 text-xs font-medium text-brand-700"
+                                  x-show="tr.mostraCategoria" x-text="tr.categoriaLabel"></span>
+                          </div>
+                          <dl class="mt-2 space-y-1 text-sm">
+                            <div class="flex gap-2">
+                              <dt class="shrink-0 font-medium text-brand-500" x-text="L.listaFinalita"></dt>
+                              <dd class="text-brand-800" x-text="tr.finalitaSintesi"></dd>
+                            </div>
+                            <div class="flex gap-2">
+                              <dt class="shrink-0 font-medium text-brand-500" x-text="L.listaBaseGiuridica"></dt>
+                              <dd class="text-brand-800" x-text="tr.basiSintesi"></dd>
+                            </div>
+                          </dl>
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                </template>
+              </ul>
+            </template>
+
+            <!-- Nessun risultato di ricerca -->
+            <template x-if="nessunRisultato">
+              <div class="mt-4 rounded-xl border border-brand-200 bg-white px-6 py-10 text-center">
+                <h2 class="text-base font-semibold text-brand-800" x-text="L.nessunRisultatoTitolo">Nessun risultato</h2>
+                <p class="mt-1 text-sm text-brand-600" x-text="L.nessunRisultatoTesto"></p>
+              </div>
+            </template>
+
+            <!-- Stato vuoto -->
+            <template x-if="nonHaTrattamenti">
+              <div class="mt-8 rounded-xl border border-dashed border-brand-300 bg-white px-6 py-14 text-center">
+                <span class="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-100 text-brand-600">
+                  <svg class="w-7 h-7" aria-hidden="true"><use href="#icon-doc" /></svg>
+                </span>
+                <h2 class="mt-4 text-lg font-semibold text-brand-800" x-text="L.listaVuotaTitolo">Nessun trattamento</h2>
+                <p class="mt-2 text-brand-600 max-w-prose mx-auto" x-text="L.listaVuotaTesto"></p>
+                <div class="mt-6">
+                  <button type="button" x-on:click="apriCatalogo"
+                          class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium hover:bg-brand-800">
+                    <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
+                    <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
+                  </button>
+                </div>
+              </div>
+            </template>
+
+            <!-- Modale catalogo -->
+            <template x-if="catalogoAperto">
+              <div class="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto bg-brand-950/60 p-4 sm:p-8"
+                   x-on:keydown.escape.window="chiudiCatalogo"
+                   x-on:click.self="chiudiCatalogo">
+                <div class="w-full max-w-2xl rounded-2xl bg-white shadow-xl my-4"
+                     role="dialog" aria-modal="true" aria-labelledby="cat-title">
+
+                  <div class="flex items-start justify-between gap-4 border-b border-brand-200 p-5">
+                    <div>
+                      <h2 id="cat-title" class="text-xl font-bold text-brand-900" x-text="L.catalogoTitolo">Scegli un template</h2>
+                      <p class="mt-1 text-sm text-brand-600" x-text="L.catalogoSottotitolo"></p>
+                    </div>
+                    <button type="button" x-on:click="chiudiCatalogo" x-bind:aria-label="L.btnChiudi"
+                            class="shrink-0 rounded-lg p-1.5 text-brand-500 hover:bg-brand-100 hover:text-brand-800">
+                      <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-close" /></svg>
+                    </button>
+                  </div>
+
+                  <!-- Ricerca nel catalogo -->
+                  <div class="border-b border-brand-100 p-4 sm:px-5">
+                    <div class="relative">
+                      <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-brand-400">
+                        <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-search" /></svg>
+                      </span>
+                      <input type="search" x-model="queryCatalogo"
+                             x-bind:placeholder="L.catalogoCercaPlaceholder" x-bind:aria-label="L.catalogoCercaAria"
+                             class="w-full rounded-lg border border-brand-300 bg-white pl-9 pr-3 py-2 text-brand-900" />
+                    </div>
+                  </div>
+
+                  <ul class="max-h-[55vh] overflow-y-auto divide-y divide-brand-100">
+                    <template x-for="tpl in templatesFiltrati" x-bind:key="tpl.id">
+                      <li class="flex items-start gap-4 p-4 sm:px-5 hover:bg-brand-50">
+                        <span class="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
+                          <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-doc" /></svg>
+                        </span>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex flex-wrap items-center gap-2">
+                            <h3 class="font-semibold text-brand-900" x-text="tpl.nomeLoc"></h3>
+                            <span class="shrink-0 rounded-full bg-brand-100 px-2 py-0.5 text-xs font-medium text-brand-700"
+                                  x-text="tpl.categoriaLabel"></span>
+                          </div>
+                          <p class="mt-1 text-sm text-brand-600" x-text="tpl.descrizioneLoc"></p>
+                        </div>
+                        <button type="button"
+                                x-on:click="creaDaTemplate"
+                                x-bind:data-template-id="tpl.id"
+                                x-bind:disabled="creazioneInCorso"
+                                class="shrink-0 self-center rounded-lg bg-brand-700 px-3 py-1.5 text-sm font-medium text-white
+                                       hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                                x-text="L.btnCrea">Aggiungi</button>
+                      </li>
+                    </template>
+                    <template x-if="nessunRisultatoCatalogo">
+                      <li class="px-5 py-8 text-center text-sm text-brand-600" x-text="L.catalogoNessunRisultato"></li>
+                    </template>
+                  </ul>
+
+                  <div class="border-t border-brand-200 p-4">
+                    <p class="text-xs text-brand-500" x-text="L.catalogoDisclaimer"></p>
+                  </div>
+                </div>
+              </div>
+            </template>
+
           </section>
         </template>
 

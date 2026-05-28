@@ -2,22 +2,9 @@
  * ropa30 — db.js
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
- * Persistence layer for ropa30.
- *
- * Wraps Dexie.js over IndexedDB to provide a clean async CRUD API
- * for the three object stores defined in the schema:
- *
- *   - settings              (singleton: controller + DPO info)
- *   - processingActivities  (one record per ROPA entry)
- *   - auditLog              (history of changes — accountability)
- *
- * All data is stored locally in the user's browser. Nothing is ever
- * sent to a server. This is enforced both by design (no fetch/XHR
- * outbound calls) and by the page-level Content Security Policy
- * (connect-src 'self').
- *
- * Dexie is loaded as a global from public/js/lib/dexie.min.js via the
- * window.Dexie property (the UMD build exposes it on window).
+ * Persistence layer for ropa30 (Dexie over IndexedDB). All data stays local.
+ * Schema v2 (multilingual). Contains the v1->v2 migration and a bilingual
+ * template factory (no flattening: presets keep both languages).
  */
 
 import {
@@ -33,7 +20,6 @@ import {
 // ============================================================================
 // DATABASE INSTANCE
 // ============================================================================
-// Dexie is loaded as a global by index.html (window.Dexie).
 const Dexie = window.Dexie;
 if (!Dexie) {
   throw new Error('Dexie.js is not loaded. Check the <script> order in index.html.');
@@ -41,19 +27,6 @@ if (!Dexie) {
 
 const db = new Dexie('ropa30');
 
-// ----------------------------------------------------------------------------
-// Schema versioning policy
-// ----------------------------------------------------------------------------
-// Dexie tracks IndexedDB schema versions via db.version(N).stores({...}).
-// When the user's IndexedDB has an older version, Dexie applies migrations
-// in order: version(1) → version(2) → ... → current.
-//
-// Our app-level schema version (data shape inside each record) is tracked
-// separately in SCHEMA_VERSION (from schema.js) and stamped on every record.
-//
-// IndexedDB version 1 — initial release.
-// Indices declared with '&' = unique primary key.
-// Other indices listed after the primary key allow efficient queries.
 db.version(1).stores({
   settings:            '&id, tenantId',
   processingActivities:'&id, tenantId, tipoRegistro, codiceUtente, nome, [tenantId+tipoRegistro]',
@@ -61,31 +34,157 @@ db.version(1).stores({
 });
 
 // ============================================================================
-// UUID GENERATION
+// MIGRATION HELPERS (v1 -> v2)
 // ============================================================================
-// Use the browser's built-in crypto.randomUUID() (RFC 4122 v4).
-// Available in all modern browsers (Chrome 92+, Firefox 95+, Safari 15.4+).
+function isBilingue(v) {
+  return v !== null && typeof v === 'object' && !Array.isArray(v)
+    && ('it' in v) && ('en' in v)
+    && Object.keys(v).every((k) => k === 'it' || k === 'en');
+}
+function toBil(v, lang) {
+  if (isBilingue(v)) return { it: v.it || '', en: v.en || '' };
+  const s = (typeof v === 'string') ? v : '';
+  return lang === 'en' ? { it: '', en: s } : { it: s, en: '' };
+}
+function toBilArray(arr, lang) {
+  if (!Array.isArray(arr)) return [];
+  return arr.map((item) => toBil(item, lang));
+}
+function migrateProcessingActivityV1toV2(rec, lang) {
+  const r = { ...rec };
+  r.nome = toBil(r.nome, lang);
+  r.descrizione = toBil(r.descrizione, lang);
+  r.finalita = toBilArray(r.finalita, lang);
+
+  const bg = { ...(r.baseGiuridica || {}) };
+  bg.art6 = Array.isArray(bg.art6) ? bg.art6 : [];
+  bg.art9 = Array.isArray(bg.art9) ? bg.art9 : [];
+  bg.dettagliArt6 = toBil(bg.dettagliArt6, lang);
+  bg.dettagliArt9 = toBil(bg.dettagliArt9, lang);
+  const li = { ...(bg.legittimoInteresseDettagli || {}) };
+  li.descrizione = toBil(li.descrizione, lang);
+  li.garanzieAdottate = toBil(li.garanzieAdottate, lang);
+  li.riferimentoBilanciamento = toBil(li.riferimentoBilanciamento, lang);
+  li.bilanciamentoEffettuato = !!li.bilanciamentoEffettuato;
+  li.bilanciamentoRichiesto = (li.bilanciamentoRichiesto !== undefined) ? !!li.bilanciamentoRichiesto : true;
+  bg.legittimoInteresseDettagli = li;
+  r.baseGiuridica = bg;
+
+  const cp = { ...(r.datiCondannePenaliReati || {}) };
+  cp.presenti = !!cp.presenti;
+  cp.normativaAutorizzativa = toBil(cp.normativaAutorizzativa, lang);
+  r.datiCondannePenaliReati = cp;
+
+  r.categorieInteressati = toBilArray(r.categorieInteressati, lang);
+  r.categorieDati = toBilArray(r.categorieDati, lang);
+  r.fonteDeiDatiDettagli = toBil(r.fonteDeiDatiDettagli, lang);
+
+  r.categorieDestinatari = toBilArray(r.categorieDestinatari, lang);
+  r.responsabiliEsterni = Array.isArray(r.responsabiliEsterni)
+    ? r.responsabiliEsterni.map((re) => {
+        const x = { ...(re || {}) };
+        x.denominazione = toBil(x.denominazione, lang);
+        x.sede = toBil(x.sede, lang);
+        x.finalita = toBil(x.finalita, lang);
+        x.riferimentoContratto = toBil(x.riferimentoContratto, lang);
+        x.notaRuoloPrivacy = toBil(x.notaRuoloPrivacy, lang);
+        x.accordoArt28Presente = !!x.accordoArt28Presente;
+        return x;
+      })
+    : [];
+
+  r.trasferimentiExtraUE = Array.isArray(r.trasferimentiExtraUE)
+    ? r.trasferimentiExtraUE.map((tr) => {
+        const x = { ...(tr || {}) };
+        x.paese = toBil(x.paese, lang);
+        x.riferimentoDocumentazione = toBil(x.riferimentoDocumentazione, lang);
+        return x;
+      })
+    : [];
+
+  const tc = { ...(r.tempiConservazione || {}) };
+  tc.periodo = toBil(tc.periodo, lang);
+  tc.criteri = toBil(tc.criteri, lang);
+  r.tempiConservazione = tc;
+
+  const ms = { ...(r.misureSicurezza || {}) };
+  ms.tecniche = toBilArray(ms.tecniche, lang);
+  ms.organizzative = toBilArray(ms.organizzative, lang);
+  ms.rinvioDocumentale = toBil(ms.rinvioDocumentale, lang);
+  r.misureSicurezza = ms;
+
+  const pda = { ...(r.processiDecisionaliAutomatizzati || {}) };
+  pda.presenti = !!pda.presenti;
+  pda.descrizione = toBil(pda.descrizione, lang);
+  pda.logica = toBil(pda.logica, lang);
+  pda.conseguenze = toBil(pda.conseguenze, lang);
+  pda.dirittiInteressato = toBil(pda.dirittiInteressato, lang);
+  r.processiDecisionaliAutomatizzati = pda;
+
+  const pm = { ...(r.profilazioneMarketing || {}) };
+  pm.presente = !!pm.presente;
+  pm.descrizione = toBil(pm.descrizione, lang);
+  pm.logica = toBil(pm.logica, lang);
+  pm.baseGiuridicaSpecifica = toBil(pm.baseGiuridicaSpecifica, lang);
+  r.profilazioneMarketing = pm;
+
+  const vi = { ...(r.valutazioneDiImpatto || {}) };
+  vi.effettuata = !!vi.effettuata;
+  vi.riferimentoDocumento = toBil(vi.riferimentoDocumento, lang);
+  r.valutazioneDiImpatto = vi;
+
+  r.note = toBil(r.note, lang);
+  r.schemaVersion = SCHEMA_VERSION;
+  return r;
+}
+function migrateSettingsV1toV2(s, lang) {
+  const out = { ...(s || {}) };
+  out.uiLanguage = (lang === 'en') ? 'en' : 'it';
+  out.registro = { lingue: [out.uiLanguage], linguaPrincipale: out.uiLanguage };
+  delete out.lingua;
+  out.titolare = { ...(out.titolare || {}) };
+  if (typeof out.titolare.sitoWeb !== 'string') out.titolare.sitoWeb = '';
+  out.schemaVersion = SCHEMA_VERSION;
+  return out;
+}
+
+db.version(2).stores({
+  settings:            '&id, tenantId',
+  processingActivities:'&id, tenantId, tipoRegistro, codiceUtente, [tenantId+tipoRegistro]',
+  auditLog:            '&id, tenantId, timestamp, targetType, targetId'
+}).upgrade(async (tx) => {
+  let lang = 'it';
+  const settingsTable = tx.table('settings');
+  const existingSettings = await settingsTable.get('default');
+  if (existingSettings && (existingSettings.lingua === 'en' || existingSettings.lingua === 'it')) {
+    lang = existingSettings.lingua;
+  }
+  if (existingSettings) {
+    await settingsTable.put(migrateSettingsV1toV2(existingSettings, lang));
+  }
+  const paTable = tx.table('processingActivities');
+  await paTable.toCollection().modify((rec) => {
+    const migrated = migrateProcessingActivityV1toV2(rec, lang);
+    for (const k of Object.keys(rec)) { if (!(k in migrated)) delete rec[k]; }
+    Object.assign(rec, migrated);
+  });
+});
+
+// ============================================================================
+// UUID
+// ============================================================================
 function newUUID() {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
     return crypto.randomUUID();
   }
-  throw new Error(
-    'crypto.randomUUID() is not available in this browser. ' +
-    'ropa30 requires a modern browser (Chrome 92+, Firefox 95+, Safari 15.4+).'
-  );
+  throw new Error('crypto.randomUUID() is not available in this browser.');
 }
 
 // ============================================================================
-// AUDIT LOG (internal helper)
+// AUDIT LOG (internal)
 // ============================================================================
 async function logAudit({ azione, targetType, targetId, summary }) {
-  const entry = createAuditEntry({
-    id: newUUID(),
-    azione,
-    targetType,
-    targetId,
-    summary
-  });
+  const entry = createAuditEntry({ id: newUUID(), azione, targetType, targetId, summary });
   await db.auditLog.add(entry);
   return entry;
 }
@@ -93,51 +192,29 @@ async function logAudit({ azione, targetType, targetId, summary }) {
 // ============================================================================
 // SETTINGS API
 // ============================================================================
-
-/**
- * Get the current settings record. If none exists yet (first run),
- * creates and persists a default empty one.
- * @returns {Promise<object>} the settings record
- */
 export async function getSettings() {
   let settings = await db.settings.get('default');
   if (!settings) {
     settings = createDefaultSettings();
     await db.settings.add(settings);
     await logAudit({
-      azione: AUDIT_AZIONE.CREATED,
-      targetType: AUDIT_TARGET.SETTINGS,
-      targetId: 'default',
-      summary: 'Initialized default settings on first run'
+      azione: AUDIT_AZIONE.CREATED, targetType: AUDIT_TARGET.SETTINGS,
+      targetId: 'default', summary: 'Initialized default settings on first run'
     });
   }
   return settings;
 }
-
-/**
- * Update the settings record.
- * @param {object} patch — partial settings object (will be deep-merged shallowly).
- * @returns {Promise<object>} the updated settings record
- */
 export async function updateSettings(patch) {
   const current = await getSettings();
   const updated = {
-    ...current,
-    ...patch,
-    id: 'default',                 // never let the id be overwritten
-    tenantId: DEFAULT_TENANT_ID,   // ditto
-    schemaVersion: SCHEMA_VERSION,
-    metadata: {
-      ...current.metadata,
-      updatedAt: new Date().toISOString()
-    }
+    ...current, ...patch,
+    id: 'default', tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION,
+    metadata: { ...current.metadata, updatedAt: new Date().toISOString() }
   };
   await db.settings.put(updated);
   await logAudit({
-    azione: AUDIT_AZIONE.UPDATED,
-    targetType: AUDIT_TARGET.SETTINGS,
-    targetId: 'default',
-    summary: 'Settings updated'
+    azione: AUDIT_AZIONE.UPDATED, targetType: AUDIT_TARGET.SETTINGS,
+    targetId: 'default', summary: 'Settings updated'
   });
   return updated;
 }
@@ -145,171 +222,66 @@ export async function updateSettings(patch) {
 // ============================================================================
 // PROCESSING ACTIVITIES API
 // ============================================================================
-
-/**
- * Create a new processing activity. Generates a fresh UUID.
- * @param {object} initial — fields to pre-fill (optional).
- * @returns {Promise<object>} the newly created activity record
- */
 export async function createProcessingActivity(initial = {}) {
   const record = createDefaultProcessingActivity({ id: newUUID() });
   Object.assign(record, initial, {
-    id: record.id,                 // protect the id
-    tenantId: DEFAULT_TENANT_ID,
-    schemaVersion: SCHEMA_VERSION,
-    metadata: record.metadata
+    id: record.id, tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION, metadata: record.metadata
   });
   await db.processingActivities.add(record);
   await logAudit({
-    azione: AUDIT_AZIONE.CREATED,
-    targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
-    targetId: record.id,
-    summary: `Created processing activity "${displayName(record.nome, record.id)}"`
+    azione: AUDIT_AZIONE.CREATED, targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
+    targetId: record.id, summary: `Created processing activity "${displayName(record.nome, record.id)}"`
   });
   return record;
 }
-
-/**
- * Read a processing activity by id.
- * @param {string} id
- * @returns {Promise<object|undefined>}
- */
 export async function getProcessingActivity(id) {
   return await db.processingActivities.get(id);
 }
-
-/**
- * List all processing activities of the current tenant and current
- * register type (titolare by default).
- * @returns {Promise<Array<object>>}
- */
 export async function listProcessingActivities() {
   return await db.processingActivities
     .where('[tenantId+tipoRegistro]')
     .equals([DEFAULT_TENANT_ID, 'titolare'])
     .toArray();
 }
-
-/**
- * Update a processing activity. Increments its internal version number
- * and refreshes updatedAt.
- * @param {string} id
- * @param {object} patch — partial fields to overwrite
- * @returns {Promise<object>} the updated record
- */
 export async function updateProcessingActivity(id, patch) {
   const current = await db.processingActivities.get(id);
   if (!current) throw new Error(`Processing activity ${id} not found`);
   const updated = {
-    ...current,
-    ...patch,
-    id: current.id,
-    tenantId: DEFAULT_TENANT_ID,
-    schemaVersion: SCHEMA_VERSION,
+    ...current, ...patch,
+    id: current.id, tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION,
     metadata: {
-      ...current.metadata,
-      updatedAt: new Date().toISOString(),
+      ...current.metadata, updatedAt: new Date().toISOString(),
       version: (current.metadata?.version || 1) + 1
     }
   };
   await db.processingActivities.put(updated);
   await logAudit({
-    azione: AUDIT_AZIONE.UPDATED,
-    targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
-    targetId: id,
-    summary: `Updated processing activity "${displayName(updated.nome, id)}"`
+    azione: AUDIT_AZIONE.UPDATED, targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
+    targetId: id, summary: `Updated processing activity "${displayName(updated.nome, id)}"`
   });
   return updated;
 }
-
-/**
- * Delete a processing activity permanently.
- * @param {string} id
- * @returns {Promise<void>}
- */
 export async function deleteProcessingActivity(id) {
   const current = await db.processingActivities.get(id);
   if (!current) return;
   await db.processingActivities.delete(id);
   await logAudit({
-    azione: AUDIT_AZIONE.DELETED,
-    targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
-    targetId: id,
-    summary: `Deleted processing activity "${displayName(current.nome, id)}"`
+    azione: AUDIT_AZIONE.DELETED, targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
+    targetId: id, summary: `Deleted processing activity "${displayName(current.nome, id)}"`
   });
 }
 
 // ============================================================================
-// AUDIT LOG API (read-only from outside)
+// AUDIT LOG API
 // ============================================================================
-
-/**
- * List audit log entries in reverse chronological order.
- * @param {number} limit — maximum entries to return (default: 100)
- * @returns {Promise<Array<object>>}
- */
 export async function listAuditLog(limit = 100) {
-// Order by timestamp descending. We use `orderBy('timestamp')` + `reverse()`
-  // because the natural index on auditLog does not guarantee chronological
-  // order across rapid sequential writes (same-millisecond timestamps).
-  const all = await db.auditLog
-    .where('tenantId').equals(DEFAULT_TENANT_ID)
-    .toArray();
-  return all
-    .sort((a, b) => b.timestamp.localeCompare(a.timestamp))
-    .slice(0, limit);
+  const all = await db.auditLog.where('tenantId').equals(DEFAULT_TENANT_ID).toArray();
+  return all.sort((a, b) => b.timestamp.localeCompare(a.timestamp)).slice(0, limit);
 }
 
 // ============================================================================
-// TEMPLATE LIBRARY (catalog loading + instantiation)
+// TEMPLATE LIBRARY
 // ============================================================================
-// The template catalog is a static JSON file served from the same origin
-// (public/data/templates.json). Loading it via fetch('./data/templates.json')
-// is same-origin and therefore compatible with the page CSP (connect-src 'self').
-// Nothing leaves the browser: the catalog ships with the app.
-
-// Default language for instantiating a (monolingual) processing activity
-// from a (bilingual) template. May become a user preference in the future.
-const DEFAULT_LANGUAGE = 'it';
-
-/**
- * Recursively localize a value coming from a bilingual template preset.
- * - {it,en} objects  -> the string for `lang` (fallback it -> en -> '')
- * - arrays           -> each element localized
- * - other objects    -> each property localized
- * - primitives       -> unchanged
- * This collapses a bilingual template into a monolingual processing activity.
- * @param {*} value
- * @param {string} lang
- * @returns {*}
- */
-function localizeValue(value, lang = DEFAULT_LANGUAGE) {
-  if (Array.isArray(value)) {
-    return value.map((item) => localizeValue(item, lang));
-  }
-  if (value && typeof value === 'object') {
-    const keys = Object.keys(value);
-    const isLocalizedObject =
-      keys.includes('it') &&
-      keys.includes('en') &&
-      keys.every((k) => k === 'it' || k === 'en');
-    if (isLocalizedObject) {
-      return value[lang] || value.it || value.en || '';
-    }
-    return Object.fromEntries(
-      Object.entries(value).map(([k, v]) => [k, localizeValue(v, lang)])
-    );
-  }
-  return value;
-}
-
-/**
- * Defensive display name: never throws, never prints "[object Object]".
- * Accepts a string, a {it,en} object, or anything else.
- * @param {*} value
- * @param {string} fallback
- * @returns {string}
- */
 function displayName(value, fallback = '') {
   if (!value) return fallback;
   if (typeof value === 'string') return value;
@@ -317,61 +289,33 @@ function displayName(value, fallback = '') {
   return String(value);
 }
 
-// In-memory cache: the catalog is static within a session, so fetch once.
 let _templateCatalogCache = null;
 
-/**
- * Deep-merge `source` onto a copy of `target`.
- * Policy (per design decision):
- *   - plain objects  -> merged recursively
- *   - arrays         -> replaced wholesale (no concatenation)
- *   - primitives     -> replaced
- * `target` is not mutated; a new object is returned.
- * @param {object} target
- * @param {object} source
- * @returns {object}
- */
 function deepMerge(target, source) {
-  const isPlainObject = (v) =>
-    v !== null && typeof v === 'object' && !Array.isArray(v);
-
+  const isPlainObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
   const out = Array.isArray(target) ? [...target] : { ...target };
-
   for (const key of Object.keys(source)) {
     const sVal = source[key];
     const tVal = out[key];
     if (isPlainObject(sVal) && isPlainObject(tVal)) {
-      out[key] = deepMerge(tVal, sVal);   // recurse into nested objects
+      out[key] = deepMerge(tVal, sVal);
     } else {
-      out[key] = sVal;                    // arrays + primitives: replace
+      out[key] = sVal;
     }
   }
   return out;
 }
 
-/**
- * Load the bilingual template catalog (public/data/templates.json).
- * Returns the full catalog object: { $schemaDescription?, version,
- * language, disclaimer, templates }. Cached in memory after first load.
- * @returns {Promise<object>} the catalog object
- * @throws if the file cannot be fetched or parsed
- */
 export async function listAvailableTemplates() {
-  if (_templateCatalogCache) {
-    return _templateCatalogCache;
-  }
+  if (_templateCatalogCache) return _templateCatalogCache;
   let res;
   try {
     res = await fetch('./data/templates.json', { cache: 'no-cache' });
   } catch (err) {
-    throw new Error(
-      'Unable to load the template catalog (network/fetch error): ' + err.message
-    );
+    throw new Error('Unable to load the template catalog (network/fetch error): ' + err.message);
   }
   if (!res.ok) {
-    throw new Error(
-      `Unable to load the template catalog: HTTP ${res.status} ${res.statusText}`
-    );
+    throw new Error(`Unable to load the template catalog: HTTP ${res.status} ${res.statusText}`);
   }
   let catalog;
   try {
@@ -386,53 +330,21 @@ export async function listAvailableTemplates() {
   return catalog;
 }
 
-/**
- * Create a new processing activity from a template.
- *
- * Flow:
- *   1. load the catalog (cached)
- *   2. find the template by templateId
- *   3. build a full default record (so every schema field is present)
- *   4. deep-merge the template's `preset` onto the default
- *   5. set provenance (sourceTemplateId / sourceTemplateVersion)
- *   6. protect technical fields (id, tenantId, schemaVersion, metadata)
- *   7. persist + write the audit log (noting the source template)
- *
- * The resulting record is a normal processing activity, indistinguishable
- * from a manually created one except for the provenance fields.
- *
- * @param {string} templateId  e.g. "tpl-it-001-rapporto-lavoro"
- * @returns {Promise<object>} the created processing activity record
- * @throws if the template is not found
- */
+// Bilingual factory: deep-merge the (bilingual) preset onto the default,
+// then defensively normalize the canonical bilingual shapes. No flattening.
 export async function createProcessingActivityFromTemplate(templateId) {
   const catalog = await listAvailableTemplates();
   const template = catalog.templates.find((t) => t.templateId === templateId);
   if (!template) {
     throw new Error(`Template not found: "${templateId}".`);
   }
-
-  // Full default record (guarantees all schema fields exist).
   const base = createDefaultProcessingActivity({ id: newUUID() });
+  const merged = deepMerge(base, template.preset || {});
+  normalizeBilingualShapes(merged);
 
-  // Deep-merge the template preset onto the default.
-  // Only `preset` is used: template meta fields (templateId, categoria,
-  // settore, scenari, descrizioneTemplate, noteTemplate...) describe the
-  // *template*, not the *processing activity*, and are intentionally excluded.
-  // Localize the bilingual preset onto the chosen language FIRST, so the
-  // resulting processing activity is monolingual (nome/descrizione/... become
-  // plain strings, not {it,en} objects). Then deep-merge onto the default.
-  const lang = DEFAULT_LANGUAGE;
-  const preset = localizeValue(template.preset || {}, lang);
-  const merged = deepMerge(base, preset);
-
-  // Provenance (technical metadata, not legal content).
   merged.sourceTemplateId = template.templateId;
-  merged.sourceTemplateVersion =
-    typeof catalog.version === 'number' ? catalog.version : null;
-  merged.sourceTemplateLanguage = lang;
-
-  // Protect technical/identity fields against anything in the preset.
+  merged.sourceTemplateVersion = typeof catalog.version === 'number' ? catalog.version : null;
+  merged.sourceTemplateLanguage = '';
   merged.id = base.id;
   merged.tenantId = DEFAULT_TENANT_ID;
   merged.schemaVersion = SCHEMA_VERSION;
@@ -440,15 +352,114 @@ export async function createProcessingActivityFromTemplate(templateId) {
 
   await db.processingActivities.add(merged);
   await logAudit({
-    azione: AUDIT_AZIONE.CREATED,
-    targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
+    azione: AUDIT_AZIONE.CREATED, targetType: AUDIT_TARGET.PROCESSING_ACTIVITY,
     targetId: merged.id,
     summary: `Created processing activity "${displayName(merged.nome, merged.id)}" from template "${template.templateId}"`
   });
   return merged;
 }
 
+// ----------------------------------------------------------------------------
+// Defensive bilingual normalization (post-merge).
+// ----------------------------------------------------------------------------
+function _isBil(v) {
+  return v !== null && typeof v === 'object' && !Array.isArray(v)
+    && ('it' in v) && ('en' in v)
+    && Object.keys(v).every((k) => k === 'it' || k === 'en');
+}
+function bil(v) {
+  if (_isBil(v)) return { it: v.it || '', en: v.en || '' };
+  const s = (typeof v === 'string') ? v : '';
+  return { it: s, en: '' };
+}
+function bilArr(v) {
+  if (Array.isArray(v)) return v.map((x) => bil(x));
+  if (v === undefined || v === null || v === '') return [];
+  return [bil(v)];
+}
+function normalizeBilingualShapes(r) {
+  r.nome = bil(r.nome);
+  r.descrizione = bil(r.descrizione);
+  r.finalita = bilArr(r.finalita);
+
+  const bg = r.baseGiuridica || (r.baseGiuridica = {});
+  bg.art6 = Array.isArray(bg.art6) ? bg.art6 : [];
+  bg.art9 = Array.isArray(bg.art9) ? bg.art9 : [];
+  bg.dettagliArt6 = bil(bg.dettagliArt6);
+  bg.dettagliArt9 = bil(bg.dettagliArt9);
+  const li = bg.legittimoInteresseDettagli || (bg.legittimoInteresseDettagli = {});
+  li.descrizione = bil(li.descrizione);
+  li.garanzieAdottate = bil(li.garanzieAdottate);
+  li.riferimentoBilanciamento = bil(li.riferimentoBilanciamento);
+  li.bilanciamentoEffettuato = !!li.bilanciamentoEffettuato;
+  li.bilanciamentoRichiesto = (li.bilanciamentoRichiesto !== undefined) ? !!li.bilanciamentoRichiesto : true;
+
+  const cp = r.datiCondannePenaliReati || (r.datiCondannePenaliReati = {});
+  cp.presenti = !!cp.presenti;
+  cp.normativaAutorizzativa = bil(cp.normativaAutorizzativa);
+
+  r.categorieInteressati = bilArr(r.categorieInteressati);
+  r.categorieDati = bilArr(r.categorieDati);
+  r.fonteDeiDatiDettagli = bil(r.fonteDeiDatiDettagli);
+
+  r.categorieDestinatari = bilArr(r.categorieDestinatari);
+  if (Array.isArray(r.responsabiliEsterni)) {
+    r.responsabiliEsterni = r.responsabiliEsterni.map((re) => {
+      const x = re || {};
+      x.denominazione = bil(x.denominazione);
+      x.sede = bil(x.sede);
+      x.finalita = bil(x.finalita);
+      x.riferimentoContratto = bil(x.riferimentoContratto);
+      x.notaRuoloPrivacy = bil(x.notaRuoloPrivacy);
+      x.accordoArt28Presente = !!x.accordoArt28Presente;
+      return x;
+    });
+  } else {
+    r.responsabiliEsterni = [];
+  }
+
+  if (Array.isArray(r.trasferimentiExtraUE)) {
+    r.trasferimentiExtraUE = r.trasferimentiExtraUE.map((tr) => {
+      const x = tr || {};
+      x.paese = bil(x.paese);
+      x.riferimentoDocumentazione = bil(x.riferimentoDocumentazione);
+      return x;
+    });
+  } else {
+    r.trasferimentiExtraUE = [];
+  }
+
+  const tc = r.tempiConservazione || (r.tempiConservazione = {});
+  tc.periodo = bil(tc.periodo);
+  tc.criteri = bil(tc.criteri);
+
+  const ms = r.misureSicurezza || (r.misureSicurezza = {});
+  ms.tecniche = bilArr(ms.tecniche);
+  ms.organizzative = bilArr(ms.organizzative);
+  ms.rinvioDocumentale = bil(ms.rinvioDocumentale);
+
+  const pda = r.processiDecisionaliAutomatizzati || (r.processiDecisionaliAutomatizzati = {});
+  pda.presenti = !!pda.presenti;
+  pda.descrizione = bil(pda.descrizione);
+  pda.logica = bil(pda.logica);
+  pda.conseguenze = bil(pda.conseguenze);
+  pda.dirittiInteressato = bil(pda.dirittiInteressato);
+
+  const pm = r.profilazioneMarketing || (r.profilazioneMarketing = {});
+  pm.presente = !!pm.presente;
+  pm.descrizione = bil(pm.descrizione);
+  pm.logica = bil(pm.logica);
+  pm.baseGiuridicaSpecifica = bil(pm.baseGiuridicaSpecifica);
+
+  const vi = r.valutazioneDiImpatto || (r.valutazioneDiImpatto = {});
+  vi.effettuata = !!vi.effettuata;
+  vi.riferimentoDocumento = bil(vi.riferimentoDocumento);
+
+  r.note = bil(r.note);
+  return r;
+}
+
 // ============================================================================
-// EXPORTS (the db instance is exported too, for debugging in console)
+// EXPORTS
 // ============================================================================
 export { db };

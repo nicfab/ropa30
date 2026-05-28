@@ -3,26 +3,40 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
  * Alpine.js component for ropa30 (CSP-safe build, @alpinejs/csp).
- *
- * CSP constraint: HTML attributes may reference *property/method names* and
- * simple member paths only — never expressions. Therefore:
- *  - x-model targets are flat, single-name properties (denominazione, via, ...).
- *  - Translated strings are read via a single getter `L` (e.g. x-text="L.onbTitolo").
- *  - Event handlers are method names with no arguments (e.g. x-on:click="salvaOnboarding").
- *
- * The component is registered with Alpine via Alpine.data('ropa30App', ...)
- * inside the alpine:init listener at the bottom of this file (both this script
- * and alpine.min.js use defer, preserving document order).
- *
- * In later phases translations will move to public/locales/{it,en}.json.
+ * Settings schema v2: uiLanguage (display) + registro {lingue, linguaPrincipale}.
+ * Multilingual reading: active-language text; strict (no silent fallback) for
+ * lists; attenuated fallback + "missing translation" badge for the title only.
  */
 
-import { getSettings, updateSettings } from './db.js';
+import {
+  getSettings,
+  updateSettings,
+  listProcessingActivities,
+  listAvailableTemplates,
+  createProcessingActivityFromTemplate
+} from './db.js';
 
 function ropa30App() {
+  const CATEGORIA_LABEL = {
+    it: { marketing: 'Marketing', risorse_umane: 'Risorse umane', sicurezza: 'Sicurezza',
+      clientela: 'Clientela', fornitori: 'Fornitori', amministrazione: 'Amministrazione',
+      legale: 'Legale', web: 'Web' },
+    en: { marketing: 'Marketing', risorse_umane: 'Human resources', sicurezza: 'Security',
+      clientela: 'Customers', fornitori: 'Suppliers', amministrazione: 'Administration',
+      legale: 'Legal', web: 'Web' }
+  };
+
+  const ART6_LABEL = {
+    it: { consenso: 'Consenso', contratto: 'Contratto', obbligo_legale: 'Obbligo legale',
+      interesse_vitale: 'Interesse vitale', interesse_pubblico: 'Interesse pubblico',
+      legittimo_interesse: 'Legittimo interesse' },
+    en: { consenso: 'Consent', contratto: 'Contract', obbligo_legale: 'Legal obligation',
+      interesse_vitale: 'Vital interest', interesse_pubblico: 'Public interest',
+      legittimo_interesse: 'Legitimate interest' }
+  };
+
   const translations = {
     it: {
-      // App-level (header / footer / <title>) — bound via single getters below.
       appTitle: 'ropa30 — Il registro dei trattamenti GDPR, semplice.',
       appDescription: 'Il registro delle attività di trattamento ex art. 30 GDPR, semplice e gratuito.',
       langSwitcherLabel: 'Lingua',
@@ -31,7 +45,6 @@ function ropa30App() {
       footerLicense: 'Rilasciato sotto AGPL-3.0-or-later',
       footerAuthor: 'Realizzato da',
 
-      // Onboarding
       onbTitolo: 'Configura il registro',
       onbSottotitolo: 'Inserisci i dati del titolare del trattamento e, se nominato, del Responsabile della protezione dei dati (DPO). Questi dati costituiscono l\u2019intestazione del tuo registro ex art. 30 GDPR. Restano sul tuo dispositivo: non lasciano mai il browser.',
       onbSezioneTitolare: 'Titolare del trattamento',
@@ -39,37 +52,49 @@ function ropa30App() {
       onbSezioneContatti: 'Contatti',
       onbSezioneDpo: 'Responsabile della protezione dei dati (DPO)',
       onbSezioneRegistro: 'Registro',
-
       lblDenominazione: 'Denominazione *',
       lblFormaGiuridica: 'Forma giuridica',
       lblCodiceFiscale: 'Codice fiscale',
       lblPartitaIVA: 'Partita IVA',
       lblTelefono: 'Telefono',
-      lblVia: 'Via',
-      lblCivico: 'Civico',
-      lblCap: 'CAP',
-      lblCitta: 'Citt\u00e0',
-      lblProvincia: 'Provincia',
-      lblPaese: 'Paese',
-      lblEmail: 'Email',
-      lblPec: 'PEC',
-      lblSitoWeb: 'Sito web',
+      lblVia: 'Via', lblCivico: 'Civico', lblCap: 'CAP', lblCitta: 'Citt\u00e0',
+      lblProvincia: 'Provincia', lblPaese: 'Paese',
+      lblEmail: 'Email', lblPec: 'PEC', lblSitoWeb: 'Sito web',
       lblDpoNominato: '\u00c8 stato nominato un DPO',
       lblDpoNome: 'Nome / denominazione del DPO',
-      lblDpoEmail: 'Email del DPO',
-      lblDpoPec: 'PEC del DPO',
-      lblLingua: 'Lingua del registro',
-      lblDataCreazione: 'Data di creazione',
-
+      lblDpoEmail: 'Email del DPO', lblDpoPec: 'PEC del DPO',
+      lblLingua: 'Lingua del registro', lblDataCreazione: 'Data di creazione',
       onbObbligatorio: '* Campo obbligatorio. Indica inoltre almeno una email o una PEC del titolare.',
       onbErrore: 'Si \u00e8 verificato un errore durante il salvataggio. Riprova.',
       btnSalva: 'Salva e continua',
 
-      // Lista (stub)
       listaTitolo: 'Registro dei trattamenti',
       listaModificaTitolare: 'Modifica dati titolare',
       listaVuotaTitolo: 'Nessun trattamento presente',
-      listaVuotaTesto: 'Il registro \u00e8 vuoto. Nei prossimi passi potrai aggiungere trattamenti partendo da un template oppure crearne di nuovi.'
+      listaVuotaTesto: 'Il registro \u00e8 vuoto. Aggiungi il primo trattamento partendo da un template.',
+      btnAggiungiTrattamento: 'Aggiungi trattamento',
+      listaFinalita: 'Finalit\u00e0',
+      listaBaseGiuridica: 'Base giuridica',
+      creazioneErrore: 'Non \u00e8 stato possibile aggiungere il trattamento. Riprova.',
+      cercaPlaceholder: 'Cerca per nome, finalit\u00e0 o base giuridica\u2026',
+      cercaAria: 'Cerca tra i trattamenti',
+      contatoreUno: 'trattamento',
+      contatoreMolti: 'trattamenti',
+      nessunRisultatoTitolo: 'Nessun risultato',
+      nessunRisultatoTesto: 'Nessun trattamento corrisponde alla ricerca. Prova con altri termini.',
+      btnPulisci: 'Pulisci',
+      sennaNome: '(senza nome)',
+      mancaEN: 'Manca EN',
+      mancaIT: 'Manca IT',
+
+      catalogoTitolo: 'Scegli un template',
+      catalogoSottotitolo: 'Seleziona un modello da cui partire: verr\u00e0 aggiunto al registro e potrai personalizzarlo.',
+      catalogoDisclaimer: 'I template sono punti di partenza redatti con cura, ma vanno adattati alla tua realt\u00e0 e verificati. Non costituiscono consulenza legale.',
+      catalogoCercaPlaceholder: 'Cerca un template\u2026',
+      catalogoCercaAria: 'Cerca tra i template',
+      catalogoNessunRisultato: 'Nessun template corrisponde alla ricerca.',
+      btnCrea: 'Aggiungi',
+      btnChiudi: 'Chiudi'
     },
     en: {
       appTitle: 'ropa30 — The GDPR Article 30 register, simplified.',
@@ -87,28 +112,18 @@ function ropa30App() {
       onbSezioneContatti: 'Contacts',
       onbSezioneDpo: 'Data Protection Officer (DPO)',
       onbSezioneRegistro: 'Register',
-
       lblDenominazione: 'Name *',
       lblFormaGiuridica: 'Legal form',
       lblCodiceFiscale: 'Tax code',
       lblPartitaIVA: 'VAT number',
       lblTelefono: 'Phone',
-      lblVia: 'Street',
-      lblCivico: 'No.',
-      lblCap: 'Postal code',
-      lblCitta: 'City',
-      lblProvincia: 'Province',
-      lblPaese: 'Country',
-      lblEmail: 'Email',
-      lblPec: 'Certified email (PEC)',
-      lblSitoWeb: 'Website',
+      lblVia: 'Street', lblCivico: 'No.', lblCap: 'Postal code', lblCitta: 'City',
+      lblProvincia: 'Province', lblPaese: 'Country',
+      lblEmail: 'Email', lblPec: 'Certified email (PEC)', lblSitoWeb: 'Website',
       lblDpoNominato: 'A DPO has been appointed',
       lblDpoNome: 'DPO name',
-      lblDpoEmail: 'DPO email',
-      lblDpoPec: 'DPO certified email (PEC)',
-      lblLingua: 'Register language',
-      lblDataCreazione: 'Creation date',
-
+      lblDpoEmail: 'DPO email', lblDpoPec: 'DPO certified email (PEC)',
+      lblLingua: 'Register language', lblDataCreazione: 'Creation date',
       onbObbligatorio: '* Required. Also provide at least an email or a certified email (PEC) for the controller.',
       onbErrore: 'An error occurred while saving. Please try again.',
       btnSalva: 'Save and continue',
@@ -116,49 +131,72 @@ function ropa30App() {
       listaTitolo: 'Record of processing activities',
       listaModificaTitolare: 'Edit controller details',
       listaVuotaTitolo: 'No processing activities yet',
-      listaVuotaTesto: 'Your register is empty. In the next steps you will be able to add activities from a template or create new ones.'
+      listaVuotaTesto: 'Your register is empty. Add your first activity starting from a template.',
+      btnAggiungiTrattamento: 'Add activity',
+      listaFinalita: 'Purposes',
+      listaBaseGiuridica: 'Legal basis',
+      creazioneErrore: 'The activity could not be added. Please try again.',
+      cercaPlaceholder: 'Search by name, purpose or legal basis\u2026',
+      cercaAria: 'Search activities',
+      contatoreUno: 'activity',
+      contatoreMolti: 'activities',
+      nessunRisultatoTitolo: 'No results',
+      nessunRisultatoTesto: 'No activity matches your search. Try different terms.',
+      btnPulisci: 'Clear',
+      sennaNome: '(untitled)',
+      mancaEN: 'Missing EN',
+      mancaIT: 'Missing IT',
+
+      catalogoTitolo: 'Choose a template',
+      catalogoSottotitolo: 'Pick a model to start from: it will be added to your register and you can customise it.',
+      catalogoDisclaimer: 'Templates are carefully drafted starting points, but must be adapted to your context and verified. They do not constitute legal advice.',
+      catalogoCercaPlaceholder: 'Search a template\u2026',
+      catalogoCercaAria: 'Search templates',
+      catalogoNessunRisultato: 'No template matches your search.',
+      btnCrea: 'Add',
+      btnChiudi: 'Close'
     }
   };
 
   return {
-    // ---- Reactive state ----
+    // ---- State ----
     lang: 'it',
-    view: '',                 // '' until init() decides: 'onboarding' | 'lista'
+    view: '',
     saving: false,
     erroreSalvataggio: false,
     settingsCreatedAt: '',
 
-    // ---- Onboarding form (flat, single-name x-model targets for CSP safety) ----
-    denominazione: '',
-    formaGiuridica: '',
-    codiceFiscale: '',
-    partitaIVA: '',
-    telefono: '',
-    via: '',
-    civico: '',
-    cap: '',
-    citta: '',
-    provincia: '',
-    paese: 'IT',
-    email: '',
-    pec: '',
-    sitoWeb: '',
-    dpoNominato: false,
-    dpoNome: '',
-    dpoEmail: '',
-    dpoPec: '',
+    // Onboarding form
+    denominazione: '', formaGiuridica: '', codiceFiscale: '', partitaIVA: '', telefono: '',
+    via: '', civico: '', cap: '', citta: '', provincia: '', paese: 'IT',
+    email: '', pec: '', sitoWeb: '',
+    dpoNominato: false, dpoNome: '', dpoEmail: '', dpoPec: '',
     lingua: 'it',
 
-    // ---- Lifecycle: Alpine auto-calls init() on component start ----
+    // List
+    _rawTrattamenti: [],
+    trattamenti: [],
+    trattamentiFiltrati: [],
+    queryRicerca: '',
+    nuovoTrattamentoId: null,
+
+    // Catalog
+    _rawTemplates: [],
+    _catByTemplateId: {},
+    templates: [],
+    templatesFiltrati: [],
+    queryCatalogo: '',
+    _catalogoCaricato: false,
+    catalogoAperto: false,
+    creazioneInCorso: false,
+    erroreCreazione: false,
+
     async init() {
       try {
         const settings = await getSettings();
-
-        const lng = (settings.lingua === 'en' || settings.lingua === 'it') ? settings.lingua : 'it';
-        this.lang = lng;
-        this.lingua = lng;
+        const lng = (settings.uiLanguage === 'en' || settings.uiLanguage === 'it') ? settings.uiLanguage : 'it';
+        this.lang = lng; this.lingua = lng;
         document.documentElement.setAttribute('lang', lng);
-
         this.settingsCreatedAt = (settings.metadata && settings.metadata.createdAt) || '';
 
         const t = settings.titolare || {};
@@ -168,34 +206,30 @@ function ropa30App() {
         this.codiceFiscale = t.codiceFiscale || '';
         this.partitaIVA = t.partitaIVA || '';
         this.telefono = t.telefono || '';
-        this.via = ind.via || '';
-        this.civico = ind.civico || '';
-        this.cap = ind.cap || '';
-        this.citta = ind.citta || '';
-        this.provincia = ind.provincia || '';
-        this.paese = ind.paese || 'IT';
-        this.email = t.email || '';
-        this.pec = t.pec || '';
-        this.sitoWeb = t.sitoWeb || '';
+        this.via = ind.via || ''; this.civico = ind.civico || ''; this.cap = ind.cap || '';
+        this.citta = ind.citta || ''; this.provincia = ind.provincia || ''; this.paese = ind.paese || 'IT';
+        this.email = t.email || ''; this.pec = t.pec || ''; this.sitoWeb = t.sitoWeb || '';
 
         const d = settings.dpo || {};
         this.dpoNominato = !!d.nominato;
-        this.dpoNome = d.nome || '';
-        this.dpoEmail = d.email || '';
-        this.dpoPec = d.pec || '';
+        this.dpoNome = d.nome || ''; this.dpoEmail = d.email || ''; this.dpoPec = d.pec || '';
 
-        // First run (no controller name yet) -> onboarding; otherwise -> register.
+        await this._assicuraCatalogo();
+        await this.caricaTrattamenti();
+
         this.view = (this.denominazione.trim() === '') ? 'onboarding' : 'lista';
+
+        this.$watch('lang', () => { this._mappaTrattamenti(); this._mappaTemplates(); });
+        this.$watch('queryRicerca', () => { this._filtra(); });
+        this.$watch('queryCatalogo', () => { this._filtraCatalogo(); });
       } catch (err) {
         console.error('[ropa30] init() error:', err);
         this.view = 'onboarding';
       }
     },
 
-    // ---- Translations (single getter; member access in templates is CSP-safe) ----
+    // ---- Translations ----
     get L() { return translations[this.lang]; },
-
-    // ---- App-level single getters (header / footer / <title>) ----
     get appTitle()          { return translations[this.lang].appTitle; },
     get appDescription()    { return translations[this.lang].appDescription; },
     get langSwitcherLabel() { return translations[this.lang].langSwitcherLabel; },
@@ -207,20 +241,27 @@ function ropa30App() {
     // ---- View flags ----
     get isViewOnboarding() { return this.view === 'onboarding'; },
     get isViewLista()      { return this.view === 'lista'; },
+    get haTrattamenti()    { return this.trattamenti.length > 0; },
+    get nonHaTrattamenti() { return this.trattamenti.length === 0; },
+    get haRisultati()      { return this.trattamentiFiltrati.length > 0; },
+    get nessunRisultato()  { return this.trattamenti.length > 0 && this.trattamentiFiltrati.length === 0; },
+    get contatoreTesto()   {
+      const n = this.trattamentiFiltrati.length;
+      return n + ' ' + (n === 1 ? this.L.contatoreUno : this.L.contatoreMolti);
+    },
+    get haRisultatiCatalogo()  { return this.templatesFiltrati.length > 0; },
+    get nessunRisultatoCatalogo() { return this.templatesFiltrati.length === 0; },
 
-    // ---- Language-switcher option state (header) ----
     get isItalianSelected() { return this.lang === 'it'; },
     get isEnglishSelected() { return this.lang === 'en'; },
 
-    // ---- Validation: denominazione required + at least one of email/pec ----
+    // ---- Onboarding validation ----
     get nonSalvabile() {
-      const hasDenominazione = this.denominazione.trim().length > 0;
-      const hasContatto = this.email.trim().length > 0 || this.pec.trim().length > 0;
-      return !(hasDenominazione && hasContatto);
+      const hasDen = this.denominazione.trim().length > 0;
+      const hasCont = this.email.trim().length > 0 || this.pec.trim().length > 0;
+      return !(hasDen && hasCont);
     },
     get salvaDisabilitato() { return this.nonSalvabile || this.saving; },
-
-    // ---- Read-only creation date (from settings.metadata.createdAt) ----
     get dataCreazioneVisuale() {
       if (!this.settingsCreatedAt) return '\u2014';
       try {
@@ -228,8 +269,174 @@ function ropa30App() {
         if (isNaN(dt.getTime())) return this.settingsCreatedAt;
         const locale = this.lang === 'en' ? 'en-GB' : 'it-IT';
         return dt.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
-      } catch (e) {
-        return this.settingsCreatedAt;
+      } catch (e) { return this.settingsCreatedAt; }
+    },
+
+    // ---- Localization helpers ----
+    // Active language only; '' if missing (NO silent fallback).
+    _locStrict(obj) {
+      if (!obj) return '';
+      if (typeof obj === 'string') return obj;
+      if (typeof obj === 'object') return obj[this.lang] || '';
+      return String(obj);
+    },
+    // Returns {testo, mancante, fallback} for the title.
+    _locConFallback(obj) {
+      if (!obj) return { testo: '', mancante: false, fallback: false };
+      if (typeof obj === 'string') return { testo: obj, mancante: false, fallback: false };
+      const attiva = obj[this.lang] || '';
+      if (attiva) return { testo: attiva, mancante: false, fallback: false };
+      const altra = (this.lang === 'it') ? (obj.en || '') : (obj.it || '');
+      if (altra) return { testo: altra, mancante: true, fallback: true };
+      return { testo: '', mancante: false, fallback: false };
+    },
+    _tronca(s, n) {
+      if (!s) return '';
+      if (s.length <= n) return s;
+      return s.slice(0, n).replace(/\s+\S*$/, '') + '\u2026';
+    },
+    // For template catalog (templates are always fully bilingual).
+    _loc(obj) {
+      if (!obj) return '';
+      if (typeof obj === 'string') return obj;
+      return obj[this.lang] || obj.it || obj.en || '';
+    },
+
+    // ---- Catalog ----
+    async _assicuraCatalogo() {
+      if (this._catalogoCaricato) return;
+      try {
+        const catalog = await listAvailableTemplates();
+        this._rawTemplates = Array.isArray(catalog.templates) ? catalog.templates : [];
+        const map = {};
+        for (const t of this._rawTemplates) map[t.templateId] = t.categoria || '';
+        this._catByTemplateId = map;
+        this._catalogoCaricato = true;
+        this._mappaTemplates();
+      } catch (err) {
+        console.error('[ropa30] catalog load error:', err);
+      }
+    },
+    async apriCatalogo() {
+      this.erroreCreazione = false;
+      this.queryCatalogo = '';
+      await this._assicuraCatalogo();
+      this._filtraCatalogo();
+      this.catalogoAperto = true;
+    },
+    chiudiCatalogo() { this.catalogoAperto = false; },
+    _mappaTemplates() {
+      const catmap = CATEGORIA_LABEL[this.lang] || CATEGORIA_LABEL.it;
+      this.templates = (this._rawTemplates || []).map((t) => {
+        const nomeLoc = this._loc(t.nome);
+        const descrizioneLoc = this._loc(t.descrizioneTemplate);
+        const categoriaLabel = catmap[t.categoria] || t.categoria || '';
+        const blob = (nomeLoc + ' ' + descrizioneLoc + ' ' + categoriaLabel).toLowerCase();
+        return {
+          id: t.templateId, categoriaLabel, nomeLoc,
+          descrizioneLoc: this._tronca(descrizioneLoc, 160), _blob: blob
+        };
+      });
+      this._filtraCatalogo();
+    },
+    _filtraCatalogo() {
+      const q = (this.queryCatalogo || '').trim().toLowerCase();
+      if (!q) { this.templatesFiltrati = this.templates; return; }
+      this.templatesFiltrati = this.templates.filter((t) => t._blob.indexOf(q) !== -1);
+    },
+    pulisciCatalogo() { this.queryCatalogo = ''; },
+
+    // ---- List ----
+    async caricaTrattamenti(highlightId = null) {
+      this.nuovoTrattamentoId = highlightId;
+      this._rawTrattamenti = await listProcessingActivities();
+      this._mappaTrattamenti();
+    },
+    _mappaTrattamenti() {
+      const records = [...this._rawTrattamenti].sort((a, b) => {
+        const ca = (a.metadata && a.metadata.createdAt) || '';
+        const cb = (b.metadata && b.metadata.createdAt) || '';
+        return cb.localeCompare(ca);
+      });
+      const art6map = ART6_LABEL[this.lang] || ART6_LABEL.it;
+      const catmap = CATEGORIA_LABEL[this.lang] || CATEGORIA_LABEL.it;
+      this.trattamenti = records.map((r) => {
+        // Title: attenuated fallback + badge if missing in active language.
+        const tit = this._locConFallback(r.nome);
+        const nome = tit.testo || this.L.sennaNome;
+        const nomeMancante = tit.mancante;
+        // The missing language is the active one (fallback came from the other).
+        const badgeMancante = nomeMancante
+          ? (this.lang === 'en' ? this.L.mancaEN : this.L.mancaIT)
+          : '';
+
+        // Purposes: strict (no silent fallback) -> '—' if empty in active lang.
+        const fin = Array.isArray(r.finalita)
+          ? r.finalita.map((f) => this._locStrict(f)).filter(Boolean) : [];
+        let finalitaSintesi = fin.slice(0, 2).join('; ');
+        if (fin.length > 2) finalitaSintesi += '\u2026';
+        if (!finalitaSintesi) finalitaSintesi = '\u2014';
+
+        // Legal basis: enum codes -> translated labels (always available).
+        const art6 = (r.baseGiuridica && Array.isArray(r.baseGiuridica.art6)) ? r.baseGiuridica.art6 : [];
+        const basi = art6.map((k) => art6map[k] || k);
+        const basiSintesi = basi.length ? basi.join(', ') : '\u2014';
+
+        const cat = this._catByTemplateId[r.sourceTemplateId || ''] || '';
+        const categoriaLabel = cat ? (catmap[cat] || cat) : '';
+
+        const evidenziato = !!this.nuovoTrattamentoId && r.id === this.nuovoTrattamentoId;
+        // Search haystack: both languages, so search works regardless of active lang.
+        const blob = (
+          (r.nome ? (r.nome.it || '') + ' ' + (r.nome.en || '') : '') + ' ' +
+          (Array.isArray(r.finalita) ? r.finalita.map((f) => (f.it || '') + ' ' + (f.en || '')).join(' ') : '') + ' ' +
+          basi.join(' ')
+        ).toLowerCase();
+
+        return {
+          id: r.id,
+          nome,
+          nomeMancante,
+          badgeMancante,
+          cssNome: nomeMancante ? 'italic text-brand-400' : '',
+          finalitaSintesi,
+          basiSintesi,
+          categoriaLabel,
+          mostraCategoria: categoriaLabel.length > 0,
+          cssEvidenzia: evidenziato ? 'ring-2 ring-brand-400' : '',
+          _blob: blob
+        };
+      });
+      this._filtra();
+    },
+    _filtra() {
+      const q = (this.queryRicerca || '').trim().toLowerCase();
+      if (!q) { this.trattamentiFiltrati = this.trattamenti; return; }
+      this.trattamentiFiltrati = this.trattamenti.filter((t) => t._blob.indexOf(q) !== -1);
+    },
+    pulisciRicerca() { this.queryRicerca = ''; },
+
+    // ---- Create from template ----
+    async creaDaTemplate(event) {
+      if (this.creazioneInCorso) return;
+      const id = (event && event.currentTarget && event.currentTarget.dataset)
+        ? event.currentTarget.dataset.templateId : '';
+      if (!id) return;
+      this.creazioneInCorso = true;
+      this.erroreCreazione = false;
+      try {
+        const nuovo = await createProcessingActivityFromTemplate(id);
+        this.catalogoAperto = false;
+        this.queryRicerca = '';
+        await this.caricaTrattamenti(nuovo.id);
+        this.view = 'lista';
+        const self = this;
+        setTimeout(function () { self.caricaTrattamenti(null); }, 2600);
+      } catch (err) {
+        console.error('[ropa30] creaDaTemplate() error:', err);
+        this.erroreCreazione = true;
+      } finally {
+        this.creazioneInCorso = false;
       }
     },
 
@@ -237,7 +444,6 @@ function ropa30App() {
     vaiAOnboarding() { this.erroreSalvataggio = false; this.view = 'onboarding'; },
     vaiAllaLista()   { this.view = 'lista'; },
 
-    // ---- Header language switcher (UI live language only; not persisted here) ----
     setLang(event) {
       const newLang = event.target.value;
       if (newLang === 'it' || newLang === 'en') {
@@ -246,16 +452,11 @@ function ropa30App() {
       }
     },
 
-    // ---- Save onboarding into settings ----
-    // updateSettings() merges only at the FIRST level, so we rebuild the full
-    // titolare/dpo objects (touched fields + preserved untouched ones).
     async salvaOnboarding() {
       if (this.nonSalvabile || this.saving) return;
-      this.saving = true;
-      this.erroreSalvataggio = false;
+      this.saving = true; this.erroreSalvataggio = false;
       try {
         const current = await getSettings();
-
         const titolare = {
           ...current.titolare,
           denominazione: this.denominazione.trim(),
@@ -264,19 +465,13 @@ function ropa30App() {
           codiceFiscale: this.codiceFiscale.trim(),
           indirizzo: {
             ...((current.titolare && current.titolare.indirizzo) || {}),
-            via: this.via.trim(),
-            civico: this.civico.trim(),
-            cap: this.cap.trim(),
-            citta: this.citta.trim(),
-            provincia: this.provincia.trim(),
+            via: this.via.trim(), civico: this.civico.trim(), cap: this.cap.trim(),
+            citta: this.citta.trim(), provincia: this.provincia.trim(),
             paese: this.paese.trim() || 'IT'
           },
-          email: this.email.trim(),
-          pec: this.pec.trim(),
-          telefono: this.telefono.trim(),
-          sitoWeb: this.sitoWeb.trim()
+          email: this.email.trim(), pec: this.pec.trim(),
+          telefono: this.telefono.trim(), sitoWeb: this.sitoWeb.trim()
         };
-
         const dpo = {
           ...current.dpo,
           nominato: this.dpoNominato,
@@ -284,11 +479,13 @@ function ropa30App() {
           email: this.dpoNominato ? this.dpoEmail.trim() : '',
           pec: this.dpoNominato ? this.dpoPec.trim() : ''
         };
-
         const lingua = this.lingua === 'en' ? 'en' : 'it';
-
-        await updateSettings({ titolare, dpo, lingua });
-
+        // Settings v2: uiLanguage + monolingual register (M5 will add 2 languages).
+        await updateSettings({
+          titolare, dpo,
+          uiLanguage: lingua,
+          registro: { lingue: [lingua], linguaPrincipale: lingua }
+        });
         this.lang = lingua;
         document.documentElement.setAttribute('lang', lingua);
         this.view = 'lista';
@@ -302,7 +499,6 @@ function ropa30App() {
   };
 }
 
-// Register the component before Alpine initializes (both scripts use defer).
 document.addEventListener('alpine:init', () => {
   window.Alpine.data('ropa30App', ropa30App);
 });

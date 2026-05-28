@@ -61,16 +61,16 @@
           "it": "Trattamento dei dati di contatto (in particolare l'indirizzo email) per l'invio periodico di newsletter, comunicazioni promozionali e informative sui prodotti/servizi del Titolare.",
           "en": "Processing of contact data (in particular email address) for the periodic sending of newsletters, promotional and informational communications about the Controller's products/services."
         },
-        "finalita": {
-          "it": [
-            "Invio periodico di newsletter informative",
-            "Invio di comunicazioni promozionali su prodotti e servizi del Titolare"
-          ],
-          "en": [
-            "Periodic sending of informational newsletters",
-            "Sending of promotional communications about the Controller's products and services"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Invio periodico di newsletter informative",
+            "en": "Periodic sending of informational newsletters"
+          },
+          {
+            "it": "Invio di comunicazioni promozionali su prodotti e servizi del Titolare",
+            "en": "Sending of promotional communications about the Controller's products and services"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "consenso"
@@ -108,41 +108,45 @@
             "en": ""
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Iscritti alla newsletter (Scenario A: prospect/non clienti)",
-            "Clienti del Titolare (Scenario B: soft opt-in)"
-          ],
-          "en": [
-            "Newsletter subscribers (Scenario A: prospects/non-customers)",
-            "Customers of the Controller (Scenario B: soft opt-in)"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Indirizzo email",
-            "Nome e cognome (se forniti)",
-            "Preferenze tematiche (se raccolte)",
-            "Dati di interazione con le comunicazioni (aperture, click, disiscrizioni, bounce), se raccolti"
-          ],
-          "en": [
-            "Email address",
-            "First and last name (if provided)",
-            "Topic preferences (if collected)",
-            "Communication interaction data (opens, clicks, unsubscribes, bounces), if collected"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Iscritti alla newsletter (Scenario A: prospect/non clienti)",
+            "en": "Newsletter subscribers (Scenario A: prospects/non-customers)"
+          },
+          {
+            "it": "Clienti del Titolare (Scenario B: soft opt-in)",
+            "en": "Customers of the Controller (Scenario B: soft opt-in)"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Indirizzo email",
+            "en": "Email address"
+          },
+          {
+            "it": "Nome e cognome (se forniti)",
+            "en": "First and last name (if provided)"
+          },
+          {
+            "it": "Preferenze tematiche (se raccolte)",
+            "en": "Topic preferences (if collected)"
+          },
+          {
+            "it": "Dati di interazione con le comunicazioni (aperture, click, disiscrizioni, bounce), se raccolti",
+            "en": "Communication interaction data (opens, clicks, unsubscribes, bounces), if collected"
+          }
+        ],
         "fonteDeiDati": "interessato",
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (ufficio marketing/comunicazione)",
-            "Fornitore della piattaforma di email marketing (responsabile del trattamento ex art. 28 GDPR)"
-          ],
-          "en": [
-            "Authorized internal personnel (marketing/communications department)",
-            "Email marketing platform provider (data processor under GDPR Art. 28)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (ufficio marketing/comunicazione)",
+            "en": "Authorized internal personnel (marketing/communications department)"
+          },
+          {
+            "it": "Fornitore della piattaforma di email marketing (responsabile del trattamento ex art. 28 GDPR)",
+            "en": "Email marketing platform provider (data processor under GDPR Art. 28)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -186,34 +190,42 @@
           "azioneFinale": "cancellazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Cifratura della connessione (HTTPS/TLS) verso la piattaforma di email marketing",
-              "Autenticazione a due fattori (MFA) sull'account amministrativo della piattaforma",
-              "Backup periodici, se necessari, con cifratura at-rest e controllo degli accessi",
-              "Sistema automatico di gestione delle disiscrizioni"
-            ],
-            "en": [
-              "Encryption of the connection (HTTPS/TLS) to the email marketing platform",
-              "Two-factor authentication (MFA) on the platform administrative account",
-              "Periodic backups, where necessary, with at-rest encryption and access control",
-              "Automatic unsubscribe management system"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati al trattamento (autorizzati ex art. 29 GDPR)",
-              "Procedura interna per la gestione delle richieste di esercizio dei diritti degli interessati",
-              "Verifica periodica delle liste e rimozione dei contatti inattivi",
-              "Audit periodico del fornitore della piattaforma di email marketing"
-            ],
-            "en": [
-              "Designation of authorized operators (authorized under GDPR Art. 29)",
-              "Internal procedure for handling data subject rights requests",
-              "Periodic list review and removal of inactive contacts",
-              "Periodic audit of the email marketing platform provider"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Cifratura della connessione (HTTPS/TLS) verso la piattaforma di email marketing",
+              "en": "Encryption of the connection (HTTPS/TLS) to the email marketing platform"
+            },
+            {
+              "it": "Autenticazione a due fattori (MFA) sull'account amministrativo della piattaforma",
+              "en": "Two-factor authentication (MFA) on the platform administrative account"
+            },
+            {
+              "it": "Backup periodici, se necessari, con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups, where necessary, with at-rest encryption and access control"
+            },
+            {
+              "it": "Sistema automatico di gestione delle disiscrizioni",
+              "en": "Automatic unsubscribe management system"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati al trattamento (autorizzati ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (authorized under GDPR Art. 29)"
+            },
+            {
+              "it": "Procedura interna per la gestione delle richieste di esercizio dei diritti degli interessati",
+              "en": "Internal procedure for handling data subject rights requests"
+            },
+            {
+              "it": "Verifica periodica delle liste e rimozione dei contatti inattivi",
+              "en": "Periodic list review and removal of inactive contacts"
+            },
+            {
+              "it": "Audit periodico del fornitore della piattaforma di email marketing",
+              "en": "Periodic audit of the email marketing platform provider"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alla policy di sicurezza informatica del Titolare e al DPA con il fornitore]",
             "en": "[Refer to the Controller's IT security policy and to the DPA with the provider]"
@@ -320,28 +332,40 @@
           "it": "Trattamento dei dati personali dei lavoratori dipendenti e assimilati per l'esecuzione del rapporto di lavoro in ogni sua fase: assunzione, esecuzione, gestione delle assenze, retribuzione, valutazione, formazione, salute e sicurezza sul lavoro, eventuali procedimenti disciplinari, cessazione del rapporto e adempimenti post-cessazione (TFR, libro unico, certificazioni).",
           "en": "Processing of personal data of employees and equivalent workers for all phases of the employment relationship: hiring, execution, leave management, remuneration, performance evaluation, training, occupational health and safety, disciplinary proceedings, termination, and post-termination obligations (severance pay, single employee register, certifications)."
         },
-        "finalita": {
-          "it": [
-            "Esecuzione del contratto di lavoro in ogni sua fase",
-            "Adempimento degli obblighi contributivi, previdenziali, assistenziali e fiscali",
-            "Tenuta del libro unico del lavoro e della documentazione obbligatoria",
-            "Gestione delle assenze, dei permessi, delle ferie e dei congedi",
-            "Sorveglianza sanitaria ex d.lgs. 81/2008 e gestione idoneità al lavoro",
-            "Formazione obbligatoria e professionale",
-            "Gestione di eventuali procedimenti disciplinari",
-            "Adempimenti relativi alla cessazione del rapporto (TFR, certificazioni, comunicazioni obbligatorie)"
-          ],
-          "en": [
-            "Performance of the employment contract in all its phases",
-            "Compliance with social security, pension, welfare and tax obligations",
-            "Maintenance of the single employee register and mandatory documentation",
-            "Management of absences, leaves, holidays and parental leaves",
-            "Health surveillance under d.lgs. 81/2008 and management of fitness for work",
-            "Mandatory and professional training",
-            "Management of disciplinary proceedings",
-            "Termination-related obligations (severance pay, certifications, mandatory notifications)"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Esecuzione del contratto di lavoro in ogni sua fase",
+            "en": "Performance of the employment contract in all its phases"
+          },
+          {
+            "it": "Adempimento degli obblighi contributivi, previdenziali, assistenziali e fiscali",
+            "en": "Compliance with social security, pension, welfare and tax obligations"
+          },
+          {
+            "it": "Tenuta del libro unico del lavoro e della documentazione obbligatoria",
+            "en": "Maintenance of the single employee register and mandatory documentation"
+          },
+          {
+            "it": "Gestione delle assenze, dei permessi, delle ferie e dei congedi",
+            "en": "Management of absences, leaves, holidays and parental leaves"
+          },
+          {
+            "it": "Sorveglianza sanitaria ex d.lgs. 81/2008 e gestione idoneità al lavoro",
+            "en": "Health surveillance under d.lgs. 81/2008 and management of fitness for work"
+          },
+          {
+            "it": "Formazione obbligatoria e professionale",
+            "en": "Mandatory and professional training"
+          },
+          {
+            "it": "Gestione di eventuali procedimenti disciplinari",
+            "en": "Management of disciplinary proceedings"
+          },
+          {
+            "it": "Adempimenti relativi alla cessazione del rapporto (TFR, certificazioni, comunicazioni obbligatorie)",
+            "en": "Termination-related obligations (severance pay, certifications, mandatory notifications)"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "contratto",
@@ -383,77 +407,113 @@
             "en": "Any processing of criminal-conviction data (GDPR Art. 10 + Italian Privacy Code Art. 2-octies) is limited to legally prescribed scenarios (e.g. criminal record certificate for specific positions, anti-money laundering, art. 25-bis d.P.R. 313/2002)."
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Lavoratori dipendenti (tempo indeterminato, determinato, apprendistato, part-time)",
-            "Collaboratori coordinati e continuativi (parasubordinati)",
-            "Tirocinanti e stagisti",
-            "Familiari del lavoratore (per detrazioni, congedi parentali, assegni familiari)"
-          ],
-          "en": [
-            "Employees (open-ended, fixed-term, apprentices, part-time)",
-            "Coordinated and continuous collaborators (para-subordinate)",
-            "Interns and trainees",
-            "Worker's family members (for tax deductions, parental leave, family allowances)"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati anagrafici e identificativi (nome, cognome, data e luogo di nascita, residenza, codice fiscale)",
-            "Dati di contatto (telefono, email, indirizzo)",
-            "Documenti di identità e, ove applicabile, documentazione relativa al permesso di soggiorno o al titolo di lavoro",
-            "Dati relativi al rapporto di lavoro (mansione, livello, retribuzione, presenze, valutazioni)",
-            "Dati bancari (IBAN per accredito retribuzione)",
-            "Dati fiscali e previdenziali (codice fiscale, posizione INPS, INAIL, detrazioni, familiari a carico)",
-            "Dati relativi alla salute (categorie particolari art. 9): idoneità alla mansione, infortuni, malattie, certificati medici",
-            "Dati relativi all'appartenenza sindacale (categoria particolare art. 9), limitatamente alle trattenute sindacali",
-            "Eventuali dati relativi a procedimenti disciplinari",
-            "Eventuali dati biometrici (categoria particolare art. 9), solo in presenza di adeguata condizione di liceità ex art. 9 GDPR, base normativa applicabile, verifica di necessità e proporzionalità, e, ove il sistema comporti controllo a distanza, nel rispetto dell'art. 4 St. Lav."
-          ],
-          "en": [
-            "Identification data (first/last name, date and place of birth, residence, tax code)",
-            "Contact data (phone, email, address)",
-            "Identity documents and, where applicable, residence permit or work authorization documentation",
-            "Employment data (job role, level, salary, attendance, performance reviews)",
-            "Banking data (IBAN for salary payment)",
-            "Tax and social security data (tax code, INPS and INAIL position, deductions, dependants)",
-            "Health-related data (special category Art. 9): fitness for work, injuries, sickness, medical certificates",
-            "Trade union membership data (special category Art. 9), limited to union dues deductions",
-            "Disciplinary proceeding data, if any",
-            "Biometric data, if any (special category Art. 9), only in the presence of an adequate condition of lawfulness under GDPR Art. 9, applicable legal basis, verification of necessity and proportionality, and, where the system involves remote monitoring, in compliance with Art. 4 of the Workers' Statute."
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Lavoratori dipendenti (tempo indeterminato, determinato, apprendistato, part-time)",
+            "en": "Employees (open-ended, fixed-term, apprentices, part-time)"
+          },
+          {
+            "it": "Collaboratori coordinati e continuativi (parasubordinati)",
+            "en": "Coordinated and continuous collaborators (para-subordinate)"
+          },
+          {
+            "it": "Tirocinanti e stagisti",
+            "en": "Interns and trainees"
+          },
+          {
+            "it": "Familiari del lavoratore (per detrazioni, congedi parentali, assegni familiari)",
+            "en": "Worker's family members (for tax deductions, parental leave, family allowances)"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati anagrafici e identificativi (nome, cognome, data e luogo di nascita, residenza, codice fiscale)",
+            "en": "Identification data (first/last name, date and place of birth, residence, tax code)"
+          },
+          {
+            "it": "Dati di contatto (telefono, email, indirizzo)",
+            "en": "Contact data (phone, email, address)"
+          },
+          {
+            "it": "Documenti di identità e, ove applicabile, documentazione relativa al permesso di soggiorno o al titolo di lavoro",
+            "en": "Identity documents and, where applicable, residence permit or work authorization documentation"
+          },
+          {
+            "it": "Dati relativi al rapporto di lavoro (mansione, livello, retribuzione, presenze, valutazioni)",
+            "en": "Employment data (job role, level, salary, attendance, performance reviews)"
+          },
+          {
+            "it": "Dati bancari (IBAN per accredito retribuzione)",
+            "en": "Banking data (IBAN for salary payment)"
+          },
+          {
+            "it": "Dati fiscali e previdenziali (codice fiscale, posizione INPS, INAIL, detrazioni, familiari a carico)",
+            "en": "Tax and social security data (tax code, INPS and INAIL position, deductions, dependants)"
+          },
+          {
+            "it": "Dati relativi alla salute (categorie particolari art. 9): idoneità alla mansione, infortuni, malattie, certificati medici",
+            "en": "Health-related data (special category Art. 9): fitness for work, injuries, sickness, medical certificates"
+          },
+          {
+            "it": "Dati relativi all'appartenenza sindacale (categoria particolare art. 9), limitatamente alle trattenute sindacali",
+            "en": "Trade union membership data (special category Art. 9), limited to union dues deductions"
+          },
+          {
+            "it": "Eventuali dati relativi a procedimenti disciplinari",
+            "en": "Disciplinary proceeding data, if any"
+          },
+          {
+            "it": "Eventuali dati biometrici (categoria particolare art. 9), solo in presenza di adeguata condizione di liceità ex art. 9 GDPR, base normativa applicabile, verifica di necessità e proporzionalità, e, ove il sistema comporti controllo a distanza, nel rispetto dell'art. 4 St. Lav.",
+            "en": "Biometric data, if any (special category Art. 9), only in the presence of an adequate condition of lawfulness under GDPR Art. 9, applicable legal basis, verification of necessity and proportionality, and, where the system involves remote monitoring, in compliance with Art. 4 of the Workers' Statute."
+          }
+        ],
         "fonteDeiDati": "misto",
         "fonteDeiDatiDettagli": {
           "it": "Dati forniti direttamente dal lavoratore; dati generati nel corso del rapporto; dati provenienti da enti pubblici, medico competente, consulenti esterni, sistemi HR/presenze e, ove applicabile, autorità competenti.",
           "en": "Data provided directly by the worker; data generated during the employment relationship; data from public bodies, occupational physician, external consultants, HR/attendance systems and, where applicable, competent authorities."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (ufficio HR, ufficio amministrazione/contabilità, dirigenza, RSPP, medico competente)",
-            "Amministratori di sistema e fornitori IT, nei limiti delle rispettive autorizzazioni e mansioni tecniche",
-            "Consulente del lavoro / studio paghe esterno (responsabile del trattamento)",
-            "Commercialista / studio fiscale (responsabile o autonomo Titolare, secondo l'incarico)",
-            "Enti pubblici (INPS, INAIL, Agenzia delle Entrate, Ispettorato del Lavoro)",
-            "Istituti previdenziali e assistenziali, fondi pensione integrativa",
-            "Banche (per accredito retribuzione)",
-            "Organizzazioni sindacali (limitatamente alle trattenute sindacali, se autorizzate dal lavoratore)",
-            "Eventuali enti di formazione esterni",
-            "Medico competente (in posizione di autonomia)"
-          ],
-          "en": [
-            "Authorized internal personnel (HR, administration/accounting, management, occupational safety, occupational physician)",
-            "System administrators and IT providers, within the limits of their respective authorizations and technical duties",
-            "Labour consultant / external payroll firm (data processor)",
-            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
-            "Public bodies (INPS, INAIL, Italian Revenue Agency, Labour Inspectorate)",
-            "Social security and welfare bodies, supplementary pension funds",
-            "Banks (for salary payment)",
-            "Trade unions (limited to union dues, if authorized by the worker)",
-            "External training providers, if any",
-            "Occupational physician (in an autonomous position)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (ufficio HR, ufficio amministrazione/contabilità, dirigenza, RSPP, medico competente)",
+            "en": "Authorized internal personnel (HR, administration/accounting, management, occupational safety, occupational physician)"
+          },
+          {
+            "it": "Amministratori di sistema e fornitori IT, nei limiti delle rispettive autorizzazioni e mansioni tecniche",
+            "en": "System administrators and IT providers, within the limits of their respective authorizations and technical duties"
+          },
+          {
+            "it": "Consulente del lavoro / studio paghe esterno (responsabile del trattamento)",
+            "en": "Labour consultant / external payroll firm (data processor)"
+          },
+          {
+            "it": "Commercialista / studio fiscale (responsabile o autonomo Titolare, secondo l'incarico)",
+            "en": "Accountant / tax firm (processor or independent controller, depending on the engagement)"
+          },
+          {
+            "it": "Enti pubblici (INPS, INAIL, Agenzia delle Entrate, Ispettorato del Lavoro)",
+            "en": "Public bodies (INPS, INAIL, Italian Revenue Agency, Labour Inspectorate)"
+          },
+          {
+            "it": "Istituti previdenziali e assistenziali, fondi pensione integrativa",
+            "en": "Social security and welfare bodies, supplementary pension funds"
+          },
+          {
+            "it": "Banche (per accredito retribuzione)",
+            "en": "Banks (for salary payment)"
+          },
+          {
+            "it": "Organizzazioni sindacali (limitatamente alle trattenute sindacali, se autorizzate dal lavoratore)",
+            "en": "Trade unions (limited to union dues, if authorized by the worker)"
+          },
+          {
+            "it": "Eventuali enti di formazione esterni",
+            "en": "External training providers, if any"
+          },
+          {
+            "it": "Medico competente (in posizione di autonomia)",
+            "en": "Occupational physician (in an autonomous position)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -516,48 +576,70 @@
           "azioneFinale": "cancellazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Controllo accessi su sistemi gestionali HR/paghe con autenticazione forte e profilazione dei privilegi",
-              "Cifratura dei dati sanitari (categoria particolare art. 9) sia in transito sia at-rest",
-              "Segregazione fisica e logica dei dati sanitari (accesso riservato al medico competente)",
-              "Backup periodici, se necessari, con cifratura at-rest e controllo degli accessi",
-              "Pseudonimizzazione dei dati nei sistemi di analisi statistica e reporting interno",
-              "Aggiornamento e patching periodico dei sistemi"
-            ],
-            "en": [
-              "Access control on HR/payroll systems with strong authentication and privilege profiling",
-              "Encryption of health data (special category Art. 9) both in transit and at rest",
-              "Physical and logical segregation of health data (access restricted to the occupational physician)",
-              "Periodic backups, where necessary, with at-rest encryption and access control",
-              "Pseudonymization of data in internal analytics and reporting systems",
-              "Periodic system updates and patching"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione formale degli operatori autorizzati (autorizzati ex art. 29 GDPR), con istruzioni specifiche scritte",
-              "Nomina del medico competente ai sensi del d.lgs. 81/2008 e definizione dei flussi informativi consentiti, nel rispetto dell'autonomia professionale e della riservatezza dei dati sanitari",
-              "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
-              "Formazione periodica del personale HR e dei responsabili sui temi della protezione dei dati",
-              "Procedura interna per la gestione delle richieste di esercizio dei diritti degli interessati (artt. 15-22 GDPR)",
-              "Procedura per la gestione degli infortuni e delle malattie professionali",
-              "Procedura per la gestione dei procedimenti disciplinari nel rispetto della riservatezza",
-              "Verifica della compatibilità di eventuali sistemi di controllo a distanza con l'art. 4 St. Lav. (accordo sindacale o autorizzazione ITL)",
-              "Politica di clean desk e gestione documentazione cartacea"
-            ],
-            "en": [
-              "Formal designation of authorized operators (authorized under GDPR Art. 29), with specific written instructions",
-              "Appointment of the occupational physician under d.lgs. 81/2008 and definition of permitted information flows, respecting professional autonomy and confidentiality of health data",
-              "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent",
-              "Periodic training of HR personnel and managers on data protection topics",
-              "Internal procedure for handling data subject rights requests (GDPR Arts. 15-22)",
-              "Procedure for managing work-related injuries and occupational diseases",
-              "Procedure for managing disciplinary proceedings while respecting confidentiality",
-              "Verification of compatibility of any remote monitoring systems with Art. 4 of the Workers' Statute (union agreement or Labour Inspectorate authorization)",
-              "Clean desk policy and paper documentation management"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Controllo accessi su sistemi gestionali HR/paghe con autenticazione forte e profilazione dei privilegi",
+              "en": "Access control on HR/payroll systems with strong authentication and privilege profiling"
+            },
+            {
+              "it": "Cifratura dei dati sanitari (categoria particolare art. 9) sia in transito sia at-rest",
+              "en": "Encryption of health data (special category Art. 9) both in transit and at rest"
+            },
+            {
+              "it": "Segregazione fisica e logica dei dati sanitari (accesso riservato al medico competente)",
+              "en": "Physical and logical segregation of health data (access restricted to the occupational physician)"
+            },
+            {
+              "it": "Backup periodici, se necessari, con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups, where necessary, with at-rest encryption and access control"
+            },
+            {
+              "it": "Pseudonimizzazione dei dati nei sistemi di analisi statistica e reporting interno",
+              "en": "Pseudonymization of data in internal analytics and reporting systems"
+            },
+            {
+              "it": "Aggiornamento e patching periodico dei sistemi",
+              "en": "Periodic system updates and patching"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione formale degli operatori autorizzati (autorizzati ex art. 29 GDPR), con istruzioni specifiche scritte",
+              "en": "Formal designation of authorized operators (authorized under GDPR Art. 29), with specific written instructions"
+            },
+            {
+              "it": "Nomina del medico competente ai sensi del d.lgs. 81/2008 e definizione dei flussi informativi consentiti, nel rispetto dell'autonomia professionale e della riservatezza dei dati sanitari",
+              "en": "Appointment of the occupational physician under d.lgs. 81/2008 and definition of permitted information flows, respecting professional autonomy and confidentiality of health data"
+            },
+            {
+              "it": "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
+              "en": "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent"
+            },
+            {
+              "it": "Formazione periodica del personale HR e dei responsabili sui temi della protezione dei dati",
+              "en": "Periodic training of HR personnel and managers on data protection topics"
+            },
+            {
+              "it": "Procedura interna per la gestione delle richieste di esercizio dei diritti degli interessati (artt. 15-22 GDPR)",
+              "en": "Internal procedure for handling data subject rights requests (GDPR Arts. 15-22)"
+            },
+            {
+              "it": "Procedura per la gestione degli infortuni e delle malattie professionali",
+              "en": "Procedure for managing work-related injuries and occupational diseases"
+            },
+            {
+              "it": "Procedura per la gestione dei procedimenti disciplinari nel rispetto della riservatezza",
+              "en": "Procedure for managing disciplinary proceedings while respecting confidentiality"
+            },
+            {
+              "it": "Verifica della compatibilità di eventuali sistemi di controllo a distanza con l'art. 4 St. Lav. (accordo sindacale o autorizzazione ITL)",
+              "en": "Verification of compatibility of any remote monitoring systems with Art. 4 of the Workers' Statute (union agreement or Labour Inspectorate authorization)"
+            },
+            {
+              "it": "Politica di clean desk e gestione documentazione cartacea",
+              "en": "Clean desk policy and paper documentation management"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio al Documento di Valutazione dei Rischi (DVR) ex d.lgs. 81/2008, al regolamento aziendale, alle policy interne sulla protezione dei dati, al codice disciplinare e all'eventuale accordo sindacale ex art. 4 St. Lav.]",
             "en": "[Refer to the Risk Assessment Document (DVR) under d.lgs. 81/2008, the company internal regulations, internal data protection policies, the disciplinary code, and any union agreement under Art. 4 of the Workers' Statute]"
@@ -674,18 +756,20 @@
           "it": "Trattamento di immagini provenienti da impianto di videosorveglianza fissa installato presso i locali e le pertinenze del Titolare per finalità di tutela del patrimonio, sicurezza delle persone presenti nei locali e prevenzione di atti illeciti (furti, intrusioni, atti vandalici).",
           "en": "Processing of images from a fixed video surveillance system installed at the Controller's premises and appurtenances for purposes of property protection, safety of persons in the premises, and prevention of unlawful acts (theft, intrusion, vandalism)."
         },
-        "finalita": {
-          "it": [
-            "Tutela del patrimonio aziendale e prevenzione di furti, intrusioni e atti vandalici",
-            "Sicurezza delle persone presenti nei locali e nelle pertinenze",
-            "Documentazione di eventuali eventi rilevanti ai fini della tutela legale del Titolare e di terzi"
-          ],
-          "en": [
-            "Protection of business assets and prevention of theft, intrusion and vandalism",
-            "Safety of persons present in the premises and appurtenances",
-            "Documentation of relevant events for the legal protection of the Controller and third parties"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Tutela del patrimonio aziendale e prevenzione di furti, intrusioni e atti vandalici",
+            "en": "Protection of business assets and prevention of theft, intrusion and vandalism"
+          },
+          {
+            "it": "Sicurezza delle persone presenti nei locali e nelle pertinenze",
+            "en": "Safety of persons present in the premises and appurtenances"
+          },
+          {
+            "it": "Documentazione di eventuali eventi rilevanti ai fini della tutela legale del Titolare e di terzi",
+            "en": "Documentation of relevant events for the legal protection of the Controller and third parties"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "legittimo_interesse"
@@ -723,53 +807,65 @@
             "en": "Images relating to criminally relevant unlawful acts may be extracted, retained, and transmitted to judicial authorities or law enforcement within the limits necessary to protect the Controller's rights or to comply with authority requests. Systematic processing of data under GDPR Art. 10 requires a specific legal basis under Italian Privacy Code Art. 2-octies."
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Visitatori, clienti, fornitori presenti nei locali",
-            "Lavoratori (subordinati e parasubordinati), se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività lavorativa — in presenza di art. 4 St. Lav.",
-            "Eventuali terzi che entrino occasionalmente nell'area sorvegliata"
-          ],
-          "en": [
-            "Visitors, customers, suppliers present in the premises",
-            "Workers (employees and para-subordinate), if the system also entails the possibility of remote monitoring of work activity — Art. 4 of the Workers' Statute applies",
-            "Any third parties occasionally entering the surveilled area"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Immagini digitali registrate dalle telecamere (volto, abbigliamento, postura, eventuali oggetti portati)",
-            "Metadati di registrazione (data, ora, telecamera di provenienza)",
-            "Eventuale audio, di regola da disattivare; l'attivazione richiede una valutazione autonoma di liceità, necessità e proporzionalità e dovrebbe essere ammessa solo in casi eccezionali e documentati",
-            "Eventuali targhe di veicoli (se il sistema le acquisisce e tratta — soggette a regime specifico)"
-          ],
-          "en": [
-            "Digital images recorded by cameras (face, clothing, posture, any objects carried)",
-            "Recording metadata (date, time, source camera)",
-            "Audio, if any, as a rule to be disabled; activation requires an independent assessment of lawfulness, necessity and proportionality, and should be allowed only in exceptional and documented cases",
-            "Vehicle license plates, if any (where the system captures and processes them — subject to specific regime)"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Visitatori, clienti, fornitori presenti nei locali",
+            "en": "Visitors, customers, suppliers present in the premises"
+          },
+          {
+            "it": "Lavoratori (subordinati e parasubordinati), se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività lavorativa — in presenza di art. 4 St. Lav.",
+            "en": "Workers (employees and para-subordinate), if the system also entails the possibility of remote monitoring of work activity — Art. 4 of the Workers' Statute applies"
+          },
+          {
+            "it": "Eventuali terzi che entrino occasionalmente nell'area sorvegliata",
+            "en": "Any third parties occasionally entering the surveilled area"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Immagini digitali registrate dalle telecamere (volto, abbigliamento, postura, eventuali oggetti portati)",
+            "en": "Digital images recorded by cameras (face, clothing, posture, any objects carried)"
+          },
+          {
+            "it": "Metadati di registrazione (data, ora, telecamera di provenienza)",
+            "en": "Recording metadata (date, time, source camera)"
+          },
+          {
+            "it": "Eventuale audio, di regola da disattivare; l'attivazione richiede una valutazione autonoma di liceità, necessità e proporzionalità e dovrebbe essere ammessa solo in casi eccezionali e documentati",
+            "en": "Audio, if any, as a rule to be disabled; activation requires an independent assessment of lawfulness, necessity and proportionality, and should be allowed only in exceptional and documented cases"
+          },
+          {
+            "it": "Eventuali targhe di veicoli (se il sistema le acquisisce e tratta — soggette a regime specifico)",
+            "en": "Vehicle license plates, if any (where the system captures and processes them — subject to specific regime)"
+          }
+        ],
         "fonteDeiDati": "interessato",
         "fonteDeiDatiDettagli": {
           "it": "Immagini acquisite direttamente dalle telecamere all'interno dell'area sorvegliata. L'interessato è informato della raccolta tramite cartelli informativi conformi al modello del Garante.",
           "en": "Images acquired directly from cameras within the surveilled area. The data subject is informed of the collection through information signs compliant with the Garante's model."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Soggetti specificamente designati dal Titolare per la consultazione delle immagini (autorizzati ex art. 29 GDPR), in numero limitato",
-            "Amministratori di sistema e fornitori IT del sistema di videosorveglianza, nei limiti delle rispettive autorizzazioni",
-            "Autorità giudiziaria e forze dell'ordine, su loro richiesta o spontanea trasmissione in caso di evento illecito",
-            "Eventuale istituto di vigilanza esterno (responsabile del trattamento)",
-            "Eventuale fornitore del servizio di videosorveglianza in cloud (responsabile del trattamento)"
-          ],
-          "en": [
-            "Persons specifically designated by the Controller to view images (authorized under GDPR Art. 29), in limited number",
-            "System administrators and IT providers of the video surveillance system, within the limits of their authorizations",
-            "Judicial authorities and law enforcement, upon their request or spontaneous transmission in case of unlawful events",
-            "External security firm, if any (data processor)",
-            "Cloud video surveillance service provider, if any (data processor)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Soggetti specificamente designati dal Titolare per la consultazione delle immagini (autorizzati ex art. 29 GDPR), in numero limitato",
+            "en": "Persons specifically designated by the Controller to view images (authorized under GDPR Art. 29), in limited number"
+          },
+          {
+            "it": "Amministratori di sistema e fornitori IT del sistema di videosorveglianza, nei limiti delle rispettive autorizzazioni",
+            "en": "System administrators and IT providers of the video surveillance system, within the limits of their authorizations"
+          },
+          {
+            "it": "Autorità giudiziaria e forze dell'ordine, su loro richiesta o spontanea trasmissione in caso di evento illecito",
+            "en": "Judicial authorities and law enforcement, upon their request or spontaneous transmission in case of unlawful events"
+          },
+          {
+            "it": "Eventuale istituto di vigilanza esterno (responsabile del trattamento)",
+            "en": "External security firm, if any (data processor)"
+          },
+          {
+            "it": "Eventuale fornitore del servizio di videosorveglianza in cloud (responsabile del trattamento)",
+            "en": "Cloud video surveillance service provider, if any (data processor)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -832,56 +928,86 @@
           "azioneFinale": "cancellazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Cifratura del salvataggio delle immagini sui supporti (NVR/DVR/cloud)",
-              "Controllo accessi al sistema con autenticazione forte e profili di privilegio differenziati",
-              "Posizionamento e angolazione delle telecamere verificati per non riprendere aree non strettamente necessarie (vicini, suolo pubblico, postazioni di lavoro non autorizzate)",
-              "Mascheratura di aree non rilevanti (privacy mask) ove tecnicamente possibile",
-              "Audit log degli accessi al sistema e delle visualizzazioni",
-              "Accesso remoto per manutenzione disabilitato di default o consentito solo su richiesta, per tempo limitato, con autenticazione forte, logging e tracciamento delle attività svolte",
-              "Sovrascrittura automatica al termine del periodo di conservazione",
-              "Aggiornamento e patching del firmware del NVR/DVR e delle telecamere"
-            ],
-            "en": [
-              "Encryption of image storage on media (NVR/DVR/cloud)",
-              "System access control with strong authentication and differentiated privilege profiles",
-              "Camera positioning and angle verified to avoid recording areas not strictly necessary (neighbors, public ground, unauthorized workstations)",
-              "Masking of irrelevant areas (privacy mask) where technically possible",
-              "Audit log of system access and viewings",
-              "Remote access for maintenance disabled by default or allowed only on request, for limited time, with strong authentication, logging and tracking of activities performed",
-              "Automatic overwriting at the end of the retention period",
-              "Firmware updates and patching of NVR/DVR and cameras"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione formale dei soggetti autorizzati a visionare le immagini (autorizzati ex art. 29 GDPR), in numero strettamente limitato",
-              "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
-              "Installazione di cartelli informativi conformi al modello del Garante, prima dell'area sorvegliata, ben visibili",
-              "Disponibilità dell'informativa estesa (secondo livello) facilmente accessibile, anche tramite QR code, link breve, reception o bacheca",
-              "Registro delle visualizzazioni, estrazioni e comunicazioni delle immagini, con indicazione di soggetto autorizzante, motivo, data, immagini estratte e destinatario",
-              "Procedura interna per l'estrazione di immagini in caso di evento illecito (chi può estrarle, con quale autorizzazione, con quale documentazione)",
-              "Procedura per la gestione delle richieste di accesso/cancellazione da parte degli interessati",
-              "Divieto di utilizzo dell'impianto per controlli continuativi, massivi o generalizzati sull'attività lavorativa; eventuale utilizzo delle immagini a fini disciplinari solo nei limiti dell'art. 4 St. Lav., previa adeguata informazione ai lavoratori e nel rispetto delle garanzie applicabili",
-              "Verifica preventiva della necessità di accordo sindacale o autorizzazione ITL ex art. 4 St. Lav. se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori",
-              "DPIA ex art. 35 GDPR redatta prima dell'attivazione del sistema, nei casi in cui il trattamento presenti rischio elevato",
-              "Audit periodico del sistema, del corretto angolo di ripresa, della scadenza automatica delle immagini"
-            ],
-            "en": [
-              "Formal designation of persons authorized to view images (authorized under GDPR Art. 29), in strictly limited number",
-              "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent",
-              "Installation of information signs compliant with the Garante's model, before the surveilled area, clearly visible",
-              "Availability of the extended (second-level) notice, easily accessible, including via QR code, short link, reception or notice board",
-              "Register of viewings, extractions and communications of images, indicating the authorizing person, reason, date, images extracted and recipient",
-              "Internal procedure for extracting images in case of unlawful events (who can extract, with what authorization, with what documentation)",
-              "Procedure for handling access/erasure requests from data subjects",
-              "Prohibition of using the system for continuous, massive or generalized monitoring of work activity; any use of images for disciplinary purposes only within the limits of Workers' Statute Art. 4, with prior adequate information to workers and respecting applicable safeguards",
-              "Prior verification of the need for union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4 if the system also entails the possibility of remote monitoring of workers' activity",
-              "DPIA under GDPR Art. 35 prepared before system activation, where the processing presents high risk",
-              "Periodic system audit, correct camera angle, automatic image expiration"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Cifratura del salvataggio delle immagini sui supporti (NVR/DVR/cloud)",
+              "en": "Encryption of image storage on media (NVR/DVR/cloud)"
+            },
+            {
+              "it": "Controllo accessi al sistema con autenticazione forte e profili di privilegio differenziati",
+              "en": "System access control with strong authentication and differentiated privilege profiles"
+            },
+            {
+              "it": "Posizionamento e angolazione delle telecamere verificati per non riprendere aree non strettamente necessarie (vicini, suolo pubblico, postazioni di lavoro non autorizzate)",
+              "en": "Camera positioning and angle verified to avoid recording areas not strictly necessary (neighbors, public ground, unauthorized workstations)"
+            },
+            {
+              "it": "Mascheratura di aree non rilevanti (privacy mask) ove tecnicamente possibile",
+              "en": "Masking of irrelevant areas (privacy mask) where technically possible"
+            },
+            {
+              "it": "Audit log degli accessi al sistema e delle visualizzazioni",
+              "en": "Audit log of system access and viewings"
+            },
+            {
+              "it": "Accesso remoto per manutenzione disabilitato di default o consentito solo su richiesta, per tempo limitato, con autenticazione forte, logging e tracciamento delle attività svolte",
+              "en": "Remote access for maintenance disabled by default or allowed only on request, for limited time, with strong authentication, logging and tracking of activities performed"
+            },
+            {
+              "it": "Sovrascrittura automatica al termine del periodo di conservazione",
+              "en": "Automatic overwriting at the end of the retention period"
+            },
+            {
+              "it": "Aggiornamento e patching del firmware del NVR/DVR e delle telecamere",
+              "en": "Firmware updates and patching of NVR/DVR and cameras"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione formale dei soggetti autorizzati a visionare le immagini (autorizzati ex art. 29 GDPR), in numero strettamente limitato",
+              "en": "Formal designation of persons authorized to view images (authorized under GDPR Art. 29), in strictly limited number"
+            },
+            {
+              "it": "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
+              "en": "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent"
+            },
+            {
+              "it": "Installazione di cartelli informativi conformi al modello del Garante, prima dell'area sorvegliata, ben visibili",
+              "en": "Installation of information signs compliant with the Garante's model, before the surveilled area, clearly visible"
+            },
+            {
+              "it": "Disponibilità dell'informativa estesa (secondo livello) facilmente accessibile, anche tramite QR code, link breve, reception o bacheca",
+              "en": "Availability of the extended (second-level) notice, easily accessible, including via QR code, short link, reception or notice board"
+            },
+            {
+              "it": "Registro delle visualizzazioni, estrazioni e comunicazioni delle immagini, con indicazione di soggetto autorizzante, motivo, data, immagini estratte e destinatario",
+              "en": "Register of viewings, extractions and communications of images, indicating the authorizing person, reason, date, images extracted and recipient"
+            },
+            {
+              "it": "Procedura interna per l'estrazione di immagini in caso di evento illecito (chi può estrarle, con quale autorizzazione, con quale documentazione)",
+              "en": "Internal procedure for extracting images in case of unlawful events (who can extract, with what authorization, with what documentation)"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di accesso/cancellazione da parte degli interessati",
+              "en": "Procedure for handling access/erasure requests from data subjects"
+            },
+            {
+              "it": "Divieto di utilizzo dell'impianto per controlli continuativi, massivi o generalizzati sull'attività lavorativa; eventuale utilizzo delle immagini a fini disciplinari solo nei limiti dell'art. 4 St. Lav., previa adeguata informazione ai lavoratori e nel rispetto delle garanzie applicabili",
+              "en": "Prohibition of using the system for continuous, massive or generalized monitoring of work activity; any use of images for disciplinary purposes only within the limits of Workers' Statute Art. 4, with prior adequate information to workers and respecting applicable safeguards"
+            },
+            {
+              "it": "Verifica preventiva della necessità di accordo sindacale o autorizzazione ITL ex art. 4 St. Lav. se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori",
+              "en": "Prior verification of the need for union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4 if the system also entails the possibility of remote monitoring of workers' activity"
+            },
+            {
+              "it": "DPIA ex art. 35 GDPR redatta prima dell'attivazione del sistema, nei casi in cui il trattamento presenti rischio elevato",
+              "en": "DPIA under GDPR Art. 35 prepared before system activation, where the processing presents high risk"
+            },
+            {
+              "it": "Audit periodico del sistema, del corretto angolo di ripresa, della scadenza automatica delle immagini",
+              "en": "Periodic system audit, correct camera angle, automatic image expiration"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alla LIA (Legitimate Interest Assessment); alla DPIA, ove richiesta; al disciplinare tecnico interno sulla videosorveglianza; al modello di cartello informativo conforme al Garante; all'eventuale accordo sindacale o autorizzazione ITL ex art. 4 St. Lav.]",
             "en": "[Refer to the LIA (Legitimate Interest Assessment); the DPIA, where required; the internal technical regulation on video surveillance; the information sign model compliant with the Garante; any union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4]"
@@ -988,20 +1114,24 @@
           "it": "Trattamento dei dati personali dei referenti, contatti e rappresentanti di clienti business (imprese, professionisti, enti) per la gestione del rapporto contrattuale, commerciale e amministrativo.",
           "en": "Processing of personal data of contacts, representatives and reference persons of business customers (companies, professionals, entities) for the management of the contractual, commercial and administrative relationship."
         },
-        "finalita": {
-          "it": [
-            "Esecuzione del contratto di fornitura di beni/servizi",
-            "Gestione amministrativa e contabile del rapporto",
-            "Comunicazioni operative connesse all'esecuzione del contratto",
-            "Gestione dell'assistenza e del supporto post-vendita"
-          ],
-          "en": [
-            "Performance of the goods/services supply contract",
-            "Administrative and accounting management of the relationship",
-            "Operational communications connected to contract performance",
-            "Management of after-sales assistance and support"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Esecuzione del contratto di fornitura di beni/servizi",
+            "en": "Performance of the goods/services supply contract"
+          },
+          {
+            "it": "Gestione amministrativa e contabile del rapporto",
+            "en": "Administrative and accounting management of the relationship"
+          },
+          {
+            "it": "Comunicazioni operative connesse all'esecuzione del contratto",
+            "en": "Operational communications connected to contract performance"
+          },
+          {
+            "it": "Gestione dell'assistenza e del supporto post-vendita",
+            "en": "Management of after-sales assistance and support"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "contratto",
@@ -1041,55 +1171,69 @@
             "en": ""
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Referenti e contatti dei clienti business (responsabili acquisti, amministratori, referenti tecnici)",
-            "Titolari di ditte individuali e liberi professionisti clienti",
-            "Legali rappresentanti delle società clienti"
-          ],
-          "en": [
-            "Contacts and representatives of business customers (purchasing managers, administrators, technical contacts)",
-            "Sole proprietors and freelance professionals who are customers",
-            "Legal representatives of customer companies"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati identificativi del referente (nome, cognome, ruolo aziendale)",
-            "Dati di contatto professionali (email, telefono aziendale)",
-            "Eventuali dati relativi a poteri di firma, deleghe, procure o ruoli autorizzativi del referente",
-            "Dati relativi al rapporto contrattuale e commerciale",
-            "Dati di fatturazione e pagamento (per ditte individuali/professionisti: anche fiscali)"
-          ],
-          "en": [
-            "Identification data of the contact (name, surname, business role)",
-            "Professional contact data (email, business phone)",
-            "Any data relating to signing powers, delegations, powers of attorney or authorization roles of the contact",
-            "Data relating to the contractual and commercial relationship",
-            "Billing and payment data (for sole proprietors/professionals: also tax data)"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Referenti e contatti dei clienti business (responsabili acquisti, amministratori, referenti tecnici)",
+            "en": "Contacts and representatives of business customers (purchasing managers, administrators, technical contacts)"
+          },
+          {
+            "it": "Titolari di ditte individuali e liberi professionisti clienti",
+            "en": "Sole proprietors and freelance professionals who are customers"
+          },
+          {
+            "it": "Legali rappresentanti delle società clienti",
+            "en": "Legal representatives of customer companies"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi del referente (nome, cognome, ruolo aziendale)",
+            "en": "Identification data of the contact (name, surname, business role)"
+          },
+          {
+            "it": "Dati di contatto professionali (email, telefono aziendale)",
+            "en": "Professional contact data (email, business phone)"
+          },
+          {
+            "it": "Eventuali dati relativi a poteri di firma, deleghe, procure o ruoli autorizzativi del referente",
+            "en": "Any data relating to signing powers, delegations, powers of attorney or authorization roles of the contact"
+          },
+          {
+            "it": "Dati relativi al rapporto contrattuale e commerciale",
+            "en": "Data relating to the contractual and commercial relationship"
+          },
+          {
+            "it": "Dati di fatturazione e pagamento (per ditte individuali/professionisti: anche fiscali)",
+            "en": "Billing and payment data (for sole proprietors/professionals: also tax data)"
+          }
+        ],
         "fonteDeiDati": "misto",
         "fonteDeiDatiDettagli": {
           "it": "Dati forniti direttamente dal cliente o dai suoi referenti; dati raccolti nel corso del rapporto commerciale; dati da fonti pubbliche (registro imprese, siti web aziendali).",
           "en": "Data provided directly by the customer or its contacts; data collected during the commercial relationship; data from public sources (business register, company websites)."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (ufficio commerciale, amministrazione, assistenza)",
-            "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
-            "Fornitori IT di CRM/gestionale (responsabili del trattamento)",
-            "Banche e istituti di pagamento",
-            "Eventuali corrieri/spedizionieri per la consegna (di norma autonomi titolari o responsabili, secondo il servizio reso)"
-          ],
-          "en": [
-            "Authorized internal personnel (sales, administration, support)",
-            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
-            "CRM/management software IT providers (data processors)",
-            "Banks and payment institutions",
-            "Couriers/shippers for delivery, if any (usually independent controllers or processors, depending on the service provided)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (ufficio commerciale, amministrazione, assistenza)",
+            "en": "Authorized internal personnel (sales, administration, support)"
+          },
+          {
+            "it": "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
+            "en": "Accountant / tax firm (processor or independent controller, depending on the engagement)"
+          },
+          {
+            "it": "Fornitori IT di CRM/gestionale (responsabili del trattamento)",
+            "en": "CRM/management software IT providers (data processors)"
+          },
+          {
+            "it": "Banche e istituti di pagamento",
+            "en": "Banks and payment institutions"
+          },
+          {
+            "it": "Eventuali corrieri/spedizionieri per la consegna (di norma autonomi titolari o responsabili, secondo il servizio reso)",
+            "en": "Couriers/shippers for delivery, if any (usually independent controllers or processors, depending on the service provided)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -1133,34 +1277,42 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Controllo accessi al CRM/gestionale con autenticazione forte",
-              "Cifratura delle connessioni (HTTPS/TLS)",
-              "Backup periodici con cifratura at-rest",
-              "Profilazione dei privilegi di accesso per ruolo"
-            ],
-            "en": [
-              "Access control to CRM/management software with strong authentication",
-              "Encryption of connections (HTTPS/TLS)",
-              "Periodic backups with at-rest encryption",
-              "Access privilege profiling by role"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
-              "Procedura per la gestione delle richieste di esercizio dei diritti",
-              "Aggiornamento periodico dei dati di contatto",
-              "Istruzioni ai fornitori IT designati responsabili"
-            ],
-            "en": [
-              "Designation of authorized operators (under GDPR Art. 29)",
-              "Procedure for handling rights requests",
-              "Periodic update of contact data",
-              "Instructions to IT providers designated as processors"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Controllo accessi al CRM/gestionale con autenticazione forte",
+              "en": "Access control to CRM/management software with strong authentication"
+            },
+            {
+              "it": "Cifratura delle connessioni (HTTPS/TLS)",
+              "en": "Encryption of connections (HTTPS/TLS)"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest",
+              "en": "Periodic backups with at-rest encryption"
+            },
+            {
+              "it": "Profilazione dei privilegi di accesso per ruolo",
+              "en": "Access privilege profiling by role"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (under GDPR Art. 29)"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti",
+              "en": "Procedure for handling rights requests"
+            },
+            {
+              "it": "Aggiornamento periodico dei dati di contatto",
+              "en": "Periodic update of contact data"
+            },
+            {
+              "it": "Istruzioni ai fornitori IT designati responsabili",
+              "en": "Instructions to IT providers designated as processors"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alle policy interne sulla protezione dei dati e ai DPA con i fornitori]",
             "en": "[Refer to internal data protection policies and DPAs with providers]"
@@ -1267,20 +1419,24 @@
           "it": "Trattamento dei dati personali dei clienti persone fisiche (consumatori) per l'esecuzione del contratto di vendita di beni o prestazione di servizi, la gestione amministrativa, fiscale e l'assistenza post-vendita.",
           "en": "Processing of personal data of customers who are natural persons (consumers) for the performance of the contract for the sale of goods or provision of services, administrative and tax management, and after-sales assistance."
         },
-        "finalita": {
-          "it": [
-            "Esecuzione del contratto di vendita/servizio",
-            "Gestione di ordini, consegne, resi e rimborsi",
-            "Adempimenti fiscali e contabili (fatturazione)",
-            "Gestione dell'assistenza e delle garanzie"
-          ],
-          "en": [
-            "Performance of the sales/service contract",
-            "Management of orders, deliveries, returns and refunds",
-            "Tax and accounting obligations (invoicing)",
-            "Management of assistance and warranties"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Esecuzione del contratto di vendita/servizio",
+            "en": "Performance of the sales/service contract"
+          },
+          {
+            "it": "Gestione di ordini, consegne, resi e rimborsi",
+            "en": "Management of orders, deliveries, returns and refunds"
+          },
+          {
+            "it": "Adempimenti fiscali e contabili (fatturazione)",
+            "en": "Tax and accounting obligations (invoicing)"
+          },
+          {
+            "it": "Gestione dell'assistenza e delle garanzie",
+            "en": "Management of assistance and warranties"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "contratto",
@@ -1320,57 +1476,73 @@
             "en": ""
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Clienti consumatori (persone fisiche)",
-            "Eventuali destinatari di consegne indicati dal cliente"
-          ],
-          "en": [
-            "Consumer customers (natural persons)",
-            "Any delivery recipients indicated by the customer"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati identificativi (nome, cognome, codice fiscale)",
-            "Dati di contatto (indirizzo, email, telefono)",
-            "Dati relativi agli ordini e agli acquisti",
-            "Dati relativi all'account cliente e credenziali di autenticazione, se è prevista la registrazione",
-            "Dati di pagamento (gestiti tramite payment provider — vedi nota)",
-            "Indirizzo di consegna e fatturazione",
-            "Dati tecnici e log di sicurezza relativi all'utilizzo della piattaforma, nei limiti necessari alla sicurezza del servizio e alla prevenzione di frodi"
-          ],
-          "en": [
-            "Identification data (name, surname, tax code)",
-            "Contact data (address, email, phone)",
-            "Order and purchase data",
-            "Customer account data and authentication credentials, if registration is provided",
-            "Payment data (handled via payment provider — see note)",
-            "Delivery and billing address",
-            "Technical data and security logs relating to platform use, within the limits necessary for service security and fraud prevention"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti consumatori (persone fisiche)",
+            "en": "Consumer customers (natural persons)"
+          },
+          {
+            "it": "Eventuali destinatari di consegne indicati dal cliente",
+            "en": "Any delivery recipients indicated by the customer"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi (nome, cognome, codice fiscale)",
+            "en": "Identification data (name, surname, tax code)"
+          },
+          {
+            "it": "Dati di contatto (indirizzo, email, telefono)",
+            "en": "Contact data (address, email, phone)"
+          },
+          {
+            "it": "Dati relativi agli ordini e agli acquisti",
+            "en": "Order and purchase data"
+          },
+          {
+            "it": "Dati relativi all'account cliente e credenziali di autenticazione, se è prevista la registrazione",
+            "en": "Customer account data and authentication credentials, if registration is provided"
+          },
+          {
+            "it": "Dati di pagamento (gestiti tramite payment provider — vedi nota)",
+            "en": "Payment data (handled via payment provider — see note)"
+          },
+          {
+            "it": "Indirizzo di consegna e fatturazione",
+            "en": "Delivery and billing address"
+          },
+          {
+            "it": "Dati tecnici e log di sicurezza relativi all'utilizzo della piattaforma, nei limiti necessari alla sicurezza del servizio e alla prevenzione di frodi",
+            "en": "Technical data and security logs relating to platform use, within the limits necessary for service security and fraud prevention"
+          }
+        ],
         "fonteDeiDati": "interessato",
         "fonteDeiDatiDettagli": {
           "it": "Dati forniti direttamente dal cliente al momento dell'acquisto, della registrazione o dell'ordine.",
           "en": "Data provided directly by the customer at the time of purchase, registration or order."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (vendite, amministrazione, assistenza)",
-            "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
-            "Payment provider / gestore dei pagamenti (responsabile o autonomo titolare, da verificare)",
-            "Corrieri e spedizionieri (di norma autonomi titolari o responsabili, secondo il servizio)",
-            "Fornitore della piattaforma e-commerce (responsabile del trattamento), se applicabile"
-          ],
-          "en": [
-            "Authorized internal personnel (sales, administration, support)",
-            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
-            "Payment provider (processor or independent controller, to be verified)",
-            "Couriers and shippers (usually independent controllers or processors, depending on the service)",
-            "E-commerce platform provider (data processor), if applicable"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (vendite, amministrazione, assistenza)",
+            "en": "Authorized internal personnel (sales, administration, support)"
+          },
+          {
+            "it": "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
+            "en": "Accountant / tax firm (processor or independent controller, depending on the engagement)"
+          },
+          {
+            "it": "Payment provider / gestore dei pagamenti (responsabile o autonomo titolare, da verificare)",
+            "en": "Payment provider (processor or independent controller, to be verified)"
+          },
+          {
+            "it": "Corrieri e spedizionieri (di norma autonomi titolari o responsabili, secondo il servizio)",
+            "en": "Couriers and shippers (usually independent controllers or processors, depending on the service)"
+          },
+          {
+            "it": "Fornitore della piattaforma e-commerce (responsabile del trattamento), se applicabile",
+            "en": "E-commerce platform provider (data processor), if applicable"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -1460,40 +1632,54 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Cifratura delle connessioni (HTTPS/TLS) sul sito/piattaforma",
-              "Controllo accessi con autenticazione forte ai sistemi gestionali",
-              "NON memorizzazione dei dati completi delle carte di pagamento (gestiti dal payment provider conforme PCI-DSS)",
-              "Misure di prevenzione frodi, logging di sicurezza e monitoraggio degli accessi anomali alla piattaforma",
-              "Backup periodici con cifratura at-rest",
-              "Aggiornamento e patching della piattaforma e dei plugin"
-            ],
-            "en": [
-              "Encryption of connections (HTTPS/TLS) on the website/platform",
-              "Access control with strong authentication to management systems",
-              "NON-storage of full payment card data (handled by PCI-DSS compliant payment provider)",
-              "Fraud prevention measures, security logging and monitoring of anomalous access to the platform",
-              "Periodic backups with at-rest encryption",
-              "Platform and plugin updates and patching"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
-              "Informativa privacy chiara al momento della raccolta (registrazione/checkout)",
-              "Procedura per la gestione delle richieste di esercizio dei diritti",
-              "Procedura per la gestione di resi, rimborsi e reclami",
-              "Gestione separata e con base giuridica autonoma di eventuali attività di marketing"
-            ],
-            "en": [
-              "Designation of authorized operators (under GDPR Art. 29)",
-              "Clear privacy notice at the time of collection (registration/checkout)",
-              "Procedure for handling rights requests",
-              "Procedure for managing returns, refunds and complaints",
-              "Separate management with autonomous legal basis of any marketing activities"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Cifratura delle connessioni (HTTPS/TLS) sul sito/piattaforma",
+              "en": "Encryption of connections (HTTPS/TLS) on the website/platform"
+            },
+            {
+              "it": "Controllo accessi con autenticazione forte ai sistemi gestionali",
+              "en": "Access control with strong authentication to management systems"
+            },
+            {
+              "it": "NON memorizzazione dei dati completi delle carte di pagamento (gestiti dal payment provider conforme PCI-DSS)",
+              "en": "NON-storage of full payment card data (handled by PCI-DSS compliant payment provider)"
+            },
+            {
+              "it": "Misure di prevenzione frodi, logging di sicurezza e monitoraggio degli accessi anomali alla piattaforma",
+              "en": "Fraud prevention measures, security logging and monitoring of anomalous access to the platform"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest",
+              "en": "Periodic backups with at-rest encryption"
+            },
+            {
+              "it": "Aggiornamento e patching della piattaforma e dei plugin",
+              "en": "Platform and plugin updates and patching"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (under GDPR Art. 29)"
+            },
+            {
+              "it": "Informativa privacy chiara al momento della raccolta (registrazione/checkout)",
+              "en": "Clear privacy notice at the time of collection (registration/checkout)"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti",
+              "en": "Procedure for handling rights requests"
+            },
+            {
+              "it": "Procedura per la gestione di resi, rimborsi e reclami",
+              "en": "Procedure for managing returns, refunds and complaints"
+            },
+            {
+              "it": "Gestione separata e con base giuridica autonoma di eventuali attività di marketing",
+              "en": "Separate management with autonomous legal basis of any marketing activities"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alla privacy policy del sito, alle condizioni di vendita e ai DPA con i fornitori]",
             "en": "[Refer to the website privacy policy, sales terms and DPAs with providers]"
@@ -1610,20 +1796,24 @@
           "it": "Trattamento dei dati personali dei candidati per la valutazione delle candidature, la conduzione dei colloqui e dei processi di selezione, e la gestione di eventuali graduatorie o liste di candidati idonei.",
           "en": "Processing of candidates' personal data for evaluating applications, conducting interviews and selection processes, and managing any rankings or lists of suitable candidates."
         },
-        "finalita": {
-          "it": [
-            "Valutazione delle candidature e dei profili professionali",
-            "Conduzione di colloqui, test e prove di selezione",
-            "Gestione delle comunicazioni con i candidati durante il processo selettivo",
-            "Eventuale conservazione del CV per future opportunità (talent pool), con base giuridica adeguata (legittimo interesse o consenso)"
-          ],
-          "en": [
-            "Evaluation of applications and professional profiles",
-            "Conducting interviews, tests and selection assessments",
-            "Management of communications with candidates during the selection process",
-            "Possible retention of the CV for future opportunities (talent pool), with adequate legal basis (legitimate interest or consent)"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Valutazione delle candidature e dei profili professionali",
+            "en": "Evaluation of applications and professional profiles"
+          },
+          {
+            "it": "Conduzione di colloqui, test e prove di selezione",
+            "en": "Conducting interviews, tests and selection assessments"
+          },
+          {
+            "it": "Gestione delle comunicazioni con i candidati durante il processo selettivo",
+            "en": "Management of communications with candidates during the selection process"
+          },
+          {
+            "it": "Eventuale conservazione del CV per future opportunità (talent pool), con base giuridica adeguata (legittimo interesse o consenso)",
+            "en": "Possible retention of the CV for future opportunities (talent pool), with adequate legal basis (legitimate interest or consent)"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "contratto",
@@ -1663,53 +1853,65 @@
             "en": "Any criminal-conviction data (GDPR Art. 10) is relevant only for specific roles requiring it by law (e.g. criminal record certificate for work with minors, art. 25-bis d.P.R. 313/2002) and must be processed only within legal limits."
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Candidati che rispondono ad annunci di lavoro",
-            "Candidati che inviano candidature spontanee",
-            "Eventuali referenze indicate dal candidato"
-          ],
-          "en": [
-            "Candidates responding to job postings",
-            "Candidates submitting unsolicited applications",
-            "Any references indicated by the candidate"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati identificativi e di contatto (nome, cognome, email, telefono, indirizzo)",
-            "Dati contenuti nel curriculum vitae (istruzione, esperienze professionali, competenze)",
-            "Dati tratti da profili professionali pubblicamente accessibili, se pertinenti alla posizione e nel rispetto dell'informativa",
-            "Dati relativi alla valutazione (esiti di colloqui, test, note del selezionatore)",
-            "Eventuale appartenenza a categorie protette ex l. 68/1999, solo se necessaria e pertinente alla specifica procedura",
-            "Eventuali dati eccedenti presenti nei CV (foto, data di nascita, stato civile) — da minimizzare e non utilizzare ai fini selettivi"
-          ],
-          "en": [
-            "Identification and contact data (name, surname, email, phone, address)",
-            "Data contained in the CV (education, professional experience, skills)",
-            "Data from publicly accessible professional profiles, where relevant to the position and in compliance with the information notice",
-            "Evaluation data (interview outcomes, tests, recruiter notes)",
-            "Any protected-category status under l. 68/1999, only where necessary and relevant to the specific procedure",
-            "Any excessive data present in CVs (photo, date of birth, marital status) — to be minimized and not used for selection purposes"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Candidati che rispondono ad annunci di lavoro",
+            "en": "Candidates responding to job postings"
+          },
+          {
+            "it": "Candidati che inviano candidature spontanee",
+            "en": "Candidates submitting unsolicited applications"
+          },
+          {
+            "it": "Eventuali referenze indicate dal candidato",
+            "en": "Any references indicated by the candidate"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto (nome, cognome, email, telefono, indirizzo)",
+            "en": "Identification and contact data (name, surname, email, phone, address)"
+          },
+          {
+            "it": "Dati contenuti nel curriculum vitae (istruzione, esperienze professionali, competenze)",
+            "en": "Data contained in the CV (education, professional experience, skills)"
+          },
+          {
+            "it": "Dati tratti da profili professionali pubblicamente accessibili, se pertinenti alla posizione e nel rispetto dell'informativa",
+            "en": "Data from publicly accessible professional profiles, where relevant to the position and in compliance with the information notice"
+          },
+          {
+            "it": "Dati relativi alla valutazione (esiti di colloqui, test, note del selezionatore)",
+            "en": "Evaluation data (interview outcomes, tests, recruiter notes)"
+          },
+          {
+            "it": "Eventuale appartenenza a categorie protette ex l. 68/1999, solo se necessaria e pertinente alla specifica procedura",
+            "en": "Any protected-category status under l. 68/1999, only where necessary and relevant to the specific procedure"
+          },
+          {
+            "it": "Eventuali dati eccedenti presenti nei CV (foto, data di nascita, stato civile) — da minimizzare e non utilizzare ai fini selettivi",
+            "en": "Any excessive data present in CVs (photo, date of birth, marital status) — to be minimized and not used for selection purposes"
+          }
+        ],
         "fonteDeiDati": "interessato",
         "fonteDeiDatiDettagli": {
           "it": "Dati forniti direttamente dal candidato tramite CV, form di candidatura o colloquio. Eventuali dati forniti da referenze indicate dal candidato, solo se pertinenti e previa adeguata informazione. Eventuali dati da portali di recruiting o agenzie per il lavoro (verificare il ruolo privacy del portale/agenzia).",
           "en": "Data provided directly by the candidate via CV, application form or interview. Any data provided by references indicated by the candidate, only where relevant and subject to appropriate information. Any data from recruiting portals or employment agencies (verify the privacy role of the portal/agency)."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (HR, responsabili di funzione coinvolti nella selezione)",
-            "Amministratori di sistema e fornitori IT del software di recruiting (responsabili del trattamento)",
-            "Eventuali società di selezione/recruiting esterne o portali (responsabili o autonomi titolari, da verificare)"
-          ],
-          "en": [
-            "Authorized internal personnel (HR, function managers involved in selection)",
-            "System administrators and IT providers of the recruiting software (data processors)",
-            "External selection/recruiting firms or portals, if any (processors or independent controllers, to be verified)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (HR, responsabili di funzione coinvolti nella selezione)",
+            "en": "Authorized internal personnel (HR, function managers involved in selection)"
+          },
+          {
+            "it": "Amministratori di sistema e fornitori IT del software di recruiting (responsabili del trattamento)",
+            "en": "System administrators and IT providers of the recruiting software (data processors)"
+          },
+          {
+            "it": "Eventuali società di selezione/recruiting esterne o portali (responsabili o autonomi titolari, da verificare)",
+            "en": "External selection/recruiting firms or portals, if any (processors or independent controllers, to be verified)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -1776,36 +1978,46 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Controllo accessi al sistema di recruiting/ATS con autenticazione forte",
-              "Cifratura delle connessioni (HTTPS/TLS)",
-              "Profilazione dei privilegi: accesso ai CV limitato al personale coinvolto nella specifica selezione",
-              "Cancellazione automatica o segnalazione alla scadenza del termine di conservazione"
-            ],
-            "en": [
-              "Access control to the recruiting/ATS system with strong authentication",
-              "Encryption of connections (HTTPS/TLS)",
-              "Privilege profiling: CV access limited to personnel involved in the specific selection",
-              "Automatic deletion or alerting upon expiry of the retention term"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
-              "Informativa ai candidati al momento della candidatura (con indicazione del termine di conservazione)",
-              "Invito ai candidati a non inserire dati eccedenti o categorie particolari nei CV",
-              "Procedura per la gestione delle richieste di accesso/cancellazione dei candidati",
-              "Procedura per il passaggio dei dati al trattamento 'Rapporto di lavoro' in caso di assunzione"
-            ],
-            "en": [
-              "Designation of authorized operators (under GDPR Art. 29)",
-              "Information notice to candidates at the time of application (indicating the retention term)",
-              "Invitation to candidates not to include excessive data or special categories in CVs",
-              "Procedure for handling candidates' access/erasure requests",
-              "Procedure for transferring data to the 'Employment relationship' activity in case of hiring"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Controllo accessi al sistema di recruiting/ATS con autenticazione forte",
+              "en": "Access control to the recruiting/ATS system with strong authentication"
+            },
+            {
+              "it": "Cifratura delle connessioni (HTTPS/TLS)",
+              "en": "Encryption of connections (HTTPS/TLS)"
+            },
+            {
+              "it": "Profilazione dei privilegi: accesso ai CV limitato al personale coinvolto nella specifica selezione",
+              "en": "Privilege profiling: CV access limited to personnel involved in the specific selection"
+            },
+            {
+              "it": "Cancellazione automatica o segnalazione alla scadenza del termine di conservazione",
+              "en": "Automatic deletion or alerting upon expiry of the retention term"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (under GDPR Art. 29)"
+            },
+            {
+              "it": "Informativa ai candidati al momento della candidatura (con indicazione del termine di conservazione)",
+              "en": "Information notice to candidates at the time of application (indicating the retention term)"
+            },
+            {
+              "it": "Invito ai candidati a non inserire dati eccedenti o categorie particolari nei CV",
+              "en": "Invitation to candidates not to include excessive data or special categories in CVs"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di accesso/cancellazione dei candidati",
+              "en": "Procedure for handling candidates' access/erasure requests"
+            },
+            {
+              "it": "Procedura per il passaggio dei dati al trattamento 'Rapporto di lavoro' in caso di assunzione",
+              "en": "Procedure for transferring data to the 'Employment relationship' activity in case of hiring"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio all'informativa per i candidati e alle policy interne sulla selezione del personale]",
             "en": "[Refer to the candidate information notice and internal personnel selection policies]"
@@ -1912,20 +2124,24 @@
           "it": "Trattamento dei dati personali dei fornitori e dei loro referenti per la gestione del rapporto contrattuale di fornitura di beni e servizi, degli ordini, dei pagamenti, degli adempimenti fiscali e dell'eventuale qualificazione/valutazione dei fornitori.",
           "en": "Processing of personal data of suppliers and their contacts for managing the contractual relationship for the supply of goods and services, orders, payments, tax obligations and any supplier qualification/evaluation."
         },
-        "finalita": {
-          "it": [
-            "Esecuzione del contratto di fornitura di beni/servizi",
-            "Gestione di ordini, consegne e pagamenti",
-            "Adempimenti fiscali e contabili",
-            "Qualificazione e valutazione dei fornitori (vendor rating), limitatamente a criteri oggettivi, documentati e pertinenti al rapporto di fornitura"
-          ],
-          "en": [
-            "Performance of the goods/services supply contract",
-            "Management of orders, deliveries and payments",
-            "Tax and accounting obligations",
-            "Supplier qualification and evaluation (vendor rating), limited to objective, documented criteria relevant to the supply relationship"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Esecuzione del contratto di fornitura di beni/servizi",
+            "en": "Performance of the goods/services supply contract"
+          },
+          {
+            "it": "Gestione di ordini, consegne e pagamenti",
+            "en": "Management of orders, deliveries and payments"
+          },
+          {
+            "it": "Adempimenti fiscali e contabili",
+            "en": "Tax and accounting obligations"
+          },
+          {
+            "it": "Qualificazione e valutazione dei fornitori (vendor rating), limitatamente a criteri oggettivi, documentati e pertinenti al rapporto di fornitura",
+            "en": "Supplier qualification and evaluation (vendor rating), limited to objective, documented criteria relevant to the supply relationship"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "contratto",
@@ -1965,61 +2181,81 @@
             "en": "In public procurement, criminal-conviction / anti-mafia data may be relevant (GDPR Art. 10, Italian Anti-Mafia Code d.lgs. 159/2011, Public Contracts Code). In that case processing has a specific legal basis. In the private sector, such data is generally not processed, except for specific legal obligations or verifications required by applicable sector legislation."
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Fornitori persone fisiche (ditte individuali, professionisti, lavoratori autonomi)",
-            "Referenti e contatti dei fornitori-società (responsabili commerciali, amministrativi, tecnici)",
-            "Legali rappresentanti delle società fornitrici"
-          ],
-          "en": [
-            "Supplier natural persons (sole proprietors, professionals, self-employed)",
-            "Contacts and representatives of supplier-companies (commercial, administrative, technical managers)",
-            "Legal representatives of supplier companies"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati identificativi del fornitore o del referente (nome, cognome, ruolo)",
-            "Dati di contatto professionali (email, telefono)",
-            "Eventuali dati relativi a poteri di firma, deleghe, procure, ruoli autorizzativi e abilitazioni del referente",
-            "Dati fiscali e di pagamento (codice fiscale, P.IVA, IBAN; per persone fisiche, professionisti e ditte individuali anche dati personali)",
-            "Dati relativi al rapporto contrattuale e alle forniture",
-            "Eventuali dati per verifiche di legge negli appalti pubblici (DURC, requisiti, autocertificazioni)",
-            "Eventuali verifiche antiriciclaggio, liste sanzioni o due diligence reputazionale, solo ove richieste o giustificate dalla normativa applicabile o dal settore di attività"
-          ],
-          "en": [
-            "Identification data of the supplier or contact (name, surname, role)",
-            "Professional contact data (email, phone)",
-            "Any data relating to signing powers, delegations, powers of attorney, authorization roles and authorizations of the contact",
-            "Tax and payment data (tax code, VAT number, IBAN; for natural persons, professionals and sole proprietors also personal data)",
-            "Data relating to the contractual relationship and supplies",
-            "Any data for legal verifications in public procurement (DURC, requirements, self-certifications)",
-            "Any anti-money laundering, sanctions-list or reputational due diligence checks, only where required or justified by applicable law or business sector"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Fornitori persone fisiche (ditte individuali, professionisti, lavoratori autonomi)",
+            "en": "Supplier natural persons (sole proprietors, professionals, self-employed)"
+          },
+          {
+            "it": "Referenti e contatti dei fornitori-società (responsabili commerciali, amministrativi, tecnici)",
+            "en": "Contacts and representatives of supplier-companies (commercial, administrative, technical managers)"
+          },
+          {
+            "it": "Legali rappresentanti delle società fornitrici",
+            "en": "Legal representatives of supplier companies"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi del fornitore o del referente (nome, cognome, ruolo)",
+            "en": "Identification data of the supplier or contact (name, surname, role)"
+          },
+          {
+            "it": "Dati di contatto professionali (email, telefono)",
+            "en": "Professional contact data (email, phone)"
+          },
+          {
+            "it": "Eventuali dati relativi a poteri di firma, deleghe, procure, ruoli autorizzativi e abilitazioni del referente",
+            "en": "Any data relating to signing powers, delegations, powers of attorney, authorization roles and authorizations of the contact"
+          },
+          {
+            "it": "Dati fiscali e di pagamento (codice fiscale, P.IVA, IBAN; per persone fisiche, professionisti e ditte individuali anche dati personali)",
+            "en": "Tax and payment data (tax code, VAT number, IBAN; for natural persons, professionals and sole proprietors also personal data)"
+          },
+          {
+            "it": "Dati relativi al rapporto contrattuale e alle forniture",
+            "en": "Data relating to the contractual relationship and supplies"
+          },
+          {
+            "it": "Eventuali dati per verifiche di legge negli appalti pubblici (DURC, requisiti, autocertificazioni)",
+            "en": "Any data for legal verifications in public procurement (DURC, requirements, self-certifications)"
+          },
+          {
+            "it": "Eventuali verifiche antiriciclaggio, liste sanzioni o due diligence reputazionale, solo ove richieste o giustificate dalla normativa applicabile o dal settore di attività",
+            "en": "Any anti-money laundering, sanctions-list or reputational due diligence checks, only where required or justified by applicable law or business sector"
+          }
+        ],
         "fonteDeiDati": "misto",
         "fonteDeiDatiDettagli": {
           "it": "Dati forniti direttamente dal fornitore o dai suoi referenti; dati raccolti nel corso del rapporto; dati da fonti pubbliche (registro imprese, banche dati per verifiche negli appalti).",
           "en": "Data provided directly by the supplier or its contacts; data collected during the relationship; data from public sources (business register, databases for procurement verifications)."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (ufficio acquisti, amministrazione, contabilità)",
-            "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
-            "Fornitori IT di gestionale/ERP (responsabili del trattamento)",
-            "Banche e istituti di pagamento",
-            "Enti pubblici per verifiche di legge (INPS/INAIL per DURC, Prefettura per antimafia negli appalti)",
-            "Eventuali auditor, organismi di certificazione o clienti che richiedano verifiche sulla supply chain, nei limiti applicabili"
-          ],
-          "en": [
-            "Authorized internal personnel (purchasing, administration, accounting)",
-            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
-            "Management/ERP software IT providers (data processors)",
-            "Banks and payment institutions",
-            "Public bodies for legal verifications (INPS/INAIL for DURC, Prefecture for anti-mafia in procurement)",
-            "Any auditors, certification bodies or customers requiring supply-chain checks, within applicable limits"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (ufficio acquisti, amministrazione, contabilità)",
+            "en": "Authorized internal personnel (purchasing, administration, accounting)"
+          },
+          {
+            "it": "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
+            "en": "Accountant / tax firm (processor or independent controller, depending on the engagement)"
+          },
+          {
+            "it": "Fornitori IT di gestionale/ERP (responsabili del trattamento)",
+            "en": "Management/ERP software IT providers (data processors)"
+          },
+          {
+            "it": "Banche e istituti di pagamento",
+            "en": "Banks and payment institutions"
+          },
+          {
+            "it": "Enti pubblici per verifiche di legge (INPS/INAIL per DURC, Prefettura per antimafia negli appalti)",
+            "en": "Public bodies for legal verifications (INPS/INAIL for DURC, Prefecture for anti-mafia in procurement)"
+          },
+          {
+            "it": "Eventuali auditor, organismi di certificazione o clienti che richiedano verifiche sulla supply chain, nei limiti applicabili",
+            "en": "Any auditors, certification bodies or customers requiring supply-chain checks, within applicable limits"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -2063,36 +2299,46 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Controllo accessi al gestionale/ERP con autenticazione forte",
-              "Cifratura delle connessioni (HTTPS/TLS)",
-              "Backup periodici con cifratura at-rest",
-              "Profilazione dei privilegi di accesso per ruolo"
-            ],
-            "en": [
-              "Access control to the management/ERP system with strong authentication",
-              "Encryption of connections (HTTPS/TLS)",
-              "Periodic backups with at-rest encryption",
-              "Access privilege profiling by role"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
-              "Procedura per la gestione delle richieste di esercizio dei diritti",
-              "Aggiornamento periodico dell'anagrafica fornitori",
-              "Istruzioni ai fornitori IT designati responsabili",
-              "Procedura per le verifiche di legge negli appalti pubblici, ove applicabile"
-            ],
-            "en": [
-              "Designation of authorized operators (under GDPR Art. 29)",
-              "Procedure for handling rights requests",
-              "Periodic update of the supplier registry",
-              "Instructions to IT providers designated as processors",
-              "Procedure for legal verifications in public procurement, where applicable"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Controllo accessi al gestionale/ERP con autenticazione forte",
+              "en": "Access control to the management/ERP system with strong authentication"
+            },
+            {
+              "it": "Cifratura delle connessioni (HTTPS/TLS)",
+              "en": "Encryption of connections (HTTPS/TLS)"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest",
+              "en": "Periodic backups with at-rest encryption"
+            },
+            {
+              "it": "Profilazione dei privilegi di accesso per ruolo",
+              "en": "Access privilege profiling by role"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (under GDPR Art. 29)"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti",
+              "en": "Procedure for handling rights requests"
+            },
+            {
+              "it": "Aggiornamento periodico dell'anagrafica fornitori",
+              "en": "Periodic update of the supplier registry"
+            },
+            {
+              "it": "Istruzioni ai fornitori IT designati responsabili",
+              "en": "Instructions to IT providers designated as processors"
+            },
+            {
+              "it": "Procedura per le verifiche di legge negli appalti pubblici, ove applicabile",
+              "en": "Procedure for legal verifications in public procurement, where applicable"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alle policy interne sulla protezione dei dati, ai DPA con i fornitori e alle procedure di qualificazione fornitori]",
             "en": "[Refer to internal data protection policies, DPAs with providers and supplier qualification procedures]"
@@ -2189,22 +2435,28 @@
           "it": "Trattamento dei dati personali per la tenuta della contabilità e delle scritture obbligatorie, la fatturazione attiva e passiva (anche elettronica via SdI), gli adempimenti fiscali, tributari e dichiarativi, e la conservazione (anche digitale/sostitutiva) della documentazione contabile e fiscale.",
           "en": "Processing of personal data for keeping accounts and mandatory records, active and passive invoicing (including e-invoicing via SdI), tax, fiscal and declaratory obligations, and retention (including digital/substitute) of accounting and tax documentation."
         },
-        "finalita": {
-          "it": [
-            "Tenuta della contabilità e delle scritture contabili obbligatorie",
-            "Emissione e ricezione di fatture (anche elettroniche tramite SdI)",
-            "Adempimenti fiscali, tributari e dichiarativi (IVA, imposte, certificazioni)",
-            "Conservazione, anche digitale/sostitutiva, della documentazione contabile e fiscale",
-            "Gestione di pagamenti e incassi nella dimensione contabile"
-          ],
-          "en": [
-            "Keeping of accounts and mandatory accounting records",
-            "Issuing and receiving invoices (including e-invoices via SdI)",
-            "Tax, fiscal and declaratory obligations (VAT, taxes, certifications)",
-            "Retention, including digital/substitute, of accounting and tax documentation",
-            "Management of payments and collections in the accounting dimension"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Tenuta della contabilità e delle scritture contabili obbligatorie",
+            "en": "Keeping of accounts and mandatory accounting records"
+          },
+          {
+            "it": "Emissione e ricezione di fatture (anche elettroniche tramite SdI)",
+            "en": "Issuing and receiving invoices (including e-invoices via SdI)"
+          },
+          {
+            "it": "Adempimenti fiscali, tributari e dichiarativi (IVA, imposte, certificazioni)",
+            "en": "Tax, fiscal and declaratory obligations (VAT, taxes, certifications)"
+          },
+          {
+            "it": "Conservazione, anche digitale/sostitutiva, della documentazione contabile e fiscale",
+            "en": "Retention, including digital/substitute, of accounting and tax documentation"
+          },
+          {
+            "it": "Gestione di pagamenti e incassi nella dimensione contabile",
+            "en": "Management of payments and collections in the accounting dimension"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "obbligo_legale"
@@ -2242,59 +2494,77 @@
             "en": "Data under GDPR Art. 10 is not systematically processed. Any references to proceedings may appear incidentally in tax documents (e.g. invoices for legal services) and must be processed only within accounting-tax limits."
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Clienti (nella dimensione di fatturazione e contabile), con rinvio ai trattamenti clientela",
-            "Fornitori (nella dimensione di fatturazione e contabile), con rinvio al trattamento fornitori",
-            "Dipendenti e collaboratori, limitatamente ai dati trattati per adempimenti fiscali, contributivi, certificazioni e scritture contabili, con rinvio al trattamento 'Gestione del rapporto di lavoro'",
-            "Professionisti e altri soggetti che emettono o ricevono documenti fiscalmente rilevanti"
-          ],
-          "en": [
-            "Customers (in the invoicing and accounting dimension), with reference to the customer activities",
-            "Suppliers (in the invoicing and accounting dimension), with reference to the supplier activity",
-            "Employees and collaborators, limited to data processed for tax, social-security, certification and accounting purposes, with reference to the 'Employment relationship management' activity",
-            "Professionals and other parties issuing or receiving fiscally relevant documents"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati identificativi e fiscali (nome, cognome, ragione sociale, codice fiscale, P.IVA)",
-            "Dati contenuti in fatture, note di credito, documenti di trasporto, ordini, contratti, quietanze, ricevute e altra documentazione fiscalmente rilevante",
-            "Dati di pagamento e incasso (IBAN, importi, causali, scadenze)",
-            "Dati relativi a rimborsi, note spese e documentazione giustificativa, se applicabile",
-            "Eventuali dati particolari o relativi a reati contenuti incidentalmente nei documenti fiscali — da minimizzare"
-          ],
-          "en": [
-            "Identification and tax data (name, surname, business name, tax code, VAT number)",
-            "Data contained in invoices, credit notes, transport documents, orders, contracts, receipts, and other fiscally relevant documentation",
-            "Payment and collection data (IBAN, amounts, descriptions, due dates)",
-            "Data relating to reimbursements, expense reports and supporting documentation, if applicable",
-            "Any special-category or criminal-related data incidentally contained in tax documents — to be minimized"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti (nella dimensione di fatturazione e contabile), con rinvio ai trattamenti clientela",
+            "en": "Customers (in the invoicing and accounting dimension), with reference to the customer activities"
+          },
+          {
+            "it": "Fornitori (nella dimensione di fatturazione e contabile), con rinvio al trattamento fornitori",
+            "en": "Suppliers (in the invoicing and accounting dimension), with reference to the supplier activity"
+          },
+          {
+            "it": "Dipendenti e collaboratori, limitatamente ai dati trattati per adempimenti fiscali, contributivi, certificazioni e scritture contabili, con rinvio al trattamento 'Gestione del rapporto di lavoro'",
+            "en": "Employees and collaborators, limited to data processed for tax, social-security, certification and accounting purposes, with reference to the 'Employment relationship management' activity"
+          },
+          {
+            "it": "Professionisti e altri soggetti che emettono o ricevono documenti fiscalmente rilevanti",
+            "en": "Professionals and other parties issuing or receiving fiscally relevant documents"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e fiscali (nome, cognome, ragione sociale, codice fiscale, P.IVA)",
+            "en": "Identification and tax data (name, surname, business name, tax code, VAT number)"
+          },
+          {
+            "it": "Dati contenuti in fatture, note di credito, documenti di trasporto, ordini, contratti, quietanze, ricevute e altra documentazione fiscalmente rilevante",
+            "en": "Data contained in invoices, credit notes, transport documents, orders, contracts, receipts, and other fiscally relevant documentation"
+          },
+          {
+            "it": "Dati di pagamento e incasso (IBAN, importi, causali, scadenze)",
+            "en": "Payment and collection data (IBAN, amounts, descriptions, due dates)"
+          },
+          {
+            "it": "Dati relativi a rimborsi, note spese e documentazione giustificativa, se applicabile",
+            "en": "Data relating to reimbursements, expense reports and supporting documentation, if applicable"
+          },
+          {
+            "it": "Eventuali dati particolari o relativi a reati contenuti incidentalmente nei documenti fiscali — da minimizzare",
+            "en": "Any special-category or criminal-related data incidentally contained in tax documents — to be minimized"
+          }
+        ],
         "fonteDeiDati": "misto",
         "fonteDeiDatiDettagli": {
           "it": "Dati provenienti dai trattamenti operativi (clienti, fornitori, personale); dati forniti direttamente dagli interessati nei documenti fiscali; dati generati nell'ambito degli adempimenti contabili e fiscali.",
           "en": "Data from operational activities (customers, suppliers, personnel); data provided directly by data subjects in tax documents; data generated in the course of accounting and tax obligations."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (amministrazione, contabilità)",
-            "Commercialista / studio fiscale: responsabile del trattamento quando svolge attività meramente esecutive per conto del Titolare sulla base di istruzioni; titolare autonomo quando rende consulenza professionale qualificata, assume autonome valutazioni tecnico-professionali o tratta i dati per obblighi propri di legge/deontologici",
-            "Agenzia delle Entrate / Sistema di Interscambio (SdI), quale destinatario/gestore istituzionale del flusso di fatturazione elettronica previsto dalla normativa vigente (non responsabile ex art. 28 del Titolare)",
-            "Fornitore del servizio di conservazione digitale/sostitutiva dei documenti fiscali e contabili, se esternalizzato (responsabile del trattamento, salvo diversa qualificazione da verificare)",
-            "Fornitori IT del software di contabilità/fatturazione (responsabili del trattamento)",
-            "Banche e istituti di pagamento"
-          ],
-          "en": [
-            "Authorized internal personnel (administration, accounting)",
-            "Accountant / tax firm: data processor when performing merely executive activities on behalf of the Controller based on instructions; independent controller when providing qualified professional advice, making autonomous technical-professional assessments, or processing data for its own legal/ethical obligations",
-            "Italian Revenue Agency / Interchange System (SdI), as institutional recipient/manager of the e-invoicing flow required by law (not an Art. 28 processor of the Controller)",
-            "Provider of digital/substitute retention service for tax and accounting documents, if outsourced (data processor, unless a different qualification is to be verified)",
-            "IT providers of accounting/invoicing software (data processors)",
-            "Banks and payment institutions"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (amministrazione, contabilità)",
+            "en": "Authorized internal personnel (administration, accounting)"
+          },
+          {
+            "it": "Commercialista / studio fiscale: responsabile del trattamento quando svolge attività meramente esecutive per conto del Titolare sulla base di istruzioni; titolare autonomo quando rende consulenza professionale qualificata, assume autonome valutazioni tecnico-professionali o tratta i dati per obblighi propri di legge/deontologici",
+            "en": "Accountant / tax firm: data processor when performing merely executive activities on behalf of the Controller based on instructions; independent controller when providing qualified professional advice, making autonomous technical-professional assessments, or processing data for its own legal/ethical obligations"
+          },
+          {
+            "it": "Agenzia delle Entrate / Sistema di Interscambio (SdI), quale destinatario/gestore istituzionale del flusso di fatturazione elettronica previsto dalla normativa vigente (non responsabile ex art. 28 del Titolare)",
+            "en": "Italian Revenue Agency / Interchange System (SdI), as institutional recipient/manager of the e-invoicing flow required by law (not an Art. 28 processor of the Controller)"
+          },
+          {
+            "it": "Fornitore del servizio di conservazione digitale/sostitutiva dei documenti fiscali e contabili, se esternalizzato (responsabile del trattamento, salvo diversa qualificazione da verificare)",
+            "en": "Provider of digital/substitute retention service for tax and accounting documents, if outsourced (data processor, unless a different qualification is to be verified)"
+          },
+          {
+            "it": "Fornitori IT del software di contabilità/fatturazione (responsabili del trattamento)",
+            "en": "IT providers of accounting/invoicing software (data processors)"
+          },
+          {
+            "it": "Banche e istituti di pagamento",
+            "en": "Banks and payment institutions"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -2361,38 +2631,50 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Controllo accessi ai sistemi contabili/fatturazione con autenticazione forte",
-              "Cifratura delle connessioni (HTTPS/TLS)",
-              "Backup periodici con cifratura at-rest",
-              "Profilazione dei privilegi di accesso per ruolo",
-              "Processo di conservazione digitale a norma con garanzie di integrità, immodificabilità, leggibilità e reperibilità"
-            ],
-            "en": [
-              "Access control to accounting/invoicing systems with strong authentication",
-              "Encryption of connections (HTTPS/TLS)",
-              "Periodic backups with at-rest encryption",
-              "Access privilege profiling by role",
-              "Compliant digital retention process with guarantees of integrity, immutability, legibility and retrievability"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
-              "Istruzioni al commercialista/studio quando designato responsabile, o presa d'atto del ruolo di titolare autonomo",
-              "Verifica del processo di conservazione digitale dei documenti fiscali, inclusi integrità, immodificabilità, leggibilità, reperibilità e tracciabilità degli accessi",
-              "Minimizzazione dei dati nei documenti fiscali, evitando l'inserimento di dati particolari non necessari",
-              "Procedura per la gestione delle richieste di esercizio dei diritti, coordinata con i trattamenti operativi collegati"
-            ],
-            "en": [
-              "Designation of authorized operators (under GDPR Art. 29)",
-              "Instructions to the accountant/firm when designated as processor, or acknowledgment of the independent-controller role",
-              "Verification of the digital retention process of tax documents, including integrity, immutability, legibility, retrievability and access traceability",
-              "Data minimisation in tax documents, avoiding the inclusion of unnecessary special-category data",
-              "Procedure for handling rights requests, coordinated with the linked operational activities"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai sistemi contabili/fatturazione con autenticazione forte",
+              "en": "Access control to accounting/invoicing systems with strong authentication"
+            },
+            {
+              "it": "Cifratura delle connessioni (HTTPS/TLS)",
+              "en": "Encryption of connections (HTTPS/TLS)"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest",
+              "en": "Periodic backups with at-rest encryption"
+            },
+            {
+              "it": "Profilazione dei privilegi di accesso per ruolo",
+              "en": "Access privilege profiling by role"
+            },
+            {
+              "it": "Processo di conservazione digitale a norma con garanzie di integrità, immodificabilità, leggibilità e reperibilità",
+              "en": "Compliant digital retention process with guarantees of integrity, immutability, legibility and retrievability"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (under GDPR Art. 29)"
+            },
+            {
+              "it": "Istruzioni al commercialista/studio quando designato responsabile, o presa d'atto del ruolo di titolare autonomo",
+              "en": "Instructions to the accountant/firm when designated as processor, or acknowledgment of the independent-controller role"
+            },
+            {
+              "it": "Verifica del processo di conservazione digitale dei documenti fiscali, inclusi integrità, immodificabilità, leggibilità, reperibilità e tracciabilità degli accessi",
+              "en": "Verification of the digital retention process of tax documents, including integrity, immutability, legibility, retrievability and access traceability"
+            },
+            {
+              "it": "Minimizzazione dei dati nei documenti fiscali, evitando l'inserimento di dati particolari non necessari",
+              "en": "Data minimisation in tax documents, avoiding the inclusion of unnecessary special-category data"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti, coordinata con i trattamenti operativi collegati",
+              "en": "Procedure for handling rights requests, coordinated with the linked operational activities"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alle policy interne sulla protezione dei dati, al manuale della conservazione (se previsto), ai DPA con i fornitori e all'eventuale nomina del commercialista]",
             "en": "[Refer to internal data protection policies, the retention manual (if any), DPAs with providers, and any appointment of the accountant]"
@@ -2499,22 +2781,28 @@
           "it": "Trattamento dei dati personali per la gestione di controversie giudiziali e stragiudiziali, il recupero dei crediti, la tutela legale dei diritti del Titolare e l'adempimento degli obblighi processuali connessi.",
           "en": "Processing of personal data for managing judicial and out-of-court disputes, recovering debts, providing legal protection of the Controller's rights, and complying with connected procedural obligations."
         },
-        "finalita": {
-          "it": [
-            "Gestione del contenzioso giudiziale, attivo e passivo",
-            "Recupero crediti in fase stragiudiziale (solleciti, diffide, messa in mora)",
-            "Recupero crediti in fase giudiziale (decreti ingiuntivi, procedure esecutive)",
-            "Tutela dei diritti del Titolare in sede giudiziaria e stragiudiziale",
-            "Adempimento di obblighi processuali, notificazioni e conservazione di atti"
-          ],
-          "en": [
-            "Management of judicial litigation, active and passive",
-            "Out-of-court debt recovery (reminders, formal notices, default notices)",
-            "Judicial debt recovery (injunctions, enforcement procedures)",
-            "Protection of the Controller's rights in judicial and out-of-court venues",
-            "Compliance with procedural obligations, notifications and document retention"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Gestione del contenzioso giudiziale, attivo e passivo",
+            "en": "Management of judicial litigation, active and passive"
+          },
+          {
+            "it": "Recupero crediti in fase stragiudiziale (solleciti, diffide, messa in mora)",
+            "en": "Out-of-court debt recovery (reminders, formal notices, default notices)"
+          },
+          {
+            "it": "Recupero crediti in fase giudiziale (decreti ingiuntivi, procedure esecutive)",
+            "en": "Judicial debt recovery (injunctions, enforcement procedures)"
+          },
+          {
+            "it": "Tutela dei diritti del Titolare in sede giudiziaria e stragiudiziale",
+            "en": "Protection of the Controller's rights in judicial and out-of-court venues"
+          },
+          {
+            "it": "Adempimento di obblighi processuali, notificazioni e conservazione di atti",
+            "en": "Compliance with procedural obligations, notifications and document retention"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "legittimo_interesse",
@@ -2555,59 +2843,77 @@
             "en": "A distinction must be made between data relating to CIVIL judicial proceedings (litigation acts, injunctions, writs, attachments, authority measures) — which do not in themselves constitute Art. 10 data — and any data relating to criminal convictions, offences or security measures under GDPR Art. 10, which may be processed only if arising in the litigation and within the limits of Italian Privacy Code Art. 2-octies."
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Debitori e controparti nel contenzioso",
-            "Clienti o fornitori inadempienti",
-            "Garanti, fideiussori, coobbligati, eredi o altri soggetti giuridicamente coinvolti nella posizione debitoria o nel contenzioso",
-            "Eventuali testimoni o soggetti terzi indicati negli atti"
-          ],
-          "en": [
-            "Debtors and counterparties in litigation",
-            "Defaulting customers or suppliers",
-            "Guarantors, sureties, co-obligors, heirs or other parties legally involved in the debt position or litigation",
-            "Any witnesses or third parties named in the documents"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Dati identificativi e di contatto delle parti e dei soggetti coinvolti",
-            "Dati relativi al credito o al rapporto contestato (importi, scadenze, documentazione)",
-            "Dati relativi a procedimenti giudiziari civili, atti di causa, decreti ingiuntivi, precetti, pignoramenti e provvedimenti dell'autorità",
-            "Eventuali dati relativi a condanne penali, reati o misure di sicurezza ex art. 10 GDPR, se emergenti nel contenzioso o richiesti dalla normativa applicabile",
-            "Eventuali dati patrimoniali e reddituali necessari alla valutazione della posizione e all'azione esecutiva",
-            "Eventuali categorie particolari emerse nel contenzioso, trattate ex art. 9(2)(f)"
-          ],
-          "en": [
-            "Identification and contact data of the parties and persons involved",
-            "Data relating to the credit or the disputed relationship (amounts, due dates, documentation)",
-            "Data relating to civil judicial proceedings, litigation acts, injunctions, writs, attachments and authority measures",
-            "Any data relating to criminal convictions, offences or security measures under GDPR Art. 10, if arising in litigation or required by applicable law",
-            "Any asset and income data necessary to assess the position and pursue enforcement",
-            "Any special categories arising in the litigation, processed under Art. 9(2)(f)"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Debitori e controparti nel contenzioso",
+            "en": "Debtors and counterparties in litigation"
+          },
+          {
+            "it": "Clienti o fornitori inadempienti",
+            "en": "Defaulting customers or suppliers"
+          },
+          {
+            "it": "Garanti, fideiussori, coobbligati, eredi o altri soggetti giuridicamente coinvolti nella posizione debitoria o nel contenzioso",
+            "en": "Guarantors, sureties, co-obligors, heirs or other parties legally involved in the debt position or litigation"
+          },
+          {
+            "it": "Eventuali testimoni o soggetti terzi indicati negli atti",
+            "en": "Any witnesses or third parties named in the documents"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto delle parti e dei soggetti coinvolti",
+            "en": "Identification and contact data of the parties and persons involved"
+          },
+          {
+            "it": "Dati relativi al credito o al rapporto contestato (importi, scadenze, documentazione)",
+            "en": "Data relating to the credit or the disputed relationship (amounts, due dates, documentation)"
+          },
+          {
+            "it": "Dati relativi a procedimenti giudiziari civili, atti di causa, decreti ingiuntivi, precetti, pignoramenti e provvedimenti dell'autorità",
+            "en": "Data relating to civil judicial proceedings, litigation acts, injunctions, writs, attachments and authority measures"
+          },
+          {
+            "it": "Eventuali dati relativi a condanne penali, reati o misure di sicurezza ex art. 10 GDPR, se emergenti nel contenzioso o richiesti dalla normativa applicabile",
+            "en": "Any data relating to criminal convictions, offences or security measures under GDPR Art. 10, if arising in litigation or required by applicable law"
+          },
+          {
+            "it": "Eventuali dati patrimoniali e reddituali necessari alla valutazione della posizione e all'azione esecutiva",
+            "en": "Any asset and income data necessary to assess the position and pursue enforcement"
+          },
+          {
+            "it": "Eventuali categorie particolari emerse nel contenzioso, trattate ex art. 9(2)(f)",
+            "en": "Any special categories arising in the litigation, processed under Art. 9(2)(f)"
+          }
+        ],
         "fonteDeiDati": "misto",
         "fonteDeiDatiDettagli": {
           "it": "Dati provenienti dai trattamenti operativi (clienti, fornitori); dati raccolti nel corso del contenzioso; dati da atti e provvedimenti dell'autorità giudiziaria; eventuali dati da fonti pubbliche o registri, nei limiti di legge. L'eventuale consultazione di banche dati, informazioni commerciali, report patrimoniali o sistemi di scoring della solvibilità deve essere valutata separatamente, verificando fonte dei dati, liceità, pertinenza, aggiornamento, informativa, eventuali ruoli privacy dei fornitori e presenza di processi decisionali automatizzati.",
           "en": "Data from operational activities (customers, suppliers); data collected during litigation; data from acts and measures of the judicial authority; any data from public sources or registers, within legal limits. Any consultation of databases, commercial information, asset reports or solvency scoring systems must be assessed separately, verifying the data source, lawfulness, relevance, accuracy, information notice, any providers' privacy roles, and the presence of automated decision-making."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Avvocati esterni: titolari autonomi del trattamento per le attività di assistenza, consulenza, rappresentanza e difesa, svolte secondo autonomia professionale, obblighi deontologici e normativa applicabile",
-            "Società di recupero crediti: responsabile del trattamento quando opera per conto del creditore sulla base di istruzioni e mandato; titolare autonomo quando agisce per finalità proprie, in particolare in caso di cessione del credito o gestione autonoma del credito acquistato",
-            "Autorità giudiziaria, tribunali, ufficiali giudiziari (destinatari istituzionali)",
-            "Periti e consulenti tecnici (responsabili o titolari autonomi, secondo l'incarico)",
-            "Eventuali agenzie di informazioni commerciali (da valutare separatamente, vedi fonte dei dati)"
-          ],
-          "en": [
-            "External lawyers: independent controllers for assistance, advice, representation and defense activities, carried out according to professional autonomy, ethical obligations and applicable law",
-            "Debt-recovery companies: data processor when operating on behalf of the creditor based on instructions and mandate; independent controller when acting for its own purposes, in particular in case of debt assignment or autonomous management of the acquired credit",
-            "Judicial authority, courts, bailiffs (institutional recipients)",
-            "Experts and technical consultants (processors or independent controllers, depending on the engagement)",
-            "Any commercial information agencies (to be assessed separately, see data source)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Avvocati esterni: titolari autonomi del trattamento per le attività di assistenza, consulenza, rappresentanza e difesa, svolte secondo autonomia professionale, obblighi deontologici e normativa applicabile",
+            "en": "External lawyers: independent controllers for assistance, advice, representation and defense activities, carried out according to professional autonomy, ethical obligations and applicable law"
+          },
+          {
+            "it": "Società di recupero crediti: responsabile del trattamento quando opera per conto del creditore sulla base di istruzioni e mandato; titolare autonomo quando agisce per finalità proprie, in particolare in caso di cessione del credito o gestione autonoma del credito acquistato",
+            "en": "Debt-recovery companies: data processor when operating on behalf of the creditor based on instructions and mandate; independent controller when acting for its own purposes, in particular in case of debt assignment or autonomous management of the acquired credit"
+          },
+          {
+            "it": "Autorità giudiziaria, tribunali, ufficiali giudiziari (destinatari istituzionali)",
+            "en": "Judicial authority, courts, bailiffs (institutional recipients)"
+          },
+          {
+            "it": "Periti e consulenti tecnici (responsabili o titolari autonomi, secondo l'incarico)",
+            "en": "Experts and technical consultants (processors or independent controllers, depending on the engagement)"
+          },
+          {
+            "it": "Eventuali agenzie di informazioni commerciali (da valutare separatamente, vedi fonte dei dati)",
+            "en": "Any commercial information agencies (to be assessed separately, see data source)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -2655,40 +2961,54 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Controllo accessi ai fascicoli del contenzioso con autenticazione forte",
-              "Cifratura delle connessioni e dei documenti sensibili",
-              "Profilazione dei privilegi: accesso ai fascicoli limitato al personale e ai legali coinvolti",
-              "Backup periodici con cifratura at-rest",
-              "Tracciabilità degli accessi ai fascicoli"
-            ],
-            "en": [
-              "Access control to litigation files with strong authentication",
-              "Encryption of connections and sensitive documents",
-              "Privilege profiling: file access limited to involved personnel and lawyers",
-              "Periodic backups with at-rest encryption",
-              "Traceability of access to files"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
-              "Divieto di comunicare a terzi non autorizzati, inclusi familiari, colleghi, vicini o datori di lavoro, informazioni sull'esistenza del debito, sull'importo o sulle iniziative di recupero",
-              "Istruzioni documentate agli incaricati e agli eventuali recuperatori esterni sulle modalità lecite di contatto del debitore e sulla minimizzazione delle informazioni comunicate",
-              "Utilizzo di plichi chiusi e privi di diciture esterne rivelatrici della finalità di recupero crediti",
-              "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con le esigenze di tutela del diritto in giudizio",
-              "Coordinamento con gli avvocati esterni (titolari autonomi) sui flussi di dati"
-            ],
-            "en": [
-              "Designation of authorized operators (under GDPR Art. 29)",
-              "Prohibition on communicating to unauthorized third parties, including family members, colleagues, neighbors or employers, information about the existence of the debt, its amount or recovery initiatives",
-              "Documented instructions to staff and any external recovery agents on lawful methods of contacting the debtor and on minimising the information communicated",
-              "Use of sealed envelopes without external markings revealing the debt-recovery purpose",
-              "Procedure for handling rights requests, balanced with the needs of protecting the right in court",
-              "Coordination with external lawyers (independent controllers) on data flows"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai fascicoli del contenzioso con autenticazione forte",
+              "en": "Access control to litigation files with strong authentication"
+            },
+            {
+              "it": "Cifratura delle connessioni e dei documenti sensibili",
+              "en": "Encryption of connections and sensitive documents"
+            },
+            {
+              "it": "Profilazione dei privilegi: accesso ai fascicoli limitato al personale e ai legali coinvolti",
+              "en": "Privilege profiling: file access limited to involved personnel and lawyers"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest",
+              "en": "Periodic backups with at-rest encryption"
+            },
+            {
+              "it": "Tracciabilità degli accessi ai fascicoli",
+              "en": "Traceability of access to files"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "en": "Designation of authorized operators (under GDPR Art. 29)"
+            },
+            {
+              "it": "Divieto di comunicare a terzi non autorizzati, inclusi familiari, colleghi, vicini o datori di lavoro, informazioni sull'esistenza del debito, sull'importo o sulle iniziative di recupero",
+              "en": "Prohibition on communicating to unauthorized third parties, including family members, colleagues, neighbors or employers, information about the existence of the debt, its amount or recovery initiatives"
+            },
+            {
+              "it": "Istruzioni documentate agli incaricati e agli eventuali recuperatori esterni sulle modalità lecite di contatto del debitore e sulla minimizzazione delle informazioni comunicate",
+              "en": "Documented instructions to staff and any external recovery agents on lawful methods of contacting the debtor and on minimising the information communicated"
+            },
+            {
+              "it": "Utilizzo di plichi chiusi e privi di diciture esterne rivelatrici della finalità di recupero crediti",
+              "en": "Use of sealed envelopes without external markings revealing the debt-recovery purpose"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con le esigenze di tutela del diritto in giudizio",
+              "en": "Procedure for handling rights requests, balanced with the needs of protecting the right in court"
+            },
+            {
+              "it": "Coordinamento con gli avvocati esterni (titolari autonomi) sui flussi di dati",
+              "en": "Coordination with external lawyers (independent controllers) on data flows"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio al vademecum del Garante sul recupero crediti, alle policy interne, alle istruzioni ai recuperatori esterni e alle nomine/qualificazioni dei soggetti coinvolti]",
             "en": "[Refer to the Italian Garante's debt-recovery vademecum, internal policies, instructions to external recovery agents and the appointments/qualifications of the parties involved]"
@@ -2815,22 +3135,28 @@
           "it": "Trattamento dei dati personali degli utenti del sito web connesso alla navigazione, alla sicurezza e al funzionamento tecnico, ai log di sistema, ai cookie e agli altri strumenti di tracciamento, agli analytics e alla gestione delle preferenze/consensi.",
           "en": "Processing of website users' personal data related to navigation, security and technical operation, system logs, cookies and other tracking tools, analytics and the management of preferences/consents."
         },
-        "finalita": {
-          "it": [
-            "Funzionamento tecnico e fruizione del sito web",
-            "Sicurezza del sito, diagnostica e prevenzione di abusi (log tecnici)",
-            "Misurazione statistica dell'utilizzo del sito (analytics)",
-            "Profilazione, marketing e advertising tramite cookie/strumenti non tecnici, ove attivati con consenso",
-            "Gestione e conservazione delle preferenze e dei consensi cookie"
-          ],
-          "en": [
-            "Technical operation and use of the website",
-            "Site security, diagnostics and abuse prevention (technical logs)",
-            "Statistical measurement of site usage (analytics)",
-            "Profiling, marketing and advertising via non-technical cookies/tools, where activated with consent",
-            "Management and retention of cookie preferences and consents"
-          ]
-        },
+        "finalita": [
+          {
+            "it": "Funzionamento tecnico e fruizione del sito web",
+            "en": "Technical operation and use of the website"
+          },
+          {
+            "it": "Sicurezza del sito, diagnostica e prevenzione di abusi (log tecnici)",
+            "en": "Site security, diagnostics and abuse prevention (technical logs)"
+          },
+          {
+            "it": "Misurazione statistica dell'utilizzo del sito (analytics)",
+            "en": "Statistical measurement of site usage (analytics)"
+          },
+          {
+            "it": "Profilazione, marketing e advertising tramite cookie/strumenti non tecnici, ove attivati con consenso",
+            "en": "Profiling, marketing and advertising via non-technical cookies/tools, where activated with consent"
+          },
+          {
+            "it": "Gestione e conservazione delle preferenze e dei consensi cookie",
+            "en": "Management and retention of cookie preferences and consents"
+          }
+        ],
         "baseGiuridica": {
           "art6": [
             "legittimo_interesse",
@@ -2869,53 +3195,65 @@
             "en": ""
           }
         },
-        "categorieInteressati": {
-          "it": [
-            "Utenti e visitatori del sito web",
-            "Eventuali utenti registrati nell'area riservata (per i dati di account, rinvio al trattamento specifico)"
-          ],
-          "en": [
-            "Website users and visitors",
-            "Any registered users in the reserved area (for account data, refer to the specific activity)"
-          ]
-        },
-        "categorieDati": {
-          "it": [
-            "Indirizzo IP e identificativi del dispositivo/connessione",
-            "Identificativi di cookie, local storage, session storage, pixel, tag, SDK e altri strumenti di archiviazione/accesso al terminale",
-            "Dati di navigazione e log tecnici (user agent, timestamp, pagine visitate, referrer, eventi)",
-            "Dati di misurazione statistica (analytics), nei limiti della configurazione adottata",
-            "Preferenze cookie e prova del consenso/revoca: identificativo consenso, timestamp, versione dell'informativa/banner, categorie accettate o rifiutate",
-            "Eventuali identificatori derivanti da tecniche di fingerprinting, se utilizzate (da valutare con particolare cautela)"
-          ],
-          "en": [
-            "IP address and device/connection identifiers",
-            "Identifiers of cookies, local storage, session storage, pixels, tags, SDKs and other terminal storage/access tools",
-            "Navigation data and technical logs (user agent, timestamp, pages visited, referrer, events)",
-            "Statistical measurement data (analytics), within the limits of the adopted configuration",
-            "Cookie preferences and proof of consent/withdrawal: consent identifier, timestamp, notice/banner version, categories accepted or refused",
-            "Any identifiers derived from fingerprinting techniques, if used (to be assessed with particular caution)"
-          ]
-        },
+        "categorieInteressati": [
+          {
+            "it": "Utenti e visitatori del sito web",
+            "en": "Website users and visitors"
+          },
+          {
+            "it": "Eventuali utenti registrati nell'area riservata (per i dati di account, rinvio al trattamento specifico)",
+            "en": "Any registered users in the reserved area (for account data, refer to the specific activity)"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Indirizzo IP e identificativi del dispositivo/connessione",
+            "en": "IP address and device/connection identifiers"
+          },
+          {
+            "it": "Identificativi di cookie, local storage, session storage, pixel, tag, SDK e altri strumenti di archiviazione/accesso al terminale",
+            "en": "Identifiers of cookies, local storage, session storage, pixels, tags, SDKs and other terminal storage/access tools"
+          },
+          {
+            "it": "Dati di navigazione e log tecnici (user agent, timestamp, pagine visitate, referrer, eventi)",
+            "en": "Navigation data and technical logs (user agent, timestamp, pages visited, referrer, events)"
+          },
+          {
+            "it": "Dati di misurazione statistica (analytics), nei limiti della configurazione adottata",
+            "en": "Statistical measurement data (analytics), within the limits of the adopted configuration"
+          },
+          {
+            "it": "Preferenze cookie e prova del consenso/revoca: identificativo consenso, timestamp, versione dell'informativa/banner, categorie accettate o rifiutate",
+            "en": "Cookie preferences and proof of consent/withdrawal: consent identifier, timestamp, notice/banner version, categories accepted or refused"
+          },
+          {
+            "it": "Eventuali identificatori derivanti da tecniche di fingerprinting, se utilizzate (da valutare con particolare cautela)",
+            "en": "Any identifiers derived from fingerprinting techniques, if used (to be assessed with particular caution)"
+          }
+        ],
         "fonteDeiDati": "interessato",
         "fonteDeiDatiDettagli": {
           "it": "Dati raccolti automaticamente durante la navigazione tramite il browser/dispositivo dell'utente e gli strumenti di tracciamento attivati. I dati inseriti volontariamente dall'utente nei form (contatto, newsletter, acquisto, area riservata) sono censiti nei rispettivi trattamenti specifici.",
           "en": "Data collected automatically during navigation via the user's browser/device and the activated tracking tools. Data voluntarily entered by the user in forms (contact, newsletter, purchase, reserved area) are recorded in their respective specific activities."
         },
-        "categorieDestinatari": {
-          "it": [
-            "Personale interno autorizzato (gestione del sito, IT, marketing per i dati aggregati)",
-            "Fornitore hosting/CDN: responsabile del trattamento ove tratti dati per conto del Titolare; possibile titolare autonomo per finalità proprie di sicurezza, compliance o abuso, secondo i termini del servizio",
-            "Fornitore CMP (Consent Management Platform): di norma responsabile del trattamento per la gestione tecnica delle preferenze, ma il ruolo va verificato in base al servizio, alle finalità proprie e ai dati trattati",
-            "Fornitori di cookie, tag, SDK, pixel, analytics, strumenti pubblicitari o social plugin di terze parti: ruolo da verificare (responsabile, titolare autonomo o contitolare, secondo le operazioni)"
-          ],
-          "en": [
-            "Authorized internal personnel (site management, IT, marketing for aggregated data)",
-            "Hosting/CDN provider: data processor where it processes data on behalf of the Controller; possible independent controller for its own security, compliance or abuse purposes, according to the service terms",
-            "CMP (Consent Management Platform) provider: generally a data processor for the technical management of preferences, but the role must be verified based on the service, its own purposes and the data processed",
-            "Providers of third-party cookies, tags, SDKs, pixels, analytics, advertising tools or social plugins: role to be verified (processor, independent controller or joint controller, depending on the operations)"
-          ]
-        },
+        "categorieDestinatari": [
+          {
+            "it": "Personale interno autorizzato (gestione del sito, IT, marketing per i dati aggregati)",
+            "en": "Authorized internal personnel (site management, IT, marketing for aggregated data)"
+          },
+          {
+            "it": "Fornitore hosting/CDN: responsabile del trattamento ove tratti dati per conto del Titolare; possibile titolare autonomo per finalità proprie di sicurezza, compliance o abuso, secondo i termini del servizio",
+            "en": "Hosting/CDN provider: data processor where it processes data on behalf of the Controller; possible independent controller for its own security, compliance or abuse purposes, according to the service terms"
+          },
+          {
+            "it": "Fornitore CMP (Consent Management Platform): di norma responsabile del trattamento per la gestione tecnica delle preferenze, ma il ruolo va verificato in base al servizio, alle finalità proprie e ai dati trattati",
+            "en": "CMP (Consent Management Platform) provider: generally a data processor for the technical management of preferences, but the role must be verified based on the service, its own purposes and the data processed"
+          },
+          {
+            "it": "Fornitori di cookie, tag, SDK, pixel, analytics, strumenti pubblicitari o social plugin di terze parti: ruolo da verificare (responsabile, titolare autonomo o contitolare, secondo le operazioni)",
+            "en": "Providers of third-party cookies, tags, SDKs, pixels, analytics, advertising tools or social plugins: role to be verified (processor, independent controller or joint controller, depending on the operations)"
+          }
+        ],
         "responsabiliEsterni": [
           {
             "denominazione": {
@@ -3009,44 +3347,62 @@
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
         "misureSicurezza": {
-          "tecniche": {
-            "it": [
-              "Cifratura delle connessioni (HTTPS/TLS) su tutto il sito",
-              "Blocco preventivo dei cookie e strumenti non tecnici prima dell'acquisizione del consenso valido",
-              "Meccanismo semplice e sempre disponibile per modificare o revocare le preferenze cookie, con la stessa facilità con cui sono state espresse",
-              "Mascheramento/anonimizzazione dell'IP negli analytics ove equiparati ai tecnici",
-              "Controllo accessi ai sistemi di gestione del sito con autenticazione forte",
-              "Aggiornamento e patching di CMS, plugin e componenti"
-            ],
-            "en": [
-              "Encryption of connections (HTTPS/TLS) across the entire site",
-              "Preventive blocking of non-technical cookies and tools before obtaining valid consent",
-              "Simple and always-available mechanism to modify or withdraw cookie preferences, with the same ease with which they were given",
-              "IP masking/anonymization in analytics where equated to technical ones",
-              "Access control to site management systems with strong authentication",
-              "Updating and patching of CMS, plugins and components"
-            ]
-          },
-          "organizzative": {
-            "it": [
-              "Informativa cookie completa e cookie policy aggiornata, con elenco e finalità dei cookie/strumenti",
-              "Banner cookie conforme: consenso preventivo, granulare, libero; lo scrolling o la prosecuzione della navigazione non costituiscono valido consenso; cookie wall ammesso solo in ipotesi eccezionali con alternativa equivalente",
-              "Registrazione e conservazione della prova del consenso",
-              "Verifica periodica della corrispondenza tra cookie effettivamente installati, configurazione CMP, cookie policy, privacy policy e script/tag presenti sul sito",
-              "Gestione controllata di eventuali tag manager, con autorizzazioni limitate, versionamento delle modifiche, audit degli script attivi e blocco dei tag non autorizzati",
-              "Verifica del ruolo privacy di ciascun fornitore di terze parti e della relativa documentazione (responsabile, titolare autonomo, contitolare ex art. 26)",
-              "I form presenti sul sito devono riportare informativa coerente con la specifica finalità (contatto, preventivo, newsletter, acquisto, account, reclami); il presente trattamento non sostituisce i trattamenti specifici collegati ai dati conferiti nei form"
-            ],
-            "en": [
-              "Complete cookie notice and updated cookie policy, with list and purposes of cookies/tools",
-              "Compliant cookie banner: prior, granular, free consent; scrolling or continued navigation do not constitute valid consent; cookie wall allowed only in exceptional cases with an equivalent alternative",
-              "Recording and retention of proof of consent",
-              "Periodic verification of the correspondence between cookies actually installed, CMP configuration, cookie policy, privacy policy and scripts/tags present on the site",
-              "Controlled management of any tag managers, with limited authorizations, versioning of changes, audit of active scripts and blocking of unauthorized tags",
-              "Verification of the privacy role of each third-party provider and the related documentation (processor, independent controller, joint controller under Art. 26)",
-              "Forms on the site must carry a notice consistent with the specific purpose (contact, quote, newsletter, purchase, account, complaints); this activity does not replace the specific activities connected to the data provided in the forms"
-            ]
-          },
+          "tecniche": [
+            {
+              "it": "Cifratura delle connessioni (HTTPS/TLS) su tutto il sito",
+              "en": "Encryption of connections (HTTPS/TLS) across the entire site"
+            },
+            {
+              "it": "Blocco preventivo dei cookie e strumenti non tecnici prima dell'acquisizione del consenso valido",
+              "en": "Preventive blocking of non-technical cookies and tools before obtaining valid consent"
+            },
+            {
+              "it": "Meccanismo semplice e sempre disponibile per modificare o revocare le preferenze cookie, con la stessa facilità con cui sono state espresse",
+              "en": "Simple and always-available mechanism to modify or withdraw cookie preferences, with the same ease with which they were given"
+            },
+            {
+              "it": "Mascheramento/anonimizzazione dell'IP negli analytics ove equiparati ai tecnici",
+              "en": "IP masking/anonymization in analytics where equated to technical ones"
+            },
+            {
+              "it": "Controllo accessi ai sistemi di gestione del sito con autenticazione forte",
+              "en": "Access control to site management systems with strong authentication"
+            },
+            {
+              "it": "Aggiornamento e patching di CMS, plugin e componenti",
+              "en": "Updating and patching of CMS, plugins and components"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Informativa cookie completa e cookie policy aggiornata, con elenco e finalità dei cookie/strumenti",
+              "en": "Complete cookie notice and updated cookie policy, with list and purposes of cookies/tools"
+            },
+            {
+              "it": "Banner cookie conforme: consenso preventivo, granulare, libero; lo scrolling o la prosecuzione della navigazione non costituiscono valido consenso; cookie wall ammesso solo in ipotesi eccezionali con alternativa equivalente",
+              "en": "Compliant cookie banner: prior, granular, free consent; scrolling or continued navigation do not constitute valid consent; cookie wall allowed only in exceptional cases with an equivalent alternative"
+            },
+            {
+              "it": "Registrazione e conservazione della prova del consenso",
+              "en": "Recording and retention of proof of consent"
+            },
+            {
+              "it": "Verifica periodica della corrispondenza tra cookie effettivamente installati, configurazione CMP, cookie policy, privacy policy e script/tag presenti sul sito",
+              "en": "Periodic verification of the correspondence between cookies actually installed, CMP configuration, cookie policy, privacy policy and scripts/tags present on the site"
+            },
+            {
+              "it": "Gestione controllata di eventuali tag manager, con autorizzazioni limitate, versionamento delle modifiche, audit degli script attivi e blocco dei tag non autorizzati",
+              "en": "Controlled management of any tag managers, with limited authorizations, versioning of changes, audit of active scripts and blocking of unauthorized tags"
+            },
+            {
+              "it": "Verifica del ruolo privacy di ciascun fornitore di terze parti e della relativa documentazione (responsabile, titolare autonomo, contitolare ex art. 26)",
+              "en": "Verification of the privacy role of each third-party provider and the related documentation (processor, independent controller, joint controller under Art. 26)"
+            },
+            {
+              "it": "I form presenti sul sito devono riportare informativa coerente con la specifica finalità (contatto, preventivo, newsletter, acquisto, account, reclami); il presente trattamento non sostituisce i trattamenti specifici collegati ai dati conferiti nei form",
+              "en": "Forms on the site must carry a notice consistent with the specific purpose (contact, quote, newsletter, purchase, account, complaints); this activity does not replace the specific activities connected to the data provided in the forms"
+            }
+          ],
           "rinvioDocumentale": {
             "it": "[Rinvio alla cookie policy, alla privacy policy del sito, alla configurazione della CMP e ai DPA/documentazione dei fornitori di terze parti]",
             "en": "[Refer to the cookie policy, the site privacy policy, the CMP configuration and the DPAs/documentation of third-party providers]"
