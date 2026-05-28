@@ -101,11 +101,143 @@ export default {
       legittimo_interesse: 'Legittimo interesse'
     },
 
-    // ---- Popolati nello Step B (non ancora importati da app.js) ----
-    art9: {},
-    fonteDeiDati: {},
-    azioneFinale: {},
-    garanziaTrasferimento: {},
-    tipoRegistro: {}
+    art9: {
+      consenso_esplicito: 'Consenso esplicito',
+      obblighi_lavoro: 'Obblighi in materia di diritto del lavoro e sicurezza sociale',
+      interesse_vitale: 'Interesse vitale dell\u2019interessato',
+      associazioni: 'Attivit\u00e0 di fondazioni, associazioni o organismi senza scopo di lucro',
+      dati_resi_pubblici: 'Dati resi manifestamente pubblici dall\u2019interessato',
+      giustizia: 'Accertamento, esercizio o difesa di un diritto in sede giudiziaria',
+      interesse_pubblico: 'Motivi di interesse pubblico rilevante',
+      medicina_lavoro: 'Medicina del lavoro e valutazione della capacit\u00e0 lavorativa',
+      sanita_pubblica: 'Interesse pubblico nel settore della sanit\u00e0 pubblica',
+      archiviazione: 'Archiviazione, ricerca scientifica/storica o fini statistici'
+    },
+    fonteDeiDati: {
+      interessato: 'Direttamente dall\u2019interessato',
+      terzi: 'Da soggetti terzi',
+      fonti_pubbliche: 'Da fonti accessibili al pubblico',
+      misto: 'Origine mista'
+    },
+    azioneFinale: {
+      cancellazione: 'Cancellazione',
+      anonimizzazione: 'Anonimizzazione',
+      archiviazione: 'Archiviazione',
+      cancellazione_o_anonimizzazione: 'Cancellazione o anonimizzazione'
+    },
+    garanziaTrasferimento: {
+      decisione_adeguatezza: 'Decisione di adeguatezza (art. 45)',
+      scc: 'Clausole contrattuali tipo \u2013 SCC (art. 46)',
+      bcr: 'Norme vincolanti d\u2019impresa \u2013 BCR (art. 47)',
+      codice_condotta: 'Codice di condotta approvato (art. 46)',
+      certificazione: 'Meccanismo di certificazione approvato (art. 46)',
+      deroga_art49: 'Deroga per situazioni specifiche (art. 49)',
+      da_verificare: 'Da verificare'
+    },
+    tipoRegistro: {
+      titolare: 'Titolare del trattamento',
+      responsabile: 'Responsabile del trattamento'
+    }
+  },
+  detail: {
+    sezioni: {
+      identificazione: 'Identificazione',
+      finalita: 'Finalit\u00e0',
+      basiGiuridiche: 'Basi giuridiche',
+      condannePenali: 'Condanne penali e reati',
+      categorieInteressati: 'Categorie di interessati',
+      categorieDati: 'Categorie di dati',
+      destinatari: 'Destinatari',
+      trasferimenti: 'Trasferimenti verso Paesi terzi',
+      conservazione: 'Conservazione',
+      sicurezza: 'Misure di sicurezza',
+      automatizzati: 'Processi automatizzati e profilazione',
+      dpiaNote: 'Valutazione d\u2019impatto e note'
+    },
+    campi: {
+      // Sez. 1 — Identificazione
+      nome: 'Denominazione del trattamento',
+      descrizione: 'Descrizione',
+      tipoRegistro: 'Tipo di registro',
+      dataInizioTrattamento: 'Data di inizio del trattamento',
+      macroStruttura: 'Macro-struttura',
+      articolazione: 'Articolazione / Ufficio',
+      codiceUtente: 'Codice interno',
+
+      // Sez. 2 — Finalit\u00e0
+      finalita: 'Finalit\u00e0 del trattamento',
+
+      // Sez. 3 — Basi giuridiche
+      art6: 'Base giuridica (art. 6)',
+      dettagliArt6: 'Dettagli sulla base giuridica',
+      liDescrizione: 'Descrizione del legittimo interesse',
+      liGaranzie: 'Garanzie adottate',
+      liBilanciamentoEffettuato: 'Test di bilanciamento effettuato',
+      liBilanciamentoRichiesto: 'Test di bilanciamento richiesto',
+      liRiferimento: 'Riferimento al test di bilanciamento',
+      art9: 'Condizioni per categorie particolari (art. 9)',
+      dettagliArt9: 'Dettagli sulle condizioni ex art. 9',
+
+      // Sez. 4 — Condanne penali e reati (art. 10)
+      condanneePresenti: 'Trattamento di dati ex art. 10',
+      condanneNormativa: 'Normativa che autorizza il trattamento',
+
+      // Sez. 5 — Categorie di interessati
+      categorieInteressati: 'Categorie di interessati',
+
+      // Sez. 6 — Categorie di dati
+      categorieDati: 'Categorie di dati personali',
+      fonteDeiDati: 'Fonte dei dati',
+      fonteDeiDatiDettagli: 'Dettagli sulla fonte dei dati',
+
+      // Sez. 7 — Destinatari
+      categorieDestinatari: 'Categorie di destinatari',
+      responsabiliEsterni: 'Responsabili del trattamento (esterni)',
+      reDenominazione: 'Denominazione',
+      reSede: 'Sede',
+      reFinalita: 'Finalit\u00e0 del trattamento affidato',
+      reAccordoArt28: 'Accordo ex art. 28 presente',
+      reRiferimentoContratto: 'Riferimento contrattuale',
+      reNotaRuolo: 'Nota sul ruolo privacy',
+
+      // Sez. 8 — Trasferimenti verso Paesi terzi
+      trasferimentiExtraUE: 'Trasferimenti verso Paesi terzi',
+      trPaese: 'Paese / Organizzazione internazionale',
+      trGaranzia: 'Garanzia applicata',
+      trRiferimento: 'Riferimento alla documentazione',
+
+      // Sez. 9 — Conservazione
+      conservazionePeriodo: 'Periodo di conservazione',
+      conservazioneCriteri: 'Criteri di determinazione del periodo',
+      azioneFinale: 'Azione al termine della conservazione',
+
+      // Sez. 10 — Misure di sicurezza
+      misureTecniche: 'Misure tecniche',
+      misureOrganizzative: 'Misure organizzative',
+      sicurezzaRinvio: 'Rinvio a documentazione sulla sicurezza',
+
+      // Sez. 11 — Processi automatizzati e profilazione
+      pdaPresenti: 'Processo decisionale automatizzato presente',
+      pdaDescrizione: 'Descrizione del processo automatizzato',
+      pdaLogica: 'Logica utilizzata',
+      pdaConseguenze: 'Conseguenze previste per l\u2019interessato',
+      pdaDiritti: 'Diritti dell\u2019interessato',
+      profPresente: 'Profilazione per marketing presente',
+      profDescrizione: 'Descrizione della profilazione',
+      profLogica: 'Logica della profilazione',
+      profBaseGiuridica: 'Base giuridica specifica della profilazione',
+
+      // Sez. 12 — DPIA e note
+      dpiaEffettuata: 'Valutazione d\u2019impatto effettuata',
+      dpiaRiferimento: 'Riferimento al documento di DPIA',
+      note: 'Note'
+    },
+    stati: {
+      vuoto: '\u2014',
+      nonPresente: 'Non presente',
+      nonApplicabile: 'Non applicabile',
+      si: 'S\u00ec',
+      no: 'No'
+    }
   }
 };

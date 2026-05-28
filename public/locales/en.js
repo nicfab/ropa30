@@ -101,11 +101,143 @@ export default {
       legittimo_interesse: 'Legitimate interest'
     },
 
-    // ---- Populated in Step B (not yet imported by app.js) ----
-    art9: {},
-    fonteDeiDati: {},
-    azioneFinale: {},
-    garanziaTrasferimento: {},
-    tipoRegistro: {}
+    art9: {
+      consenso_esplicito: 'Explicit consent',
+      obblighi_lavoro: 'Employment, social security and social protection obligations',
+      interesse_vitale: 'Vital interests of the data subject',
+      associazioni: 'Activities of a foundation, association or not-for-profit body',
+      dati_resi_pubblici: 'Data manifestly made public by the data subject',
+      giustizia: 'Establishment, exercise or defence of legal claims',
+      interesse_pubblico: 'Reasons of substantial public interest',
+      medicina_lavoro: 'Occupational medicine and assessment of working capacity',
+      sanita_pubblica: 'Public interest in the area of public health',
+      archiviazione: 'Archiving, scientific/historical research or statistical purposes'
+    },
+    fonteDeiDati: {
+      interessato: 'Directly from the data subject',
+      terzi: 'From third parties',
+      fonti_pubbliche: 'From publicly accessible sources',
+      misto: 'Mixed origin'
+    },
+    azioneFinale: {
+      cancellazione: 'Erasure',
+      anonimizzazione: 'Anonymisation',
+      archiviazione: 'Archiving',
+      cancellazione_o_anonimizzazione: 'Erasure or anonymisation'
+    },
+    garanziaTrasferimento: {
+      decisione_adeguatezza: 'Adequacy decision (Art. 45)',
+      scc: 'Standard contractual clauses \u2013 SCC (Art. 46)',
+      bcr: 'Binding corporate rules \u2013 BCR (Art. 47)',
+      codice_condotta: 'Approved code of conduct (Art. 46)',
+      certificazione: 'Approved certification mechanism (Art. 46)',
+      deroga_art49: 'Derogation for specific situations (Art. 49)',
+      da_verificare: 'To be verified'
+    },
+    tipoRegistro: {
+      titolare: 'Controller',
+      responsabile: 'Processor'
+    }
+  },
+  detail: {
+    sezioni: {
+      identificazione: 'Identification',
+      finalita: 'Purposes',
+      basiGiuridiche: 'Legal bases',
+      condannePenali: 'Criminal convictions and offences',
+      categorieInteressati: 'Categories of data subjects',
+      categorieDati: 'Categories of data',
+      destinatari: 'Recipients',
+      trasferimenti: 'Transfers to third countries',
+      conservazione: 'Retention',
+      sicurezza: 'Security measures',
+      automatizzati: 'Automated processing and profiling',
+      dpiaNote: 'Impact assessment and notes'
+    },
+    campi: {
+      // Sec. 1 — Identification
+      nome: 'Processing activity name',
+      descrizione: 'Description',
+      tipoRegistro: 'Record type',
+      dataInizioTrattamento: 'Processing start date',
+      macroStruttura: 'Macro-structure',
+      articolazione: 'Unit / Office',
+      codiceUtente: 'Internal code',
+
+      // Sec. 2 — Purposes
+      finalita: 'Purposes of the processing',
+
+      // Sec. 3 — Legal bases
+      art6: 'Legal basis (Art. 6)',
+      dettagliArt6: 'Legal basis details',
+      liDescrizione: 'Description of the legitimate interest',
+      liGaranzie: 'Safeguards adopted',
+      liBilanciamentoEffettuato: 'Balancing test carried out',
+      liBilanciamentoRichiesto: 'Balancing test required',
+      liRiferimento: 'Reference to the balancing test',
+      art9: 'Conditions for special categories (Art. 9)',
+      dettagliArt9: 'Details on Art. 9 conditions',
+
+      // Sec. 4 — Criminal convictions and offences (Art. 10)
+      condanneePresenti: 'Processing of Art. 10 data',
+      condanneNormativa: 'Law authorising the processing',
+
+      // Sec. 5 — Categories of data subjects
+      categorieInteressati: 'Categories of data subjects',
+
+      // Sec. 6 — Categories of data
+      categorieDati: 'Categories of personal data',
+      fonteDeiDati: 'Source of the data',
+      fonteDeiDatiDettagli: 'Details on the data source',
+
+      // Sec. 7 — Recipients
+      categorieDestinatari: 'Categories of recipients',
+      responsabiliEsterni: 'Processors (external)',
+      reDenominazione: 'Name',
+      reSede: 'Registered office',
+      reFinalita: 'Purpose of the entrusted processing',
+      reAccordoArt28: 'Art. 28 agreement in place',
+      reRiferimentoContratto: 'Contract reference',
+      reNotaRuolo: 'Note on the privacy role',
+
+      // Sec. 8 — Transfers to third countries
+      trasferimentiExtraUE: 'Transfers to third countries',
+      trPaese: 'Country / International organisation',
+      trGaranzia: 'Safeguard applied',
+      trRiferimento: 'Reference to documentation',
+
+      // Sec. 9 — Retention
+      conservazionePeriodo: 'Retention period',
+      conservazioneCriteri: 'Criteria for determining the period',
+      azioneFinale: 'Action at the end of retention',
+
+      // Sec. 10 — Security measures
+      misureTecniche: 'Technical measures',
+      misureOrganizzative: 'Organisational measures',
+      sicurezzaRinvio: 'Reference to security documentation',
+
+      // Sec. 11 — Automated processing and profiling
+      pdaPresenti: 'Automated decision-making present',
+      pdaDescrizione: 'Description of the automated process',
+      pdaLogica: 'Logic involved',
+      pdaConseguenze: 'Envisaged consequences for the data subject',
+      pdaDiritti: 'Rights of the data subject',
+      profPresente: 'Marketing profiling present',
+      profDescrizione: 'Description of the profiling',
+      profLogica: 'Logic of the profiling',
+      profBaseGiuridica: 'Specific legal basis for profiling',
+
+      // Sec. 12 — DPIA and notes
+      dpiaEffettuata: 'Data protection impact assessment carried out',
+      dpiaRiferimento: 'Reference to the DPIA document',
+      note: 'Notes'
+    },
+    stati: {
+      vuoto: '\u2014',
+      nonPresente: 'Not present',
+      nonApplicabile: 'Not applicable',
+      si: 'Yes',
+      no: 'No'
+    }
   }
 };
