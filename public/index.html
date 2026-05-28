@@ -31,6 +31,7 @@
 
     <meta name="theme-color" content="#1a4d6e" />
     <link rel="stylesheet" href="css/ropa30.css" />
+    <link rel="icon" type="image/png" href="icons/favicon.png" />
 
     <script src="js/lib/dexie.min.js" defer></script>
     <script src="js/app.js" type="module"></script>
@@ -584,10 +585,13 @@
     <footer class="border-t border-brand-200 bg-white">
       <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-brand-700
                   flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <div>
-          <span x-text="footerAuthor">Realizzato da</span>
+        <div class="flex items-center gap-2">
           <a href="https://nicfab.eu" rel="noopener noreferrer"
-             class="font-semibold text-brand-800 hover:underline">Nicola Fabiano</a>
+             class="inline-flex items-center gap-2 font-semibold text-brand-800 hover:underline">
+            <img src="icons/nicfab-logo.png" alt="nicfab" width="61" height="28"
+                 class="h-7 w-auto" />
+            <span><span x-text="footerAuthor">Realizzato da</span> Nicola Fabiano</span>
+          </a>
         </div>
         <div x-text="footerLicense">Rilasciato sotto AGPL-3.0-or-later</div>
       </div>
