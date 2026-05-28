@@ -71,6 +71,8 @@ function ropa30App() {
     isExportMenuOpen: false,      // export dialog visibility
     exportMessage: '',            // localized export outcome
     exportError: false,
+    // ---- PWA ----
+    storagePersistente: false,    // navigator.storage persisted state (informational)
     trattamentiFiltrati: [],
     queryRicerca: '',
     nuovoTrattamentoId: null,
@@ -139,6 +141,17 @@ function ropa30App() {
 
         await this._assicuraCatalogo();
         await this.caricaTrattamenti();
+
+        // Storage persistence: ask the browser not to evict our IndexedDB data.
+        // Best-effort, non-blocking, no user-facing prompt.
+        try {
+          if (navigator.storage && navigator.storage.persist) {
+            const gia = await navigator.storage.persisted();
+            this.storagePersistente = gia || await navigator.storage.persist();
+          }
+        } catch (e) {
+          console.warn('[ropa30] storage.persist non disponibile:', e);
+        }
 
         this.view = (this.denominazione.trim() === '') ? 'onboarding' : 'lista';
 
@@ -839,3 +852,15 @@ console.info(
   'color: #1a4d6e; font-weight: bold;',
   'color: inherit;'
 );
+
+// ============================================================================
+// PWA: register the service worker for offline support.
+// ============================================================================
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').then(
+      (reg) => console.info('[ropa30] service worker registered, scope:', reg.scope),
+      (err) => console.warn('[ropa30] service worker registration failed:', err)
+    );
+  });
+}
