@@ -322,8 +322,14 @@
                 <template x-for="tr in trattamentiFiltrati" x-bind:key="tr.id">
                   <li>
                     <article class="group rounded-xl border border-brand-200 bg-white p-4 sm:p-5 shadow-sm
-                                    transition hover:shadow-md hover:border-brand-300"
-                             x-bind:class="tr.cssEvidenzia">
+                                    transition hover:shadow-md hover:border-brand-300 cursor-pointer"
+                             x-bind:class="tr.cssEvidenzia"
+                             role="button"
+                             tabindex="0"
+                             x-bind:data-id="tr.id"
+                             x-on:click="apriDettaglio"
+                             x-on:keydown.enter="apriDettaglio"
+                             x-on:keydown.space.prevent="apriDettaglio">
                       <div class="flex items-start gap-4">
                         <span class="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center
                                      rounded-lg bg-brand-100 text-brand-700">
