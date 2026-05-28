@@ -222,16 +222,31 @@
 
             <fieldset class="mt-6 border-0 p-0 m-0">
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneRegistro"></legend>
+              <p class="text-sm text-brand-600 mb-4" x-text="L.hintLingueRegistro"></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="f-lingua" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblLingua"></label>
-                  <select id="f-lingua" x-model="lingua"
-                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
-                    <option value="it">Italiano</option>
-                    <option value="en">English</option>
-                  </select>
+                  <span class="block text-sm font-medium text-brand-800 mb-2" x-text="L.lblLingueRegistro"></span>
+                  <div class="flex items-center gap-6">
+                    <label class="inline-flex items-center gap-2 text-brand-800">
+                      <input type="checkbox" x-model="regIt" x-on:change="validaLingueRegistro" class="h-4 w-4 accent-brand-700" />
+                      <span>Italiano</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 text-brand-800">
+                      <input type="checkbox" x-model="regEn" x-on:change="validaLingueRegistro" class="h-4 w-4 accent-brand-700" />
+                      <span>English</span>
+                    </label>
+                  </div>
+                  <p class="mt-2 text-sm text-danger-600" x-show="nessunaLinguaRegistro" x-text="L.erroreNessunaLingua"></p>
                 </div>
                 <div>
+                  <label for="f-principale" class="block text-sm font-medium text-brand-800 mb-2" x-text="L.lblLinguaPrincipale"></label>
+                  <select id="f-principale" x-model="regPrincipale"
+                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                    <option value="it" x-show="mostraPrincipaleIt">Italiano</option>
+                    <option value="en" x-show="mostraPrincipaleEn">English</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
                   <span class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDataCreazione"></span>
                   <p class="px-3 py-2 text-brand-700" x-text="dataCreazioneVisuale">—</p>
                 </div>

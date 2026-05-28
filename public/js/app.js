@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
  * Alpine.js component for ropa30 (CSP-safe build, @alpinejs/csp).
- * Settings schema v2: uiLanguage (display) + registro {lingue, linguaPrincipale}.
- * Multilingual reading: active-language text; strict (no silent fallback) for
- * lists; attenuated fallback + "missing translation" badge for the title only.
+ * Settings schema v2: uiLanguage (display, persisted) +
+ * registro {lingue, linguaPrincipale} (enabled register languages + primary).
+ * UI language and register languages are INDEPENDENT (architecture α).
  */
 
 import {
@@ -63,7 +63,11 @@ function ropa30App() {
       lblDpoNominato: '\u00c8 stato nominato un DPO',
       lblDpoNome: 'Nome / denominazione del DPO',
       lblDpoEmail: 'Email del DPO', lblDpoPec: 'PEC del DPO',
-      lblLingua: 'Lingua del registro', lblDataCreazione: 'Data di creazione',
+      lblLingueRegistro: 'Lingue del registro',
+      lblLinguaPrincipale: 'Lingua principale',
+      lblDataCreazione: 'Data di creazione',
+      hintLingueRegistro: 'Scegli in quali lingue redigere il registro. Puoi abilitarne una o entrambe; la lingua principale \u00e8 quella usata per impostazione predefinita.',
+      erroreNessunaLingua: 'Seleziona almeno una lingua per il registro.',
       onbObbligatorio: '* Campo obbligatorio. Indica inoltre almeno una email o una PEC del titolare.',
       onbErrore: 'Si \u00e8 verificato un errore durante il salvataggio. Riprova.',
       btnSalva: 'Salva e continua',
@@ -123,7 +127,11 @@ function ropa30App() {
       lblDpoNominato: 'A DPO has been appointed',
       lblDpoNome: 'DPO name',
       lblDpoEmail: 'DPO email', lblDpoPec: 'DPO certified email (PEC)',
-      lblLingua: 'Register language', lblDataCreazione: 'Creation date',
+      lblLingueRegistro: 'Register languages',
+      lblLinguaPrincipale: 'Primary language',
+      lblDataCreazione: 'Creation date',
+      hintLingueRegistro: 'Choose which languages to draft the register in. Enable one or both; the primary language is used by default.',
+      erroreNessunaLingua: 'Select at least one language for the register.',
       onbObbligatorio: '* Required. Also provide at least an email or a certified email (PEC) for the controller.',
       onbErrore: 'An error occurred while saving. Please try again.',
       btnSalva: 'Save and continue',
@@ -171,7 +179,11 @@ function ropa30App() {
     via: '', civico: '', cap: '', citta: '', provincia: '', paese: 'IT',
     email: '', pec: '', sitoWeb: '',
     dpoNominato: false, dpoNome: '', dpoEmail: '', dpoPec: '',
-    lingua: 'it',
+
+    // Register languages (M5): enabled set via checkboxes + primary.
+    regIt: true,
+    regEn: false,
+    regPrincipale: 'it',
 
     // List
     _rawTrattamenti: [],
@@ -195,7 +207,7 @@ function ropa30App() {
       try {
         const settings = await getSettings();
         const lng = (settings.uiLanguage === 'en' || settings.uiLanguage === 'it') ? settings.uiLanguage : 'it';
-        this.lang = lng; this.lingua = lng;
+        this.lang = lng;
         document.documentElement.setAttribute('lang', lng);
         this.settingsCreatedAt = (settings.metadata && settings.metadata.createdAt) || '';
 
@@ -213,6 +225,15 @@ function ropa30App() {
         const d = settings.dpo || {};
         this.dpoNominato = !!d.nominato;
         this.dpoNome = d.nome || ''; this.dpoEmail = d.email || ''; this.dpoPec = d.pec || '';
+
+        // Register languages from settings.registro.
+        const reg = settings.registro || { lingue: ['it'], linguaPrincipale: 'it' };
+        const lingue = Array.isArray(reg.lingue) && reg.lingue.length ? reg.lingue : ['it'];
+        this.regIt = lingue.indexOf('it') !== -1;
+        this.regEn = lingue.indexOf('en') !== -1;
+        if (!this.regIt && !this.regEn) this.regIt = true;
+        const princ = (reg.linguaPrincipale === 'en' || reg.linguaPrincipale === 'it') ? reg.linguaPrincipale : 'it';
+        this.regPrincipale = (this[princ === 'en' ? 'regEn' : 'regIt']) ? princ : (this.regIt ? 'it' : 'en');
 
         await this._assicuraCatalogo();
         await this.caricaTrattamenti();
@@ -255,11 +276,17 @@ function ropa30App() {
     get isItalianSelected() { return this.lang === 'it'; },
     get isEnglishSelected() { return this.lang === 'en'; },
 
+    // ---- Register language flags ----
+    get nessunaLinguaRegistro() { return !this.regIt && !this.regEn; },
+    get mostraPrincipaleIt() { return this.regIt; },
+    get mostraPrincipaleEn() { return this.regEn; },
+
     // ---- Onboarding validation ----
     get nonSalvabile() {
       const hasDen = this.denominazione.trim().length > 0;
       const hasCont = this.email.trim().length > 0 || this.pec.trim().length > 0;
-      return !(hasDen && hasCont);
+      const hasLingua = this.regIt || this.regEn;
+      return !(hasDen && hasCont && hasLingua);
     },
     get salvaDisabilitato() { return this.nonSalvabile || this.saving; },
     get dataCreazioneVisuale() {
@@ -272,15 +299,25 @@ function ropa30App() {
       } catch (e) { return this.settingsCreatedAt; }
     },
 
+    // Keep the primary language valid w.r.t. enabled languages (invariant).
+    validaLingueRegistro() {
+      if (!this.regIt && !this.regEn) {
+        // Don't allow zero languages: the just-unchecked one cannot be known
+        // here without args, so we restore the primary's language as enabled.
+        if (this.regPrincipale === 'en') this.regEn = true; else this.regIt = true;
+        return;
+      }
+      if (this.regPrincipale === 'it' && !this.regIt) this.regPrincipale = 'en';
+      if (this.regPrincipale === 'en' && !this.regEn) this.regPrincipale = 'it';
+    },
+
     // ---- Localization helpers ----
-    // Active language only; '' if missing (NO silent fallback).
     _locStrict(obj) {
       if (!obj) return '';
       if (typeof obj === 'string') return obj;
       if (typeof obj === 'object') return obj[this.lang] || '';
       return String(obj);
     },
-    // Returns {testo, mancante, fallback} for the title.
     _locConFallback(obj) {
       if (!obj) return { testo: '', mancante: false, fallback: false };
       if (typeof obj === 'string') return { testo: obj, mancante: false, fallback: false };
@@ -295,7 +332,6 @@ function ropa30App() {
       if (s.length <= n) return s;
       return s.slice(0, n).replace(/\s+\S*$/, '') + '\u2026';
     },
-    // For template catalog (templates are always fully bilingual).
     _loc(obj) {
       if (!obj) return '';
       if (typeof obj === 'string') return obj;
@@ -361,23 +397,19 @@ function ropa30App() {
       const art6map = ART6_LABEL[this.lang] || ART6_LABEL.it;
       const catmap = CATEGORIA_LABEL[this.lang] || CATEGORIA_LABEL.it;
       this.trattamenti = records.map((r) => {
-        // Title: attenuated fallback + badge if missing in active language.
         const tit = this._locConFallback(r.nome);
         const nome = tit.testo || this.L.sennaNome;
         const nomeMancante = tit.mancante;
-        // The missing language is the active one (fallback came from the other).
         const badgeMancante = nomeMancante
           ? (this.lang === 'en' ? this.L.mancaEN : this.L.mancaIT)
           : '';
 
-        // Purposes: strict (no silent fallback) -> '—' if empty in active lang.
         const fin = Array.isArray(r.finalita)
           ? r.finalita.map((f) => this._locStrict(f)).filter(Boolean) : [];
         let finalitaSintesi = fin.slice(0, 2).join('; ');
         if (fin.length > 2) finalitaSintesi += '\u2026';
         if (!finalitaSintesi) finalitaSintesi = '\u2014';
 
-        // Legal basis: enum codes -> translated labels (always available).
         const art6 = (r.baseGiuridica && Array.isArray(r.baseGiuridica.art6)) ? r.baseGiuridica.art6 : [];
         const basi = art6.map((k) => art6map[k] || k);
         const basiSintesi = basi.length ? basi.join(', ') : '\u2014';
@@ -386,7 +418,6 @@ function ropa30App() {
         const categoriaLabel = cat ? (catmap[cat] || cat) : '';
 
         const evidenziato = !!this.nuovoTrattamentoId && r.id === this.nuovoTrattamentoId;
-        // Search haystack: both languages, so search works regardless of active lang.
         const blob = (
           (r.nome ? (r.nome.it || '') + ' ' + (r.nome.en || '') : '') + ' ' +
           (Array.isArray(r.finalita) ? r.finalita.map((f) => (f.it || '') + ' ' + (f.en || '')).join(' ') : '') + ' ' +
@@ -394,14 +425,9 @@ function ropa30App() {
         ).toLowerCase();
 
         return {
-          id: r.id,
-          nome,
-          nomeMancante,
-          badgeMancante,
+          id: r.id, nome, nomeMancante, badgeMancante,
           cssNome: nomeMancante ? 'italic text-brand-400' : '',
-          finalitaSintesi,
-          basiSintesi,
-          categoriaLabel,
+          finalitaSintesi, basiSintesi, categoriaLabel,
           mostraCategoria: categoriaLabel.length > 0,
           cssEvidenzia: evidenziato ? 'ring-2 ring-brand-400' : '',
           _blob: blob
@@ -444,16 +470,23 @@ function ropa30App() {
     vaiAOnboarding() { this.erroreSalvataggio = false; this.view = 'onboarding'; },
     vaiAllaLista()   { this.view = 'lista'; },
 
-    setLang(event) {
+    // UI language switch: change display AND persist uiLanguage (independent
+    // from register languages — architecture α).
+    async setLang(event) {
       const newLang = event.target.value;
-      if (newLang === 'it' || newLang === 'en') {
-        this.lang = newLang;
-        document.documentElement.setAttribute('lang', newLang);
+      if (newLang !== 'it' && newLang !== 'en') return;
+      this.lang = newLang;
+      document.documentElement.setAttribute('lang', newLang);
+      try {
+        await updateSettings({ uiLanguage: newLang });
+      } catch (err) {
+        console.error('[ropa30] persist uiLanguage error:', err);
       }
     },
 
     async salvaOnboarding() {
       if (this.nonSalvabile || this.saving) return;
+      this.validaLingueRegistro();
       this.saving = true; this.erroreSalvataggio = false;
       try {
         const current = await getSettings();
@@ -479,15 +512,19 @@ function ropa30App() {
           email: this.dpoNominato ? this.dpoEmail.trim() : '',
           pec: this.dpoNominato ? this.dpoPec.trim() : ''
         };
-        const lingua = this.lingua === 'en' ? 'en' : 'it';
-        // Settings v2: uiLanguage + monolingual register (M5 will add 2 languages).
+
+        const lingue = [];
+        if (this.regIt) lingue.push('it');
+        if (this.regEn) lingue.push('en');
+        if (lingue.length === 0) lingue.push('it');
+        let principale = this.regPrincipale;
+        if (lingue.indexOf(principale) === -1) principale = lingue[0];
+
         await updateSettings({
           titolare, dpo,
-          uiLanguage: lingua,
-          registro: { lingue: [lingua], linguaPrincipale: lingua }
+          registro: { lingue, linguaPrincipale: principale }
         });
-        this.lang = lingua;
-        document.documentElement.setAttribute('lang', lingua);
+
         this.view = 'lista';
       } catch (err) {
         console.error('[ropa30] salvaOnboarding() error:', err);
