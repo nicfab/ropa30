@@ -13,6 +13,11 @@ e della sicurezza.
 
 🇬🇧 [Read this page in English](README.md)
 
+> **Policy del repository.** Lo sviluppo primario avviene su **Codeberg**
+> ([codeberg.org/nicfab/ropa30](https://codeberg.org/nicfab/ropa30)).
+> Questo repository GitHub è un mirror in sola lettura, fornito per favorire la
+> reperibilità. Apri issue e pull request su Codeberg.
+
 ---
 
 ## Perché ropa30?

@@ -12,6 +12,11 @@ background — while remaining rigorous from a legal and security standpoint.
 
 🇮🇹 [Leggi questa pagina in italiano](README.it.md)
 
+> **Repository policy.** Primary development happens on **Codeberg**
+> ([codeberg.org/nicfab/ropa30](https://codeberg.org/nicfab/ropa30)).
+> This GitHub repository is a read-only mirror provided for discoverability.
+> Please open issues and pull requests on Codeberg.
+
 ---
 
 ## Why ropa30?
