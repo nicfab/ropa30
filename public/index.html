@@ -16,6 +16,53 @@
           content="Il registro delle attività di trattamento ex art. 30 GDPR, semplice e gratuito. Applicazione web locale: i tuoi dati non lasciano mai il tuo dispositivo." />
     <meta name="author" content="Nicola Fabiano" />
     <meta name="license" content="AGPL-3.0-or-later" />
+    <!-- Canonical + SEO -->
+    <link rel="canonical" href="https://ropa30.eu/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (static EN; social scrapers don't run JS) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ropa30" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://ropa30.eu/" />
+    <meta property="og:title" content="ropa30 — The GDPR Article 30 register, simplified." />
+    <meta property="og:description" content="A free, local-first, open-source web app to keep your GDPR Article 30 Record of Processing Activities. Your data never leaves your browser." />
+    <meta property="og:image" content="https://ropa30.eu/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ropa30 — The GDPR Article 30 register, simplified." />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ropa30 — The GDPR Article 30 register, simplified." />
+    <meta name="twitter:description" content="A free, local-first, open-source web app to keep your GDPR Article 30 Record of Processing Activities. Your data never leaves your browser." />
+    <meta name="twitter:image" content="https://ropa30.eu/og-image.jpg" />
+    <meta name="twitter:image:alt" content="ropa30 — The GDPR Article 30 register, simplified." />
+    <!-- Structured data (JSON-LD): describes ropa30 to search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ropa30",
+      "url": "https://ropa30.eu/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web browser",
+      "description": "A free, local-first, open-source web app to keep your GDPR Article 30 Record of Processing Activities. Your data never leaves your browser.",
+      "inLanguage": ["en", "it"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+      "author": {
+        "@type": "Person",
+        "name": "Nicola Fabiano",
+        "url": "https://nicfab.eu"
+      }
+    }
+    </script>
 
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
