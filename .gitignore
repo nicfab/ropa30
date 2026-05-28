@@ -144,3 +144,10 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
+
+# ---> ropa30 project-specific
+# Backup locali dei template e di altri file (creati durante l'editing)
+*.backup-*
+
+# File temporanei di lavoro
+/tmp/ropa30_*.json

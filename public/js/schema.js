@@ -102,7 +102,8 @@ export const FONTE_DATI = {
 export const AZIONE_FINALE_DATI = {
   CANCELLAZIONE:    'cancellazione',
   ANONIMIZZAZIONE:  'anonimizzazione',
-  ARCHIVIAZIONE:    'archiviazione'
+  ARCHIVIAZIONE:    'archiviazione',
+  CANCELLAZIONE_O_ANONIMIZZAZIONE: 'cancellazione_o_anonimizzazione'
 };
 
 // ============================================================================
@@ -245,7 +246,10 @@ export function createDefaultProcessingActivity({ id }) {
     // Each entry has shape:
     // {
     //   denominazione, sede, finalita,
-    //   accordoArt28Presente: false, riferimentoContratto
+    //   accordoArt28Presente: false, riferimentoContratto,
+    //   notaRuoloPrivacy: {it,en}  (opzionale: per soggetti il cui ruolo
+    //   privacy va verificato — responsabile ex art. 28 vs titolare autonomo,
+    //   es. payment provider, corrieri, commercialisti)
     // }
 
     // ---- Art. 30(1)(e) — Trasferimenti extra-UE ----

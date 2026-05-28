@@ -930,6 +930,616 @@
           "en": "Relevant legal references: GDPR Arts. 5, 6, 13, 22, 35; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-octies, 2-ter; Workers' Statute (l. 300/1970) Art. 4; art. 615-bis Italian Criminal Code (unlawful interference with private life); EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); Italian Garante provision of 8 April 2010 on video surveillance (within the limits of GDPR compatibility); Garante FAQ on video surveillance; Italian Garante provision of 27 November 2008 on system administrators; Italian Garante provision of 11 October 2018 on the list of processing subject to DPIA (doc. web 9058979); national rules on the moratorium on facial recognition systems, introduced by d.l. 139/2021 and extended until 31 December 2027 (unless further amendments). Note: any non-functioning or dummy cameras must be assessed separately, as they may still affect data subjects' rights and employment relationships, even if they do not involve processing of personal data when they capture no images."
         }
       }
+    },
+    {
+      "templateId": "tpl-it-003-clientela-b2b",
+      "official": true,
+      "categoria": "clientela",
+      "icon": "🏢",
+      "nome": {
+        "it": "Gestione clientela B2B",
+        "en": "B2B customer management"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati dei referenti e contatti di clienti che sono imprese, professionisti o enti, per l'esecuzione del rapporto contrattuale e la gestione commerciale. I dati trattati sono tipicamente quelli di persone fisiche che operano per conto del cliente (referenti, responsabili acquisti, amministratori).",
+        "en": "Processing of data of contacts and representatives of customers that are companies, professionals or entities, for the performance of the contractual relationship and commercial management. The data processed is typically that of natural persons acting on behalf of the customer (contacts, purchasing managers, administrators)."
+      },
+      "noteTemplate": {
+        "it": "Anche nel B2B i dati dei referenti (persone fisiche) sono dati personali e ricadono nel GDPR. La base giuridica per l'esecuzione del contratto è l'art. 6(1)(b) se il referente è esso stesso parte, oppure il legittimo interesse (art. 6(1)(f)) per la gestione dei contatti del cliente-azienda. Per eventuale marketing B2B verso i referenti, distinguere tra comunicazioni strettamente funzionali al rapporto commerciale in essere e comunicazioni promozionali autonome, che richiedono base giuridica separata e rispetto dell'art. 130 Codice privacy. I dati della società (P.IVA, ragione sociale) di per sé non sono dati personali, ma quelli delle persone fisiche di riferimento lo sono; per le ditte individuali la P.IVA può essere riconducibile alla persona fisica.",
+        "en": "Even in B2B, data of contacts (natural persons) are personal data and fall under the GDPR. The legal basis for contract performance is Art. 6(1)(b) if the contact is themselves a party, or legitimate interest (Art. 6(1)(f)) for managing the customer-company's contacts. For any B2B marketing toward contacts, distinguish between communications strictly functional to the existing commercial relationship and autonomous promotional communications, which require a separate legal basis and compliance with Italian Privacy Code Art. 130. Company data (VAT number, business name) are not personal data per se, but those of the reference natural persons are; for sole proprietors the VAT number may be traceable to the natural person."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "referente_parte",
+            "label": "Cliente persona fisica / ditta individuale (referente = parte)",
+            "art6": "contratto"
+          },
+          {
+            "id": "referente_societa",
+            "label": "Cliente società (referenti = contatti aziendali)",
+            "art6": "legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "referente_parte",
+            "label": "Individual customer / sole proprietor (contact = party)",
+            "art6": "contratto"
+          },
+          {
+            "id": "referente_societa",
+            "label": "Company customer (contacts = business representatives)",
+            "art6": "legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione clientela B2B",
+          "en": "B2B customer management"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali dei referenti, contatti e rappresentanti di clienti business (imprese, professionisti, enti) per la gestione del rapporto contrattuale, commerciale e amministrativo.",
+          "en": "Processing of personal data of contacts, representatives and reference persons of business customers (companies, professionals, entities) for the management of the contractual, commercial and administrative relationship."
+        },
+        "finalita": {
+          "it": [
+            "Esecuzione del contratto di fornitura di beni/servizi",
+            "Gestione amministrativa e contabile del rapporto",
+            "Comunicazioni operative connesse all'esecuzione del contratto",
+            "Gestione dell'assistenza e del supporto post-vendita"
+          ],
+          "en": [
+            "Performance of the goods/services supply contract",
+            "Administrative and accounting management of the relationship",
+            "Operational communications connected to contract performance",
+            "Management of after-sales assistance and support"
+          ]
+        },
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "legittimo_interesse",
+            "obbligo_legale"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR per l'esecuzione del contratto, quando il referente è parte contrattuale (es. ditta individuale, professionista). Art. 6(1)(f) GDPR (legittimo interesse) per il trattamento dei dati dei referenti/contatti di clienti che sono persone giuridiche, ai fini della gestione operativa del rapporto. Art. 6(1)(c) GDPR per gli obblighi fiscali e contabili connessi.",
+            "en": "GDPR Art. 6(1)(b) for contract performance, when the contact is a contractual party (e.g. sole proprietor, professional). GDPR Art. 6(1)(f) (legitimate interest) for processing data of contacts/representatives of customers that are legal entities, for the operational management of the relationship. GDPR Art. 6(1)(c) for connected tax and accounting obligations."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Compilare se si tratta di dati di referenti di clienti-società. Legittimo interesse del Titolare alla gestione operativa e commerciale del rapporto con il cliente business, tramite i suoi referenti.",
+              "en": "Complete if processing data of contacts of company-customers. Legitimate interest of the Controller in the operational and commercial management of the relationship with the business customer, through its contacts."
+            },
+            "garanzieAdottate": {
+              "it": "Trattamento limitato ai dati di contatto professionali necessari; informativa fornita ai referenti; possibilità di aggiornamento, cancellazione/sostituzione del referente e opposizione nei limiti applicabili.",
+              "en": "Processing limited to necessary professional contact data; information notice provided to contacts; ability to update, delete/replace the contact and object within applicable limits."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "categorieInteressati": {
+          "it": [
+            "Referenti e contatti dei clienti business (responsabili acquisti, amministratori, referenti tecnici)",
+            "Titolari di ditte individuali e liberi professionisti clienti",
+            "Legali rappresentanti delle società clienti"
+          ],
+          "en": [
+            "Contacts and representatives of business customers (purchasing managers, administrators, technical contacts)",
+            "Sole proprietors and freelance professionals who are customers",
+            "Legal representatives of customer companies"
+          ]
+        },
+        "categorieDati": {
+          "it": [
+            "Dati identificativi del referente (nome, cognome, ruolo aziendale)",
+            "Dati di contatto professionali (email, telefono aziendale)",
+            "Eventuali dati relativi a poteri di firma, deleghe, procure o ruoli autorizzativi del referente",
+            "Dati relativi al rapporto contrattuale e commerciale",
+            "Dati di fatturazione e pagamento (per ditte individuali/professionisti: anche fiscali)"
+          ],
+          "en": [
+            "Identification data of the contact (name, surname, business role)",
+            "Professional contact data (email, business phone)",
+            "Any data relating to signing powers, delegations, powers of attorney or authorization roles of the contact",
+            "Data relating to the contractual and commercial relationship",
+            "Billing and payment data (for sole proprietors/professionals: also tax data)"
+          ]
+        },
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti direttamente dal cliente o dai suoi referenti; dati raccolti nel corso del rapporto commerciale; dati da fonti pubbliche (registro imprese, siti web aziendali).",
+          "en": "Data provided directly by the customer or its contacts; data collected during the commercial relationship; data from public sources (business register, company websites)."
+        },
+        "categorieDestinatari": {
+          "it": [
+            "Personale interno autorizzato (ufficio commerciale, amministrazione, assistenza)",
+            "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
+            "Fornitori IT di CRM/gestionale (responsabili del trattamento)",
+            "Banche e istituti di pagamento",
+            "Eventuali corrieri/spedizionieri per la consegna (di norma autonomi titolari o responsabili, secondo il servizio reso)"
+          ],
+          "en": [
+            "Authorized internal personnel (sales, administration, support)",
+            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
+            "CRM/management software IT providers (data processors)",
+            "Banks and payment institutions",
+            "Couriers/shippers for delivery, if any (usually independent controllers or processors, depending on the service provided)"
+          ]
+        },
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del CRM/gestionale, se in cloud]",
+              "en": "[Enter the name of the CRM/management software provider, if cloud-based]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura del servizio di gestione clienti (CRM) e amministrazione commerciale",
+              "en": "Provision of customer management (CRM) and commercial administration service"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA]",
+              "en": "[Reference to the DPA]"
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Verificare in base ai fornitori — molti CRM hanno sub-responsabili extra-UE]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "Verificare la presenza di sub-responsabili extra-UE nei fornitori CRM/cloud. Se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Verify the presence of non-EU sub-processors in CRM/cloud providers. If present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del rapporto contrattuale + termini di prescrizione e obblighi fiscali (di regola 10 anni ex art. 2220 c.c.).",
+            "en": "For the duration of the contractual relationship + prescription terms and tax obligations (as a rule 10 years under Italian Civil Code Art. 2220)."
+          },
+          "criteri": {
+            "it": "I dati contrattuali e fiscali sono conservati 10 anni ex art. 2220 c.c. I dati di contatto dei referenti sono conservati per la durata del rapporto e aggiornati periodicamente; cancellati, anonimizzati o sostituiti al termine del rapporto, salvo necessità di tutela legale.",
+            "en": "Contractual and tax data are kept for 10 years under Italian Civil Code Art. 2220. Contact data of representatives are kept for the duration of the relationship and periodically updated; deleted, anonymized or replaced at the end of the relationship, except for legal protection needs."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": {
+            "it": [
+              "Controllo accessi al CRM/gestionale con autenticazione forte",
+              "Cifratura delle connessioni (HTTPS/TLS)",
+              "Backup periodici con cifratura at-rest",
+              "Profilazione dei privilegi di accesso per ruolo"
+            ],
+            "en": [
+              "Access control to CRM/management software with strong authentication",
+              "Encryption of connections (HTTPS/TLS)",
+              "Periodic backups with at-rest encryption",
+              "Access privilege profiling by role"
+            ]
+          },
+          "organizzative": {
+            "it": [
+              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "Procedura per la gestione delle richieste di esercizio dei diritti",
+              "Aggiornamento periodico dei dati di contatto",
+              "Istruzioni ai fornitori IT designati responsabili"
+            ],
+            "en": [
+              "Designation of authorized operators (under GDPR Art. 29)",
+              "Procedure for handling rights requests",
+              "Periodic update of contact data",
+              "Instructions to IT providers designated as processors"
+            ]
+          },
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sulla protezione dei dati e ai DPA con i fornitori]",
+            "en": "[Refer to internal data protection policies and DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "",
+            "en": ""
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Compilare se si effettua profilazione dei referenti per finalità commerciali/marketing. Per il marketing B2B verso i referenti, valutare la base giuridica appropriata (consenso o soft opt-in ex art. 130 Codice privacy).",
+            "en": "Complete if profiling contacts for commercial/marketing purposes. For B2B marketing toward contacts, assess the appropriate legal basis (consent or soft opt-in under Italian Privacy Code Art. 130)."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 13, 14; Codice privacy (d.lgs. 196/2003) art. 130 (per marketing); art. 2220 c.c. (conservazione documenti contabili).",
+          "en": "Relevant legal references: GDPR Arts. 6, 13, 14; Italian Privacy Code (d.lgs. 196/2003) Art. 130 (for marketing); Italian Civil Code Art. 2220 (retention of accounting documents)."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-004-clientela-b2c",
+      "official": true,
+      "categoria": "clientela",
+      "icon": "🛍️",
+      "nome": {
+        "it": "Gestione clientela B2C",
+        "en": "B2C customer management"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati di clienti che sono persone fisiche (consumatori), per l'esecuzione del contratto di vendita/servizio, gli adempimenti fiscali e l'eventuale assistenza. Distinto dal marketing, che richiede base giuridica autonoma (vedi template Newsletter).",
+        "en": "Processing of data of customers who are natural persons (consumers), for the performance of the sales/service contract, tax obligations and any assistance. Distinct from marketing, which requires an autonomous legal basis (see Newsletter template)."
+      },
+      "noteTemplate": {
+        "it": "Il cliente consumatore è direttamente l'interessato. La base giuridica primaria è l'esecuzione del contratto (art. 6(1)(b)). ATTENZIONE: il marketing verso i clienti NON è coperto dalla base contrattuale e va gestito separatamente (consenso o soft opt-in ex art. 130 Codice privacy — vedi template Newsletter). Per l'e-commerce, valuta anche cookie e tracciamento (template separato). Se tratti dati di minori, applica cautele specifiche, distinguendo tra servizi della società dell'informazione basati sul consenso ex art. 8 GDPR e rapporti contrattuali soggetti anche alle regole civilistiche sulla capacità del minore.",
+        "en": "The consumer customer is directly the data subject. The primary legal basis is contract performance (Art. 6(1)(b)). WARNING: marketing toward customers is NOT covered by the contractual basis and must be managed separately (consent or soft opt-in under Italian Privacy Code Art. 130 — see Newsletter template). For e-commerce, also assess cookies and tracking (separate template). If processing minors' data, apply specific safeguards, distinguishing between information-society services based on consent under GDPR Art. 8 and contractual relationships also subject to civil-law rules on the minor's capacity."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "vendita_diretta",
+            "label": "Vendita diretta in negozio/sede",
+            "art6": "contratto"
+          },
+          {
+            "id": "ecommerce",
+            "label": "Vendita online / e-commerce",
+            "art6": "contratto"
+          }
+        ],
+        "en": [
+          {
+            "id": "vendita_diretta",
+            "label": "Direct in-store/on-site sale",
+            "art6": "contratto"
+          },
+          {
+            "id": "ecommerce",
+            "label": "Online sale / e-commerce",
+            "art6": "contratto"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione clientela B2C",
+          "en": "B2C customer management"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali dei clienti persone fisiche (consumatori) per l'esecuzione del contratto di vendita di beni o prestazione di servizi, la gestione amministrativa, fiscale e l'assistenza post-vendita.",
+          "en": "Processing of personal data of customers who are natural persons (consumers) for the performance of the contract for the sale of goods or provision of services, administrative and tax management, and after-sales assistance."
+        },
+        "finalita": {
+          "it": [
+            "Esecuzione del contratto di vendita/servizio",
+            "Gestione di ordini, consegne, resi e rimborsi",
+            "Adempimenti fiscali e contabili (fatturazione)",
+            "Gestione dell'assistenza e delle garanzie"
+          ],
+          "en": [
+            "Performance of the sales/service contract",
+            "Management of orders, deliveries, returns and refunds",
+            "Tax and accounting obligations (invoicing)",
+            "Management of assistance and warranties"
+          ]
+        },
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: esecuzione del contratto di vendita/servizio di cui l'interessato è parte. Art. 6(1)(c) GDPR: adempimenti fiscali e contabili (fatturazione, conservazione documenti). Art. 6(1)(f) GDPR per la gestione di resi, contestazioni, prevenzione frodi e tutela dei diritti del Titolare. Il marketing NON è coperto da queste basi e richiede consenso o soft opt-in (art. 130 Codice privacy).",
+            "en": "GDPR Art. 6(1)(b): performance of the sales/service contract to which the data subject is a party. GDPR Art. 6(1)(c): tax and accounting obligations (invoicing, document retention). GDPR Art. 6(1)(f) for managing returns, disputes, fraud prevention and protection of the Controller's rights. Marketing is NOT covered by these bases and requires consent or soft opt-in (Italian Privacy Code Art. 130)."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Legittimo interesse del Titolare alla gestione di reclami, resi, contestazioni, prevenzione frodi e tutela dei propri diritti.",
+              "en": "Legitimate interest of the Controller in managing complaints, returns, disputes, fraud prevention and protection of its rights."
+            },
+            "garanzieAdottate": {
+              "it": "Trattamento limitato ai dati necessari; conservazione proporzionata; accesso limitato al personale autorizzato; documentazione delle contestazioni.",
+              "en": "Processing limited to necessary data; proportionate retention; access limited to authorized personnel; documentation of disputes."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "categorieInteressati": {
+          "it": [
+            "Clienti consumatori (persone fisiche)",
+            "Eventuali destinatari di consegne indicati dal cliente"
+          ],
+          "en": [
+            "Consumer customers (natural persons)",
+            "Any delivery recipients indicated by the customer"
+          ]
+        },
+        "categorieDati": {
+          "it": [
+            "Dati identificativi (nome, cognome, codice fiscale)",
+            "Dati di contatto (indirizzo, email, telefono)",
+            "Dati relativi agli ordini e agli acquisti",
+            "Dati relativi all'account cliente e credenziali di autenticazione, se è prevista la registrazione",
+            "Dati di pagamento (gestiti tramite payment provider — vedi nota)",
+            "Indirizzo di consegna e fatturazione",
+            "Dati tecnici e log di sicurezza relativi all'utilizzo della piattaforma, nei limiti necessari alla sicurezza del servizio e alla prevenzione di frodi"
+          ],
+          "en": [
+            "Identification data (name, surname, tax code)",
+            "Contact data (address, email, phone)",
+            "Order and purchase data",
+            "Customer account data and authentication credentials, if registration is provided",
+            "Payment data (handled via payment provider — see note)",
+            "Delivery and billing address",
+            "Technical data and security logs relating to platform use, within the limits necessary for service security and fraud prevention"
+          ]
+        },
+        "fonteDeiDati": "interessato",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti direttamente dal cliente al momento dell'acquisto, della registrazione o dell'ordine.",
+          "en": "Data provided directly by the customer at the time of purchase, registration or order."
+        },
+        "categorieDestinatari": {
+          "it": [
+            "Personale interno autorizzato (vendite, amministrazione, assistenza)",
+            "Commercialista / studio fiscale (responsabile o autonomo titolare, secondo l'incarico)",
+            "Payment provider / gestore dei pagamenti (responsabile o autonomo titolare, da verificare)",
+            "Corrieri e spedizionieri (di norma autonomi titolari o responsabili, secondo il servizio)",
+            "Fornitore della piattaforma e-commerce (responsabile del trattamento), se applicabile"
+          ],
+          "en": [
+            "Authorized internal personnel (sales, administration, support)",
+            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
+            "Payment provider (processor or independent controller, to be verified)",
+            "Couriers and shippers (usually independent controllers or processors, depending on the service)",
+            "E-commerce platform provider (data processor), if applicable"
+          ]
+        },
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome della piattaforma e-commerce, se applicabile, es. Shopify, WooCommerce hosting, ecc.]",
+              "en": "[Enter the name of the e-commerce platform, if applicable, e.g. Shopify, WooCommerce hosting, etc.]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura della piattaforma di vendita online e gestione degli ordini",
+              "en": "Provision of the online sales platform and order management"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA]",
+              "en": "[Reference to the DPA]"
+            }
+          },
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del payment provider, es. Stripe, PayPal, Nexi, ecc.]",
+              "en": "[Enter the name of the payment provider, e.g. Stripe, PayPal, Nexi, etc.]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione dei pagamenti",
+              "en": "Payment management"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA o ai termini del provider]",
+              "en": "[Reference to the DPA or provider terms]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare se il provider opera come responsabile del trattamento o autonomo titolare. Non inserirlo tra i responsabili ex art. 28 se opera come titolare autonomo per le proprie finalità.",
+              "en": "Verify whether the provider acts as processor or independent controller. Do not include it among Art. 28 processors if it acts as independent controller for its own purposes."
+            }
+          },
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del corriere/spedizioniere]",
+              "en": "[Enter the name of the courier/shipping provider]"
+            },
+            "sede": {
+              "it": "[Sede legale]",
+              "en": "[Registered office]"
+            },
+            "finalita": {
+              "it": "Consegna dei prodotti acquistati e gestione delle spedizioni",
+              "en": "Delivery of purchased products and shipment management"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al contratto/DPA, se responsabile]",
+              "en": "[Reference to the contract/DPA, if processor]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare se il corriere opera come autonomo titolare o responsabile del trattamento, secondo il servizio reso.",
+              "en": "Verify whether the courier acts as independent controller or data processor, depending on the service provided."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Verificare — molti payment provider e piattaforme e-commerce hanno infrastrutture extra-UE]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "Payment provider e piattaforme e-commerce spesso hanno sub-responsabili extra-UE (frequentemente USA). Verificare e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Payment providers and e-commerce platforms often have non-EU sub-processors (frequently in the USA). Verify and apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del rapporto + termini fiscali e di garanzia (di regola 10 anni ex art. 2220 c.c. per i documenti contabili).",
+            "en": "For the duration of the relationship + tax and warranty terms (as a rule 10 years under Italian Civil Code Art. 2220 for accounting documents)."
+          },
+          "criteri": {
+            "it": "Dati contrattuali e fiscali: 10 anni ex art. 2220 c.c. Dati dell'account cliente: fino alla cancellazione dell'account o, in caso di inattività prolungata, secondo un termine definito nella policy interna, previa eventuale comunicazione all'interessato ove opportuno. Dati di consegna: per il tempo necessario all'evasione dell'ordine e alla gestione di resi/garanzie.",
+            "en": "Contractual and tax data: 10 years under Italian Civil Code Art. 2220. Customer account data: until account deletion or, in case of prolonged inactivity, according to a term defined in the internal policy, with prior notice to the data subject where appropriate. Delivery data: for the time needed to fulfill the order and manage returns/warranties."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": {
+            "it": [
+              "Cifratura delle connessioni (HTTPS/TLS) sul sito/piattaforma",
+              "Controllo accessi con autenticazione forte ai sistemi gestionali",
+              "NON memorizzazione dei dati completi delle carte di pagamento (gestiti dal payment provider conforme PCI-DSS)",
+              "Misure di prevenzione frodi, logging di sicurezza e monitoraggio degli accessi anomali alla piattaforma",
+              "Backup periodici con cifratura at-rest",
+              "Aggiornamento e patching della piattaforma e dei plugin"
+            ],
+            "en": [
+              "Encryption of connections (HTTPS/TLS) on the website/platform",
+              "Access control with strong authentication to management systems",
+              "NON-storage of full payment card data (handled by PCI-DSS compliant payment provider)",
+              "Fraud prevention measures, security logging and monitoring of anomalous access to the platform",
+              "Periodic backups with at-rest encryption",
+              "Platform and plugin updates and patching"
+            ]
+          },
+          "organizzative": {
+            "it": [
+              "Designazione degli operatori autorizzati (ex art. 29 GDPR)",
+              "Informativa privacy chiara al momento della raccolta (registrazione/checkout)",
+              "Procedura per la gestione delle richieste di esercizio dei diritti",
+              "Procedura per la gestione di resi, rimborsi e reclami",
+              "Gestione separata e con base giuridica autonoma di eventuali attività di marketing"
+            ],
+            "en": [
+              "Designation of authorized operators (under GDPR Art. 29)",
+              "Clear privacy notice at the time of collection (registration/checkout)",
+              "Procedure for handling rights requests",
+              "Procedure for managing returns, refunds and complaints",
+              "Separate management with autonomous legal basis of any marketing activities"
+            ]
+          },
+          "rinvioDocumentale": {
+            "it": "[Rinvio alla privacy policy del sito, alle condizioni di vendita e ai DPA con i fornitori]",
+            "en": "[Refer to the website privacy policy, sales terms and DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "",
+            "en": ""
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Compilare se si effettua profilazione dei clienti (es. raccomandazioni personalizzate, segmentazione comportamentale). Richiede di regola consenso specifico e informativa adeguata.",
+            "en": "Complete if profiling customers (e.g. personalized recommendations, behavioral segmentation). Generally requires specific consent and adequate information."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Valutare la necessità di DPIA in caso di profilazione su larga scala o trattamento di dati di minori.",
+            "en": "Assess the need for a DPIA in case of large-scale profiling or processing of minors' data."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 8 (minori), 13, 22; Codice privacy (d.lgs. 196/2003) art. 130 (marketing); Codice del Consumo (d.lgs. 206/2005) per gli aspetti contrattuali; art. 2220 c.c. (conservazione documenti contabili); standard PCI-DSS per i dati di pagamento.",
+          "en": "Relevant legal references: GDPR Arts. 6, 8 (minors), 13, 22; Italian Privacy Code (d.lgs. 196/2003) Art. 130 (marketing); Italian Consumer Code (d.lgs. 206/2005) for contractual aspects; Italian Civil Code Art. 2220 (retention of accounting documents); PCI-DSS standard for payment data."
+        }
+      }
     }
   ]
 }
