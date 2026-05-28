@@ -13,6 +13,8 @@ import {
   updateSettings,
   listProcessingActivities,
   getProcessingActivity,
+  updateProcessingActivity,
+  normalizeBilingualShapes,
   listAvailableTemplates,
   createProcessingActivityFromTemplate,
   exportAllData
@@ -22,6 +24,7 @@ import localeIt from '../locales/it.js';
 import localeEn from '../locales/en.js';
 import { buildDettaglio } from './detail.js';
 import { scaricaBackup } from './exporters/backup.js';
+import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo } from './editor.js';
 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
@@ -59,6 +62,17 @@ function ropa30App() {
     trattamentoCorrente: null,
     trattamentoVm: null,
     trattamentoTitolo: '',
+    // Editor (Step C)
+    editId: null,
+    editRecord: null,        // working copy (deep clone via JSON) — protected until save
+    editModel: { sezioni: [] }, // edit-model bound by the template (never null: avoids x-for teardown race)
+    editTitolo: '',
+    editLingue: ['it'],      // from settings.registro.lingue (1 or 2 columns)
+    editDirty: false,
+    editSalvando: false,
+    editErroreSalva: false,
+    editNomeMancante: false,
+    chiediConfermaAnnulla: false,
 
     // Catalog
     _rawTemplates: [],
@@ -134,6 +148,10 @@ function ropa30App() {
     get isViewOnboarding() { return this.view === 'onboarding'; },
     get isViewLista()      { return this.view === 'lista'; },
     get isViewDettaglio() { return this.view === 'dettaglio'; },
+    get isViewEditor()    { return this.view === 'editor'; },
+    get editMostraEn()    { return this.editLingue.indexOf('en') !== -1; },
+    get editMostraIt()    { return this.editLingue.indexOf('it') !== -1; },
+    get editSalvaDisabilitato() { return this.editNomeMancante || this.editSalvando; },
     get badgeManca() { return this.lang === 'en' ? this.L.mancaEN : this.L.mancaIT; },
     get haTrattamenti()    { return this.trattamenti.length > 0; },
     get nonHaTrattamenti() { return this.trattamenti.length === 0; },
@@ -386,6 +404,150 @@ function ropa30App() {
       this.trattamentoCorrente = null;
       this.trattamentoVm = null;
       this.trattamentoTitolo = '';
+    },
+
+    // ---- Editor (Step C) ----
+    _validaNomeEditor() {
+      // Required: name non-empty in the register's PRIMARY language.
+      const princ = (this.editLingue.indexOf('it') !== -1) ? 'it' : (this.editLingue[0] || 'it');
+      let nomeCtl = null;
+      const sez0 = this.editModel && this.editModel.sezioni[0];
+      if (sez0) nomeCtl = sez0.campi.find((c) => c.chiave === 'nome');
+      const val = nomeCtl ? (princ === 'en' ? nomeCtl.valEn : nomeCtl.valIt) : '';
+      this.editNomeMancante = !(val && val.trim().length > 0);
+    },
+    async apriEditor(event) {
+      const id = (event && event.currentTarget && event.currentTarget.dataset)
+        ? event.currentTarget.dataset.id : (this.trattamentoCorrente ? this.trattamentoCorrente.id : '');
+      if (!id) return;
+      try {
+        const record = await getProcessingActivity(id);
+        if (!record) { this.view = 'lista'; return; }
+        this.editId = id;
+        this.editRecord = JSON.parse(JSON.stringify(record));
+        this.editLingue = Array.isArray(this.editRegistroLingue()) ? this.editRegistroLingue() : ['it'];
+        const loc = LOCALI[this.lang] || localeIt;
+        this.editModel = buildEditModel(this.editRecord, {
+          lingue: this.editLingue, detail: loc.detail, enums: loc.enums
+        });
+        this.editTitolo = this._loc(record.nome) || this.L.sennaNome;
+        this.editDirty = false;
+        this.editErroreSalva = false;
+        this.chiediConfermaAnnulla = false;
+        this._validaNomeEditor();
+        this.view = 'editor';
+        window.scrollTo(0, 0);
+      } catch (err) {
+        console.error('[ropa30] apriEditor() error:', err);
+        this.view = 'lista';
+      }
+    },
+    editRegistroLingue() {
+      const out = [];
+      if (this.regIt) out.push('it');
+      if (this.regEn) out.push('en');
+      return out.length ? out : ['it'];
+    },
+    segnaDirty() {
+      this.editDirty = true;
+      this._validaNomeEditor();
+    },
+    async salvaTrattamento() {
+      this._validaNomeEditor();
+      if (this.editNomeMancante || this.editSalvando) return;
+      this.editSalvando = true;
+      this.editErroreSalva = false;
+      try {
+        const work = JSON.parse(JSON.stringify(this.editRecord));
+        applyEditModel(work, this.editModel);
+        normalizeBilingualShapes(work);
+        await updateProcessingActivity(this.editId, work);
+        const id = this.editId;
+        this._resetEditor();
+        await this.caricaTrattamenti();      // keep the list in sync
+        await this.apriDettaglioById(id);    // back to the updated detail (C3-D1: a)
+      } catch (err) {
+        console.error('[ropa30] salvaTrattamento() error:', err);
+        this.editErroreSalva = true;
+      } finally {
+        this.editSalvando = false;
+      }
+    },
+    annullaEditor() {
+      if (this.editDirty) { this.chiediConfermaAnnulla = true; return; }
+      this._uscitaDaEditor();
+    },
+    confermaAnnulla() { this._uscitaDaEditor(); },
+    annullaAnnulla()  { this.chiediConfermaAnnulla = false; },
+    _uscitaDaEditor() {
+      const id = this.editId;
+      this._resetEditor();
+      if (id) { this.apriDettaglioById(id); } else { this.view = 'lista'; }
+    },
+    _resetEditor() {
+      this.editId = null;
+      this.editRecord = null;
+      this.editModel = { sezioni: [] };
+      this.editTitolo = '';
+      this.editDirty = false;
+      this.editErroreSalva = false;
+      this.editNomeMancante = false;
+      this.chiediConfermaAnnulla = false;
+    },
+    async apriDettaglioById(id) {
+      try {
+        const record = await getProcessingActivity(id);
+        if (!record) { this.view = 'lista'; return; }
+        this.trattamentoCorrente = record;
+        this.trattamentoTitolo = this._loc(record.nome) || this.L.sennaNome;
+        this.trattamentoVm = this._costruisciVm(record);
+        this.view = 'dettaglio';
+        window.scrollTo(0, 0);
+      } catch (err) {
+        console.error('[ropa30] apriDettaglioById() error:', err);
+        this.view = 'lista';
+      }
+    },
+
+    // ---- Editor: array helpers (read coordinates from dataset) ----
+    _campoDaEvento(event) {
+      const ds = (event && event.currentTarget && event.currentTarget.dataset) ? event.currentTarget.dataset : null;
+      if (!ds || !this.editModel) return { campo: null, idx: -1 };
+      const si = parseInt(ds.sez, 10);
+      const ci = parseInt(ds.campo, 10);
+      const idx = (ds.idx !== undefined && ds.idx !== '') ? parseInt(ds.idx, 10) : -1;
+      const sez = this.editModel.sezioni[si];
+      const campo = sez ? sez.campi[ci] : null;
+      return { campo, idx };
+    },
+    aggiungiVoce(event) {
+      const { campo } = this._campoDaEvento(event);
+      if (campo && Array.isArray(campo.voci)) {
+        campo.voci.push(nuovaVoceLista());
+        this.segnaDirty();
+      }
+    },
+    rimuoviVoce(event) {
+      const { campo, idx } = this._campoDaEvento(event);
+      if (campo && Array.isArray(campo.voci) && idx >= 0 && idx < campo.voci.length) {
+        campo.voci.splice(idx, 1);
+        this.segnaDirty();
+      }
+    },
+    aggiungiRiga(event) {
+      const { campo } = this._campoDaEvento(event);
+      if (campo && Array.isArray(campo.righe)) {
+        const loc = LOCALI[this.lang] || localeIt;
+        campo.righe.push(nuovaRigaGruppo(campo.gruppoTipo, { detail: loc.detail, enums: loc.enums }));
+        this.segnaDirty();
+      }
+    },
+    rimuoviRiga(event) {
+      const { campo, idx } = this._campoDaEvento(event);
+      if (campo && Array.isArray(campo.righe) && idx >= 0 && idx < campo.righe.length) {
+        campo.righe.splice(idx, 1);
+        this.segnaDirty();
+      }
     },
 
     // UI language switch: change display AND persist uiLanguage (independent

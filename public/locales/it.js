@@ -82,7 +82,23 @@ export default {
     catalogoNessunRisultato: 'Nessun template corrisponde alla ricerca.',
     btnCrea: 'Aggiungi',
     btnChiudi: 'Chiudi',
-    dettaglioTornaLista: 'Torna al registro'
+    dettaglioTornaLista: 'Torna al registro',
+    dettaglioModifica: 'Modifica',
+    editorTitolo: 'Modifica trattamento',
+    editorSalva: 'Salva',
+    editorAnnulla: 'Annulla',
+    editorErroreSalva: 'Si \u00e8 verificato un errore durante il salvataggio. Riprova.',
+    editorNomeMancante: 'La denominazione \u00e8 obbligatoria nella lingua principale del registro.',
+    editorAggiungiVoce: 'Aggiungi voce',
+    editorAggiungiElemento: 'Aggiungi elemento',
+    editorRimuovi: 'Rimuovi',
+    editorVuoto: 'Nessun elemento. Usa \u201cAggiungi elemento\u201d per inserirne uno.',
+    editorConfermaTitolo: 'Modifiche non salvate',
+    editorConfermaTesto: 'Hai modifiche non salvate. Vuoi davvero uscire senza salvare?',
+    editorConfermaEsci: 'Esci senza salvare',
+    editorConfermaResta: 'Continua a modificare',
+    editorColonnaIt: 'Italiano',
+    editorColonnaEn: 'English'
   },
 
   enums: {

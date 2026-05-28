@@ -82,7 +82,23 @@ export default {
     catalogoNessunRisultato: 'No template matches your search.',
     btnCrea: 'Add',
     btnChiudi: 'Close',
-    dettaglioTornaLista: 'Back to the register'
+    dettaglioTornaLista: 'Back to the register',
+    dettaglioModifica: 'Edit',
+    editorTitolo: 'Edit processing activity',
+    editorSalva: 'Save',
+    editorAnnulla: 'Cancel',
+    editorErroreSalva: 'An error occurred while saving. Please try again.',
+    editorNomeMancante: 'The name is required in the register\u2019s primary language.',
+    editorAggiungiVoce: 'Add item',
+    editorAggiungiElemento: 'Add entry',
+    editorRimuovi: 'Remove',
+    editorVuoto: 'No entries. Use \u201cAdd entry\u201d to insert one.',
+    editorConfermaTitolo: 'Unsaved changes',
+    editorConfermaTesto: 'You have unsaved changes. Are you sure you want to leave without saving?',
+    editorConfermaEsci: 'Leave without saving',
+    editorConfermaResta: 'Keep editing',
+    editorColonnaIt: 'Italiano',
+    editorColonnaEn: 'English'
   },
 
   enums: {

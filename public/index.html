@@ -524,6 +524,13 @@
               <span x-text="L.dettaglioTornaLista">Torna al registro</span>
             </button>
 
+            <button type="button" x-bind:data-id="trattamentoCorrente.id"
+                    x-on:click="apriEditor"
+                    class="ml-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
+              <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
+              <span x-text="L.dettaglioModifica">Modifica</span>
+            </button>
+
             <!-- Intestazione trattamento -->
             <div class="mt-6">
               <p class="text-sm font-medium uppercase tracking-wide text-brand-500">
@@ -638,6 +645,319 @@
         </template>
 
       </div>
+      <!-- ===================== EDITOR (Step C) ===================== -->
+        <template x-if="isViewEditor">
+          <section aria-labelledby="edit-title">
+
+            <!-- Barra azioni (alto) -->
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" x-on:click="salvaTrattamento" x-bind:disabled="editSalvaDisabilitato"
+                      class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium shadow-sm hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                      x-text="L.editorSalva">Salva</button>
+              <button type="button" x-on:click="annullaEditor"
+                      class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white"
+                      x-text="L.editorAnnulla">Annulla</button>
+            </div>
+
+            <p class="mt-3 text-sm text-danger-600" x-show="editNomeMancante" x-text="L.editorNomeMancante"></p>
+            <p class="mt-2 text-sm text-danger-600" x-show="editErroreSalva" x-text="L.editorErroreSalva"></p>
+
+            <!-- Intestazione -->
+            <div class="mt-6">
+              <p class="text-sm font-medium uppercase tracking-wide text-brand-500">
+                <span x-text="L.editorTitolo">Modifica trattamento</span>
+                <span class="text-brand-400"> · </span>
+                <span x-text="denominazione">UNIFG</span>
+              </p>
+              <h1 id="edit-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+                  x-text="editTitolo">—</h1>
+            </div>
+
+            <!-- Indice di navigazione (sticky) -->
+            <nav aria-label="Sezioni" class="sticky top-0 z-10 -mx-4 mt-6 border-y border-brand-200 bg-brand-50/95 px-4 py-2 backdrop-blur">
+              <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                <template x-for="(sez, i) in editModel.sezioni" x-bind:key="sez.id">
+                  <li>
+                    <a x-bind:href="sez.ancora" class="text-brand-600 hover:text-brand-900 hover:underline">
+                      <span x-text="sez.indice"></span><span x-text="sez.titolo"></span>
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            </nav>
+          <!-- Sezioni -->
+            <div class="mt-8 space-y-8">
+              <template x-for="(sez, si) in editModel.sezioni" x-bind:key="sez.id">
+                <section x-bind:id="sez.id" class="scroll-mt-16">
+                  <h2 class="flex items-baseline gap-2 text-xl font-bold text-brand-900 border-b border-brand-200 pb-2">
+                    <span class="text-brand-400 text-base font-semibold" x-text="sez.indice"></span>
+                    <span x-text="sez.titolo"></span>
+                  </h2>
+
+                  <div class="mt-4 space-y-5">
+                    <template x-for="(campo, ci) in sez.campi" x-bind:key="ci">
+                      <div>
+                        <span class="block text-sm font-medium text-brand-700 mb-1" x-text="campo.label"></span>
+
+                        <!-- testoBil: 1 o 2 colonne IT|EN -->
+                        <template x-if="campo.isTestoBil">
+                          <div class="grid gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
+                            <div x-show="editMostraIt">
+                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaIt"></label>
+                              <template x-if="campo.multilinea">
+                                <textarea rows="3" x-model="campo.valIt" x-on:input="segnaDirty"
+                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                              </template>
+                              <template x-if="!campo.multilinea">
+                                <input type="text" x-model="campo.valIt" x-on:input="segnaDirty"
+                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                              </template>
+                            </div>
+                            <div x-show="editMostraEn">
+                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaEn"></label>
+                              <template x-if="campo.multilinea">
+                                <textarea rows="3" x-model="campo.valEn" x-on:input="segnaDirty"
+                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                              </template>
+                              <template x-if="!campo.multilinea">
+                                <input type="text" x-model="campo.valEn" x-on:input="segnaDirty"
+                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                              </template>
+                            </div>
+                          </div>
+                        </template>
+
+                        <!-- piano: testo non bilingue -->
+                        <template x-if="campo.isPiano">
+                          <input type="text" x-model="campo.val" x-on:input="segnaDirty"
+                                 class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                        </template>
+
+                        <!-- data -->
+                        <template x-if="campo.isData">
+                          <input type="date" x-model="campo.val" x-on:change="segnaDirty"
+                                 class="rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                        </template>
+
+                        <!-- enum1: select -->
+                        <template x-if="campo.isEnum1">
+                          <select x-model="campo.val" x-on:change="segnaDirty"
+                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                            <template x-for="opz in campo.opzioni" x-bind:key="opz.code">
+                              <option x-bind:value="opz.code" x-text="opz.label"></option>
+                            </template>
+                          </select>
+                        </template>
+
+                        <!-- enumN: checkbox per opzione -->
+                        <template x-if="campo.isEnumN">
+                          <div class="space-y-1">
+                            <template x-for="opz in campo.opzioni" x-bind:key="opz.code">
+                              <label class="flex items-center gap-2 text-sm text-brand-800">
+                                <input type="checkbox" x-model="opz.sel" x-on:change="segnaDirty"
+                                       class="h-4 w-4 accent-brand-700" />
+                                <span x-text="opz.label"></span>
+                              </label>
+                            </template>
+                          </div>
+                        </template>
+
+                        <!-- bool: checkbox + figli condizionali -->
+                        <template x-if="campo.isBool">
+                          <div>
+                            <label class="inline-flex items-center gap-2 text-sm text-brand-800">
+                              <input type="checkbox" x-model="campo.val" x-on:change="segnaDirty"
+                                     class="h-4 w-4 accent-brand-700" />
+                              <span x-text="campo.label"></span>
+                            </label>
+                            <div class="mt-3 space-y-4 pl-6 border-l-2 border-brand-100" x-show="campo.val && campo.haFigli">
+                              <template x-for="(figlio, fi) in campo.figli" x-bind:key="fi">
+                                <div>
+                                  <span class="block text-sm font-medium text-brand-700 mb-1" x-text="figlio.label"></span>
+                                  <div class="grid gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
+                                    <div x-show="editMostraIt">
+                                      <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaIt"></label>
+                                      <template x-if="figlio.multilinea">
+                                        <textarea rows="3" x-model="figlio.valIt" x-on:input="segnaDirty"
+                                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                      </template>
+                                      <template x-if="!figlio.multilinea">
+                                        <input type="text" x-model="figlio.valIt" x-on:input="segnaDirty"
+                                               class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                      </template>
+                                    </div>
+                                    <div x-show="editMostraEn">
+                                      <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaEn"></label>
+                                      <template x-if="figlio.multilinea">
+                                        <textarea rows="3" x-model="figlio.valEn" x-on:input="segnaDirty"
+                                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                      </template>
+                                      <template x-if="!figlio.multilinea">
+                                        <input type="text" x-model="figlio.valEn" x-on:input="segnaDirty"
+                                               class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                      </template>
+                                    </div>
+                                  </div>
+                                </div>
+                              </template>
+                            </div>
+                          </div>
+                        </template>
+                      <!-- listaBil: voci bilingui ripetibili -->
+                        <template x-if="campo.isListaBil">
+                          <div>
+                            <p x-show="campo.voci.length === 0" class="text-sm text-brand-500 mb-2" x-text="L.editorVuoto"></p>
+                            <div class="space-y-2">
+                              <template x-for="(voce, vi) in campo.voci" x-bind:key="vi">
+                                <div class="flex items-start gap-2">
+                                  <div class="grid flex-1 gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
+                                    <div x-show="editMostraIt">
+                                      <input type="text" x-model="voce.valIt" x-on:input="segnaDirty"
+                                             x-bind:placeholder="L.editorColonnaIt"
+                                             class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                    </div>
+                                    <div x-show="editMostraEn">
+                                      <input type="text" x-model="voce.valEn" x-on:input="segnaDirty"
+                                             x-bind:placeholder="L.editorColonnaEn"
+                                             class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                    </div>
+                                  </div>
+                                  <button type="button"
+                                          x-bind:data-sez="si" x-bind:data-campo="ci" x-bind:data-idx="vi"
+                                          x-on:click="rimuoviVoce" x-bind:aria-label="L.editorRimuovi"
+                                          class="shrink-0 rounded-lg border border-brand-300 p-2 text-brand-500 hover:bg-brand-100 hover:text-danger-600">
+                                    <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-close" /></svg>
+                                  </button>
+                                </div>
+                              </template>
+                            </div>
+                            <button type="button"
+                                    x-bind:data-sez="si" x-bind:data-campo="ci"
+                                    x-on:click="aggiungiVoce"
+                                    class="mt-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
+                              <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
+                              <span x-text="L.editorAggiungiVoce">Aggiungi voce</span>
+                            </button>
+                          </div>
+                        </template>
+                      <!-- gruppi: righe strutturate ripetibili -->
+                        <template x-if="campo.isGruppi">
+                          <div>
+                            <p x-show="campo.righe.length === 0" class="text-sm text-brand-500 mb-2" x-text="L.editorVuoto"></p>
+                            <div class="space-y-3">
+                              <template x-for="(riga, ri) in campo.righe" x-bind:key="ri">
+                                <div class="rounded-lg border border-brand-200 bg-brand-50/50 p-3">
+                                  <div class="flex justify-end">
+                                    <button type="button"
+                                            x-bind:data-sez="si" x-bind:data-campo="ci" x-bind:data-idx="ri"
+                                            x-on:click="rimuoviRiga" x-bind:aria-label="L.editorRimuovi"
+                                            class="rounded-lg border border-brand-300 p-1.5 text-brand-500 hover:bg-brand-100 hover:text-danger-600">
+                                      <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-close" /></svg>
+                                    </button>
+                                  </div>
+                                  <div class="space-y-4">
+                                    <template x-for="(sc, sci) in riga.campi" x-bind:key="sci">
+                                      <div>
+                                        <span class="block text-sm font-medium text-brand-700 mb-1" x-text="sc.label"></span>
+
+                                        <template x-if="sc.isTestoBil">
+                                          <div class="grid gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
+                                            <div x-show="editMostraIt">
+                                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaIt"></label>
+                                              <template x-if="sc.multilinea">
+                                                <textarea rows="2" x-model="sc.valIt" x-on:input="segnaDirty"
+                                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                              </template>
+                                              <template x-if="!sc.multilinea">
+                                                <input type="text" x-model="sc.valIt" x-on:input="segnaDirty"
+                                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                              </template>
+                                            </div>
+                                            <div x-show="editMostraEn">
+                                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaEn"></label>
+                                              <template x-if="sc.multilinea">
+                                                <textarea rows="2" x-model="sc.valEn" x-on:input="segnaDirty"
+                                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                              </template>
+                                              <template x-if="!sc.multilinea">
+                                                <input type="text" x-model="sc.valEn" x-on:input="segnaDirty"
+                                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                              </template>
+                                            </div>
+                                          </div>
+                                        </template>
+
+                                        <template x-if="sc.isBool">
+                                          <label class="inline-flex items-center gap-2 text-sm text-brand-800">
+                                            <input type="checkbox" x-model="sc.val" x-on:change="segnaDirty"
+                                                   class="h-4 w-4 accent-brand-700" />
+                                            <span x-text="sc.label"></span>
+                                          </label>
+                                        </template>
+
+                                        <template x-if="sc.isEnum1">
+                                          <select x-model="sc.val" x-on:change="segnaDirty"
+                                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                                            <template x-for="opz in sc.opzioni" x-bind:key="opz.code">
+                                              <option x-bind:value="opz.code" x-text="opz.label"></option>
+                                            </template>
+                                          </select>
+                                        </template>
+                                      </div>
+                                    </template>
+                                  </div>
+                                </div>
+                              </template>
+                            </div>
+                            <button type="button"
+                                    x-bind:data-sez="si" x-bind:data-campo="ci"
+                                    x-on:click="aggiungiRiga"
+                                    class="mt-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
+                              <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
+                              <span x-text="L.editorAggiungiElemento">Aggiungi elemento</span>
+                            </button>
+                          </div>
+                        </template>
+
+                      </div>
+                    </template>
+                  </div>
+                </section>
+              </template>
+            </div>
+          <!-- Barra azioni (fondo) -->
+            <div class="mt-10 border-t border-brand-200 pt-6 flex flex-wrap items-center gap-2">
+              <button type="button" x-on:click="salvaTrattamento" x-bind:disabled="editSalvaDisabilitato"
+                      class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium shadow-sm hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                      x-text="L.editorSalva">Salva</button>
+              <button type="button" x-on:click="annullaEditor"
+                      class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white"
+                      x-text="L.editorAnnulla">Annulla</button>
+            </div>
+
+            <!-- Conferma inline: modifiche non salvate -->
+            <template x-if="chiediConfermaAnnulla">
+              <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+                   x-on:keydown.escape.window="annullaAnnulla"
+                   x-on:click.self="annullaAnnulla">
+                <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                     role="dialog" aria-modal="true" aria-labelledby="conf-title">
+                  <h2 id="conf-title" class="text-lg font-bold text-brand-900" x-text="L.editorConfermaTitolo">Modifiche non salvate</h2>
+                  <p class="mt-2 text-sm text-brand-700" x-text="L.editorConfermaTesto"></p>
+                  <div class="mt-5 flex flex-wrap justify-end gap-2">
+                    <button type="button" x-on:click="annullaAnnulla"
+                            class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                            x-text="L.editorConfermaResta">Continua a modificare</button>
+                    <button type="button" x-on:click="confermaAnnulla"
+                            class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700"
+                            x-text="L.editorConfermaEsci">Esci senza salvare</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+          </section>
+        </template>
     </main>
 
     <!-- Footer -->

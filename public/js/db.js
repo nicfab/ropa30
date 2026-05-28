@@ -409,7 +409,7 @@ function bilArr(v) {
   if (v === undefined || v === null || v === '') return [];
   return [bil(v)];
 }
-function normalizeBilingualShapes(r) {
+export function normalizeBilingualShapes(r) {
   r.nome = bil(r.nome);
   r.descrizione = bil(r.descrizione);
   r.finalita = bilArr(r.finalita);
