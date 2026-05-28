@@ -129,6 +129,7 @@ function ropa30App() {
     get isViewOnboarding() { return this.view === 'onboarding'; },
     get isViewLista()      { return this.view === 'lista'; },
     get isViewDettaglio() { return this.view === 'dettaglio'; },
+    get badgeManca() { return this.lang === 'en' ? this.L.mancaEN : this.L.mancaIT; },
     get haTrattamenti()    { return this.trattamenti.length > 0; },
     get nonHaTrattamenti() { return this.trattamenti.length === 0; },
     get haRisultati()      { return this.trattamentiFiltrati.length > 0; },

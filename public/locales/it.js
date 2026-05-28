@@ -78,7 +78,8 @@ export default {
     catalogoCercaAria: 'Cerca tra i template',
     catalogoNessunRisultato: 'Nessun template corrisponde alla ricerca.',
     btnCrea: 'Aggiungi',
-    btnChiudi: 'Chiudi'
+    btnChiudi: 'Chiudi',
+    dettaglioTornaLista: 'Torna al registro'
   },
 
   enums: {

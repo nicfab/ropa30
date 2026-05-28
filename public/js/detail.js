@@ -85,31 +85,39 @@ function resolveLista(arr, lang, stati) {
 // Field builders (small helpers to keep section code readable)
 // ---------------------------------------------------------------------------
 
+function conFlag(c) {
+  const t = c.tipo;
+  c.isLista = (t === 'lista');
+  c.isGruppi = (t === 'gruppi');
+  c.isSemplice = !c.isLista && !c.isGruppi; // testo | data | enum | bool
+  return c;
+}
+
 function campoTesto(label, obj, lang, stati) {
   const r = resolveTesto(obj, lang, stati);
-  return { label, tipo: 'testo', value: r.value, items: [], gruppi: [],
-    missingTranslation: r.missingTranslation, mostra: true };
+  return conFlag({ label, tipo: 'testo', value: r.value, items: [], gruppi: [],
+    missingTranslation: r.missingTranslation, mostra: true });
 }
 function campoData(label, iso, lang, stati) {
   const r = resolveData(iso, lang, stati);
-  return { label, tipo: 'data', value: r.value, items: [], gruppi: [],
-    missingTranslation: false, mostra: true };
+  return conFlag({ label, tipo: 'data', value: r.value, items: [], gruppi: [],
+    missingTranslation: false, mostra: true });
 }
 function campoEnum(label, code, mappa, stati) {
   const r = resolveEnum(code, mappa, stati);
-  return { label, tipo: 'enum', value: r.value, items: [], gruppi: [],
-    missingTranslation: false, mostra: true };
+  return conFlag({ label, tipo: 'enum', value: r.value, items: [], gruppi: [],
+    missingTranslation: false, mostra: true });
 }
 function campoBool(label, val, stati) {
   const r = resolveBool(val, stati);
-  return { label, tipo: 'bool', value: r.value, items: [], gruppi: [],
-    missingTranslation: false, mostra: true };
+  return conFlag({ label, tipo: 'bool', value: r.value, items: [], gruppi: [],
+    missingTranslation: false, mostra: true });
 }
 function campoLista(label, arr, lang, stati) {
   const items = resolveLista(arr, lang, stati);
-  return { label, tipo: 'lista', value: '', items, gruppi: [],
+  return conFlag({ label, tipo: 'lista', value: '', items, gruppi: [],
     missingTranslation: false, mostra: true,
-    vuota: items.length === 0, etichettaVuota: stati.nonPresente };
+    vuota: items.length === 0, etichettaVuota: stati.nonPresente });
 }
 
 // Build a repeated-group field from an array of sub-objects.
@@ -132,9 +140,9 @@ function campoGruppi(label, arr, mappa, lang, stati) {
     });
     return { campi };
   });
-  return { label, tipo: 'gruppi', value: '', items: [], gruppi,
+  return conFlag({ label, tipo: 'gruppi', value: '', items: [], gruppi,
     missingTranslation: false, mostra: true,
-    vuota: gruppi.length === 0, etichettaVuota: stati.nonPresente };
+    vuota: gruppi.length === 0, etichettaVuota: stati.nonPresente });
 }
 
 // ---------------------------------------------------------------------------
@@ -186,10 +194,10 @@ export function buildDettaglio(record, lang, deps) {
 
   const campiBasi = [
     // art6 as a fixed (already-localized) list of enum labels
-    { label: C.art6, tipo: 'lista', value: '',
+    conFlag({ label: C.art6, tipo: 'lista', value: '',
       items: art6Labels.map((t) => ({ value: t, missingTranslation: false })),
       gruppi: [], missingTranslation: false, mostra: true,
-      vuota: art6Labels.length === 0, etichettaVuota: ST.vuoto },
+      vuota: art6Labels.length === 0, etichettaVuota: ST.vuoto }),
     campoTesto(C.dettagliArt6, bg.dettagliArt6, lang, ST)
   ];
 
@@ -202,10 +210,10 @@ export function buildDettaglio(record, lang, deps) {
     campiBasi.push(campoTesto(C.liRiferimento, li.riferimentoBilanciamento, lang, ST));
   }
 
-  campiBasi.push({ label: C.art9, tipo: 'lista', value: '',
+  campiBasi.push(conFlag({ label: C.art9, tipo: 'lista', value: '',
     items: art9Labels.map((t) => ({ value: t, missingTranslation: false })),
     gruppi: [], missingTranslation: false, mostra: true,
-    vuota: art9Labels.length === 0, etichettaVuota: ST.nonPresente });
+    vuota: art9Labels.length === 0, etichettaVuota: ST.nonPresente }));
   campiBasi.push(campoTesto(C.dettagliArt9, bg.dettagliArt9, lang, ST));
 
   sezioni.push({ id: 'basiGiuridiche', titolo: S.basiGiuridiche, campi: campiBasi });
@@ -321,6 +329,12 @@ export function buildDettaglio(record, lang, deps) {
   }
   campiDpia.push(campoTesto(C.note, r.note, lang, ST));
   sezioni.push({ id: 'dpiaNote', titolo: S.dpiaNote, campi: campiDpia });
+
+  // Enrich each section with navigation helpers (CSP: precomputed strings).
+  sezioni.forEach((sez, i) => {
+    sez.ancora = '#' + sez.id;
+    sez.indice = (i + 1) + '. ';
+  });
 
   return { sezioni };
 }

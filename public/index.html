@@ -67,6 +67,10 @@
         <path d="M4.75 19.25 9 18l9.5-9.5a1.77 1.77 0 0 0-2.5-2.5L6.5 15.5l-1.75 3.75Z" />
         <path d="m14.5 7.5 2.5 2.5" />
       </symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </symbol>
     </svg>
 
     <a href="#main"
@@ -440,6 +444,129 @@
                 </div>
               </div>
             </template>
+
+          </section>
+        </template>
+        <!-- ===================== DETTAGLIO (read-only) ===================== -->
+        <template x-if="isViewDettaglio">
+          <section aria-labelledby="det-title">
+
+            <!-- Torna al registro (alto) -->
+            <button type="button" x-on:click="tornaAllaLista"
+                    class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
+              <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-left" /></svg>
+              <span x-text="L.dettaglioTornaLista">Torna al registro</span>
+            </button>
+
+            <!-- Intestazione trattamento -->
+            <div class="mt-6">
+              <p class="text-sm font-medium uppercase tracking-wide text-brand-500">
+                <span x-text="L.listaTitolo">Registro dei trattamenti</span>
+                <span class="text-brand-400"> · </span>
+                <span x-text="denominazione">UNIFG</span>
+              </p>
+              <h1 id="det-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+                  x-text="trattamentoTitolo">—</h1>
+            </div>
+
+            <!-- Indice di navigazione (sticky) -->
+            <nav aria-label="Sezioni" class="sticky top-0 z-10 -mx-4 mt-6 border-y border-brand-200 bg-brand-50/95 px-4 py-2 backdrop-blur">
+              <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                <template x-for="(sez, i) in trattamentoVm.sezioni" x-bind:key="sez.id">
+                  <li>
+                    <a x-bind:href="sez.ancora"
+                       class="text-brand-600 hover:text-brand-900 hover:underline">
+                      <span x-text="sez.indice"></span><span x-text="sez.titolo"></span>
+                    </a>
+                  </li>
+                </template>
+              </ul>
+            </nav>
+
+            <!-- Sezioni -->
+            <div class="mt-8 space-y-8">
+              <template x-for="sez in trattamentoVm.sezioni" x-bind:key="sez.id">
+                <section x-bind:id="sez.id" class="scroll-mt-16">
+                  <h2 class="flex items-baseline gap-2 text-xl font-bold text-brand-900 border-b border-brand-200 pb-2">
+                    <span class="text-brand-400 text-base font-semibold" x-text="sez.indice"></span>
+                    <span x-text="sez.titolo"></span>
+                  </h2>
+
+                  <dl class="mt-4 space-y-4">
+                    <template x-for="(campo, ci) in sez.campi" x-bind:key="ci">
+                      <div class="sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-medium text-brand-500 sm:text-right" x-text="campo.label"></dt>
+                        <dd class="mt-1 sm:mt-0 sm:col-span-2 text-brand-900">
+
+                          <!-- Campo semplice (testo/data/enum/bool): value già risolto -->
+                          <template x-if="campo.isSemplice">
+                            <span>
+                              <span x-text="campo.value">—</span>
+                              <span x-show="campo.missingTranslation"
+                                    class="ml-2 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600"
+                                    x-text="badgeManca"></span>
+                            </span>
+                          </template>
+
+                          <!-- Campo lista: array di voci -->
+                          <template x-if="campo.isLista">
+                            <span>
+                              <span x-show="campo.vuota" class="text-brand-500" x-text="campo.etichettaVuota">Non presente</span>
+                              <ul x-show="!campo.vuota" class="list-disc pl-5 space-y-1">
+                                <template x-for="(it, ii) in campo.items" x-bind:key="ii">
+                                  <li>
+                                    <span x-text="it.value">—</span>
+                                    <span x-show="it.missingTranslation"
+                                          class="ml-2 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600"
+                                          x-text="badgeManca"></span>
+                                  </li>
+                                </template>
+                              </ul>
+                            </span>
+                          </template>
+
+                          <!-- Campo gruppi: array di sotto-oggetti -->
+                          <template x-if="campo.isGruppi">
+                            <span>
+                              <span x-show="campo.vuota" class="text-brand-500" x-text="campo.etichettaVuota">Non presente</span>
+                              <div x-show="!campo.vuota" class="space-y-3">
+                                <template x-for="(g, gi) in campo.gruppi" x-bind:key="gi">
+                                  <div class="rounded-lg border border-brand-200 bg-brand-50/50 p-3">
+                                    <dl class="space-y-1.5">
+                                      <template x-for="(sc, si) in g.campi" x-bind:key="si">
+                                        <div class="sm:flex sm:gap-2 text-sm">
+                                          <dt class="shrink-0 font-medium text-brand-500" x-text="sc.label"></dt>
+                                          <dd class="text-brand-900">
+                                            <span x-text="sc.value">—</span>
+                                            <span x-show="sc.missingTranslation"
+                                                  class="ml-2 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600"
+                                                  x-text="badgeManca"></span>
+                                          </dd>
+                                        </div>
+                                      </template>
+                                    </dl>
+                                  </div>
+                                </template>
+                              </div>
+                            </span>
+                          </template>
+
+                        </dd>
+                      </div>
+                    </template>
+                  </dl>
+                </section>
+              </template>
+            </div>
+
+            <!-- Torna al registro (fondo) -->
+            <div class="mt-10 border-t border-brand-200 pt-6">
+              <button type="button" x-on:click="tornaAllaLista"
+                      class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
+                <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-left" /></svg>
+                <span x-text="L.dettaglioTornaLista">Torna al registro</span>
+              </button>
+            </div>
 
           </section>
         </template>
