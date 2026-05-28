@@ -110,7 +110,21 @@ export default {
     restoreAnnulla: 'Annulla',
     restoreSuccesso: 'Ripristino completato',
     restoreErroreFile: 'Il file selezionato non è un backup valido di ropa30',
-    restoreErroreRipristino: 'Si è verificato un errore durante il ripristino. I dati non sono stati modificati.'
+    restoreErroreRipristino: 'Si è verificato un errore durante il ripristino. I dati non sono stati modificati.',
+    printTitoloRegistro: 'Registro delle attività di trattamento',
+    printGeneratoIl: 'Generato il',
+    exportRegistro: 'Esporta registro',
+    exportTitolo: 'Esporta il registro',
+    exportSottotitolo: 'Scegli il formato del documento da generare.',
+    exportPdf: 'PDF',
+    exportPdfDesc: 'Per stampa, conservazione ed esibizione.',
+    exportXlsx: 'XLSX',
+    exportXlsxDesc: 'Per elaborazione in Microsoft Excel.',
+    exportOds: 'ODS',
+    exportOdsDesc: 'Per LibreOffice / OpenDocument.',
+    exportChiudi: 'Chiudi',
+    exportFatto: 'Export completato',
+    exportErrore: 'Errore durante l’export del registro'
   },
 
   enums: {

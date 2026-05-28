@@ -110,7 +110,21 @@ export default {
     restoreAnnulla: 'Cancel',
     restoreSuccesso: 'Restore completed',
     restoreErroreFile: 'The selected file is not a valid ropa30 backup',
-    restoreErroreRipristino: 'An error occurred during the restore. Your data was not modified.'
+    restoreErroreRipristino: 'An error occurred during the restore. Your data was not modified.',
+    printTitoloRegistro: 'Records of processing activities',
+    printGeneratoIl: 'Generated on',
+    exportRegistro: 'Export register',
+    exportTitolo: 'Export the register',
+    exportSottotitolo: 'Choose the document format to generate.',
+    exportPdf: 'PDF',
+    exportPdfDesc: 'For printing, archiving and exhibition.',
+    exportXlsx: 'XLSX',
+    exportXlsxDesc: 'For processing in Microsoft Excel.',
+    exportOds: 'ODS',
+    exportOdsDesc: 'For LibreOffice / OpenDocument.',
+    exportChiudi: 'Close',
+    exportFatto: 'Export completed',
+    exportErrore: 'Error while exporting the register'
   },
 
   enums: {

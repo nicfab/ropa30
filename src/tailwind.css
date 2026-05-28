@@ -122,3 +122,98 @@
 @layer utilities {
   /* Placeholder — utilities will be added here in later phases. */
 }
+
+/* ----------------------------------------------------------------------------
+ * PRINT — document-oriented register (Fase 4).
+ * On screen #print-area is hidden; in print it becomes the ONLY visible content
+ * (app chrome hidden), rendering a clean Art.30 register for archiving/exhibit.
+ * -------------------------------------------------------------------------- */
+
+/* On screen: keep the print area out of the flow. */
+#print-area { display: none; }
+
+@media print {
+  /* Hide the live app entirely. */
+  body > header,
+  main#main,
+  body > footer,
+  .skip-link { display: none !important; }
+
+  /* Show only the document. */
+  #print-area {
+    display: block !important;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  @page { margin: 18mm 16mm; }
+
+  html, body {
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  #print-area .print-header {
+    margin-bottom: 10mm;
+    border-bottom: 1pt solid #000;
+    padding-bottom: 4mm;
+  }
+  #print-area .print-header h1 {
+    font-size: 18pt;
+    font-weight: 700;
+    margin: 0 0 2mm 0;
+  }
+  #print-area .print-meta {
+    font-size: 10pt;
+    margin: 0.5mm 0;
+  }
+
+  /* One processing activity per page block. */
+  #print-area .print-trattamento {
+    page-break-before: always;
+    break-before: page;
+  }
+  #print-area .print-trattamento:first-of-type {
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+  #print-area .print-trattamento > h2 {
+    font-size: 14pt;
+    font-weight: 700;
+    margin: 0 0 4mm 0;
+    padding-bottom: 1mm;
+    border-bottom: 0.5pt solid #555;
+  }
+
+  #print-area .print-sezione {
+    margin: 0 0 5mm 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  #print-area .print-sezione > h3 {
+    font-size: 12pt;
+    font-weight: 700;
+    margin: 0 0 2mm 0;
+  }
+
+  #print-area .print-campo {
+    margin: 0 0 1.5mm 0;
+  }
+  #print-area .print-label {
+    font-weight: 600;
+  }
+  #print-area .print-value { }
+
+  #print-area .print-lista {
+    margin: 0.5mm 0 0 6mm;
+    padding: 0;
+    list-style: disc;
+  }
+  #print-area .print-gruppi { margin-top: 1mm; }
+  #print-area .print-gruppo {
+    margin: 0 0 1.5mm 4mm;
+    padding-left: 2mm;
+    border-left: 1pt solid #ccc;
+  }
+}

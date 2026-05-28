@@ -27,6 +27,9 @@ import localeEn from '../locales/en.js';
 import { buildDettaglio } from './detail.js';
 import { scaricaBackup } from './exporters/backup.js';
 import { leggiFileBackup } from './importers/restore.js';
+import { buildModelloRegistro } from './exporters/registro-common.js';
+import { esportaRegistroXlsx } from './exporters/xlsx.js';
+import { esportaRegistroOds } from './exporters/ods.js';
 import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo } from './editor.js';
 
 function ropa30App() {
@@ -64,6 +67,10 @@ function ropa30App() {
     restoreInCorso: false,        // guard against double submit
     restoreMessage: '',           // localized outcome message
     restoreError: false,          // styles the outcome message as error
+    // ---- Export registro (Fase 4) ----
+    isExportMenuOpen: false,      // export dialog visibility
+    exportMessage: '',            // localized export outcome
+    exportError: false,
     trattamentiFiltrati: [],
     queryRicerca: '',
     nuovoTrattamentoId: null,
@@ -160,7 +167,83 @@ function ropa30App() {
     get isViewDettaglio() { return this.view === 'dettaglio'; },
     get isViewEditor()    { return this.view === 'editor'; },
     get restoreCountPA() { return this.restoreSummary ? String(this.restoreSummary.counts.processingActivities) : ''; },
+    // Print model for the whole register (rich, document-oriented).
+    get registroStampa() {
+      const loc = LOCALI[this.lang] || LOCALI.it;
+      const deps = { detail: loc.detail, enums: loc.enums };
+      const records = Array.isArray(this._rawTrattamenti) ? this._rawTrattamenti : [];
+      const trattamenti = records.map((rec) => {
+        const dett = buildDettaglio(rec, this.lang, deps);
+        const t = this._locConFallback(rec.nome);
+        const sezioni = (dett.sezioni || []).map((sez) => ({
+          titolo: sez.titolo,
+          campi: (sez.campi || []).map((c) => ({ ...c, isSemplice: (c.tipo !== 'lista' && c.tipo !== 'gruppi'), isLista: (c.tipo === 'lista'), isGruppi: (c.tipo === 'gruppi') }))
+        }));
+        return { titolo: (t && t.testo) || this.L.sennaNome, sezioni };
+      });
+      return {
+        titolare: this.denominazione || '',
+        generatoIl: new Date().toLocaleString(this.lang === 'en' ? 'en-GB' : 'it-IT'),
+        lingua: this.lang,
+        conteggio: trattamenti.length,
+        trattamenti
+      };
+    },
+    stampaRegistro() {
+      setTimeout(function () { window.print(); }, 0);
+    },
+    apriExportMenu() {
+      this.exportMessage = '';
+      this.exportError = false;
+      this.isExportMenuOpen = true;
+    },
+    chiudiExportMenu() {
+      this.isExportMenuOpen = false;
+    },
+    _modelloRegistro() {
+      const loc = LOCALI[this.lang] || LOCALI.it;
+      const deps = { detail: loc.detail, enums: loc.enums };
+      const records = Array.isArray(this._rawTrattamenti) ? this._rawTrattamenti : [];
+      return buildModelloRegistro(records, this.lang, deps, { denominazione: this.denominazione || '' });
+    },
+    esportaXLSX() {
+      this.exportError = false;
+      try {
+        const model = this._modelloRegistro();
+        const labels = { titolo: this.L.printTitoloRegistro, generatoIl: this.L.printGeneratoIl };
+        esportaRegistroXlsx(model, labels);
+        this.isExportMenuOpen = false;
+        this.exportMessage = this.L.exportFatto || 'Export completato';
+      } catch (err) {
+        console.error('[ropa30] esportaXLSX() error:', err);
+        this.exportError = true;
+        this.exportMessage = this.L.exportErrore || 'Errore durante l\u2019export';
+      }
+    },
+    esportaODS() {
+      this.exportError = false;
+      try {
+        const model = this._modelloRegistro();
+        const labels = { titolo: this.L.printTitoloRegistro, generatoIl: this.L.printGeneratoIl };
+        esportaRegistroOds(model, labels);
+        this.isExportMenuOpen = false;
+        this.exportMessage = this.L.exportFatto || 'Export completato';
+      } catch (err) {
+        console.error('[ropa30] esportaODS() error:', err);
+        this.exportError = true;
+        this.exportMessage = this.L.exportErrore || 'Errore durante l\u2019export';
+      }
+    },
+    esportaPDF() {
+      // Close the dialog, then trigger the browser print dialog on the next tick
+      // so the dialog overlay is gone and @media print sees only #print-area.
+      this.isExportMenuOpen = false;
+      const self = this;
+      setTimeout(function () { window.print(); }, 50);
+    },
+
     get restoreDataExport() { return this.restoreSummary ? (this.restoreSummary.exportedAt || '—') : ''; },
+    get exportMsgClass() { return this.exportError ? 'mt-2 text-sm text-danger-600' : 'mt-2 text-sm text-accent-600'; },
     get restoreMsgClass() { return this.restoreError ? 'mt-2 text-sm text-danger-600' : 'mt-2 text-sm text-accent-600'; },
     get wrapperClass() { return this.view === 'editor' ? 'max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-14' : 'max-w-3xl mx-auto px-4 py-10 sm:py-14'; },
     get editMostraEn()    { return this.editLingue.indexOf('en') !== -1; },

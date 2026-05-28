@@ -81,6 +81,8 @@
     <link rel="icon" type="image/png" href="icons/favicon.png" />
 
     <script src="js/lib/dexie.min.js" defer></script>
+    <script src="js/lib/xlsx.full.min.js" defer></script>
+    <script src="js/lib/fflate.min.js" defer></script>
     <script src="js/app.js" type="module"></script>
     <script src="js/lib/alpine.min.js" defer></script>
   </head>
@@ -363,6 +365,11 @@
                   <span x-text="L.restoreImporta">Importa / Ripristina</span>
                 </button>
                 <input type="file" id="restore-file-input" accept="application/json" class="hidden" x-on:change="fileSelezionato">
+                <button type="button" x-on:click="apriExportMenu"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
+                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-download" /></svg>
+                  <span x-text="L.exportRegistro">Esporta registro</span>
+                </button>
                 <button type="button" x-on:click="vaiAOnboarding"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
@@ -375,6 +382,7 @@
             <p class="mt-2 text-xs text-brand-500" x-text="L.backupAvviso"></p>
             <p class="mt-2 text-sm text-danger-600" x-show="erroreBackup" x-text="L.erroreBackup"></p>
             <p x-show="restoreMessage" x-bind:class="restoreMsgClass" x-text="restoreMessage"></p>
+            <p x-show="exportMessage" x-bind:class="exportMsgClass" x-text="exportMessage"></p>
 
             <!-- Ricerca nella lista (solo se ci sono trattamenti) -->
             <template x-if="haTrattamenti">
@@ -557,6 +565,50 @@
                       <button type="button" x-on:click="confermaRestore" x-bind:disabled="restoreInCorso"
                               class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
                               x-text="L.restoreConferma">Ripristina (sostituisci tutto)</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
+
+              <!-- Dialog ESPORTA REGISTRO (Fase 4) -->
+              <template x-if="isExportMenuOpen">
+                <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+                     x-on:keydown.escape.window="chiudiExportMenu"
+                     x-on:click.self="chiudiExportMenu">
+                  <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                       role="dialog" aria-modal="true" aria-labelledby="export-title">
+                    <h2 id="export-title" class="text-lg font-bold text-brand-900" x-text="L.exportTitolo">Esporta il registro</h2>
+                    <p class="mt-2 text-sm text-brand-700" x-text="L.exportSottotitolo"></p>
+                    <div class="mt-4 space-y-2">
+                      <button type="button" x-on:click="esportaPDF"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-download" /></svg>
+                        <span>
+                          <span class="block font-semibold text-brand-900" x-text="L.exportPdf">PDF</span>
+                          <span class="block text-xs text-brand-600" x-text="L.exportPdfDesc"></span>
+                        </span>
+                      </button>
+                      <button type="button" x-on:click="esportaXLSX"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-download" /></svg>
+                        <span>
+                          <span class="block font-semibold text-brand-900" x-text="L.exportXlsx">XLSX</span>
+                          <span class="block text-xs text-brand-600" x-text="L.exportXlsxDesc"></span>
+                        </span>
+                      </button>
+                      <button type="button" x-on:click="esportaODS"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-download" /></svg>
+                        <span>
+                          <span class="block font-semibold text-brand-900" x-text="L.exportOds">ODS</span>
+                          <span class="block text-xs text-brand-600" x-text="L.exportOdsDesc"></span>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="mt-5 flex justify-end">
+                      <button type="button" x-on:click="chiudiExportMenu"
+                              class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                              x-text="L.exportChiudi">Chiudi</button>
                     </div>
                   </div>
                 </div>
@@ -1019,6 +1071,51 @@
         </template>
       </div>
     </main>
+
+    <!-- ===================== PRINT AREA (Fase 4, solo stampa) ===================== -->
+    <div id="print-area" aria-hidden="true">
+      <header class="print-header">
+        <h1 x-text="L.printTitoloRegistro">Registro delle attività di trattamento</h1>
+        <p class="print-meta" x-text="registroStampa.titolare"></p>
+        <p class="print-meta"><span x-text="L.printGeneratoIl"></span>: <span x-text="registroStampa.generatoIl"></span></p>
+      </header>
+      <template x-for="(tr, ti) in registroStampa.trattamenti" x-bind:key="ti">
+        <section class="print-trattamento">
+          <h2 x-text="tr.titolo"></h2>
+          <template x-for="(sez, si) in tr.sezioni" x-bind:key="si">
+            <div class="print-sezione">
+              <h3 x-text="sez.titolo"></h3>
+              <template x-for="(campo, ci) in sez.campi" x-bind:key="ci">
+                <div class="print-campo">
+                  <span class="print-label" x-text="campo.label"></span>
+                  <template x-if="campo.isSemplice">
+                    <span class="print-value" x-text="campo.value"></span>
+                  </template>
+                  <template x-if="campo.isLista">
+                    <ul class="print-lista">
+                      <template x-for="(el, ii) in campo.items" x-bind:key="ii">
+                        <li x-text="el.value"></li>
+                      </template>
+                    </ul>
+                  </template>
+                  <template x-if="campo.isGruppi">
+                    <div class="print-gruppi">
+                      <template x-for="(g, gi) in campo.gruppi" x-bind:key="gi">
+                        <div class="print-gruppo">
+                          <template x-for="(c, cci) in g.campi" x-bind:key="cci">
+                            <div><span class="print-label" x-text="c.label"></span> <span x-text="c.value"></span></div>
+                          </template>
+                        </div>
+                      </template>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </template>
+        </section>
+      </template>
+    </div>
 
     <!-- Footer -->
     <footer class="border-t border-brand-200 bg-white">
