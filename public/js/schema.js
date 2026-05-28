@@ -82,7 +82,8 @@ export const GARANZIA_TRASFERIMENTO = {
   BCR:                   'bcr',                   // Art. 47 — Norme vincolanti d'impresa
   CODICE_CONDOTTA:       'codice_condotta',       // Art. 46(2)(e)
   CERTIFICAZIONE:        'certificazione',        // Art. 46(2)(f)
-  DEROGA_ART49:          'deroga_art49'           // Art. 49 — deroghe in situazioni specifiche
+  DEROGA_ART49:          'deroga_art49',           // Art. 49 — deroghe in situazioni specifiche
+  DA_VERIFICARE:         'da_verificare'          // placeholder: garanzia da accertare in concreto
 };
 
 // ============================================================================
@@ -194,6 +195,17 @@ export function createDefaultProcessingActivity({ id }) {
     tenantId: DEFAULT_TENANT_ID,
     schemaVersion: SCHEMA_VERSION,
     tipoRegistro: TIPO_REGISTRO.TITOLARE,
+    // ---- Unità organizzativa (classificazione interna opzionale) ----
+    // Per enti complessi (università, PA, grandi aziende): consente di
+    // raggruppare/filtrare i trattamenti per struttura interna, restando in
+    // un unico registro del medesimo titolare. macroStruttura = livello alto
+    // (es. "Dipartimento di Giurisprudenza", "Amministrazione Centrale");
+    // articolazione = livello di dettaglio (es. "Area Affari legali —
+    // Servizio Privacy"). Entrambi opzionali; vuoti per chi non ne ha bisogno.
+    unitaOrganizzativa: {
+      macroStruttura: '',
+      articolazione: ''
+    },
     codiceUtente: '',
     nome: '',
     descrizione: '',
@@ -208,6 +220,7 @@ export function createDefaultProcessingActivity({ id }) {
         descrizione: '',
         garanzieAdottate: '',
         bilanciamentoEffettuato: false,
+        bilanciamentoRichiesto: true,
         riferimentoBilanciamento: ''
       },
       art9: [],                  // array of CONDIZIONE_ART9 values
@@ -224,6 +237,7 @@ export function createDefaultProcessingActivity({ id }) {
     categorieInteressati: [],
     categorieDati: [],
     fonteDeiDati: FONTE_DATI.INTERESSATO,
+    fonteDeiDatiDettagli: '',
 
     // ---- Art. 30(1)(d) — Destinatari ----
     categorieDestinatari: [],
@@ -231,7 +245,7 @@ export function createDefaultProcessingActivity({ id }) {
     // Each entry has shape:
     // {
     //   denominazione, sede, finalita,
-    //   contrattoArt28Firmato: false, riferimentoContratto
+    //   accordoArt28Presente: false, riferimentoContratto
     // }
 
     // ---- Art. 30(1)(e) — Trasferimenti extra-UE ----
@@ -262,6 +276,18 @@ export function createDefaultProcessingActivity({ id }) {
       logica: '',
       conseguenze: '',
       dirittiInteressato: ''
+    },
+
+    // ---- Profilazione marketing (separata dalla profilazione automatizzata ex Art. 22) ----
+    // Tracciamento di aperture, click, preferenze tematiche o comportamenti per segmentare
+    // i destinatari o personalizzare le comunicazioni. Diversa dalla profilazione "decisionale"
+    // dell'Art. 22: qui si tratta di comunicazioni personalizzate, non di decisioni con effetti
+    // giuridici/significativi sulla persona.
+    profilazioneMarketing: {
+      presente: false,
+      descrizione: '',
+      logica: '',
+      baseGiuridicaSpecifica: ''
     },
 
     // ---- Art. 35 — DPIA ----

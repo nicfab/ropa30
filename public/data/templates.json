@@ -1,0 +1,935 @@
+{
+  "$schemaDescription": "ropa30 official templates library. Bilingual (IT/EN). See docs/TEMPLATES.md (planned).",
+  "version": 1,
+  "language": "bilingual",
+  "disclaimer": {
+    "it": "I template ropa30 sono punti di partenza professionali, non sostituiscono la consulenza giuridica. Verifica e adatta ogni campo alla realtà concreta del tuo trattamento prima di considerarlo completo.",
+    "en": "ropa30 templates are professional starting points, not legal advice. Review and adapt every field to the actual context of your processing before considering it complete."
+  },
+  "templates": [
+    {
+      "templateId": "tpl-it-005-newsletter-marketing",
+      "official": true,
+      "categoria": "marketing",
+      "icon": "📧",
+      "nome": {
+        "it": "Newsletter e comunicazioni marketing",
+        "en": "Newsletter and marketing communications"
+      },
+      "descrizioneTemplate": {
+        "it": "Invio periodico di newsletter e comunicazioni promozionali via email. Il template prevede due scenari giuridici distinti, da scegliere in base ai destinatari: (A) consenso ex art. 6(1)(a) GDPR per prospect e non clienti; (B) soft opt-in ex art. 130 c.4 Codice privacy per clienti acquisiti, limitatamente a servizi/prodotti analoghi.",
+        "en": "Periodic sending of newsletters and promotional communications via email. The template offers two distinct legal scenarios, to be selected based on recipients: (A) consent under GDPR Art. 6(1)(a) for prospects and non-customers; (B) soft opt-in under Italian Privacy Code Art. 130(4) for existing customers, limited to similar goods/services."
+      },
+      "noteTemplate": {
+        "it": "DUE SCENARI: (A) Marketing a prospect/non clienti → consenso libero, specifico, informato e inequivocabile ex art. 6(1)(a) GDPR + art. 130 c.1-2 Codice privacy. (B) Marketing a clienti acquisiti per servizi/prodotti analoghi → soft opt-in ex art. 130 c.4 Codice privacy. Il soft opt-in NON è un legittimo interesse ordinario: è una costruzione speciale che richiede TUTTE queste condizioni: dati raccolti nel contesto di una vendita; prodotti/servizi analoghi; marketing del Titolare (non di terzi); informativa al momento della raccolta; opposizione agevole fin dall'inizio e in ogni comunicazione. Verifica accuratamente quale regime applichi: se compili un solo registro per entrambi, distingui chiaramente le finalità.",
+        "en": "TWO SCENARIOS: (A) Marketing to prospects/non-customers → freely given, specific, informed, and unambiguous consent under GDPR Art. 6(1)(a) + Italian Privacy Code Art. 130(1-2). (B) Marketing to existing customers for similar goods/services → soft opt-in under Italian Privacy Code Art. 130(4). Soft opt-in is NOT an ordinary legitimate interest: it is a special construct requiring ALL of these conditions: data collected in the context of a sale; similar goods/services; marketing by the Controller (not third parties); information notice at collection time; easy objection from the outset and in every communication. Verify carefully which regime applies: if you cover both in a single record, clearly distinguish the purposes."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "prospect",
+            "label": "Marketing a prospect e non clienti",
+            "art6": "consenso"
+          },
+          {
+            "id": "clienti_soft_optin",
+            "label": "Marketing a clienti acquisiti (soft opt-in)",
+            "art6": "legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "prospect",
+            "label": "Marketing to prospects and non-customers",
+            "art6": "consenso"
+          },
+          {
+            "id": "clienti_soft_optin",
+            "label": "Marketing to existing customers (soft opt-in)",
+            "art6": "legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Newsletter e comunicazioni marketing",
+          "en": "Newsletter and marketing communications"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati di contatto (in particolare l'indirizzo email) per l'invio periodico di newsletter, comunicazioni promozionali e informative sui prodotti/servizi del Titolare.",
+          "en": "Processing of contact data (in particular email address) for the periodic sending of newsletters, promotional and informational communications about the Controller's products/services."
+        },
+        "finalita": {
+          "it": [
+            "Invio periodico di newsletter informative",
+            "Invio di comunicazioni promozionali su prodotti e servizi del Titolare"
+          ],
+          "en": [
+            "Periodic sending of informational newsletters",
+            "Sending of promotional communications about the Controller's products and services"
+          ]
+        },
+        "baseGiuridica": {
+          "art6": [
+            "consenso"
+          ],
+          "dettagliArt6": {
+            "it": "Scenario A (prospect/non clienti): consenso libero, specifico, informato e inequivocabile, revocabile in qualsiasi momento ex art. 6(1)(a) GDPR e art. 130 c.1-2 Codice privacy (d.lgs. 196/2003). Scenario B (clienti acquisiti): soft opt-in ex art. 130 c.4 Codice privacy, applicabile esclusivamente quando: i dati siano stati raccolti dal Titolare nel contesto di una vendita; le comunicazioni riguardino prodotti/servizi analoghi; il marketing sia del Titolare e non di terzi; l'interessato sia stato informato al momento della raccolta e abbia avuto la possibilità di opporsi sin dall'inizio e in ogni successiva comunicazione, in modo agevole. NB: il soft opt-in non è un legittimo interesse ordinario.",
+            "en": "Scenario A (prospects/non-customers): freely given, specific, informed and unambiguous consent, revocable at any time under GDPR Art. 6(1)(a) and Italian Privacy Code Art. 130(1-2) (d.lgs. 196/2003). Scenario B (existing customers): soft opt-in under Italian Privacy Code Art. 130(4), applicable exclusively when: data were collected by the Controller in the context of a sale; communications concern similar goods/services; marketing is by the Controller and not third parties; the data subject was informed at collection time and could object from the outset and in every subsequent communication, easily. Note: soft opt-in is not an ordinary legitimate interest."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Compilare solo nello Scenario B (soft opt-in ex art. 130 c.4 Codice privacy). Condizioni speciali da verificare cumulativamente: (1) dati raccolti nel contesto di una vendita; (2) prodotti/servizi analoghi a quelli oggetto della vendita; (3) marketing del Titolare e non di terzi; (4) informativa al momento della raccolta; (5) opposizione agevole fin dall'inizio e in ogni comunicazione (es. link di disiscrizione in ogni messaggio).",
+              "en": "Complete only in Scenario B (soft opt-in under Italian Privacy Code Art. 130(4)). Special conditions to verify cumulatively: (1) data collected in the context of a sale; (2) goods/services similar to those of the sale; (3) marketing by the Controller and not third parties; (4) information notice at collection time; (5) easy objection from the outset and in every communication (e.g. unsubscribe link in every message)."
+            },
+            "garanzieAdottate": {
+              "it": "Informativa preventiva chiara fornita al momento della raccolta; possibilità di opposizione gratuita e immediata in ogni comunicazione (link di disiscrizione); limitazione rigorosa a servizi/prodotti analoghi a quelli oggetto del contratto; documentazione delle condizioni di applicabilità del soft opt-in.",
+              "en": "Clear prior notice provided at the time of data collection; free and immediate objection in every communication (unsubscribe link); strict limitation to goods/services similar to those covered by the contract; documentation of soft opt-in applicability conditions."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "Documentare la verifica delle condizioni di applicabilità del soft opt-in (LIA — Legitimate Interest Assessment) prima dell'avvio del trattamento.",
+              "en": "Document the verification of soft opt-in applicability conditions (LIA — Legitimate Interest Assessment) before starting processing."
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "categorieInteressati": {
+          "it": [
+            "Iscritti alla newsletter (Scenario A: prospect/non clienti)",
+            "Clienti del Titolare (Scenario B: soft opt-in)"
+          ],
+          "en": [
+            "Newsletter subscribers (Scenario A: prospects/non-customers)",
+            "Customers of the Controller (Scenario B: soft opt-in)"
+          ]
+        },
+        "categorieDati": {
+          "it": [
+            "Indirizzo email",
+            "Nome e cognome (se forniti)",
+            "Preferenze tematiche (se raccolte)",
+            "Dati di interazione con le comunicazioni (aperture, click, disiscrizioni, bounce), se raccolti"
+          ],
+          "en": [
+            "Email address",
+            "First and last name (if provided)",
+            "Topic preferences (if collected)",
+            "Communication interaction data (opens, clicks, unsubscribes, bounces), if collected"
+          ]
+        },
+        "fonteDeiDati": "interessato",
+        "categorieDestinatari": {
+          "it": [
+            "Personale interno autorizzato (ufficio marketing/comunicazione)",
+            "Fornitore della piattaforma di email marketing (responsabile del trattamento ex art. 28 GDPR)"
+          ],
+          "en": [
+            "Authorized internal personnel (marketing/communications department)",
+            "Email marketing platform provider (data processor under GDPR Art. 28)"
+          ]
+        },
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore della piattaforma di email marketing utilizzata, es. Mailchimp, Brevo, MailerLite, Sendinblue, ecc.]",
+              "en": "[Enter the name of the email marketing platform provider used, e.g. Mailchimp, Brevo, MailerLite, Sendinblue, etc.]"
+            },
+            "sede": {
+              "it": "[Verificare la sede legale e i Paesi di processing del fornitore]",
+              "en": "[Verify the registered office and processing countries of the provider]"
+            },
+            "finalita": {
+              "it": "Erogazione del servizio di invio massivo di email e gestione delle liste di iscritti",
+              "en": "Provision of bulk email sending service and management of subscriber lists"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA — Data Processing Agreement — sottoscritto o accettato online con il fornitore]",
+              "en": "[Reference to the DPA — Data Processing Agreement — signed or accepted online with the provider]"
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Verificare in base al fornitore scelto]",
+            "garanziaApplicata": "scc",
+            "riferimentoDocumentazione": {
+              "it": "Se il fornitore ha sede o sub-responsabili extra-UE (frequentemente USA): Clausole Contrattuali Tipo della Commissione Europea (decisione 2021/914) integrate con eventuale Transfer Impact Assessment (TIA). Verificare anche eventuale certificazione EU-US Data Privacy Framework, ove applicabile.",
+              "en": "If the provider is based or has sub-processors outside the EU (frequently in the USA): EU Standard Contractual Clauses (Commission Decision 2021/914) supplemented by Transfer Impact Assessment (TIA). Also verify any EU-US Data Privacy Framework certification, where applicable."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Fino alla revoca del consenso o all'esercizio dell'opposizione; verifica periodica almeno annuale.",
+            "en": "Until consent is withdrawn or objection is exercised; periodic review at least yearly."
+          },
+          "criteri": {
+            "it": "I dati sono conservati per tutta la durata della finalità marketing. La revoca del consenso o l'esercizio dell'opposizione (es. tramite link di disiscrizione) comporta la cessazione immediata dell'invio e la cancellazione dei dati entro un termine definito nella procedura interna, di regola non superiore a 30 giorni. Verifica periodica, almeno annuale, dell'attualità della lista, della validità della base giuridica e dell'effettiva interazione degli iscritti. È conservata una traccia minima dell'opposizione (email + data) ai fini probatori per il periodo di prescrizione applicabile.",
+            "en": "Data is kept for the entire duration of the marketing purpose. Withdrawal of consent or objection (e.g. via unsubscribe link) results in immediate cessation of sending and data deletion within a term defined in the internal procedure, ordinarily not exceeding 30 days. Periodic review, at least yearly, of list freshness, lawful basis validity, and actual subscriber engagement. Minimal record of the objection (email + date) is kept for evidentiary purposes for the applicable prescription period."
+          },
+          "azioneFinale": "cancellazione"
+        },
+        "misureSicurezza": {
+          "tecniche": {
+            "it": [
+              "Cifratura della connessione (HTTPS/TLS) verso la piattaforma di email marketing",
+              "Autenticazione a due fattori (MFA) sull'account amministrativo della piattaforma",
+              "Backup periodici, se necessari, con cifratura at-rest e controllo degli accessi",
+              "Sistema automatico di gestione delle disiscrizioni"
+            ],
+            "en": [
+              "Encryption of the connection (HTTPS/TLS) to the email marketing platform",
+              "Two-factor authentication (MFA) on the platform administrative account",
+              "Periodic backups, where necessary, with at-rest encryption and access control",
+              "Automatic unsubscribe management system"
+            ]
+          },
+          "organizzative": {
+            "it": [
+              "Designazione degli operatori autorizzati al trattamento (autorizzati ex art. 29 GDPR)",
+              "Procedura interna per la gestione delle richieste di esercizio dei diritti degli interessati",
+              "Verifica periodica delle liste e rimozione dei contatti inattivi",
+              "Audit periodico del fornitore della piattaforma di email marketing"
+            ],
+            "en": [
+              "Designation of authorized operators (authorized under GDPR Art. 29)",
+              "Internal procedure for handling data subject rights requests",
+              "Periodic list review and removal of inactive contacts",
+              "Periodic audit of the email marketing platform provider"
+            ]
+          },
+          "rinvioDocumentale": {
+            "it": "[Rinvio alla policy di sicurezza informatica del Titolare e al DPA con il fornitore]",
+            "en": "[Refer to the Controller's IT security policy and to the DPA with the provider]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Compilare solo se il trattamento prevede decisioni automatizzate con effetti giuridici o significativi sulla persona ex art. 22 GDPR. Per la sola personalizzazione/segmentazione delle comunicazioni utilizzare il campo profilazioneMarketing.",
+            "en": "Complete only if the processing involves automated decisions with legal or significant effects on the person under GDPR Art. 22. For mere personalization/segmentation of communications, use the profilazioneMarketing field."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Compilare solo se sono utilizzati dati di apertura, click, preferenze tematiche o comportamento per segmentare i destinatari o personalizzare le comunicazioni. La profilazione marketing è cosa distinta dall'art. 22 GDPR: qui non si producono decisioni con effetti giuridici, ma comunicazioni personalizzate.",
+            "en": "Complete only if open, click, topic preference or behavioural data are used to segment recipients or personalise communications. Marketing profiling is distinct from GDPR Art. 22: here no decisions with legal effects are produced, only personalised communications."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "Per la profilazione marketing è di regola necessario un consenso specifico e granulare ulteriore rispetto a quello per la newsletter ordinaria.",
+            "en": "Marketing profiling generally requires a specific and granular consent additional to the one for ordinary newsletter."
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Se è attiva la profilazione su larga scala o l'invio è massivo verso categorie vulnerabili (es. minori), valutare la necessità di una DPIA ex art. 35 GDPR.",
+            "en": "If large-scale profiling is active or sending is massive toward vulnerable categories (e.g. minors), consider the need for a DPIA under GDPR Art. 35."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 7, 13, 21, 22; Codice privacy (d.lgs. 196/2003) artt. 130, 140-bis; Linee guida EDPB 05/2020 sul consenso; provvedimenti del Garante italiano in materia di marketing e profilazione.",
+          "en": "Relevant legal references: GDPR Arts. 6, 7, 13, 21, 22; Italian Privacy Code (d.lgs. 196/2003) Arts. 130, 140-bis; EDPB Guidelines 05/2020 on consent; Italian Garante provisions on marketing and profiling."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-001-rapporto-lavoro",
+      "official": true,
+      "categoria": "risorse_umane",
+      "icon": "👥",
+      "nome": {
+        "it": "Gestione del rapporto di lavoro",
+        "en": "Employment relationship management"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali dei lavoratori dipendenti per l'esecuzione del contratto di lavoro, l'adempimento degli obblighi di legge (contributivi, fiscali, previdenziali, di sicurezza), e gli ulteriori trattamenti connessi (formazione, salute e sicurezza sul lavoro, eventuali controlli leciti, ecc.). Include il trattamento di categorie particolari di dati (art. 9) quando necessario.",
+        "en": "Processing of personal data of employees for the performance of the employment contract, compliance with legal obligations (social security, tax, pension, safety), and further connected processing activities (training, occupational health and safety, lawful monitoring where applicable). Includes processing of special categories of data (Art. 9) when necessary."
+      },
+      "noteTemplate": {
+        "it": "TRATTAMENTO COMPLESSO. Il rapporto di lavoro raggruppa molteplici basi giuridiche: (a) art. 6(1)(b) GDPR per l'esecuzione del contratto; (b) art. 6(1)(c) GDPR per gli obblighi di legge (contributivi INPS, fiscali, INAIL, libro unico, ecc.); (c) art. 9(2)(b) GDPR + art. 88 GDPR + art. 2-sexies Codice privacy per i dati sanitari connessi all'idoneità o all'infortunio. Per gli impianti audiovisivi e gli altri strumenti dai quali derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, occorre verificare la riconducibilità all'art. 4 St. Lav., distinguendo tra strumenti di lavoro, strumenti di registrazione degli accessi/presenze e strumenti soggetti ad accordo sindacale o autorizzazione ITL. Le attività di ricerca e selezione del personale/candidati possono essere censite in una distinta attività di trattamento, se gestite con processi, basi giuridiche, tempi di conservazione o fornitori diversi. Il trattamento dei dati connesso a segnalazioni whistleblowing ex d.lgs. 24/2023 dovrebbe essere censito in una distinta attività di trattamento, ove applicabile.",
+        "en": "COMPLEX PROCESSING. The employment relationship covers multiple lawful bases: (a) GDPR Art. 6(1)(b) for contract performance; (b) GDPR Art. 6(1)(c) for legal obligations (Italian INPS contributions, tax, INAIL, single employee register, etc.); (c) GDPR Art. 9(2)(b) + Art. 88 + Italian Privacy Code Art. 2-sexies for health data related to fitness for work or injuries. For audiovisual systems and other tools from which the possibility of remote monitoring of workers' activity may also arise, verify the applicability of Art. 4 of the Workers' Statute, distinguishing between work tools, access/attendance recording tools, and tools subject to union agreement or Labour Inspectorate authorization. Recruitment and personnel selection activities may be recorded as a distinct processing activity, if managed with different processes, legal bases, retention periods or providers. Processing of data related to whistleblowing reports under d.lgs. 24/2023 should be recorded as a distinct processing activity, where applicable."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "dipendenti_standard",
+            "label": "Lavoratori dipendenti (rapporto subordinato)",
+            "art6": "contratto_e_obbligo"
+          },
+          {
+            "id": "collaboratori",
+            "label": "Collaboratori coordinati e continuativi (parasubordinati)",
+            "art6": "contratto_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "dipendenti_standard",
+            "label": "Employees (subordinate employment)",
+            "art6": "contract_and_obligation"
+          },
+          {
+            "id": "collaboratori",
+            "label": "Coordinated and continuous collaborators (para-subordinate)",
+            "art6": "contract_and_obligation"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione del rapporto di lavoro",
+          "en": "Employment relationship management"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali dei lavoratori dipendenti e assimilati per l'esecuzione del rapporto di lavoro in ogni sua fase: assunzione, esecuzione, gestione delle assenze, retribuzione, valutazione, formazione, salute e sicurezza sul lavoro, eventuali procedimenti disciplinari, cessazione del rapporto e adempimenti post-cessazione (TFR, libro unico, certificazioni).",
+          "en": "Processing of personal data of employees and equivalent workers for all phases of the employment relationship: hiring, execution, leave management, remuneration, performance evaluation, training, occupational health and safety, disciplinary proceedings, termination, and post-termination obligations (severance pay, single employee register, certifications)."
+        },
+        "finalita": {
+          "it": [
+            "Esecuzione del contratto di lavoro in ogni sua fase",
+            "Adempimento degli obblighi contributivi, previdenziali, assistenziali e fiscali",
+            "Tenuta del libro unico del lavoro e della documentazione obbligatoria",
+            "Gestione delle assenze, dei permessi, delle ferie e dei congedi",
+            "Sorveglianza sanitaria ex d.lgs. 81/2008 e gestione idoneità al lavoro",
+            "Formazione obbligatoria e professionale",
+            "Gestione di eventuali procedimenti disciplinari",
+            "Adempimenti relativi alla cessazione del rapporto (TFR, certificazioni, comunicazioni obbligatorie)"
+          ],
+          "en": [
+            "Performance of the employment contract in all its phases",
+            "Compliance with social security, pension, welfare and tax obligations",
+            "Maintenance of the single employee register and mandatory documentation",
+            "Management of absences, leaves, holidays and parental leaves",
+            "Health surveillance under d.lgs. 81/2008 and management of fitness for work",
+            "Mandatory and professional training",
+            "Management of disciplinary proceedings",
+            "Termination-related obligations (severance pay, certifications, mandatory notifications)"
+          ]
+        },
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: esecuzione del contratto individuale di lavoro. Art. 6(1)(c) GDPR: adempimento di obblighi legali cui è soggetto il Titolare, in particolare: d.lgs. 165/2001 (per lavoro pubblico); d.lgs. 81/2015 e successive modifiche (disciplina dei rapporti di lavoro); l. 300/1970 (Statuto dei Lavoratori); d.lgs. 81/2008 (TUSL — salute e sicurezza); normativa fiscale (TUIR, IRPEF, sostituti d'imposta); normativa previdenziale (INPS, INAIL); art. 88 GDPR sui trattamenti nel contesto lavorativo. Per i dati relativi alla salute (idoneità, infortuni, malattia): art. 9(2)(b) GDPR + art. 2-sexies Codice privacy + d.lgs. 81/2008.",
+            "en": "GDPR Art. 6(1)(b): performance of the individual employment contract. GDPR Art. 6(1)(c): compliance with legal obligations to which the Controller is subject, in particular: d.lgs. 165/2001 (for public-sector employment); d.lgs. 81/2015 as amended (employment relationships discipline); l. 300/1970 (Workers' Statute); d.lgs. 81/2008 (Italian Consolidated Safety Act); tax legislation (TUIR, IRPEF, withholding agents); social security legislation (INPS, INAIL); GDPR Art. 88 on processing in employment context. For health-related data (fitness for work, injuries, sickness): GDPR Art. 9(2)(b) + Italian Privacy Code Art. 2-sexies + d.lgs. 81/2008."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "",
+              "en": ""
+            },
+            "garanzieAdottate": {
+              "it": "",
+              "en": ""
+            },
+            "bilanciamentoRichiesto": false,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "obblighi_lavoro",
+            "medicina_lavoro"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(b) GDPR (assolvimento obblighi e diritti specifici del Titolare o dell'interessato in materia di diritto del lavoro e sicurezza sociale) e art. 9(2)(h) (medicina del lavoro, valutazione idoneità). Riferimento art. 88 GDPR e art. 2-sexies Codice privacy. I dati sanitari sono trattati esclusivamente dal medico competente o sotto la sua diretta responsabilità.",
+            "en": "GDPR Art. 9(2)(b) (compliance with obligations and specific rights of the Controller or data subject in employment and social security law) and Art. 9(2)(h) (occupational medicine, fitness assessment). Reference to GDPR Art. 88 and Italian Privacy Code Art. 2-sexies. Health data is processed exclusively by the occupational physician or under their direct responsibility."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Eventuale trattamento di dati relativi a condanne penali (art. 10 GDPR + art. 2-octies Codice privacy) è limitato a ipotesi normativamente previste (es. certificato del casellario giudiziale per specifiche mansioni, antiriciclaggio, art. 25-bis d.P.R. 313/2002).",
+            "en": "Any processing of criminal-conviction data (GDPR Art. 10 + Italian Privacy Code Art. 2-octies) is limited to legally prescribed scenarios (e.g. criminal record certificate for specific positions, anti-money laundering, art. 25-bis d.P.R. 313/2002)."
+          }
+        },
+        "categorieInteressati": {
+          "it": [
+            "Lavoratori dipendenti (tempo indeterminato, determinato, apprendistato, part-time)",
+            "Collaboratori coordinati e continuativi (parasubordinati)",
+            "Tirocinanti e stagisti",
+            "Familiari del lavoratore (per detrazioni, congedi parentali, assegni familiari)"
+          ],
+          "en": [
+            "Employees (open-ended, fixed-term, apprentices, part-time)",
+            "Coordinated and continuous collaborators (para-subordinate)",
+            "Interns and trainees",
+            "Worker's family members (for tax deductions, parental leave, family allowances)"
+          ]
+        },
+        "categorieDati": {
+          "it": [
+            "Dati anagrafici e identificativi (nome, cognome, data e luogo di nascita, residenza, codice fiscale)",
+            "Dati di contatto (telefono, email, indirizzo)",
+            "Documenti di identità e, ove applicabile, documentazione relativa al permesso di soggiorno o al titolo di lavoro",
+            "Dati relativi al rapporto di lavoro (mansione, livello, retribuzione, presenze, valutazioni)",
+            "Dati bancari (IBAN per accredito retribuzione)",
+            "Dati fiscali e previdenziali (codice fiscale, posizione INPS, INAIL, detrazioni, familiari a carico)",
+            "Dati relativi alla salute (categorie particolari art. 9): idoneità alla mansione, infortuni, malattie, certificati medici",
+            "Dati relativi all'appartenenza sindacale (categoria particolare art. 9), limitatamente alle trattenute sindacali",
+            "Eventuali dati relativi a procedimenti disciplinari",
+            "Eventuali dati biometrici (categoria particolare art. 9), solo in presenza di adeguata condizione di liceità ex art. 9 GDPR, base normativa applicabile, verifica di necessità e proporzionalità, e, ove il sistema comporti controllo a distanza, nel rispetto dell'art. 4 St. Lav."
+          ],
+          "en": [
+            "Identification data (first/last name, date and place of birth, residence, tax code)",
+            "Contact data (phone, email, address)",
+            "Identity documents and, where applicable, residence permit or work authorization documentation",
+            "Employment data (job role, level, salary, attendance, performance reviews)",
+            "Banking data (IBAN for salary payment)",
+            "Tax and social security data (tax code, INPS and INAIL position, deductions, dependants)",
+            "Health-related data (special category Art. 9): fitness for work, injuries, sickness, medical certificates",
+            "Trade union membership data (special category Art. 9), limited to union dues deductions",
+            "Disciplinary proceeding data, if any",
+            "Biometric data, if any (special category Art. 9), only in the presence of an adequate condition of lawfulness under GDPR Art. 9, applicable legal basis, verification of necessity and proportionality, and, where the system involves remote monitoring, in compliance with Art. 4 of the Workers' Statute."
+          ]
+        },
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti direttamente dal lavoratore; dati generati nel corso del rapporto; dati provenienti da enti pubblici, medico competente, consulenti esterni, sistemi HR/presenze e, ove applicabile, autorità competenti.",
+          "en": "Data provided directly by the worker; data generated during the employment relationship; data from public bodies, occupational physician, external consultants, HR/attendance systems and, where applicable, competent authorities."
+        },
+        "categorieDestinatari": {
+          "it": [
+            "Personale interno autorizzato (ufficio HR, ufficio amministrazione/contabilità, dirigenza, RSPP, medico competente)",
+            "Amministratori di sistema e fornitori IT, nei limiti delle rispettive autorizzazioni e mansioni tecniche",
+            "Consulente del lavoro / studio paghe esterno (responsabile del trattamento)",
+            "Commercialista / studio fiscale (responsabile o autonomo Titolare, secondo l'incarico)",
+            "Enti pubblici (INPS, INAIL, Agenzia delle Entrate, Ispettorato del Lavoro)",
+            "Istituti previdenziali e assistenziali, fondi pensione integrativa",
+            "Banche (per accredito retribuzione)",
+            "Organizzazioni sindacali (limitatamente alle trattenute sindacali, se autorizzate dal lavoratore)",
+            "Eventuali enti di formazione esterni",
+            "Medico competente (in posizione di autonomia)"
+          ],
+          "en": [
+            "Authorized internal personnel (HR, administration/accounting, management, occupational safety, occupational physician)",
+            "System administrators and IT providers, within the limits of their respective authorizations and technical duties",
+            "Labour consultant / external payroll firm (data processor)",
+            "Accountant / tax firm (processor or independent controller, depending on the engagement)",
+            "Public bodies (INPS, INAIL, Italian Revenue Agency, Labour Inspectorate)",
+            "Social security and welfare bodies, supplementary pension funds",
+            "Banks (for salary payment)",
+            "Trade unions (limited to union dues, if authorized by the worker)",
+            "External training providers, if any",
+            "Occupational physician (in an autonomous position)"
+          ]
+        },
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del consulente del lavoro / studio paghe esterno]",
+              "en": "[Enter the name of the external labour consultant / payroll firm]"
+            },
+            "sede": {
+              "it": "[Sede legale]",
+              "en": "[Registered office]"
+            },
+            "finalita": {
+              "it": "Elaborazione delle buste paga, adempimenti contributivi e fiscali per conto del Titolare",
+              "en": "Payroll processing, social security and tax compliance on behalf of the Controller"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al contratto di nomina ex art. 28 GDPR]",
+              "en": "[Reference to the GDPR Art. 28 appointment contract]"
+            }
+          },
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale HR/paghe, se in cloud]",
+              "en": "[Enter the name of the HR/payroll cloud software provider, if applicable]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura del servizio di gestione informatizzata di HR, presenze, paghe",
+              "en": "Provision of HR, attendance and payroll management software service"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Verificare in base ai fornitori coinvolti — di regola UE, ma verificare cloud provider e sub-responsabili]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "Per dati di lavoro è preferibile evitare trasferimenti extra-UE. Se inevitabili (es. cloud provider con sub-responsabili USA), applicare la garanzia appropriata (SCC + TIA, decisione di adeguatezza, EU-US Data Privacy Framework ove applicabile, ecc.). Verificare attentamente la presenza di sub-responsabili extra-UE nei contratti dei fornitori.",
+              "en": "For employment data, transfers outside the EU should be avoided where possible. If unavoidable (e.g. cloud providers with US sub-processors), apply the appropriate safeguard (SCC + TIA, adequacy decision, EU-US Data Privacy Framework where applicable, etc.). Carefully verify the presence of non-EU sub-processors in supplier contracts."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Variabili in funzione della categoria di dati e degli obblighi normativi specifici (vedi criteri).",
+            "en": "Variable depending on data category and specific legal obligations (see criteria)."
+          },
+          "criteri": {
+            "it": "Documentazione fiscale e contributiva: 10 anni ex art. 2220 c.c. e normativa fiscale. Libro unico del lavoro: 5 anni dall'ultima registrazione (art. 39 d.l. 112/2008). Documenti relativi a TFR e quietanze: 10 anni. Documenti sanitari (cartella sanitaria e di rischio): secondo i termini previsti dal d.lgs. 81/2008 e dalla normativa speciale applicabile, con conservazioni più lunghe per specifiche esposizioni a rischio. Procedimenti disciplinari: fino al termine di prescrizione e comunque non oltre il necessario. In caso di contenzioso: fino al termine dello stesso e dei termini di impugnazione. Verifica periodica delle scadenze e cancellazione tempestiva dei dati non più necessari.",
+            "en": "Tax and social security documentation: 10 years under Italian Civil Code Art. 2220 and tax legislation. Single employee register: 5 years from last entry (Art. 39 d.l. 112/2008). Severance pay and receipt documents: 10 years. Health documents (health and risk file): according to the terms provided by d.lgs. 81/2008 and applicable special legislation, with longer retention for specific risk exposures. Disciplinary proceedings: until prescription term, and in any case not beyond what is necessary. In case of litigation: until conclusion and lapse of appeal terms. Periodic review of deadlines and prompt deletion of data no longer needed."
+          },
+          "azioneFinale": "cancellazione"
+        },
+        "misureSicurezza": {
+          "tecniche": {
+            "it": [
+              "Controllo accessi su sistemi gestionali HR/paghe con autenticazione forte e profilazione dei privilegi",
+              "Cifratura dei dati sanitari (categoria particolare art. 9) sia in transito sia at-rest",
+              "Segregazione fisica e logica dei dati sanitari (accesso riservato al medico competente)",
+              "Backup periodici, se necessari, con cifratura at-rest e controllo degli accessi",
+              "Pseudonimizzazione dei dati nei sistemi di analisi statistica e reporting interno",
+              "Aggiornamento e patching periodico dei sistemi"
+            ],
+            "en": [
+              "Access control on HR/payroll systems with strong authentication and privilege profiling",
+              "Encryption of health data (special category Art. 9) both in transit and at rest",
+              "Physical and logical segregation of health data (access restricted to the occupational physician)",
+              "Periodic backups, where necessary, with at-rest encryption and access control",
+              "Pseudonymization of data in internal analytics and reporting systems",
+              "Periodic system updates and patching"
+            ]
+          },
+          "organizzative": {
+            "it": [
+              "Designazione formale degli operatori autorizzati (autorizzati ex art. 29 GDPR), con istruzioni specifiche scritte",
+              "Nomina del medico competente ai sensi del d.lgs. 81/2008 e definizione dei flussi informativi consentiti, nel rispetto dell'autonomia professionale e della riservatezza dei dati sanitari",
+              "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
+              "Formazione periodica del personale HR e dei responsabili sui temi della protezione dei dati",
+              "Procedura interna per la gestione delle richieste di esercizio dei diritti degli interessati (artt. 15-22 GDPR)",
+              "Procedura per la gestione degli infortuni e delle malattie professionali",
+              "Procedura per la gestione dei procedimenti disciplinari nel rispetto della riservatezza",
+              "Verifica della compatibilità di eventuali sistemi di controllo a distanza con l'art. 4 St. Lav. (accordo sindacale o autorizzazione ITL)",
+              "Politica di clean desk e gestione documentazione cartacea"
+            ],
+            "en": [
+              "Formal designation of authorized operators (authorized under GDPR Art. 29), with specific written instructions",
+              "Appointment of the occupational physician under d.lgs. 81/2008 and definition of permitted information flows, respecting professional autonomy and confidentiality of health data",
+              "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent",
+              "Periodic training of HR personnel and managers on data protection topics",
+              "Internal procedure for handling data subject rights requests (GDPR Arts. 15-22)",
+              "Procedure for managing work-related injuries and occupational diseases",
+              "Procedure for managing disciplinary proceedings while respecting confidentiality",
+              "Verification of compatibility of any remote monitoring systems with Art. 4 of the Workers' Statute (union agreement or Labour Inspectorate authorization)",
+              "Clean desk policy and paper documentation management"
+            ]
+          },
+          "rinvioDocumentale": {
+            "it": "[Rinvio al Documento di Valutazione dei Rischi (DVR) ex d.lgs. 81/2008, al regolamento aziendale, alle policy interne sulla protezione dei dati, al codice disciplinare e all'eventuale accordo sindacale ex art. 4 St. Lav.]",
+            "en": "[Refer to the Risk Assessment Document (DVR) under d.lgs. 81/2008, the company internal regulations, internal data protection policies, the disciplinary code, and any union agreement under Art. 4 of the Workers' Statute]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Compilare se sono utilizzati sistemi di decisione automatizzata o di monitoraggio nel rapporto di lavoro. Attenzione: l'art. 22 GDPR e il d.lgs. 152/1997, come modificato dal d.lgs. 104/2022 e dal d.l. 48/2023, impongono specifici obblighi informativi in caso di utilizzo di sistemi decisionali o di monitoraggio automatizzati nel rapporto di lavoro.",
+            "en": "Complete if automated decision-making or monitoring systems are used in the employment relationship. Note: GDPR Art. 22 and d.lgs. 152/1997, as amended by d.lgs. 104/2022 and d.l. 48/2023, impose specific information obligations where automated decision-making or monitoring systems are used in the employment relationship."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile al rapporto di lavoro ordinario. Il marketing verso i dipendenti (es. iniziative welfare) richiede valutazioni specifiche separate.",
+            "en": "Not applicable to ordinary employment relationships. Marketing toward employees (e.g. welfare initiatives) requires separate specific assessments."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "DPIA ex art. 35 GDPR raccomandata o richiesta in presenza di: sistemi di controllo a distanza (videosorveglianza, geolocalizzazione, monitoraggio attività informatica); uso di dati biometrici; sistemi di decisione automatizzata sui lavoratori; trattamenti su larga scala di dati sanitari. Verifica l'elenco dei trattamenti soggetti a DPIA pubblicato dal Garante (provv. 11 ottobre 2018 e successivi aggiornamenti).",
+            "en": "DPIA under GDPR Art. 35 recommended or required when: remote monitoring systems are in use (CCTV, geolocation, IT activity monitoring); biometric data is used; automated decision-making systems concerning workers; large-scale processing of health data. Verify the list of processing subject to DPIA published by the Italian Garante (provv. 11 October 2018 and subsequent updates)."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9, 22, 35, 88; Codice privacy (d.lgs. 196/2003) artt. 2-sexies, 2-octies, 111, 113-114; Statuto dei Lavoratori (l. 300/1970) art. 4; d.lgs. 81/2008 (TUSL); d.lgs. 81/2015; d.lgs. 104/2022; d.l. 48/2023 conv. in l. 85/2023; d.lgs. 152/1997 art. 1-bis; Direttiva (UE) 2024/2831 sul lavoro tramite piattaforme digitali, ove applicabile; Linee guida del Garante 1° marzo 2007 sulla posta elettronica e internet nei rapporti di lavoro; provvedimenti del Garante in materia di videosorveglianza, geolocalizzazione, biometria, amministratori di sistema; raccomandazioni del Working Party 29 / EDPB sui trattamenti sul lavoro (WP249 e successivi).",
+          "en": "Relevant legal references: GDPR Arts. 6, 9, 22, 35, 88; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-sexies, 2-octies, 111, 113-114; Workers' Statute (l. 300/1970) Art. 4; d.lgs. 81/2008 (Italian Consolidated Safety Act); d.lgs. 81/2015; d.lgs. 104/2022; d.l. 48/2023 conv. in l. 85/2023; d.lgs. 152/1997 art. 1-bis; Directive (EU) 2024/2831 on platform work, where applicable; Italian Garante Guidelines of 1 March 2007 on email and internet in employment; Italian Garante provisions on CCTV, geolocation, biometrics, system administrators; Working Party 29 / EDPB recommendations on processing in employment (WP249 and subsequent)."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-008-videosorveglianza",
+      "official": true,
+      "categoria": "sicurezza",
+      "icon": "📹",
+      "nome": {
+        "it": "Videosorveglianza ai fini di sicurezza",
+        "en": "Video surveillance for security purposes"
+      },
+      "descrizioneTemplate": {
+        "it": "Installazione e gestione di un sistema di videosorveglianza fissa per finalità di sicurezza del patrimonio, sicurezza delle persone e prevenzione di atti illeciti. Il template assume riprese in ambienti aziendali o pertinenze, non destinate a controllo continuativo dei lavoratori. Se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, occorre rispettare l'art. 4 St. Lav.",
+        "en": "Installation and management of a fixed video surveillance system for purposes of property security, personal safety, and prevention of unlawful acts. The template assumes recordings in business premises or appurtenances, not intended for continuous worker monitoring. If the system also entails the possibility of remote monitoring of workers' activity, Art. 4 of the Workers' Statute must be observed."
+      },
+      "noteTemplate": {
+        "it": "TRATTAMENTO POTENZIALMENTE AD ALTO RISCHIO, da valutare in concreto in base a scala, aree riprese, interessati coinvolti, eventuale presenza di lavoratori, tecnologie utilizzate e modalità di conservazione. La videosorveglianza richiede particolare cautela: (a) DPIA ex art. 35 GDPR da effettuare prima dell'attivazione nei casi in cui il trattamento presenti rischio elevato, in particolare nei casi indicati dall'elenco del Garante (provv. 11 ottobre 2018) e dalle Linee guida EDPB 3/2019; (b) cartelli informativi conformi al modello del Garante visibili PRIMA dell'area sorvegliata (informativa di primo livello) e informativa estesa (secondo livello) facilmente accessibile; (c) se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, art. 4 St. Lav.: accordo sindacale o autorizzazione ITL preventiva; (d) tempi di conservazione DI REGOLA non superiori a 24/72 ore, prolungabili solo per specifiche esigenze documentate; (e) divieto di riprese verso aree non strettamente necessarie (vicini, strade pubbliche, ecc.) — verifica accuratamente l'angolo delle telecamere; (f) puntamento e angolazione devono rispettare il principio di minimizzazione. Verifica le Linee guida EDPB 3/2019, il provvedimento del Garante 8 aprile 2010 (nei limiti di compatibilità con il GDPR) e le FAQ del Garante in materia di videosorveglianza.",
+        "en": "POTENTIALLY HIGH-RISK PROCESSING, to be assessed in concrete terms based on scale, recorded areas, data subjects involved, possible presence of workers, technologies used, and retention methods. Video surveillance requires particular caution: (a) DPIA under GDPR Art. 35 to be carried out before activation where the processing presents high risk, in particular in the cases indicated by the Italian Garante's list (provv. 11 October 2018) and by EDPB Guidelines 3/2019; (b) information signs in compliance with the Garante's model, visible BEFORE the surveilled area (first-level notice) and an easily accessible extended (second-level) notice; (c) if the system also entails the possibility of remote monitoring of workers' activity, Art. 4 of the Workers' Statute applies: prior union agreement or Labour Inspectorate authorization; (d) retention periods AS A RULE not exceeding 24/72 hours, extendable only for specific documented needs; (e) prohibition of filming areas not strictly necessary (neighbors, public roads, etc.) — carefully verify camera angles; (f) camera positioning and angle must respect the data minimisation principle. Verify EDPB Guidelines 3/2019, the Italian Garante provision of 8 April 2010 (within the limits of GDPR compatibility), and the Garante's FAQ on video surveillance."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "esercizio_commerciale",
+            "label": "Esercizio commerciale aperto al pubblico",
+            "art6": "legittimo_interesse"
+          },
+          {
+            "id": "azienda_dipendenti",
+            "label": "Azienda con dipendenti (può richiedere art. 4 St. Lav.)",
+            "art6": "legittimo_interesse_art4"
+          },
+          {
+            "id": "pertinenze_private",
+            "label": "Pertinenze aziendali non aperte al pubblico",
+            "art6": "legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "esercizio_commerciale",
+            "label": "Commercial establishment open to public",
+            "art6": "legitimate_interest"
+          },
+          {
+            "id": "azienda_dipendenti",
+            "label": "Business with employees (may require Workers' Statute Art. 4)",
+            "art6": "legitimate_interest_art4"
+          },
+          {
+            "id": "pertinenze_private",
+            "label": "Business appurtenances not open to public",
+            "art6": "legitimate_interest"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Videosorveglianza ai fini di sicurezza",
+          "en": "Video surveillance for security purposes"
+        },
+        "descrizione": {
+          "it": "Trattamento di immagini provenienti da impianto di videosorveglianza fissa installato presso i locali e le pertinenze del Titolare per finalità di tutela del patrimonio, sicurezza delle persone presenti nei locali e prevenzione di atti illeciti (furti, intrusioni, atti vandalici).",
+          "en": "Processing of images from a fixed video surveillance system installed at the Controller's premises and appurtenances for purposes of property protection, safety of persons in the premises, and prevention of unlawful acts (theft, intrusion, vandalism)."
+        },
+        "finalita": {
+          "it": [
+            "Tutela del patrimonio aziendale e prevenzione di furti, intrusioni e atti vandalici",
+            "Sicurezza delle persone presenti nei locali e nelle pertinenze",
+            "Documentazione di eventuali eventi rilevanti ai fini della tutela legale del Titolare e di terzi"
+          ],
+          "en": [
+            "Protection of business assets and prevention of theft, intrusion and vandalism",
+            "Safety of persons present in the premises and appurtenances",
+            "Documentation of relevant events for the legal protection of the Controller and third parties"
+          ]
+        },
+        "baseGiuridica": {
+          "art6": [
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(f) GDPR: legittimo interesse del Titolare alla tutela del patrimonio, alla sicurezza delle persone e alla prevenzione di atti illeciti. Il legittimo interesse va documentato in una valutazione di bilanciamento (LIA) che dimostri necessità, proporzionalità e prevalenza rispetto ai diritti e libertà degli interessati. Se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, è necessario il rispetto dell'art. 4 St. Lav. (l. 300/1970): accordo sindacale con le RSA/RSU o, in mancanza, autorizzazione dell'Ispettorato Territoriale del Lavoro. Riferimenti: EDPB Guidelines 3/2019 sul trattamento dei dati personali attraverso dispositivi video (adottate il 29 gennaio 2020); provvedimento del Garante 8 aprile 2010, nei limiti di compatibilità con il GDPR; FAQ e provvedimenti del Garante in materia di videosorveglianza.",
+            "en": "GDPR Art. 6(1)(f): legitimate interest of the Controller in protecting property, ensuring personal safety, and preventing unlawful acts. The legitimate interest must be documented in a balancing assessment (LIA) demonstrating necessity, proportionality, and prevalence over data subjects' rights and freedoms. If the system also entails the possibility of remote monitoring of workers' activity, compliance with Art. 4 of the Workers' Statute (l. 300/1970) is required: union agreement with the workers' representatives or, failing that, authorization from the Local Labour Inspectorate. References: EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); Italian Garante provision of 8 April 2010, within the limits of GDPR compatibility; Garante FAQ and provisions on video surveillance."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Legittimo interesse del Titolare alla protezione del proprio patrimonio, alla sicurezza delle persone presenti nei locali e alla prevenzione/documentazione di atti illeciti (furti, intrusioni, atti vandalici).",
+              "en": "Legitimate interest of the Controller in protecting its assets, ensuring the safety of persons present in the premises, and preventing/documenting unlawful acts (theft, intrusions, vandalism)."
+            },
+            "garanzieAdottate": {
+              "it": "Limitazione delle aree di ripresa allo stretto necessario (no zone non pertinenti, no postazioni di lavoro salvo specifica autorizzazione ex art. 4 St. Lav.); informativa di primo livello (cartello conforme al modello del Garante) ben visibile prima dell'area sorvegliata; informativa di secondo livello facilmente accessibile, anche tramite QR code, link breve, reception, bacheca o altro canale indicato nel cartello; tempi di conservazione minimi (di regola 24-72 ore); accesso alle immagini riservato a soggetti designati; cifratura del salvataggio; audit periodico del sistema.",
+              "en": "Limitation of camera coverage to what is strictly necessary (no irrelevant areas, no workstations except with specific authorization under Workers' Statute Art. 4); first-level notice (sign compliant with the Garante's model) clearly visible before the surveilled area; second-level notice easily accessible, including via QR code, short link, reception, notice board or other channel indicated on the sign; minimum retention periods (as a rule 24-72 hours); image access restricted to designated personnel; encrypted storage; periodic system audit."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "[Riferimento al documento di bilanciamento del legittimo interesse (LIA) redatto prima dell'attivazione dell'impianto, da conservare ai fini di accountability]",
+              "en": "[Reference to the Legitimate Interest Assessment (LIA) document prepared before system activation, to be retained for accountability purposes]"
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "Eventuali immagini che incidentalmente catturino dati di categoria particolare (es. condizioni di salute visibili, appartenenza religiosa visibile) devono essere gestite con particolare cautela: nessun trattamento ulteriore, cancellazione tempestiva, nessuna analisi automatica. Riprese in luoghi di culto, sindacali o sanitari richiedono base giuridica ulteriore ex art. 9.",
+            "en": "Any images that incidentally capture special-category data (e.g. visible health conditions, visible religious affiliation) must be handled with particular care: no further processing, prompt deletion, no automated analysis. Recording in places of worship, union premises or healthcare settings requires an additional legal basis under Art. 9."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Eventuali immagini relative a fatti illeciti penalmente rilevanti possono essere estratte, conservate e trasmesse all'autorità giudiziaria o alle forze dell'ordine nei limiti necessari alla tutela dei diritti del Titolare o all'adempimento di richieste dell'autorità. Il trattamento sistematico di dati ex art. 10 GDPR richiede specifica base normativa ai sensi dell'art. 2-octies Codice privacy.",
+            "en": "Images relating to criminally relevant unlawful acts may be extracted, retained, and transmitted to judicial authorities or law enforcement within the limits necessary to protect the Controller's rights or to comply with authority requests. Systematic processing of data under GDPR Art. 10 requires a specific legal basis under Italian Privacy Code Art. 2-octies."
+          }
+        },
+        "categorieInteressati": {
+          "it": [
+            "Visitatori, clienti, fornitori presenti nei locali",
+            "Lavoratori (subordinati e parasubordinati), se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività lavorativa — in presenza di art. 4 St. Lav.",
+            "Eventuali terzi che entrino occasionalmente nell'area sorvegliata"
+          ],
+          "en": [
+            "Visitors, customers, suppliers present in the premises",
+            "Workers (employees and para-subordinate), if the system also entails the possibility of remote monitoring of work activity — Art. 4 of the Workers' Statute applies",
+            "Any third parties occasionally entering the surveilled area"
+          ]
+        },
+        "categorieDati": {
+          "it": [
+            "Immagini digitali registrate dalle telecamere (volto, abbigliamento, postura, eventuali oggetti portati)",
+            "Metadati di registrazione (data, ora, telecamera di provenienza)",
+            "Eventuale audio, di regola da disattivare; l'attivazione richiede una valutazione autonoma di liceità, necessità e proporzionalità e dovrebbe essere ammessa solo in casi eccezionali e documentati",
+            "Eventuali targhe di veicoli (se il sistema le acquisisce e tratta — soggette a regime specifico)"
+          ],
+          "en": [
+            "Digital images recorded by cameras (face, clothing, posture, any objects carried)",
+            "Recording metadata (date, time, source camera)",
+            "Audio, if any, as a rule to be disabled; activation requires an independent assessment of lawfulness, necessity and proportionality, and should be allowed only in exceptional and documented cases",
+            "Vehicle license plates, if any (where the system captures and processes them — subject to specific regime)"
+          ]
+        },
+        "fonteDeiDati": "interessato",
+        "fonteDeiDatiDettagli": {
+          "it": "Immagini acquisite direttamente dalle telecamere all'interno dell'area sorvegliata. L'interessato è informato della raccolta tramite cartelli informativi conformi al modello del Garante.",
+          "en": "Images acquired directly from cameras within the surveilled area. The data subject is informed of the collection through information signs compliant with the Garante's model."
+        },
+        "categorieDestinatari": {
+          "it": [
+            "Soggetti specificamente designati dal Titolare per la consultazione delle immagini (autorizzati ex art. 29 GDPR), in numero limitato",
+            "Amministratori di sistema e fornitori IT del sistema di videosorveglianza, nei limiti delle rispettive autorizzazioni",
+            "Autorità giudiziaria e forze dell'ordine, su loro richiesta o spontanea trasmissione in caso di evento illecito",
+            "Eventuale istituto di vigilanza esterno (responsabile del trattamento)",
+            "Eventuale fornitore del servizio di videosorveglianza in cloud (responsabile del trattamento)"
+          ],
+          "en": [
+            "Persons specifically designated by the Controller to view images (authorized under GDPR Art. 29), in limited number",
+            "System administrators and IT providers of the video surveillance system, within the limits of their authorizations",
+            "Judicial authorities and law enforcement, upon their request or spontaneous transmission in case of unlawful events",
+            "External security firm, if any (data processor)",
+            "Cloud video surveillance service provider, if any (data processor)"
+          ]
+        },
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome dell'istituto di vigilanza esterno che gestisce/monitora il sistema, se esiste]",
+              "en": "[Enter the name of the external security firm that manages/monitors the system, if any]"
+            },
+            "sede": {
+              "it": "[Sede legale]",
+              "en": "[Registered office]"
+            },
+            "finalita": {
+              "it": "Gestione operativa del sistema di videosorveglianza, monitoraggio in tempo reale, intervento in caso di allarme",
+              "en": "Operational management of the video surveillance system, real-time monitoring, intervention in case of alarm"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al contratto di nomina ex art. 28 GDPR]",
+              "en": "[Reference to the GDPR Art. 28 appointment contract]"
+            }
+          },
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del sistema di videosorveglianza, se la registrazione è in cloud o se il fornitore ha accesso remoto]",
+              "en": "[Enter the name of the video surveillance system provider, if recording is cloud-based or the provider has remote access]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura del servizio di videosorveglianza cloud, manutenzione tecnica, eventuale accesso remoto per assistenza",
+              "en": "Provision of cloud video surveillance service, technical maintenance, possible remote access for support"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Per la videosorveglianza è fortemente sconsigliato il salvataggio in cloud extra-UE. Se il fornitore ha sub-responsabili extra-UE, verificare attentamente]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "Le immagini di videosorveglianza possono presentare rischi elevati per i diritti e le libertà degli interessati, soprattutto in caso di conservazione cloud, accesso remoto, larga scala o aree accessibili al pubblico. La conservazione in cloud extra-UE va evitata; se inevitabile (es. sub-responsabili USA del fornitore), applicare SCC + TIA approfondito, verificare la presenza di certificazione EU-US Data Privacy Framework, valutare alternative europee.",
+              "en": "Video surveillance images may present high risks to the rights and freedoms of data subjects, especially in the case of cloud storage, remote access, large scale, or publicly accessible areas. Storage in non-EU cloud should be avoided; if unavoidable (e.g. provider's US sub-processors), apply SCC + in-depth TIA, verify EU-US Data Privacy Framework certification, evaluate European alternatives."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Di regola 24 ore, prolungabili fino a 72 ore per specifiche esigenze; estensioni ulteriori solo se documentate e proporzionate (es. festività prolungate, esercizi con rischio elevato e furti ripetuti documentati). Il Garante ha sanzionato conservazioni indebitamente prolungate.",
+            "en": "As a rule 24 hours, extendable up to 72 hours for specific needs; further extensions only if documented and proportionate (e.g. extended holidays, establishments with high risk and documented repeated thefts). The Italian Garante has sanctioned undue retention extensions."
+          },
+          "criteri": {
+            "it": "Il termine è determinato in base alla finalità (sicurezza/prevenzione di atti illeciti) e al principio di minimizzazione. Cancellazione automatica al termine del periodo tramite sovrascrittura. In caso di evento rilevante (es. furto, intrusione), le immagini relative possono essere estratte e conservate per il periodo necessario al perseguimento giudiziario o difensivo. L'estrazione di immagini per eventi rilevanti deve essere limitata alle sole sequenze necessarie e documentata con separato verbale o ticket interno.",
+            "en": "The term is determined based on the purpose (security/prevention of unlawful acts) and the data minimisation principle. Automatic deletion at the end of the period through overwriting. In case of a relevant event (e.g. theft, intrusion), the related images may be extracted and retained for the period necessary for judicial or defensive pursuit. Extraction of images for relevant events must be limited to the necessary sequences only and documented with a separate report or internal ticket."
+          },
+          "azioneFinale": "cancellazione"
+        },
+        "misureSicurezza": {
+          "tecniche": {
+            "it": [
+              "Cifratura del salvataggio delle immagini sui supporti (NVR/DVR/cloud)",
+              "Controllo accessi al sistema con autenticazione forte e profili di privilegio differenziati",
+              "Posizionamento e angolazione delle telecamere verificati per non riprendere aree non strettamente necessarie (vicini, suolo pubblico, postazioni di lavoro non autorizzate)",
+              "Mascheratura di aree non rilevanti (privacy mask) ove tecnicamente possibile",
+              "Audit log degli accessi al sistema e delle visualizzazioni",
+              "Accesso remoto per manutenzione disabilitato di default o consentito solo su richiesta, per tempo limitato, con autenticazione forte, logging e tracciamento delle attività svolte",
+              "Sovrascrittura automatica al termine del periodo di conservazione",
+              "Aggiornamento e patching del firmware del NVR/DVR e delle telecamere"
+            ],
+            "en": [
+              "Encryption of image storage on media (NVR/DVR/cloud)",
+              "System access control with strong authentication and differentiated privilege profiles",
+              "Camera positioning and angle verified to avoid recording areas not strictly necessary (neighbors, public ground, unauthorized workstations)",
+              "Masking of irrelevant areas (privacy mask) where technically possible",
+              "Audit log of system access and viewings",
+              "Remote access for maintenance disabled by default or allowed only on request, for limited time, with strong authentication, logging and tracking of activities performed",
+              "Automatic overwriting at the end of the retention period",
+              "Firmware updates and patching of NVR/DVR and cameras"
+            ]
+          },
+          "organizzative": {
+            "it": [
+              "Designazione formale dei soggetti autorizzati a visionare le immagini (autorizzati ex art. 29 GDPR), in numero strettamente limitato",
+              "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
+              "Installazione di cartelli informativi conformi al modello del Garante, prima dell'area sorvegliata, ben visibili",
+              "Disponibilità dell'informativa estesa (secondo livello) facilmente accessibile, anche tramite QR code, link breve, reception o bacheca",
+              "Registro delle visualizzazioni, estrazioni e comunicazioni delle immagini, con indicazione di soggetto autorizzante, motivo, data, immagini estratte e destinatario",
+              "Procedura interna per l'estrazione di immagini in caso di evento illecito (chi può estrarle, con quale autorizzazione, con quale documentazione)",
+              "Procedura per la gestione delle richieste di accesso/cancellazione da parte degli interessati",
+              "Divieto di utilizzo dell'impianto per controlli continuativi, massivi o generalizzati sull'attività lavorativa; eventuale utilizzo delle immagini a fini disciplinari solo nei limiti dell'art. 4 St. Lav., previa adeguata informazione ai lavoratori e nel rispetto delle garanzie applicabili",
+              "Verifica preventiva della necessità di accordo sindacale o autorizzazione ITL ex art. 4 St. Lav. se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori",
+              "DPIA ex art. 35 GDPR redatta prima dell'attivazione del sistema, nei casi in cui il trattamento presenti rischio elevato",
+              "Audit periodico del sistema, del corretto angolo di ripresa, della scadenza automatica delle immagini"
+            ],
+            "en": [
+              "Formal designation of persons authorized to view images (authorized under GDPR Art. 29), in strictly limited number",
+              "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent",
+              "Installation of information signs compliant with the Garante's model, before the surveilled area, clearly visible",
+              "Availability of the extended (second-level) notice, easily accessible, including via QR code, short link, reception or notice board",
+              "Register of viewings, extractions and communications of images, indicating the authorizing person, reason, date, images extracted and recipient",
+              "Internal procedure for extracting images in case of unlawful events (who can extract, with what authorization, with what documentation)",
+              "Procedure for handling access/erasure requests from data subjects",
+              "Prohibition of using the system for continuous, massive or generalized monitoring of work activity; any use of images for disciplinary purposes only within the limits of Workers' Statute Art. 4, with prior adequate information to workers and respecting applicable safeguards",
+              "Prior verification of the need for union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4 if the system also entails the possibility of remote monitoring of workers' activity",
+              "DPIA under GDPR Art. 35 prepared before system activation, where the processing presents high risk",
+              "Periodic system audit, correct camera angle, automatic image expiration"
+            ]
+          },
+          "rinvioDocumentale": {
+            "it": "[Rinvio alla LIA (Legitimate Interest Assessment); alla DPIA, ove richiesta; al disciplinare tecnico interno sulla videosorveglianza; al modello di cartello informativo conforme al Garante; all'eventuale accordo sindacale o autorizzazione ITL ex art. 4 St. Lav.]",
+            "en": "[Refer to the LIA (Legitimate Interest Assessment); the DPIA, where required; the internal technical regulation on video surveillance; the information sign model compliant with the Garante; any union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Compilare se il sistema utilizza analisi automatizzate delle immagini (es. riconoscimento facciale, riconoscimento di comportamenti, analisi predittive). Attenzione: il riconoscimento facciale è dato biometrico ex art. 9 GDPR, richiede base giuridica specifica. Riferimento: disciplina nazionale sulla moratoria dei sistemi di riconoscimento facciale, originariamente introdotta dal d.l. 139/2021 e successivamente prorogata, attualmente fino al 31 dicembre 2027, salvo ulteriori modifiche normative.",
+            "en": "Complete if the system uses automated image analysis (e.g. facial recognition, behavior recognition, predictive analysis). Note: facial recognition is biometric data under GDPR Art. 9 and requires a specific legal basis. Reference: national rules on the moratorium on facial recognition systems, originally introduced by d.l. 139/2021 and subsequently extended, currently until 31 December 2027, unless further legislative amendments are adopted."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla videosorveglianza per finalità di sicurezza. Eventuali analisi di affluenza/comportamento per finalità commerciali costituiscono trattamento autonomo che richiede base giuridica e finalità distinte.",
+            "en": "Not applicable to security video surveillance. Any traffic/behavior analysis for commercial purposes constitutes a separate processing activity requiring distinct legal basis and purpose."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "DPIA ex art. 35 GDPR da effettuare prima dell'attivazione nei casi in cui il trattamento presenti rischio elevato, in particolare nei casi indicati dall'elenco del Garante (provv. 11 ottobre 2018, doc. web 9058979) e dalle Linee guida EDPB: videosorveglianza su larga scala, in zone particolarmente sensibili, con riconoscimento biometrico, con analisi automatica dei comportamenti, monitoraggio sistematico di aree accessibili al pubblico. La DPIA deve essere redatta PRIMA dell'attivazione del sistema. [Inserire il riferimento al documento DPIA].",
+            "en": "DPIA under GDPR Art. 35 to be carried out before activation where the processing presents high risk, in particular in the cases indicated by the Italian Garante's list (provv. 11 October 2018, doc. web 9058979) and by EDPB Guidelines: large-scale video surveillance, in particularly sensitive areas, with biometric recognition, with automated behavior analysis, systematic monitoring of publicly accessible areas. The DPIA must be prepared BEFORE system activation. [Enter the reference to the DPIA document]."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 5, 6, 13, 22, 35; Codice privacy (d.lgs. 196/2003) artt. 2-octies, 2-ter; Statuto dei Lavoratori (l. 300/1970) art. 4; art. 615-bis c.p. (interferenze illecite nella vita privata); EDPB Guidelines 3/2019 sul trattamento dei dati personali attraverso dispositivi video (adottate il 29 gennaio 2020); provvedimento del Garante 8 aprile 2010 in materia di videosorveglianza (nei limiti di compatibilità con il GDPR); FAQ del Garante sulla videosorveglianza; provvedimento del Garante 27 novembre 2008 sugli amministratori di sistema; provvedimento del Garante 11 ottobre 2018 sull'elenco delle tipologie di trattamento soggette a DPIA (doc. web 9058979); disciplina nazionale sulla moratoria dei sistemi di riconoscimento facciale, introdotta dal d.l. 139/2021 e prorogata fino al 31 dicembre 2027 (salvo ulteriori modifiche). Nota: eventuali telecamere non funzionanti o simulate vanno valutate separatamente, poiché possono comunque incidere sui diritti degli interessati e sui rapporti di lavoro, pur non comportando trattamento di dati personali se non acquisiscono immagini.",
+          "en": "Relevant legal references: GDPR Arts. 5, 6, 13, 22, 35; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-octies, 2-ter; Workers' Statute (l. 300/1970) Art. 4; art. 615-bis Italian Criminal Code (unlawful interference with private life); EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); Italian Garante provision of 8 April 2010 on video surveillance (within the limits of GDPR compatibility); Garante FAQ on video surveillance; Italian Garante provision of 27 November 2008 on system administrators; Italian Garante provision of 11 October 2018 on the list of processing subject to DPIA (doc. web 9058979); national rules on the moratorium on facial recognition systems, introduced by d.l. 139/2021 and extended until 31 December 2027 (unless further amendments). Note: any non-functioning or dummy cameras must be assessed separately, as they may still affect data subjects' rights and employment relationships, even if they do not involve processing of personal data when they capture no images."
+        }
+      }
+    }
+  ]
+}
