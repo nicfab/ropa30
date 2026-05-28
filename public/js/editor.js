@@ -73,9 +73,9 @@ function ctlGruppi(chiave, path, label, righe, gruppoTipo, voceLabel) {
 }
 
 // --- Group-row builders (render existing rows AND add blank ones) ---
-function rigaResponsabile(entry, detail) {
+function rigaResponsabile(entry, detail, titolo) {
   const C = detail.campi; const e = entry || {};
-  return { campi: [
+  return { rigaTitolo: titolo || '', campi: [
     ctlTestoBil('denominazione', '', C.reDenominazione, e.denominazione, false),
     ctlTestoBil('sede', '', C.reSede, e.sede, false),
     ctlTestoBil('finalita', '', C.reFinalita, e.finalita, true),
@@ -84,18 +84,19 @@ function rigaResponsabile(entry, detail) {
     ctlTestoBil('notaRuoloPrivacy', '', C.reNotaRuolo, e.notaRuoloPrivacy, true)
   ] };
 }
-function rigaTrasferimento(entry, detail, enums) {
+function rigaTrasferimento(entry, detail, enums, titolo) {
   const C = detail.campi; const e = entry || {};
-  return { campi: [
+  return { rigaTitolo: titolo || '', campi: [
     ctlTestoBil('paese', '', C.trPaese, e.paese, false),
     ctlEnum1('garanziaApplicata', '', C.trGaranzia, e.garanziaApplicata, enums.garanziaTrasferimento),
     ctlTestoBil('riferimentoDocumentazione', '', C.trRiferimento, e.riferimentoDocumentazione, true)
   ] };
 }
-function righeDaArray(gruppoTipo, arr, detail, enums) {
+function righeDaArray(gruppoTipo, arr, detail, enums, baseLabel) {
   const a = Array.isArray(arr) ? arr : [];
-  if (gruppoTipo === 'responsabiliEsterni') return a.map((e) => rigaResponsabile(e, detail));
-  if (gruppoTipo === 'trasferimentiExtraUE') return a.map((e) => rigaTrasferimento(e, detail, enums));
+  const tit = (i) => (baseLabel || '') + ' ' + (i + 1);
+  if (gruppoTipo === 'responsabiliEsterni') return a.map((e, i) => rigaResponsabile(e, detail, tit(i)));
+  if (gruppoTipo === 'trasferimentiExtraUE') return a.map((e, i) => rigaTrasferimento(e, detail, enums, tit(i)));
   return [];
 }
 
@@ -158,12 +159,12 @@ export function buildEditModel(record, { lingue, detail, enums }) {
   // 7 — Destinatari
   sezioni.push({ id: 'destinatari', titolo: S.destinatari, campi: [
     ctlListaBil('categorieDestinatari', 'categorieDestinatari', C.categorieDestinatari, g('categorieDestinatari'), 'categorieDestinatari', false),
-    ctlGruppi('responsabiliEsterni', 'responsabiliEsterni', C.responsabiliEsterni, righeDaArray('responsabiliEsterni', g('responsabiliEsterni'), detail, enums), 'responsabiliEsterni', C.responsabiliEsterni)
+    ctlGruppi('responsabiliEsterni', 'responsabiliEsterni', C.responsabiliEsterni, righeDaArray('responsabiliEsterni', g('responsabiliEsterni'), detail, enums, C.responsabiliEsterni), 'responsabiliEsterni', C.responsabiliEsterni)
   ] });
 
   // 8 — Trasferimenti verso Paesi terzi
   sezioni.push({ id: 'trasferimenti', titolo: S.trasferimenti, campi: [
-    ctlGruppi('trasferimentiExtraUE', 'trasferimentiExtraUE', C.trasferimentiExtraUE, righeDaArray('trasferimentiExtraUE', g('trasferimentiExtraUE'), detail, enums), 'trasferimentiExtraUE', C.trasferimentiExtraUE)
+    ctlGruppi('trasferimentiExtraUE', 'trasferimentiExtraUE', C.trasferimentiExtraUE, righeDaArray('trasferimentiExtraUE', g('trasferimentiExtraUE'), detail, enums, C.trasferimentiExtraUE), 'trasferimentiExtraUE', C.trasferimentiExtraUE)
   ] });
 
   // 9 — Conservazione
@@ -204,7 +205,7 @@ export function buildEditModel(record, { lingue, detail, enums }) {
   ] });
 
   // Navigation helpers (CSP: precomputed strings), as in detail.js.
-  sezioni.forEach((sez, i) => { sez.ancora = '#edit-' + sez.id; sez.indice = (i + 1) + '. '; });
+  sezioni.forEach((sez, i) => { sez.ancora = '#edit-' + sez.id; sez.indice = (i + 1) + '. '; sez.aperta = (i === 0); sez.idEdit = 'edit-' + sez.id; });
 
   return { sezioni, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
 }
@@ -246,8 +247,8 @@ export function applyEditModel(record, editModel) {
 export function nuovaVoceLista() {
   return { valIt: '', valEn: '' };
 }
-export function nuovaRigaGruppo(gruppoTipo, { detail, enums }) {
-  if (gruppoTipo === 'responsabiliEsterni') return rigaResponsabile({}, detail);
-  if (gruppoTipo === 'trasferimentiExtraUE') return rigaTrasferimento({}, detail, enums);
-  return { campi: [] };
+export function nuovaRigaGruppo(gruppoTipo, { detail, enums, titolo }) {
+  if (gruppoTipo === 'responsabiliEsterni') return rigaResponsabile({}, detail, titolo || '');
+  if (gruppoTipo === 'trasferimentiExtraUE') return rigaTrasferimento({}, detail, enums, titolo || '');
+  return { rigaTitolo: titolo || '', campi: [] };
 }

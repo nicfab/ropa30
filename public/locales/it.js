@@ -98,7 +98,9 @@ export default {
     editorConfermaEsci: 'Esci senza salvare',
     editorConfermaResta: 'Continua a modificare',
     editorColonnaIt: 'Italiano',
-    editorColonnaEn: 'English'
+    editorColonnaEn: 'English',
+    editorEspandiTutto: 'Espandi tutto',
+    editorComprimiTutto: 'Comprimi tutto'
   },
 
   enums: {

@@ -149,6 +149,7 @@ function ropa30App() {
     get isViewLista()      { return this.view === 'lista'; },
     get isViewDettaglio() { return this.view === 'dettaglio'; },
     get isViewEditor()    { return this.view === 'editor'; },
+    get wrapperClass() { return this.view === 'editor' ? 'max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-14' : 'max-w-3xl mx-auto px-4 py-10 sm:py-14'; },
     get editMostraEn()    { return this.editLingue.indexOf('en') !== -1; },
     get editMostraIt()    { return this.editLingue.indexOf('it') !== -1; },
     get editSalvaDisabilitato() { return this.editNomeMancante || this.editSalvando; },
@@ -548,6 +549,38 @@ function ropa30App() {
         campo.righe.splice(idx, 1);
         this.segnaDirty();
       }
+    },
+
+    // ---- Editor: accordion (presentation only) ----
+    _sezioneDaEvento(event) {
+      const ds = (event && event.currentTarget && event.currentTarget.dataset) ? event.currentTarget.dataset : null;
+      if (!ds || !this.editModel) return null;
+      const si = parseInt(ds.sez, 10);
+      return this.editModel.sezioni[si] || null;
+    },
+    toggleSezione(event) {
+      const sez = this._sezioneDaEvento(event);
+      if (sez) sez.aperta = !sez.aperta;
+    },
+    espandiTutto() {
+      if (this.editModel) this.editModel.sezioni.forEach((s) => { s.aperta = true; });
+    },
+    comprimiTutto() {
+      if (this.editModel) this.editModel.sezioni.forEach((s) => { s.aperta = false; });
+    },
+    apriEscrollaSezione(event) {
+      const ds = (event && event.currentTarget && event.currentTarget.dataset) ? event.currentTarget.dataset : null;
+      if (!ds || !this.editModel) return;
+      const si = parseInt(ds.sez, 10);
+      const sez = this.editModel.sezioni[si];
+      if (!sez) return;
+      sez.aperta = true;
+      const self = this;
+      // Wait a tick so x-show reveals the body before scrolling to it.
+      setTimeout(function () {
+        const el = document.getElementById('edit-' + sez.id);
+        if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
     },
 
     // UI language switch: change display AND persist uiLanguage (independent
