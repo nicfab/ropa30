@@ -222,6 +222,13 @@ export function createDefaultProcessingActivity({ id }) {
       articolazione: ''
     },
     codiceUtente: '',
+    // ---- Provenance (metadati tecnici, non giuridici) ----
+    // Tracciano se il trattamento è nato da un template e da quale versione.
+    // Vuoti/null per i trattamenti creati manualmente. Utili per audit,
+    // statistiche d'uso dei template e future migrazioni mirate.
+    sourceTemplateId: '',
+    sourceTemplateVersion: null,
+    sourceTemplateLanguage: '',  // lingua usata per istanziare da template ('it'/'en'); '' se manuale
     nome: '',
     descrizione: '',
     dataInizioTrattamento: '',
