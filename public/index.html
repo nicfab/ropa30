@@ -8,9 +8,8 @@
   Security posture:
   - Strict Content Security Policy: default-src 'self' only.
     No 'unsafe-inline', no 'unsafe-eval'.
-  - Runs under Alpine.js CSP build (@alpinejs/csp), which evaluates
-    bindings without using new Function() or eval(). HTML attributes
-    therefore reference *property names only*, not JavaScript expressions.
+  - Runs under Alpine.js CSP build (@alpinejs/csp). HTML attributes therefore
+    reference *property/method names* and simple member paths only.
   - No external network requests at runtime (no CDN, no fonts, no analytics).
 
   Bilingual UI:
@@ -52,15 +51,13 @@
     <meta name="theme-color" content="#1a4d6e" />
 
     <link rel="stylesheet" href="css/ropa30.css" />
-    
+
     <!--
       Script load order (all use defer; deferred scripts run in document
       order):
       1. dexie       — exposes window.Dexie globally (UMD build)
       2. app.js      — defines ropa30App, imports db.js (ES module)
       3. alpine      — boots reactivity (CSP-safe build)
-      Modules and classic scripts can coexist; both honor defer ordering
-      relative to other scripts in modern browsers.
     -->
     <script src="js/lib/dexie.min.js" defer></script>
     <script src="js/app.js" type="module"></script>
@@ -104,35 +101,192 @@
 
     <!-- Main -->
     <main id="main" class="flex-1">
-      <div class="max-w-3xl mx-auto px-4 py-12 sm:py-20">
+      <div class="max-w-3xl mx-auto px-4 py-10 sm:py-14">
 
-        <section aria-labelledby="hero-title">
-          <h1 id="hero-title"
-              class="text-4xl sm:text-5xl font-bold text-brand-900 tracking-tight"
-              x-text="heroTitle">In costruzione</h1>
+        <!-- ===================== ONBOARDING ===================== -->
+        <template x-if="isViewOnboarding">
+          <section aria-labelledby="onb-title">
 
-          <p class="mt-6 text-lg text-brand-800 leading-relaxed"
-             x-text="heroBody">
-            ropa30 è in fase di sviluppo iniziale. Stiamo costruendo un'applicazione web che ti aiuti a tenere il registro delle attività di trattamento richiesto dall'articolo 30 del GDPR — in modo semplice, locale e privato.
-          </p>
+            <h1 id="onb-title"
+                class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+                x-text="L.onbTitolo">Configura il registro</h1>
+            <p class="mt-3 text-brand-700 leading-relaxed" x-text="L.onbSottotitolo"></p>
 
-          <div class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1
-                      text-sm text-brand-800">
-            <span class="font-semibold" x-text="statusLabel">Versione</span>
-            <span x-text="statusValue">0.0.0 — scaffolding completato</span>
-          </div>
+            <!-- Titolare -->
+            <fieldset class="mt-8 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneTitolare"></legend>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="sm:col-span-2">
+                  <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDenominazione"></label>
+                  <input id="f-denominazione" type="text" x-model="denominazione"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-forma" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblFormaGiuridica"></label>
+                  <input id="f-forma" type="text" x-model="formaGiuridica"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-cf" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCodiceFiscale"></label>
+                  <input id="f-cf" type="text" x-model="codiceFiscale"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-piva" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPartitaIVA"></label>
+                  <input id="f-piva" type="text" x-model="partitaIVA"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-tel" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblTelefono"></label>
+                  <input id="f-tel" type="tel" x-model="telefono"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+              </div>
+            </fieldset>
 
-          <div class="mt-8">
-            <a href="https://codeberg.org/nicfab/ropa30"
-               rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 rounded bg-brand-700 px-4 py-2 text-white
-                      hover:bg-brand-800 focus-visible:outline focus-visible:outline-2
-                      focus-visible:outline-offset-2 focus-visible:outline-brand-500"
-               x-text="ctaCodebergLabel">
-              Vedi il codice su Codeberg
-            </a>
-          </div>
-        </section>
+            <!-- Indirizzo -->
+            <fieldset class="mt-6 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneIndirizzo"></legend>
+              <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
+                <div class="sm:col-span-4">
+                  <label for="f-via" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblVia"></label>
+                  <input id="f-via" type="text" x-model="via"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="f-civico" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCivico"></label>
+                  <input id="f-civico" type="text" x-model="civico"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="f-cap" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCap"></label>
+                  <input id="f-cap" type="text" x-model="cap"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div class="sm:col-span-4">
+                  <label for="f-citta" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCitta"></label>
+                  <input id="f-citta" type="text" x-model="citta"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div class="sm:col-span-3">
+                  <label for="f-prov" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblProvincia"></label>
+                  <input id="f-prov" type="text" x-model="provincia"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div class="sm:col-span-3">
+                  <label for="f-paese" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPaese"></label>
+                  <input id="f-paese" type="text" x-model="paese"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Contatti -->
+            <fieldset class="mt-6 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneContatti"></legend>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblEmail"></label>
+                  <input id="f-email" type="email" x-model="email"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPec"></label>
+                  <input id="f-pec" type="email" x-model="pec"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="f-sito" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblSitoWeb"></label>
+                  <input id="f-sito" type="url" x-model="sitoWeb"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- DPO -->
+            <fieldset class="mt-6 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneDpo"></legend>
+              <label class="inline-flex items-center gap-2 text-brand-800">
+                <input type="checkbox" x-model="dpoNominato" class="h-4 w-4 accent-brand-700" />
+                <span x-text="L.lblDpoNominato"></span>
+              </label>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4" x-show="dpoNominato">
+                <div class="sm:col-span-2">
+                  <label for="f-dpo-nome" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoNome"></label>
+                  <input id="f-dpo-nome" type="text" x-model="dpoNome"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-dpo-email" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoEmail"></label>
+                  <input id="f-dpo-email" type="email" x-model="dpoEmail"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+                <div>
+                  <label for="f-dpo-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoPec"></label>
+                  <input id="f-dpo-pec" type="email" x-model="dpoPec"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500" />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Registro -->
+            <fieldset class="mt-6 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneRegistro"></legend>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="f-lingua" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblLingua"></label>
+                  <select id="f-lingua" x-model="lingua"
+                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500">
+                    <option value="it">Italiano</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+                <div>
+                  <span class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDataCreazione"></span>
+                  <p class="px-3 py-2 text-brand-700" x-text="dataCreazioneVisuale">—</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Help + error + save -->
+            <p class="mt-6 text-sm text-brand-600" x-text="L.onbObbligatorio"></p>
+            <p class="mt-2 text-sm text-red-700" x-show="erroreSalvataggio" x-text="L.onbErrore"></p>
+
+            <div class="mt-6">
+              <button type="button" x-on:click="salvaOnboarding" x-bind:disabled="salvaDisabilitato"
+                      class="inline-flex items-center gap-2 rounded bg-brand-700 px-5 py-2.5 text-white
+                             hover:bg-brand-800 focus-visible:outline focus-visible:outline-2
+                             focus-visible:outline-offset-2 focus-visible:outline-brand-500
+                             disabled:opacity-50 disabled:cursor-not-allowed"
+                      x-text="L.btnSalva">Salva e continua</button>
+            </div>
+
+          </section>
+        </template>
+
+        <!-- ===================== LISTA (stub) ===================== -->
+        <template x-if="isViewLista">
+          <section aria-labelledby="lista-title">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h1 id="lista-title"
+                    class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+                    x-text="L.listaTitolo">Registro dei trattamenti</h1>
+                <p class="mt-2 text-brand-700"><span x-text="denominazione"></span></p>
+              </div>
+              <button type="button" x-on:click="vaiAOnboarding"
+                      class="shrink-0 text-sm rounded border border-brand-300 px-3 py-1.5 text-brand-700
+                             hover:bg-brand-100 focus-visible:outline focus-visible:outline-2
+                             focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+                      x-text="L.listaModificaTitolare">Modifica dati titolare</button>
+            </div>
+
+            <div class="mt-10 rounded-lg border border-dashed border-brand-300 px-6 py-12 text-center">
+              <h2 class="text-lg font-semibold text-brand-800" x-text="L.listaVuotaTitolo">Nessun trattamento</h2>
+              <p class="mt-2 text-brand-600 max-w-prose mx-auto" x-text="L.listaVuotaTesto"></p>
+            </div>
+          </section>
+        </template>
 
       </div>
     </main>

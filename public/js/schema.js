@@ -164,6 +164,7 @@ export function createDefaultSettings() {
       email: '',
       pec: '',
       telefono: '',
+      sitoWeb: '',
       settoreAttivita: '',
       // Rappresentante per soggetti non UE (Art. 27 GDPR)
       rappresentante: {
