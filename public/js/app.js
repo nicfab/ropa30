@@ -13,6 +13,7 @@ import {
   updateSettings,
   listProcessingActivities,
   getProcessingActivity,
+  deleteProcessingActivity,
   updateProcessingActivity,
   normalizeBilingualShapes,
   listAvailableTemplates,
@@ -72,6 +73,8 @@ function ropa30App() {
     // ---- Export registro (Fase 4) ----
     isExportMenuOpen: false,      // export dialog visibility
     isAzioniMenuOpen: false,      // azioni dialog visibility
+    isEliminaConfirmOpen: false,  // delete-activity confirmation dialog
+    eliminaInCorso: false,        // delete in progress guard
     exportMessage: '',            // localized export outcome
     exportError: false,
     // ---- PWA ----
@@ -803,6 +806,33 @@ function ropa30App() {
       this.trattamentoCorrente = null;
       this.trattamentoVm = null;
       this.trattamentoTitolo = '';
+    },
+    chiediElimina() {
+      if (!this.trattamentoCorrente) return;
+      this.isEliminaConfirmOpen = true;
+    },
+    annullaElimina() {
+      this.isEliminaConfirmOpen = false;
+    },
+    async confermaElimina() {
+      if (this.eliminaInCorso || !this.trattamentoCorrente) return;
+      this.eliminaInCorso = true;
+      const id = this.trattamentoCorrente.id;
+      try {
+        await deleteProcessingActivity(id);
+        await this.caricaTrattamenti();
+        this.isEliminaConfirmOpen = false;
+        this.tornaAllaLista();
+        this.exportMessage = this.L.eliminaFatto || 'Trattamento eliminato';
+        this.exportError = false;
+      } catch (err) {
+        console.error('[ropa30] confermaElimina() error:', err);
+        this.isEliminaConfirmOpen = false;
+        this.exportError = true;
+        this.exportMessage = this.L.eliminaErrore || 'Errore durante l\u2019eliminazione';
+      } finally {
+        this.eliminaInCorso = false;
+      }
     },
 
     // ---- Editor (Step C) ----

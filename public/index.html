@@ -118,6 +118,13 @@
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M20 6L9 17l-5-5" />
       </symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 7h14" />
+        <path d="M10 7V5.5A1.5 1.5 0 0 1 11.5 4h1A1.5 1.5 0 0 1 14 5.5V7" />
+        <path d="M6.5 7l.7 11a1.5 1.5 0 0 0 1.5 1.4h6.6a1.5 1.5 0 0 0 1.5-1.4l.7-11" />
+        <path d="M10 11v5M14 11v5" />
+      </symbol>
       <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4.75 19.25 9 18l9.5-9.5a1.77 1.77 0 0 0-2.5-2.5L6.5 15.5l-1.75 3.75Z" />
@@ -179,6 +186,28 @@
       <div x-bind:class="wrapperClass">
         <!-- Global restore file input (reachable from any view: welcome, list). -->
         <input type="file" id="restore-file-input" accept="application/json" class="hidden" x-on:change="fileSelezionato">
+        <!-- Delete-activity confirmation dialog. -->
+        <template x-if="isEliminaConfirmOpen">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+               x-on:keydown.escape.window="annullaElimina"
+               x-on:click.self="annullaElimina">
+            <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                 role="dialog" aria-modal="true" aria-labelledby="elimina-conf-title">
+              <h2 id="elimina-conf-title" class="text-lg font-bold text-brand-900" x-text="L.eliminaConfermaTitolo">Eliminare questo trattamento?</h2>
+              <p class="mt-2 text-sm text-brand-700" x-text="L.eliminaConfermaTesto"></p>
+              <p class="mt-2 text-sm text-brand-800 bg-warning-500/10 border-l-4 border-warning-500 rounded-r-lg p-2" x-text="L.eliminaConfermaNota"></p>
+              <div class="mt-5 flex flex-wrap justify-end gap-2">
+                <button type="button" x-on:click="annullaElimina"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                        x-text="L.eliminaAnnulla">Annulla</button>
+                <button type="button" x-on:click="confermaElimina" x-bind:disabled="eliminaInCorso"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                        x-text="L.eliminaConferma">Elimina definitivamente</button>
+              </div>
+            </div>
+          </div>
+        </template>
+
         <!-- Global restore confirmation dialog (reachable from any view). -->
         <template x-if="isRestoreConfirmOpen">
           <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
@@ -764,6 +793,11 @@
                     class="ml-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
               <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
               <span x-text="L.dettaglioModifica">Modifica</span>
+            </button>
+            <button type="button" x-on:click="chiediElimina"
+                    class="ml-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-danger-600 hover:bg-brand-50">
+              <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-trash" /></svg>
+              <span x-text="L.dettaglioElimina">Elimina</span>
             </button>
 
             <!-- Intestazione trattamento -->
