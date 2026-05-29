@@ -1,0 +1,308 @@
+{
+  "templateId": "tpl-it-024-studi-legali-agenda-udienze-scadenze",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione agenda udienze, scadenze e adempimenti processuali",
+    "en": "Management of hearings calendar, deadlines and procedural tasks"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per la gestione strumentale e organizzativa dell'agenda dello studio: calendario delle udienze, termini e scadenze processuali, adempimenti, promemoria e pianificazione delle attività. L'agenda contiene riferimenti minimi alle pratiche (parti, data, ufficio, tipo di adempimento) e non il contenuto sostanziale del fascicolo. Il taglio è organizzativo-strumentale, distinto dalla conduzione della lite (template contenzioso) e dalla tenuta del fascicolo (template dedicato).",
+    "en": "Processing of personal data for the instrumental and organisational management of the firm's calendar: schedule of hearings, procedural terms and deadlines, tasks, reminders and activity planning. The calendar contains minimal references to cases (parties, date, office, type of task) and not the substantive content of the case file. The scope is organisational-instrumental, distinct from conducting the dispute (litigation template) and keeping the case file (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO ORGANIZZATIVO-STRUMENTALE. SPECIALIZZAZIONE del template-cardine: qui il trattamento è la gestione dell'AGENDA e dello scadenzario, non la conduzione della lite (template contenzioso) né la tenuta del fascicolo (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) BASE su CONTRATTO (l'agenda è strumentale all'esecuzione del mandato) e LEGITTIMO INTERESSE organizzativo dello studio (pianificazione, rispetto dei termini, prevenzione di decadenze e responsabilità); (c) DATI MINIMI: l'agenda dovrebbe contenere parti, data, ufficio, tipo di udienza/adempimento e riferimento alla pratica, NON il merito; (d) ART. 9/ART. 10 NON sono finalità proprie: l'agenda non deve contenere, se non nei limiti strettamente necessari, dati particolari o dati relativi a condanne penali e reati; eventuali riferimenti a tali dati devono restare nel fascicolo o nella documentazione della pratica; (e) PROMEMORIA/NOTIFICHE: attenzione ai dati veicolati in alert e sincronizzazioni su dispositivi e calendari esterni; (f) SEGRETO PROFESSIONALE anche sui riferimenti minimi (la sola esistenza di un incarico può essere riservata). Basi giuridiche, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "ORGANISATIONAL-INSTRUMENTAL SCOPE. SPECIALISATION of the core template: here the processing is the management of the CALENDAR and the deadlines tracker, not conducting the dispute (litigation template) or keeping the case file (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) basis on CONTRACT (the calendar is instrumental to performing the mandate) and the firm's organisational LEGITIMATE INTEREST (planning, meeting deadlines, preventing forfeitures and liability); (c) MINIMAL DATA: the calendar should contain parties, date, office, type of hearing/task and a reference to the case, NOT the merits; (d) ART. 9/ART. 10 are NOT autonomous purposes: the calendar must not contain, except within strictly necessary limits, special data or data on criminal convictions and offences; any reference to such data must remain in the case file or case documentation; (e) REMINDERS/NOTIFICATIONS: attention to the data carried in alerts and synchronisations on devices and external calendars; (f) PROFESSIONAL SECRECY also on the minimal references (the mere existence of an engagement may be confidential). Legal bases, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "agenda_udienze",
+        "label": "Calendario udienze e pianificazione attività",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "scadenzario",
+        "label": "Scadenzario termini processuali e adempimenti",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "agenda_udienze",
+        "label": "Hearings calendar and activity planning",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "scadenzario",
+        "label": "Procedural-terms and tasks deadline tracker",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione agenda udienze, scadenze e adempimenti processuali",
+      "en": "Management of hearings calendar, deadlines and procedural tasks"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per la gestione dell'agenda dello studio: calendario delle udienze, termini e scadenze processuali, adempimenti, promemoria e pianificazione delle attività, con riferimenti minimi alle pratiche e senza il contenuto sostanziale dei fascicoli.",
+      "en": "Processing of personal data for managing the firm's calendar: schedule of hearings, procedural terms and deadlines, tasks, reminders and activity planning, with minimal references to cases and without the substantive content of the case files."
+    },
+    "finalita": [
+      {
+        "it": "Gestione del calendario delle udienze e degli impegni professionali",
+        "en": "Management of the calendar of hearings and professional commitments"
+      },
+      {
+        "it": "Calcolo e monitoraggio dei termini e delle scadenze processuali per prevenire decadenze",
+        "en": "Calculation and monitoring of procedural terms and deadlines to prevent forfeitures"
+      },
+      {
+        "it": "Pianificazione e assegnazione delle attività e degli adempimenti tra i professionisti dello studio",
+        "en": "Planning and allocation of activities and tasks among the firm's professionals"
+      },
+      {
+        "it": "Gestione di promemoria, alert e notifiche relativi a udienze e scadenze",
+        "en": "Management of reminders, alerts and notifications relating to hearings and deadlines"
+      },
+      {
+        "it": "Documentazione dello svolgimento degli adempimenti a fini organizzativi e di prova della diligenza",
+        "en": "Documentation of the performance of tasks for organisational purposes and to evidence diligence"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: l'agenda e lo scadenzario sono strumentali all'esecuzione del mandato professionale conferito dal cliente (rispetto dei termini, presenza alle udienze, adempimenti). Art. 6(1)(f) GDPR: legittimo interesse organizzativo dello studio alla pianificazione delle attività, al rispetto delle scadenze e alla prevenzione di decadenze e responsabilità professionali. Il trattamento è strumentale; non costituisce base per finalità ulteriori.",
+        "en": "GDPR Art. 6(1)(b): the calendar and deadlines tracker are instrumental to performing the professional mandate granted by the client (meeting deadlines, attending hearings, completing tasks). GDPR Art. 6(1)(f): the firm's organisational legitimate interest in planning activities, meeting deadlines and preventing forfeitures and professional liability. The processing is instrumental; it is not a basis for further purposes."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda l'organizzazione interna dello studio: pianificare le attività, monitorare le scadenze e prevenire decadenze e responsabilità. Si tratta di riferimenti minimi alle pratiche e di dati dei professionisti incaricati.",
+          "en": "Legitimate interest concerns the firm's internal organisation: planning activities, monitoring deadlines and preventing forfeitures and liability. It involves minimal references to cases and data of the assigned professionals."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione: l'agenda contiene parti, data, ufficio, tipo di adempimento e riferimento alla pratica, non il merito; accesso riservato; cautela sui dati veicolati in alert e sincronizzazioni con calendari esterni o dispositivi mobili.",
+          "en": "Minimisation: the calendar contains parties, date, office, type of task and a reference to the case, not the merits; restricted access; caution over the data carried in alerts and synchronisations with external calendars or mobile devices."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [],
+      "dettagliArt9": {
+        "it": "Non pertinente come finalità propria. L'agenda non deve contenere categorie particolari di dati se non nei limiti strettamente necessari (es. un riferimento sintetico al tipo di procedimento); i dati particolari restano nel fascicolo o negli atti collegati, con la condizione di liceità propria di quel trattamento.",
+        "en": "Not relevant as an autonomous purpose. The calendar must not contain special categories of data except within strictly necessary limits (e.g. a summary reference to the type of proceedings); special data remains in the case file or related acts, with the lawfulness condition of that processing."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": false,
+      "normativaAutorizzativa": {
+        "it": "Non presenti come finalità propria. L'agenda non deve contenere, se non nei limiti strettamente necessari, dati relativi a condanne penali e reati; eventuali riferimenti a tali dati devono restare nel fascicolo o nella documentazione della pratica. Qualora il titolare scelga di indicare in agenda il tipo di procedimento (anche penale), valutare la minimizzazione e la condizione ex art. 10 GDPR e art. 2-octies Codice privacy.",
+        "en": "Not present as an autonomous purpose. The calendar must not contain, except within strictly necessary limits, data on criminal convictions and offences; any reference to such data must remain in the case file or case documentation. Should the controller choose to indicate the type of proceedings (including criminal) in the calendar, assess minimisation and the condition under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti e parti delle pratiche cui si riferiscono udienze e scadenze (riferimenti minimi)",
+        "en": "Clients and parties of the cases to which hearings and deadlines refer (minimal references)"
+      },
+      {
+        "it": "Controparti e relativi difensori (riferimenti minimi per identificare l'udienza/la pratica)",
+        "en": "Counterparties and their lawyers (minimal references to identify the hearing/case)"
+      },
+      {
+        "it": "Avvocati, praticanti e collaboratori dello studio assegnatari di attività e adempimenti",
+        "en": "Lawyers, trainees and collaborators of the firm assigned to activities and tasks"
+      },
+      {
+        "it": "Domiciliatari e sostituti coinvolti negli adempimenti calendarizzati",
+        "en": "Domiciliary lawyers and substitutes involved in the scheduled tasks"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Riferimenti identificativi minimi delle parti e della pratica (nominativo/numero di ruolo)",
+        "en": "Minimal identification references of the parties and the case (name/docket number)"
+      },
+      {
+        "it": "Dati dell'udienza/adempimento: data, ora, ufficio giudiziario, tipo di attività",
+        "en": "Data of the hearing/task: date, time, court office, type of activity"
+      },
+      {
+        "it": "Termini e scadenze calcolati e relativi promemoria",
+        "en": "Calculated terms and deadlines and related reminders"
+      },
+      {
+        "it": "Dati dei professionisti assegnatari e stato di avanzamento dell'adempimento",
+        "en": "Data of the assigned professionals and the task's progress status"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati inseriti dai professionisti dello studio sulla base degli incarichi e degli atti processuali; dati derivati dai sistemi del processo telematico e dai provvedimenti che fissano udienze e termini; riferimenti minimi tratti dal fascicolo. L'inserimento è limitato ai dati necessari alla pianificazione e al rispetto delle scadenze.",
+      "en": "Data entered by the firm's professionals based on engagements and procedural acts; data derived from the electronic-proceedings systems and the measures setting hearings and terms; minimal references taken from the case file. Entry is limited to the data necessary for planning and meeting deadlines."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Professionisti, praticanti e collaboratori dello studio destinatari di impegni e adempimenti (trattamento interno)",
+        "en": "Professionals, trainees and collaborators of the firm assigned to commitments and tasks (internal processing)"
+      },
+      {
+        "it": "Domiciliatari e sostituti incaricati di adempimenti calendarizzati (di regola titolari autonomi)",
+        "en": "Domiciliary lawyers and substitutes assigned to scheduled tasks (generally independent controllers)"
+      },
+      {
+        "it": "Fornitore del software gestionale/agenda e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management/calendar software and cloud services (data processor)"
+      },
+      {
+        "it": "Fornitore dei servizi di calendario, posta e sincronizzazione eventualmente utilizzati (responsabile del trattamento)",
+        "en": "Provider of the calendar, email and synchronisation services possibly used (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale/agenda, dei servizi di calendario/sincronizzazione e cloud dello studio]",
+          "en": "[Enter the name of the firm's management/calendar software, calendar/synchronisation services and cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione dell'agenda, dello scadenzario, dei promemoria e della sincronizzazione, servizi cloud connessi",
+          "en": "Management of the calendar, deadlines tracker, reminders and synchronisation, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Particolare attenzione ai servizi di calendario/sincronizzazione cloud e mobile, che possono comportare trasferimenti e accessi ai dati dell'agenda coperti da segreto professionale.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. Pay particular attention to cloud and mobile calendar/synchronisation services, which may involve transfers and access to calendar data covered by professional secrecy."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i servizi di calendario/sincronizzazione e cloud]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati dell'agenda, pur minimi, sono coperti da segreto professionale e vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di calendario, posta e sincronizzazione cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Calendar data, although minimal, is covered by professional secrecy and should preferably be processed within the EU. Verify any non-EU sub-processors in the calendar, email and cloud synchronisation services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata della pratica e, successivamente, per il tempo necessario a documentare il rispetto dei termini e degli adempimenti e a difendersi da eventuali contestazioni o azioni di responsabilità professionale, tenuto conto dei termini di prescrizione applicabili.",
+        "en": "For the duration of the case and, thereafter, for the time necessary to document compliance with deadlines and tasks and to defend against any complaints or professional-liability actions, taking into account the applicable prescription terms."
+      },
+      "criteri": {
+        "it": "Conservazione delle registrazioni di agenda e scadenzario per documentare la diligenza nel rispetto dei termini (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione delle registrazioni non più necessarie.",
+        "en": "Retention of calendar and deadline records to document diligence in meeting deadlines (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation of records no longer needed."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi all'agenda e allo scadenzario con autenticazione forte e profili di privilegio",
+          "en": "Access control to the calendar and deadlines tracker with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei dati e delle connessioni, in transito e at-rest, e dei flussi di sincronizzazione",
+          "en": "Encryption of data and connections, in transit and at rest, and of the synchronisation flows"
+        },
+        {
+          "it": "Configurazione prudente delle sincronizzazioni con calendari esterni e dispositivi mobili",
+          "en": "Prudent configuration of synchronisations with external calendars and mobile devices"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle modifiche alle registrazioni di agenda",
+          "en": "Traceability of accesses and changes to calendar records"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Minimizzazione: in agenda solo riferimenti necessari (parti, data, ufficio, tipo di adempimento), non il merito",
+          "en": "Minimisation: only necessary references in the calendar (parties, date, office, type of task), not the merits"
+        },
+        {
+          "it": "Istruzione agli operatori di non inserire in agenda dati particolari o giudiziari oltre lo stretto necessario",
+          "en": "Instruction to operators not to enter special or judicial data in the calendar beyond what is strictly necessary"
+        },
+        {
+          "it": "Rispetto del segreto professionale anche sui riferimenti minimi (la sola esistenza dell'incarico può essere riservata)",
+          "en": "Compliance with professional secrecy also on minimal references (the mere existence of the engagement may be confidential)"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono agenda e scadenzario",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling the calendar and deadlines tracker"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sull'uso dell'agenda e sulla sincronizzazione dei calendari, alle istruzioni di minimizzazione e ai DPA con i fornitori]",
+        "en": "[Refer to internal policies on calendar use and calendar synchronisation, the minimisation instructions and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Il calcolo automatico dei termini supporta l'attività professionale ma non produce decisioni con effetti giuridici sugli interessati. Compilare se si adottano automatismi con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present. The automatic calculation of terms supports professional activity but does not produce decisions with legal effects on data subjects. Complete if adopting automated mechanisms with significant effects, assessing whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione dell'agenda e dello scadenzario.",
+        "en": "Not applicable to managing the calendar and deadlines tracker."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria: trattamento strumentale, dati minimi. Da valutare solo se l'agenda integra dati particolari/giudiziari in modo sistematico o se la sincronizzazione comporta trasferimenti o accessi su larga scala da parte di terzi.",
+        "en": "Generally not required: instrumental processing, minimal data. Assess only if the calendar systematically incorporates special/judicial data or if synchronisation involves large-scale transfers or access by third parties."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(b), 6(1)(f); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo. Trattamento strumentale e organizzativo: l'agenda contiene riferimenti minimi alle pratiche; i dati particolari (art. 9) e i dati relativi a condanne penali e reati (art. 10) restano nel fascicolo o negli atti collegati, non in agenda.",
+      "en": "Relevant legal references: GDPR Arts. 6(1)(b), 6(1)(f); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller. Instrumental and organisational processing: the calendar contains minimal references to cases; special data (Art. 9) and data on criminal convictions and offences (Art. 10) remain in the case file or related acts, not in the calendar."
+    }
+  }
+}

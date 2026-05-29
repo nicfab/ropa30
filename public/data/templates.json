@@ -6731,6 +6731,1573 @@
           "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 28, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Law 397/2000 and Art. 391-bis ff. CCP (defensive investigations); rules on the activity of authorized private investigators; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; auxiliaries are Art. 28 processors or independent controllers depending on the actual qualification; private investigators generally act as independent controllers in the regulated activity."
         }
       }
+    },
+    {
+      "templateId": "tpl-it-021-studi-legali-antiriciclaggio-adeguata-verifica",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione antiriciclaggio e adeguata verifica della clientela",
+        "en": "Anti-money-laundering management and customer due diligence"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per l'adempimento degli obblighi antiriciclaggio gravanti sui professionisti legali destinatari della disciplina (d.lgs. 231/2007): adeguata verifica della clientela e del titolare effettivo, valutazione del rischio, acquisizione e conservazione della documentazione, eventuale astensione e segnalazione di operazioni sospette. Il taglio è imperniato su un trattamento imposto dalla legge, distinto dalla gestione del rapporto con il cliente (template-cardine) e dagli adempimenti fiscali e contabili (trattamenti dedicati).",
+        "en": "Processing of personal data to comply with anti-money-laundering obligations applicable to legal professionals subject to the rules (d.lgs. 231/2007): customer and beneficial-owner due diligence, risk assessment, acquisition and retention of documentation, possible abstention and reporting of suspicious transactions. The scope is centred on processing imposed by law, distinct from managing the client relationship (core template) and tax and accounting obligations (dedicated processing activities)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO ANTIRICICLAGGIO (AML). SPECIALIZZAZIONE del template-cardine 'Gestione clienti e incarichi professionali': qui il trattamento è quello IMPOSTO dal d.lgs. 231/2007, non la gestione ordinaria del rapporto col cliente (template-cardine) né gli adempimenti fiscali/contabili (trattamenti dedicati). PUNTI CRITICI: (a) lo studio/professionista è TITOLARE AUTONOMO e DESTINATARIO degli obblighi solo se rientra tra i soggetti obbligati e per le prestazioni rilevanti ai fini AML (verifica caso per caso: non tutte le attività forensi sono soggette); (b) BASE GIURIDICA imperniata sull'OBBLIGO LEGALE (art. 6(1)(c) GDPR): adeguata verifica, conservazione e segnalazione sono adempimenti di legge; la valutazione del rischio è parte dell'adempimento 231, non finalità autonoma; (c) ART. 10: possono emergere dati su condanne penali/reati (es. in verifica rafforzata, controllo su PEP, liste e fonti reputazionali), trattati solo se pertinenti e necessari all'adempimento; (d) PEP (persone politicamente esposte): obblighi rafforzati, dati delicati; (e) SEGNALAZIONE DI OPERAZIONI SOSPETTE (SOS): regime speciale, divieto di tale segnalazione (divieto di comunicazione al cliente) e limitazioni dei diritti dell'interessato secondo la disciplina applicabile; (f) CONSERVAZIONE legata ai termini di legge AML (di regola dieci anni dalla cessazione del rapporto o dall'esecuzione dell'operazione, salvo diversa previsione) con CANCELLAZIONE a scadenza; (g) SEGRETO PROFESSIONALE e relativi limiti/esenzioni previsti dalla disciplina AML per i professionisti legali. Basi giuridiche, perimetro dei soggetti obbligati, condizioni art. 10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "ANTI-MONEY-LAUNDERING (AML) SCOPE. SPECIALISATION of the core 'Client and engagement management' template: here the processing is the one IMPOSED by d.lgs. 231/2007, not the ordinary management of the client relationship (core template) or tax/accounting obligations (dedicated activities). CRITICAL POINTS: (a) the firm/professional is an INDEPENDENT CONTROLLER and SUBJECT to the obligations only if it falls among the obliged entities and for AML-relevant services (assess case by case: not all legal activities are covered); (b) LEGAL BASIS centred on the LEGAL OBLIGATION (GDPR Art. 6(1)(c)): due diligence, retention and reporting are statutory obligations; risk assessment is part of the 231 compliance, not an autonomous purpose; (c) ART. 10: data on criminal convictions/offences may emerge (e.g. in enhanced due diligence, PEP screening, lists and reputational sources), processed only if relevant and necessary to compliance; (d) PEPs (politically exposed persons): enhanced obligations, sensitive data; (e) SUSPICIOUS TRANSACTION REPORTING (STR): special regime, prohibition of disclosure of the report to the client and limitations on the data subject's rights under the applicable rules; (f) RETENTION tied to AML statutory terms (generally ten years from the end of the relationship or the execution of the transaction, unless otherwise provided) with DELETION at expiry; (g) PROFESSIONAL SECRECY and its limits/exemptions provided for by the AML rules for legal professionals. Legal bases, the perimeter of obliged entities, Art. 10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "adeguata_verifica",
+            "label": "Adeguata verifica della clientela e del titolare effettivo",
+            "art6": "obbligo_legale"
+          },
+          {
+            "id": "segnalazione_sos",
+            "label": "Conservazione e segnalazione di operazioni sospette (SOS)",
+            "art6": "obbligo_legale"
+          }
+        ],
+        "en": [
+          {
+            "id": "adeguata_verifica",
+            "label": "Customer and beneficial-owner due diligence",
+            "art6": "obbligo_legale"
+          },
+          {
+            "id": "segnalazione_sos",
+            "label": "Retention and reporting of suspicious transactions (STR)",
+            "art6": "obbligo_legale"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione antiriciclaggio e adeguata verifica della clientela",
+          "en": "Anti-money-laundering management and customer due diligence"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per l'adempimento degli obblighi antiriciclaggio (d.lgs. 231/2007) da parte del professionista legale destinatario della disciplina: adeguata verifica del cliente e del titolare effettivo, valutazione del rischio, acquisizione e conservazione della documentazione, eventuale astensione e segnalazione di operazioni sospette.",
+          "en": "Processing of personal data to comply with anti-money-laundering obligations (d.lgs. 231/2007) by the legal professional subject to the rules: customer and beneficial-owner due diligence, risk assessment, acquisition and retention of documentation, possible abstention and reporting of suspicious transactions."
+        },
+        "finalita": [
+          {
+            "it": "Adeguata verifica del cliente, dell'esecutore e del titolare effettivo, secondo l'approccio basato sul rischio",
+            "en": "Due diligence of the client, the executor and the beneficial owner, according to the risk-based approach"
+          },
+          {
+            "it": "Valutazione e profilatura del rischio di riciclaggio e finanziamento del terrorismo ai fini dell'adempimento 231",
+            "en": "Assessment and risk profiling of money-laundering and terrorist-financing risk for 231 compliance"
+          },
+          {
+            "it": "Acquisizione, registrazione e conservazione dei dati e dei documenti previsti dalla disciplina antiriciclaggio",
+            "en": "Acquisition, recording and retention of the data and documents required by the anti-money-laundering rules"
+          },
+          {
+            "it": "Eventuale astensione dalla prestazione e segnalazione di operazioni sospette (SOS) agli organi competenti",
+            "en": "Possible abstention from the service and reporting of suspicious transactions (STR) to the competent bodies"
+          },
+          {
+            "it": "Controlli su persone politicamente esposte (PEP), liste e fonti rilevanti ai fini antiriciclaggio",
+            "en": "Screening of politically exposed persons (PEPs), lists and sources relevant for anti-money-laundering purposes"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "obbligo_legale"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(c) GDPR: adempimento degli obblighi legali antiriciclaggio cui è soggetto il professionista destinatario della disciplina (d.lgs. 231/2007), in particolare adeguata verifica della clientela e del titolare effettivo, conservazione della documentazione, astensione e segnalazione di operazioni sospette, valutazione del rischio. La valutazione del rischio non costituisce finalità autonoma ma è parte integrante dell'adempimento di legge. In un trattamento AML puro l'obbligo legale è il perno del trattamento; eventuali ulteriori basi giuridiche vanno introdotte solo in presenza di finalità ulteriori effettive e documentate.",
+            "en": "GDPR Art. 6(1)(c): compliance with the anti-money-laundering legal obligations applicable to the professional subject to the rules (d.lgs. 231/2007), in particular customer and beneficial-owner due diligence, document retention, abstention and reporting of suspicious transactions, risk assessment. Risk assessment is not an autonomous purpose but an integral part of the statutory compliance. In a pure AML processing activity the legal obligation is the (almost) exclusive basis; any other basis should be introduced only where genuinely autonomous and well-defined further purposes exist."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Di regola non utilizzato in un trattamento AML puro, in cui la base è l'obbligo legale. Da introdurre solo se il titolare individua una finalità ulteriore effettivamente autonoma (non già coperta dall'obbligo 231) e ben delimitata, previo bilanciamento.",
+              "en": "Generally not used in a pure AML processing activity, where the basis is the legal obligation. To be introduced only if the controller identifies a genuinely autonomous further purpose (not already covered by the 231 obligation) that is well-defined, subject to a balancing test."
+            },
+            "garanzieAdottate": {
+              "it": "Trattamento limitato a quanto richiesto dalla disciplina antiriciclaggio; minimizzazione; accesso riservato; conservazione nei soli termini di legge e cancellazione a scadenza.",
+              "en": "Processing limited to what is required by the anti-money-laundering rules; minimisation; restricted access; retention only within statutory terms and deletion at expiry."
+            },
+            "bilanciamentoRichiesto": false,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "Di regola non pertinente come finalità propria del trattamento AML. Qualora nel corso della verifica emergano categorie particolari di dati, valutare caso per caso la condizione di liceità ex art. 9 applicabile, nei limiti di quanto strettamente necessario all'adempimento; non presumere automaticamente l'art. 9(2)(f).",
+            "en": "Generally not relevant as an autonomous purpose of AML processing. Should special categories of data emerge during due diligence, assess case by case the applicable Art. 9 lawfulness condition, within the limits of what is strictly necessary for compliance; do not automatically presume Art. 9(2)(f)."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003), in combinato con gli obblighi del d.lgs. 231/2007. Nell'adeguata verifica, in particolare rafforzata, possono emergere dati relativi a condanne penali, reati o procedimenti (es. controlli su PEP, liste sanzionatorie, fonti reputazionali e informazioni su provenienza dei fondi); il trattamento è ammesso solo se pertinente e necessario all'adempimento antiriciclaggio, nei limiti della normativa applicabile.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003), in combination with the obligations of d.lgs. 231/2007. During due diligence, in particular enhanced due diligence, data on criminal convictions, offences or proceedings may emerge (e.g. PEP screening, sanctions lists, reputational sources and information on the source of funds); processing is permitted only if relevant and necessary for anti-money-laundering compliance, within the limits of applicable law."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti (persone fisiche) e referenti/esecutori di clienti persone giuridiche",
+            "en": "Clients (natural persons) and contacts/executors of corporate clients"
+          },
+          {
+            "it": "Titolari effettivi delle controparti contrattuali e delle entità coinvolte",
+            "en": "Beneficial owners of the contractual counterparties and entities involved"
+          },
+          {
+            "it": "Persone politicamente esposte (PEP) e relativi familiari e soggetti collegati",
+            "en": "Politically exposed persons (PEPs) and their family members and close associates"
+          },
+          {
+            "it": "Soggetti coinvolti in operazioni oggetto di valutazione o segnalazione",
+            "en": "Persons involved in transactions subject to assessment or reporting"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto del cliente, dell'esecutore e del titolare effettivo",
+            "en": "Identification and contact data of the client, the executor and the beneficial owner"
+          },
+          {
+            "it": "Dati su scopo e natura della prestazione, provenienza dei fondi e profilo di rischio",
+            "en": "Data on the purpose and nature of the service, source of funds and risk profile"
+          },
+          {
+            "it": "Copia dei documenti di identità e della documentazione raccolta per l'adeguata verifica",
+            "en": "Copies of identity documents and the documentation collected for due diligence"
+          },
+          {
+            "it": "Dati relativi allo status di PEP e risultanze dei controlli su liste e fonti",
+            "en": "Data on PEP status and results of screening against lists and sources"
+          },
+          {
+            "it": "Eventuali dati relativi a condanne penali e reati (art. 10) emersi in sede di verifica, ove pertinenti e necessari",
+            "en": "Any data on criminal convictions and offences (Art. 10) emerging during due diligence, where relevant and necessary"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti direttamente dal cliente e dall'esecutore; dati da registri pubblici (es. registro delle imprese, registro dei titolari effettivi nei limiti di legge); dati da liste e fonti rilevanti ai fini antiriciclaggio (liste sanzionatorie, fonti su PEP); informazioni raccolte nel corso della verifica rafforzata. La raccolta è limitata a quanto richiesto dalla disciplina AML.",
+          "en": "Data provided directly by the client and the executor; data from public registers (e.g. business register, beneficial-owner register within legal limits); data from lists and sources relevant for anti-money-laundering (sanctions lists, PEP sources); information collected during enhanced due diligence. Collection is limited to what is required by the AML rules."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Organi e autorità competenti in materia antiriciclaggio (es. unità di informazione finanziaria, autorità di vigilanza) secondo la disciplina applicabile",
+            "en": "Bodies and authorities competent for anti-money-laundering (e.g. financial intelligence unit, supervisory authorities) under the applicable rules"
+          },
+          {
+            "it": "Fornitore del software gestionale/AML e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management/AML software and cloud services (data processor)"
+          },
+          {
+            "it": "Fornitore dei servizi di screening su liste, PEP e fonti reputazionali (responsabile del trattamento)",
+            "en": "Provider of screening services against lists, PEPs and reputational sources (data processor)"
+          },
+          {
+            "it": "Eventuali soggetti del medesimo network professionale, nei limiti e con le garanzie previste dalla disciplina AML",
+            "en": "Any parties of the same professional network, within the limits and safeguards provided for by the AML rules"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software AML / di screening su liste e PEP / cloud dello studio]",
+              "en": "[Enter the name of the AML / list-and-PEP screening / cloud software provider of the firm]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura del software per l'adeguata verifica e la conservazione AML, e dei servizi di screening su liste, sanzioni e PEP",
+              "en": "Provision of software for due diligence and AML retention, and screening services against lists, sanctions and PEPs"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Le autorità antiriciclaggio destinatarie delle segnalazioni NON sono responsabili dello studio: sono soggetti pubblici/titolari autonomi. Particolare attenzione alle fonti di screening extra-UE.",
+              "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The anti-money-laundering authorities receiving the reports are NOT the firm's processors: they are public bodies / independent controllers. Pay particular attention to non-EU screening sources."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori di screening e i servizi cloud/AML]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati AML, nominativi e vincolati a obblighi di legge, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di screening su liste/PEP e nei servizi cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "AML data, nominative and bound by legal obligations, should preferably be processed within the EU. Verify any non-EU sub-processors in list/PEP screening services and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per il periodo di conservazione previsto dalla disciplina antiriciclaggio (di regola dieci anni dalla cessazione del rapporto continuativo o dall'esecuzione dell'operazione occasionale, salvo diversa previsione di legge), decorso il quale i dati sono cancellati.",
+            "en": "For the retention period provided for by the anti-money-laundering rules (generally ten years from the end of the continuing relationship or the execution of the occasional transaction, unless otherwise provided by law), after which the data is deleted."
+          },
+          "criteri": {
+            "it": "Conservazione vincolata ai termini di legge AML; al decorso del termine i dati e i documenti dell'adeguata verifica sono cancellati, salvo specifici obblighi che ne impongano la conservazione ulteriore (es. contenzioso pendente, richieste delle autorità). Verifica periodica delle scadenze; cancellazione a fine periodo.",
+            "en": "Retention bound to the AML statutory terms; once the term elapses, the due-diligence data and documents are deleted, unless specific obligations require further retention (e.g. pending litigation, authority requests). Periodic review of deadlines; deletion at the end of the period."
+          },
+          "azioneFinale": "cancellazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai dati e ai fascicoli AML con autenticazione forte e profili di privilegio",
+              "en": "Access control to AML data and files with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei documenti e delle connessioni, in transito e at-rest",
+              "en": "Encryption of documents and connections, in transit and at rest"
+            },
+            {
+              "it": "Segregazione e accesso strettamente riservato ai dati delle segnalazioni di operazioni sospette",
+              "en": "Segregation and strictly restricted access to suspicious-transaction-report data"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sui dati AML",
+              "en": "Traceability of accesses and operations on AML data"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups with at-rest encryption and access control"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Procedure interne di adeguata verifica, valutazione del rischio e conservazione conformi alla disciplina antiriciclaggio",
+              "en": "Internal procedures for due diligence, risk assessment and retention compliant with the anti-money-laundering rules"
+            },
+            {
+              "it": "Rispetto del divieto di comunicazione al cliente dell'avvenuta segnalazione di operazioni sospette e delle limitazioni dei diritti previste dalla disciplina AML",
+              "en": "Compliance with the prohibition of disclosing the suspicious-transaction report to the client and with the limitations on rights provided for by the AML rules"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) abilitati al trattamento dei dati AML",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) enabled to process AML data"
+            },
+            {
+              "it": "Verifica preliminare del perimetro dei soggetti obbligati e delle prestazioni rilevanti ai fini antiriciclaggio",
+              "en": "Preliminary verification of the perimeter of obliged entities and AML-relevant services"
+            },
+            {
+              "it": "Coordinamento con il segreto professionale e con i relativi limiti/esenzioni previsti dalla disciplina AML per i professionisti legali",
+              "en": "Coordination with professional secrecy and its limits/exemptions provided for by the AML rules for legal professionals"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle procedure interne antiriciclaggio, alla valutazione del rischio dello studio, ai DPA con i fornitori e alle nomine dei soggetti coinvolti]",
+            "en": "[Refer to the internal anti-money-laundering procedures, the firm's risk assessment, the DPAs with providers and the appointments of the parties involved]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Da valutare se si utilizzano strumenti automatizzati di scoring del rischio o di screening con effetti significativi sull'interessato (es. blocco o rifiuto automatico della prestazione); valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili. Di regola lo scoring AML supporta una decisione umana.",
+            "en": "Assess if using automated risk-scoring or screening tools with significant effects on the data subject (e.g. automatic blocking or refusal of the service); assess whether they fall under GDPR Art. 22 and the applicable safeguards. AML scoring generally supports a human decision."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile. La profilatura del rischio antiriciclaggio è finalità di compliance, non di marketing.",
+            "en": "Not applicable. Anti-money-laundering risk profiling is a compliance purpose, not a marketing one."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Da valutare: il trattamento AML comporta dati delicati (PEP, eventuali dati ex art. 10) e screening su fonti; una DPIA ai sensi dell'art. 35 GDPR può essere necessaria in presenza di trattamenti sistematici o su larga scala, di scoring automatizzato o di valutazioni che incidono significativamente sugli interessati.",
+            "en": "To be assessed: AML processing involves sensitive data (PEPs, any Art. 10 data) and screening against sources; a DPIA under GDPR Art. 35 may be necessary in case of systematic or large-scale processing, automated scoring or assessments that significantly affect the data subjects."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(c), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 231/2007 (antiriciclaggio: adeguata verifica, conservazione, segnalazione di operazioni sospette, regime PEP); art. 622 c.p. e normativa forense/deontologica sul segreto professionale (con i limiti/esenzioni previsti dalla disciplina AML). Lo studio è titolare autonomo e destinatario degli obblighi solo se rientra tra i soggetti obbligati per le prestazioni rilevanti: perimetro da verificare. Obbligo legale come base principale del trattamento.",
+          "en": "Relevant legal references: GDPR Arts. 6(1)(c), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering: due diligence, retention, suspicious-transaction reporting, PEP regime); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy (with the limits/exemptions provided for by the AML rules). The firm is an independent controller and subject to the obligations only if it falls among the obliged entities for relevant services: the perimeter must be verified. Legal obligation as the almost exclusive basis."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-022-studi-legali-conflitti-interesse",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione conflitti di interesse",
+        "en": "Conflict-of-interest management"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per la verifica preventiva e la gestione dei conflitti di interesse prima dell'assunzione dell'incarico e durante il rapporto professionale: incrocio dei nominativi di clienti, parti, controparti e soggetti collegati, tenuta di un registro/elenco dei conflitti e adozione delle misure deontologiche conseguenti. Il taglio è interno e organizzativo, con dati minimi, distinto dalla gestione del rapporto con il cliente (template-cardine) e dalla tenuta del fascicolo (template dedicato).",
+        "en": "Processing of personal data for the preventive check and management of conflicts of interest before accepting an engagement and during the professional relationship: cross-checking the names of clients, parties, counterparties and connected persons, keeping a conflicts register/list and adopting the ensuing ethical measures. The scope is internal and organisational, with minimal data, distinct from managing the client relationship (core template) and keeping the case file (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO INTERNO/ORGANIZZATIVO. SPECIALIZZAZIONE del template-cardine: qui il trattamento è la VERIFICA PREVENTIVA dei conflitti, non la gestione del rapporto col cliente (template-cardine) né la tenuta del fascicolo (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) DATI MINIMI: di regola identificativi delle parti e oggetto/posizione, sufficienti a rilevare il conflitto; va evitato di replicare nel registro conflitti il contenuto sostanziale dei fascicoli; (c) BASE GIURIDICA su OBBLIGO deontologico di verifica dei conflitti e su LEGITTIMO INTERESSE organizzativo dello studio alla corretta assunzione degli incarichi e alla prevenzione di responsabilità; (d) ART. 9/ART. 10 NON sono finalità proprie: il registro conflitti lavora su nominativi e posizione, non sul merito; eventuali dati particolari/giudiziari restano nei fascicoli; va comunque previsto che possano emergere incidentalmente, con minimizzazione; (e) CONSERVAZIONE prudente del registro, per documentare le verifiche svolte; (f) SEGRETO PROFESSIONALE anche tra incarichi potenzialmente confliggenti (eventuali muri etici/segregazioni interne). Basi giuridiche, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "INTERNAL/ORGANISATIONAL SCOPE. SPECIALISATION of the core template: here the processing is the PREVENTIVE conflict check, not managing the client relationship (core template) or keeping the case file (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) MINIMAL DATA: generally the parties' identifiers and the subject/position, sufficient to detect the conflict; replicating the substantive content of case files in the conflicts register must be avoided; (c) LEGAL BASIS on the ethical OBLIGATION to check conflicts and on the firm's organisational LEGITIMATE INTEREST in correctly accepting engagements and preventing liability; (d) ART. 9/ART. 10 are NOT autonomous purposes: the conflicts register works on names and position, not on the merits; any special/judicial data remains in the case files; it should however be anticipated that such data may emerge incidentally, with minimisation; (e) PRUDENT RETENTION of the register, to document the checks carried out; (f) PROFESSIONAL SECRECY also between potentially conflicting engagements (possible ethical walls/internal segregation). Legal bases, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "verifica_preventiva",
+            "label": "Verifica preventiva del conflitto prima dell'assunzione dell'incarico",
+            "art6": "obbligo_e_legittimo_interesse"
+          },
+          {
+            "id": "registro_conflitti",
+            "label": "Tenuta del registro dei conflitti e misure conseguenti",
+            "art6": "legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "verifica_preventiva",
+            "label": "Preventive conflict check before accepting the engagement",
+            "art6": "obbligo_e_legittimo_interesse"
+          },
+          {
+            "id": "registro_conflitti",
+            "label": "Keeping the conflicts register and ensuing measures",
+            "art6": "legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione conflitti di interesse",
+          "en": "Conflict-of-interest management"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per la verifica preventiva e la gestione dei conflitti di interesse: incrocio dei nominativi di clienti, parti, controparti e soggetti collegati, tenuta del registro dei conflitti e adozione delle misure deontologiche e organizzative conseguenti, con dati ridotti al minimo necessario al rilievo del conflitto.",
+          "en": "Processing of personal data for the preventive check and management of conflicts of interest: cross-checking the names of clients, parties, counterparties and connected persons, keeping the conflicts register and adopting the ensuing ethical and organisational measures, with data reduced to the minimum necessary to detect the conflict."
+        },
+        "finalita": [
+          {
+            "it": "Verifica preventiva dell'esistenza di conflitti di interesse prima dell'assunzione dell'incarico",
+            "en": "Preventive check of the existence of conflicts of interest before accepting the engagement"
+          },
+          {
+            "it": "Monitoraggio dei conflitti potenziali o sopravvenuti durante il rapporto professionale",
+            "en": "Monitoring of potential or supervening conflicts during the professional relationship"
+          },
+          {
+            "it": "Tenuta e aggiornamento del registro/elenco dei conflitti di interesse",
+            "en": "Keeping and updating the conflicts-of-interest register/list"
+          },
+          {
+            "it": "Adozione delle misure deontologiche e organizzative conseguenti (astensione, rinuncia all'incarico, segregazioni interne)",
+            "en": "Adoption of the ensuing ethical and organisational measures (abstention, declining the engagement, internal segregation)"
+          },
+          {
+            "it": "Documentazione delle verifiche svolte a fini di prova e di prevenzione di responsabilità",
+            "en": "Documentation of the checks carried out for evidentiary purposes and to prevent liability"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(c) GDPR: adempimento dell'obbligo, derivante dalla normativa forense e deontologica applicabile, dell'avvocato di verificare e gestire i conflitti di interesse. Art. 6(1)(f) GDPR: legittimo interesse organizzativo dello studio alla corretta assunzione degli incarichi, alla tutela dell'indipendenza e del segreto professionale e alla prevenzione di responsabilità, mediante la verifica e la registrazione dei conflitti. Il trattamento è interno e strumentale; non costituisce base per finalità ulteriori.",
+            "en": "GDPR Art. 6(1)(c): compliance with the lawyer's ethical and professional obligation to check and manage conflicts of interest, provided for by the applicable legal-profession and ethical rules. GDPR Art. 6(1)(f): the firm's organisational legitimate interest in correctly accepting engagements, protecting independence and professional secrecy and preventing liability, through the checking and recording of conflicts. The processing is internal and instrumental; it is not a basis for further purposes."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse riguarda l'organizzazione interna dello studio: rilevare e documentare i conflitti per assumere correttamente gli incarichi, tutelare l'indipendenza e prevenire responsabilità professionali e deontologiche. Si tratta di dati di clienti, parti e soggetti collegati trattati al solo fine del rilievo del conflitto.",
+              "en": "Legitimate interest concerns the firm's internal organisation: detecting and documenting conflicts to correctly accept engagements, protect independence and prevent professional and ethical liability. It involves data of clients, parties and connected persons processed only to detect the conflict."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione: nel registro conflitti si trattano di regola solo nominativi, ruolo e posizione, non il contenuto sostanziale dei fascicoli; accesso riservato; segregazioni interne ove necessario; conservazione prudente a fini di prova.",
+              "en": "Minimisation: the conflicts register generally processes only names, role and position, not the substantive content of case files; restricted access; internal segregation where necessary; prudent retention for evidentiary purposes."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "Di regola non pertinente: la verifica dei conflitti lavora su nominativi e posizione, non sul merito. Qualora incidentalmente emergano categorie particolari di dati, vanno minimizzate e non replicate nel registro conflitti; restano semmai nei fascicoli, con la condizione di liceità propria di quel trattamento.",
+            "en": "Generally not relevant: the conflict check works on names and position, not on the merits. Should special categories of data emerge incidentally, they must be minimised and not replicated in the conflicts register; they remain, if anything, in the case files, with the lawfulness condition of that processing."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Di regola non presenti come finalità propria: la verifica dei conflitti non ha per oggetto dati ex art. 10. Qualora un nominativo o una posizione facciano incidentalmente riferimento a procedimenti penali, il dato va minimizzato e mantenuto nel fascicolo pertinente, non nel registro conflitti. Se il titolare ritiene di trattarli, valutare la condizione ex art. 10 GDPR e art. 2-octies Codice privacy.",
+            "en": "Generally not present as an autonomous purpose: the conflict check does not target Art. 10 data. Should a name or position incidentally refer to criminal proceedings, the data must be minimised and kept in the relevant case file, not in the conflicts register. If the controller decides to process it, assess the condition under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti attuali e potenziali (persone fisiche) e referenti di clienti persone giuridiche",
+            "en": "Current and prospective clients (natural persons) and contacts of corporate clients"
+          },
+          {
+            "it": "Parti, controparti e soggetti collegati alle posizioni trattate",
+            "en": "Parties, counterparties and persons connected to the positions handled"
+          },
+          {
+            "it": "Soci, collaboratori e professionisti dello studio rilevanti ai fini del conflitto",
+            "en": "Partners, collaborators and professionals of the firm relevant for the conflict"
+          },
+          {
+            "it": "Soggetti terzi i cui interessi possono determinare un conflitto",
+            "en": "Third parties whose interests may give rise to a conflict"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi di clienti, parti, controparti e soggetti collegati",
+            "en": "Identification data of clients, parties, counterparties and connected persons"
+          },
+          {
+            "it": "Ruolo nella posizione e riferimento sintetico all'oggetto dell'incarico (senza contenuto sostanziale del fascicolo)",
+            "en": "Role in the position and a summary reference to the subject of the engagement (without the substantive content of the case file)"
+          },
+          {
+            "it": "Esito della verifica del conflitto e misure adottate (astensione, rinuncia, segregazione)",
+            "en": "Outcome of the conflict check and measures adopted (abstention, declining, segregation)"
+          },
+          {
+            "it": "Date e tracciamento delle verifiche svolte",
+            "en": "Dates and tracking of the checks carried out"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente in fase di contatto o conferimento dell'incarico; dati già presenti nel sistema gestionale dello studio (incarichi pregressi e in corso); dati da fonti pubbliche o registri nei limiti di legge per identificare i soggetti collegati. La raccolta è limitata a quanto necessario al rilievo del conflitto.",
+          "en": "Data provided by the client at the contact or engagement stage; data already present in the firm's management system (past and ongoing engagements); data from public sources or registers within legal limits to identify connected persons. Collection is limited to what is necessary to detect the conflict."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Soci e responsabili dello studio competenti a decidere sull'assunzione dell'incarico (trattamento interno)",
+            "en": "Partners and managers of the firm competent to decide on accepting the engagement (internal processing)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          },
+          {
+            "it": "Ordine professionale o organismi competenti, nei soli casi e limiti previsti dalla disciplina deontologica",
+            "en": "Professional body or competent bodies, only in the cases and within the limits provided for by the ethical rules"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+              "en": "[Enter the name of the firm's management software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione del registro conflitti e supporto alle verifiche tramite il sistema gestionale, servizi cloud connessi",
+              "en": "Management of the conflicts register and support to the checks via the management system, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Il registro conflitti è coperto da segreto professionale e va trattato con accesso riservato.",
+              "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The conflicts register is covered by professional secrecy and must be processed with restricted access."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati del registro conflitti, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Conflicts-register data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the management and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del rapporto professionale e, successivamente, per il tempo necessario a documentare le verifiche svolte e a difendersi da eventuali contestazioni deontologiche o azioni di responsabilità, tenuto conto dei termini di prescrizione applicabili.",
+            "en": "For the duration of the professional relationship and, thereafter, for the time necessary to document the checks carried out and to defend against any ethical complaints or liability actions, taking into account the applicable prescription terms."
+          },
+          "criteri": {
+            "it": "Conservazione del registro conflitti e degli esiti delle verifiche per il periodo necessario alla prova delle verifiche svolte (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione costante; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of the conflicts register and the outcomes of the checks for the period necessary to prove the checks carried out (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); constant minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi al registro conflitti con autenticazione forte e profili di privilegio",
+              "en": "Access control to the conflicts register with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Segregazioni interne (muri etici) ove necessario per separare team su posizioni potenzialmente confliggenti",
+              "en": "Internal segregation (ethical walls) where necessary to separate teams on potentially conflicting positions"
+            },
+            {
+              "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+              "en": "Encryption of data and connections, in transit and at rest"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle verifiche registrate",
+              "en": "Traceability of accesses and recorded checks"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Procedura interna di verifica preventiva e periodica dei conflitti di interesse",
+              "en": "Internal procedure for preventive and periodic conflict-of-interest checks"
+            },
+            {
+              "it": "Minimizzazione dei dati nel registro conflitti, evitando la replica del contenuto dei fascicoli",
+              "en": "Data minimisation in the conflicts register, avoiding the replication of case-file content"
+            },
+            {
+              "it": "Rispetto del segreto professionale tra incarichi potenzialmente confliggenti",
+              "en": "Compliance with professional secrecy between potentially conflicting engagements"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) abilitati alla gestione del registro",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) enabled to manage the register"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alla procedura interna sui conflitti di interesse, alla normativa forense e deontologica applicabile e ai DPA con i fornitori]",
+            "en": "[Refer to the internal conflict-of-interest procedure, the applicable legal-profession and ethical rules and the DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti: la rilevazione del conflitto può essere supportata da ricerche automatiche sui nominativi, ma la decisione sull'assunzione dell'incarico è umana. Compilare se si adottano automatismi con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR.",
+            "en": "Generally not present: conflict detection may be supported by automated name searches, but the decision on accepting the engagement is human. Complete if adopting automated mechanisms with significant effects, assessing whether they fall under GDPR Art. 22."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione dei conflitti di interesse.",
+            "en": "Not applicable to conflict-of-interest management."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria: trattamento interno, dati minimi. Da valutare solo in caso di soluzioni particolarmente estese o di incroci sistematici su larga scala con fonti esterne.",
+            "en": "Generally not required: internal processing, minimal data. Assess only in case of particularly extensive solutions or systematic large-scale cross-checking with external sources."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(c), 6(1)(f); normativa forense e deontologica applicabile sull'obbligo di verifica dei conflitti di interesse; art. 622 c.p. e normativa sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo. Trattamento interno e organizzativo, con dati minimi: il merito e gli eventuali dati particolari/giudiziari restano nei fascicoli, non nel registro conflitti.",
+          "en": "Relevant legal references: GDPR Arts. 6(1)(c), 6(1)(f); applicable legal-profession and ethical rules on the obligation to check conflicts of interest; Art. 622 Italian Criminal Code and rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller. Internal and organisational processing, with minimal data: the merits and any special/judicial data remain in the case files, not in the conflicts register."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-023-studi-legali-procure-deleghe-mandati",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione procure, deleghe e mandati difensivi",
+        "en": "Management of powers of attorney, delegations and defense mandates"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per la formazione, l'acquisizione, la verifica e la gestione documentale di procure alle liti, procure speciali, deleghe e mandati difensivi: conferimento dei poteri rappresentativi, autentica della sottoscrizione del cliente da parte del difensore, gestione di sostituzioni e deleghe a colleghi, revoche e rinunce. Il taglio è documentale-rappresentativo, distinto dalla gestione del rapporto con il cliente (template-cardine) e dalla conduzione della lite (template contenzioso).",
+        "en": "Processing of personal data for the creation, acquisition, verification and document management of powers of attorney for litigation, special powers of attorney, delegations and defense mandates: granting of representative powers, authentication of the client's signature by the lawyer, management of substitutions and delegations to colleagues, revocations and waivers. The scope is documentary-representative, distinct from managing the client relationship (core template) and conducting the dispute (litigation template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO DOCUMENTALE-RAPPRESENTATIVO. SPECIALIZZAZIONE del template-cardine: qui il trattamento riguarda lo strumento che conferisce e documenta i POTERI rappresentativi (procura/mandato), non la gestione complessiva del rapporto col cliente (template-cardine) né la conduzione della lite (template contenzioso). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) BASE su CONTRATTO (la procura/mandato attua il rapporto professionale con il cliente) e OBBLIGO LEGALE (forma della procura alle liti, autentica della firma del difensore, adempimenti processuali); (c) AUTENTICA DELLA SOTTOSCRIZIONE: il difensore certifica l'autografia della firma del cliente sulla procura, attività regolata; (d) ART. 9(2)(f): la procura alle liti veicola la posizione difensiva e può riferirsi a procedimenti che coinvolgono categorie particolari; condizione applicabile ove pertinente; (e) ART. 10: la procura può riguardare procedimenti penali o dati giudiziari, trattati solo se pertinenti e necessari; (f) DATI IDENTIFICATIVI e poteri (oggetto, limiti, durata), eventuale documento di identità per l'autentica; (g) SEGRETO PROFESSIONALE. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "DOCUMENTARY-REPRESENTATIVE SCOPE. SPECIALISATION of the core template: here the processing concerns the instrument that grants and documents the representative POWERS (power of attorney/mandate), not the overall management of the client relationship (core template) or conducting the dispute (litigation template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) basis on CONTRACT (the power of attorney/mandate implements the professional relationship with the client) and LEGAL OBLIGATION (form of the power of attorney for litigation, authentication of the lawyer's signature, procedural obligations); (c) SIGNATURE AUTHENTICATION: the lawyer certifies the authenticity of the client's signature on the power of attorney, a regulated activity; (d) ART. 9(2)(f): the power of attorney for litigation carries the defense position and may refer to proceedings involving special categories; condition applicable where relevant; (e) ART. 10: the power of attorney may concern criminal proceedings or judicial data, processed only if relevant and necessary; (f) IDENTIFICATION DATA and powers (subject, limits, duration), possibly an identity document for authentication; (g) PROFESSIONAL SECRECY. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "procura_alle_liti",
+            "label": "Procura alle liti e autentica della sottoscrizione del cliente",
+            "art6": "contratto_e_obbligo"
+          },
+          {
+            "id": "deleghe_sostituzioni",
+            "label": "Deleghe, sostituzioni, revoche e rinunce al mandato",
+            "art6": "contratto_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "procura_alle_liti",
+            "label": "Power of attorney for litigation and authentication of the client's signature",
+            "art6": "contratto_e_obbligo"
+          },
+          {
+            "id": "deleghe_sostituzioni",
+            "label": "Delegations, substitutions, revocations and waivers of the mandate",
+            "art6": "contratto_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione procure, deleghe e mandati difensivi",
+          "en": "Management of powers of attorney, delegations and defense mandates"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per la formazione, acquisizione, autentica, verifica e gestione documentale di procure alle liti, procure speciali, deleghe e mandati difensivi: poteri rappresentativi conferiti, dati del rappresentato e del rappresentante, sostituzioni e deleghe, revoche e rinunce.",
+          "en": "Processing of personal data for the creation, acquisition, authentication, verification and document management of powers of attorney for litigation, special powers of attorney, delegations and defense mandates: representative powers granted, data of the represented and the representative, substitutions and delegations, revocations and waivers."
+        },
+        "finalita": [
+          {
+            "it": "Formazione e acquisizione di procure, deleghe e mandati difensivi conferiti dal cliente",
+            "en": "Creation and acquisition of powers of attorney, delegations and defense mandates granted by the client"
+          },
+          {
+            "it": "Autentica della sottoscrizione del cliente da parte del difensore, ove prevista",
+            "en": "Authentication of the client's signature by the lawyer, where required"
+          },
+          {
+            "it": "Gestione di sostituzioni e deleghe a colleghi, domiciliatari e collaboratori",
+            "en": "Management of substitutions and delegations to colleagues, domiciliary lawyers and collaborators"
+          },
+          {
+            "it": "Gestione di revoche e rinunce al mandato e relativi adempimenti",
+            "en": "Management of revocations and waivers of the mandate and related obligations"
+          },
+          {
+            "it": "Conservazione documentale delle procure e dei mandati a fini di prova dei poteri rappresentativi",
+            "en": "Document retention of powers of attorney and mandates to evidence the representative powers"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: la procura e il mandato difensivo attuano il rapporto professionale con il cliente e sono necessari all'esecuzione dell'incarico. Art. 6(1)(c) GDPR: adempimento degli obblighi di legge sulla forma e sul contenuto della procura alle liti, sull'autentica della sottoscrizione da parte del difensore e sugli adempimenti processuali connessi al deposito e alla produzione della procura. Eventuali dati di terzi presenti nel documento sono trattati nei limiti di quanto necessario.",
+            "en": "GDPR Art. 6(1)(b): the power of attorney and the defense mandate implement the professional relationship with the client and are necessary to perform the engagement. GDPR Art. 6(1)(c): compliance with legal obligations on the form and content of the power of attorney for litigation, on the authentication of the signature by the lawyer and on the procedural obligations connected to filing and producing the power of attorney. Any third-party data in the document is processed within the limits of what is necessary."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Di regola non utilizzato come base principale: il trattamento si fonda sul contratto e sull'obbligo legale. Eventuali dati di terzi presenti nella procura/mandato sono trattati nei limiti della necessità documentale.",
+              "en": "Generally not used as the main basis: the processing is grounded on the contract and the legal obligation. Any third-party data in the power of attorney/mandate is processed within the limits of documentary necessity."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati riportati nel documento e degli eventuali allegati (es. documento di identità per l'autentica); accesso riservato; conservazione a fini di prova dei poteri.",
+              "en": "Minimisation of data reported in the document and any attachments (e.g. identity document for authentication); restricted access; retention to evidence the powers."
+            },
+            "bilanciamentoRichiesto": false,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR ove pertinente: la procura alle liti veicola la posizione difensiva e può riferirsi a procedimenti che coinvolgono categorie particolari di dati, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria. Il documento di procura in sé è essenzialmente identificativo e attributivo di poteri; la condizione ex art. 9 rileva in relazione al procedimento cui la procura accede.",
+            "en": "GDPR Art. 9(2)(f) where relevant: the power of attorney for litigation carries the defense position and may refer to proceedings involving special categories of data, processed to establish, exercise or defend a right in court. The power-of-attorney document itself is essentially identifying and power-granting; the Art. 9 condition is relevant in relation to the proceedings the power of attorney relates to."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). La procura o il mandato possono riguardare procedimenti penali o accedere a dati giudiziari (es. procura per la difesa penale); il trattamento di tali dati è ammesso solo se pertinente e necessario rispetto all'incarico rappresentato, nei limiti della normativa applicabile.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The power of attorney or mandate may concern criminal proceedings or relate to judicial data (e.g. power of attorney for criminal defense); processing of such data is permitted only if relevant and necessary to the represented engagement, within the limits of applicable law."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti che conferiscono la procura o il mandato (rappresentati)",
+            "en": "Clients granting the power of attorney or mandate (represented persons)"
+          },
+          {
+            "it": "Avvocati, domiciliatari, sostituti e collaboratori destinatari di deleghe o sostituzioni",
+            "en": "Lawyers, domiciliary lawyers, substitutes and collaborators receiving delegations or substitutions"
+          },
+          {
+            "it": "Eventuali rappresentanti legali, tutori o procuratori del cliente",
+            "en": "Any legal representatives, guardians or attorneys of the client"
+          },
+          {
+            "it": "Terzi soggetti eventualmente menzionati nell'oggetto della procura o del mandato",
+            "en": "Third parties possibly mentioned in the subject of the power of attorney or mandate"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi del rappresentato e del rappresentante e dati di contatto",
+            "en": "Identification data of the represented and the representative and contact data"
+          },
+          {
+            "it": "Contenuto della procura/mandato: oggetto, poteri conferiti, limiti, durata, sottoscrizione",
+            "en": "Content of the power of attorney/mandate: subject, powers granted, limits, duration, signature"
+          },
+          {
+            "it": "Dati per l'autentica della sottoscrizione (eventuale estremi/copia del documento di identità)",
+            "en": "Data for signature authentication (possibly the details/copy of the identity document)"
+          },
+          {
+            "it": "Eventuali categorie particolari di dati (art. 9) connesse al procedimento cui la procura accede, nei limiti delle condizioni applicabili",
+            "en": "Any special categories of data (Art. 9) connected to the proceedings the power of attorney relates to, within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati relativi a procedimenti penali (art. 10), ove la procura riguardi la difesa penale, se pertinenti e necessari",
+            "en": "Any data on criminal proceedings (Art. 10), where the power of attorney concerns criminal defense, if relevant and necessary"
+          }
+        ],
+        "fonteDeiDati": "diretta",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti direttamente dal cliente al momento del conferimento della procura o del mandato, inclusi i dati per l'autentica della sottoscrizione; eventuali dati di sostituti/domiciliatari forniti dagli stessi o dallo studio. La raccolta è limitata a quanto necessario alla formazione e alla prova dei poteri rappresentativi.",
+          "en": "Data provided directly by the client when granting the power of attorney or mandate, including the data for signature authentication; any data of substitutes/domiciliary lawyers provided by them or by the firm. Collection is limited to what is necessary to create and evidence the representative powers."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Autorità giudiziarie, cancellerie e uffici giudiziari cui la procura è prodotta o depositata (destinatari istituzionali)",
+            "en": "Judicial authorities, registries and court offices to which the power of attorney is produced or filed (institutional recipients)"
+          },
+          {
+            "it": "Avvocati domiciliatari, sostituti e corrispondenti destinatari di deleghe (di regola titolari autonomi)",
+            "en": "Domiciliary lawyers, substitutes and correspondents receiving delegations (generally independent controllers)"
+          },
+          {
+            "it": "Controparti e relativi difensori, nei limiti del contraddittorio (la procura è prodotta in atti)",
+            "en": "Counterparties and their lawyers, within the limits of cross-examination (the power of attorney is produced in the acts)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale / firma digitale / cloud dello studio]",
+              "en": "[Enter the name of the firm's management / digital signature / cloud software provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione documentale di procure e mandati, eventuale firma digitale e servizi cloud connessi",
+              "en": "Document management of powers of attorney and mandates, any digital signature and connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Le autorità giudiziarie cui la procura è prodotta sono titolari autonomi/soggetti pubblici; i domiciliatari/sostituti di regola titolari autonomi.",
+              "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The judicial authorities to which the power of attorney is produced are independent controllers / public bodies; domiciliary lawyers/substitutes are generally independent controllers."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e di firma digitale]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati di procure e mandati, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali, di firma digitale e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Power-of-attorney and mandate data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the management, digital-signature and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del mandato e, successivamente, per il tempo necessario alla prova dei poteri esercitati e alla difesa da eventuali contestazioni o azioni di responsabilità professionale, tenuto conto dei termini di prescrizione applicabili.",
+            "en": "For the duration of the mandate and, thereafter, for the time necessary to evidence the powers exercised and to defend against any complaints or professional-liability actions, taking into account the applicable prescription terms."
+          },
+          "criteri": {
+            "it": "Conservazione delle procure e dei mandati per documentare i poteri rappresentativi esercitati e per la difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of powers of attorney and mandates to evidence the representative powers exercised and to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai documenti di procura e mandato con autenticazione forte e profili di privilegio",
+              "en": "Access control to power-of-attorney and mandate documents with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei documenti e delle connessioni, in transito e at-rest",
+              "en": "Encryption of documents and connections, in transit and at rest"
+            },
+            {
+              "it": "Protezione specifica della copia del documento di identità eventualmente acquisita per l'autentica",
+              "en": "Specific protection of the identity-document copy possibly acquired for authentication"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sui documenti rappresentativi",
+              "en": "Traceability of accesses and operations on the representative documents"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Procedura per l'autentica della sottoscrizione e la verifica dell'identità del rappresentato",
+              "en": "Procedure for signature authentication and verification of the represented person's identity"
+            },
+            {
+              "it": "Minimizzazione dei dati riportati nel documento e degli allegati acquisiti",
+              "en": "Minimisation of data reported in the document and of the attachments acquired"
+            },
+            {
+              "it": "Rispetto del segreto professionale sui documenti e sui poteri conferiti",
+              "en": "Compliance with professional secrecy on the documents and the powers granted"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono procure e mandati",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling powers of attorney and mandates"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sulla gestione di procure e mandati e sull'autentica della firma, alla normativa forense applicabile e ai DPA con i fornitori]",
+            "en": "[Refer to internal policies on managing powers of attorney and mandates and on signature authentication, the applicable legal-profession rules and the DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti nella gestione di procure e mandati. Compilare se si utilizzano automatismi con effetti significativi; valutarne la riconducibilità all'art. 22 GDPR.",
+            "en": "Generally not present in managing powers of attorney and mandates. Complete if using automated mechanisms with significant effects; assess whether they fall under GDPR Art. 22."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione di procure, deleghe e mandati.",
+            "en": "Not applicable to managing powers of attorney, delegations and mandates."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria: trattamento essenzialmente documentale e identificativo. Da valutare solo in presenza di trattamenti sistematici o su larga scala di dati ex art. 9/art. 10 connessi alle procure (es. studi con elevati volumi di difese penali).",
+            "en": "Generally not required: essentially documentary and identifying processing. Assess only in case of systematic or large-scale processing of Art. 9/Art. 10 data connected to the powers of attorney (e.g. firms with high volumes of criminal defenses)."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(b), 6(1)(c), 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile e penale sulla forma della procura alle liti e sull'autentica della sottoscrizione da parte del difensore; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; le autorità giudiziarie sono titolari autonomi/soggetti pubblici; i domiciliatari/sostituti di regola titolari autonomi.",
+          "en": "Relevant legal references: GDPR Arts. 6(1)(b), 6(1)(c), 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian codes of civil and criminal procedure on the form of the power of attorney for litigation and on signature authentication by the lawyer; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the judicial authorities are independent controllers / public bodies; domiciliary lawyers/substitutes are generally independent controllers."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-024-studi-legali-agenda-udienze-scadenze",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione agenda udienze, scadenze e adempimenti processuali",
+        "en": "Management of hearings calendar, deadlines and procedural tasks"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per la gestione strumentale e organizzativa dell'agenda dello studio: calendario delle udienze, termini e scadenze processuali, adempimenti, promemoria e pianificazione delle attività. L'agenda contiene riferimenti minimi alle pratiche (parti, data, ufficio, tipo di adempimento) e non il contenuto sostanziale del fascicolo. Il taglio è organizzativo-strumentale, distinto dalla conduzione della lite (template contenzioso) e dalla tenuta del fascicolo (template dedicato).",
+        "en": "Processing of personal data for the instrumental and organisational management of the firm's calendar: schedule of hearings, procedural terms and deadlines, tasks, reminders and activity planning. The calendar contains minimal references to cases (parties, date, office, type of task) and not the substantive content of the case file. The scope is organisational-instrumental, distinct from conducting the dispute (litigation template) and keeping the case file (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO ORGANIZZATIVO-STRUMENTALE. SPECIALIZZAZIONE del template-cardine: qui il trattamento è la gestione dell'AGENDA e dello scadenzario, non la conduzione della lite (template contenzioso) né la tenuta del fascicolo (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) BASE su CONTRATTO (l'agenda è strumentale all'esecuzione del mandato) e LEGITTIMO INTERESSE organizzativo dello studio (pianificazione, rispetto dei termini, prevenzione di decadenze e responsabilità); (c) DATI MINIMI: l'agenda dovrebbe contenere parti, data, ufficio, tipo di udienza/adempimento e riferimento alla pratica, NON il merito; (d) ART. 9/ART. 10 NON sono finalità proprie: l'agenda non deve contenere, se non nei limiti strettamente necessari, dati particolari o dati relativi a condanne penali e reati; eventuali riferimenti a tali dati devono restare nel fascicolo o nella documentazione della pratica; (e) PROMEMORIA/NOTIFICHE: attenzione ai dati veicolati in alert e sincronizzazioni su dispositivi e calendari esterni; (f) SEGRETO PROFESSIONALE anche sui riferimenti minimi (la sola esistenza di un incarico può essere riservata). Basi giuridiche, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "ORGANISATIONAL-INSTRUMENTAL SCOPE. SPECIALISATION of the core template: here the processing is the management of the CALENDAR and the deadlines tracker, not conducting the dispute (litigation template) or keeping the case file (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) basis on CONTRACT (the calendar is instrumental to performing the mandate) and the firm's organisational LEGITIMATE INTEREST (planning, meeting deadlines, preventing forfeitures and liability); (c) MINIMAL DATA: the calendar should contain parties, date, office, type of hearing/task and a reference to the case, NOT the merits; (d) ART. 9/ART. 10 are NOT autonomous purposes: the calendar must not contain, except within strictly necessary limits, special data or data on criminal convictions and offences; any reference to such data must remain in the case file or case documentation; (e) REMINDERS/NOTIFICATIONS: attention to the data carried in alerts and synchronisations on devices and external calendars; (f) PROFESSIONAL SECRECY also on the minimal references (the mere existence of an engagement may be confidential). Legal bases, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "agenda_udienze",
+            "label": "Calendario udienze e pianificazione attività",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "scadenzario",
+            "label": "Scadenzario termini processuali e adempimenti",
+            "art6": "contratto_e_legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "agenda_udienze",
+            "label": "Hearings calendar and activity planning",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "scadenzario",
+            "label": "Procedural-terms and tasks deadline tracker",
+            "art6": "contratto_e_legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione agenda udienze, scadenze e adempimenti processuali",
+          "en": "Management of hearings calendar, deadlines and procedural tasks"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per la gestione dell'agenda dello studio: calendario delle udienze, termini e scadenze processuali, adempimenti, promemoria e pianificazione delle attività, con riferimenti minimi alle pratiche e senza il contenuto sostanziale dei fascicoli.",
+          "en": "Processing of personal data for managing the firm's calendar: schedule of hearings, procedural terms and deadlines, tasks, reminders and activity planning, with minimal references to cases and without the substantive content of the case files."
+        },
+        "finalita": [
+          {
+            "it": "Gestione del calendario delle udienze e degli impegni professionali",
+            "en": "Management of the calendar of hearings and professional commitments"
+          },
+          {
+            "it": "Calcolo e monitoraggio dei termini e delle scadenze processuali per prevenire decadenze",
+            "en": "Calculation and monitoring of procedural terms and deadlines to prevent forfeitures"
+          },
+          {
+            "it": "Pianificazione e assegnazione delle attività e degli adempimenti tra i professionisti dello studio",
+            "en": "Planning and allocation of activities and tasks among the firm's professionals"
+          },
+          {
+            "it": "Gestione di promemoria, alert e notifiche relativi a udienze e scadenze",
+            "en": "Management of reminders, alerts and notifications relating to hearings and deadlines"
+          },
+          {
+            "it": "Documentazione dello svolgimento degli adempimenti a fini organizzativi e di prova della diligenza",
+            "en": "Documentation of the performance of tasks for organisational purposes and to evidence diligence"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: l'agenda e lo scadenzario sono strumentali all'esecuzione del mandato professionale conferito dal cliente (rispetto dei termini, presenza alle udienze, adempimenti). Art. 6(1)(f) GDPR: legittimo interesse organizzativo dello studio alla pianificazione delle attività, al rispetto delle scadenze e alla prevenzione di decadenze e responsabilità professionali. Il trattamento è strumentale; non costituisce base per finalità ulteriori.",
+            "en": "GDPR Art. 6(1)(b): the calendar and deadlines tracker are instrumental to performing the professional mandate granted by the client (meeting deadlines, attending hearings, completing tasks). GDPR Art. 6(1)(f): the firm's organisational legitimate interest in planning activities, meeting deadlines and preventing forfeitures and professional liability. The processing is instrumental; it is not a basis for further purposes."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse riguarda l'organizzazione interna dello studio: pianificare le attività, monitorare le scadenze e prevenire decadenze e responsabilità. Si tratta di riferimenti minimi alle pratiche e di dati dei professionisti incaricati.",
+              "en": "Legitimate interest concerns the firm's internal organisation: planning activities, monitoring deadlines and preventing forfeitures and liability. It involves minimal references to cases and data of the assigned professionals."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione: l'agenda contiene parti, data, ufficio, tipo di adempimento e riferimento alla pratica, non il merito; accesso riservato; cautela sui dati veicolati in alert e sincronizzazioni con calendari esterni o dispositivi mobili.",
+              "en": "Minimisation: the calendar contains parties, date, office, type of task and a reference to the case, not the merits; restricted access; caution over the data carried in alerts and synchronisations with external calendars or mobile devices."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "Non pertinente come finalità propria. L'agenda non deve contenere categorie particolari di dati se non nei limiti strettamente necessari (es. un riferimento sintetico al tipo di procedimento); i dati particolari restano nel fascicolo o negli atti collegati, con la condizione di liceità propria di quel trattamento.",
+            "en": "Not relevant as an autonomous purpose. The calendar must not contain special categories of data except within strictly necessary limits (e.g. a summary reference to the type of proceedings); special data remains in the case file or related acts, with the lawfulness condition of that processing."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Non presenti come finalità propria. L'agenda non deve contenere, se non nei limiti strettamente necessari, dati relativi a condanne penali e reati; eventuali riferimenti a tali dati devono restare nel fascicolo o nella documentazione della pratica. Qualora il titolare scelga di indicare in agenda il tipo di procedimento (anche penale), valutare la minimizzazione e la condizione ex art. 10 GDPR e art. 2-octies Codice privacy.",
+            "en": "Not present as an autonomous purpose. The calendar must not contain, except within strictly necessary limits, data on criminal convictions and offences; any reference to such data must remain in the case file or case documentation. Should the controller choose to indicate the type of proceedings (including criminal) in the calendar, assess minimisation and the condition under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti e parti delle pratiche cui si riferiscono udienze e scadenze (riferimenti minimi)",
+            "en": "Clients and parties of the cases to which hearings and deadlines refer (minimal references)"
+          },
+          {
+            "it": "Controparti e relativi difensori (riferimenti minimi per identificare l'udienza/la pratica)",
+            "en": "Counterparties and their lawyers (minimal references to identify the hearing/case)"
+          },
+          {
+            "it": "Avvocati, praticanti e collaboratori dello studio assegnatari di attività e adempimenti",
+            "en": "Lawyers, trainees and collaborators of the firm assigned to activities and tasks"
+          },
+          {
+            "it": "Domiciliatari e sostituti coinvolti negli adempimenti calendarizzati",
+            "en": "Domiciliary lawyers and substitutes involved in the scheduled tasks"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Riferimenti identificativi minimi delle parti e della pratica (nominativo/numero di ruolo)",
+            "en": "Minimal identification references of the parties and the case (name/docket number)"
+          },
+          {
+            "it": "Dati dell'udienza/adempimento: data, ora, ufficio giudiziario, tipo di attività",
+            "en": "Data of the hearing/task: date, time, court office, type of activity"
+          },
+          {
+            "it": "Termini e scadenze calcolati e relativi promemoria",
+            "en": "Calculated terms and deadlines and related reminders"
+          },
+          {
+            "it": "Dati dei professionisti assegnatari e stato di avanzamento dell'adempimento",
+            "en": "Data of the assigned professionals and the task's progress status"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati inseriti dai professionisti dello studio sulla base degli incarichi e degli atti processuali; dati derivati dai sistemi del processo telematico e dai provvedimenti che fissano udienze e termini; riferimenti minimi tratti dal fascicolo. L'inserimento è limitato ai dati necessari alla pianificazione e al rispetto delle scadenze.",
+          "en": "Data entered by the firm's professionals based on engagements and procedural acts; data derived from the electronic-proceedings systems and the measures setting hearings and terms; minimal references taken from the case file. Entry is limited to the data necessary for planning and meeting deadlines."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Professionisti, praticanti e collaboratori dello studio destinatari di impegni e adempimenti (trattamento interno)",
+            "en": "Professionals, trainees and collaborators of the firm assigned to commitments and tasks (internal processing)"
+          },
+          {
+            "it": "Domiciliatari e sostituti incaricati di adempimenti calendarizzati (di regola titolari autonomi)",
+            "en": "Domiciliary lawyers and substitutes assigned to scheduled tasks (generally independent controllers)"
+          },
+          {
+            "it": "Fornitore del software gestionale/agenda e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management/calendar software and cloud services (data processor)"
+          },
+          {
+            "it": "Fornitore dei servizi di calendario, posta e sincronizzazione eventualmente utilizzati (responsabile del trattamento)",
+            "en": "Provider of the calendar, email and synchronisation services possibly used (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale/agenda, dei servizi di calendario/sincronizzazione e cloud dello studio]",
+              "en": "[Enter the name of the firm's management/calendar software, calendar/synchronisation services and cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione dell'agenda, dello scadenzario, dei promemoria e della sincronizzazione, servizi cloud connessi",
+              "en": "Management of the calendar, deadlines tracker, reminders and synchronisation, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Particolare attenzione ai servizi di calendario/sincronizzazione cloud e mobile, che possono comportare trasferimenti e accessi ai dati dell'agenda coperti da segreto professionale.",
+              "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. Pay particular attention to cloud and mobile calendar/synchronisation services, which may involve transfers and access to calendar data covered by professional secrecy."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i servizi di calendario/sincronizzazione e cloud]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati dell'agenda, pur minimi, sono coperti da segreto professionale e vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di calendario, posta e sincronizzazione cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Calendar data, although minimal, is covered by professional secrecy and should preferably be processed within the EU. Verify any non-EU sub-processors in the calendar, email and cloud synchronisation services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata della pratica e, successivamente, per il tempo necessario a documentare il rispetto dei termini e degli adempimenti e a difendersi da eventuali contestazioni o azioni di responsabilità professionale, tenuto conto dei termini di prescrizione applicabili.",
+            "en": "For the duration of the case and, thereafter, for the time necessary to document compliance with deadlines and tasks and to defend against any complaints or professional-liability actions, taking into account the applicable prescription terms."
+          },
+          "criteri": {
+            "it": "Conservazione delle registrazioni di agenda e scadenzario per documentare la diligenza nel rispetto dei termini (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione delle registrazioni non più necessarie.",
+            "en": "Retention of calendar and deadline records to document diligence in meeting deadlines (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation of records no longer needed."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi all'agenda e allo scadenzario con autenticazione forte e profili di privilegio",
+              "en": "Access control to the calendar and deadlines tracker with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei dati e delle connessioni, in transito e at-rest, e dei flussi di sincronizzazione",
+              "en": "Encryption of data and connections, in transit and at rest, and of the synchronisation flows"
+            },
+            {
+              "it": "Configurazione prudente delle sincronizzazioni con calendari esterni e dispositivi mobili",
+              "en": "Prudent configuration of synchronisations with external calendars and mobile devices"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle modifiche alle registrazioni di agenda",
+              "en": "Traceability of accesses and changes to calendar records"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Minimizzazione: in agenda solo riferimenti necessari (parti, data, ufficio, tipo di adempimento), non il merito",
+              "en": "Minimisation: only necessary references in the calendar (parties, date, office, type of task), not the merits"
+            },
+            {
+              "it": "Istruzione agli operatori di non inserire in agenda dati particolari o giudiziari oltre lo stretto necessario",
+              "en": "Instruction to operators not to enter special or judicial data in the calendar beyond what is strictly necessary"
+            },
+            {
+              "it": "Rispetto del segreto professionale anche sui riferimenti minimi (la sola esistenza dell'incarico può essere riservata)",
+              "en": "Compliance with professional secrecy also on minimal references (the mere existence of the engagement may be confidential)"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono agenda e scadenzario",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling the calendar and deadlines tracker"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sull'uso dell'agenda e sulla sincronizzazione dei calendari, alle istruzioni di minimizzazione e ai DPA con i fornitori]",
+            "en": "[Refer to internal policies on calendar use and calendar synchronisation, the minimisation instructions and the DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Il calcolo automatico dei termini supporta l'attività professionale ma non produce decisioni con effetti giuridici sugli interessati. Compilare se si adottano automatismi con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR.",
+            "en": "Generally not present. The automatic calculation of terms supports professional activity but does not produce decisions with legal effects on data subjects. Complete if adopting automated mechanisms with significant effects, assessing whether they fall under GDPR Art. 22."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione dell'agenda e dello scadenzario.",
+            "en": "Not applicable to managing the calendar and deadlines tracker."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria: trattamento strumentale, dati minimi. Da valutare solo se l'agenda integra dati particolari/giudiziari in modo sistematico o se la sincronizzazione comporta trasferimenti o accessi su larga scala da parte di terzi.",
+            "en": "Generally not required: instrumental processing, minimal data. Assess only if the calendar systematically incorporates special/judicial data or if synchronisation involves large-scale transfers or access by third parties."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(b), 6(1)(f); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo. Trattamento strumentale e organizzativo: l'agenda contiene riferimenti minimi alle pratiche; i dati particolari (art. 9) e i dati relativi a condanne penali e reati (art. 10) restano nel fascicolo o negli atti collegati, non in agenda.",
+          "en": "Relevant legal references: GDPR Arts. 6(1)(b), 6(1)(f); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller. Instrumental and organisational processing: the calendar contains minimal references to cases; special data (Art. 9) and data on criminal convictions and offences (Art. 10) remain in the case file or related acts, not in the calendar."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-025-studi-legali-archiviazione-conservazione-fascicoli",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione archiviazione e conservazione fascicoli",
+        "en": "Management of case-file archiving and retention"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali relativo al ciclo di vita della conservazione dei fascicoli chiusi e della documentazione dello studio: archiviazione (fisica e digitale), conservazione secondo criteri e tempi definiti, eventuale conservazione sostitutiva e riversamento, riesame periodico, fino alla cancellazione o distruzione sicura a fine periodo. Il taglio è quello della retention e della dismissione (conservazione e distruzione), distinto dalla tenuta e gestione documentale corrente del fascicolo (template dedicato) e dalla conduzione della lite (template contenzioso).",
+        "en": "Processing of personal data relating to the lifecycle of retention of closed case files and the firm's documentation: archiving (physical and digital), retention according to defined criteria and terms, possible substitute storage and migration, periodic review, through to secure deletion or destruction at the end of the period. The scope is that of retention and disposal (retention and destruction), distinct from the current keeping and document management of the case file (dedicated template) and conducting the dispute (litigation template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO RETENTION & DISMISSIONE. SPECIALIZZAZIONE del template-cardine. ATTENZIONE A NON DUPLICARE IL TEMPLATE 'Fascicoli e pratiche legali' (tpl-it-012): quello riguarda la TENUTA e GESTIONE DOCUMENTALE CORRENTE del fascicolo attivo; QUESTO riguarda la CONSERVAZIONE/RETENTION e la DISTRUZIONE dei fascicoli chiusi (criteri, tempi, archiviazione, conservazione sostitutiva, cancellazione a scadenza). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) BASE su OBBLIGO LEGALE (obblighi di conservazione antiriciclaggio per i professionisti destinatari, obblighi fiscali e documentali) e LEGITTIMO INTERESSE alla difesa da azioni di responsabilità professionale (conservazione per la durata della prescrizione applicabile); (c) gli archivi CONTENGONO dati ex art. 9 e art. 10: la conservazione dei dati difensivi va ricondotta alla tutela dei diritti e agli obblighi applicabili, nei limiti di necessità e proporzionalità; massima attenzione a minimizzazione e accesso; (d) DEFINIZIONE DI CRITERI E TEMPI documentati per categoria di fascicolo, con riesame periodico; (e) CANCELLAZIONE/DISTRUZIONE SICURA a fine periodo, documentata; possibili obblighi specifici che impongano la cancellazione (es. dati AML); (f) CONSERVAZIONE SOSTITUTIVA e riversamento: ruoli privacy del conservatore da qualificare (responsabile ex art. 28); (g) SEGRETO PROFESSIONALE su tutto l'archivio. Basi giuridiche, condizioni art. 9/10, tempi di conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "RETENTION & DISPOSAL SCOPE. SPECIALISATION of the core template. CAUTION NOT TO DUPLICATE THE 'Case files and legal matters' TEMPLATE (tpl-it-012): that one concerns the CURRENT KEEPING and DOCUMENT MANAGEMENT of the active case file; THIS one concerns the RETENTION and DESTRUCTION of closed case files (criteria, terms, archiving, substitute storage, deletion at expiry). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) basis on LEGAL OBLIGATION (anti-money-laundering retention obligations for professionals subject to them, tax and documentary obligations) and LEGITIMATE INTEREST in defending against professional-liability actions (retention for the duration of the applicable prescription); (c) the archives CONTAIN Art. 9 and Art. 10 data: the Art. 9(2)(f) condition persists on the retained defense data; maximum attention to minimisation and access; (d) DEFINITION OF documented CRITERIA AND TERMS per case-file category, with periodic review; (e) secure DELETION/DESTRUCTION at the end of the period, documented; possible specific obligations requiring deletion (e.g. AML data); (f) SUBSTITUTE STORAGE and migration: the storage provider's privacy roles to be qualified (Art. 28 processor); (g) PROFESSIONAL SECRECY over the entire archive. Legal bases, Art. 9/10 conditions, retention terms and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "archiviazione_conservazione",
+            "label": "Archiviazione e conservazione dei fascicoli chiusi (criteri e tempi)",
+            "art6": "obbligo_e_legittimo_interesse"
+          },
+          {
+            "id": "cancellazione_distruzione",
+            "label": "Riesame periodico, cancellazione e distruzione sicura a fine periodo",
+            "art6": "obbligo_e_legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "archiviazione_conservazione",
+            "label": "Archiving and retention of closed case files (criteria and terms)",
+            "art6": "obbligo_e_legittimo_interesse"
+          },
+          {
+            "id": "cancellazione_distruzione",
+            "label": "Periodic review, deletion and secure destruction at the end of the period",
+            "art6": "obbligo_e_legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione archiviazione e conservazione fascicoli",
+          "en": "Management of case-file archiving and retention"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per la conservazione dei fascicoli chiusi e della documentazione dello studio: archiviazione fisica e digitale, definizione di criteri e tempi di conservazione, conservazione sostitutiva e riversamento, riesame periodico e cancellazione o distruzione sicura a fine periodo.",
+          "en": "Processing of personal data for the retention of closed case files and the firm's documentation: physical and digital archiving, definition of retention criteria and terms, substitute storage and migration, periodic review and secure deletion or destruction at the end of the period."
+        },
+        "finalita": [
+          {
+            "it": "Archiviazione fisica e digitale dei fascicoli chiusi e della documentazione dello studio",
+            "en": "Physical and digital archiving of closed case files and the firm's documentation"
+          },
+          {
+            "it": "Definizione e applicazione di criteri e tempi di conservazione per categoria di fascicolo",
+            "en": "Definition and application of retention criteria and terms per case-file category"
+          },
+          {
+            "it": "Conservazione a fini di adempimento di obblighi di legge e di difesa da azioni di responsabilità professionale",
+            "en": "Retention to comply with legal obligations and to defend against professional-liability actions"
+          },
+          {
+            "it": "Gestione della conservazione sostitutiva, del riversamento e dell'integrità dei documenti nel tempo",
+            "en": "Management of substitute storage, migration and the integrity of documents over time"
+          },
+          {
+            "it": "Riesame periodico, cancellazione e distruzione sicura della documentazione al termine del periodo di conservazione",
+            "en": "Periodic review, secure deletion and destruction of documentation at the end of the retention period"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(c) GDPR: adempimento degli obblighi di conservazione documentale cui è soggetto lo studio, in particolare obblighi antiriciclaggio (d.lgs. 231/2007, per i professionisti destinatari), obblighi fiscali e contabili e ulteriori obblighi di legge sulla conservazione di atti e documenti. Art. 6(1)(f) GDPR: legittimo interesse alla conservazione dei fascicoli per la difesa da eventuali azioni di responsabilità professionale per la durata della prescrizione applicabile, e alla corretta dismissione dei dati non più necessari. Il trattamento riguarda il ciclo di vita della conservazione, non la gestione corrente del fascicolo.",
+            "en": "GDPR Art. 6(1)(c): compliance with the document-retention obligations to which the firm is subject, in particular anti-money-laundering obligations (d.lgs. 231/2007, for professionals subject to them), tax and accounting obligations and further legal obligations on the retention of acts and documents. GDPR Art. 6(1)(f): legitimate interest in retaining case files to defend against any professional-liability actions for the duration of the applicable prescription, and in the proper disposal of data no longer needed. The processing concerns the retention lifecycle, not the current management of the case file."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse riguarda la conservazione dei fascicoli chiusi per il tempo necessario alla difesa da azioni di responsabilità professionale e alla tutela dei diritti dello studio, oltre alla corretta e sicura dismissione dei dati a fine periodo. Si tratta dei dati contenuti nei fascicoli archiviati, conservati al solo fine della retention e poi cancellati.",
+              "en": "Legitimate interest concerns the retention of closed case files for the time necessary to defend against professional-liability actions and to protect the firm's rights, as well as the proper and secure disposal of data at the end of the period. It involves the data contained in the archived case files, retained solely for retention purposes and then deleted."
+            },
+            "garanzieAdottate": {
+              "it": "Criteri e tempi di conservazione documentati per categoria di fascicolo; accesso all'archivio strettamente riservato; minimizzazione progressiva; cancellazione o distruzione sicura e documentata a fine periodo; riesame periodico delle scadenze.",
+              "en": "Documented retention criteria and terms per case-file category; strictly restricted access to the archive; progressive minimisation; secure and documented deletion or destruction at the end of the period; periodic review of deadlines."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR: i fascicoli archiviati contengono categorie particolari di dati trattate per accertare, esercitare o difendere un diritto in sede giudiziaria; la conservazione deve essere ricondotta alla medesima finalità di tutela dei diritti e/o agli obblighi di conservazione applicabili, nei limiti di necessità e proporzionalità. La conservazione va comunque circoscritta nel tempo e i dati cancellati a scadenza.",
+            "en": "GDPR Art. 9(2)(f): the archived case files contain special categories of data processed to establish, exercise or defend a right in court; the lawfulness condition that legitimised the processing during the engagement persists on the data retained for defense and compliance purposes. Retention must in any case be time-bound and the data deleted at expiry."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli archivi possono contenere dati relativi a condanne penali, reati, procedimenti o misure presenti nei fascicoli chiusi; la conservazione è ammessa solo se pertinente e necessaria agli obblighi di legge e alla difesa da azioni di responsabilità, nei limiti della normativa applicabile, con cancellazione a scadenza del periodo di conservazione.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The archives may contain data on criminal convictions, offences, proceedings or measures present in the closed case files; retention is permitted only if relevant and necessary to legal obligations and to defend against liability actions, within the limits of applicable law, with deletion at the expiry of the retention period."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti e parti dei fascicoli chiusi conservati in archivio",
+            "en": "Clients and parties of the closed case files kept in the archive"
+          },
+          {
+            "it": "Controparti, testimoni, consulenti e terzi i cui dati sono contenuti nei fascicoli archiviati",
+            "en": "Counterparties, witnesses, consultants and third parties whose data is contained in the archived case files"
+          },
+          {
+            "it": "Soggetti i cui dati ex art. 9/art. 10 risultano dalla documentazione conservata",
+            "en": "Persons whose Art. 9/Art. 10 data appears in the retained documentation"
+          },
+          {
+            "it": "Professionisti e collaboratori dello studio che hanno trattato i fascicoli (dati di gestione dell'archivio)",
+            "en": "Professionals and collaborators of the firm who handled the case files (archive-management data)"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto contenuti nei fascicoli archiviati",
+            "en": "Identification and contact data contained in the archived case files"
+          },
+          {
+            "it": "Atti, documenti e corrispondenza dei fascicoli chiusi, con metadati di archiviazione",
+            "en": "Acts, documents and correspondence of the closed case files, with archiving metadata"
+          },
+          {
+            "it": "Categorie particolari di dati (art. 9) presenti nei fascicoli conservati, nei limiti delle condizioni applicabili",
+            "en": "Special categories of data (Art. 9) present in the retained case files, within the limits of applicable conditions"
+          },
+          {
+            "it": "Dati relativi a condanne penali e reati (art. 10) presenti nei fascicoli conservati, ove pertinenti e necessari",
+            "en": "Data on criminal convictions and offences (Art. 10) present in the retained case files, where relevant and necessary"
+          },
+          {
+            "it": "Dati di gestione dell'archivio: criteri e tempi applicati, date di scadenza, evidenze di cancellazione/distruzione",
+            "en": "Archive-management data: criteria and terms applied, expiry dates, deletion/destruction evidence"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati confluiti nei fascicoli nel corso degli incarichi (dal cliente, da controparti, da atti e provvedimenti dell'autorità giudiziaria, da consulenti); metadati generati dai sistemi di archiviazione e conservazione. Nella fase di conservazione non si raccolgono di regola nuovi dati: si gestiscono quelli già presenti nei fascicoli chiusi.",
+          "en": "Data that flowed into the case files during the engagements (from the client, counterparties, acts and measures of the judicial authority, consultants); metadata generated by the archiving and storage systems. In the retention phase, new data is generally not collected: the data already present in the closed case files is managed."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Conservatore/fornitore di servizi di archiviazione e conservazione sostitutiva (responsabile del trattamento)",
+            "en": "Storage provider / substitute-storage service provider (data processor)"
+          },
+          {
+            "it": "Fornitore del software gestionale documentale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's document-management software and cloud services (data processor)"
+          },
+          {
+            "it": "Fornitore di servizi di distruzione sicura di documenti e supporti (responsabile del trattamento)",
+            "en": "Provider of secure document and media destruction services (data processor)"
+          },
+          {
+            "it": "Autorità competenti, nei soli casi e limiti previsti dalla legge (es. richieste nell'ambito di obblighi di conservazione)",
+            "en": "Competent authorities, only in the cases and within the limits provided for by law (e.g. requests within retention obligations)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del conservatore / fornitore di archiviazione, conservazione sostitutiva, cloud e distruzione sicura]",
+              "en": "[Enter the name of the storage provider / archiving, substitute-storage, cloud and secure-destruction provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Archiviazione, conservazione (anche sostitutiva) e distruzione sicura della documentazione dei fascicoli chiusi, servizi cloud connessi",
+              "en": "Archiving, storage (including substitute storage) and secure destruction of the documentation of closed case files, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore e all'eventuale incarico di conservazione]",
+              "en": "[Reference to the DPA with the provider and any storage engagement]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Il conservatore e il fornitore di distruzione sicura sono responsabili del trattamento: ne vanno qualificati ruolo, misure e modalità di restituzione/cancellazione dei dati a fine rapporto. Gli archivi sono coperti da segreto professionale e contengono dati ex art. 9/art. 10.",
+              "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The storage provider and the secure-destruction provider are data processors: their role, measures and arrangements for returning/deleting data at the end of the relationship must be qualified. The archives are covered by professional secrecy and contain Art. 9/Art. 10 data."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i servizi di conservazione, cloud e distruzione]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "Gli archivi dei fascicoli, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno conservati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di conservazione/cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "The case-file archives, covered by professional secrecy and including Art. 9/Art. 10 data, should preferably be stored within the EU. Verify any non-EU sub-processors in the storage/cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per il tempo necessario agli obblighi di legge (in particolare conservazione antiriciclaggio per i professionisti destinatari e obblighi fiscali) e alla difesa da eventuali azioni di responsabilità professionale, tenuto conto del termine di prescrizione applicabile; al decorso del periodo, cancellazione o distruzione sicura, salvo specifici obblighi che impongano la sola cancellazione.",
+            "en": "For the time necessary for legal obligations (in particular anti-money-laundering retention for professionals subject to them and tax obligations) and to defend against any professional-liability actions, taking into account the applicable prescription term; once the period elapses, secure deletion or destruction, unless specific obligations require deletion only."
+          },
+          "criteri": {
+            "it": "Criteri e tempi di conservazione documentati per categoria di fascicolo; conservazione (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate, e dei termini di conservazione antiriciclaggio/fiscali); litigation hold documentato in caso di contenzioso; riesame periodico delle scadenze; cancellazione o distruzione sicura e documentata a fine periodo. Per categorie soggette a obblighi specifici (es. dati AML) può essere imposta la cancellazione.",
+            "en": "Documented retention criteria and terms per case-file category; retention (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules, and the anti-money-laundering/tax retention terms); documented litigation hold in case of litigation; periodic review of deadlines; secure and documented deletion or destruction at the end of the period. For categories subject to specific obligations (e.g. AML data), deletion may be required."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi all'archivio (fisico e digitale) con autenticazione forte e profili di privilegio",
+              "en": "Access control to the archive (physical and digital) with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura at-rest dei documenti archiviati e dei backup, e cifratura delle connessioni",
+              "en": "At-rest encryption of archived documents and backups, and encryption of connections"
+            },
+            {
+              "it": "Integrità e leggibilità nel tempo dei documenti (conservazione sostitutiva, riversamento controllato)",
+              "en": "Integrity and readability of documents over time (substitute storage, controlled migration)"
+            },
+            {
+              "it": "Procedure di distruzione sicura di documenti cartacei e supporti digitali, con evidenza dell'avvenuta cancellazione",
+              "en": "Secure destruction procedures for paper documents and digital media, with evidence of the deletion"
+            },
+            {
+              "it": "Tracciabilità degli accessi all'archivio e delle operazioni di cancellazione/distruzione",
+              "en": "Traceability of accesses to the archive and of deletion/destruction operations"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Politica di conservazione con criteri e tempi documentati per categoria di fascicolo e riesame periodico",
+              "en": "Retention policy with documented criteria and terms per case-file category and periodic review"
+            },
+            {
+              "it": "Rispetto del segreto professionale su tutta la documentazione archiviata",
+              "en": "Compliance with professional secrecy on all archived documentation"
+            },
+            {
+              "it": "Coordinamento con gli obblighi di conservazione antiriciclaggio e fiscali e con eventuali litigation hold",
+              "en": "Coordination with anti-money-laundering and tax retention obligations and any litigation holds"
+            },
+            {
+              "it": "Qualificazione documentata del ruolo privacy del conservatore e del fornitore di distruzione sicura (responsabili ex art. 28)",
+              "en": "Documented qualification of the privacy role of the storage provider and the secure-destruction provider (Art. 28 processors)"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) abilitati alla gestione dell'archivio",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) enabled to manage the archive"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alla politica di conservazione dello studio, alle procedure di archiviazione, conservazione sostitutiva e distruzione, ai DPA con i conservatori e ai termini antiriciclaggio/fiscali applicabili]",
+            "en": "[Refer to the firm's retention policy, the archiving, substitute-storage and destruction procedures, the DPAs with storage providers and the applicable anti-money-laundering/tax terms]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. La gestione automatica delle scadenze di conservazione supporta l'attività ma non produce decisioni con effetti giuridici sugli interessati. Compilare se si adottano automatismi con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR.",
+            "en": "Generally not present. The automated management of retention deadlines supports the activity but does not produce decisions with legal effects on data subjects. Complete if adopting automated mechanisms with significant effects, assessing whether they fall under GDPR Art. 22."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile all'archiviazione e conservazione dei fascicoli.",
+            "en": "Not applicable to case-file archiving and retention."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Da valutare: la conservazione su larga scala e a lungo termine di archivi contenenti dati ex art. 9/art. 10 può richiedere una DPIA ai sensi dell'art. 35 GDPR, in funzione dei volumi, della durata e della concentrazione di dati sensibili e giudiziari conservati.",
+            "en": "To be assessed: large-scale and long-term retention of archives containing Art. 9/Art. 10 data may require a DPIA under GDPR Art. 35, depending on the volumes, duration and concentration of sensitive and judicial data retained."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(c), 6(1)(f), 9(2)(f), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 231/2007 (conservazione antiriciclaggio, per i professionisti destinatari); normativa sulla conservazione sostitutiva e l'integrità documentale; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; conservatore e fornitore di distruzione sono responsabili ex art. 28. DISTINZIONE DAL tpl-it-012: qui conservazione/retention e distruzione dei fascicoli chiusi, non tenuta corrente del fascicolo attivo.",
+          "en": "Relevant legal references: GDPR Arts. 6(1)(c), 6(1)(f), 9(2)(f), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering retention, for professionals subject to it); rules on substitute storage and documentary integrity; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the storage provider and the destruction provider are Art. 28 processors. DISTINCTION FROM tpl-it-012: here retention and destruction of closed case files, not the current keeping of the active case file."
+        }
+      }
     }
   ]
 }

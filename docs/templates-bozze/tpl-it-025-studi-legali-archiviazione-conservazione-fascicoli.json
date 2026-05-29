@@ -1,0 +1,322 @@
+{
+  "templateId": "tpl-it-025-studi-legali-archiviazione-conservazione-fascicoli",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione archiviazione e conservazione fascicoli",
+    "en": "Management of case-file archiving and retention"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali relativo al ciclo di vita della conservazione dei fascicoli chiusi e della documentazione dello studio: archiviazione (fisica e digitale), conservazione secondo criteri e tempi definiti, eventuale conservazione sostitutiva e riversamento, riesame periodico, fino alla cancellazione o distruzione sicura a fine periodo. Il taglio è quello della retention e della dismissione (conservazione e distruzione), distinto dalla tenuta e gestione documentale corrente del fascicolo (template dedicato) e dalla conduzione della lite (template contenzioso).",
+    "en": "Processing of personal data relating to the lifecycle of retention of closed case files and the firm's documentation: archiving (physical and digital), retention according to defined criteria and terms, possible substitute storage and migration, periodic review, through to secure deletion or destruction at the end of the period. The scope is that of retention and disposal (retention and destruction), distinct from the current keeping and document management of the case file (dedicated template) and conducting the dispute (litigation template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO RETENTION & DISMISSIONE. SPECIALIZZAZIONE del template-cardine. ATTENZIONE A NON DUPLICARE IL TEMPLATE 'Fascicoli e pratiche legali' (tpl-it-012): quello riguarda la TENUTA e GESTIONE DOCUMENTALE CORRENTE del fascicolo attivo; QUESTO riguarda la CONSERVAZIONE/RETENTION e la DISTRUZIONE dei fascicoli chiusi (criteri, tempi, archiviazione, conservazione sostitutiva, cancellazione a scadenza). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) BASE su OBBLIGO LEGALE (obblighi di conservazione antiriciclaggio per i professionisti destinatari, obblighi fiscali e documentali) e LEGITTIMO INTERESSE alla difesa da azioni di responsabilità professionale (conservazione per la durata della prescrizione applicabile); (c) gli archivi CONTENGONO dati ex art. 9 e art. 10: la conservazione dei dati difensivi va ricondotta alla tutela dei diritti e agli obblighi applicabili, nei limiti di necessità e proporzionalità; massima attenzione a minimizzazione e accesso; (d) DEFINIZIONE DI CRITERI E TEMPI documentati per categoria di fascicolo, con riesame periodico; (e) CANCELLAZIONE/DISTRUZIONE SICURA a fine periodo, documentata; possibili obblighi specifici che impongano la cancellazione (es. dati AML); (f) CONSERVAZIONE SOSTITUTIVA e riversamento: ruoli privacy del conservatore da qualificare (responsabile ex art. 28); (g) SEGRETO PROFESSIONALE su tutto l'archivio. Basi giuridiche, condizioni art. 9/10, tempi di conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "RETENTION & DISPOSAL SCOPE. SPECIALISATION of the core template. CAUTION NOT TO DUPLICATE THE 'Case files and legal matters' TEMPLATE (tpl-it-012): that one concerns the CURRENT KEEPING and DOCUMENT MANAGEMENT of the active case file; THIS one concerns the RETENTION and DESTRUCTION of closed case files (criteria, terms, archiving, substitute storage, deletion at expiry). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) basis on LEGAL OBLIGATION (anti-money-laundering retention obligations for professionals subject to them, tax and documentary obligations) and LEGITIMATE INTEREST in defending against professional-liability actions (retention for the duration of the applicable prescription); (c) the archives CONTAIN Art. 9 and Art. 10 data: the Art. 9(2)(f) condition persists on the retained defense data; maximum attention to minimisation and access; (d) DEFINITION OF documented CRITERIA AND TERMS per case-file category, with periodic review; (e) secure DELETION/DESTRUCTION at the end of the period, documented; possible specific obligations requiring deletion (e.g. AML data); (f) SUBSTITUTE STORAGE and migration: the storage provider's privacy roles to be qualified (Art. 28 processor); (g) PROFESSIONAL SECRECY over the entire archive. Legal bases, Art. 9/10 conditions, retention terms and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "archiviazione_conservazione",
+        "label": "Archiviazione e conservazione dei fascicoli chiusi (criteri e tempi)",
+        "art6": "obbligo_e_legittimo_interesse"
+      },
+      {
+        "id": "cancellazione_distruzione",
+        "label": "Riesame periodico, cancellazione e distruzione sicura a fine periodo",
+        "art6": "obbligo_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "archiviazione_conservazione",
+        "label": "Archiving and retention of closed case files (criteria and terms)",
+        "art6": "obbligo_e_legittimo_interesse"
+      },
+      {
+        "id": "cancellazione_distruzione",
+        "label": "Periodic review, deletion and secure destruction at the end of the period",
+        "art6": "obbligo_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione archiviazione e conservazione fascicoli",
+      "en": "Management of case-file archiving and retention"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per la conservazione dei fascicoli chiusi e della documentazione dello studio: archiviazione fisica e digitale, definizione di criteri e tempi di conservazione, conservazione sostitutiva e riversamento, riesame periodico e cancellazione o distruzione sicura a fine periodo.",
+      "en": "Processing of personal data for the retention of closed case files and the firm's documentation: physical and digital archiving, definition of retention criteria and terms, substitute storage and migration, periodic review and secure deletion or destruction at the end of the period."
+    },
+    "finalita": [
+      {
+        "it": "Archiviazione fisica e digitale dei fascicoli chiusi e della documentazione dello studio",
+        "en": "Physical and digital archiving of closed case files and the firm's documentation"
+      },
+      {
+        "it": "Definizione e applicazione di criteri e tempi di conservazione per categoria di fascicolo",
+        "en": "Definition and application of retention criteria and terms per case-file category"
+      },
+      {
+        "it": "Conservazione a fini di adempimento di obblighi di legge e di difesa da azioni di responsabilità professionale",
+        "en": "Retention to comply with legal obligations and to defend against professional-liability actions"
+      },
+      {
+        "it": "Gestione della conservazione sostitutiva, del riversamento e dell'integrità dei documenti nel tempo",
+        "en": "Management of substitute storage, migration and the integrity of documents over time"
+      },
+      {
+        "it": "Riesame periodico, cancellazione e distruzione sicura della documentazione al termine del periodo di conservazione",
+        "en": "Periodic review, secure deletion and destruction of documentation at the end of the retention period"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(c) GDPR: adempimento degli obblighi di conservazione documentale cui è soggetto lo studio, in particolare obblighi antiriciclaggio (d.lgs. 231/2007, per i professionisti destinatari), obblighi fiscali e contabili e ulteriori obblighi di legge sulla conservazione di atti e documenti. Art. 6(1)(f) GDPR: legittimo interesse alla conservazione dei fascicoli per la difesa da eventuali azioni di responsabilità professionale per la durata della prescrizione applicabile, e alla corretta dismissione dei dati non più necessari. Il trattamento riguarda il ciclo di vita della conservazione, non la gestione corrente del fascicolo.",
+        "en": "GDPR Art. 6(1)(c): compliance with the document-retention obligations to which the firm is subject, in particular anti-money-laundering obligations (d.lgs. 231/2007, for professionals subject to them), tax and accounting obligations and further legal obligations on the retention of acts and documents. GDPR Art. 6(1)(f): legitimate interest in retaining case files to defend against any professional-liability actions for the duration of the applicable prescription, and in the proper disposal of data no longer needed. The processing concerns the retention lifecycle, not the current management of the case file."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda la conservazione dei fascicoli chiusi per il tempo necessario alla difesa da azioni di responsabilità professionale e alla tutela dei diritti dello studio, oltre alla corretta e sicura dismissione dei dati a fine periodo. Si tratta dei dati contenuti nei fascicoli archiviati, conservati al solo fine della retention e poi cancellati.",
+          "en": "Legitimate interest concerns the retention of closed case files for the time necessary to defend against professional-liability actions and to protect the firm's rights, as well as the proper and secure disposal of data at the end of the period. It involves the data contained in the archived case files, retained solely for retention purposes and then deleted."
+        },
+        "garanzieAdottate": {
+          "it": "Criteri e tempi di conservazione documentati per categoria di fascicolo; accesso all'archivio strettamente riservato; minimizzazione progressiva; cancellazione o distruzione sicura e documentata a fine periodo; riesame periodico delle scadenze.",
+          "en": "Documented retention criteria and terms per case-file category; strictly restricted access to the archive; progressive minimisation; secure and documented deletion or destruction at the end of the period; periodic review of deadlines."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR: i fascicoli archiviati contengono categorie particolari di dati trattate per accertare, esercitare o difendere un diritto in sede giudiziaria; la conservazione deve essere ricondotta alla medesima finalità di tutela dei diritti e/o agli obblighi di conservazione applicabili, nei limiti di necessità e proporzionalità. La conservazione va comunque circoscritta nel tempo e i dati cancellati a scadenza.",
+        "en": "GDPR Art. 9(2)(f): the archived case files contain special categories of data processed to establish, exercise or defend a right in court; the lawfulness condition that legitimised the processing during the engagement persists on the data retained for defense and compliance purposes. Retention must in any case be time-bound and the data deleted at expiry."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli archivi possono contenere dati relativi a condanne penali, reati, procedimenti o misure presenti nei fascicoli chiusi; la conservazione è ammessa solo se pertinente e necessaria agli obblighi di legge e alla difesa da azioni di responsabilità, nei limiti della normativa applicabile, con cancellazione a scadenza del periodo di conservazione.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The archives may contain data on criminal convictions, offences, proceedings or measures present in the closed case files; retention is permitted only if relevant and necessary to legal obligations and to defend against liability actions, within the limits of applicable law, with deletion at the expiry of the retention period."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti e parti dei fascicoli chiusi conservati in archivio",
+        "en": "Clients and parties of the closed case files kept in the archive"
+      },
+      {
+        "it": "Controparti, testimoni, consulenti e terzi i cui dati sono contenuti nei fascicoli archiviati",
+        "en": "Counterparties, witnesses, consultants and third parties whose data is contained in the archived case files"
+      },
+      {
+        "it": "Soggetti i cui dati ex art. 9/art. 10 risultano dalla documentazione conservata",
+        "en": "Persons whose Art. 9/Art. 10 data appears in the retained documentation"
+      },
+      {
+        "it": "Professionisti e collaboratori dello studio che hanno trattato i fascicoli (dati di gestione dell'archivio)",
+        "en": "Professionals and collaborators of the firm who handled the case files (archive-management data)"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto contenuti nei fascicoli archiviati",
+        "en": "Identification and contact data contained in the archived case files"
+      },
+      {
+        "it": "Atti, documenti e corrispondenza dei fascicoli chiusi, con metadati di archiviazione",
+        "en": "Acts, documents and correspondence of the closed case files, with archiving metadata"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9) presenti nei fascicoli conservati, nei limiti delle condizioni applicabili",
+        "en": "Special categories of data (Art. 9) present in the retained case files, within the limits of applicable conditions"
+      },
+      {
+        "it": "Dati relativi a condanne penali e reati (art. 10) presenti nei fascicoli conservati, ove pertinenti e necessari",
+        "en": "Data on criminal convictions and offences (Art. 10) present in the retained case files, where relevant and necessary"
+      },
+      {
+        "it": "Dati di gestione dell'archivio: criteri e tempi applicati, date di scadenza, evidenze di cancellazione/distruzione",
+        "en": "Archive-management data: criteria and terms applied, expiry dates, deletion/destruction evidence"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati confluiti nei fascicoli nel corso degli incarichi (dal cliente, da controparti, da atti e provvedimenti dell'autorità giudiziaria, da consulenti); metadati generati dai sistemi di archiviazione e conservazione. Nella fase di conservazione non si raccolgono di regola nuovi dati: si gestiscono quelli già presenti nei fascicoli chiusi.",
+      "en": "Data that flowed into the case files during the engagements (from the client, counterparties, acts and measures of the judicial authority, consultants); metadata generated by the archiving and storage systems. In the retention phase, new data is generally not collected: the data already present in the closed case files is managed."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Conservatore/fornitore di servizi di archiviazione e conservazione sostitutiva (responsabile del trattamento)",
+        "en": "Storage provider / substitute-storage service provider (data processor)"
+      },
+      {
+        "it": "Fornitore del software gestionale documentale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's document-management software and cloud services (data processor)"
+      },
+      {
+        "it": "Fornitore di servizi di distruzione sicura di documenti e supporti (responsabile del trattamento)",
+        "en": "Provider of secure document and media destruction services (data processor)"
+      },
+      {
+        "it": "Autorità competenti, nei soli casi e limiti previsti dalla legge (es. richieste nell'ambito di obblighi di conservazione)",
+        "en": "Competent authorities, only in the cases and within the limits provided for by law (e.g. requests within retention obligations)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del conservatore / fornitore di archiviazione, conservazione sostitutiva, cloud e distruzione sicura]",
+          "en": "[Enter the name of the storage provider / archiving, substitute-storage, cloud and secure-destruction provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Archiviazione, conservazione (anche sostitutiva) e distruzione sicura della documentazione dei fascicoli chiusi, servizi cloud connessi",
+          "en": "Archiving, storage (including substitute storage) and secure destruction of the documentation of closed case files, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore e all'eventuale incarico di conservazione]",
+          "en": "[Reference to the DPA with the provider and any storage engagement]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Il conservatore e il fornitore di distruzione sicura sono responsabili del trattamento: ne vanno qualificati ruolo, misure e modalità di restituzione/cancellazione dei dati a fine rapporto. Gli archivi sono coperti da segreto professionale e contengono dati ex art. 9/art. 10.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The storage provider and the secure-destruction provider are data processors: their role, measures and arrangements for returning/deleting data at the end of the relationship must be qualified. The archives are covered by professional secrecy and contain Art. 9/Art. 10 data."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i servizi di conservazione, cloud e distruzione]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "Gli archivi dei fascicoli, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno conservati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di conservazione/cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "The case-file archives, covered by professional secrecy and including Art. 9/Art. 10 data, should preferably be stored within the EU. Verify any non-EU sub-processors in the storage/cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per il tempo necessario agli obblighi di legge (in particolare conservazione antiriciclaggio per i professionisti destinatari e obblighi fiscali) e alla difesa da eventuali azioni di responsabilità professionale, tenuto conto del termine di prescrizione applicabile; al decorso del periodo, cancellazione o distruzione sicura, salvo specifici obblighi che impongano la sola cancellazione.",
+        "en": "For the time necessary for legal obligations (in particular anti-money-laundering retention for professionals subject to them and tax obligations) and to defend against any professional-liability actions, taking into account the applicable prescription term; once the period elapses, secure deletion or destruction, unless specific obligations require deletion only."
+      },
+      "criteri": {
+        "it": "Criteri e tempi di conservazione documentati per categoria di fascicolo; conservazione (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate, e dei termini di conservazione antiriciclaggio/fiscali); litigation hold documentato in caso di contenzioso; riesame periodico delle scadenze; cancellazione o distruzione sicura e documentata a fine periodo. Per categorie soggette a obblighi specifici (es. dati AML) può essere imposta la cancellazione.",
+        "en": "Documented retention criteria and terms per case-file category; retention (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules, and the anti-money-laundering/tax retention terms); documented litigation hold in case of litigation; periodic review of deadlines; secure and documented deletion or destruction at the end of the period. For categories subject to specific obligations (e.g. AML data), deletion may be required."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi all'archivio (fisico e digitale) con autenticazione forte e profili di privilegio",
+          "en": "Access control to the archive (physical and digital) with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura at-rest dei documenti archiviati e dei backup, e cifratura delle connessioni",
+          "en": "At-rest encryption of archived documents and backups, and encryption of connections"
+        },
+        {
+          "it": "Integrità e leggibilità nel tempo dei documenti (conservazione sostitutiva, riversamento controllato)",
+          "en": "Integrity and readability of documents over time (substitute storage, controlled migration)"
+        },
+        {
+          "it": "Procedure di distruzione sicura di documenti cartacei e supporti digitali, con evidenza dell'avvenuta cancellazione",
+          "en": "Secure destruction procedures for paper documents and digital media, with evidence of the deletion"
+        },
+        {
+          "it": "Tracciabilità degli accessi all'archivio e delle operazioni di cancellazione/distruzione",
+          "en": "Traceability of accesses to the archive and of deletion/destruction operations"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Politica di conservazione con criteri e tempi documentati per categoria di fascicolo e riesame periodico",
+          "en": "Retention policy with documented criteria and terms per case-file category and periodic review"
+        },
+        {
+          "it": "Rispetto del segreto professionale su tutta la documentazione archiviata",
+          "en": "Compliance with professional secrecy on all archived documentation"
+        },
+        {
+          "it": "Coordinamento con gli obblighi di conservazione antiriciclaggio e fiscali e con eventuali litigation hold",
+          "en": "Coordination with anti-money-laundering and tax retention obligations and any litigation holds"
+        },
+        {
+          "it": "Qualificazione documentata del ruolo privacy del conservatore e del fornitore di distruzione sicura (responsabili ex art. 28)",
+          "en": "Documented qualification of the privacy role of the storage provider and the secure-destruction provider (Art. 28 processors)"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) abilitati alla gestione dell'archivio",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) enabled to manage the archive"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alla politica di conservazione dello studio, alle procedure di archiviazione, conservazione sostitutiva e distruzione, ai DPA con i conservatori e ai termini antiriciclaggio/fiscali applicabili]",
+        "en": "[Refer to the firm's retention policy, the archiving, substitute-storage and destruction procedures, the DPAs with storage providers and the applicable anti-money-laundering/tax terms]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. La gestione automatica delle scadenze di conservazione supporta l'attività ma non produce decisioni con effetti giuridici sugli interessati. Compilare se si adottano automatismi con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present. The automated management of retention deadlines supports the activity but does not produce decisions with legal effects on data subjects. Complete if adopting automated mechanisms with significant effects, assessing whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile all'archiviazione e conservazione dei fascicoli.",
+        "en": "Not applicable to case-file archiving and retention."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare: la conservazione su larga scala e a lungo termine di archivi contenenti dati ex art. 9/art. 10 può richiedere una DPIA ai sensi dell'art. 35 GDPR, in funzione dei volumi, della durata e della concentrazione di dati sensibili e giudiziari conservati.",
+        "en": "To be assessed: large-scale and long-term retention of archives containing Art. 9/Art. 10 data may require a DPIA under GDPR Art. 35, depending on the volumes, duration and concentration of sensitive and judicial data retained."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(c), 6(1)(f), 9(2)(f), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 231/2007 (conservazione antiriciclaggio, per i professionisti destinatari); normativa sulla conservazione sostitutiva e l'integrità documentale; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; conservatore e fornitore di distruzione sono responsabili ex art. 28. DISTINZIONE DAL tpl-it-012: qui conservazione/retention e distruzione dei fascicoli chiusi, non tenuta corrente del fascicolo attivo.",
+      "en": "Relevant legal references: GDPR Arts. 6(1)(c), 6(1)(f), 9(2)(f), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering retention, for professionals subject to it); rules on substitute storage and documentary integrity; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the storage provider and the destruction provider are Art. 28 processors. DISTINCTION FROM tpl-it-012: here retention and destruction of closed case files, not the current keeping of the active case file."
+    }
+  }
+}

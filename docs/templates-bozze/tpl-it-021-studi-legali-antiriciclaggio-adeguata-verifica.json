@@ -1,0 +1,319 @@
+{
+  "templateId": "tpl-it-021-studi-legali-antiriciclaggio-adeguata-verifica",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione antiriciclaggio e adeguata verifica della clientela",
+    "en": "Anti-money-laundering management and customer due diligence"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per l'adempimento degli obblighi antiriciclaggio gravanti sui professionisti legali destinatari della disciplina (d.lgs. 231/2007): adeguata verifica della clientela e del titolare effettivo, valutazione del rischio, acquisizione e conservazione della documentazione, eventuale astensione e segnalazione di operazioni sospette. Il taglio è imperniato su un trattamento imposto dalla legge, distinto dalla gestione del rapporto con il cliente (template-cardine) e dagli adempimenti fiscali e contabili (trattamenti dedicati).",
+    "en": "Processing of personal data to comply with anti-money-laundering obligations applicable to legal professionals subject to the rules (d.lgs. 231/2007): customer and beneficial-owner due diligence, risk assessment, acquisition and retention of documentation, possible abstention and reporting of suspicious transactions. The scope is centred on processing imposed by law, distinct from managing the client relationship (core template) and tax and accounting obligations (dedicated processing activities)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO ANTIRICICLAGGIO (AML). SPECIALIZZAZIONE del template-cardine 'Gestione clienti e incarichi professionali': qui il trattamento è quello IMPOSTO dal d.lgs. 231/2007, non la gestione ordinaria del rapporto col cliente (template-cardine) né gli adempimenti fiscali/contabili (trattamenti dedicati). PUNTI CRITICI: (a) lo studio/professionista è TITOLARE AUTONOMO e DESTINATARIO degli obblighi solo se rientra tra i soggetti obbligati e per le prestazioni rilevanti ai fini AML (verifica caso per caso: non tutte le attività forensi sono soggette); (b) BASE GIURIDICA imperniata sull'OBBLIGO LEGALE (art. 6(1)(c) GDPR): adeguata verifica, conservazione e segnalazione sono adempimenti di legge; la valutazione del rischio è parte dell'adempimento 231, non finalità autonoma; (c) ART. 10: possono emergere dati su condanne penali/reati (es. in verifica rafforzata, controllo su PEP, liste e fonti reputazionali), trattati solo se pertinenti e necessari all'adempimento; (d) PEP (persone politicamente esposte): obblighi rafforzati, dati delicati; (e) SEGNALAZIONE DI OPERAZIONI SOSPETTE (SOS): regime speciale, divieto di tale segnalazione (divieto di comunicazione al cliente) e limitazioni dei diritti dell'interessato secondo la disciplina applicabile; (f) CONSERVAZIONE legata ai termini di legge AML (di regola dieci anni dalla cessazione del rapporto o dall'esecuzione dell'operazione, salvo diversa previsione) con CANCELLAZIONE a scadenza; (g) SEGRETO PROFESSIONALE e relativi limiti/esenzioni previsti dalla disciplina AML per i professionisti legali. Basi giuridiche, perimetro dei soggetti obbligati, condizioni art. 10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "ANTI-MONEY-LAUNDERING (AML) SCOPE. SPECIALISATION of the core 'Client and engagement management' template: here the processing is the one IMPOSED by d.lgs. 231/2007, not the ordinary management of the client relationship (core template) or tax/accounting obligations (dedicated activities). CRITICAL POINTS: (a) the firm/professional is an INDEPENDENT CONTROLLER and SUBJECT to the obligations only if it falls among the obliged entities and for AML-relevant services (assess case by case: not all legal activities are covered); (b) LEGAL BASIS centred on the LEGAL OBLIGATION (GDPR Art. 6(1)(c)): due diligence, retention and reporting are statutory obligations; risk assessment is part of the 231 compliance, not an autonomous purpose; (c) ART. 10: data on criminal convictions/offences may emerge (e.g. in enhanced due diligence, PEP screening, lists and reputational sources), processed only if relevant and necessary to compliance; (d) PEPs (politically exposed persons): enhanced obligations, sensitive data; (e) SUSPICIOUS TRANSACTION REPORTING (STR): special regime, prohibition of disclosure of the report to the client and limitations on the data subject's rights under the applicable rules; (f) RETENTION tied to AML statutory terms (generally ten years from the end of the relationship or the execution of the transaction, unless otherwise provided) with DELETION at expiry; (g) PROFESSIONAL SECRECY and its limits/exemptions provided for by the AML rules for legal professionals. Legal bases, the perimeter of obliged entities, Art. 10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "adeguata_verifica",
+        "label": "Adeguata verifica della clientela e del titolare effettivo",
+        "art6": "obbligo_legale"
+      },
+      {
+        "id": "segnalazione_sos",
+        "label": "Conservazione e segnalazione di operazioni sospette (SOS)",
+        "art6": "obbligo_legale"
+      }
+    ],
+    "en": [
+      {
+        "id": "adeguata_verifica",
+        "label": "Customer and beneficial-owner due diligence",
+        "art6": "obbligo_legale"
+      },
+      {
+        "id": "segnalazione_sos",
+        "label": "Retention and reporting of suspicious transactions (STR)",
+        "art6": "obbligo_legale"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione antiriciclaggio e adeguata verifica della clientela",
+      "en": "Anti-money-laundering management and customer due diligence"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per l'adempimento degli obblighi antiriciclaggio (d.lgs. 231/2007) da parte del professionista legale destinatario della disciplina: adeguata verifica del cliente e del titolare effettivo, valutazione del rischio, acquisizione e conservazione della documentazione, eventuale astensione e segnalazione di operazioni sospette.",
+      "en": "Processing of personal data to comply with anti-money-laundering obligations (d.lgs. 231/2007) by the legal professional subject to the rules: customer and beneficial-owner due diligence, risk assessment, acquisition and retention of documentation, possible abstention and reporting of suspicious transactions."
+    },
+    "finalita": [
+      {
+        "it": "Adeguata verifica del cliente, dell'esecutore e del titolare effettivo, secondo l'approccio basato sul rischio",
+        "en": "Due diligence of the client, the executor and the beneficial owner, according to the risk-based approach"
+      },
+      {
+        "it": "Valutazione e profilatura del rischio di riciclaggio e finanziamento del terrorismo ai fini dell'adempimento 231",
+        "en": "Assessment and risk profiling of money-laundering and terrorist-financing risk for 231 compliance"
+      },
+      {
+        "it": "Acquisizione, registrazione e conservazione dei dati e dei documenti previsti dalla disciplina antiriciclaggio",
+        "en": "Acquisition, recording and retention of the data and documents required by the anti-money-laundering rules"
+      },
+      {
+        "it": "Eventuale astensione dalla prestazione e segnalazione di operazioni sospette (SOS) agli organi competenti",
+        "en": "Possible abstention from the service and reporting of suspicious transactions (STR) to the competent bodies"
+      },
+      {
+        "it": "Controlli su persone politicamente esposte (PEP), liste e fonti rilevanti ai fini antiriciclaggio",
+        "en": "Screening of politically exposed persons (PEPs), lists and sources relevant for anti-money-laundering purposes"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "obbligo_legale"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(c) GDPR: adempimento degli obblighi legali antiriciclaggio cui è soggetto il professionista destinatario della disciplina (d.lgs. 231/2007), in particolare adeguata verifica della clientela e del titolare effettivo, conservazione della documentazione, astensione e segnalazione di operazioni sospette, valutazione del rischio. La valutazione del rischio non costituisce finalità autonoma ma è parte integrante dell'adempimento di legge. In un trattamento AML puro l'obbligo legale è il perno del trattamento; eventuali ulteriori basi giuridiche vanno introdotte solo in presenza di finalità ulteriori effettive e documentate.",
+        "en": "GDPR Art. 6(1)(c): compliance with the anti-money-laundering legal obligations applicable to the professional subject to the rules (d.lgs. 231/2007), in particular customer and beneficial-owner due diligence, document retention, abstention and reporting of suspicious transactions, risk assessment. Risk assessment is not an autonomous purpose but an integral part of the statutory compliance. In a pure AML processing activity the legal obligation is the (almost) exclusive basis; any other basis should be introduced only where genuinely autonomous and well-defined further purposes exist."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Di regola non utilizzato in un trattamento AML puro, in cui la base è l'obbligo legale. Da introdurre solo se il titolare individua una finalità ulteriore effettivamente autonoma (non già coperta dall'obbligo 231) e ben delimitata, previo bilanciamento.",
+          "en": "Generally not used in a pure AML processing activity, where the basis is the legal obligation. To be introduced only if the controller identifies a genuinely autonomous further purpose (not already covered by the 231 obligation) that is well-defined, subject to a balancing test."
+        },
+        "garanzieAdottate": {
+          "it": "Trattamento limitato a quanto richiesto dalla disciplina antiriciclaggio; minimizzazione; accesso riservato; conservazione nei soli termini di legge e cancellazione a scadenza.",
+          "en": "Processing limited to what is required by the anti-money-laundering rules; minimisation; restricted access; retention only within statutory terms and deletion at expiry."
+        },
+        "bilanciamentoRichiesto": false,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [],
+      "dettagliArt9": {
+        "it": "Di regola non pertinente come finalità propria del trattamento AML. Qualora nel corso della verifica emergano categorie particolari di dati, valutare caso per caso la condizione di liceità ex art. 9 applicabile, nei limiti di quanto strettamente necessario all'adempimento; non presumere automaticamente l'art. 9(2)(f).",
+        "en": "Generally not relevant as an autonomous purpose of AML processing. Should special categories of data emerge during due diligence, assess case by case the applicable Art. 9 lawfulness condition, within the limits of what is strictly necessary for compliance; do not automatically presume Art. 9(2)(f)."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003), in combinato con gli obblighi del d.lgs. 231/2007. Nell'adeguata verifica, in particolare rafforzata, possono emergere dati relativi a condanne penali, reati o procedimenti (es. controlli su PEP, liste sanzionatorie, fonti reputazionali e informazioni su provenienza dei fondi); il trattamento è ammesso solo se pertinente e necessario all'adempimento antiriciclaggio, nei limiti della normativa applicabile.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003), in combination with the obligations of d.lgs. 231/2007. During due diligence, in particular enhanced due diligence, data on criminal convictions, offences or proceedings may emerge (e.g. PEP screening, sanctions lists, reputational sources and information on the source of funds); processing is permitted only if relevant and necessary for anti-money-laundering compliance, within the limits of applicable law."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti (persone fisiche) e referenti/esecutori di clienti persone giuridiche",
+        "en": "Clients (natural persons) and contacts/executors of corporate clients"
+      },
+      {
+        "it": "Titolari effettivi delle controparti contrattuali e delle entità coinvolte",
+        "en": "Beneficial owners of the contractual counterparties and entities involved"
+      },
+      {
+        "it": "Persone politicamente esposte (PEP) e relativi familiari e soggetti collegati",
+        "en": "Politically exposed persons (PEPs) and their family members and close associates"
+      },
+      {
+        "it": "Soggetti coinvolti in operazioni oggetto di valutazione o segnalazione",
+        "en": "Persons involved in transactions subject to assessment or reporting"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto del cliente, dell'esecutore e del titolare effettivo",
+        "en": "Identification and contact data of the client, the executor and the beneficial owner"
+      },
+      {
+        "it": "Dati su scopo e natura della prestazione, provenienza dei fondi e profilo di rischio",
+        "en": "Data on the purpose and nature of the service, source of funds and risk profile"
+      },
+      {
+        "it": "Copia dei documenti di identità e della documentazione raccolta per l'adeguata verifica",
+        "en": "Copies of identity documents and the documentation collected for due diligence"
+      },
+      {
+        "it": "Dati relativi allo status di PEP e risultanze dei controlli su liste e fonti",
+        "en": "Data on PEP status and results of screening against lists and sources"
+      },
+      {
+        "it": "Eventuali dati relativi a condanne penali e reati (art. 10) emersi in sede di verifica, ove pertinenti e necessari",
+        "en": "Any data on criminal convictions and offences (Art. 10) emerging during due diligence, where relevant and necessary"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti direttamente dal cliente e dall'esecutore; dati da registri pubblici (es. registro delle imprese, registro dei titolari effettivi nei limiti di legge); dati da liste e fonti rilevanti ai fini antiriciclaggio (liste sanzionatorie, fonti su PEP); informazioni raccolte nel corso della verifica rafforzata. La raccolta è limitata a quanto richiesto dalla disciplina AML.",
+      "en": "Data provided directly by the client and the executor; data from public registers (e.g. business register, beneficial-owner register within legal limits); data from lists and sources relevant for anti-money-laundering (sanctions lists, PEP sources); information collected during enhanced due diligence. Collection is limited to what is required by the AML rules."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Organi e autorità competenti in materia antiriciclaggio (es. unità di informazione finanziaria, autorità di vigilanza) secondo la disciplina applicabile",
+        "en": "Bodies and authorities competent for anti-money-laundering (e.g. financial intelligence unit, supervisory authorities) under the applicable rules"
+      },
+      {
+        "it": "Fornitore del software gestionale/AML e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management/AML software and cloud services (data processor)"
+      },
+      {
+        "it": "Fornitore dei servizi di screening su liste, PEP e fonti reputazionali (responsabile del trattamento)",
+        "en": "Provider of screening services against lists, PEPs and reputational sources (data processor)"
+      },
+      {
+        "it": "Eventuali soggetti del medesimo network professionale, nei limiti e con le garanzie previste dalla disciplina AML",
+        "en": "Any parties of the same professional network, within the limits and safeguards provided for by the AML rules"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software AML / di screening su liste e PEP / cloud dello studio]",
+          "en": "[Enter the name of the AML / list-and-PEP screening / cloud software provider of the firm]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Fornitura del software per l'adeguata verifica e la conservazione AML, e dei servizi di screening su liste, sanzioni e PEP",
+          "en": "Provision of software for due diligence and AML retention, and screening services against lists, sanctions and PEPs"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Le autorità antiriciclaggio destinatarie delle segnalazioni NON sono responsabili dello studio: sono soggetti pubblici/titolari autonomi. Particolare attenzione alle fonti di screening extra-UE.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The anti-money-laundering authorities receiving the reports are NOT the firm's processors: they are public bodies / independent controllers. Pay particular attention to non-EU screening sources."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori di screening e i servizi cloud/AML]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati AML, nominativi e vincolati a obblighi di legge, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di screening su liste/PEP e nei servizi cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "AML data, nominative and bound by legal obligations, should preferably be processed within the EU. Verify any non-EU sub-processors in list/PEP screening services and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per il periodo di conservazione previsto dalla disciplina antiriciclaggio (di regola dieci anni dalla cessazione del rapporto continuativo o dall'esecuzione dell'operazione occasionale, salvo diversa previsione di legge), decorso il quale i dati sono cancellati.",
+        "en": "For the retention period provided for by the anti-money-laundering rules (generally ten years from the end of the continuing relationship or the execution of the occasional transaction, unless otherwise provided by law), after which the data is deleted."
+      },
+      "criteri": {
+        "it": "Conservazione vincolata ai termini di legge AML; al decorso del termine i dati e i documenti dell'adeguata verifica sono cancellati, salvo specifici obblighi che ne impongano la conservazione ulteriore (es. contenzioso pendente, richieste delle autorità). Verifica periodica delle scadenze; cancellazione a fine periodo.",
+        "en": "Retention bound to the AML statutory terms; once the term elapses, the due-diligence data and documents are deleted, unless specific obligations require further retention (e.g. pending litigation, authority requests). Periodic review of deadlines; deletion at the end of the period."
+      },
+      "azioneFinale": "cancellazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai dati e ai fascicoli AML con autenticazione forte e profili di privilegio",
+          "en": "Access control to AML data and files with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei documenti e delle connessioni, in transito e at-rest",
+          "en": "Encryption of documents and connections, in transit and at rest"
+        },
+        {
+          "it": "Segregazione e accesso strettamente riservato ai dati delle segnalazioni di operazioni sospette",
+          "en": "Segregation and strictly restricted access to suspicious-transaction-report data"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni sui dati AML",
+          "en": "Traceability of accesses and operations on AML data"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+          "en": "Periodic backups with at-rest encryption and access control"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Procedure interne di adeguata verifica, valutazione del rischio e conservazione conformi alla disciplina antiriciclaggio",
+          "en": "Internal procedures for due diligence, risk assessment and retention compliant with the anti-money-laundering rules"
+        },
+        {
+          "it": "Rispetto del divieto di comunicazione al cliente dell'avvenuta segnalazione di operazioni sospette e delle limitazioni dei diritti previste dalla disciplina AML",
+          "en": "Compliance with the prohibition of disclosing the suspicious-transaction report to the client and with the limitations on rights provided for by the AML rules"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) abilitati al trattamento dei dati AML",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) enabled to process AML data"
+        },
+        {
+          "it": "Verifica preliminare del perimetro dei soggetti obbligati e delle prestazioni rilevanti ai fini antiriciclaggio",
+          "en": "Preliminary verification of the perimeter of obliged entities and AML-relevant services"
+        },
+        {
+          "it": "Coordinamento con il segreto professionale e con i relativi limiti/esenzioni previsti dalla disciplina AML per i professionisti legali",
+          "en": "Coordination with professional secrecy and its limits/exemptions provided for by the AML rules for legal professionals"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle procedure interne antiriciclaggio, alla valutazione del rischio dello studio, ai DPA con i fornitori e alle nomine dei soggetti coinvolti]",
+        "en": "[Refer to the internal anti-money-laundering procedures, the firm's risk assessment, the DPAs with providers and the appointments of the parties involved]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Da valutare se si utilizzano strumenti automatizzati di scoring del rischio o di screening con effetti significativi sull'interessato (es. blocco o rifiuto automatico della prestazione); valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili. Di regola lo scoring AML supporta una decisione umana.",
+        "en": "Assess if using automated risk-scoring or screening tools with significant effects on the data subject (e.g. automatic blocking or refusal of the service); assess whether they fall under GDPR Art. 22 and the applicable safeguards. AML scoring generally supports a human decision."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile. La profilatura del rischio antiriciclaggio è finalità di compliance, non di marketing.",
+        "en": "Not applicable. Anti-money-laundering risk profiling is a compliance purpose, not a marketing one."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare: il trattamento AML comporta dati delicati (PEP, eventuali dati ex art. 10) e screening su fonti; una DPIA ai sensi dell'art. 35 GDPR può essere necessaria in presenza di trattamenti sistematici o su larga scala, di scoring automatizzato o di valutazioni che incidono significativamente sugli interessati.",
+        "en": "To be assessed: AML processing involves sensitive data (PEPs, any Art. 10 data) and screening against sources; a DPIA under GDPR Art. 35 may be necessary in case of systematic or large-scale processing, automated scoring or assessments that significantly affect the data subjects."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(c), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 231/2007 (antiriciclaggio: adeguata verifica, conservazione, segnalazione di operazioni sospette, regime PEP); art. 622 c.p. e normativa forense/deontologica sul segreto professionale (con i limiti/esenzioni previsti dalla disciplina AML). Lo studio è titolare autonomo e destinatario degli obblighi solo se rientra tra i soggetti obbligati per le prestazioni rilevanti: perimetro da verificare. Obbligo legale come base principale del trattamento.",
+      "en": "Relevant legal references: GDPR Arts. 6(1)(c), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering: due diligence, retention, suspicious-transaction reporting, PEP regime); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy (with the limits/exemptions provided for by the AML rules). The firm is an independent controller and subject to the obligations only if it falls among the obliged entities for relevant services: the perimeter must be verified. Legal obligation as the almost exclusive basis."
+    }
+  }
+}

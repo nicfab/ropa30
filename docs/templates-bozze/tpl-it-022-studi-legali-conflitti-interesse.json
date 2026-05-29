@@ -1,0 +1,304 @@
+{
+  "templateId": "tpl-it-022-studi-legali-conflitti-interesse",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione conflitti di interesse",
+    "en": "Conflict-of-interest management"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per la verifica preventiva e la gestione dei conflitti di interesse prima dell'assunzione dell'incarico e durante il rapporto professionale: incrocio dei nominativi di clienti, parti, controparti e soggetti collegati, tenuta di un registro/elenco dei conflitti e adozione delle misure deontologiche conseguenti. Il taglio è interno e organizzativo, con dati minimi, distinto dalla gestione del rapporto con il cliente (template-cardine) e dalla tenuta del fascicolo (template dedicato).",
+    "en": "Processing of personal data for the preventive check and management of conflicts of interest before accepting an engagement and during the professional relationship: cross-checking the names of clients, parties, counterparties and connected persons, keeping a conflicts register/list and adopting the ensuing ethical measures. The scope is internal and organisational, with minimal data, distinct from managing the client relationship (core template) and keeping the case file (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO INTERNO/ORGANIZZATIVO. SPECIALIZZAZIONE del template-cardine: qui il trattamento è la VERIFICA PREVENTIVA dei conflitti, non la gestione del rapporto col cliente (template-cardine) né la tenuta del fascicolo (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) DATI MINIMI: di regola identificativi delle parti e oggetto/posizione, sufficienti a rilevare il conflitto; va evitato di replicare nel registro conflitti il contenuto sostanziale dei fascicoli; (c) BASE GIURIDICA su OBBLIGO deontologico di verifica dei conflitti e su LEGITTIMO INTERESSE organizzativo dello studio alla corretta assunzione degli incarichi e alla prevenzione di responsabilità; (d) ART. 9/ART. 10 NON sono finalità proprie: il registro conflitti lavora su nominativi e posizione, non sul merito; eventuali dati particolari/giudiziari restano nei fascicoli; va comunque previsto che possano emergere incidentalmente, con minimizzazione; (e) CONSERVAZIONE prudente del registro, per documentare le verifiche svolte; (f) SEGRETO PROFESSIONALE anche tra incarichi potenzialmente confliggenti (eventuali muri etici/segregazioni interne). Basi giuridiche, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "INTERNAL/ORGANISATIONAL SCOPE. SPECIALISATION of the core template: here the processing is the PREVENTIVE conflict check, not managing the client relationship (core template) or keeping the case file (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) MINIMAL DATA: generally the parties' identifiers and the subject/position, sufficient to detect the conflict; replicating the substantive content of case files in the conflicts register must be avoided; (c) LEGAL BASIS on the ethical OBLIGATION to check conflicts and on the firm's organisational LEGITIMATE INTEREST in correctly accepting engagements and preventing liability; (d) ART. 9/ART. 10 are NOT autonomous purposes: the conflicts register works on names and position, not on the merits; any special/judicial data remains in the case files; it should however be anticipated that such data may emerge incidentally, with minimisation; (e) PRUDENT RETENTION of the register, to document the checks carried out; (f) PROFESSIONAL SECRECY also between potentially conflicting engagements (possible ethical walls/internal segregation). Legal bases, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "verifica_preventiva",
+        "label": "Verifica preventiva del conflitto prima dell'assunzione dell'incarico",
+        "art6": "obbligo_e_legittimo_interesse"
+      },
+      {
+        "id": "registro_conflitti",
+        "label": "Tenuta del registro dei conflitti e misure conseguenti",
+        "art6": "legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "verifica_preventiva",
+        "label": "Preventive conflict check before accepting the engagement",
+        "art6": "obbligo_e_legittimo_interesse"
+      },
+      {
+        "id": "registro_conflitti",
+        "label": "Keeping the conflicts register and ensuing measures",
+        "art6": "legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione conflitti di interesse",
+      "en": "Conflict-of-interest management"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per la verifica preventiva e la gestione dei conflitti di interesse: incrocio dei nominativi di clienti, parti, controparti e soggetti collegati, tenuta del registro dei conflitti e adozione delle misure deontologiche e organizzative conseguenti, con dati ridotti al minimo necessario al rilievo del conflitto.",
+      "en": "Processing of personal data for the preventive check and management of conflicts of interest: cross-checking the names of clients, parties, counterparties and connected persons, keeping the conflicts register and adopting the ensuing ethical and organisational measures, with data reduced to the minimum necessary to detect the conflict."
+    },
+    "finalita": [
+      {
+        "it": "Verifica preventiva dell'esistenza di conflitti di interesse prima dell'assunzione dell'incarico",
+        "en": "Preventive check of the existence of conflicts of interest before accepting the engagement"
+      },
+      {
+        "it": "Monitoraggio dei conflitti potenziali o sopravvenuti durante il rapporto professionale",
+        "en": "Monitoring of potential or supervening conflicts during the professional relationship"
+      },
+      {
+        "it": "Tenuta e aggiornamento del registro/elenco dei conflitti di interesse",
+        "en": "Keeping and updating the conflicts-of-interest register/list"
+      },
+      {
+        "it": "Adozione delle misure deontologiche e organizzative conseguenti (astensione, rinuncia all'incarico, segregazioni interne)",
+        "en": "Adoption of the ensuing ethical and organisational measures (abstention, declining the engagement, internal segregation)"
+      },
+      {
+        "it": "Documentazione delle verifiche svolte a fini di prova e di prevenzione di responsabilità",
+        "en": "Documentation of the checks carried out for evidentiary purposes and to prevent liability"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(c) GDPR: adempimento dell'obbligo, derivante dalla normativa forense e deontologica applicabile, dell'avvocato di verificare e gestire i conflitti di interesse. Art. 6(1)(f) GDPR: legittimo interesse organizzativo dello studio alla corretta assunzione degli incarichi, alla tutela dell'indipendenza e del segreto professionale e alla prevenzione di responsabilità, mediante la verifica e la registrazione dei conflitti. Il trattamento è interno e strumentale; non costituisce base per finalità ulteriori.",
+        "en": "GDPR Art. 6(1)(c): compliance with the lawyer's ethical and professional obligation to check and manage conflicts of interest, provided for by the applicable legal-profession and ethical rules. GDPR Art. 6(1)(f): the firm's organisational legitimate interest in correctly accepting engagements, protecting independence and professional secrecy and preventing liability, through the checking and recording of conflicts. The processing is internal and instrumental; it is not a basis for further purposes."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda l'organizzazione interna dello studio: rilevare e documentare i conflitti per assumere correttamente gli incarichi, tutelare l'indipendenza e prevenire responsabilità professionali e deontologiche. Si tratta di dati di clienti, parti e soggetti collegati trattati al solo fine del rilievo del conflitto.",
+          "en": "Legitimate interest concerns the firm's internal organisation: detecting and documenting conflicts to correctly accept engagements, protect independence and prevent professional and ethical liability. It involves data of clients, parties and connected persons processed only to detect the conflict."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione: nel registro conflitti si trattano di regola solo nominativi, ruolo e posizione, non il contenuto sostanziale dei fascicoli; accesso riservato; segregazioni interne ove necessario; conservazione prudente a fini di prova.",
+          "en": "Minimisation: the conflicts register generally processes only names, role and position, not the substantive content of case files; restricted access; internal segregation where necessary; prudent retention for evidentiary purposes."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [],
+      "dettagliArt9": {
+        "it": "Di regola non pertinente: la verifica dei conflitti lavora su nominativi e posizione, non sul merito. Qualora incidentalmente emergano categorie particolari di dati, vanno minimizzate e non replicate nel registro conflitti; restano semmai nei fascicoli, con la condizione di liceità propria di quel trattamento.",
+        "en": "Generally not relevant: the conflict check works on names and position, not on the merits. Should special categories of data emerge incidentally, they must be minimised and not replicated in the conflicts register; they remain, if anything, in the case files, with the lawfulness condition of that processing."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": false,
+      "normativaAutorizzativa": {
+        "it": "Di regola non presenti come finalità propria: la verifica dei conflitti non ha per oggetto dati ex art. 10. Qualora un nominativo o una posizione facciano incidentalmente riferimento a procedimenti penali, il dato va minimizzato e mantenuto nel fascicolo pertinente, non nel registro conflitti. Se il titolare ritiene di trattarli, valutare la condizione ex art. 10 GDPR e art. 2-octies Codice privacy.",
+        "en": "Generally not present as an autonomous purpose: the conflict check does not target Art. 10 data. Should a name or position incidentally refer to criminal proceedings, the data must be minimised and kept in the relevant case file, not in the conflicts register. If the controller decides to process it, assess the condition under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti attuali e potenziali (persone fisiche) e referenti di clienti persone giuridiche",
+        "en": "Current and prospective clients (natural persons) and contacts of corporate clients"
+      },
+      {
+        "it": "Parti, controparti e soggetti collegati alle posizioni trattate",
+        "en": "Parties, counterparties and persons connected to the positions handled"
+      },
+      {
+        "it": "Soci, collaboratori e professionisti dello studio rilevanti ai fini del conflitto",
+        "en": "Partners, collaborators and professionals of the firm relevant for the conflict"
+      },
+      {
+        "it": "Soggetti terzi i cui interessi possono determinare un conflitto",
+        "en": "Third parties whose interests may give rise to a conflict"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi di clienti, parti, controparti e soggetti collegati",
+        "en": "Identification data of clients, parties, counterparties and connected persons"
+      },
+      {
+        "it": "Ruolo nella posizione e riferimento sintetico all'oggetto dell'incarico (senza contenuto sostanziale del fascicolo)",
+        "en": "Role in the position and a summary reference to the subject of the engagement (without the substantive content of the case file)"
+      },
+      {
+        "it": "Esito della verifica del conflitto e misure adottate (astensione, rinuncia, segregazione)",
+        "en": "Outcome of the conflict check and measures adopted (abstention, declining, segregation)"
+      },
+      {
+        "it": "Date e tracciamento delle verifiche svolte",
+        "en": "Dates and tracking of the checks carried out"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente in fase di contatto o conferimento dell'incarico; dati già presenti nel sistema gestionale dello studio (incarichi pregressi e in corso); dati da fonti pubbliche o registri nei limiti di legge per identificare i soggetti collegati. La raccolta è limitata a quanto necessario al rilievo del conflitto.",
+      "en": "Data provided by the client at the contact or engagement stage; data already present in the firm's management system (past and ongoing engagements); data from public sources or registers within legal limits to identify connected persons. Collection is limited to what is necessary to detect the conflict."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Soci e responsabili dello studio competenti a decidere sull'assunzione dell'incarico (trattamento interno)",
+        "en": "Partners and managers of the firm competent to decide on accepting the engagement (internal processing)"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      },
+      {
+        "it": "Ordine professionale o organismi competenti, nei soli casi e limiti previsti dalla disciplina deontologica",
+        "en": "Professional body or competent bodies, only in the cases and within the limits provided for by the ethical rules"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione del registro conflitti e supporto alle verifiche tramite il sistema gestionale, servizi cloud connessi",
+          "en": "Management of the conflicts register and support to the checks via the management system, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Il registro conflitti è coperto da segreto professionale e va trattato con accesso riservato.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The conflicts register is covered by professional secrecy and must be processed with restricted access."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati del registro conflitti, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Conflicts-register data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the management and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata del rapporto professionale e, successivamente, per il tempo necessario a documentare le verifiche svolte e a difendersi da eventuali contestazioni deontologiche o azioni di responsabilità, tenuto conto dei termini di prescrizione applicabili.",
+        "en": "For the duration of the professional relationship and, thereafter, for the time necessary to document the checks carried out and to defend against any ethical complaints or liability actions, taking into account the applicable prescription terms."
+      },
+      "criteri": {
+        "it": "Conservazione del registro conflitti e degli esiti delle verifiche per il periodo necessario alla prova delle verifiche svolte (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione costante; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of the conflicts register and the outcomes of the checks for the period necessary to prove the checks carried out (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); constant minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi al registro conflitti con autenticazione forte e profili di privilegio",
+          "en": "Access control to the conflicts register with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Segregazioni interne (muri etici) ove necessario per separare team su posizioni potenzialmente confliggenti",
+          "en": "Internal segregation (ethical walls) where necessary to separate teams on potentially conflicting positions"
+        },
+        {
+          "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+          "en": "Encryption of data and connections, in transit and at rest"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle verifiche registrate",
+          "en": "Traceability of accesses and recorded checks"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Procedura interna di verifica preventiva e periodica dei conflitti di interesse",
+          "en": "Internal procedure for preventive and periodic conflict-of-interest checks"
+        },
+        {
+          "it": "Minimizzazione dei dati nel registro conflitti, evitando la replica del contenuto dei fascicoli",
+          "en": "Data minimisation in the conflicts register, avoiding the replication of case-file content"
+        },
+        {
+          "it": "Rispetto del segreto professionale tra incarichi potenzialmente confliggenti",
+          "en": "Compliance with professional secrecy between potentially conflicting engagements"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) abilitati alla gestione del registro",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) enabled to manage the register"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alla procedura interna sui conflitti di interesse, alla normativa forense e deontologica applicabile e ai DPA con i fornitori]",
+        "en": "[Refer to the internal conflict-of-interest procedure, the applicable legal-profession and ethical rules and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti: la rilevazione del conflitto può essere supportata da ricerche automatiche sui nominativi, ma la decisione sull'assunzione dell'incarico è umana. Compilare se si adottano automatismi con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present: conflict detection may be supported by automated name searches, but the decision on accepting the engagement is human. Complete if adopting automated mechanisms with significant effects, assessing whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione dei conflitti di interesse.",
+        "en": "Not applicable to conflict-of-interest management."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria: trattamento interno, dati minimi. Da valutare solo in caso di soluzioni particolarmente estese o di incroci sistematici su larga scala con fonti esterne.",
+        "en": "Generally not required: internal processing, minimal data. Assess only in case of particularly extensive solutions or systematic large-scale cross-checking with external sources."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(c), 6(1)(f); normativa forense e deontologica applicabile sull'obbligo di verifica dei conflitti di interesse; art. 622 c.p. e normativa sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo. Trattamento interno e organizzativo, con dati minimi: il merito e gli eventuali dati particolari/giudiziari restano nei fascicoli, non nel registro conflitti.",
+      "en": "Relevant legal references: GDPR Arts. 6(1)(c), 6(1)(f); applicable legal-profession and ethical rules on the obligation to check conflicts of interest; Art. 622 Italian Criminal Code and rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller. Internal and organisational processing, with minimal data: the merits and any special/judicial data remain in the case files, not in the conflicts register."
+    }
+  }
+}

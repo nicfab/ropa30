@@ -1,0 +1,314 @@
+{
+  "templateId": "tpl-it-023-studi-legali-procure-deleghe-mandati",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione procure, deleghe e mandati difensivi",
+    "en": "Management of powers of attorney, delegations and defense mandates"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per la formazione, l'acquisizione, la verifica e la gestione documentale di procure alle liti, procure speciali, deleghe e mandati difensivi: conferimento dei poteri rappresentativi, autentica della sottoscrizione del cliente da parte del difensore, gestione di sostituzioni e deleghe a colleghi, revoche e rinunce. Il taglio è documentale-rappresentativo, distinto dalla gestione del rapporto con il cliente (template-cardine) e dalla conduzione della lite (template contenzioso).",
+    "en": "Processing of personal data for the creation, acquisition, verification and document management of powers of attorney for litigation, special powers of attorney, delegations and defense mandates: granting of representative powers, authentication of the client's signature by the lawyer, management of substitutions and delegations to colleagues, revocations and waivers. The scope is documentary-representative, distinct from managing the client relationship (core template) and conducting the dispute (litigation template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO DOCUMENTALE-RAPPRESENTATIVO. SPECIALIZZAZIONE del template-cardine: qui il trattamento riguarda lo strumento che conferisce e documenta i POTERI rappresentativi (procura/mandato), non la gestione complessiva del rapporto col cliente (template-cardine) né la conduzione della lite (template contenzioso). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) BASE su CONTRATTO (la procura/mandato attua il rapporto professionale con il cliente) e OBBLIGO LEGALE (forma della procura alle liti, autentica della firma del difensore, adempimenti processuali); (c) AUTENTICA DELLA SOTTOSCRIZIONE: il difensore certifica l'autografia della firma del cliente sulla procura, attività regolata; (d) ART. 9(2)(f): la procura alle liti veicola la posizione difensiva e può riferirsi a procedimenti che coinvolgono categorie particolari; condizione applicabile ove pertinente; (e) ART. 10: la procura può riguardare procedimenti penali o dati giudiziari, trattati solo se pertinenti e necessari; (f) DATI IDENTIFICATIVI e poteri (oggetto, limiti, durata), eventuale documento di identità per l'autentica; (g) SEGRETO PROFESSIONALE. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "DOCUMENTARY-REPRESENTATIVE SCOPE. SPECIALISATION of the core template: here the processing concerns the instrument that grants and documents the representative POWERS (power of attorney/mandate), not the overall management of the client relationship (core template) or conducting the dispute (litigation template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) basis on CONTRACT (the power of attorney/mandate implements the professional relationship with the client) and LEGAL OBLIGATION (form of the power of attorney for litigation, authentication of the lawyer's signature, procedural obligations); (c) SIGNATURE AUTHENTICATION: the lawyer certifies the authenticity of the client's signature on the power of attorney, a regulated activity; (d) ART. 9(2)(f): the power of attorney for litigation carries the defense position and may refer to proceedings involving special categories; condition applicable where relevant; (e) ART. 10: the power of attorney may concern criminal proceedings or judicial data, processed only if relevant and necessary; (f) IDENTIFICATION DATA and powers (subject, limits, duration), possibly an identity document for authentication; (g) PROFESSIONAL SECRECY. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "procura_alle_liti",
+        "label": "Procura alle liti e autentica della sottoscrizione del cliente",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "deleghe_sostituzioni",
+        "label": "Deleghe, sostituzioni, revoche e rinunce al mandato",
+        "art6": "contratto_e_obbligo"
+      }
+    ],
+    "en": [
+      {
+        "id": "procura_alle_liti",
+        "label": "Power of attorney for litigation and authentication of the client's signature",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "deleghe_sostituzioni",
+        "label": "Delegations, substitutions, revocations and waivers of the mandate",
+        "art6": "contratto_e_obbligo"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione procure, deleghe e mandati difensivi",
+      "en": "Management of powers of attorney, delegations and defense mandates"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per la formazione, acquisizione, autentica, verifica e gestione documentale di procure alle liti, procure speciali, deleghe e mandati difensivi: poteri rappresentativi conferiti, dati del rappresentato e del rappresentante, sostituzioni e deleghe, revoche e rinunce.",
+      "en": "Processing of personal data for the creation, acquisition, authentication, verification and document management of powers of attorney for litigation, special powers of attorney, delegations and defense mandates: representative powers granted, data of the represented and the representative, substitutions and delegations, revocations and waivers."
+    },
+    "finalita": [
+      {
+        "it": "Formazione e acquisizione di procure, deleghe e mandati difensivi conferiti dal cliente",
+        "en": "Creation and acquisition of powers of attorney, delegations and defense mandates granted by the client"
+      },
+      {
+        "it": "Autentica della sottoscrizione del cliente da parte del difensore, ove prevista",
+        "en": "Authentication of the client's signature by the lawyer, where required"
+      },
+      {
+        "it": "Gestione di sostituzioni e deleghe a colleghi, domiciliatari e collaboratori",
+        "en": "Management of substitutions and delegations to colleagues, domiciliary lawyers and collaborators"
+      },
+      {
+        "it": "Gestione di revoche e rinunce al mandato e relativi adempimenti",
+        "en": "Management of revocations and waivers of the mandate and related obligations"
+      },
+      {
+        "it": "Conservazione documentale delle procure e dei mandati a fini di prova dei poteri rappresentativi",
+        "en": "Document retention of powers of attorney and mandates to evidence the representative powers"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: la procura e il mandato difensivo attuano il rapporto professionale con il cliente e sono necessari all'esecuzione dell'incarico. Art. 6(1)(c) GDPR: adempimento degli obblighi di legge sulla forma e sul contenuto della procura alle liti, sull'autentica della sottoscrizione da parte del difensore e sugli adempimenti processuali connessi al deposito e alla produzione della procura. Eventuali dati di terzi presenti nel documento sono trattati nei limiti di quanto necessario.",
+        "en": "GDPR Art. 6(1)(b): the power of attorney and the defense mandate implement the professional relationship with the client and are necessary to perform the engagement. GDPR Art. 6(1)(c): compliance with legal obligations on the form and content of the power of attorney for litigation, on the authentication of the signature by the lawyer and on the procedural obligations connected to filing and producing the power of attorney. Any third-party data in the document is processed within the limits of what is necessary."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Di regola non utilizzato come base principale: il trattamento si fonda sul contratto e sull'obbligo legale. Eventuali dati di terzi presenti nella procura/mandato sono trattati nei limiti della necessità documentale.",
+          "en": "Generally not used as the main basis: the processing is grounded on the contract and the legal obligation. Any third-party data in the power of attorney/mandate is processed within the limits of documentary necessity."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati riportati nel documento e degli eventuali allegati (es. documento di identità per l'autentica); accesso riservato; conservazione a fini di prova dei poteri.",
+          "en": "Minimisation of data reported in the document and any attachments (e.g. identity document for authentication); restricted access; retention to evidence the powers."
+        },
+        "bilanciamentoRichiesto": false,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR ove pertinente: la procura alle liti veicola la posizione difensiva e può riferirsi a procedimenti che coinvolgono categorie particolari di dati, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria. Il documento di procura in sé è essenzialmente identificativo e attributivo di poteri; la condizione ex art. 9 rileva in relazione al procedimento cui la procura accede.",
+        "en": "GDPR Art. 9(2)(f) where relevant: the power of attorney for litigation carries the defense position and may refer to proceedings involving special categories of data, processed to establish, exercise or defend a right in court. The power-of-attorney document itself is essentially identifying and power-granting; the Art. 9 condition is relevant in relation to the proceedings the power of attorney relates to."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). La procura o il mandato possono riguardare procedimenti penali o accedere a dati giudiziari (es. procura per la difesa penale); il trattamento di tali dati è ammesso solo se pertinente e necessario rispetto all'incarico rappresentato, nei limiti della normativa applicabile.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The power of attorney or mandate may concern criminal proceedings or relate to judicial data (e.g. power of attorney for criminal defense); processing of such data is permitted only if relevant and necessary to the represented engagement, within the limits of applicable law."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti che conferiscono la procura o il mandato (rappresentati)",
+        "en": "Clients granting the power of attorney or mandate (represented persons)"
+      },
+      {
+        "it": "Avvocati, domiciliatari, sostituti e collaboratori destinatari di deleghe o sostituzioni",
+        "en": "Lawyers, domiciliary lawyers, substitutes and collaborators receiving delegations or substitutions"
+      },
+      {
+        "it": "Eventuali rappresentanti legali, tutori o procuratori del cliente",
+        "en": "Any legal representatives, guardians or attorneys of the client"
+      },
+      {
+        "it": "Terzi soggetti eventualmente menzionati nell'oggetto della procura o del mandato",
+        "en": "Third parties possibly mentioned in the subject of the power of attorney or mandate"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi del rappresentato e del rappresentante e dati di contatto",
+        "en": "Identification data of the represented and the representative and contact data"
+      },
+      {
+        "it": "Contenuto della procura/mandato: oggetto, poteri conferiti, limiti, durata, sottoscrizione",
+        "en": "Content of the power of attorney/mandate: subject, powers granted, limits, duration, signature"
+      },
+      {
+        "it": "Dati per l'autentica della sottoscrizione (eventuale estremi/copia del documento di identità)",
+        "en": "Data for signature authentication (possibly the details/copy of the identity document)"
+      },
+      {
+        "it": "Eventuali categorie particolari di dati (art. 9) connesse al procedimento cui la procura accede, nei limiti delle condizioni applicabili",
+        "en": "Any special categories of data (Art. 9) connected to the proceedings the power of attorney relates to, within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati relativi a procedimenti penali (art. 10), ove la procura riguardi la difesa penale, se pertinenti e necessari",
+        "en": "Any data on criminal proceedings (Art. 10), where the power of attorney concerns criminal defense, if relevant and necessary"
+      }
+    ],
+    "fonteDeiDati": "diretta",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti direttamente dal cliente al momento del conferimento della procura o del mandato, inclusi i dati per l'autentica della sottoscrizione; eventuali dati di sostituti/domiciliatari forniti dagli stessi o dallo studio. La raccolta è limitata a quanto necessario alla formazione e alla prova dei poteri rappresentativi.",
+      "en": "Data provided directly by the client when granting the power of attorney or mandate, including the data for signature authentication; any data of substitutes/domiciliary lawyers provided by them or by the firm. Collection is limited to what is necessary to create and evidence the representative powers."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Autorità giudiziarie, cancellerie e uffici giudiziari cui la procura è prodotta o depositata (destinatari istituzionali)",
+        "en": "Judicial authorities, registries and court offices to which the power of attorney is produced or filed (institutional recipients)"
+      },
+      {
+        "it": "Avvocati domiciliatari, sostituti e corrispondenti destinatari di deleghe (di regola titolari autonomi)",
+        "en": "Domiciliary lawyers, substitutes and correspondents receiving delegations (generally independent controllers)"
+      },
+      {
+        "it": "Controparti e relativi difensori, nei limiti del contraddittorio (la procura è prodotta in atti)",
+        "en": "Counterparties and their lawyers, within the limits of cross-examination (the power of attorney is produced in the acts)"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / firma digitale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management / digital signature / cloud software provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale di procure e mandati, eventuale firma digitale e servizi cloud connessi",
+          "en": "Document management of powers of attorney and mandates, any digital signature and connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. Le autorità giudiziarie cui la procura è prodotta sono titolari autonomi/soggetti pubblici; i domiciliatari/sostituti di regola titolari autonomi.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. The judicial authorities to which the power of attorney is produced are independent controllers / public bodies; domiciliary lawyers/substitutes are generally independent controllers."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e di firma digitale]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati di procure e mandati, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali, di firma digitale e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Power-of-attorney and mandate data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the management, digital-signature and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata del mandato e, successivamente, per il tempo necessario alla prova dei poteri esercitati e alla difesa da eventuali contestazioni o azioni di responsabilità professionale, tenuto conto dei termini di prescrizione applicabili.",
+        "en": "For the duration of the mandate and, thereafter, for the time necessary to evidence the powers exercised and to defend against any complaints or professional-liability actions, taking into account the applicable prescription terms."
+      },
+      "criteri": {
+        "it": "Conservazione delle procure e dei mandati per documentare i poteri rappresentativi esercitati e per la difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of powers of attorney and mandates to evidence the representative powers exercised and to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai documenti di procura e mandato con autenticazione forte e profili di privilegio",
+          "en": "Access control to power-of-attorney and mandate documents with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei documenti e delle connessioni, in transito e at-rest",
+          "en": "Encryption of documents and connections, in transit and at rest"
+        },
+        {
+          "it": "Protezione specifica della copia del documento di identità eventualmente acquisita per l'autentica",
+          "en": "Specific protection of the identity-document copy possibly acquired for authentication"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni sui documenti rappresentativi",
+          "en": "Traceability of accesses and operations on the representative documents"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Procedura per l'autentica della sottoscrizione e la verifica dell'identità del rappresentato",
+          "en": "Procedure for signature authentication and verification of the represented person's identity"
+        },
+        {
+          "it": "Minimizzazione dei dati riportati nel documento e degli allegati acquisiti",
+          "en": "Minimisation of data reported in the document and of the attachments acquired"
+        },
+        {
+          "it": "Rispetto del segreto professionale sui documenti e sui poteri conferiti",
+          "en": "Compliance with professional secrecy on the documents and the powers granted"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono procure e mandati",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling powers of attorney and mandates"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sulla gestione di procure e mandati e sull'autentica della firma, alla normativa forense applicabile e ai DPA con i fornitori]",
+        "en": "[Refer to internal policies on managing powers of attorney and mandates and on signature authentication, the applicable legal-profession rules and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti nella gestione di procure e mandati. Compilare se si utilizzano automatismi con effetti significativi; valutarne la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present in managing powers of attorney and mandates. Complete if using automated mechanisms with significant effects; assess whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione di procure, deleghe e mandati.",
+        "en": "Not applicable to managing powers of attorney, delegations and mandates."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria: trattamento essenzialmente documentale e identificativo. Da valutare solo in presenza di trattamenti sistematici o su larga scala di dati ex art. 9/art. 10 connessi alle procure (es. studi con elevati volumi di difese penali).",
+        "en": "Generally not required: essentially documentary and identifying processing. Assess only in case of systematic or large-scale processing of Art. 9/Art. 10 data connected to the powers of attorney (e.g. firms with high volumes of criminal defenses)."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(b), 6(1)(c), 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile e penale sulla forma della procura alle liti e sull'autentica della sottoscrizione da parte del difensore; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; le autorità giudiziarie sono titolari autonomi/soggetti pubblici; i domiciliatari/sostituti di regola titolari autonomi.",
+      "en": "Relevant legal references: GDPR Arts. 6(1)(b), 6(1)(c), 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian codes of civil and criminal procedure on the form of the power of attorney for litigation and on signature authentication by the lawyer; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the judicial authorities are independent controllers / public bodies; domiciliary lawyers/substitutes are generally independent controllers."
+    }
+  }
+}
