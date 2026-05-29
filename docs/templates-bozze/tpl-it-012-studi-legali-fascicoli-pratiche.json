@@ -1,0 +1,342 @@
+{
+  "templateId": "tpl-it-012-studi-legali-fascicoli-pratiche",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "📁",
+  "nome": {
+    "it": "Gestione fascicoli e pratiche legali",
+    "en": "Case file and legal matter management"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali connesso al ciclo di vita del fascicolo della pratica legale: apertura, organizzazione, tenuta, aggiornamento, archiviazione, conservazione e distruzione, con gestione documentale e controllo degli accessi. Riguarda l'aspetto documentale e organizzativo della pratica, distinto dalla gestione del rapporto con il cliente (template dedicato).",
+    "en": "Processing of personal data connected to the life cycle of the legal case file: opening, organisation, keeping, updating, archiving, retention and destruction, with document management and access control. It concerns the documentary and organisational aspect of the matter, distinct from client-relationship management (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO DOCUMENTALE/ORGANIZZATIVO. Il fascicolo è un contenitore documentale e organizzativo: NON costituisce una finalità autonoma svincolata dall'incarico, ma organizza i dati trattati per consulenza, assistenza, difesa, contenzioso e adempimenti connessi. Questo template copre il fascicolo come contenitore, NON il rapporto col cliente (vedi 'Gestione clienti e incarichi professionali') né la fase processuale (vedi 'Contenzioso'). PUNTI CRITICI: (a) il fascicolo aggrega dati di clienti, controparti e terzi, e può contenere categorie particolari (art. 9) e dati relativi a condanne/reati (art. 10): la base di liceità segue quella dell'incarico cui il fascicolo si riferisce; (b) SEGRETO PROFESSIONALE su tutto il contenuto; (c) la CONSERVAZIONE e la DISTRUZIONE vanno regolate con criteri documentati (registro di carico/scarico, tempi per tipologia di pratica); (d) ATTENZIONE ai fascicoli ibridi cartaceo/digitale e alla migrazione su gestionale/cloud (verificare DPA e sub-responsabili). Verificare la pertinenza dei documenti conservati (minimizzazione) ed evitare archivi indistinti a tempo indeterminato.",
+    "en": "DOCUMENTARY/ORGANISATIONAL SCOPE. The case file is a documentary and organisational container: it is NOT an autonomous purpose detached from the engagement, but organises data processed for advice, assistance, defense, litigation and connected obligations. This template covers the file as a container, NOT the client relationship (see 'Client and engagement management') or the procedural phase (see 'Litigation'). CRITICAL POINTS: (a) the file aggregates data of clients, counterparties and third parties, and may contain special categories (Art. 9) and conviction/offence data (Art. 10): the lawfulness basis follows that of the engagement the file relates to; (b) PROFESSIONAL SECRECY on the entire content; (c) RETENTION and DESTRUCTION must be governed by documented criteria (check-in/check-out register, timeframes by matter type); (d) ATTENTION to hybrid paper/digital files and migration to management software/cloud (verify DPA and sub-processors). Verify the relevance of retained documents (minimisation) and avoid indistinct indefinite archives."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "fascicolo_attivo",
+        "label": "Fascicolo di pratica attiva (in corso)",
+        "art6": "contratto"
+      },
+      {
+        "id": "fascicolo_archiviato",
+        "label": "Fascicolo archiviato (conservazione post-incarico)",
+        "art6": "obbligo_legale_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "fascicolo_attivo",
+        "label": "Active matter file (ongoing)",
+        "art6": "contratto"
+      },
+      {
+        "id": "fascicolo_archiviato",
+        "label": "Archived file (post-engagement retention)",
+        "art6": "obbligo_legale_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione fascicoli e pratiche legali",
+      "en": "Case file and legal matter management"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali nell'ambito dell'organizzazione, tenuta, archiviazione e conservazione dei fascicoli delle pratiche legali, inclusa la gestione documentale e il controllo degli accessi ai documenti.",
+      "en": "Processing of personal data in organising, keeping, archiving and retaining legal case files, including document management and access control to documents."
+    },
+    "finalita": [
+      {
+        "it": "Apertura, organizzazione e tenuta dei fascicoli delle pratiche",
+        "en": "Opening, organisation and keeping of case files"
+      },
+      {
+        "it": "Gestione documentale: classificazione, indicizzazione, versioning e reperimento dei documenti",
+        "en": "Document management: classification, indexing, versioning and retrieval of documents"
+      },
+      {
+        "it": "Archiviazione e conservazione dei fascicoli secondo criteri e tempi documentati",
+        "en": "Archiving and retention of files according to documented criteria and timeframes"
+      },
+      {
+        "it": "Controllo e tracciabilità degli accessi ai fascicoli e ai documenti",
+        "en": "Control and traceability of access to files and documents"
+      },
+      {
+        "it": "Distruzione sicura o anonimizzazione dei fascicoli al termine dei periodi di conservazione",
+        "en": "Secure destruction or anonymisation of files at the end of retention periods"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: la tenuta del fascicolo e' strumentale all'esecuzione del mandato professionale. Art. 6(1)(c) GDPR: obblighi di conservazione documentale (antiriciclaggio per i professionisti destinatari, obblighi fiscali e deontologici). Art. 6(1)(f) GDPR: legittimo interesse alla conservazione del fascicolo, dopo la chiusura dell'incarico, per la difesa da eventuali azioni di responsabilità professionale e per la tutela dei diritti, limitatamente a tale finalità. La liceità del trattamento dei singoli dati contenuti nel fascicolo segue quella dell'incarico di riferimento.",
+        "en": "GDPR Art. 6(1)(b): keeping the file is instrumental to performing the professional mandate. GDPR Art. 6(1)(c): document-retention obligations (anti-money-laundering for professionals subject to them, tax and ethical obligations). GDPR Art. 6(1)(f): legitimate interest in retaining the file, after the engagement closes, to defend against any professional-liability actions and to protect rights, limited to that purpose. The lawfulness of processing the individual data in the file follows that of the underlying engagement."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Legittimo interesse alla conservazione del fascicolo archiviato per il periodo necessario alla difesa da azioni di responsabilità professionale e alla tutela dei diritti del Titolare e del cliente. Non costituisce base per usi ulteriori del fascicolo.",
+          "en": "Legitimate interest in retaining the archived file for the period necessary to defend against professional-liability actions and to protect the rights of the Controller and the client. It is not a basis for further uses of the file."
+        },
+        "garanzieAdottate": {
+          "it": "Conservazione limitata ai documenti pertinenti; criteri e tempi documentati per tipologia di pratica; registro degli accessi; accesso riservato; cancellazione/anonimizzazione alla scadenza.",
+          "en": "Retention limited to relevant documents; documented criteria and timeframes by matter type; access register; restricted access; deletion/anonymisation at expiry."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Le categorie particolari eventualmente presenti nel fascicolo sono trattate sulla base della condizione applicabile all'incarico di riferimento (di regola art. 9(2)(f) per l'attività giudiziale/difensiva; per la consulenza non contenziosa la condizione va valutata caso per caso). Nella gestione documentale tali dati ricevono misure di protezione rafforzate.",
+        "en": "Any special categories in the file are processed on the basis of the condition applicable to the underlying engagement (generally Art. 9(2)(f) for judicial/defense activity; for non-contentious advice the condition must be assessed case by case). In document management such data receive enhanced protection measures."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy. Il fascicolo può contenere dati relativi a condanne penali e reati quando l'incarico di riferimento lo comporta; tali dati seguono la liceità e i limiti dell'incarico e ricevono protezione rafforzata nell'archiviazione.",
+        "en": "GDPR Art. 10 and Art. 2-octies Italian Privacy Code. The file may contain data on criminal convictions and offences where the underlying engagement involves them; such data follows the lawfulness and limits of the engagement and receives enhanced protection in archiving."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti titolari delle pratiche",
+        "en": "Clients to whom the matters belong"
+      },
+      {
+        "it": "Controparti e soggetti coinvolti nelle pratiche",
+        "en": "Counterparties and persons involved in the matters"
+      },
+      {
+        "it": "Terzi i cui dati sono contenuti nei documenti del fascicolo",
+        "en": "Third parties whose data is contained in the file documents"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto presenti nei documenti della pratica",
+        "en": "Identification and contact data in the matter documents"
+      },
+      {
+        "it": "Documenti, atti, corrispondenza e materiale probatorio della pratica",
+        "en": "Documents, acts, correspondence and evidentiary material of the matter"
+      },
+      {
+        "it": "Metadati di gestione documentale (date, versioni, autore, accessi)",
+        "en": "Document-management metadata (dates, versions, author, accesses)"
+      },
+      {
+        "it": "Eventuali categorie particolari di dati (art. 9) contenute nel fascicolo",
+        "en": "Any special categories of data (Art. 9) contained in the file"
+      },
+      {
+        "it": "Eventuali dati relativi a condanne penali e reati (art. 10), ove presenti nella pratica",
+        "en": "Any data on criminal convictions and offences (Art. 10), where present in the matter"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Documenti e dati confluiti nel fascicolo nel corso dell'incarico: forniti dal cliente, raccolti nell'attività, provenienti da controparti, autorità e terzi. La gestione documentale non genera nuove finalità di raccolta.",
+      "en": "Documents and data collected in the file during the engagement: provided by the client, gathered in the activity, from counterparties, authorities and third parties. Document management does not create new collection purposes."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Personale dello studio autorizzato all'accesso ai fascicoli (autorizzati ex art. 29 GDPR)",
+        "en": "Firm staff authorized to access files (authorized under GDPR Art. 29)"
+      },
+      {
+        "it": "Fornitore del software di gestione documentale e dei servizi cloud/archiviazione (responsabile del trattamento)",
+        "en": "Provider of document-management software and cloud/archiving services (data processor)"
+      },
+      {
+        "it": "Eventuale fornitore di servizi di archiviazione fisica e custodia documenti (responsabile del trattamento)",
+        "en": "Any physical archiving and document-custody service provider (data processor)"
+      },
+      {
+        "it": "Eventuale fornitore di servizi di distruzione sicura dei documenti (responsabile del trattamento)",
+        "en": "Any secure document-destruction service provider (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del gestionale documentale / archiviazione cloud]",
+          "en": "[Enter the name of the document-management / cloud-archiving provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale, archiviazione e conservazione dei fascicoli",
+          "en": "Document management, archiving and retention of files"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28, sub-responsabili (anche extra-UE) e misure di sicurezza. Contenuto coperto da segreto professionale.",
+          "en": "Verify the Art. 28 DPA, sub-processors (including non-EU) and security measures. Content covered by professional secrecy."
+        }
+      },
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore di distruzione sicura documenti, se utilizzato]",
+          "en": "[Enter the name of the secure document-destruction provider, if used]"
+        },
+        "sede": {
+          "it": "[Sede legale]",
+          "en": "[Registered office]"
+        },
+        "finalita": {
+          "it": "Distruzione sicura dei documenti cartacei e dei supporti a fine conservazione",
+          "en": "Secure destruction of paper documents and media at end of retention"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al contratto/DPA]",
+          "en": "[Reference to the contract/DPA]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Acquisire attestazione/verbale di avvenuta distruzione.",
+          "en": "Obtain a destruction certificate/record."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori di gestione documentale/cloud]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I fascicoli, coperti da segreto professionale, vanno conservati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Files, covered by professional secrecy, should preferably be retained within the EU. Verify any non-EU sub-processors; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata della pratica e, dopo la chiusura, per il periodo necessario alla difesa da azioni di responsabilità professionale e agli obblighi di conservazione applicabili (antiriciclaggio, fiscali), secondo criteri documentati per tipologia di pratica.",
+        "en": "For the duration of the matter and, after closure, for the period necessary to defend against professional-liability actions and applicable retention obligations (anti-money-laundering, tax), according to documented criteria by matter type."
+      },
+      "criteri": {
+        "it": "Definizione di tempi di conservazione differenziati per tipologia di pratica e di documento; registro di archiviazione e distruzione; revisione periodica degli archivi; minimizzazione dei documenti conservati; cancellazione o anonimizzazione alla scadenza, salvo litigation hold documentato.",
+        "en": "Definition of differentiated retention periods by matter and document type; archiving and destruction register; periodic review of archives; minimisation of retained documents; deletion or anonymisation at expiry, save for documented litigation hold."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai fascicoli con autenticazione forte e profili di privilegio per pratica",
+          "en": "Access control to files with strong authentication and per-matter privilege profiles"
+        },
+        {
+          "it": "Cifratura dei documenti e degli archivi digitali, in transito e at-rest",
+          "en": "Encryption of documents and digital archives, in transit and at rest"
+        },
+        {
+          "it": "Tracciabilità degli accessi, delle modifiche e delle estrazioni documentali",
+          "en": "Traceability of accesses, changes and document extractions"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e verifica del ripristino",
+          "en": "Periodic backups with at-rest encryption and restore testing"
+        },
+        {
+          "it": "Conservazione sicura dei fascicoli cartacei (armadi/locali ad accesso controllato)",
+          "en": "Secure storage of paper files (access-controlled cabinets/rooms)"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza su tutto il contenuto dei fascicoli",
+          "en": "Compliance with professional secrecy and the duty of confidentiality on all file content"
+        },
+        {
+          "it": "Procedura documentata di apertura, classificazione, archiviazione e distruzione dei fascicoli",
+          "en": "Documented procedure for opening, classifying, archiving and destroying files"
+        },
+        {
+          "it": "Registro di carico/scarico e di distruzione con attestazioni",
+          "en": "Check-in/check-out and destruction register with certificates"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR)",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29)"
+        },
+        {
+          "it": "Verifica periodica della pertinenza dei documenti conservati (minimizzazione)",
+          "en": "Periodic review of the relevance of retained documents (minimisation)"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alla procedura interna di gestione documentale e archiviazione, al registro di distruzione, alle policy sul segreto professionale e ai DPA con i fornitori]",
+        "en": "[Refer to the internal document-management and archiving procedure, the destruction register, legal professional secrecy policies and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano sistemi automatizzati di classificazione/indicizzazione documentale che producano effetti significativi; valutarne la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present. Complete if using automated document classification/indexing systems producing significant effects; assess whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione documentale dei fascicoli.",
+        "en": "Not applicable to case-file document management."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare in presenza di archiviazione su larga scala di dati ex art. 9/art. 10, migrazione massiva su cloud o sistemi automatizzati di gestione documentale.",
+        "en": "Assess in case of large-scale archiving of Art. 9/Art. 10 data, mass cloud migration or automated document-management systems."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 5, 6, 9(2)(f), 10, 32; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 231/2007 (conservazione antiriciclaggio, per i destinatari); art. 622 c.p. e normativa forense/deontologica sul segreto professionale. La liceità dei dati nel fascicolo segue l'incarico di riferimento.",
+      "en": "Relevant legal references: GDPR Arts. 5, 6, 9(2)(f), 10, 32; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering retention, for subjects); Art. 622 Italian Criminal Code and legal professional secrecy and legal ethics rules. The lawfulness of file data follows the underlying engagement."
+    }
+  }
+}

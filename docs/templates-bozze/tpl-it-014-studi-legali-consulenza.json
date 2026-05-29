@@ -1,0 +1,312 @@
+{
+  "templateId": "tpl-it-014-studi-legali-consulenza",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "📝",
+  "nome": {
+    "it": "Gestione attività di consulenza legale",
+    "en": "Legal advisory services management"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per l'attività di consulenza legale non contenziosa: pareri legali, assistenza contrattuale, due diligence, compliance e assistenza stragiudiziale. Si distingue dal contenzioso perché NON e' finalizzata alla difesa di un diritto in giudizio: la condizione di liceità per le categorie particolari NON può fondarsi automaticamente sull'art. 9(2)(f) e va valutata caso per caso.",
+    "en": "Processing of personal data for non-contentious legal advisory activity: legal opinions, contract assistance, due diligence, compliance and out-of-court assistance. It differs from litigation because it is NOT aimed at defending a right in court: the lawfulness condition for special categories CANNOT automatically rely on Art. 9(2)(f) and must be assessed case by case."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO NON CONTENZIOSO. AVVERTENZA: questo template assume consulenza ORDINARIA non contenziosa. Se la consulenza riguarda categorie particolari di dati, dati giudiziari o profili penali, il titolare DEVE adattare il template valorizzando art. 9 e/o art. 10 e individuando la condizione di liceità applicabile. Copre consulenza, pareri, contrattualistica e due diligence, NON la lite (template 'Contenzioso') né la difesa in giudizio (template dedicato). PUNTO PIU' DELICATO: per le categorie particolari (art. 9) NON si applica automaticamente l'art. 9(2)(f), che presuppone un diritto da accertare/esercitare/difendere in sede giudiziaria. In consulenza la condizione va individuata caso per caso (ad es. consenso esplicito ex art. 9(2)(a), se effettivamente libero e appropriato; o altra condizione applicabile in funzione della materia, es. ambito lavoristico, sanitario, ecc.). ALTRI PUNTI: (a) studio TITOLARE AUTONOMO; (b) art. 10 eventuale, solo se pertinente; (c) attenzione alla due diligence che può comportare il trattamento di dati di terzi (target, controparti contrattuali) con base nel legittimo interesse del cliente, da bilanciare; (d) segreto professionale.",
+    "en": "NON-CONTENTIOUS SCOPE. WARNING: this template assumes ORDINARY non-contentious advice. If the advice involves special categories of data, judicial data or criminal aspects, the controller MUST adapt the template by populating Art. 9 and/or Art. 10 and identifying the applicable lawfulness condition. Covers advice, opinions, contracts and due diligence, NOT the dispute ('Litigation' template) or defense in court (dedicated template). MOST DELICATE POINT: for special categories (Art. 9), Art. 9(2)(f) does NOT apply automatically, as it presupposes a right to establish/exercise/defend in court. In advisory work the condition must be identified case by case (e.g. explicit consent under Art. 9(2)(a), if genuinely free and appropriate; or another condition applicable to the subject matter, e.g. employment, healthcare, etc.). OTHER POINTS: (a) firm as INDEPENDENT CONTROLLER; (b) Art. 10 possible, only if relevant; (c) attention to due diligence, which may involve processing third-party data (targets, contractual counterparties) based on the client's legitimate interest, to be balanced; (d) professional secrecy."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "pareri_assistenza",
+        "label": "Pareri e assistenza legale continuativa",
+        "art6": "contratto"
+      },
+      {
+        "id": "due_diligence",
+        "label": "Due diligence e contrattualistica (con dati di terzi)",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "pareri_assistenza",
+        "label": "Opinions and ongoing legal assistance",
+        "art6": "contratto"
+      },
+      {
+        "id": "due_diligence",
+        "label": "Due diligence and contracts (with third-party data)",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione attività di consulenza legale",
+      "en": "Legal advisory services management"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per l'erogazione di consulenza legale non contenziosa: redazione di pareri, assistenza contrattuale e negoziale, due diligence, attività di compliance e assistenza stragiudiziale, per conto del cliente.",
+      "en": "Processing of personal data for providing non-contentious legal advice: drafting opinions, contract and negotiation assistance, due diligence, compliance activities and out-of-court assistance, on behalf of the client."
+    },
+    "finalita": [
+      {
+        "it": "Redazione di pareri legali e analisi giuridiche",
+        "en": "Drafting of legal opinions and legal analyses"
+      },
+      {
+        "it": "Assistenza contrattuale e negoziale (redazione, revisione, negoziazione di contratti)",
+        "en": "Contract and negotiation assistance (drafting, reviewing, negotiating contracts)"
+      },
+      {
+        "it": "Due diligence legale e attività di verifica documentale",
+        "en": "Legal due diligence and document-verification activities"
+      },
+      {
+        "it": "Attività di compliance e consulenza regolatoria continuativa",
+        "en": "Compliance activities and ongoing regulatory advice"
+      },
+      {
+        "it": "Assistenza stragiudiziale non finalizzata alla lite",
+        "en": "Out-of-court assistance not aimed at litigation"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: esecuzione dell'incarico di consulenza conferito dal cliente. Art. 6(1)(f) GDPR: legittimo interesse per il trattamento dei dati di terzi necessari alla consulenza (ad es. controparti contrattuali, soggetti target di una due diligence), limitatamente a tali soggetti e finalità, previo bilanciamento. Eventuali obblighi di legge specifici della materia (art. 6(1)(c)) vanno aggiunti caso per caso.",
+        "en": "GDPR Art. 6(1)(b): performance of the advisory engagement granted by the client. GDPR Art. 6(1)(f): legitimate interest in processing third-party data necessary for the advice (e.g. contractual counterparties, due-diligence targets), limited to those persons and purposes, after balancing. Any subject-specific legal obligations (Art. 6(1)(c)) must be added case by case."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Legittimo interesse circoscritto al trattamento dei dati di terzi necessari all'attività di consulenza (controparti contrattuali, soggetti coinvolti in una due diligence o in un'operazione), che non hanno rapporto diretto con lo studio. Richiede bilanciamento, soprattutto nella due diligence che può coinvolgere ampie basi di dati.",
+          "en": "Legitimate interest limited to processing third-party data necessary for advisory activity (contractual counterparties, persons involved in a due diligence or transaction) who have no direct relationship with the firm. Requires balancing, especially in due diligence that may involve large datasets."
+        },
+        "garanzieAdottate": {
+          "it": "Limitazione ai dati pertinenti e necessari; minimizzazione; durata limitata all'operazione; accesso riservato; rispetto del segreto professionale; informativa nei limiti compatibili con la natura dell'incarico.",
+          "en": "Limitation to relevant and necessary data; minimisation; duration limited to the transaction; restricted access; respect for professional secrecy; information notice within limits compatible with the nature of the engagement."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [],
+      "dettagliArt9": {
+        "it": "ATTENZIONE: nella consulenza non contenziosa NON si applica automaticamente l'art. 9(2)(f), che presuppone l'accertamento/esercizio/difesa di un diritto in sede giudiziaria. Se la consulenza comporta il trattamento di categorie particolari, la condizione di liceità va individuata caso per caso (ad es. consenso esplicito ex art. 9(2)(a), se effettivamente libero e appropriato; o altra condizione applicabile in funzione della materia, ad es. art. 9(2)(b) in ambito lavoristico). Documentare la condizione scelta.",
+        "en": "WARNING: in non-contentious advice, Art. 9(2)(f) does NOT apply automatically, as it presupposes establishing/exercising/defending a right in court. If the advice involves processing special categories, the lawfulness condition must be identified case by case (e.g. explicit consent under Art. 9(2)(a), if genuinely free and appropriate; or another condition applicable to the subject matter, e.g. Art. 9(2)(b) in employment matters). Document the chosen condition."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": false,
+      "normativaAutorizzativa": {
+        "it": "Di regola NON trattati nella consulenza ordinaria non contenziosa (default: presenti = No). Se la consulenza implica dati giudiziari o profili penali (es. due diligence su profili 231, compliance penale), il titolare deve valorizzare art. 10 GDPR e art. 2-octies Codice privacy, con trattamento limitato a quanto pertinente e necessario e apposita base.",
+        "en": "Generally NOT processed in ordinary non-contentious advice (default: present = No). If the advice involves judicial data or criminal aspects (e.g. due diligence on Legislative Decree 231 profiles, criminal compliance), the controller must populate GDPR Art. 10 and Art. 2-octies Italian Privacy Code, with processing limited to what is relevant and necessary and an appropriate basis."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti che richiedono consulenza",
+        "en": "Clients requesting advice"
+      },
+      {
+        "it": "Referenti e personale del cliente coinvolti nell'attività consulenziale",
+        "en": "Client contacts and staff involved in the advisory activity"
+      },
+      {
+        "it": "Controparti contrattuali e soggetti coinvolti nelle operazioni assistite",
+        "en": "Contractual counterparties and persons involved in the assisted transactions"
+      },
+      {
+        "it": "Soggetti target o terzi i cui dati emergono in attività di due diligence",
+        "en": "Target subjects or third parties whose data appears in due-diligence activities"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto del cliente e dei soggetti coinvolti",
+        "en": "Identification and contact data of the client and persons involved"
+      },
+      {
+        "it": "Dati relativi all'oggetto della consulenza, alle operazioni e ai contratti",
+        "en": "Data relating to the subject of the advice, the transactions and the contracts"
+      },
+      {
+        "it": "Dati economici, societari e documentali raccolti nelle attività di due diligence",
+        "en": "Economic, corporate and documentary data collected in due-diligence activities"
+      },
+      {
+        "it": "Eventuali categorie particolari di dati (art. 9), trattate solo con condizione di liceità individuata caso per caso",
+        "en": "Any special categories of data (Art. 9), processed only with a lawfulness condition identified case by case"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente; dati raccolti nelle attività di verifica e due diligence; dati di controparti e terzi pertinenti all'operazione; dati da fonti pubbliche o registri nei limiti di legge. La raccolta e' limitata a quanto necessario all'incarico di consulenza.",
+      "en": "Data provided by the client; data collected in verification and due-diligence activities; data of counterparties and third parties relevant to the transaction; data from public sources or registers within legal limits. Collection is limited to what is necessary for the advisory engagement."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Personale dello studio coinvolto nella consulenza (autorizzati ex art. 29 GDPR)",
+        "en": "Firm staff involved in the advice (authorized under GDPR Art. 29)"
+      },
+      {
+        "it": "Altri professionisti coinvolti nell'operazione (commercialisti, notai, consulenti): di regola titolari autonomi",
+        "en": "Other professionals involved in the transaction (accountants, notaries, consultants): generally independent controllers"
+      },
+      {
+        "it": "Controparti dell'operazione e relativi consulenti, nei limiti dell'attività negoziale",
+        "en": "Transaction counterparties and their advisors, within the limits of the negotiation activity"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Fornitura del software di gestione delle pratiche di consulenza e dei servizi cloud connessi",
+          "en": "Provision of advisory-matter management software and connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Gli altri professionisti coinvolti sono di regola titolari autonomi.",
+          "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). Other professionals involved are generally independent controllers."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati della consulenza, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Advisory data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico di consulenza e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the advisory engagement and, thereafter, for the time necessary to protect rights and meet retention obligations, considering the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione per la durata dell'incarico; dopo la chiusura, conservazione del parere/dossier per il periodo necessario alla difesa da azioni di responsabilità professionale e per gli obblighi applicabili; i dati di due diligence sui terzi sono conservati solo per il tempo dell'operazione, salvo necessità documentate. Verifica periodica e cancellazione o anonimizzazione.",
+        "en": "Retention for the duration of the engagement; after closure, retention of the opinion/dossier for the period necessary to defend against professional-liability actions and for applicable obligations; third-party due-diligence data is kept only for the duration of the transaction, save for documented needs. Periodic review and deletion or anonymisation."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi alle pratiche di consulenza con autenticazione forte e profili di privilegio",
+          "en": "Access control to advisory matters with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura delle connessioni e dei documenti riservati, in transito e at-rest",
+          "en": "Encryption of connections and confidential documents, in transit and at rest"
+        },
+        {
+          "it": "Accesso ai dati di due diligence limitato al team incaricato e per il tempo dell'operazione",
+          "en": "Access to due-diligence data limited to the assigned team and for the duration of the transaction"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest",
+          "en": "Periodic backups with at-rest encryption"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza sui dati della consulenza",
+          "en": "Compliance with professional secrecy and the duty of confidentiality on advisory data"
+        },
+        {
+          "it": "Individuazione e documentazione della condizione di liceità ex art. 9 quando si trattano categorie particolari (caso per caso)",
+          "en": "Identification and documentation of the Art. 9 lawfulness condition when processing special categories (case by case)"
+        },
+        {
+          "it": "Bilanciamento documentato per il trattamento dei dati di terzi nella due diligence",
+          "en": "Documented balancing for processing third-party data in due diligence"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR)",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29)"
+        },
+        {
+          "it": "Minimizzazione e limitazione temporale dei dati raccolti nelle operazioni",
+          "en": "Minimisation and time-limitation of data collected in transactions"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sulla consulenza e sul segreto professionale, alle valutazioni di bilanciamento per la due diligence e ai DPA con i fornitori]",
+        "en": "[Refer to internal advisory and professional-secrecy policies, the balancing assessments for due diligence and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati di analisi documentale o contrattuale con effetti significativi; valutarne la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present. Complete if using automated document or contract analysis tools with significant effects; assess whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla consulenza legale. Eventuali comunicazioni informative dello studio vanno gestite in un trattamento dedicato.",
+        "en": "Not applicable to legal advice. Any informational communications by the firm should be handled in a dedicated processing activity."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare in presenza di due diligence su larga scala, trattamento sistematico di categorie particolari o strumenti automatizzati di analisi.",
+        "en": "Assess in case of large-scale due diligence, systematic processing of special categories or automated analysis tools."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9 (condizione da individuare caso per caso, NON automaticamente 9(2)(f)), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; art. 622 c.p. e normativa forense/deontologica sul segreto professionale. Lo studio e' titolare autonomo.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9 (condition to be identified case by case, NOT automatically 9(2)(f)), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Art. 622 Italian Criminal Code and legal-profession/ethical rules on professional secrecy. The firm is an independent controller."
+    }
+  }
+}

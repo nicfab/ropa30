@@ -1,0 +1,346 @@
+{
+  "templateId": "tpl-it-015-studi-legali-difesa-giudizio",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "🛡️",
+  "nome": {
+    "it": "Gestione attività di difesa in giudizio",
+    "en": "Defense in court and criminal defense management"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per la difesa in giudizio, con particolare attenzione alla difesa penale e ai procedimenti che comportano dati ex art. 10 GDPR: assunzione del mandato difensivo, esercizio del diritto di difesa, indagini difensive, rapporti con l'autorità giudiziaria e con la polizia giudiziaria. E' il trattamento in cui i dati relativi a condanne penali e reati (art. 10) e le categorie particolari (art. 9) sono più ricorrenti e centrali.",
+    "en": "Processing of personal data for defense in court, with particular regard to criminal defense: acceptance of the defense mandate, exercise of the right of defense, defensive investigations, dealings with the judicial authority and judicial police. It is the processing where data on criminal convictions and offences (Art. 10) and special categories (Art. 9) are most recurrent and central."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO DIFENSIVO/PENALE. Copre la difesa in giudizio (spec. penale), distinta dal contenzioso civile (template 'Contenzioso') e dalla consulenza (template dedicato). PUNTI CRITICI: (a) studio/difensore TITOLARE AUTONOMO; (b) ART. 10 CENTRALE: i dati relativi a condanne penali, reati, imputazioni, indagini e misure sono fisiologici; trattamento ex art. 10 GDPR e art. 2-octies Codice privacy nell'esercizio del diritto di difesa; (c) ART. 9(2)(f) per le categorie particolari necessarie alla difesa; (d) INDAGINI DIFENSIVE ex l. 397/2000 (artt. 391-bis ss. c.p.p.): la raccolta di informazioni da persone informate e da terzi ha una specifica disciplina; i dati dell'assistito, della persona offesa, dei testimoni e di terzi vanno trattati nel rispetto di tale disciplina e del segreto; (e) particolare cautela per i dati di minori, vittime e soggetti vulnerabili; (f) il diritto di difesa può limitare l'esercizio di alcuni diritti dell'interessato controparte (art. 2-undecies Codice privacy).",
+    "en": "DEFENSE/CRIMINAL SCOPE. Covers defense in court (esp. criminal), distinct from civil litigation ('Litigation' template) and advice (dedicated template). CRITICAL POINTS: (a) firm/defense lawyer as INDEPENDENT CONTROLLER; (b) ART. 10 CENTRAL: data on criminal convictions, offences, charges, investigations and measures are inherent; processing under GDPR Art. 10 and Art. 2-octies Italian Privacy Code in exercising the right of defense; (c) ART. 9(2)(f) for special categories necessary to the defense; (d) DEFENSIVE INVESTIGATIONS under Law 397/2000 (Arts. 391-bis ff. Italian Code of Criminal Procedure): gathering information from informed persons and third parties has specific rules; data of the client, the injured party, witnesses and third parties must be processed in compliance with those rules and secrecy; (e) particular caution for data of minors, victims and vulnerable persons; (f) the right of defense may limit the exercise of some data-subject rights of the opposing party (Art. 2-undecies Italian Privacy Code)."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "difesa_penale",
+        "label": "Difesa penale (indagato/imputato, persona offesa, parte civile)",
+        "art6": "obbligo_e_legittimo_interesse"
+      },
+      {
+        "id": "indagini_difensive",
+        "label": "Indagini difensive ex l. 397/2000",
+        "art6": "legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "difesa_penale",
+        "label": "Criminal defense (suspect/defendant, injured party, civil party)",
+        "art6": "obbligo_e_legittimo_interesse"
+      },
+      {
+        "id": "indagini_difensive",
+        "label": "Defensive investigations under Law 397/2000",
+        "art6": "legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione attività di difesa in giudizio",
+      "en": "Defense in court and criminal defense management"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per l'esercizio del diritto di difesa in giudizio, con particolare riguardo alla difesa penale, incluse le indagini difensive, i rapporti con l'autorità giudiziaria e la polizia giudiziaria, e la gestione degli atti difensivi.",
+      "en": "Processing of personal data for exercising the right of defense in court, with particular regard to criminal defense, including defensive investigations, dealings with the judicial authority and judicial police, and management of defense acts."
+    },
+    "finalita": [
+      {
+        "it": "Esercizio del diritto di difesa dell'assistito in sede giudiziaria",
+        "en": "Exercise of the client's right of defense in court"
+      },
+      {
+        "it": "Assunzione e gestione del mandato difensivo e della nomina",
+        "en": "Acceptance and management of the defense mandate and appointment"
+      },
+      {
+        "it": "Svolgimento di indagini difensive ex l. 397/2000 (raccolta di informazioni e documentazione)",
+        "en": "Conduct of defensive investigations under Law 397/2000 (gathering of information and documentation)"
+      },
+      {
+        "it": "Gestione dei rapporti con l'autorità giudiziaria, la polizia giudiziaria e gli uffici",
+        "en": "Management of relations with the judicial authority, judicial police and offices"
+      },
+      {
+        "it": "Predisposizione e deposito di atti, memorie e istanze difensive",
+        "en": "Preparation and filing of defense acts, briefs and requests"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: la difesa nasce dal mandato difensivo/professionale conferito dall'assistito; per l'assistito la base è contrattuale. Art. 6(1)(f) GDPR: legittimo interesse all'esercizio del diritto di difesa (art. 24 Cost.), esteso al trattamento dei dati di persone offese, testimoni e terzi necessari alla difesa. Art. 6(1)(c) GDPR: adempimenti processuali, ordini dell'autorità giudiziaria, obblighi connessi alla disciplina del processo penale.",
+        "en": "GDPR Art. 6(1)(b): the defense arises from the defense/professional mandate granted by the client; for the client the basis is contractual. GDPR Art. 6(1)(f): legitimate interest in exercising the right of defense (Art. 24 Italian Constitution), extended to processing data of injured parties, witnesses and third parties necessary for the defense. GDPR Art. 6(1)(c): procedural obligations, judicial-authority orders, duties connected to criminal-procedure rules."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Legittimo interesse all'effettivo esercizio del diritto di difesa, che giustifica il trattamento dei dati di persone offese, testimoni, persone informate sui fatti e terzi, nei limiti di quanto necessario alla difesa e nel rispetto della disciplina delle indagini difensive (l. 397/2000).",
+          "en": "Legitimate interest in the effective exercise of the right of defense, justifying the processing of data of injured parties, witnesses, informed persons and third parties, within the limits of what is necessary for the defense and in compliance with the defensive-investigations rules (Law 397/2000)."
+        },
+        "garanzieAdottate": {
+          "it": "Trattamento limitato a quanto necessario alla difesa; rispetto delle forme delle indagini difensive; particolare cautela per minori, vittime e soggetti vulnerabili; segreto professionale e investigativo; minimizzazione negli atti depositati.",
+          "en": "Processing limited to what is necessary for the defense; compliance with the forms of defensive investigations; particular caution for minors, victims and vulnerable persons; professional and investigative secrecy; minimisation in filed acts."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR: le categorie particolari di dati (dell'assistito, della persona offesa, di testimoni o terzi) sono trattate quando necessarie per accertare, esercitare o difendere un diritto in sede giudiziaria. Nell'ambito penale tali dati possono essere centrali (es. salute, vita sessuale, condizioni psichiche) e vanno trattati con cautela rafforzata.",
+        "en": "GDPR Art. 9(2)(f): special categories of data (of the client, injured party, witnesses or third parties) are processed when necessary to establish, exercise or defend a right in court. In criminal matters such data may be central (e.g. health, sexual life, psychological conditions) and must be processed with enhanced caution."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Nella difesa in giudizio, in particolare penale, il trattamento di dati relativi a condanne penali, reati, imputazioni, indagini e misure di sicurezza e' centrale e necessario all'esercizio del diritto di difesa, nei limiti della normativa processuale e di protezione dei dati. Particolare attenzione al segreto investigativo e alla disciplina delle indagini difensive.",
+        "en": "GDPR Art. 10 and Art. 2-octies Italian Privacy Code (d.lgs. 196/2003). In defense in court, particularly criminal, processing data on criminal convictions, offences, charges, investigations and security measures is central and necessary to exercising the right of defense, within the limits of procedural and data-protection rules. Particular attention to investigative secrecy and the defensive-investigations rules."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Assistiti (indagati, imputati, condannati; ovvero persone offese e parti civili)",
+        "en": "Clients (suspects, defendants, convicted persons; or injured parties and civil parties)"
+      },
+      {
+        "it": "Persone offese, danneggiati e relative parti",
+        "en": "Injured parties, damaged parties and their representatives"
+      },
+      {
+        "it": "Testimoni, persone informate sui fatti e terzi coinvolti",
+        "en": "Witnesses, persons informed of the facts and involved third parties"
+      },
+      {
+        "it": "Eventuali minori e soggetti vulnerabili coinvolti nel procedimento",
+        "en": "Any minors and vulnerable persons involved in the proceedings"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto dei soggetti coinvolti nel procedimento",
+        "en": "Identification and contact data of persons involved in the proceedings"
+      },
+      {
+        "it": "Dati relativi a condanne penali, reati, imputazioni, indagini e misure (art. 10)",
+        "en": "Data on criminal convictions, offences, charges, investigations and measures (Art. 10)"
+      },
+      {
+        "it": "Atti del procedimento, fascicolo, verbali, documentazione probatoria e investigativa",
+        "en": "Proceedings acts, file, records, evidentiary and investigative documentation"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9), spesso rilevanti nel penale (salute, vita sessuale, condizioni psichiche, ecc.)",
+        "en": "Special categories of data (Art. 9), often relevant in criminal matters (health, sexual life, psychological conditions, etc.)"
+      },
+      {
+        "it": "Informazioni e dichiarazioni raccolte nelle indagini difensive",
+        "en": "Information and statements gathered in defensive investigations"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dall'assistito; dati raccolti nelle indagini difensive (da persone informate, documenti, fonti); atti e provvedimenti dell'autorità giudiziaria e della polizia giudiziaria; dati da fonti pubbliche nei limiti di legge. La raccolta nelle indagini difensive segue le forme di legge (l. 397/2000, artt. 391-bis ss. c.p.p.).",
+      "en": "Data provided by the client; data gathered in defensive investigations (from informed persons, documents, sources); acts and measures of the judicial authority and judicial police; data from public sources within legal limits. Collection in defensive investigations follows the legal forms (Law 397/2000, Arts. 391-bis ff. Italian Code of Criminal Procedure)."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Autorità giudiziarie, organi inquirenti, polizia giudiziaria, uffici giudiziari (destinatari istituzionali)",
+        "en": "Judicial authorities, investigating bodies, judicial police, court offices (institutional recipients)"
+      },
+      {
+        "it": "Avvocati domiciliatari, corrispondenti e co-difensori (di regola titolari autonomi)",
+        "en": "Domiciliary, corresponding and co-defense lawyers (generally independent controllers)"
+      },
+      {
+        "it": "Investigatori privati autorizzati e consulenti tecnici per le indagini difensive (responsabili o titolari autonomi, secondo l'incarico)",
+        "en": "Authorized private investigators and technical consultants for defensive investigations (processors or independent controllers, depending on the engagement)"
+      },
+      {
+        "it": "Periti e consulenti (medico-legali, psicologi, ecc.) coinvolti nella difesa",
+        "en": "Experts and consultants (forensic doctors, psychologists, etc.) involved in the defense"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome dell'investigatore privato autorizzato, se incaricato per indagini difensive su mandato]",
+          "en": "[Enter the name of the authorized private investigator, if engaged for defensive investigations on mandate]"
+        },
+        "sede": {
+          "it": "[Sede legale e autorizzazione]",
+          "en": "[Registered office and authorisation]"
+        },
+        "finalita": {
+          "it": "Svolgimento di attività investigativa difensiva su incarico del difensore, nei limiti di legge",
+          "en": "Conduct of defensive investigative activity on the lawyer's engagement, within legal limits"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al contratto/DPA e all'autorizzazione dell'investigatore]",
+          "en": "[Reference to the contract/DPA and the investigator's authorisation]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare il ruolo (responsabile su mandato del difensore o titolare autonomo) e l'autorizzazione ex TULPS. Istruzioni documentate nel rispetto della l. 397/2000 e del segreto.",
+          "en": "Verify the role (processor on the lawyer's mandate or independent controller) and the authorisation under Italian public-security law. Documented instructions in compliance with Law 397/2000 and secrecy."
+        }
+      },
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Fornitura del software di gestione dei procedimenti e dei servizi cloud connessi",
+          "en": "Provision of proceedings-management software and connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Dati penali e investigativi: misure rafforzate.",
+          "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). Criminal and investigative data: enhanced measures."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Fortemente preferibile intra-UE per dati penali/investigativi; verificare i fornitori IT/cloud]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati della difesa, in particolare penali e investigativi, coperti da segreto, vanno trattati preferibilmente in ambito UE. Verificare con particolare rigore eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile) valutando l'elevata sensibilità.",
+          "en": "Defense data, particularly criminal and investigative, covered by secrecy, should preferably be processed within the EU. Verify with particular rigour any non-EU sub-processors; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable), considering the high sensitivity."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata del procedimento e dei relativi gradi, più i termini di impugnazione; successivamente per il tempo necessario alla tutela dei diritti dell'assistito e agli obblighi di conservazione, tenuto conto della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the proceedings and their instances, plus appeal terms; thereafter for the time necessary to protect the client's rights and meet retention obligations, considering the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione fino alla definizione del procedimento e al decorso dei termini di impugnazione; conservazione del fascicolo difensivo per la tutela dell'assistito (es. revisione, riabilitazione) e la difesa da azioni di responsabilità; particolare cautela e accesso ristretto per i dati penali e investigativi; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention until the proceedings conclude and appeal terms elapse; retention of the defense file to protect the client (e.g. review, rehabilitation) and to defend against liability actions; particular caution and restricted access for criminal and investigative data; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi rafforzato ai fascicoli penali/difensivi con autenticazione forte",
+          "en": "Enhanced access control to criminal/defense files with strong authentication"
+        },
+        {
+          "it": "Cifratura dei documenti e delle connessioni, in transito e at-rest, con misure rafforzate per i dati art. 9/art. 10",
+          "en": "Encryption of documents and connections, in transit and at rest, with enhanced measures for Art. 9/Art. 10 data"
+        },
+        {
+          "it": "Accesso ai fascicoli difensivi limitato al difensore e al team strettamente coinvolto",
+          "en": "Access to defense files limited to the lawyer and the strictly involved team"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle estrazioni; backup cifrati at-rest",
+          "en": "Traceability of accesses and extractions; at-rest encrypted backups"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e investigativo su tutti i dati della difesa",
+          "en": "Compliance with professional and investigative secrecy on all defense data"
+        },
+        {
+          "it": "Rispetto delle forme delle indagini difensive ex l. 397/2000 (artt. 391-bis ss. c.p.p.)",
+          "en": "Compliance with the forms of defensive investigations under Law 397/2000 (Arts. 391-bis ff. Italian Code of Criminal Procedure)"
+        },
+        {
+          "it": "Cautele rafforzate per i dati di minori, vittime e soggetti vulnerabili",
+          "en": "Enhanced safeguards for data of minors, victims and vulnerable persons"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) e agli ausiliari delle indagini",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) and to investigation auxiliaries"
+        },
+        {
+          "it": "Gestione delle richieste di esercizio dei diritti tenuto conto delle limitazioni connesse al diritto di difesa (art. 2-undecies Codice privacy)",
+          "en": "Handling of rights requests taking into account the limitations connected to the right of defense (Art. 2-undecies Italian Privacy Code)"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sulla difesa penale e sul segreto, alla disciplina delle indagini difensive, alle istruzioni agli investigatori e ai DPA con i fornitori]",
+        "en": "[Refer to internal criminal-defense and secrecy policies, the defensive-investigations rules, instructions to investigators and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati di analisi nelle indagini o nella difesa con effetti significativi; valutarne la riconducibilità all'art. 22 GDPR.",
+        "en": "Generally not present. Complete if using automated analysis tools in investigations or defense with significant effects; assess whether they fall under GDPR Art. 22."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla difesa in giudizio.",
+        "en": "Not applicable to defense in court."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare con attenzione: il trattamento sistematico di dati art. 10 e di categorie particolari nel penale, su larga scala o con strumenti investigativi, può richiedere una DPIA. Valutare anche in presenza di dati di minori o soggetti vulnerabili.",
+        "en": "Assess carefully: systematic processing of Art. 10 data and special categories in criminal matters, on a large scale or with investigative tools, may require a DPIA. Also assess in the presence of data of minors or vulnerable persons."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) artt. 2-octies, 2-undecies; art. 24 Cost. (diritto di difesa); l. 397/2000 e artt. 391-bis ss. c.p.p. (indagini difensive); art. 622 c.p. e normativa forense/deontologica sul segreto professionale. Lo studio/difensore e' titolare autonomo.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-octies, 2-undecies; Art. 24 Italian Constitution (right of defense); Law 397/2000 and Arts. 391-bis ff. Italian Code of Criminal Procedure (defensive investigations); Art. 622 Italian Criminal Code and legal professional secrecy and legal ethics rules. The firm/defense lawyer is an independent controller."
+    }
+  }
+}

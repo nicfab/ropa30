@@ -154,3 +154,6 @@ vite.config.ts.timestamp-*
 
 # File di contesto locale per Claude Code (NON versionare)
 CLAUDE.md
+
+# macOS
+.DS_Store
