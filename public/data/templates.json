@@ -8298,6 +8298,1280 @@
           "en": "Relevant legal references: GDPR Arts. 6(1)(c), 6(1)(f), 9(2)(f), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering retention, for professionals subject to it); rules on substitute storage and documentary integrity; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the storage provider and the destruction provider are Art. 28 processors. DISTINCTION FROM tpl-it-012: here retention and destruction of closed case files, not the current keeping of the active case file."
         }
       }
+    },
+    {
+      "templateId": "tpl-it-026-studi-legali-recupero-crediti",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione recupero crediti per conto del cliente",
+        "en": "Debt recovery management on behalf of the client"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per l'attività di recupero crediti svolta dallo studio per conto del cliente creditore, in fase stragiudiziale (solleciti, diffide, piani di rientro) e giudiziale (decreti ingiuntivi e azioni connesse): gestione delle posizioni debitorie del cliente, contatti con i debitori e con terzi autorizzati, nel rispetto delle indicazioni del Garante in materia di recupero crediti. Il taglio riguarda il recupero dei crediti DI TERZI (i clienti creditori), distinto dal recupero dei crediti propri dello studio (coperto dal template comune sul contenzioso e recupero crediti).",
+        "en": "Processing of personal data for debt-recovery activity carried out by the firm on behalf of the creditor client, in the out-of-court phase (reminders, formal notices, repayment plans) and the judicial phase (orders for payment and connected actions): management of the client's debt positions, contacts with debtors and authorized third parties, in compliance with the Italian Data Protection Authority's guidance on debt recovery. The scope concerns the recovery of THIRD-PARTY credits (the creditor clients'), distinct from the recovery of the firm's own credits (covered by the common litigation-and-debt-recovery template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO RECUPERO CREDITI PER CONTO DEL CLIENTE. NON copre il recupero dei crediti propri dello studio (template comune sul contenzioso e recupero crediti, tpl-it-009). PUNTI CRITICI: (a) RUOLO PRIVACY DA QUALIFICARE CASO PER CASO: lo studio opera tipicamente come RESPONSABILE del trattamento (ex art. 28 GDPR) su mandato del cliente creditore, che resta TITOLARE delle posizioni debitorie; quando il credito è CEDUTO, titolare diventa il cessionario (per conto del quale lo studio agisce, o di cui è esso stesso cessionario, divenendo in tal caso titolare autonomo); inoltre, l'avvocato che agisce in piena autonomia professionale, specie nella fase giudiziale, può configurarsi come TITOLARE AUTONOMO. Il presente template è impostato in via principale come RESPONSABILE per conto del cliente: la qualificazione va verificata e formalizzata; (b) INDICAZIONI DEL GARANTE SUL RECUPERO CREDITI: divieto di comunicare a terzi non autorizzati l'esistenza e l'importo del debito; comunicazioni in plichi chiusi e privi di diciture rivelatrici della morosità; divieto di pressioni indebite e di modalità lesive della dignità del debitore; contatti nei limiti di quanto necessario; (c) ART. 6: il trattamento si fonda, in capo al titolare creditore, sul contratto da cui nasce il credito e sul legittimo interesse al recupero; nella fase giudiziale rilevano gli obblighi processuali; (d) ART. 9/ART. 10: di regola NON pertinenti come finalità propria del recupero; eventuali dati particolari o giudiziari restano marginali e vanno minimizzati; se la posizione creditoria deriva da fatti penalmente rilevanti o da atti di natura penale, il template va adattato valorizzando l'art. 10, nei limiti di pertinenza e necessità rispetto all'incarico; (e) SEGRETO PROFESSIONALE. Basi giuridiche, qualificazione del ruolo, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "DEBT-RECOVERY-ON-BEHALF-OF-CLIENT SCOPE. It does NOT cover the recovery of the firm's own credits (common litigation-and-debt-recovery template, tpl-it-009). CRITICAL POINTS: (a) PRIVACY ROLE TO BE QUALIFIED CASE BY CASE: the firm typically acts as a PROCESSOR (under GDPR Art. 28) on the mandate of the creditor client, who remains CONTROLLER of the debt positions; when the credit is ASSIGNED, the assignee becomes controller (on whose behalf the firm acts, or of which the firm is itself the assignee, in which case it becomes an independent controller); moreover, the lawyer acting in full professional autonomy, especially in the judicial phase, may qualify as an INDEPENDENT CONTROLLER. This template is set primarily as PROCESSOR on behalf of the client: the qualification must be verified and formalised; (b) DATA PROTECTION AUTHORITY GUIDANCE ON DEBT RECOVERY: prohibition on disclosing the existence and amount of the debt to unauthorized third parties; communications in sealed envelopes without markings revealing the default; prohibition of undue pressure and of methods harming the debtor's dignity; contacts limited to what is necessary; (c) ART. 6: the processing is grounded, for the creditor controller, on the contract from which the credit arises and on the legitimate interest in recovery; in the judicial phase procedural obligations are relevant; (d) ART. 9/ART. 10: generally NOT relevant as an autonomous purpose of recovery; any special or judicial data remains marginal and must be minimised; if the credit position derives from criminally relevant facts or acts of a criminal nature, the template must be adapted by addressing Art. 10, within the limits of relevance and necessity in relation to the engagement; (e) PROFESSIONAL SECRECY. Legal bases, role qualification, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "stragiudiziale",
+            "label": "Recupero stragiudiziale (solleciti, diffide, piani di rientro)",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "giudiziale",
+            "label": "Recupero giudiziale (decreto ingiuntivo e azioni connesse)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "stragiudiziale",
+            "label": "Out-of-court recovery (reminders, formal notices, repayment plans)",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "giudiziale",
+            "label": "Judicial recovery (order for payment and connected actions)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "responsabile",
+        "nome": {
+          "it": "Gestione recupero crediti per conto del cliente",
+          "en": "Debt recovery management on behalf of the client"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali dei debitori e dei soggetti collegati per l'attività di recupero crediti svolta per conto del cliente creditore (titolare del trattamento): solleciti, diffide, piani di rientro, gestione delle posizioni e, nella fase giudiziale, decreti ingiuntivi e azioni connesse, nel rispetto delle indicazioni del Garante in materia di recupero crediti.",
+          "en": "Processing of personal data of debtors and connected persons for debt-recovery activity carried out on behalf of the creditor client (data controller): reminders, formal notices, repayment plans, position management and, in the judicial phase, orders for payment and connected actions, in compliance with the Data Protection Authority's guidance on debt recovery."
+        },
+        "finalita": [
+          {
+            "it": "Recupero stragiudiziale dei crediti del cliente: solleciti, diffide, gestione di piani di rientro e accordi transattivi",
+            "en": "Out-of-court recovery of the client's credits: reminders, formal notices, management of repayment plans and settlement agreements"
+          },
+          {
+            "it": "Recupero giudiziale: predisposizione e gestione di decreti ingiuntivi e azioni connesse per conto del creditore",
+            "en": "Judicial recovery: preparation and management of orders for payment and connected actions on behalf of the creditor"
+          },
+          {
+            "it": "Gestione dei contatti con i debitori e con i soggetti terzi autorizzati, nei limiti di quanto necessario",
+            "en": "Management of contacts with debtors and authorized third parties, within the limits of what is necessary"
+          },
+          {
+            "it": "Rendicontazione al cliente creditore sullo stato delle posizioni e degli incassi",
+            "en": "Reporting to the creditor client on the status of positions and collections"
+          },
+          {
+            "it": "Trattamento conforme alle indicazioni del Garante sul recupero crediti (riservatezza del debito, plichi chiusi, divieto di pressioni indebite)",
+            "en": "Processing compliant with the Data Protection Authority's guidance on debt recovery (debt confidentiality, sealed envelopes, prohibition of undue pressure)"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Le basi giuridiche fanno capo al cliente creditore (titolare del trattamento), per conto del quale lo studio opera di regola come responsabile. Art. 6(1)(b) GDPR: il credito nasce dal contratto tra creditore e debitore; il recupero ne costituisce attuazione. Art. 6(1)(f) GDPR: legittimo interesse del creditore al recupero del proprio credito, esteso al trattamento dei dati di terzi (garanti, coobbligati, soggetti collegati) nei limiti del necessario. Art. 6(1)(c) GDPR: nella fase giudiziale rilevano gli adempimenti processuali. Qualora lo studio agisca come titolare autonomo (cessione del credito a proprio favore o piena autonomia professionale), le medesime basi vanno riferite allo studio stesso.",
+            "en": "The legal bases pertain to the creditor client (data controller), on whose behalf the firm generally acts as a processor. GDPR Art. 6(1)(b): the credit arises from the contract between creditor and debtor; recovery implements it. GDPR Art. 6(1)(f): the creditor's legitimate interest in recovering its own credit, extended to processing data of third parties (guarantors, co-obligors, connected persons) within the limits of necessity. GDPR Art. 6(1)(c): in the judicial phase procedural obligations are relevant. Where the firm acts as an independent controller (assignment of the credit in its favour or full professional autonomy), the same bases must be referred to the firm itself."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse al recupero del credito fa capo al creditore (titolare); lo studio lo attua per suo conto. Riguarda il trattamento dei dati dei debitori e dei soggetti collegati (garanti, coobbligati) necessari al recupero. Non costituisce base per finalità ulteriori (es. cessione a terzi non autorizzati, marketing).",
+              "en": "The legitimate interest in recovering the credit pertains to the creditor (controller); the firm implements it on its behalf. It concerns processing data of debtors and connected persons (guarantors, co-obligors) necessary for recovery. It is not a basis for further purposes (e.g. transfer to unauthorized third parties, marketing)."
+            },
+            "garanzieAdottate": {
+              "it": "Rispetto delle indicazioni del Garante: divieto di rivelare a terzi non autorizzati l'esistenza/importo del debito; plichi chiusi privi di diciture rivelatrici; divieto di pressioni indebite; minimizzazione dei dati trattati e dei contatti; istruzioni documentate dal titolare creditore.",
+              "en": "Compliance with the Data Protection Authority's guidance: prohibition on revealing the existence/amount of the debt to unauthorized third parties; sealed envelopes without revealing markings; prohibition of undue pressure; minimisation of data processed and of contacts; documented instructions from the creditor controller."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [],
+          "dettagliArt9": {
+            "it": "Di regola non pertinente come finalità propria del recupero crediti. Qualora emergano incidentalmente categorie particolari di dati (es. in piani di rientro motivati da situazioni personali), vanno minimizzate e trattate nei limiti della condizione di liceità applicabile, senza presumere automaticamente l'art. 9(2)(f).",
+            "en": "Generally not relevant as an autonomous purpose of debt recovery. Should special categories of data emerge incidentally (e.g. in repayment plans motivated by personal circumstances), they must be minimised and processed within the limits of the applicable lawfulness condition, without automatically presuming Art. 9(2)(f)."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Di regola non presenti: il recupero crediti ha natura civile/contrattuale e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora il recupero si intrecci con profili penali (es. assegni o insoluti con rilievo penale), il trattamento di tali dati va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
+            "en": "Generally not present: debt recovery is civil/contractual in nature and the acts of civil proceedings do not in themselves constitute Art. 10 data. Should recovery intersect with criminal aspects (e.g. cheques or unpaid items with criminal relevance), processing of such data must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Debitori (persone fisiche) e referenti di debitori persone giuridiche",
+            "en": "Debtors (natural persons) and contacts of corporate debtors"
+          },
+          {
+            "it": "Garanti, fideiussori, coobbligati e soggetti collegati alla posizione debitoria",
+            "en": "Guarantors, sureties, co-obligors and persons connected to the debt position"
+          },
+          {
+            "it": "Referenti del cliente creditore (titolare del trattamento)",
+            "en": "Contacts of the creditor client (data controller)"
+          },
+          {
+            "it": "Terzi autorizzati eventualmente coinvolti nei contatti (es. domiciliatari del debitore)",
+            "en": "Authorized third parties possibly involved in contacts (e.g. the debtor's domiciliary representatives)"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto dei debitori e dei soggetti collegati",
+            "en": "Identification and contact data of debtors and connected persons"
+          },
+          {
+            "it": "Dati relativi al credito: titolo, importo, scadenze, stato della morosità e dei pagamenti",
+            "en": "Data relating to the credit: title, amount, due dates, status of default and payments"
+          },
+          {
+            "it": "Dati su piani di rientro, accordi transattivi e corrispondenza di recupero",
+            "en": "Data on repayment plans, settlement agreements and recovery correspondence"
+          },
+          {
+            "it": "Dati patrimoniali e reddituali rilevanti per la solvibilità, nei limiti del necessario e di quanto fornito dal titolare",
+            "en": "Asset and income data relevant to solvency, within the limits of necessity and of what is provided by the controller"
+          },
+          {
+            "it": "Atti e documenti della fase giudiziale (decreti ingiuntivi e azioni connesse)",
+            "en": "Acts and documents of the judicial phase (orders for payment and connected actions)"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente creditore (titolare) unitamente al mandato di recupero; dati raccolti nel corso dell'attività di recupero; dati provenienti dal debitore e da soggetti collegati; dati da fonti pubbliche o registri nei limiti di legge per la verifica della solvibilità. La raccolta è limitata a quanto necessario al recupero e alle istruzioni del titolare.",
+          "en": "Data provided by the creditor client (controller) together with the recovery mandate; data collected during the recovery activity; data from the debtor and connected persons; data from public sources or registers within legal limits to verify solvency. Collection is limited to what is necessary for recovery and to the controller's instructions."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Cliente creditore (titolare del trattamento), destinatario della rendicontazione",
+            "en": "Creditor client (data controller), recipient of the reporting"
+          },
+          {
+            "it": "Autorità giudiziarie e uffici giudiziari nella fase giudiziale (destinatari istituzionali)",
+            "en": "Judicial authorities and court offices in the judicial phase (institutional recipients)"
+          },
+          {
+            "it": "Avvocati domiciliatari e corrispondenti (di regola titolari autonomi)",
+            "en": "Domiciliary and corresponding lawyers (generally independent controllers)"
+          },
+          {
+            "it": "Fornitore del software gestionale/recupero crediti e dei servizi cloud (responsabile o sub-responsabile del trattamento)",
+            "en": "Provider of the management/debt-recovery software and cloud services (processor or sub-processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale/recupero crediti / cloud dello studio]",
+              "en": "[Enter the name of the firm's management/debt-recovery software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura del software di gestione del recupero crediti e dei servizi cloud connessi",
+              "en": "Provision of the debt-recovery management software and connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore; ove lo studio sia responsabile del cliente creditore, verificare l'autorizzazione al sub-responsabile]",
+              "en": "[Reference to the DPA with the provider; where the firm is the creditor client's processor, verify the authorisation of the sub-processor]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Qualificare la catena dei ruoli: il cliente creditore è di regola titolare; lo studio è responsabile su suo mandato; il fornitore del software è sub-responsabile. Formalizzare nomina e istruzioni. Verificare DPA e sub-responsabili, anche extra-UE.",
+              "en": "Qualify the chain of roles: the creditor client is generally the controller; the firm is the processor on its mandate; the software provider is a sub-processor. Formalise appointment and instructions. Verify the DPA and sub-processors, including non-EU ones."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud di recupero crediti]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati delle posizioni debitorie vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Debt-position data should preferably be processed within the EU. Verify any non-EU sub-processors in the management and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del mandato di recupero e, successivamente, per il tempo necessario alla rendicontazione, alla tutela dei diritti e agli obblighi di legge, secondo le istruzioni del titolare creditore e tenuto conto dei termini di prescrizione applicabili al credito e all'azione di responsabilità professionale.",
+            "en": "For the duration of the recovery mandate and, thereafter, for the time necessary for reporting, protection of rights and legal obligations, according to the creditor controller's instructions and taking into account the prescription terms applicable to the credit and to the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione per la durata del recupero e secondo le istruzioni del titolare; dopo la chiusura, conservazione limitata alla prova dell'attività svolta e alla difesa da contestazioni (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention for the duration of recovery and according to the controller's instructions; after closure, retention limited to evidencing the activity carried out and defending against complaints (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi alle posizioni debitorie con autenticazione forte e profili di privilegio",
+              "en": "Access control to debt positions with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+              "en": "Encryption of data and connections, in transit and at rest"
+            },
+            {
+              "it": "Modalità di contatto e di invio conformi alle indicazioni del Garante (plichi chiusi, assenza di diciture rivelatrici)",
+              "en": "Contact and mailing methods compliant with the Data Protection Authority's guidance (sealed envelopes, no revealing markings)"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sulle posizioni di recupero",
+              "en": "Traceability of accesses and operations on recovery positions"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Istruzioni documentate ricevute dal titolare creditore (ove lo studio operi come responsabile ex art. 28)",
+              "en": "Documented instructions received from the creditor controller (where the firm acts as an Art. 28 processor)"
+            },
+            {
+              "it": "Divieto di comunicare a terzi non autorizzati l'esistenza e l'importo del debito; divieto di pressioni indebite",
+              "en": "Prohibition on disclosing the existence and amount of the debt to unauthorized third parties; prohibition of undue pressure"
+            },
+            {
+              "it": "Minimizzazione dei dati trattati e dei contatti con il debitore e i soggetti collegati",
+              "en": "Minimisation of data processed and of contacts with the debtor and connected persons"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti al recupero",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling recovery"
+            },
+            {
+              "it": "Rispetto del segreto professionale e della dignità del debitore",
+              "en": "Compliance with professional secrecy and the debtor's dignity"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle istruzioni del titolare creditore, alle indicazioni del Garante in materia di recupero crediti, alle policy interne e ai DPA con i fornitori]",
+            "en": "[Refer to the creditor controller's instructions, the Data Protection Authority's guidance on debt recovery, the internal policies and the DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Da valutare se si utilizzano sistemi automatizzati di scoring della solvibilità o di prioritizzazione delle posizioni con effetti significativi sul debitore; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Assess if using automated solvency-scoring or position-prioritisation systems with significant effects on the debtor; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile al recupero crediti per conto del cliente.",
+            "en": "Not applicable to debt recovery on behalf of the client."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Da valutare in presenza di recupero crediti su larga scala, di scoring automatizzato della solvibilità o di trattamenti che incidono significativamente sui debitori; in tali casi una DPIA ai sensi dell'art. 35 GDPR può essere necessaria.",
+            "en": "Assess in case of large-scale debt recovery, automated solvency scoring or processing that significantly affects debtors; in such cases a DPIA under GDPR Art. 35 may be necessary."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6(1)(b), 6(1)(c), 6(1)(f), 28, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; indicazioni del Garante in materia di recupero crediti; codice di procedura civile (procedimento d'ingiunzione); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Ruolo privacy da qualificare: di regola studio responsabile per conto del cliente creditore (titolare); titolare autonomo in caso di cessione del credito a proprio favore o di piena autonomia professionale. [DA VERIFICARE: estremi esatti del provvedimento/vademecum del Garante in materia di recupero crediti applicabile alla fattispecie].",
+          "en": "Relevant legal references: GDPR Arts. 6(1)(b), 6(1)(c), 6(1)(f), 28, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; the Data Protection Authority's guidance on debt recovery; Italian Code of Civil Procedure (order-for-payment proceedings); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. Privacy role to be qualified: generally the firm is a processor on behalf of the creditor client (controller); independent controller in case of assignment of the credit in its favour or full professional autonomy. [TO BE VERIFIED: exact references of the Data Protection Authority's measure/guidance on debt recovery applicable to the case]."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-027-studi-legali-esecuzioni-pignoramenti",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione procedure esecutive e pignoramenti",
+        "en": "Management of enforcement proceedings and attachments"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per la conduzione delle procedure esecutive per conto del cliente: esecuzione forzata mobiliare, immobiliare e presso terzi, precetti, pignoramenti, vendite e distribuzione del ricavato, inclusi i rapporti con ufficiali giudiziari, custodi, delegati alle vendite e periti stimatori. Il taglio riguarda la fase esecutiva, distinta dalla cognizione e dal contenzioso (template dedicato) e dal recupero crediti stragiudiziale per conto del cliente (template dedicato).",
+        "en": "Processing of personal data for conducting enforcement proceedings on behalf of the client: movable, real-estate and third-party enforcement, payment injunctions, attachments, sales and distribution of proceeds, including dealings with bailiffs, custodians, sale delegates and appraisers. The scope concerns the enforcement phase, distinct from the cognition phase and litigation (dedicated template) and from out-of-court debt recovery on behalf of the client (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO ESECUTIVO. Copre la fase dell'esecuzione forzata, NON la fase di cognizione/contenzioso (template dedicato) né il recupero stragiudiziale (template dedicato). PUNTI CRITICI: (a) lo studio agisce come TITOLARE AUTONOMO nell'esecuzione dell'incarico; (b) ART. 6: base contrattuale (mandato del cliente procedente), obbligo legale (norme processuali sull'esecuzione forzata) e legittimo interesse alla tutela del credito, esteso ai dati del debitore esecutato e di terzi (es. terzi pignorati, datori di lavoro, istituti di credito); (c) ART. 9(2)(f): il pignoramento presso terzi può veicolare dati che rivelano categorie particolari (es. natura di redditi da pensione di invalidità, somme connesse a situazioni personali); trattamento per accertare/esercitare/difendere un diritto in sede giudiziaria, nei limiti di necessità; (d) ART. 10: l'esecuzione civile NON tratta di per sé dati ex art. 10; gli atti dei procedimenti civili non costituiscono dati art. 10; (e) PIGNORAMENTO PRESSO TERZI: attenzione al divieto di rivelare a terzi non legittimati l'esistenza/entità del debito oltre quanto necessario al pignoramento; (f) RUOLI: ufficiali giudiziari, custodi giudiziari, delegati alle vendite e periti stimatori sono destinatari istituzionali che trattano i dati nell'esercizio delle rispettive funzioni e secondo il proprio autonomo regime di titolarità (ufficiali giudiziari quali soggetti pubblici; custodi/delegati/periti quali ausiliari del giudice), non responsabili ex art. 28 dello studio; (g) SEGRETO PROFESSIONALE e minimizzazione anche nelle pubblicità delle vendite. Basi giuridiche, condizioni art. 9, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "ENFORCEMENT SCOPE. Covers the compulsory-enforcement phase, NOT the cognition/litigation phase (dedicated template) or out-of-court recovery (dedicated template). CRITICAL POINTS: (a) the firm acts as an INDEPENDENT CONTROLLER in performing the engagement; (b) ART. 6: contractual basis (the proceeding client's mandate), legal obligation (procedural rules on compulsory enforcement) and legitimate interest in protecting the credit, extended to data of the enforced debtor and of third parties (e.g. third-party garnishees, employers, credit institutions); (c) ART. 9(2)(f): third-party attachment may carry data revealing special categories (e.g. the nature of disability-pension income, sums connected to personal circumstances); processing to establish/exercise/defend a right in court, within the limits of necessity; (d) ART. 10: civil enforcement does not in itself process Art. 10 data; civil-proceedings acts do not constitute Art. 10 data; (e) THIRD-PARTY ATTACHMENT: attention to the prohibition on revealing the existence/amount of the debt to non-entitled third parties beyond what is necessary for the attachment; (f) ROLES: bailiffs, judicial custodians, sale delegates and appraisers are institutional recipients that process the data in the exercise of their respective functions and under their own independent controllership regime (bailiffs as public bodies; custodians/sale delegates/appraisers as auxiliaries of the judge), not the firm's processors under Art. 28; (g) PROFESSIONAL SECRECY and minimisation also in sale advertisements. Legal bases, Art. 9 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "esecuzione_mobiliare_immobiliare",
+            "label": "Esecuzione mobiliare e immobiliare (precetto, pignoramento, vendita)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "pignoramento_presso_terzi",
+            "label": "Pignoramento presso terzi (stipendi, conti, crediti)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "esecuzione_mobiliare_immobiliare",
+            "label": "Movable and real-estate enforcement (injunction, attachment, sale)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "pignoramento_presso_terzi",
+            "label": "Third-party attachment (salaries, accounts, credits)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione procedure esecutive e pignoramenti",
+          "en": "Management of enforcement proceedings and attachments"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per la conduzione delle procedure esecutive per conto del cliente: precetti, pignoramenti mobiliari, immobiliari e presso terzi, vendite e distribuzione del ricavato, e rapporti con ufficiali giudiziari, custodi, delegati alle vendite e periti stimatori.",
+          "en": "Processing of personal data for conducting enforcement proceedings on behalf of the client: payment injunctions, movable, real-estate and third-party attachments, sales and distribution of proceeds, and dealings with bailiffs, custodians, sale delegates and appraisers."
+        },
+        "finalita": [
+          {
+            "it": "Predisposizione e notifica di atti di precetto e avvio delle procedure esecutive",
+            "en": "Preparation and service of payment injunctions and initiation of enforcement proceedings"
+          },
+          {
+            "it": "Gestione dei pignoramenti mobiliari, immobiliari e presso terzi per conto del creditore procedente",
+            "en": "Management of movable, real-estate and third-party attachments on behalf of the proceeding creditor"
+          },
+          {
+            "it": "Gestione delle vendite, dell'aggiudicazione e della distribuzione del ricavato",
+            "en": "Management of sales, awards and distribution of proceeds"
+          },
+          {
+            "it": "Rapporti con ufficiali giudiziari, custodi giudiziari, delegati alle vendite e periti stimatori",
+            "en": "Dealings with bailiffs, judicial custodians, sale delegates and appraisers"
+          },
+          {
+            "it": "Adempimenti processuali e documentazione della procedura esecutiva",
+            "en": "Procedural obligations and documentation of the enforcement procedure"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: l'esecuzione è svolta nell'ambito del mandato professionale conferito dal cliente procedente. Art. 6(1)(c) GDPR: adempimento delle norme processuali sull'esecuzione forzata, ordini del giudice dell'esecuzione e obblighi di notifica e deposito. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del credito del cliente, esteso al trattamento dei dati del debitore esecutato e di terzi coinvolti (terzi pignorati, datori di lavoro, istituti di credito, aggiudicatari), nei limiti di quanto necessario all'esecuzione.",
+            "en": "GDPR Art. 6(1)(b): enforcement is carried out within the professional mandate granted by the proceeding client. GDPR Art. 6(1)(c): compliance with the procedural rules on compulsory enforcement, orders of the enforcement judge and service and filing obligations. GDPR Art. 6(1)(f): legitimate interest in protecting the client's credit, extended to processing data of the enforced debtor and of third parties involved (third-party garnishees, employers, credit institutions, successful bidders), within the limits of what is necessary for enforcement."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse riguarda la tutela del credito del cliente procedente e si estende ai dati del debitore esecutato e dei terzi coinvolti nella procedura (terzi pignorati, datori di lavoro, istituti di credito). Non costituisce base per finalità ulteriori né per comunicazioni eccedenti.",
+              "en": "Legitimate interest concerns protecting the proceeding client's credit and extends to data of the enforced debtor and of third parties involved in the procedure (third-party garnishees, employers, credit institutions). It is not a basis for further purposes or for excessive disclosures."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati trattati e prodotti negli atti esecutivi; nel pignoramento presso terzi, comunicazione ai terzi limitata a quanto necessario; cautela nella pubblicità delle vendite (dati strettamente necessari); rispetto del segreto professionale; accesso riservato ai soggetti coinvolti.",
+              "en": "Minimisation of data processed and produced in enforcement acts; in third-party attachment, disclosure to third parties limited to what is necessary; caution in sale advertisements (strictly necessary data); respect for professional secrecy; access reserved to persons involved."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR ove pertinente: il pignoramento presso terzi può veicolare dati idonei a rivelare categorie particolari (ad es. la natura di redditi da pensione di invalidità, o somme connesse a situazioni personali), trattati per accertare, esercitare o difendere un diritto in sede giudiziaria. Trattamento limitato a quanto necessario all'esecuzione; non presumere automaticamente la presenza di dati particolari in ogni esecuzione.",
+            "en": "GDPR Art. 9(2)(f) where relevant: third-party attachment may carry data capable of revealing special categories (e.g. the nature of disability-pension income, or sums connected to personal circumstances), processed to establish, exercise or defend a right in court. Processing limited to what is necessary for enforcement; do not automatically presume the presence of special data in every enforcement."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Di regola non presenti: l'esecuzione forzata ha natura civile e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora, in casi specifici, emergano dati relativi a reati o procedimenti penali pertinenti alla procedura, il trattamento va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
+            "en": "Generally not present: compulsory enforcement is civil in nature and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings relevant to the procedure emerge, processing must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti creditori procedenti (persone fisiche) e referenti di clienti persone giuridiche",
+            "en": "Proceeding creditor clients (natural persons) and contacts of corporate clients"
+          },
+          {
+            "it": "Debitori esecutati e relativi garanti e coobbligati",
+            "en": "Enforced debtors and their guarantors and co-obligors"
+          },
+          {
+            "it": "Terzi pignorati (datori di lavoro, istituti di credito, altri debitori del debitore)",
+            "en": "Third-party garnishees (employers, credit institutions, other debtors of the debtor)"
+          },
+          {
+            "it": "Aggiudicatari, offerenti e terzi interessati alle vendite",
+            "en": "Successful bidders, bidders and third parties interested in the sales"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto delle parti e dei terzi coinvolti nella procedura",
+            "en": "Identification and contact data of the parties and third parties involved in the procedure"
+          },
+          {
+            "it": "Dati sul titolo esecutivo, sul credito e sugli atti esecutivi (precetto, pignoramento, vendita)",
+            "en": "Data on the enforcement title, the credit and the enforcement acts (injunction, attachment, sale)"
+          },
+          {
+            "it": "Dati patrimoniali, reddituali ed economici del debitore e dei beni pignorati",
+            "en": "Asset, income and economic data of the debtor and the attached assets"
+          },
+          {
+            "it": "Dati relativi a rapporti di lavoro o bancari nel pignoramento presso terzi",
+            "en": "Data on employment or banking relationships in third-party attachment"
+          },
+          {
+            "it": "Eventuali categorie particolari di dati (art. 9) veicolate dagli atti esecutivi, nei limiti delle condizioni applicabili",
+            "en": "Any special categories of data (Art. 9) carried by the enforcement acts, within the limits of applicable conditions"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente procedente; dati da titoli esecutivi e atti di causa; dati raccolti nel corso dell'esecuzione; dati provenienti da terzi pignorati e dai loro riscontri; dati da pubblici registri (es. registri immobiliari, anagrafe tributaria nei limiti di legge) per l'individuazione dei beni; dati da ufficiali giudiziari, custodi e periti.",
+          "en": "Data provided by the proceeding client; data from enforcement titles and case acts; data collected during enforcement; data from third-party garnishees and their responses; data from public registers (e.g. land registers, tax registry within legal limits) to identify assets; data from bailiffs, custodians and appraisers."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Giudice dell'esecuzione, cancellerie e uffici giudiziari (destinatari istituzionali)",
+            "en": "Enforcement judge, registries and court offices (institutional recipients)"
+          },
+          {
+            "it": "Ufficiali giudiziari e UNEP (destinatari istituzionali, soggetti pubblici che trattano i dati nell'esercizio delle proprie funzioni)",
+            "en": "Bailiffs and the bailiff service (institutional recipients, public bodies processing the data in the exercise of their functions)"
+          },
+          {
+            "it": "Custodi giudiziari, delegati alle vendite e periti stimatori (ausiliari del giudice che operano secondo il proprio autonomo regime di titolarità)",
+            "en": "Judicial custodians, sale delegates and appraisers (auxiliaries of the judge operating under their own independent controllership regime)"
+          },
+          {
+            "it": "Terzi pignorati (datori di lavoro, istituti di credito), nei limiti del pignoramento",
+            "en": "Third-party garnishees (employers, credit institutions), within the limits of the attachment"
+          },
+          {
+            "it": "Fornitore del software gestionale/esecuzioni e dei servizi cloud (responsabile del trattamento)",
+            "en": "Provider of the management/enforcement software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale/esecuzioni / cloud dello studio]",
+              "en": "[Enter the name of the firm's management/enforcement software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura del software di gestione delle procedure esecutive e dei servizi cloud connessi",
+              "en": "Provision of the enforcement-management software and connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Giudice dell'esecuzione, ufficiali giudiziari, custodi, delegati alle vendite e periti sono destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità e non sono responsabili ex art. 28 dello studio.",
+              "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). The enforcement judge, bailiffs, custodians, sale delegates and appraisers are institutional recipients that process the data under their own independent controllership regime and are not the firm's processors under Art. 28."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud delle esecuzioni]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati delle procedure esecutive, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Enforcement-proceedings data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the management and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata della procedura esecutiva e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the enforcement procedure and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione fino alla conclusione della procedura (distribuzione del ricavato/estinzione) e al decorso dei termini di impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention until the procedure concludes (distribution of proceeds/extinction) and the appeal terms elapse; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai fascicoli esecutivi con autenticazione forte e profili di privilegio",
+              "en": "Access control to enforcement files with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+              "en": "Encryption of data and connections, in transit and at rest"
+            },
+            {
+              "it": "Minimizzazione dei dati nelle comunicazioni ai terzi pignorati e nella pubblicità delle vendite",
+              "en": "Minimisation of data in communications to third-party garnishees and in sale advertisements"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sui fascicoli esecutivi",
+              "en": "Traceability of accesses and operations on enforcement files"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Rispetto del segreto professionale e della dignità del debitore esecutato",
+              "en": "Compliance with professional secrecy and the enforced debtor's dignity"
+            },
+            {
+              "it": "Limitazione delle comunicazioni ai terzi a quanto necessario al pignoramento (divieto di rivelazioni eccedenti)",
+              "en": "Limitation of disclosures to third parties to what is necessary for the attachment (prohibition of excessive disclosures)"
+            },
+            {
+              "it": "Qualificazione documentata dei ruoli privacy di custodi, delegati alle vendite e periti",
+              "en": "Documented qualification of the privacy roles of custodians, sale delegates and appraisers"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti alle esecuzioni",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling enforcement"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sulle procedure esecutive e sul segreto professionale, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy degli ausiliari]",
+            "en": "[Refer to internal policies on enforcement proceedings and professional secrecy, the DPAs with providers and the privacy-role qualifications of the auxiliaries]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati (es. ricerca automatizzata di beni con effetti significativi) riconducibili all'art. 22 GDPR, valutandone le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated tools (e.g. automated asset searches with significant effects) falling under GDPR Art. 22, assessing the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alle procedure esecutive e ai pignoramenti.",
+            "en": "Not applicable to enforcement proceedings and attachments."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria per la gestione ordinaria. Da valutare in presenza di esecuzioni su larga scala, di ricerca sistematica e automatizzata dei beni o di trattamenti che incidano significativamente sugli interessati.",
+            "en": "Generally not required for ordinary management. Assess in case of large-scale enforcement, systematic and automated asset searches or processing that significantly affects data subjects."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile, Libro III (esecuzione forzata), incluse le disposizioni su precetto, pignoramento mobiliare, immobiliare e presso terzi, vendite e distribuzione; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; ufficiali giudiziari, custodi, delegati e periti sono destinatari istituzionali che operano secondo il proprio autonomo regime di titolarità (soggetti pubblici gli ufficiali giudiziari; ausiliari del giudice custodi, delegati e periti).",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian Code of Civil Procedure, Book III (compulsory enforcement), including the provisions on payment injunction, movable, real-estate and third-party attachment, sales and distribution; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; bailiffs, custodians, sale delegates and appraisers are institutional recipients operating under their own independent controllership regime (bailiffs as public bodies; custodians, delegates and appraisers as auxiliaries of the judge)."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-028-studi-legali-procedure-concorsuali",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione procedure concorsuali e crisi d'impresa",
+        "en": "Management of insolvency proceedings and business crisis"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per l'assistenza nelle procedure di regolazione della crisi e dell'insolvenza e negli incarichi connessi: liquidazione giudiziale (già fallimento), concordato preventivo, composizione negoziata della crisi, procedure di sovraindebitamento e strumenti correlati previsti dal Codice della crisi d'impresa e dell'insolvenza (d.lgs. 14/2019). Comprende l'assistenza al debitore, ai creditori e l'eventuale assunzione di incarichi di curatore, commissario o gestore della crisi. Il taglio riguarda la materia concorsuale, distinto dal contenzioso ordinario e dall'esecuzione individuale (template dedicati).",
+        "en": "Processing of personal data for assistance in crisis-and-insolvency regulation proceedings and connected engagements: judicial liquidation (formerly bankruptcy), preventive arrangement with creditors, negotiated crisis settlement, over-indebtedness procedures and related tools provided for by the Italian Code of business crisis and insolvency (d.lgs. 14/2019). It includes assistance to the debtor, to creditors and the possible acceptance of roles as receiver, judicial commissioner or crisis manager. The scope concerns insolvency matters, distinct from ordinary litigation and individual enforcement (dedicated templates)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO CONCORSUALE / CRISI D'IMPRESA. PUNTI CRITICI: (a) RUOLI DA QUALIFICARE: lo studio può assistere il debitore o i creditori (TITOLARE AUTONOMO nell'incarico professionale); quando il professionista assume funzioni di CURATORE, COMMISSARIO GIUDIZIALE, LIQUIDATORE o GESTORE DELLA CRISI (OCC), il regime di titolarità di tali funzioni va qualificato a parte: si tratta di organi della procedura con poteri propri, il cui inquadramento privacy (titolare autonomo nell'esercizio della funzione) va valutato e, se ricorre, gestito in un trattamento dedicato; (b) ART. 6: base contrattuale (mandato), obbligo legale (norme concorsuali) e legittimo interesse (dati di creditori, debitori e terzi nella massa); (c) ART. 9(2)(f): nelle procedure possono emergere categorie particolari (es. sovraindebitamento di persone fisiche con dati su situazioni personali, di salute, sociali); trattamento per accertare/esercitare/difendere diritti in sede giudiziaria, nei limiti di necessità; (d) ART. 10: nella liquidazione giudiziale possono rilevare profili penali (es. reati nelle procedure di crisi, segnalazioni al pubblico ministero); trattamento dei relativi dati solo se pertinente e necessario; (e) PUBBLICITÀ legale della procedura: attenzione alla minimizzazione nei dati resi pubblici; (f) SEGRETO PROFESSIONALE. Basi giuridiche, qualificazione dei ruoli, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "INSOLVENCY / BUSINESS-CRISIS SCOPE. CRITICAL POINTS: (a) ROLES TO BE QUALIFIED: the firm may assist the debtor or creditors (INDEPENDENT CONTROLLER in the professional engagement); when the professional takes on the functions of RECEIVER, JUDICIAL COMMISSIONER, LIQUIDATOR or CRISIS MANAGER (over-indebtedness body), the controllership regime of those functions must be qualified separately: they are organs of the procedure with their own powers, whose privacy framing (independent controller in exercising the function) must be assessed and, where applicable, handled in a dedicated processing activity; (b) ART. 6: contractual basis (mandate), legal obligation (insolvency rules) and legitimate interest (data of creditors, debtors and third parties in the estate); (c) ART. 9(2)(f): special categories may emerge in the procedures (e.g. over-indebtedness of natural persons with data on personal, health, social circumstances); processing to establish/exercise/defend rights in court, within the limits of necessity; (d) ART. 10: in judicial liquidation criminal aspects may be relevant (e.g. offences in crisis procedures, reports to the public prosecutor); processing of the related data only if relevant and necessary; (e) LEGAL PUBLICITY of the procedure: attention to minimisation in the data made public; (f) PROFESSIONAL SECRECY. Legal bases, role qualification, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "assistenza_debitore_creditori",
+            "label": "Assistenza al debitore o ai creditori nelle procedure di crisi e insolvenza",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "sovraindebitamento",
+            "label": "Procedure di sovraindebitamento del debitore civile/consumatore",
+            "art6": "contratto_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "assistenza_debitore_creditori",
+            "label": "Assistance to the debtor or creditors in crisis and insolvency procedures",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "sovraindebitamento",
+            "label": "Over-indebtedness procedures of the civil debtor/consumer",
+            "art6": "contratto_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione procedure concorsuali e crisi d'impresa",
+          "en": "Management of insolvency proceedings and business crisis"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per l'assistenza nelle procedure di regolazione della crisi e dell'insolvenza (liquidazione giudiziale, concordato preventivo, composizione negoziata, sovraindebitamento) e negli incarichi connessi, per conto del debitore o dei creditori, ai sensi del Codice della crisi d'impresa e dell'insolvenza (d.lgs. 14/2019).",
+          "en": "Processing of personal data for assistance in crisis-and-insolvency regulation procedures (judicial liquidation, preventive arrangement, negotiated settlement, over-indebtedness) and connected engagements, on behalf of the debtor or creditors, under the Italian Code of business crisis and insolvency (d.lgs. 14/2019)."
+        },
+        "finalita": [
+          {
+            "it": "Assistenza al debitore nella predisposizione e gestione delle procedure di regolazione della crisi e dell'insolvenza",
+            "en": "Assistance to the debtor in preparing and managing crisis-and-insolvency regulation procedures"
+          },
+          {
+            "it": "Assistenza ai creditori nell'insinuazione al passivo e nella tutela delle ragioni di credito",
+            "en": "Assistance to creditors in lodging claims and protecting their credit positions"
+          },
+          {
+            "it": "Gestione degli adempimenti, delle istanze e dei rapporti con gli organi della procedura",
+            "en": "Management of obligations, applications and dealings with the organs of the procedure"
+          },
+          {
+            "it": "Gestione della composizione negoziata della crisi e degli strumenti di regolazione correlati",
+            "en": "Management of the negotiated crisis settlement and related regulation tools"
+          },
+          {
+            "it": "Gestione delle procedure di sovraindebitamento del debitore civile e del consumatore",
+            "en": "Management of over-indebtedness procedures of the civil debtor and consumer"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: l'assistenza è svolta nell'ambito del mandato professionale conferito dal debitore o dai creditori. Art. 6(1)(c) GDPR: adempimento delle norme del Codice della crisi d'impresa e dell'insolvenza, degli obblighi processuali e degli ordini degli organi della procedura. Art. 6(1)(f) GDPR: legittimo interesse alla tutela dei diritti del cliente, esteso al trattamento dei dati di creditori, debitori e terzi coinvolti nella massa e nella procedura, nei limiti di quanto necessario. Quando il professionista assume funzioni di organo della procedura, il relativo trattamento va inquadrato separatamente.",
+            "en": "GDPR Art. 6(1)(b): assistance is carried out within the professional mandate granted by the debtor or creditors. GDPR Art. 6(1)(c): compliance with the rules of the Code of business crisis and insolvency, procedural obligations and orders of the organs of the procedure. GDPR Art. 6(1)(f): legitimate interest in protecting the client's rights, extended to processing data of creditors, debtors and third parties involved in the estate and the procedure, within the limits of what is necessary. When the professional takes on the functions of an organ of the procedure, the related processing must be framed separately."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse riguarda la tutela dei diritti del cliente (debitore o creditore) e si estende ai dati di altri creditori, del debitore e dei terzi coinvolti nella procedura concorsuale, nei limiti di quanto necessario. Non costituisce base per finalità ulteriori.",
+              "en": "Legitimate interest concerns protecting the client's rights (debtor or creditor) and extends to data of other creditors, the debtor and third parties involved in the insolvency procedure, within the limits of what is necessary. It is not a basis for further purposes."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati trattati e prodotti negli atti e nelle relazioni; attenzione alla pubblicità legale della procedura (dati strettamente necessari); rispetto del segreto professionale; accesso riservato ai soggetti coinvolti.",
+              "en": "Minimisation of data processed and produced in acts and reports; attention to the legal publicity of the procedure (strictly necessary data); respect for professional secrecy; access reserved to persons involved."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR ove pertinente: nelle procedure, in particolare di sovraindebitamento di persone fisiche, possono emergere categorie particolari di dati (es. dati relativi a salute, situazioni personali e sociali rilevanti per la meritevolezza o per la composizione), trattate per accertare, esercitare o difendere un diritto in sede giudiziaria. Trattamento limitato a quanto necessario; valutare caso per caso la condizione applicabile.",
+            "en": "GDPR Art. 9(2)(f) where relevant: in the procedures, in particular over-indebtedness of natural persons, special categories of data may emerge (e.g. data on health, personal and social circumstances relevant to merit or to the arrangement), processed to establish, exercise or defend a right in court. Processing limited to what is necessary; assess the applicable condition case by case."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Nelle procedure concorsuali, in particolare nella liquidazione giudiziale, possono rilevare dati relativi a reati e procedimenti penali (es. reati nelle procedure di crisi, segnalazioni all'autorità giudiziaria); il trattamento è ammesso solo se pertinente e necessario all'incarico e alla procedura, nei limiti della normativa applicabile. Gli atti dei procedimenti civili connessi non costituiscono di per sé dati ex art. 10.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). In insolvency procedures, in particular judicial liquidation, data on offences and criminal proceedings may be relevant (e.g. offences in crisis procedures, reports to the judicial authority); processing is permitted only if relevant and necessary to the engagement and the procedure, within the limits of applicable law. Acts of connected civil proceedings do not in themselves constitute Art. 10 data."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Debitore (imprenditore, società tramite referenti, consumatore o debitore civile) assistito o coinvolto",
+            "en": "Debtor (entrepreneur, company through contacts, consumer or civil debtor) assisted or involved"
+          },
+          {
+            "it": "Creditori e relativi referenti coinvolti nella procedura",
+            "en": "Creditors and their contacts involved in the procedure"
+          },
+          {
+            "it": "Organi della procedura (curatore, commissario, liquidatore, gestore della crisi) e referenti",
+            "en": "Organs of the procedure (receiver, commissioner, liquidator, crisis manager) and contacts"
+          },
+          {
+            "it": "Terzi coinvolti (soci, garanti, lavoratori, contraenti) i cui dati emergono nella procedura",
+            "en": "Third parties involved (partners, guarantors, employees, contractors) whose data appears in the procedure"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto del debitore, dei creditori e dei soggetti coinvolti",
+            "en": "Identification and contact data of the debtor, creditors and persons involved"
+          },
+          {
+            "it": "Dati patrimoniali, contabili, economici e finanziari della crisi e della massa",
+            "en": "Asset, accounting, economic and financial data of the crisis and the estate"
+          },
+          {
+            "it": "Atti, relazioni, istanze, piani e provvedimenti della procedura",
+            "en": "Acts, reports, applications, plans and measures of the procedure"
+          },
+          {
+            "it": "Eventuali categorie particolari di dati (art. 9), in particolare nel sovraindebitamento di persone fisiche, nei limiti delle condizioni applicabili",
+            "en": "Any special categories of data (Art. 9), in particular in over-indebtedness of natural persons, within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati relativi a reati e procedimenti penali (art. 10), ove pertinenti e necessari",
+            "en": "Any data on offences and criminal proceedings (Art. 10), where relevant and necessary"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente (debitore o creditore); dati contabili e patrimoniali dell'impresa o del debitore; dati provenienti dagli organi della procedura, dall'autorità giudiziaria e dai creditori; dati da pubblici registri (es. registro delle imprese, registri immobiliari nei limiti di legge); dati dalla pubblicità legale della procedura.",
+          "en": "Data provided by the client (debtor or creditor); accounting and asset data of the business or debtor; data from the organs of the procedure, the judicial authority and creditors; data from public registers (e.g. business register, land registers within legal limits); data from the legal publicity of the procedure."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Tribunale, giudice delegato, cancellerie e uffici giudiziari (destinatari istituzionali)",
+            "en": "Court, delegated judge, registries and court offices (institutional recipients)"
+          },
+          {
+            "it": "Organi della procedura: curatore, commissario giudiziale, liquidatore, gestore della crisi/OCC (titolari autonomi nell'esercizio delle funzioni)",
+            "en": "Organs of the procedure: receiver, judicial commissioner, liquidator, crisis manager/over-indebtedness body (independent controllers in exercising their functions)"
+          },
+          {
+            "it": "Creditori e relativi difensori, nei limiti del concorso e della procedura",
+            "en": "Creditors and their lawyers, within the limits of the concurrence and the procedure"
+          },
+          {
+            "it": "Registro delle imprese e soggetti della pubblicità legale (destinatari istituzionali)",
+            "en": "Business register and bodies of legal publicity (institutional recipients)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+              "en": "[Enter the name of the firm's management software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione documentale delle procedure concorsuali e dei dati della crisi, servizi cloud connessi",
+              "en": "Document management of insolvency procedures and crisis data, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Tribunale, giudice delegato e organi della procedura (curatore, commissario, liquidatore, gestore della crisi) NON sono responsabili dello studio: sono destinatari istituzionali che trattano i dati nell'esercizio delle proprie funzioni e secondo il proprio autonomo regime di titolarità (Tribunale e giudice delegato quali soggetti pubblici; organi della procedura quali titolari autonomi). Se il professionista dello studio assume tali funzioni, predisporre un trattamento dedicato.",
+              "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). The court, delegated judge and organs of the procedure (receiver, commissioner, liquidator, crisis manager) are NOT the firm's processors: they are institutional recipients that process the data in the exercise of their functions and under their own independent controllership regime (the court and delegated judge as public bodies; the organs of the procedure as independent controllers). If the firm's professional takes on such functions, set up a dedicated processing activity."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud delle procedure concorsuali]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati delle procedure concorsuali, coperti da segreto professionale e potenzialmente comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Insolvency-procedure data, covered by professional secrecy and potentially including Art. 9/Art. 10 data, should preferably be processed within the EU. Verify any non-EU sub-processors; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata della procedura e dell'incarico e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the procedure and the engagement and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione fino alla chiusura della procedura e al decorso dei termini di impugnazione/reclamo; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention until the procedure closes and the appeal/complaint terms elapse; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai fascicoli concorsuali con autenticazione forte e profili di privilegio",
+              "en": "Access control to insolvency files with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+              "en": "Encryption of data and connections, in transit and at rest"
+            },
+            {
+              "it": "Minimizzazione dei dati nella pubblicità legale e nelle comunicazioni ai creditori",
+              "en": "Minimisation of data in legal publicity and in communications to creditors"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sui fascicoli concorsuali",
+              "en": "Traceability of accesses and operations on insolvency files"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Rispetto del segreto professionale e cautela sui dati patrimoniali e personali della crisi",
+              "en": "Compliance with professional secrecy and caution over the asset and personal data of the crisis"
+            },
+            {
+              "it": "Qualificazione documentata dei ruoli privacy degli organi della procedura e, se ricorre, della funzione assunta dal professionista",
+              "en": "Documented qualification of the privacy roles of the organs of the procedure and, where applicable, of the function taken on by the professional"
+            },
+            {
+              "it": "Particolare attenzione ai dati ex art. 9/art. 10 nelle procedure di sovraindebitamento e nella liquidazione giudiziale",
+              "en": "Particular attention to Art. 9/Art. 10 data in over-indebtedness procedures and judicial liquidation"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti alle procedure concorsuali",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling insolvency procedures"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sulle procedure concorsuali e sul segreto professionale, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy degli organi della procedura]",
+            "en": "[Refer to internal policies on insolvency procedures and professional secrecy, the DPAs with providers and the privacy-role qualifications of the organs of the procedure]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati con effetti significativi (es. scoring sulla meritevolezza o sulla fattibilità) riconducibili all'art. 22 GDPR, valutandone le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated tools with significant effects (e.g. scoring on merit or feasibility) falling under GDPR Art. 22, assessing the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alle procedure concorsuali e alla crisi d'impresa.",
+            "en": "Not applicable to insolvency procedures and business crisis."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Da valutare: le procedure possono comportare il trattamento di dati ex art. 9/art. 10 e di dati patrimoniali su larga scala; una DPIA ai sensi dell'art. 35 GDPR può essere necessaria in presenza di trattamenti sistematici o su larga scala, specie nel sovraindebitamento di persone fisiche.",
+            "en": "To be assessed: the procedures may involve processing Art. 9/Art. 10 data and asset data on a large scale; a DPIA under GDPR Art. 35 may be necessary in case of systematic or large-scale processing, especially in over-indebtedness of natural persons."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; Codice della crisi d'impresa e dell'insolvenza (d.lgs. 14/2019), che disciplina liquidazione giudiziale, concordato preventivo, composizione negoziata della crisi e procedure di sovraindebitamento; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo nell'incarico di assistenza; gli organi della procedura (curatore, commissario, liquidatore, gestore della crisi) sono titolari autonomi nell'esercizio delle funzioni; se assunti dal professionista dello studio, prevedere un trattamento dedicato.",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Code of business crisis and insolvency (d.lgs. 14/2019), governing judicial liquidation, preventive arrangement, negotiated crisis settlement and over-indebtedness procedures; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller in the assistance engagement; the organs of the procedure (receiver, commissioner, liquidator, crisis manager) are independent controllers in exercising their functions; if taken on by the firm's professional, provide for a dedicated processing activity."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-029-studi-legali-adr-mediazione",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione mediazione, negoziazione assistita e arbitrato",
+        "en": "Management of mediation, assisted negotiation and arbitration"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali per l'assistenza al cliente negli strumenti di risoluzione alternativa delle controversie (ADR): mediazione civile e commerciale, negoziazione assistita da avvocati e arbitrato. Comprende la partecipazione ai procedimenti, lo scambio di memorie e documenti, la gestione degli accordi conciliativi e i rapporti con organismi di mediazione, mediatori, arbitri e camere arbitrali. Il taglio riguarda la fase ADR, distinta dal contenzioso giudiziale (template dedicato).",
+        "en": "Processing of personal data for assisting the client in alternative dispute resolution (ADR) tools: civil and commercial mediation, lawyer-assisted negotiation and arbitration. It includes participation in the procedures, the exchange of briefs and documents, the management of settlement agreements and dealings with mediation bodies, mediators, arbitrators and arbitration chambers. The scope concerns the ADR phase, distinct from judicial litigation (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO ADR. Copre mediazione, negoziazione assistita e arbitrato, NON il contenzioso giudiziale (template dedicato). PUNTI CRITICI: (a) lo studio agisce come TITOLARE AUTONOMO nell'assistenza al cliente; (b) RUOLI DEI SOGGETTI ADR: l'organismo di mediazione e il mediatore, gli arbitri e la camera arbitrale operano come TITOLARI AUTONOMI nell'esercizio delle proprie funzioni, non come responsabili dello studio; (c) RISERVATEZZA: la mediazione è soggetta a obblighi di riservatezza e a regimi di inutilizzabilità delle dichiarazioni rese nel procedimento; va garantita una rigorosa riservatezza sui dati e sulle informazioni scambiate; (d) ART. 6: base contrattuale (mandato), obbligo legale (es. mediazione come condizione di procedibilità in determinate materie; norme su negoziazione assistita e arbitrato) e legittimo interesse (dati di controparti e terzi); (e) ART. 9(2)(f): le controversie possono coinvolgere categorie particolari (es. famiglia, salute, rapporti di lavoro); la condizione di liceità per accertare/esercitare/difendere un diritto si applica alla fase ADR strettamente connessa alla tutela del diritto, da valutare caso per caso; (f) ART. 10: di regola non pertinente nelle materie civili/commerciali tipiche dell'ADR; gli atti civili non sono di per sé dati art. 10. Se la controversia riguarda fatti penalmente rilevanti o documentazione penale, il template va adattato valorizzando l'art. 10. Basi giuridiche, condizioni art. 9, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "ADR SCOPE. Covers mediation, assisted negotiation and arbitration, NOT judicial litigation (dedicated template). CRITICAL POINTS: (a) the firm acts as an INDEPENDENT CONTROLLER in assisting the client; (b) ROLES OF ADR PARTIES: the mediation body and the mediator, the arbitrators and the arbitration chamber act as INDEPENDENT CONTROLLERS in exercising their functions, not as the firm's processors; (c) CONFIDENTIALITY: mediation is subject to confidentiality obligations and to regimes of inadmissibility of the statements made in the procedure; strict confidentiality must be ensured over the data and information exchanged; (d) ART. 6: contractual basis (mandate), legal obligation (e.g. mediation as a condition of admissibility in certain matters; rules on assisted negotiation and arbitration) and legitimate interest (data of counterparties and third parties); (e) ART. 9(2)(f): disputes may involve special categories (e.g. family, health, employment); the lawfulness condition to establish/exercise/defend a right applies to the ADR phase strictly connected to the protection of the right, to be assessed case by case; (f) ART. 10: generally not relevant in the civil/commercial matters typical of ADR; civil acts are not in themselves Art. 10 data. If the dispute concerns criminally relevant facts or criminal documentation, the template must be adapted by addressing Art. 10. Legal bases, Art. 9 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "mediazione_negoziazione",
+            "label": "Mediazione civile/commerciale e negoziazione assistita",
+            "art6": "contratto_e_obbligo"
+          },
+          {
+            "id": "arbitrato",
+            "label": "Arbitrato (rituale e irrituale) e procedimenti arbitrali",
+            "art6": "contratto_e_legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "mediazione_negoziazione",
+            "label": "Civil/commercial mediation and assisted negotiation",
+            "art6": "contratto_e_obbligo"
+          },
+          {
+            "id": "arbitrato",
+            "label": "Arbitration (formal and informal) and arbitral proceedings",
+            "art6": "contratto_e_legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione mediazione, negoziazione assistita e arbitrato",
+          "en": "Management of mediation, assisted negotiation and arbitration"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali per l'assistenza al cliente negli strumenti ADR: mediazione civile e commerciale, negoziazione assistita da avvocati e arbitrato, inclusi partecipazione ai procedimenti, scambio di memorie e documenti, gestione degli accordi e rapporti con organismi di mediazione, mediatori, arbitri e camere arbitrali.",
+          "en": "Processing of personal data for assisting the client in ADR tools: civil and commercial mediation, lawyer-assisted negotiation and arbitration, including participation in the procedures, exchange of briefs and documents, management of agreements and dealings with mediation bodies, mediators, arbitrators and arbitration chambers."
+        },
+        "finalita": [
+          {
+            "it": "Assistenza al cliente nei procedimenti di mediazione civile e commerciale",
+            "en": "Assistance to the client in civil and commercial mediation procedures"
+          },
+          {
+            "it": "Gestione della negoziazione assistita da avvocati e degli accordi conclusi",
+            "en": "Management of lawyer-assisted negotiation and the agreements concluded"
+          },
+          {
+            "it": "Assistenza nei procedimenti arbitrali (rituali e irrituali) e rapporti con arbitri e camere arbitrali",
+            "en": "Assistance in arbitral proceedings (formal and informal) and dealings with arbitrators and arbitration chambers"
+          },
+          {
+            "it": "Scambio di memorie, documenti e proposte e gestione della corrispondenza nei procedimenti ADR",
+            "en": "Exchange of briefs, documents and proposals and management of correspondence in ADR procedures"
+          },
+          {
+            "it": "Gestione degli accordi conciliativi, dei verbali e degli adempimenti connessi",
+            "en": "Management of settlement agreements, records and connected obligations"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: l'assistenza ADR è svolta nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimento delle norme applicabili (ad es. mediazione quale condizione di procedibilità in determinate materie; disciplina della negoziazione assistita; norme sull'arbitrato). Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti e terzi coinvolti nel procedimento ADR, nei limiti di quanto necessario.",
+            "en": "GDPR Art. 6(1)(b): ADR assistance is carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): compliance with the applicable rules (e.g. mediation as a condition of admissibility in certain matters; the rules on assisted negotiation; the rules on arbitration). GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties and third parties involved in the ADR procedure, within the limits of what is necessary."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse riguarda la tutela del diritto del cliente e si estende ai dati di controparti e terzi coinvolti nel procedimento ADR, nei limiti di quanto necessario. Non costituisce base per finalità ulteriori; le informazioni scambiate in mediazione sono soggette a riservatezza e non vanno utilizzate oltre il procedimento.",
+              "en": "Legitimate interest concerns protecting the client's right and extends to data of counterparties and third parties involved in the ADR procedure, within the limits of what is necessary. It is not a basis for further purposes; the information exchanged in mediation is subject to confidentiality and must not be used beyond the procedure."
+            },
+            "garanzieAdottate": {
+              "it": "Riservatezza rafforzata sulle dichiarazioni e sui documenti scambiati in mediazione; minimizzazione dei dati prodotti nei procedimenti ADR; rispetto del segreto professionale; accesso riservato ai soggetti coinvolti; coordinamento con organismi di mediazione, arbitri e camere arbitrali (titolari autonomi).",
+              "en": "Enhanced confidentiality over the statements and documents exchanged in mediation; minimisation of data produced in ADR procedures; respect for professional secrecy; access reserved to persons involved; coordination with mediation bodies, arbitrators and arbitration chambers (independent controllers)."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR ove pertinente: le controversie oggetto di ADR possono coinvolgere categorie particolari di dati (es. materia di famiglia, salute, rapporti di lavoro), trattate per accertare, esercitare o difendere un diritto, anche nella fase ADR strettamente connessa alla tutela del diritto. La condizione va valutata caso per caso, tenendo conto della natura della controversia e della funzione, conciliativa o decisoria, del procedimento.",
+            "en": "GDPR Art. 9(2)(f) where relevant: disputes subject to ADR may involve special categories of data (e.g. family matters, health, employment), processed to establish, exercise or defend a right, also in the ADR phase strictly connected to the protection of the right. The condition must be assessed case by case, taking into account the nature of the dispute and the conciliatory or adjudicatory function of the procedure."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": false,
+          "normativaAutorizzativa": {
+            "it": "Di regola non pertinenti: gli strumenti ADR riguardano tipicamente materie civili e commerciali e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora, in casi specifici, emergano dati relativi a reati o procedimenti penali, il trattamento va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
+            "en": "Generally not relevant: ADR tools typically concern civil and commercial matters and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings emerge, processing must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti parti del procedimento ADR (persone fisiche) e referenti di clienti persone giuridiche",
+            "en": "Clients party to the ADR procedure (natural persons) and contacts of corporate clients"
+          },
+          {
+            "it": "Controparti e relativi difensori partecipanti al procedimento",
+            "en": "Counterparties and their lawyers participating in the procedure"
+          },
+          {
+            "it": "Mediatori, arbitri e referenti di organismi di mediazione e camere arbitrali",
+            "en": "Mediators, arbitrators and contacts of mediation bodies and arbitration chambers"
+          },
+          {
+            "it": "Terzi soggetti i cui dati emergono nelle memorie, nei documenti o nei verbali ADR",
+            "en": "Third parties whose data appears in ADR briefs, documents or records"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto delle parti e dei soggetti coinvolti nel procedimento ADR",
+            "en": "Identification and contact data of the parties and persons involved in the ADR procedure"
+          },
+          {
+            "it": "Dati relativi all'oggetto della controversia e alla posizione delle parti",
+            "en": "Data relating to the subject of the dispute and the parties' position"
+          },
+          {
+            "it": "Memorie, documenti, proposte, verbali e accordi conciliativi",
+            "en": "Briefs, documents, proposals, records and settlement agreements"
+          },
+          {
+            "it": "Eventuali categorie particolari di dati (art. 9) connesse alla controversia, nei limiti delle condizioni applicabili",
+            "en": "Any special categories of data (Art. 9) connected to the dispute, within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati patrimoniali, reddituali o economici rilevanti per la conciliazione o la decisione arbitrale",
+            "en": "Any asset, income or economic data relevant to the settlement or the arbitral decision"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente; dati provenienti dalle controparti e dai relativi difensori nel corso del procedimento; dati scambiati con organismi di mediazione, mediatori, arbitri e camere arbitrali; dati da fonti pubbliche o registri nei limiti di legge. La raccolta è limitata a quanto necessario al procedimento ADR e alla tutela del diritto del cliente.",
+          "en": "Data provided by the client; data from counterparties and their lawyers during the procedure; data exchanged with mediation bodies, mediators, arbitrators and arbitration chambers; data from public sources or registers within legal limits. Collection is limited to what is necessary for the ADR procedure and the protection of the client's right."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Organismi di mediazione e mediatori (titolari autonomi nell'esercizio delle funzioni)",
+            "en": "Mediation bodies and mediators (independent controllers in exercising their functions)"
+          },
+          {
+            "it": "Arbitri, collegi arbitrali e camere arbitrali (titolari autonomi nell'esercizio delle funzioni)",
+            "en": "Arbitrators, arbitral panels and arbitration chambers (independent controllers in exercising their functions)"
+          },
+          {
+            "it": "Controparti e relativi difensori partecipanti al procedimento ADR",
+            "en": "Counterparties and their lawyers participating in the ADR procedure"
+          },
+          {
+            "it": "Autorità giudiziarie nei casi di omologazione, deposito o impugnazione (destinatari istituzionali)",
+            "en": "Judicial authorities in cases of approval, filing or challenge (institutional recipients)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+              "en": "[Enter the name of the firm's management software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione documentale dei procedimenti ADR e della relativa corrispondenza, servizi cloud connessi",
+              "en": "Document management of ADR procedures and the related correspondence, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Organismi di mediazione, mediatori, arbitri e camere arbitrali NON sono responsabili dello studio: sono titolari autonomi nell'esercizio delle proprie funzioni. Attenzione alla riservatezza propria della mediazione nei flussi con i fornitori.",
+              "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). Mediation bodies, mediators, arbitrators and arbitration chambers are NOT the firm's processors: they are independent controllers in exercising their functions. Pay attention to the confidentiality inherent in mediation in the flows with providers."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e eventuali arbitrati internazionali]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati dei procedimenti ADR, coperti da segreto professionale e da riservatezza, vanno trattati preferibilmente in ambito UE. Negli arbitrati internazionali possono verificarsi flussi verso Paesi terzi: verificare la base del trasferimento e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile). Verificare inoltre eventuali sub-responsabili extra-UE nei servizi cloud.",
+              "en": "ADR-procedure data, covered by professional secrecy and confidentiality, should preferably be processed within the EU. In international arbitration, flows to third countries may occur: verify the transfer basis and apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable). Also verify any non-EU sub-processors in the cloud services."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del procedimento ADR e dell'incarico e, successivamente, per il tempo necessario alla tutela dei diritti, all'esecuzione degli accordi e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the ADR procedure and the engagement and, thereafter, for the time necessary to protect rights, enforce the agreements and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione fino alla conclusione del procedimento (accordo, lodo, mancato accordo) e per il tempo necessario all'esecuzione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); rispetto della riservatezza della mediazione; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention until the procedure concludes (agreement, award, no agreement) and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); respect for the confidentiality of mediation; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai fascicoli ADR con autenticazione forte e profili di privilegio",
+              "en": "Access control to ADR files with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+              "en": "Encryption of data and connections, in transit and at rest"
+            },
+            {
+              "it": "Misure rafforzate di riservatezza sulle dichiarazioni e sui documenti scambiati in mediazione",
+              "en": "Enhanced confidentiality measures over the statements and documents exchanged in mediation"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sui fascicoli ADR",
+              "en": "Traceability of accesses and operations on ADR files"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Rispetto del segreto professionale e degli obblighi di riservatezza propri della mediazione",
+              "en": "Compliance with professional secrecy and the confidentiality obligations inherent in mediation"
+            },
+            {
+              "it": "Minimizzazione dei dati prodotti nelle memorie, nei documenti e nei verbali ADR",
+              "en": "Minimisation of data produced in ADR briefs, documents and records"
+            },
+            {
+              "it": "Qualificazione documentata dei ruoli privacy di organismi di mediazione, mediatori, arbitri e camere arbitrali (titolari autonomi)",
+              "en": "Documented qualification of the privacy roles of mediation bodies, mediators, arbitrators and arbitration chambers (independent controllers)"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti ai procedimenti ADR",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling ADR procedures"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sui procedimenti ADR e sulla riservatezza della mediazione, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy dei soggetti ADR]",
+            "en": "[Refer to internal policies on ADR procedures and mediation confidentiality, the DPAs with providers and the privacy-role qualifications of the ADR parties]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati (es. ODR con componenti decisionali automatizzate) con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated tools (e.g. online dispute resolution with automated decision-making components) with significant effects, assessing whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione di mediazione, negoziazione assistita e arbitrato.",
+            "en": "Not applicable to managing mediation, assisted negotiation and arbitration."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria per l'assistenza ordinaria. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9 connessi a controversie particolarmente delicate, o di piattaforme ODR con componenti automatizzate.",
+            "en": "Generally not required for ordinary assistance. Assess in case of systematic or large-scale processing of Art. 9 data connected to particularly sensitive disputes, or of ODR platforms with automated components."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 28/2010 (mediazione civile e commerciale); d.l. 132/2014, conv. L. 162/2014 (negoziazione assistita); artt. 806 e seguenti c.p.c. (arbitrato); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo nell'assistenza; organismi di mediazione, mediatori, arbitri e camere arbitrali sono titolari autonomi nell'esercizio delle proprie funzioni. [DA VERIFICARE: estremi e versione vigente delle norme su mediazione, negoziazione assistita e arbitrato alla luce delle riforme processuali].",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 28/2010 (civil and commercial mediation); d.l. 132/2014, converted by L. 162/2014 (assisted negotiation); Arts. 806 ff. of the Italian Code of Civil Procedure (arbitration); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller in the assistance; mediation bodies, mediators, arbitrators and arbitration chambers are independent controllers in exercising their functions. [TO BE VERIFIED: references and current version of the rules on mediation, assisted negotiation and arbitration in light of the procedural reforms]."
+        }
+      }
     }
   ]
 }

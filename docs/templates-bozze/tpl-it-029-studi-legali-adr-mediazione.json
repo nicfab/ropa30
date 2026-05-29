@@ -1,0 +1,319 @@
+{
+  "templateId": "tpl-it-029-studi-legali-adr-mediazione",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione mediazione, negoziazione assistita e arbitrato",
+    "en": "Management of mediation, assisted negotiation and arbitration"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per l'assistenza al cliente negli strumenti di risoluzione alternativa delle controversie (ADR): mediazione civile e commerciale, negoziazione assistita da avvocati e arbitrato. Comprende la partecipazione ai procedimenti, lo scambio di memorie e documenti, la gestione degli accordi conciliativi e i rapporti con organismi di mediazione, mediatori, arbitri e camere arbitrali. Il taglio riguarda la fase ADR, distinta dal contenzioso giudiziale (template dedicato).",
+    "en": "Processing of personal data for assisting the client in alternative dispute resolution (ADR) tools: civil and commercial mediation, lawyer-assisted negotiation and arbitration. It includes participation in the procedures, the exchange of briefs and documents, the management of settlement agreements and dealings with mediation bodies, mediators, arbitrators and arbitration chambers. The scope concerns the ADR phase, distinct from judicial litigation (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO ADR. Copre mediazione, negoziazione assistita e arbitrato, NON il contenzioso giudiziale (template dedicato). PUNTI CRITICI: (a) lo studio agisce come TITOLARE AUTONOMO nell'assistenza al cliente; (b) RUOLI DEI SOGGETTI ADR: l'organismo di mediazione e il mediatore, gli arbitri e la camera arbitrale operano come TITOLARI AUTONOMI nell'esercizio delle proprie funzioni, non come responsabili dello studio; (c) RISERVATEZZA: la mediazione è soggetta a obblighi di riservatezza e a regimi di inutilizzabilità delle dichiarazioni rese nel procedimento; va garantita una rigorosa riservatezza sui dati e sulle informazioni scambiate; (d) ART. 6: base contrattuale (mandato), obbligo legale (es. mediazione come condizione di procedibilità in determinate materie; norme su negoziazione assistita e arbitrato) e legittimo interesse (dati di controparti e terzi); (e) ART. 9(2)(f): le controversie possono coinvolgere categorie particolari (es. famiglia, salute, rapporti di lavoro); la condizione di liceità per accertare/esercitare/difendere un diritto si applica alla fase ADR strettamente connessa alla tutela del diritto, da valutare caso per caso; (f) ART. 10: di regola non pertinente nelle materie civili/commerciali tipiche dell'ADR; gli atti civili non sono di per sé dati art. 10. Se la controversia riguarda fatti penalmente rilevanti o documentazione penale, il template va adattato valorizzando l'art. 10. Basi giuridiche, condizioni art. 9, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "ADR SCOPE. Covers mediation, assisted negotiation and arbitration, NOT judicial litigation (dedicated template). CRITICAL POINTS: (a) the firm acts as an INDEPENDENT CONTROLLER in assisting the client; (b) ROLES OF ADR PARTIES: the mediation body and the mediator, the arbitrators and the arbitration chamber act as INDEPENDENT CONTROLLERS in exercising their functions, not as the firm's processors; (c) CONFIDENTIALITY: mediation is subject to confidentiality obligations and to regimes of inadmissibility of the statements made in the procedure; strict confidentiality must be ensured over the data and information exchanged; (d) ART. 6: contractual basis (mandate), legal obligation (e.g. mediation as a condition of admissibility in certain matters; rules on assisted negotiation and arbitration) and legitimate interest (data of counterparties and third parties); (e) ART. 9(2)(f): disputes may involve special categories (e.g. family, health, employment); the lawfulness condition to establish/exercise/defend a right applies to the ADR phase strictly connected to the protection of the right, to be assessed case by case; (f) ART. 10: generally not relevant in the civil/commercial matters typical of ADR; civil acts are not in themselves Art. 10 data. If the dispute concerns criminally relevant facts or criminal documentation, the template must be adapted by addressing Art. 10. Legal bases, Art. 9 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "mediazione_negoziazione",
+        "label": "Mediazione civile/commerciale e negoziazione assistita",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "arbitrato",
+        "label": "Arbitrato (rituale e irrituale) e procedimenti arbitrali",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "mediazione_negoziazione",
+        "label": "Civil/commercial mediation and assisted negotiation",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "arbitrato",
+        "label": "Arbitration (formal and informal) and arbitral proceedings",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione mediazione, negoziazione assistita e arbitrato",
+      "en": "Management of mediation, assisted negotiation and arbitration"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per l'assistenza al cliente negli strumenti ADR: mediazione civile e commerciale, negoziazione assistita da avvocati e arbitrato, inclusi partecipazione ai procedimenti, scambio di memorie e documenti, gestione degli accordi e rapporti con organismi di mediazione, mediatori, arbitri e camere arbitrali.",
+      "en": "Processing of personal data for assisting the client in ADR tools: civil and commercial mediation, lawyer-assisted negotiation and arbitration, including participation in the procedures, exchange of briefs and documents, management of agreements and dealings with mediation bodies, mediators, arbitrators and arbitration chambers."
+    },
+    "finalita": [
+      {
+        "it": "Assistenza al cliente nei procedimenti di mediazione civile e commerciale",
+        "en": "Assistance to the client in civil and commercial mediation procedures"
+      },
+      {
+        "it": "Gestione della negoziazione assistita da avvocati e degli accordi conclusi",
+        "en": "Management of lawyer-assisted negotiation and the agreements concluded"
+      },
+      {
+        "it": "Assistenza nei procedimenti arbitrali (rituali e irrituali) e rapporti con arbitri e camere arbitrali",
+        "en": "Assistance in arbitral proceedings (formal and informal) and dealings with arbitrators and arbitration chambers"
+      },
+      {
+        "it": "Scambio di memorie, documenti e proposte e gestione della corrispondenza nei procedimenti ADR",
+        "en": "Exchange of briefs, documents and proposals and management of correspondence in ADR procedures"
+      },
+      {
+        "it": "Gestione degli accordi conciliativi, dei verbali e degli adempimenti connessi",
+        "en": "Management of settlement agreements, records and connected obligations"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: l'assistenza ADR è svolta nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimento delle norme applicabili (ad es. mediazione quale condizione di procedibilità in determinate materie; disciplina della negoziazione assistita; norme sull'arbitrato). Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti e terzi coinvolti nel procedimento ADR, nei limiti di quanto necessario.",
+        "en": "GDPR Art. 6(1)(b): ADR assistance is carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): compliance with the applicable rules (e.g. mediation as a condition of admissibility in certain matters; the rules on assisted negotiation; the rules on arbitration). GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties and third parties involved in the ADR procedure, within the limits of what is necessary."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda la tutela del diritto del cliente e si estende ai dati di controparti e terzi coinvolti nel procedimento ADR, nei limiti di quanto necessario. Non costituisce base per finalità ulteriori; le informazioni scambiate in mediazione sono soggette a riservatezza e non vanno utilizzate oltre il procedimento.",
+          "en": "Legitimate interest concerns protecting the client's right and extends to data of counterparties and third parties involved in the ADR procedure, within the limits of what is necessary. It is not a basis for further purposes; the information exchanged in mediation is subject to confidentiality and must not be used beyond the procedure."
+        },
+        "garanzieAdottate": {
+          "it": "Riservatezza rafforzata sulle dichiarazioni e sui documenti scambiati in mediazione; minimizzazione dei dati prodotti nei procedimenti ADR; rispetto del segreto professionale; accesso riservato ai soggetti coinvolti; coordinamento con organismi di mediazione, arbitri e camere arbitrali (titolari autonomi).",
+          "en": "Enhanced confidentiality over the statements and documents exchanged in mediation; minimisation of data produced in ADR procedures; respect for professional secrecy; access reserved to persons involved; coordination with mediation bodies, arbitrators and arbitration chambers (independent controllers)."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR ove pertinente: le controversie oggetto di ADR possono coinvolgere categorie particolari di dati (es. materia di famiglia, salute, rapporti di lavoro), trattate per accertare, esercitare o difendere un diritto, anche nella fase ADR strettamente connessa alla tutela del diritto. La condizione va valutata caso per caso, tenendo conto della natura della controversia e della funzione, conciliativa o decisoria, del procedimento.",
+        "en": "GDPR Art. 9(2)(f) where relevant: disputes subject to ADR may involve special categories of data (e.g. family matters, health, employment), processed to establish, exercise or defend a right, also in the ADR phase strictly connected to the protection of the right. The condition must be assessed case by case, taking into account the nature of the dispute and the conciliatory or adjudicatory function of the procedure."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": false,
+      "normativaAutorizzativa": {
+        "it": "Di regola non pertinenti: gli strumenti ADR riguardano tipicamente materie civili e commerciali e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora, in casi specifici, emergano dati relativi a reati o procedimenti penali, il trattamento va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
+        "en": "Generally not relevant: ADR tools typically concern civil and commercial matters and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings emerge, processing must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti parti del procedimento ADR (persone fisiche) e referenti di clienti persone giuridiche",
+        "en": "Clients party to the ADR procedure (natural persons) and contacts of corporate clients"
+      },
+      {
+        "it": "Controparti e relativi difensori partecipanti al procedimento",
+        "en": "Counterparties and their lawyers participating in the procedure"
+      },
+      {
+        "it": "Mediatori, arbitri e referenti di organismi di mediazione e camere arbitrali",
+        "en": "Mediators, arbitrators and contacts of mediation bodies and arbitration chambers"
+      },
+      {
+        "it": "Terzi soggetti i cui dati emergono nelle memorie, nei documenti o nei verbali ADR",
+        "en": "Third parties whose data appears in ADR briefs, documents or records"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto delle parti e dei soggetti coinvolti nel procedimento ADR",
+        "en": "Identification and contact data of the parties and persons involved in the ADR procedure"
+      },
+      {
+        "it": "Dati relativi all'oggetto della controversia e alla posizione delle parti",
+        "en": "Data relating to the subject of the dispute and the parties' position"
+      },
+      {
+        "it": "Memorie, documenti, proposte, verbali e accordi conciliativi",
+        "en": "Briefs, documents, proposals, records and settlement agreements"
+      },
+      {
+        "it": "Eventuali categorie particolari di dati (art. 9) connesse alla controversia, nei limiti delle condizioni applicabili",
+        "en": "Any special categories of data (Art. 9) connected to the dispute, within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati patrimoniali, reddituali o economici rilevanti per la conciliazione o la decisione arbitrale",
+        "en": "Any asset, income or economic data relevant to the settlement or the arbitral decision"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente; dati provenienti dalle controparti e dai relativi difensori nel corso del procedimento; dati scambiati con organismi di mediazione, mediatori, arbitri e camere arbitrali; dati da fonti pubbliche o registri nei limiti di legge. La raccolta è limitata a quanto necessario al procedimento ADR e alla tutela del diritto del cliente.",
+      "en": "Data provided by the client; data from counterparties and their lawyers during the procedure; data exchanged with mediation bodies, mediators, arbitrators and arbitration chambers; data from public sources or registers within legal limits. Collection is limited to what is necessary for the ADR procedure and the protection of the client's right."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Organismi di mediazione e mediatori (titolari autonomi nell'esercizio delle funzioni)",
+        "en": "Mediation bodies and mediators (independent controllers in exercising their functions)"
+      },
+      {
+        "it": "Arbitri, collegi arbitrali e camere arbitrali (titolari autonomi nell'esercizio delle funzioni)",
+        "en": "Arbitrators, arbitral panels and arbitration chambers (independent controllers in exercising their functions)"
+      },
+      {
+        "it": "Controparti e relativi difensori partecipanti al procedimento ADR",
+        "en": "Counterparties and their lawyers participating in the ADR procedure"
+      },
+      {
+        "it": "Autorità giudiziarie nei casi di omologazione, deposito o impugnazione (destinatari istituzionali)",
+        "en": "Judicial authorities in cases of approval, filing or challenge (institutional recipients)"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale dei procedimenti ADR e della relativa corrispondenza, servizi cloud connessi",
+          "en": "Document management of ADR procedures and the related correspondence, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Organismi di mediazione, mediatori, arbitri e camere arbitrali NON sono responsabili dello studio: sono titolari autonomi nell'esercizio delle proprie funzioni. Attenzione alla riservatezza propria della mediazione nei flussi con i fornitori.",
+          "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). Mediation bodies, mediators, arbitrators and arbitration chambers are NOT the firm's processors: they are independent controllers in exercising their functions. Pay attention to the confidentiality inherent in mediation in the flows with providers."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e eventuali arbitrati internazionali]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati dei procedimenti ADR, coperti da segreto professionale e da riservatezza, vanno trattati preferibilmente in ambito UE. Negli arbitrati internazionali possono verificarsi flussi verso Paesi terzi: verificare la base del trasferimento e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile). Verificare inoltre eventuali sub-responsabili extra-UE nei servizi cloud.",
+          "en": "ADR-procedure data, covered by professional secrecy and confidentiality, should preferably be processed within the EU. In international arbitration, flows to third countries may occur: verify the transfer basis and apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable). Also verify any non-EU sub-processors in the cloud services."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata del procedimento ADR e dell'incarico e, successivamente, per il tempo necessario alla tutela dei diritti, all'esecuzione degli accordi e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the ADR procedure and the engagement and, thereafter, for the time necessary to protect rights, enforce the agreements and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione fino alla conclusione del procedimento (accordo, lodo, mancato accordo) e per il tempo necessario all'esecuzione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); rispetto della riservatezza della mediazione; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention until the procedure concludes (agreement, award, no agreement) and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); respect for the confidentiality of mediation; minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai fascicoli ADR con autenticazione forte e profili di privilegio",
+          "en": "Access control to ADR files with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+          "en": "Encryption of data and connections, in transit and at rest"
+        },
+        {
+          "it": "Misure rafforzate di riservatezza sulle dichiarazioni e sui documenti scambiati in mediazione",
+          "en": "Enhanced confidentiality measures over the statements and documents exchanged in mediation"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni sui fascicoli ADR",
+          "en": "Traceability of accesses and operations on ADR files"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e degli obblighi di riservatezza propri della mediazione",
+          "en": "Compliance with professional secrecy and the confidentiality obligations inherent in mediation"
+        },
+        {
+          "it": "Minimizzazione dei dati prodotti nelle memorie, nei documenti e nei verbali ADR",
+          "en": "Minimisation of data produced in ADR briefs, documents and records"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy di organismi di mediazione, mediatori, arbitri e camere arbitrali (titolari autonomi)",
+          "en": "Documented qualification of the privacy roles of mediation bodies, mediators, arbitrators and arbitration chambers (independent controllers)"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti ai procedimenti ADR",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling ADR procedures"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sui procedimenti ADR e sulla riservatezza della mediazione, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy dei soggetti ADR]",
+        "en": "[Refer to internal policies on ADR procedures and mediation confidentiality, the DPAs with providers and the privacy-role qualifications of the ADR parties]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati (es. ODR con componenti decisionali automatizzate) con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if using automated tools (e.g. online dispute resolution with automated decision-making components) with significant effects, assessing whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione di mediazione, negoziazione assistita e arbitrato.",
+        "en": "Not applicable to managing mediation, assisted negotiation and arbitration."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per l'assistenza ordinaria. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9 connessi a controversie particolarmente delicate, o di piattaforme ODR con componenti automatizzate.",
+        "en": "Generally not required for ordinary assistance. Assess in case of systematic or large-scale processing of Art. 9 data connected to particularly sensitive disputes, or of ODR platforms with automated components."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 28/2010 (mediazione civile e commerciale); d.l. 132/2014, conv. L. 162/2014 (negoziazione assistita); artt. 806 e seguenti c.p.c. (arbitrato); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo nell'assistenza; organismi di mediazione, mediatori, arbitri e camere arbitrali sono titolari autonomi nell'esercizio delle proprie funzioni. [DA VERIFICARE: estremi e versione vigente delle norme su mediazione, negoziazione assistita e arbitrato alla luce delle riforme processuali].",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 28/2010 (civil and commercial mediation); d.l. 132/2014, converted by L. 162/2014 (assisted negotiation); Arts. 806 ff. of the Italian Code of Civil Procedure (arbitration); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller in the assistance; mediation bodies, mediators, arbitrators and arbitration chambers are independent controllers in exercising their functions. [TO BE VERIFIED: references and current version of the rules on mediation, assisted negotiation and arbitration in light of the procedural reforms]."
+    }
+  }
+}
