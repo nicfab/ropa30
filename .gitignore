@@ -151,3 +151,6 @@ vite.config.ts.timestamp-*
 
 # File temporanei di lavoro
 /tmp/ropa30_*.json
+
+# File di contesto locale per Claude Code (NON versionare)
+CLAUDE.md
