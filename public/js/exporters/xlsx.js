@@ -9,7 +9,7 @@
  */
 
 // Build a filesystem-friendly filename: ropa30-registro-YYYYMMDD-HHMMSS.xlsx
-export function nomeFileRegistro(ext, date = new Date()) {
+export function nomeFileRegistro(ext, date = new Date(), estratto = null) {
   const p = (n) => String(n).padStart(2, '0');
   const Y = date.getFullYear();
   const M = p(date.getMonth() + 1);
@@ -17,7 +17,13 @@ export function nomeFileRegistro(ext, date = new Date()) {
   const h = p(date.getHours());
   const m = p(date.getMinutes());
   const s = p(date.getSeconds());
-  return 'ropa30-registro-' + Y + M + D + '-' + h + m + s + '.' + ext;
+  let tipo = 'registro-completo';
+  if (estratto && estratto.estratto) {
+    const slug = String(estratto.unita || '').toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'unita';
+    tipo = 'estratto-unita-' + slug;
+  }
+  return 'ropa30-' + tipo + '-' + Y + M + D + '-' + h + m + s + '.' + ext;
 }
 
 // Trigger a download for an in-memory byte array / blob.
@@ -43,9 +49,14 @@ export function esportaRegistroXlsx(model, labels = {}, date = new Date()) {
   if (!XLSX) throw new Error('XLSX_NOT_AVAILABLE');
 
   const headerRows = [];
-  // Two info rows on top: register title + owner, and generation timestamp.
-  const titolo = labels.titolo || 'Registro dei trattamenti';
-  headerRows.push([titolo + (model.meta.titolare ? ' — ' + model.meta.titolare : '')]);
+  const est = model.meta.estratto || { estratto: false, unita: '' };
+  const titoloBase = est.estratto
+    ? (labels.estrattoTitolo || 'Estratto del Registro')
+    : (labels.titolo || 'Registro dei trattamenti');
+  headerRows.push([titoloBase + (model.meta.titolare ? ' — ' + model.meta.titolare : '')]);
+  if (est.estratto) {
+    headerRows.push([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]);
+  }
   headerRows.push([(labels.generatoIl || 'Generato il') + ': ' + model.meta.generatoIl]);
   headerRows.push([]); // spacer
 
@@ -59,6 +70,16 @@ export function esportaRegistroXlsx(model, labels = {}, date = new Date()) {
   ws['!cols'] = model.headers.map(() => ({ wch: 28 }));
 
   const wb = XLSX.utils.book_new();
+  const righe = Array.isArray(model.meta.titolareRighe) ? model.meta.titolareRighe : [];
+  if (righe.length) {
+    const tAoa = [[labels.titolareTitolo || 'Dati del titolare']];
+    if (est.estratto) tAoa.push([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]);
+    tAoa.push([]);
+    for (const r of righe) tAoa.push([r.label, r.value]);
+    const wsT = XLSX.utils.aoa_to_sheet(tAoa);
+    wsT['!cols'] = [{ wch: 24 }, { wch: 50 }];
+    XLSX.utils.book_append_sheet(wb, wsT, 'Titolare');
+  }
   XLSX.utils.book_append_sheet(wb, ws, 'Registro');
 
   const out = XLSX.write(wb, { type: 'array', bookType: 'xlsx' });
@@ -66,7 +87,7 @@ export function esportaRegistroXlsx(model, labels = {}, date = new Date()) {
     type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
   });
 
-  const filename = nomeFileRegistro('xlsx', date);
+  const filename = nomeFileRegistro('xlsx', date, model.meta.estratto);
   scaricaBlob(blob, filename);
   return filename;
 }

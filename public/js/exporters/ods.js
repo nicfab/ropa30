@@ -41,13 +41,32 @@ function rigaXml(cells) {
 
 // Build the content.xml document for the register table.
 function contentXml(model, labels) {
-  const titolo = (labels.titolo || 'Registro dei trattamenti')
-    + (model.meta.titolare ? ' — ' + model.meta.titolare : '');
+  const est = model.meta.estratto || { estratto: false, unita: '' };
+  const titoloBase = est.estratto
+    ? (labels.estrattoTitolo || 'Estratto del Registro')
+    : (labels.titolo || 'Registro dei trattamenti');
+  const titolo = titoloBase + (model.meta.titolare ? ' — ' + model.meta.titolare : '');
   const generato = (labels.generatoIl || 'Generato il') + ': ' + model.meta.generatoIl;
+
+  // Sheet 'Titolare' table (label/value rows).
+  const righe = Array.isArray(model.meta.titolareRighe) ? model.meta.titolareRighe : [];
+  let tabellaTitolare = '';
+  if (righe.length) {
+    const tRows = [];
+    tRows.push(rigaXml([labels.titolareTitolo || 'Dati del titolare']));
+    if (est.estratto) tRows.push(rigaXml([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]));
+    tRows.push(rigaXml(['']));
+    for (const r of righe) tRows.push(rigaXml([r.label, r.value]));
+    tabellaTitolare = '<table:table table:name="Titolare">'
+      + '<table:table-column table:number-columns-repeated="2"/>'
+      + tRows.join('')
+      + '</table:table>';
+  }
 
   // Top info rows (single cell each), a spacer, then header row + data rows.
   const rows = [];
   rows.push(rigaXml([titolo]));
+  if (est.estratto) rows.push(rigaXml([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]));
   rows.push(rigaXml([generato]));
   rows.push(rigaXml(['']));
   rows.push(rigaXml(model.headers));
@@ -60,6 +79,7 @@ function contentXml(model, labels) {
     + ' xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"'
     + ' office:version="1.2">'
     + '<office:body><office:spreadsheet>'
+    + tabellaTitolare
     + '<table:table table:name="Registro">'
     + '<table:table-column table:number-columns-repeated="' + Math.max(1, model.headers.length) + '"/>'
     + rows.join('')
@@ -93,7 +113,7 @@ export function esportaRegistroOds(model, labels = {}, date = new Date()) {
   const blob = new Blob([zipped], { type: MIMETYPE });
 
   const url = URL.createObjectURL(blob);
-  const filename = nomeFileRegistro('ods', date);
+  const filename = nomeFileRegistro('ods', date, model.meta.estratto);
   try {
     const a = document.createElement('a');
     a.href = url;

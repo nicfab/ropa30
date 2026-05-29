@@ -82,6 +82,8 @@ export function buildModelloRegistro(records, lang, deps, titolare = {}) {
 
   const meta = {
     titolare: (titolare && titolare.denominazione) || '',
+    titolareRighe: (titolare && Array.isArray(titolare.righe)) ? titolare.righe : [],
+    estratto: (titolare && titolare.estratto) || { estratto: false, unita: '' },
     generatoIl: new Date().toISOString(),
     lingua: lang,
     conteggio: list.length

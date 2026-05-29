@@ -1194,7 +1194,17 @@
     <div id="print-area" aria-hidden="true">
       <header class="print-header">
         <h1 x-text="L.printTitoloRegistro">Registro delle attività di trattamento</h1>
-        <p class="print-meta" x-text="registroStampa.titolare"></p>
+        <template x-if="registroStampa.estratto.estratto">
+          <p class="print-estratto"><span x-text="L.estrattoTitolo"></span> &mdash; <span x-text="L.estrattoUnita"></span>: <span x-text="registroStampa.estratto.unita"></span></p>
+        </template>
+        <table class="print-titolare">
+          <template x-for="(r, ri) in registroStampa.titolareRighe" x-bind:key="ri">
+            <tr>
+              <td class="print-td-label" x-text="r.label"></td>
+              <td class="print-td-value" x-text="r.value"></td>
+            </tr>
+          </template>
+        </table>
         <p class="print-meta"><span x-text="L.printGeneratoIl"></span>: <span x-text="registroStampa.generatoIl"></span></p>
       </header>
       <template x-for="(tr, ti) in registroStampa.trattamenti" x-bind:key="ti">

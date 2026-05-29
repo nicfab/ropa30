@@ -194,10 +194,49 @@ function ropa30App() {
     get isViewEditor()    { return this.view === 'editor'; },
     get restoreCountPA() { return this.restoreSummary ? String(this.restoreSummary.counts.processingActivities) : ''; },
     // Print model for the whole register (rich, document-oriented).
+    get _indirizzoFormattato() {
+      const viaCivico = [this.via, this.civico].filter(Boolean).join(' ');
+      const capCitta = [this.cap, this.citta].filter(Boolean).join(' ');
+      const prov = this.provincia ? '(' + this.provincia + ')' : '';
+      const riga1 = [viaCivico, [capCitta, prov].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+      return [riga1, this.paese].filter(Boolean).join(' \u2014 ');
+    },
+    get titolareRighe() {
+      const L = this.L; const out = [];
+      const push = (label, val) => { if (val && String(val).trim()) out.push({ label: label, value: String(val).trim() }); };
+      push(L.tdDenominazione, this.denominazione);
+      push(L.tdFormaGiuridica, this.formaGiuridica);
+      push(L.tdCodiceFiscale, this.codiceFiscale);
+      push(L.tdPartitaIVA, this.partitaIVA);
+      push(L.tdIndirizzo, this._indirizzoFormattato);
+      push(L.tdTelefono, this.telefono);
+      push(L.tdEmail, this.email);
+      push(L.tdPec, this.pec);
+      push(L.tdSitoWeb, this.sitoWeb);
+      if (this.dpoNominato) {
+        push(L.tdDpoNome, this.dpoNome);
+        push(L.tdDpoEmail, this.dpoEmail);
+        push(L.tdDpoPec, this.dpoPec);
+      }
+      return out;
+    },
+    get recordsPerExport() {
+      const records = Array.isArray(this._rawTrattamenti) ? this._rawTrattamenti : [];
+      const u = this.filtroUnita || '';
+      if (!u) return records;
+      return records.filter((r) => {
+        const lista = Array.isArray(r.unitaOrganizzativa) ? r.unitaOrganizzativa : [];
+        return lista.some((x) => this._locConFallback(x && x.unita).testo === u);
+      });
+    },
+    get exportEstratto() {
+      const u = this.filtroUnita || '';
+      return { estratto: !!u, unita: u };
+    },
     get registroStampa() {
       const loc = LOCALI[this.lang] || LOCALI.it;
       const deps = { detail: loc.detail, enums: loc.enums };
-      const records = Array.isArray(this._rawTrattamenti) ? this._rawTrattamenti : [];
+      const records = this.recordsPerExport;
       const trattamenti = records.map((rec) => {
         const dett = buildDettaglio(rec, this.lang, deps);
         const t = this._locConFallback(rec.nome);
@@ -209,6 +248,8 @@ function ropa30App() {
       });
       return {
         titolare: this.denominazione || '',
+        titolareRighe: this.titolareRighe,
+        estratto: this.exportEstratto,
         generatoIl: new Date().toLocaleString(this.lang === 'en' ? 'en-GB' : 'it-IT'),
         lingua: this.lang,
         conteggio: trattamenti.length,
@@ -250,17 +291,31 @@ function ropa30App() {
       this.isAzioniMenuOpen = false;
       this.vaiAOnboarding();
     },
+    _exportLabels() {
+      return {
+        titolo: this.L.printTitoloRegistro,
+        generatoIl: this.L.printGeneratoIl,
+        titolareTitolo: this.L.tdTitolo,
+        estrattoTitolo: this.L.estrattoTitolo,
+        estrattoUnita: this.L.estrattoUnita
+      };
+    },
     _modelloRegistro() {
       const loc = LOCALI[this.lang] || LOCALI.it;
       const deps = { detail: loc.detail, enums: loc.enums };
-      const records = Array.isArray(this._rawTrattamenti) ? this._rawTrattamenti : [];
-      return buildModelloRegistro(records, this.lang, deps, { denominazione: this.denominazione || '' });
+      const records = this.recordsPerExport;
+      const titolare = {
+        denominazione: this.denominazione || '',
+        righe: this.titolareRighe,
+        estratto: this.exportEstratto
+      };
+      return buildModelloRegistro(records, this.lang, deps, titolare);
     },
     esportaXLSX() {
       this.exportError = false;
       try {
         const model = this._modelloRegistro();
-        const labels = { titolo: this.L.printTitoloRegistro, generatoIl: this.L.printGeneratoIl };
+        const labels = this._exportLabels();
         esportaRegistroXlsx(model, labels);
         this.isExportMenuOpen = false;
         this.exportMessage = this.L.exportFatto || 'Export completato';
@@ -274,7 +329,7 @@ function ropa30App() {
       this.exportError = false;
       try {
         const model = this._modelloRegistro();
-        const labels = { titolo: this.L.printTitoloRegistro, generatoIl: this.L.printGeneratoIl };
+        const labels = this._exportLabels();
         esportaRegistroOds(model, labels);
         this.isExportMenuOpen = false;
         this.exportMessage = this.L.exportFatto || 'Export completato';
