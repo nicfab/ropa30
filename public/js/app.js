@@ -14,6 +14,7 @@ import {
   listProcessingActivities,
   getProcessingActivity,
   deleteProcessingActivity,
+  resetAllData,
   updateProcessingActivity,
   normalizeBilingualShapes,
   listAvailableTemplates,
@@ -75,6 +76,8 @@ function ropa30App() {
     isExportMenuOpen: false,      // export dialog visibility
     isAzioniMenuOpen: false,      // azioni dialog visibility
     isEliminaConfirmOpen: false,  // delete-activity confirmation dialog
+    isResetConfirmOpen: false,    // reset-all confirmation dialog
+    resetInCorso: false,          // reset in progress guard
     eliminaInCorso: false,        // delete in progress guard
     exportMessage: '',            // localized export outcome
     exportError: false,
@@ -294,6 +297,29 @@ function ropa30App() {
       this.isAzioniMenuOpen = false;
       this.apriExportMenu();
     },
+    azioniReset() {
+      this.isAzioniMenuOpen = false;
+      this.isResetConfirmOpen = true;
+    },
+    chiudiResetConfirm() {
+      this.isResetConfirmOpen = false;
+    },
+    resetScaricaBackup() {
+      this.esportaBackup();
+    },
+    async confermaReset() {
+      if (this.resetInCorso) return;
+      this.resetInCorso = true;
+      try {
+        await resetAllData();
+        this.isResetConfirmOpen = false;
+        this.registroAttivo = 'titolare';
+        window.location.reload();
+      } catch (err) {
+        console.error('[ropa30] confermaReset() error:', err);
+        this.resetInCorso = false;
+      }
+    },
     azioniModificaTitolare() {
       this.isAzioniMenuOpen = false;
       this.vaiAOnboarding();
@@ -307,7 +333,7 @@ function ropa30App() {
       return {
         titolo: this.titoloRegistroExport,
         generatoIl: this.L.printGeneratoIl,
-        titolareTitolo: this.L.tdTitolo,
+        titolareTitolo: (this.registroAttivo === 'responsabile') ? this.L.tdTitoloResponsabile : this.L.tdTitolo,
         estrattoTitolo: this.L.estrattoTitolo,
         estrattoUnita: this.L.estrattoUnita,
         sheetRegistro: (this.registroAttivo === 'responsabile') ? 'Registro responsabile' : 'Registro titolare',
@@ -625,7 +651,7 @@ function ropa30App() {
       this.creazioneInCorso = true;
       this.erroreCreazione = false;
       try {
-        const nuovo = await createProcessingActivityFromTemplate(id);
+        const nuovo = await createProcessingActivityFromTemplate(id, this.registroAttivo);
         this.catalogoAperto = false;
         this.queryRicerca = '';
         await this.caricaTrattamenti(nuovo.id);

@@ -207,6 +207,30 @@
             </div>
           </div>
         </template>
+        <!-- Dialog RESET TOTALE (svuota tutti i dati) -->
+        <template x-if="isResetConfirmOpen">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+               x-on:keydown.escape.window="chiudiResetConfirm"
+               x-on:click.self="chiudiResetConfirm">
+            <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                 role="dialog" aria-modal="true" aria-labelledby="reset-conf-title">
+              <h2 id="reset-conf-title" class="text-lg font-bold text-danger-700" x-text="L.resetConfermaTitolo">Svuotare tutti i dati?</h2>
+              <p class="mt-2 text-sm text-brand-700" x-text="L.resetConfermaTesto"></p>
+              <p class="mt-2 text-sm text-brand-800 bg-warning-500/10 border-l-4 border-warning-500 rounded-r-lg p-2" x-text="L.resetConfermaNota"></p>
+              <div class="mt-5 flex flex-wrap justify-end gap-2">
+                <button type="button" x-on:click="resetScaricaBackup"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                        x-text="L.resetScaricaBackup">Scarica backup</button>
+                <button type="button" x-on:click="chiudiResetConfirm"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                        x-text="L.resetAnnulla">Annulla</button>
+                <button type="button" x-on:click="confermaReset" x-bind:disabled="resetInCorso"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                        x-text="L.resetConferma">Svuota tutti i dati</button>
+              </div>
+            </div>
+          </div>
+        </template>
 
         <!-- Global restore confirmation dialog (reachable from any view). -->
         <template x-if="isRestoreConfirmOpen">
@@ -726,6 +750,11 @@
                               class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
                         <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-edit" /></svg>
                         <span class="font-semibold text-brand-900" x-text="L.listaModificaTitolare">Modifica dati titolare</span>
+                      </button>
+                    <button type="button" x-on:click="azioniReset"
+                              class="w-full flex items-center gap-3 rounded-lg border border-danger-500 px-4 py-3 text-left hover:bg-danger-500/10">
+                        <svg class="w-5 h-5 shrink-0 text-danger-600" aria-hidden="true"><use href="#icon-trash" /></svg>
+                        <span class="font-semibold text-danger-700" x-text="L.azioniReset">Svuota tutti i dati</span>
                       </button>
                     </div>
                     <div class="mt-5 flex justify-end">

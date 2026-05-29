@@ -16,6 +16,7 @@ import {
   AUDIT_TARGET,
   createDefaultSettings,
   createDefaultProcessingActivity,
+  TIPO_REGISTRO,
   createAuditEntry,
   unitaOrgVuota,
   bilingue
@@ -552,6 +553,22 @@ export async function importAllData(envelope, { mode = 'replace' } = {}) {
     fromExportedAt: summary.exportedAt || null
   };
 }
+// Reset totale: cancella settings, trattamenti e audit, poi ricrea le settings
+// di default (titolare vuoto). Operazione irreversibile. Usata da "Svuota tutti i dati".
+export async function resetAllData() {
+  await db.transaction('rw', db.settings, db.processingActivities, db.auditLog, async () => {
+    await db.settings.clear();
+    await db.processingActivities.clear();
+    await db.auditLog.clear();
+    await db.settings.put(createDefaultSettings());
+  });
+  await logAudit({
+    azione: 'DELETED',
+    targetType: 'database',
+    targetId: 'all',
+    summary: 'Reset totale: cancellati impostazioni, trattamenti e registro attivita'
+  });
+}
 
 // ============================================================================
 // TEMPLATE LIBRARY
@@ -606,7 +623,7 @@ export async function listAvailableTemplates() {
 
 // Bilingual factory: deep-merge the (bilingual) preset onto the default,
 // then defensively normalize the canonical bilingual shapes. No flattening.
-export async function createProcessingActivityFromTemplate(templateId) {
+export async function createProcessingActivityFromTemplate(templateId, tipoRegistro = TIPO_REGISTRO.TITOLARE) {
   const catalog = await listAvailableTemplates();
   const template = catalog.templates.find((t) => t.templateId === templateId);
   if (!template) {
@@ -621,6 +638,7 @@ export async function createProcessingActivityFromTemplate(templateId) {
   merged.sourceTemplateLanguage = '';
   merged.id = base.id;
   merged.tenantId = DEFAULT_TENANT_ID;
+  merged.tipoRegistro = tipoRegistro;
   merged.schemaVersion = SCHEMA_VERSION;
   merged.metadata = base.metadata;
 
