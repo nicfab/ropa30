@@ -406,10 +406,10 @@ export async function createProcessingActivity(initial = {}) {
 export async function getProcessingActivity(id) {
   return await db.processingActivities.get(id);
 }
-export async function listProcessingActivities() {
+export async function listProcessingActivities(tipoRegistro = 'titolare') {
   return await db.processingActivities
     .where('[tenantId+tipoRegistro]')
-    .equals([DEFAULT_TENANT_ID, 'titolare'])
+    .equals([DEFAULT_TENANT_ID, tipoRegistro])
     .toArray();
 }
 export async function updateProcessingActivity(id, patch) {
