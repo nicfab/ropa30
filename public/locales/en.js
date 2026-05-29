@@ -29,6 +29,8 @@ export default {
     footerRepoAria: 'Source code and issues on Codeberg (opens in a new tab)',
     footerEmailAria: 'Send a support email',
     btnAzioni: 'Actions',
+    tabRegistroTitolare: 'Controller register',
+    tabRegistroResponsabile: 'Processor register',
     azioniTitolo: 'Register actions',
     azioniSottotitolo: 'Backup, restore, export and controller details.',
     azioniChiudi: 'Close',

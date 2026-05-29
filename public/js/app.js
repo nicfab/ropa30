@@ -61,6 +61,7 @@ function ropa30App() {
 
     // List
     _rawTrattamenti: [],
+    registroAttivo: 'titolare',   // 'titolare' | 'responsabile' — quale registro art.30 e' in vista
     trattamenti: [],
     // ---- Restore (Fase 3) ----
     restoreEnvelope: null,        // parsed envelope awaiting user confirmation
@@ -511,8 +512,25 @@ function ropa30App() {
     // ---- List ----
     async caricaTrattamenti(highlightId = null) {
       this.nuovoTrattamentoId = highlightId;
-      this._rawTrattamenti = await listProcessingActivities();
+      this._rawTrattamenti = await listProcessingActivities(this.registroAttivo);
       this._mappaTrattamenti();
+    },
+    get clsTabTitolare() {
+      const base = 'px-5 py-2.5 text-base font-medium rounded-lg border ';
+      if (this.registroAttivo === 'titolare') return base + 'bg-brand-700 text-white border-brand-700';
+      return base + 'bg-white text-brand-700 border-brand-300 hover:bg-brand-50';
+    },
+    get clsTabResponsabile() {
+      const base = 'px-5 py-2.5 text-base font-medium rounded-lg border ';
+      if (this.registroAttivo === 'responsabile') return base + 'bg-brand-700 text-white border-brand-700';
+      return base + 'bg-white text-brand-700 border-brand-300 hover:bg-brand-50';
+    },
+    async cambiaRegistro(tipo) {
+      if (tipo !== 'titolare' && tipo !== 'responsabile') return;
+      if (this.registroAttivo === tipo) return;
+      this.registroAttivo = tipo;
+      this.queryRicerca = '';
+      await this.caricaTrattamenti();
     },
     _mappaTrattamenti() {
       const records = [...this._rawTrattamenti].sort((a, b) => {

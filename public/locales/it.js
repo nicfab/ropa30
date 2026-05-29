@@ -29,6 +29,8 @@ export default {
     footerRepoAria: 'Codice sorgente e segnalazioni su Codeberg (apre una nuova scheda)',
     footerEmailAria: 'Scrivi un\x27email di supporto',
     btnAzioni: 'Azioni',
+    tabRegistroTitolare: 'Registro del titolare',
+    tabRegistroResponsabile: 'Registro del responsabile',
     azioniTitolo: 'Azioni sul registro',
     azioniSottotitolo: 'Backup, ripristino, esportazione e dati del titolare.',
     azioniChiudi: 'Chiudi',

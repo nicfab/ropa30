@@ -491,14 +491,20 @@
                 <h1 id="lista-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight truncate"
                     x-bind:title="denominazione" x-text="denominazione">UNIFG</h1>
               </div>
+              <div class="flex items-center gap-2" role="tablist" aria-label="Tipo di registro">
+                <button type="button" role="tab" x-on:click="cambiaRegistro('titolare')"
+                        x-bind:class="clsTabTitolare" x-text="L.tabRegistroTitolare">Registro del titolare</button>
+                <button type="button" role="tab" x-on:click="cambiaRegistro('responsabile')"
+                        x-bind:class="clsTabResponsabile" x-text="L.tabRegistroResponsabile">Registro del responsabile</button>
+              </div>
               <div class="flex items-center gap-2">
                 <button type="button" x-on:click="apriCatalogo"
-                        class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium shadow-sm hover:bg-brand-800">
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                   <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
                 </button>
                 <button type="button" x-on:click="apriAzioniMenu"
-                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
                   <span x-text="L.btnAzioni">Azioni</span>
                 </button>
