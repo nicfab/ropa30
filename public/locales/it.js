@@ -104,6 +104,8 @@ export default {
     nessunRisultatoTitolo: 'Nessun risultato',
     nessunRisultatoTesto: 'Nessun trattamento corrisponde alla ricerca. Prova con altri termini.',
     btnPulisci: 'Pulisci',
+    filtroUnitaLabel: 'Filtra per unit\xE0 organizzativa',
+    filtroUnitaTutte: 'Tutte le unit\xE0',
     sennaNome: '(senza nome)',
     mancaEN: 'Manca EN',
     mancaIT: 'Manca IT',

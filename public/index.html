@@ -497,6 +497,15 @@
                   <button type="button" x-on:click="pulisciRicerca" x-show="queryRicerca.length > 0"
                           class="shrink-0 text-sm rounded-lg border border-brand-300 px-3 py-2.5 text-brand-700 hover:bg-white"
                           x-text="L.btnPulisci">Pulisci</button>
+                  <select x-show="unitaDisponibili.length > 0"
+                          x-model="filtroUnita"
+                          x-bind:aria-label="L.filtroUnitaLabel"
+                          class="shrink-0 text-sm rounded-lg border border-brand-300 bg-white px-3 py-2.5 text-brand-700">
+                    <option value="" x-text="L.filtroUnitaTutte">Tutte le unità</option>
+                    <template x-for="u in unitaDisponibili" x-bind:key="u">
+                      <option x-bind:value="u" x-text="u"></option>
+                    </template>
+                  </select>
                 </div>
                 <p class="mt-2 text-xs text-brand-500" x-text="contatoreTesto"></p>
               </div>

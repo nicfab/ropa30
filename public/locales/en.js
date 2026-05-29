@@ -104,6 +104,8 @@ export default {
     nessunRisultatoTitolo: 'No results',
     nessunRisultatoTesto: 'No activity matches your search. Try different terms.',
     btnPulisci: 'Clear',
+    filtroUnitaLabel: 'Filter by organizational unit',
+    filtroUnitaTutte: 'All units',
     sennaNome: '(untitled)',
     mancaEN: 'Missing EN',
     mancaIT: 'Missing IT',

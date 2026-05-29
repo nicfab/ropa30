@@ -77,6 +77,7 @@ function ropa30App() {
     storagePersistente: false,    // navigator.storage persisted state (informational)
     trattamentiFiltrati: [],
     queryRicerca: '',
+    filtroUnita: '',
     nuovoTrattamentoId: null,
 
     // Detail (read-only)
@@ -167,6 +168,7 @@ function ropa30App() {
 
         this.$watch('lang', () => { this._mappaTrattamenti(); this._mappaTemplates(); if (this.view === 'dettaglio' && this.trattamentoCorrente) { this.trattamentoVm = this._costruisciVm(this.trattamentoCorrente); } });
         this.$watch('queryRicerca', () => { this._filtra(); });
+        this.$watch('filtroUnita', () => { this._filtra(); });
         this.$watch('queryCatalogo', () => { this._filtraCatalogo(); });
       } catch (err) {
         console.error('[ropa30] init() error:', err);
@@ -457,10 +459,14 @@ function ropa30App() {
         const categoriaLabel = cat ? (catmap[cat] || cat) : '';
 
         const evidenziato = !!this.nuovoTrattamentoId && r.id === this.nuovoTrattamentoId;
+        const unitaList = (Array.isArray(r.unitaOrganizzativa) ? r.unitaOrganizzativa : [])
+          .map((u) => this._locConFallback(u && u.unita).testo)
+          .filter(Boolean);
         const blob = (
           (r.nome ? (r.nome.it || '') + ' ' + (r.nome.en || '') : '') + ' ' +
           (Array.isArray(r.finalita) ? r.finalita.map((f) => (f.it || '') + ' ' + (f.en || '')).join(' ') : '') + ' ' +
-          basi.join(' ')
+          basi.join(' ') + ' ' +
+          unitaList.join(' ')
         ).toLowerCase();
 
         return {
@@ -469,6 +475,7 @@ function ropa30App() {
           finalitaSintesi, basiSintesi, categoriaLabel,
           mostraCategoria: categoriaLabel.length > 0,
           cssEvidenzia: evidenziato ? 'ring-2 ring-brand-400' : '',
+          unitaList: unitaList,
           _blob: blob
         };
       });
@@ -476,8 +483,19 @@ function ropa30App() {
     },
     _filtra() {
       const q = (this.queryRicerca || '').trim().toLowerCase();
-      if (!q) { this.trattamentiFiltrati = this.trattamenti; return; }
-      this.trattamentiFiltrati = this.trattamenti.filter((t) => t._blob.indexOf(q) !== -1);
+      const u = this.filtroUnita || '';
+      this.trattamentiFiltrati = this.trattamenti.filter((t) => {
+        const okQ = !q || t._blob.indexOf(q) !== -1;
+        const okU = !u || (Array.isArray(t.unitaList) && t.unitaList.indexOf(u) !== -1);
+        return okQ && okU;
+      });
+    },
+    get unitaDisponibili() {
+      const set = {};
+      for (const t of this.trattamenti) {
+        for (const u of (t.unitaList || [])) { if (u) set[u] = true; }
+      }
+      return Object.keys(set).sort((a, b) => a.localeCompare(b, this.lang === 'en' ? 'en' : 'it'));
     },
     pulisciRicerca() { this.queryRicerca = ''; },
 
