@@ -1,0 +1,335 @@
+{
+  "templateId": "tpl-it-011-studi-legali-clienti-incarichi",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione clienti e incarichi professionali",
+    "en": "Management of legal clients and professional engagements"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per l'instaurazione e la gestione del rapporto con il cliente e per l'esecuzione dell'incarico professionale forense: conferimento del mandato, apertura e gestione del fascicolo, attività di assistenza, consulenza, rappresentanza e difesa, adempimenti antiriciclaggio, deontologici, fiscali e documentali connessi.",
+    "en": "Processing of personal data for establishing and managing the client relationship and performing the legal professional engagement: granting of the mandate, opening and management of the case file, assistance, advice, representation and defense activities, and connected anti-money-laundering, ethical, tax and documentary obligations."
+  },
+  "noteTemplate": {
+    "it": "TEMPLATE CARDINE DEGLI STUDI LEGALI. Da esso discendono fascicolo, contenzioso, consulenza, difesa e rapporti con terzi. PUNTI CRITICI: (a) lo studio/avvocato è TITOLARE AUTONOMO del trattamento nello svolgimento dell'incarico professionale; in alcuni incarichi specifici potrebbe operare come responsabile per conto del cliente, ma NON è il caso ordinario di questo template; (b) il domiciliatario e l'avvocato corrispondente sono di regola TITOLARI AUTONOMI, non responsabili ex art. 28; (c) SEGRETO PROFESSIONALE: i dati del fascicolo sono coperti dal segreto professionale e dal dovere di riservatezza previsti dalla normativa forense e deontologica applicabile, nonché dall'art. 622 c.p.; (d) ART. 9: per categorie particolari del cliente o di terzi la condizione ex art. 9(2)(f) si applica nell'ambito giudiziale/difensivo; per la consulenza non contenziosa la condizione va valutata caso per caso, senza presumere automaticamente l'art. 9(2)(f); (e) ART. 10: i dati su condanne penali/reati vanno trattati solo se pertinenti e necessari rispetto all'incarico, nei limiti dell'art. 2-octies Codice privacy e delle finalità di assistenza, consulenza, difesa o tutela dei diritti; (f) ANTIRICICLAGGIO: adeguata verifica della clientela e conservazione documentale ex d.lgs. 231/2007 per i professionisti destinatari degli obblighi.",
+    "en": "CORE TEMPLATE FOR LAW FIRMS. Case files, litigation, advice, defense and dealings with third parties derive from it. CRITICAL POINTS: (a) the firm/lawyer is an INDEPENDENT CONTROLLER in performing the engagement; in some specific engagements it may act as a processor on behalf of the client, but this is NOT the ordinary case of this template; (b) the domiciliary lawyer and the corresponding lawyer are generally INDEPENDENT CONTROLLERS, not Art. 28 processors; (c) PROFESSIONAL SECRECY: case-file data is covered by professional secrecy and the duty of confidentiality provided for under applicable legal-profession and ethical rules, as well as Art. 622 of the Italian Criminal Code; (d) ART. 9: for special categories of the client or third parties, the Art. 9(2)(f) condition applies in the judicial/defense context; for non-contentious advice the condition must be assessed case by case, without automatically presuming Art. 9(2)(f); (e) ART. 10: data on criminal convictions/offences must be processed only if relevant and necessary to the engagement, within the limits of Art. 2-octies of the Italian Privacy Code and the purposes of assistance, advice, defense or protection of rights; (f) ANTI-MONEY-LAUNDERING: customer due diligence and document retention under d.lgs. 231/2007 for professionals subject to the obligations."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "incarico_giudiziale",
+        "label": "Incarico giudiziale (assistenza e difesa in giudizio)",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "consulenza_stragiudiziale",
+        "label": "Consulenza e assistenza stragiudiziale",
+        "art6": "contratto"
+      }
+    ],
+    "en": [
+      {
+        "id": "incarico_giudiziale",
+        "label": "Judicial engagement (assistance and defense in court)",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "consulenza_stragiudiziale",
+        "label": "Out-of-court advice and assistance",
+        "art6": "contratto"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione clienti e incarichi professionali",
+      "en": "Management of legal clients and professional engagements"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali dei clienti e dei soggetti coinvolti negli incarichi professionali per l'esecuzione del mandato forense in ogni sua fase: conferimento dell'incarico, adeguata verifica, gestione del fascicolo, attività di assistenza, consulenza, rappresentanza e difesa, e adempimenti connessi.",
+      "en": "Processing of personal data of clients and persons involved in professional engagements for performing the legal mandate in all its phases: granting of the engagement, due diligence, case-file management, assistance, advice, representation and defense activities, and connected obligations."
+    },
+    "finalita": [
+      {
+        "it": "Instaurazione e gestione del rapporto con il cliente e conferimento del mandato professionale",
+        "en": "Establishment and management of the client relationship and granting of the professional mandate"
+      },
+      {
+        "it": "Esecuzione dell'incarico: assistenza, consulenza, rappresentanza e difesa in sede giudiziale e stragiudiziale",
+        "en": "Performance of the engagement: assistance, advice, representation and defense in judicial and out-of-court venues"
+      },
+      {
+        "it": "Apertura, tenuta e organizzazione del fascicolo e della documentazione della pratica",
+        "en": "Opening, keeping and organisation of the case file and case documentation"
+      },
+      {
+        "it": "Adempimenti antiriciclaggio (adeguata verifica della clientela e conservazione) per i professionisti destinatari degli obblighi",
+        "en": "Anti-money-laundering obligations (customer due diligence and retention) for professionals subject to them"
+      },
+      {
+        "it": "Adempimenti fiscali, contabili, deontologici e documentali connessi all'attività professionale",
+        "en": "Tax, accounting, ethical and documentary obligations connected to the professional activity"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: esecuzione del contratto di patrocinio/mandato professionale con il cliente e delle misure precontrattuali adottate su sua richiesta. Art. 6(1)(c) GDPR: adempimento di obblighi legali cui è soggetto lo studio, in particolare obblighi antiriciclaggio (d.lgs. 231/2007, per i professionisti destinatari), obblighi fiscali e contabili, obblighi di conservazione documentale e obblighi deontologici applicabili agli avvocati. Art. 6(1)(f) GDPR: legittimo interesse al trattamento dei dati di controparti, terzi, testimoni, consulenti e altri soggetti collegati alla pratica, necessario allo svolgimento dell'incarico e alla tutela dei diritti del cliente, limitatamente a tali soggetti e finalità.",
+        "en": "GDPR Art. 6(1)(b): performance of the retainer/professional mandate with the client and pre-contractual measures taken at the client's request. GDPR Art. 6(1)(c): compliance with legal obligations of the firm, in particular anti-money-laundering obligations (d.lgs. 231/2007, for professionals subject to them), tax and accounting obligations, document-retention obligations and professional and ethical obligations applicable to lawyers. GDPR Art. 6(1)(f): legitimate interest in processing data of counterparties, third parties, witnesses, consultants and other persons connected to the case, necessary to perform the engagement and protect the client's rights, limited to those persons and purposes."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, testimoni, consulenti, soggetti collegati alla posizione) che non hanno un rapporto contrattuale diretto con lo studio, ma i cui dati sono necessari per l'esecuzione dell'incarico professionale e per la tutela dei diritti del cliente. Non costituisce base giuridica generica per finalità ulteriori.",
+          "en": "Legitimate interest is limited to processing data of third parties (counterparties, witnesses, consultants, persons connected to the position) who have no direct contractual relationship with the firm but whose data is necessary to perform the professional engagement and protect the client's rights. It is not a generic legal basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Trattamento limitato ai dati pertinenti e necessari all'incarico; minimizzazione; accesso riservato ai soli soggetti coinvolti nella pratica; rispetto del segreto professionale; informativa ai terzi nei limiti compatibili con l'attività difensiva e con gli obblighi di riservatezza.",
+          "en": "Processing limited to data relevant and necessary to the engagement; minimisation; access reserved to persons involved in the case only; respect for professional secrecy; information to third parties within limits compatible with the defense activity and confidentiality obligations."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati (del cliente o di terzi) trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o comunque nell'ambito dell'attività difensiva. Per l'attività di consulenza non contenziosa, la condizione di liceità ex art. 9 va valutata caso per caso (ad es. consenso esplicito ex art. 9(2)(a), se effettivamente libero e appropriato, o altra condizione applicabile), senza presumere automaticamente l'applicabilità dell'art. 9(2)(f).",
+        "en": "GDPR Art. 9(2)(f) for special categories of data (of the client or third parties) processed to establish, exercise or defend a right in court, or otherwise within the defense activity. For non-contentious advice, the Art. 9 lawfulness condition must be assessed case by case (e.g. explicit consent under Art. 9(2)(a), if genuinely free and appropriate, or another applicable condition), without automatically presuming the applicability of Art. 9(2)(f)."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Negli studi legali il trattamento di dati relativi a condanne penali, reati, procedimenti penali, indagini, misure o atti giudiziari può essere fisiologico, ma deve avvenire solo se pertinente e necessario rispetto all'incarico, nei limiti della normativa applicabile e delle finalità di assistenza, consulenza, difesa o tutela dei diritti. Vanno distinti gli atti di procedimenti civili (che non costituiscono di per sé dati ex art. 10) dai dati relativi a condanne penali, reati o misure di sicurezza.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). In law firms, processing of data on criminal convictions, offences, criminal proceedings, investigations, measures or judicial acts may be ordinary, but must take place only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. A distinction must be made between civil-proceedings acts (which do not in themselves constitute Art. 10 data) and data on criminal convictions, offences or security measures."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti (persone fisiche) e referenti di clienti persone giuridiche",
+        "en": "Clients (natural persons) and contacts of corporate clients"
+      },
+      {
+        "it": "Controparti e relativi difensori e referenti",
+        "en": "Counterparties and their lawyers and contacts"
+      },
+      {
+        "it": "Testimoni, periti, consulenti tecnici e altri ausiliari coinvolti nella pratica",
+        "en": "Witnesses, experts, technical consultants and other auxiliaries involved in the case"
+      },
+      {
+        "it": "Terzi soggetti i cui dati emergono negli atti o nella documentazione della pratica",
+        "en": "Third parties whose data appears in the case documents or documentation"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto del cliente e dei soggetti coinvolti",
+        "en": "Identification and contact data of the client and persons involved"
+      },
+      {
+        "it": "Dati relativi all'incarico, all'oggetto della pratica e alla posizione giuridica",
+        "en": "Data relating to the engagement, the subject of the case and the legal position"
+      },
+      {
+        "it": "Dati amministrativi, fiscali e di pagamento connessi al rapporto professionale",
+        "en": "Administrative, tax and payment data connected to the professional relationship"
+      },
+      {
+        "it": "Dati raccolti per l'adeguata verifica della clientela (antiriciclaggio), per i professionisti destinatari degli obblighi",
+        "en": "Data collected for customer due diligence (anti-money-laundering), for professionals subject to the obligations"
+      },
+      {
+        "it": "Eventuali categorie particolari di dati (art. 9), trattate nei limiti delle condizioni applicabili",
+        "en": "Any special categories of data (Art. 9), processed within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati relativi a condanne penali e reati (art. 10), ove pertinenti e necessari rispetto all'incarico",
+        "en": "Any data on criminal convictions and offences (Art. 10), where relevant and necessary to the engagement"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti direttamente dal cliente; dati raccolti nel corso dell'incarico; dati provenienti da controparti, da altri difensori, da atti e provvedimenti dell'autorità giudiziaria; dati da fonti pubbliche o registri nei limiti di legge. La raccolta di dati di terzi è limitata a quanto necessario per l'incarico.",
+      "en": "Data provided directly by the client; data collected during the engagement; data from counterparties, other lawyers, acts and measures of the judicial authority; data from public sources or registers within legal limits. Collection of third-party data is limited to what is necessary for the engagement."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Avvocati domiciliatari e corrispondenti: di regola titolari autonomi del trattamento per le attività svolte secondo autonomia professionale",
+        "en": "Domiciliary and corresponding lawyers: generally independent controllers for activities carried out under professional autonomy"
+      },
+      {
+        "it": "Periti, consulenti tecnici di parte e investigatori privati autorizzati (responsabili o titolari autonomi, secondo l'incarico)",
+        "en": "Experts, party-appointed technical consultants and authorized private investigators (processors or independent controllers, depending on the engagement)"
+      },
+      {
+        "it": "Autorità giudiziarie, cancellerie, uffici giudiziari e ufficiali giudiziari (destinatari istituzionali)",
+        "en": "Judicial authorities, court registries, court offices and bailiffs (institutional recipients)"
+      },
+      {
+        "it": "Fornitore del software gestionale dello studio e dei servizi cloud (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      },
+      {
+        "it": "Commercialista / consulente fiscale dello studio (responsabile o titolare autonomo, secondo l'incarico)",
+        "en": "Accountant / tax advisor of the firm (processor or independent controller, depending on the engagement)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale legale / cloud dello studio]",
+          "en": "[Enter the name of the firm's legal management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Fornitura del software di gestione dello studio, dei fascicoli e dei servizi cloud connessi",
+          "en": "Provision of the firm's management software, case files and connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. I dati dei fascicoli sono coperti da segreto professionale.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. Case-file data is covered by professional secrecy."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati dei fascicoli, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei software gestionali e nei servizi cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Case-file data, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in management software and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico e, successivamente, per il tempo necessario agli obblighi di legge e alla tutela dei diritti, tenuto conto dei termini di prescrizione dell'azione di responsabilità professionale e degli obblighi antiriciclaggio e fiscali.",
+        "en": "For the duration of the engagement and, thereafter, for the time necessary for legal obligations and protection of rights, taking into account the prescription terms of the professional-liability action and the anti-money-laundering and tax obligations."
+      },
+      "criteri": {
+        "it": "Conservazione per la durata del mandato; dopo la chiusura, conservazione del fascicolo per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di conservazione antiriciclaggio (d.lgs. 231/2007) e fiscali. Eventuale litigation hold documentato in caso di contenzioso. Verifica periodica e cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention for the duration of the mandate; after closure, retention of the case file for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for anti-money-laundering (d.lgs. 231/2007) and tax retention obligations. Documented litigation hold in case of litigation. Periodic review and deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai fascicoli con autenticazione forte e profili di privilegio",
+          "en": "Access control to case files with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura delle connessioni e dei documenti riservati, in transito e at-rest",
+          "en": "Encryption of connections and confidential documents, in transit and at rest"
+        },
+        {
+          "it": "Accesso ai fascicoli limitato ai soli soggetti coinvolti nella pratica",
+          "en": "Case-file access limited to persons involved in the case only"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+          "en": "Periodic backups with at-rest encryption and access control"
+        },
+        {
+          "it": "Tracciabilità degli accessi ai fascicoli e ai documenti",
+          "en": "Traceability of access to case files and documents"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza su tutti i dati del fascicolo",
+          "en": "Compliance with professional secrecy and the duty of confidentiality on all case-file data"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR), inclusi praticanti e collaboratori",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29), including trainees and collaborators"
+        },
+        {
+          "it": "Procedure di adeguata verifica della clientela e conservazione documentale antiriciclaggio, per i professionisti destinatari degli obblighi",
+          "en": "Customer due diligence procedures and anti-money-laundering document retention, for professionals subject to the obligations"
+        },
+        {
+          "it": "Coordinamento con domiciliatari e corrispondenti (titolari autonomi) sui flussi di dati",
+          "en": "Coordination with domiciliary and corresponding lawyers (independent controllers) on data flows"
+        },
+        {
+          "it": "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con il segreto professionale e la tutela del diritto in giudizio",
+          "en": "Procedure for handling rights requests, balanced with professional secrecy and protection of the right in court"
+        },
+        {
+          "it": "Gestione dei conflitti di interesse prima dell'assunzione dell'incarico",
+          "en": "Conflict-of-interest management before accepting the engagement"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio al codice deontologico forense, alle policy interne dello studio sulla protezione dei dati e sul segreto professionale, alle procedure antiriciclaggio e alle nomine dei soggetti coinvolti]",
+        "en": "[Refer to the forensic code of conduct, the firm's internal policies on data protection and professional secrecy, anti-money-laundering procedures and the appointments of the parties involved]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti nella gestione dell'incarico professionale. Compilare se si utilizzano sistemi automatizzati di valutazione (es. scoring, strumenti di analisi predittiva), valutandone la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present in managing the professional engagement. Complete if using automated assessment systems (e.g. scoring, predictive analytics tools), assessing whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione dell'incarico professionale. Eventuali comunicazioni informative o promozionali dello studio vanno gestite in un trattamento dedicato, con base giuridica propria.",
+        "en": "Not applicable to managing the professional engagement. Any informational or promotional communications by the firm should be handled in a dedicated processing activity, with its own legal basis."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per la gestione ordinaria degli incarichi. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9 o art. 10, o di trattamenti particolarmente invasivi (es. profilazione, strumenti automatizzati, grandi volumi di dati giudiziari).",
+        "en": "Generally not required for ordinary engagement management. Assess where there is systematic or large-scale processing of Art. 9 or Art. 10 data, or particularly invasive processing (e.g. profiling, automated tools, large volumes of judicial data)."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; d.lgs. 231/2007 (antiriciclaggio, per i professionisti destinatari); art. 622 c.p. e normativa forense e deontologica sul segreto professionale; art. 2946 c.c. (prescrizione ordinaria). Lo studio è titolare autonomo; domiciliatari e corrispondenti sono di regola titolari autonomi.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; d.lgs. 231/2007 (anti-money-laundering, for professionals subject to it); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code (ordinary prescription). The firm is an independent controller; domiciliary and corresponding lawyers are generally independent controllers."
+    }
+  }
+}
