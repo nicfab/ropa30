@@ -51,6 +51,7 @@
 
   --color-danger-500: oklch(0.60 0.18 25);
   --color-danger-600: oklch(0.50 0.18 25);
+  --color-danger-700: oklch(0.42 0.18 25);
 
   /* ----- Typography -----
    * System font stack — no external font files, no network requests.
