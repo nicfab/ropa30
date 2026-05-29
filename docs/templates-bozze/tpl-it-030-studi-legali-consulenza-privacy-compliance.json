@@ -1,0 +1,309 @@
+{
+  "templateId": "tpl-it-030-studi-legali-consulenza-privacy-compliance",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione consulenza privacy, GDPR e funzione di DPO per clienti terzi",
+    "en": "Management of privacy and GDPR consultancy and the DPO function for third-party clients"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali connessi all'erogazione, a clienti terzi (titolari o responsabili), di servizi di consulenza in materia di protezione dei dati e GDPR e della funzione di Responsabile della protezione dei dati (DPO). Lo studio tratta in qualità di TITOLARE AUTONOMO i dati di contatto e di gestione del rapporto di consulenza con il cliente; quando opera sui dati personali degli interessati del cliente per conto di quest'ultimo (es. supporto alla tenuta dei registri, gestione delle richieste degli interessati, assistenza nelle valutazioni d'impatto) può configurarsi come RESPONSABILE ex art. 28 GDPR. Il template NON riguarda il trattamento dei dati propri dello studio (clienti, dipendenti), oggetto di template dedicati.",
+    "en": "Processing of personal data connected to providing third-party clients (controllers or processors) with data protection and GDPR consultancy services and the Data Protection Officer (DPO) function. The firm processes, as an INDEPENDENT CONTROLLER, the contact data and the data for managing the consultancy relationship with the client; when it operates on the personal data of the client's data subjects on the client's behalf (e.g. support in keeping records, handling data subject requests, assistance with impact assessments) it may configure as a PROCESSOR under GDPR Art. 28. The template does NOT concern the processing of the firm's own data (clients, employees), covered by dedicated templates."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO CONSULENZA PRIVACY PRESTATA A TERZI. PUNTI CRITICI: (a) DOPPIO RUOLO: per i dati di contatto e di gestione del rapporto di consulenza lo studio è TITOLARE AUTONOMO; per le attività svolte sui dati degli interessati del cliente per conto di quest'ultimo lo studio può essere RESPONSABILE ex art. 28 GDPR, con apposito accordo. Il presente registro inquadra in via primaria il ruolo di TITOLARE; il ruolo di responsabile va documentato separatamente (registro dei trattamenti del responsabile e DPA con il cliente). (b) FUNZIONE DI DPO: la designazione del DPO (artt. 37-39 GDPR) implica indipendenza, assenza di conflitto di interessi e vincoli di riservatezza; il DPO opera con indipendenza presso il titolare o responsabile cliente. La funzione di DPO va distinta dal ruolo di responsabile del trattamento: il DPO opera con indipendenza funzionale ai sensi degli artt. 37-39 GDPR e non è, in quanto tale, responsabile ex art. 28; eventuali attività operative svolte dallo studio sui dati del cliente per conto di quest'ultimo vanno disciplinate separatamente, ove necessario, con accordo ex art. 28 GDPR. (c) DISTINZIONE DALL'OGGETTO: il template riguarda la consulenza privacy PRESTATA A TERZI, non i dati che lo studio tratta come titolare per i propri fini (clienti dello studio, dipendenti), coperti da template dedicati. (d) ART. 6: base contrattuale (mandato di consulenza o incarico di DPO), obbligo legale (obblighi propri dello studio: contabili, fiscali, di conservazione, eventuali antiriciclaggio ove applicabili), legittimo interesse (dati di contatto dei referenti del cliente e dei terzi strettamente necessari all'attività). (e) ART. 9 e ART. 10: nel ruolo di TITOLARE (dati del rapporto di consulenza) di regola non pertinenti; eventuali categorie particolari o dati ex art. 10 trattati nell'erogazione del servizio appartengono ai trattamenti del CLIENTE titolare, rispetto ai quali lo studio opera come responsabile sotto la base di liceità individuata dal cliente. Basi giuridiche, ruoli, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "PRIVACY CONSULTANCY PROVIDED TO THIRD PARTIES SCOPE. CRITICAL POINTS: (a) DUAL ROLE: for the contact data and the data for managing the consultancy relationship the firm is an INDEPENDENT CONTROLLER; for the activities carried out on the personal data of the client's data subjects on the client's behalf the firm may be a PROCESSOR under GDPR Art. 28, with a dedicated agreement. This record primarily frames the CONTROLLER role; the processor role must be documented separately (the processor's record of processing and the DPA with the client). (b) DPO FUNCTION: the designation of the DPO (GDPR Arts. 37-39) entails independence, absence of conflict of interest and confidentiality obligations; the DPO operates with independence at the client controller or processor. The DPO function must be distinguished from the role of processor: the DPO operates with functional independence under GDPR Arts. 37-39 and is not, as such, a processor under Art. 28; any operational activities carried out by the firm on the client's data on the client's behalf must be governed separately, where necessary, by an agreement under GDPR Art. 28. (c) DISTINCTION OF THE SUBJECT MATTER: the template concerns privacy consultancy PROVIDED TO THIRD PARTIES, not the data the firm processes as a controller for its own purposes (the firm's clients, employees), covered by dedicated templates. (d) ART. 6: contractual basis (consultancy mandate or DPO engagement), legal obligation (the firm's own obligations: accounting, tax, retention, any anti-money-laundering where applicable), legitimate interest (contact data of the client's contacts and of third parties strictly necessary for the activity). (e) ART. 9 and ART. 10: in the CONTROLLER role (consultancy-relationship data) generally not relevant; any special categories or Art. 10 data processed in delivering the service belong to the processing of the CLIENT controller, in respect of which the firm acts as a processor under the lawfulness basis identified by the client. Legal bases, roles, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "consulenza_gdpr",
+        "label": "Consulenza privacy/GDPR a clienti terzi (titolare autonomo)",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "funzione_dpo",
+        "label": "Designazione e svolgimento della funzione di DPO per clienti terzi",
+        "art6": "contratto_e_obbligo"
+      }
+    ],
+    "en": [
+      {
+        "id": "consulenza_gdpr",
+        "label": "Privacy/GDPR consultancy for third-party clients (independent controller)",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "funzione_dpo",
+        "label": "Designation and performance of the DPO function for third-party clients",
+        "art6": "contratto_e_obbligo"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione consulenza privacy, GDPR e funzione di DPO per clienti terzi",
+      "en": "Management of privacy and GDPR consultancy and the DPO function for third-party clients"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per l'erogazione, a clienti terzi (titolari o responsabili), di consulenza in materia di protezione dei dati e GDPR e della funzione di DPO. Lo studio è titolare autonomo dei dati di contatto e di gestione del rapporto di consulenza; quando opera sui dati degli interessati del cliente per conto di quest'ultimo può configurarsi come responsabile ex art. 28 GDPR.",
+      "en": "Processing of personal data for providing third-party clients (controllers or processors) with data protection and GDPR consultancy and the DPO function. The firm is an independent controller of the contact data and the data for managing the consultancy relationship; when it operates on the client's data subjects' data on the client's behalf it may configure as a processor under GDPR Art. 28."
+    },
+    "finalita": [
+      {
+        "it": "Erogazione di consulenza in materia di protezione dei dati personali e GDPR a clienti terzi",
+        "en": "Provision of data protection and GDPR consultancy to third-party clients"
+      },
+      {
+        "it": "Svolgimento della funzione di Responsabile della protezione dei dati (DPO) per clienti titolari o responsabili",
+        "en": "Performance of the Data Protection Officer (DPO) function for client controllers or processors"
+      },
+      {
+        "it": "Gestione del rapporto di consulenza, della corrispondenza e della reportistica con il cliente",
+        "en": "Management of the consultancy relationship, correspondence and reporting with the client"
+      },
+      {
+        "it": "Supporto al cliente negli adempimenti (registri, informative, valutazioni d'impatto, gestione delle richieste degli interessati)",
+        "en": "Support to the client in compliance tasks (records, notices, impact assessments, handling of data subject requests)"
+      },
+      {
+        "it": "Gestione dei rapporti con l'Autorità di controllo a supporto o per conto del cliente",
+        "en": "Management of dealings with the supervisory authority in support of or on behalf of the client"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: la consulenza e la funzione di DPO sono svolte nell'ambito del contratto o dell'incarico professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimento di obblighi propri dello studio (es. obblighi contabili e fiscali, conservazione documentale, eventuali obblighi antiriciclaggio ove applicabili). Art. 6(1)(f) GDPR: legittimo interesse al trattamento dei dati di contatto dei referenti del cliente e dei terzi strettamente necessari allo svolgimento dell'attività. Quando lo studio tratta dati degli interessati del cliente per conto di quest'ultimo, la base di liceità è quella del cliente titolare e lo studio opera come responsabile ex art. 28 GDPR.",
+        "en": "GDPR Art. 6(1)(b): the consultancy and the DPO function are carried out within the contract or professional engagement granted by the client. GDPR Art. 6(1)(c): compliance with the firm's own obligations (e.g. accounting and tax obligations, document retention, any anti-money-laundering obligations where applicable). GDPR Art. 6(1)(f): legitimate interest in processing the contact data of the client's contacts and of third parties strictly necessary for the activity. When the firm processes the client's data subjects' data on the client's behalf, the lawfulness basis is that of the client controller and the firm acts as a processor under GDPR Art. 28."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda i dati di contatto dei referenti del cliente (titolare o responsabile) e dei terzi strettamente necessari all'attività di consulenza, nei limiti di quanto necessario. Non costituisce base per finalità ulteriori.",
+          "en": "Legitimate interest concerns the contact data of the client's contacts (controller or processor) and of third parties strictly necessary for the consultancy activity, within the limits of what is necessary. It is not a basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati; segreto professionale e riservatezza; separazione tra i dati trattati come titolare (rapporto di consulenza) e quelli trattati come responsabile per conto del cliente; accesso riservato ai soggetti autorizzati.",
+          "en": "Data minimisation; professional secrecy and confidentiality; separation between data processed as controller (consultancy relationship) and data processed as processor on the client's behalf; access reserved to authorized persons."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [],
+      "dettagliArt9": {
+        "it": "Nel ruolo di titolare (dati del rapporto di consulenza) di regola non sono trattate categorie particolari di dati. Eventuali dati ex art. 9 trattati nell'erogazione del servizio (es. supporto alla gestione di trattamenti del cliente che coinvolgono dati sanitari o di altra natura particolare) appartengono ai trattamenti del CLIENTE titolare e sono trattati dallo studio in qualità di responsabile ex art. 28, sotto la condizione di liceità individuata dal cliente.",
+        "en": "In the controller role (consultancy-relationship data) special categories of data are generally not processed. Any Art. 9 data processed in delivering the service (e.g. support in managing the client's processing involving health data or other special categories) belongs to the processing of the CLIENT controller and is processed by the firm as a processor under Art. 28, under the lawfulness condition identified by the client."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": false,
+      "normativaAutorizzativa": {
+        "it": "Nel ruolo di titolare (rapporto di consulenza) di regola non sono trattati dati relativi a condanne penali e reati. Qualora il cliente affidi allo studio attività che comportino il trattamento di dati ex art. 10 GDPR, questi appartengono ai trattamenti del cliente titolare, sotto la condizione di cui all'art. 10 GDPR e all'art. 2-octies del Codice privacy individuata dal cliente, e lo studio opera come responsabile ex art. 28.",
+        "en": "In the controller role (consultancy relationship) data on criminal convictions and offences are generally not processed. Should the client entrust the firm with activities involving Art. 10 GDPR data, these belong to the processing of the client controller, under the condition set out in GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code identified by the client, and the firm acts as a processor under Art. 28."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Referenti e personale del cliente (titolare o responsabile) coinvolti nel rapporto di consulenza",
+        "en": "Contacts and staff of the client (controller or processor) involved in the consultancy relationship"
+      },
+      {
+        "it": "DPO, referenti privacy e funzioni interne del cliente",
+        "en": "DPO, privacy contacts and internal functions of the client"
+      },
+      {
+        "it": "Interessati i cui dati sono trattati dallo studio per conto del cliente nel ruolo di responsabile (es. dipendenti, utenti, clienti del cliente)",
+        "en": "Data subjects whose data the firm processes on the client's behalf in the processor role (e.g. the client's employees, users, customers)"
+      },
+      {
+        "it": "Terzi i cui dati emergono nella documentazione di consulenza",
+        "en": "Third parties whose data appears in the consultancy documentation"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto dei referenti del cliente e dei soggetti coinvolti",
+        "en": "Identification and contact data of the client's contacts and the persons involved"
+      },
+      {
+        "it": "Dati relativi all'organizzazione del cliente e ai suoi trattamenti (registri, mappature, informative, valutazioni)",
+        "en": "Data relating to the client's organisation and its processing activities (records, mappings, notices, assessments)"
+      },
+      {
+        "it": "Corrispondenza, reportistica, pareri e documentazione del rapporto di consulenza",
+        "en": "Correspondence, reporting, opinions and documentation of the consultancy relationship"
+      },
+      {
+        "it": "Eventuali dati degli interessati del cliente trattati per conto di quest'ultimo nel ruolo di responsabile",
+        "en": "Any data of the client's data subjects processed on its behalf in the processor role"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente e dai suoi referenti; dati raccolti nello svolgimento dell'attività di consulenza e della funzione di DPO; dati provenienti, per conto del cliente, dai trattamenti del cliente stesso. La raccolta è limitata a quanto necessario all'erogazione del servizio.",
+      "en": "Data provided by the client and its contacts; data collected in carrying out the consultancy activity and the DPO function; data coming, on the client's behalf, from the client's own processing. Collection is limited to what is necessary to deliver the service."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Autorità di controllo (Garante per la protezione dei dati personali) nei rapporti svolti a supporto o per conto del cliente (destinatario istituzionale)",
+        "en": "Supervisory authority (Italian Data Protection Authority) in dealings carried out in support of or on behalf of the client (institutional recipient)"
+      },
+      {
+        "it": "Il cliente titolare o responsabile, nei flussi di restituzione dei dati e della documentazione",
+        "en": "The client controller or processor, in the flows returning data and documentation"
+      },
+      {
+        "it": "Altri consulenti e professionisti del cliente, ove indicati dal cliente",
+        "en": "Other consultants and professionals of the client, where indicated by the client"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale del rapporto di consulenza e della relativa corrispondenza, servizi cloud connessi",
+          "en": "Document management of the consultancy relationship and the related correspondence, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE) con il fornitore. Distinguere il presente registro (studio TITOLARE del rapporto di consulenza) dalla posizione dello studio quale RESPONSABILE del cliente, da disciplinare con apposito accordo ex art. 28 e da documentare nel registro dei trattamenti svolti per conto del titolare.",
+          "en": "Verify the Art. 28 DPA and sub-processors (including non-EU) with the provider. Distinguish this record (firm as CONTROLLER of the consultancy relationship) from the firm's position as PROCESSOR of the client, to be governed by a dedicated Art. 28 agreement and documented in the record of processing carried out on the controller's behalf."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e i relativi sub-responsabili]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati del rapporto di consulenza, coperti da segreto professionale e riservatezza, vanno trattati preferibilmente in ambito UE. Verificare la catena dei fornitori IT/cloud e gli eventuali sub-responsabili extra-UE; applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Consultancy-relationship data, covered by professional secrecy and confidentiality, should preferably be processed within the EU. Verify the chain of IT/cloud providers and any non-EU sub-processors; apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico di consulenza o di DPO e, successivamente, per il tempo necessario alla prova dell'attività svolta, alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale. I dati trattati per conto del cliente sono restituiti o cancellati al termine del servizio secondo le istruzioni del cliente (art. 28(3)(g) GDPR).",
+        "en": "For the duration of the consultancy or DPO engagement and, thereafter, for the time necessary to evidence the activity carried out, protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action. Data processed on the client's behalf is returned or deleted at the end of the service according to the client's instructions (GDPR Art. 28(3)(g))."
+      },
+      "criteri": {
+        "it": "Conservazione per la durata dell'incarico; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); per i dati trattati come responsabile, restituzione o cancellazione su istruzione del cliente; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention for the duration of the engagement; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); for data processed as processor, return or deletion upon the client's instruction; minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi con autenticazione forte e profili di privilegio",
+          "en": "Access control with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+          "en": "Encryption of data and connections, in transit and at rest"
+        },
+        {
+          "it": "Separazione logica tra i dati trattati come titolare e quelli trattati come responsabile per conto del cliente",
+          "en": "Logical separation between data processed as controller and data processed as processor on the client's behalf"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni",
+          "en": "Traceability of accesses and operations"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza previsti dalla normativa forense e deontologica applicabile, nonché dall'art. 622 c.p.",
+          "en": "Compliance with professional secrecy and the duty of confidentiality under the applicable rules for lawyers and legal ethics, as well as Art. 622 of the Italian Criminal Code"
+        },
+        {
+          "it": "Indipendenza e assenza di conflitto di interessi nello svolgimento della funzione di DPO (artt. 38-39 GDPR)",
+          "en": "Independence and absence of conflict of interest in performing the DPO function (GDPR Arts. 38-39)"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy (titolare/responsabile) e accordi ex art. 28 con i clienti",
+          "en": "Documented qualification of privacy roles (controller/processor) and Art. 28 agreements with clients"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR)",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29)"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne, agli incarichi di consulenza/DPO, ai DPA con i clienti e con i fornitori e alle qualificazioni dei ruoli privacy]",
+        "en": "[Refer to internal policies, the consultancy/DPO engagements, the DPAs with clients and providers and the privacy-role qualifications]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se nell'attività si utilizzano strumenti automatizzati con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if the activity uses automated tools with significant effects, assessing whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla consulenza privacy e alla funzione di DPO prestate a clienti terzi.",
+        "en": "Not applicable to the privacy consultancy and the DPO function provided to third-party clients."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per il rapporto di consulenza in sé. Da valutare ove lo studio, quale responsabile, supporti trattamenti del cliente sistematici o su larga scala o relativi a dati ex art. 9/10: in tali casi la DPIA compete al cliente titolare, con il supporto del DPO.",
+        "en": "Generally not required for the consultancy relationship itself. Assess where the firm, as a processor, supports the client's systematic or large-scale processing or processing of Art. 9/10 data: in such cases the DPIA is the responsibility of the client controller, with the support of the DPO."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 5, 6, 28, 29, 37-39; Codice privacy (d.lgs. 196/2003); art. 622 c.p. e normativa forense e deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo per i dati del rapporto di consulenza e può essere responsabile ex art. 28 per i trattamenti svolti per conto del cliente. [DA VERIFICARE: estremi degli incarichi e degli accordi ex art. 28 con i singoli clienti e l'eventuale applicabilità di obblighi settoriali].",
+      "en": "Relevant legal references: GDPR Arts. 5, 6, 28, 29, 37-39; Italian Privacy Code (d.lgs. 196/2003); Art. 622 Italian Criminal Code and the legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller of the consultancy-relationship data and may be a processor under Art. 28 for the processing carried out on the client's behalf. [TO BE VERIFIED: the references of the engagements and of the Art. 28 agreements with individual clients and the possible applicability of sector-specific obligations]."
+    }
+  }
+}

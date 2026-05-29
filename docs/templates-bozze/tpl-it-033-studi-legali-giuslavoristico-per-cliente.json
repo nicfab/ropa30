@@ -1,0 +1,319 @@
+{
+  "templateId": "tpl-it-033-studi-legali-giuslavoristico-per-cliente",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione assistenza giuslavoristica per il cliente datore di lavoro",
+    "en": "Management of employment-law assistance for the client employer"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per l'assistenza giuslavoristica prestata dallo studio al cliente DATORE DI LAVORO: consulenza su contratti e rapporti di lavoro, gestione di vertenze e contenzioso del lavoro per conto del cliente, assistenza in procedure disciplinari, licenziamenti, trasferimenti e relazioni sindacali. Il template NON riguarda la gestione dei dati dei dipendenti PROPRI dello studio (coperta dal template comune sul rapporto di lavoro): qui lo studio assiste un cliente datore nelle proprie vicende lavoristiche, in qualità di titolare autonomo.",
+    "en": "Processing of personal data for the employment-law assistance provided by the firm to the client EMPLOYER: advice on employment contracts and relationships, management of disputes and employment litigation on the client's behalf, assistance with disciplinary proceedings, dismissals, transfers and industrial relations. The template does NOT concern the processing of the firm's OWN employees' data (covered by the common template on the employment relationship): here the firm assists a client employer in its own employment matters, as an independent controller."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO GIUSLAVORISTICO PER IL CLIENTE DATORE. PUNTI CRITICI: (a) AMBITO: assistenza al CLIENTE DATORE, non gestione dei dipendenti propri dello studio (coperta dal template comune sul rapporto di lavoro). Lo studio è TITOLARE AUTONOMO dell'attività difensiva e consulenziale: i dati dei lavoratori del cliente sono trattati nell'ambito del proprio incarico professionale, di regola non come responsabile del cliente datore. Resta ferma la necessità di verificare caso per caso eventuali attività meramente operative svolte per conto del cliente datore, che potrebbero richiedere una diversa qualificazione privacy e, se del caso, un accordo ex art. 28 GDPR. (b) ART. 9 (SALUTE E ALTRO): nelle cause di lavoro possono emergere dati particolari, in particolare dati sulla salute del lavoratore (es. licenziamenti per superamento del periodo di comporto, malattia, inidoneità) e, talora, dati sull'appartenenza sindacale; trattati ai sensi dell'art. 9(2)(f) GDPR per accertare, esercitare o difendere un diritto in sede giudiziaria, da valutare caso per caso, con rigorosa minimizzazione. (c) ART. 10: possono emergere dati relativi a procedimenti penali (es. licenziamenti per giusta causa connessi a condotte penalmente rilevanti), trattati solo ove pertinenti e necessari ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy. Gli atti dei procedimenti civili, incluse le cause di lavoro, non sono di per sé dati art. 10. (d) ART. 6: base contrattuale (mandato del cliente datore), obbligo legale (obblighi propri dello studio; adempimenti processuali), legittimo interesse (dati dei lavoratori controparti, testimoni e terzi necessari alla difesa del cliente). Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "EMPLOYMENT-LAW ASSISTANCE FOR THE CLIENT EMPLOYER SCOPE. CRITICAL POINTS: (a) SCOPE: assistance to the CLIENT EMPLOYER, not management of the firm's own employees (covered by the common template on the employment relationship). The firm is an INDEPENDENT CONTROLLER of the defensive and advisory activity: the client's workers' data is processed within the firm's own professional engagement, as a rule not as the client employer's processor. It remains necessary to verify case by case any merely operational activities carried out on the client employer's behalf, which may require a different privacy qualification and, where appropriate, an agreement under GDPR Art. 28. (b) ART. 9 (HEALTH AND OTHER): in employment cases special data may emerge, in particular data on the worker's health (e.g. dismissals for exceeding the sick-leave protection period, illness, unfitness) and, at times, data on trade-union membership; processed under GDPR Art. 9(2)(f) to establish, exercise or defend a right before the courts, to be assessed case by case, with strict minimisation. (c) ART. 10: data on criminal proceedings may emerge (e.g. for-cause dismissals connected to criminally relevant conduct), processed only where relevant and necessary under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts, including employment cases, are not in themselves Art. 10 data. (d) ART. 6: contractual basis (the client employer's mandate), legal obligation (the firm's own obligations; procedural formalities), legitimate interest (data of worker counterparties, witnesses and third parties necessary to defend the client). Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "consulenza_giuslavoristica",
+        "label": "Consulenza su contratti, rapporti di lavoro e relazioni sindacali per il cliente datore",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "contenzioso_lavoro",
+        "label": "Vertenze e contenzioso del lavoro per conto del cliente datore",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "consulenza_giuslavoristica",
+        "label": "Advice on contracts, employment relationships and industrial relations for the client employer",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "contenzioso_lavoro",
+        "label": "Disputes and employment litigation on the client employer's behalf",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione assistenza giuslavoristica per il cliente datore di lavoro",
+      "en": "Management of employment-law assistance for the client employer"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per l'assistenza giuslavoristica al cliente datore di lavoro: consulenza su contratti e rapporti di lavoro, vertenze e contenzioso del lavoro per conto del cliente, procedure disciplinari, licenziamenti, trasferimenti e relazioni sindacali. Non riguarda i dipendenti propri dello studio (template comune dedicato).",
+      "en": "Processing of personal data for employment-law assistance to the client employer: advice on employment contracts and relationships, disputes and employment litigation on the client's behalf, disciplinary proceedings, dismissals, transfers and industrial relations. It does not concern the firm's own employees (dedicated common template)."
+    },
+    "finalita": [
+      {
+        "it": "Consulenza su contratti di lavoro, rapporti di lavoro e organizzazione del personale del cliente datore",
+        "en": "Advice on employment contracts, employment relationships and staff organisation of the client employer"
+      },
+      {
+        "it": "Assistenza in procedure disciplinari, licenziamenti, trasferimenti e provvedimenti del cliente datore",
+        "en": "Assistance with disciplinary proceedings, dismissals, transfers and measures of the client employer"
+      },
+      {
+        "it": "Gestione di vertenze e del contenzioso del lavoro (giudiziale e stragiudiziale) per conto del cliente",
+        "en": "Management of disputes and employment litigation (judicial and out-of-court) on the client's behalf"
+      },
+      {
+        "it": "Assistenza nelle relazioni sindacali e nelle procedure di conciliazione del lavoro",
+        "en": "Assistance with industrial relations and employment-conciliation procedures"
+      },
+      {
+        "it": "Gestione dei rapporti con autorità giudiziarie, controparti lavoratori, difensori ed enti competenti",
+        "en": "Management of dealings with judicial authorities, worker counterparties, lawyers and competent bodies"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: l'assistenza è svolta nell'ambito del mandato professionale conferito dal cliente datore di lavoro. Art. 6(1)(c) GDPR: adempimento di obblighi applicabili (obblighi propri dello studio; adempimenti processuali nel rito del lavoro). Art. 6(1)(f) GDPR: legittimo interesse alla difesa del cliente, esteso al trattamento dei dati dei lavoratori controparti, dei testimoni e dei terzi coinvolti nelle vicende lavoristiche, nei limiti di quanto necessario.",
+        "en": "GDPR Art. 6(1)(b): the assistance is carried out within the professional mandate granted by the client employer. GDPR Art. 6(1)(c): compliance with applicable obligations (the firm's own obligations; procedural formalities in employment proceedings). GDPR Art. 6(1)(f): legitimate interest in defending the client, extended to processing data of worker counterparties, witnesses and third parties involved in the employment matters, within the limits of what is necessary."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda la difesa e l'assistenza del cliente datore e si estende ai dati dei lavoratori controparti, dei testimoni e dei terzi coinvolti nelle vicende lavoristiche, nei limiti di quanto necessario. Non costituisce base per finalità ulteriori.",
+          "en": "Legitimate interest concerns defending and assisting the client employer and extends to data of worker counterparties, witnesses and third parties involved in the employment matters, within the limits of what is necessary. It is not a basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Rigorosa minimizzazione, in particolare dei dati sulla salute del lavoratore; segreto professionale; accesso riservato ai soggetti autorizzati; trattamento dei dati ex art. 9 limitato a quanto necessario alla tutela del diritto in giudizio.",
+          "en": "Strict minimisation, in particular of the worker's health data; professional secrecy; access reserved to authorized persons; processing of Art. 9 data limited to what is necessary to protect the right before the courts."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR: nelle cause di lavoro possono emergere categorie particolari di dati, in particolare dati sulla salute del lavoratore (es. malattia, inidoneità, superamento del periodo di comporto) e, talora, dati sull'appartenenza sindacale, trattati per accertare, esercitare o difendere un diritto del cliente in sede giudiziaria. Il trattamento è limitato a quanto strettamente necessario e va valutato caso per caso.",
+        "en": "GDPR Art. 9(2)(f): in employment cases special categories of data may emerge, in particular the worker's health data (e.g. illness, unfitness, exceeding the sick-leave protection period) and, at times, trade-union membership data, processed to establish, exercise or defend the client's right before the courts. Processing is limited to what is strictly necessary and must be assessed case by case."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Possono emergere dati relativi a condanne penali e reati (es. licenziamenti per giusta causa connessi a condotte penalmente rilevanti del lavoratore), trattati solo ove pertinenti e necessari rispetto all'incarico, ai sensi dell'art. 10 GDPR e dell'art. 2-octies del Codice privacy. Gli atti dei procedimenti civili, incluse le cause di lavoro, non costituiscono di per sé dati ex art. 10.",
+        "en": "Data on criminal convictions and offences may emerge (e.g. for-cause dismissals connected to criminally relevant conduct of the worker), processed only where relevant and necessary in relation to the engagement, under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts, including employment cases, do not in themselves constitute Art. 10 data."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Cliente datore di lavoro (persona giuridica) e suoi referenti e rappresentanti",
+        "en": "Client employer (legal entity) and its contacts and representatives"
+      },
+      {
+        "it": "Lavoratori controparti del cliente (dipendenti, ex dipendenti, collaboratori)",
+        "en": "Workers who are counterparties of the client (employees, former employees, collaborators)"
+      },
+      {
+        "it": "Testimoni, colleghi e terzi coinvolti nelle vicende lavoristiche",
+        "en": "Witnesses, colleagues and third parties involved in the employment matters"
+      },
+      {
+        "it": "Difensori delle controparti, consulenti del lavoro e rappresentanti delle organizzazioni sindacali",
+        "en": "Counterparties' lawyers, labour consultants and representatives of trade unions"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto dei soggetti coinvolti",
+        "en": "Identification and contact data of the persons involved"
+      },
+      {
+        "it": "Dati relativi al rapporto di lavoro (inquadramento, mansioni, retribuzione, presenze, provvedimenti)",
+        "en": "Data on the employment relationship (job classification, duties, pay, attendance, measures)"
+      },
+      {
+        "it": "Dati su procedimenti disciplinari, licenziamenti, vertenze, conciliazioni e contenzioso",
+        "en": "Data on disciplinary proceedings, dismissals, disputes, conciliations and litigation"
+      },
+      {
+        "it": "Eventuali dati sulla salute del lavoratore e altre categorie particolari (es. appartenenza sindacale), nei limiti dell'art. 9(2)(f)",
+        "en": "Any data on the worker's health and other special categories (e.g. trade-union membership), within the limits of Art. 9(2)(f)"
+      },
+      {
+        "it": "Eventuali dati ex art. 10 connessi a condotte penalmente rilevanti, ove pertinenti e necessari",
+        "en": "Any Art. 10 data connected to criminally relevant conduct, where relevant and necessary"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente datore di lavoro; dati provenienti dalle controparti lavoratori, dai relativi difensori e dai testimoni nel corso delle vicende lavoristiche e del contenzioso; dati da fonti pubbliche o atti processuali nei limiti di legge. La raccolta è limitata a quanto necessario alla difesa e all'assistenza del cliente.",
+      "en": "Data provided by the client employer; data from the worker counterparties, their lawyers and witnesses during the employment matters and litigation; data from public sources or court acts within legal limits. Collection is limited to what is necessary to defend and assist the client."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Autorità giudiziarie (giudice del lavoro), uffici giudiziari e organi competenti (destinatari istituzionali)",
+        "en": "Judicial authorities (labour court), court offices and competent bodies (institutional recipients)"
+      },
+      {
+        "it": "Controparti lavoratori e relativi difensori; rappresentanti delle organizzazioni sindacali",
+        "en": "Worker counterparties and their lawyers; representatives of trade unions"
+      },
+      {
+        "it": "Commissioni di conciliazione, Ispettorato del lavoro ed enti competenti, ove coinvolti (destinatari istituzionali)",
+        "en": "Conciliation boards, the Labour Inspectorate and competent bodies, where involved (institutional recipients)"
+      },
+      {
+        "it": "Consulenti del lavoro, periti e consulenti tecnici coinvolti nell'incarico",
+        "en": "Labour consultants, experts and technical consultants involved in the engagement"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale delle pratiche giuslavoristiche e del contenzioso e della relativa corrispondenza, servizi cloud connessi",
+          "en": "Document management of employment-law matters and litigation and the related correspondence, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). Autorità giudiziarie, Ispettorato del lavoro, commissioni di conciliazione e consulenti del lavoro operano come destinatari istituzionali o titolari autonomi, non come responsabili dello studio. Attenzione alla particolare riservatezza dei dati sulla salute del lavoratore nei flussi con i fornitori.",
+          "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). Judicial authorities, the Labour Inspectorate, conciliation boards and labour consultants act as institutional recipients or independent controllers, not as the firm's processors. Pay attention to the particular confidentiality of the worker's health data in the flows with providers."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e i relativi sub-responsabili]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati delle pratiche giuslavoristiche, coperti da segreto professionale e comprensivi di dati sulla salute, vanno trattati preferibilmente in ambito UE. Verificare la catena dei fornitori IT/cloud e gli eventuali sub-responsabili extra-UE; applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Employment-law matters' data, covered by professional secrecy and including health data, should preferably be processed within the EU. Verify the chain of IT/cloud providers and any non-EU sub-processors; apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico e, successivamente, per il tempo necessario alla prova dell'attività, alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili (anche in materia di crediti di lavoro) e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the engagement and, thereafter, for the time necessary to evidence the activity, protect rights and meet retention obligations, taking into account the applicable prescription terms (including for employment claims) and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione fino alla conclusione della vertenza o del contenzioso e per il tempo necessario all'esecuzione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione e cancellazione anticipata dei dati sulla salute non più necessari; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention until the dispute or litigation concludes and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation and early deletion of health data no longer necessary; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai fascicoli giuslavoristici con autenticazione forte e profili di privilegio",
+          "en": "Access control to employment-law files with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+          "en": "Encryption of data and connections, in transit and at rest"
+        },
+        {
+          "it": "Misure rafforzate di riservatezza e accesso selettivo per i dati sulla salute del lavoratore",
+          "en": "Enhanced confidentiality measures and selective access for the worker's health data"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni sui fascicoli",
+          "en": "Traceability of accesses and operations on the files"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza previsti dalla normativa forense e deontologica applicabile, nonché dall'art. 622 c.p.",
+          "en": "Compliance with professional secrecy and the duty of confidentiality under the applicable rules for lawyers and legal ethics, as well as Art. 622 of the Italian Criminal Code"
+        },
+        {
+          "it": "Rigorosa minimizzazione dei dati ex art. 9, in particolare sulla salute del lavoratore",
+          "en": "Strict minimisation of Art. 9 data, in particular the worker's health data"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy di autorità, enti, consulenti del lavoro e periti (destinatari istituzionali / titolari autonomi)",
+          "en": "Documented qualification of the privacy roles of authorities, bodies, labour consultants and experts (institutional recipients / independent controllers)"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti alle pratiche giuslavoristiche",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling employment-law matters"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sulle pratiche giuslavoristiche e sul trattamento dei dati sulla salute, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy dei soggetti coinvolti]",
+        "en": "[Refer to internal policies on employment-law matters and the processing of health data, the DPAs with providers and the privacy-role qualifications of the parties involved]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if automated tools are used with significant effects, assessing whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile all'assistenza giuslavoristica prestata al cliente datore di lavoro.",
+        "en": "Not applicable to the employment-law assistance provided to the client employer."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per l'assistenza ordinaria. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9 (salute) connessi a contenziosi del lavoro particolarmente delicati o numerosi.",
+        "en": "Generally not required for ordinary assistance. Assess in case of systematic or large-scale processing of Art. 9 data (health) connected to particularly sensitive or numerous employment litigation."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice civile (artt. 2094 e seguenti, rapporto di lavoro); Statuto dei lavoratori (L. 300/1970); codice di procedura civile (rito del lavoro, artt. 409 e seguenti); art. 622 c.p. e normativa forense e deontologica sul segreto professionale; art. 2946 c.c. Il template riguarda l'assistenza al cliente datore, distinta dalla gestione dei dipendenti propri dello studio (template comune sul rapporto di lavoro). [DA VERIFICARE: versione vigente delle norme sostanziali e processuali in materia di lavoro e i termini di prescrizione applicabili ai crediti di lavoro].",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian Civil Code (Arts. 2094 ff., employment relationship); Workers' Statute (L. 300/1970); Italian Code of Civil Procedure (employment proceedings, Arts. 409 ff.); Art. 622 Italian Criminal Code and the legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The template concerns the assistance to the client employer, distinct from the management of the firm's own employees (common template on the employment relationship). [TO BE VERIFIED: the current version of the substantive and procedural employment rules and the prescription terms applicable to employment claims]."
+    }
+  }
+}

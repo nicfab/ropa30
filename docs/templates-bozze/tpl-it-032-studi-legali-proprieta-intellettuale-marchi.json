@@ -1,0 +1,323 @@
+{
+  "templateId": "tpl-it-032-studi-legali-proprieta-intellettuale-marchi",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione proprietà intellettuale, marchi e brevetti",
+    "en": "Management of intellectual property, trademarks and patents"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali per la tutela della proprietà intellettuale e industriale: deposito e gestione di marchi, brevetti, disegni e modelli; attività di sorveglianza e monitoraggio; contenzioso in materia di proprietà intellettuale e azioni contro la contraffazione. Comprende i rapporti con gli uffici competenti (UIBM, EUIPO e, per i depositi internazionali, WIPO/OMPI) quali destinatari istituzionali, nonché il trattamento dei dati di titolari, inventori, autori, licenziatari, controparti e presunti contraffattori. Lo studio agisce quale titolare autonomo nell'assistenza al cliente.",
+    "en": "Processing of personal data for protecting intellectual and industrial property: filing and managing trademarks, patents, designs and models; watch and monitoring activities; intellectual-property litigation and anti-counterfeiting actions. It includes dealings with the competent offices (UIBM, EUIPO and, for international filings, WIPO) as institutional recipients, as well as processing the data of right holders, inventors, authors, licensees, counterparties and alleged infringers. The firm acts as an independent controller in assisting the client."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO PROPRIETÀ INTELLETTUALE E INDUSTRIALE. PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO nell'assistenza al cliente. (b) UFFICI COMPETENTI: UIBM, EUIPO e WIPO/OMPI operano come destinatari istituzionali e titolari autonomi nell'esercizio delle proprie funzioni; molte informazioni sui titoli di proprietà industriale sono contenute in banche dati pubbliche. (c) ART. 10 E CONTRAFFAZIONE: la gestione ordinaria di marchi, brevetti, disegni e modelli non comporta di regola dati ex art. 9 o art. 10; tali dati possono emergere nelle attività di enforcement, contenzioso, sorveglianza o contrasto alla contraffazione e vanno trattati solo ove pertinenti e necessari. Le azioni contro la contraffazione possono coinvolgere fattispecie penalmente rilevanti (es. artt. 473-474 e 517 c.p.) e dati relativi a procedimenti penali, trattati solo ove pertinenti e necessari ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy. Gli atti dei procedimenti civili non sono di per sé dati art. 10. (d) ART. 9(2)(f): nel contenzioso IP la condizione di accertamento, esercizio o difesa di un diritto si applica ove emergano categorie particolari, da valutare caso per caso. (e) ART. 6: base contrattuale (mandato), obbligo legale (adempimenti, termini e tasse presso gli uffici), legittimo interesse (dati di controparti, presunti contraffattori e terzi necessari alla tutela). Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "INTELLECTUAL AND INDUSTRIAL PROPERTY SCOPE. CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER in assisting the client. (b) COMPETENT OFFICES: UIBM, EUIPO and WIPO act as institutional recipients and independent controllers in exercising their functions; much information on industrial property rights is held in public databases. (c) ART. 10 AND COUNTERFEITING: the ordinary management of trademarks, patents, designs and models does not as a rule entail Art. 9 or Art. 10 data; such data may emerge in enforcement, litigation, surveillance or anti-counterfeiting activities and must be processed only where relevant and necessary. Anti-counterfeiting actions may involve criminally relevant offences (e.g. Arts. 473-474 and 517 of the Italian Criminal Code) and data on criminal proceedings, processed only where relevant and necessary under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts are not in themselves Art. 10 data. (d) ART. 9(2)(f): in IP litigation the condition to establish, exercise or defend a right applies where special categories emerge, to be assessed case by case. (e) ART. 6: contractual basis (mandate), legal obligation (formalities, deadlines and fees before the offices), legitimate interest (data of counterparties, alleged infringers and third parties necessary for the protection). Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "deposito_gestione_titoli",
+        "label": "Deposito e gestione di marchi, brevetti, disegni e modelli e sorveglianza",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "contenzioso_contraffazione",
+        "label": "Contenzioso IP e azioni contro la contraffazione",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "deposito_gestione_titoli",
+        "label": "Filing and management of trademarks, patents, designs and models and watch services",
+        "art6": "contratto_e_obbligo"
+      },
+      {
+        "id": "contenzioso_contraffazione",
+        "label": "IP litigation and anti-counterfeiting actions",
+        "art6": "contratto_e_legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione proprietà intellettuale, marchi e brevetti",
+      "en": "Management of intellectual property, trademarks and patents"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali per il deposito e la gestione di marchi, brevetti, disegni e modelli, per la sorveglianza dei titoli e per il contenzioso IP e le azioni contro la contraffazione, inclusi i rapporti con UIBM, EUIPO e WIPO/OMPI e i dati di titolari, inventori, autori, licenziatari, controparti e presunti contraffattori.",
+      "en": "Processing of personal data for filing and managing trademarks, patents, designs and models, for watching the rights and for IP litigation and anti-counterfeiting actions, including dealings with UIBM, EUIPO and WIPO and data of right holders, inventors, authors, licensees, counterparties and alleged infringers."
+    },
+    "finalita": [
+      {
+        "it": "Deposito, registrazione, rinnovo e gestione di marchi, brevetti, disegni e modelli",
+        "en": "Filing, registration, renewal and management of trademarks, patents, designs and models"
+      },
+      {
+        "it": "Sorveglianza e monitoraggio dei titoli e dei diritti di proprietà intellettuale",
+        "en": "Watch and monitoring of intellectual-property rights and titles"
+      },
+      {
+        "it": "Assistenza nella contrattualistica IP (licenze, cessioni, accordi di riservatezza e di sfruttamento)",
+        "en": "Assistance with IP contracts (licences, assignments, confidentiality and exploitation agreements)"
+      },
+      {
+        "it": "Gestione del contenzioso in materia di proprietà intellettuale e delle azioni contro la contraffazione",
+        "en": "Management of intellectual-property litigation and anti-counterfeiting actions"
+      },
+      {
+        "it": "Gestione dei rapporti con uffici competenti, mandatari, corrispondenti e agenti, anche per i depositi internazionali",
+        "en": "Management of dealings with competent offices, attorneys, correspondents and agents, including for international filings"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: l'attività è svolta nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimento degli obblighi e dei termini procedurali presso gli uffici competenti (depositi, rinnovi, tasse, opposizioni). Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, presunti contraffattori e terzi coinvolti nelle attività di tutela e nel contenzioso, nei limiti di quanto necessario.",
+        "en": "GDPR Art. 6(1)(b): the activity is carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): compliance with procedural obligations and deadlines before the competent offices (filings, renewals, fees, oppositions). GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, alleged infringers and third parties involved in the protection activities and litigation, within the limits of what is necessary."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse riguarda la tutela del diritto di proprietà intellettuale del cliente e si estende ai dati di controparti, presunti contraffattori e terzi coinvolti nelle attività di tutela e nel contenzioso, nei limiti di quanto necessario. Non costituisce base per finalità ulteriori.",
+          "en": "Legitimate interest concerns protecting the client's intellectual-property right and extends to data of counterparties, alleged infringers and third parties involved in the protection activities and litigation, within the limits of what is necessary. It is not a basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati raccolti nelle attività di sorveglianza e nel contenzioso; segreto professionale; accesso riservato; coordinamento dei ruoli privacy con uffici competenti, mandatari e corrispondenti (titolari autonomi).",
+          "en": "Minimisation of data collected in watch activities and litigation; professional secrecy; reserved access; coordination of privacy roles with competent offices, attorneys and correspondents (independent controllers)."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR ove pertinente: nel contenzioso IP possono emergere, in casi specifici, categorie particolari di dati (es. dati idonei a rivelare informazioni particolari di persone fisiche coinvolte), trattate per accertare, esercitare o difendere un diritto in sede giudiziaria. La condizione va valutata caso per caso; di regola il contenzioso IP riguarda diritti su segni e creazioni e non comporta categorie particolari.",
+        "en": "GDPR Art. 9(2)(f) where relevant: in IP litigation, in specific cases, special categories of data may emerge (e.g. data capable of revealing special information about the natural persons involved), processed to establish, exercise or defend a right before the courts. The condition must be assessed case by case; IP litigation generally concerns rights over signs and creations and does not involve special categories."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Nelle azioni contro la contraffazione e nel relativo contenzioso possono emergere dati relativi a condanne penali e reati (es. contraffazione e alterazione di segni distintivi e brevetti, vendita di prodotti con segni mendaci: artt. 473-474 e 517 c.p.), trattati solo ove pertinenti e necessari rispetto all'incarico, ai sensi dell'art. 10 GDPR e dell'art. 2-octies del Codice privacy. Gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10.",
+        "en": "In anti-counterfeiting actions and the related litigation, data on criminal convictions and offences may emerge (e.g. counterfeiting and alteration of distinctive signs and patents, sale of goods bearing false marks: Arts. 473-474 and 517 of the Italian Criminal Code), processed only where relevant and necessary in relation to the engagement, under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts do not in themselves constitute Art. 10 data."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Titolari dei diritti di proprietà intellettuale e industriale (clienti) e relativi referenti",
+        "en": "Holders of intellectual and industrial property rights (clients) and their contacts"
+      },
+      {
+        "it": "Inventori, autori e designer",
+        "en": "Inventors, authors and designers"
+      },
+      {
+        "it": "Licenziatari, licenzianti e controparti contrattuali",
+        "en": "Licensees, licensors and contractual counterparties"
+      },
+      {
+        "it": "Controparti, presunti contraffattori e relativi difensori nel contenzioso IP",
+        "en": "Counterparties, alleged infringers and their lawyers in IP litigation"
+      },
+      {
+        "it": "Mandatari, agenti, corrispondenti e referenti presso gli uffici competenti",
+        "en": "Attorneys, agents, correspondents and contacts at the competent offices"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto di titolari, inventori, autori e referenti",
+        "en": "Identification and contact data of right holders, inventors, authors and contacts"
+      },
+      {
+        "it": "Dati relativi ai titoli di proprietà industriale (domande, registrazioni, scadenze, rinnovi)",
+        "en": "Data on industrial property rights (applications, registrations, deadlines, renewals)"
+      },
+      {
+        "it": "Dati su licenze, cessioni, contratti e rapporti economici connessi",
+        "en": "Data on licences, assignments, contracts and connected economic relationships"
+      },
+      {
+        "it": "Documentazione di contenzioso, atti, prove e corrispondenza",
+        "en": "Litigation documentation, acts, evidence and correspondence"
+      },
+      {
+        "it": "Eventuali dati ex art. 9 o art. 10 connessi al contenzioso e alle azioni contro la contraffazione, nei limiti delle condizioni applicabili",
+        "en": "Any Art. 9 or Art. 10 data connected to litigation and anti-counterfeiting actions, within the limits of applicable conditions"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente; dati provenienti da banche dati pubbliche dei titoli di proprietà industriale (UIBM, EUIPO, WIPO/OMPI) nei limiti di legge; dati da servizi di sorveglianza e monitoraggio; dati provenienti da controparti e relativi difensori nel contenzioso. La raccolta è limitata a quanto necessario alla tutela del diritto.",
+      "en": "Data provided by the client; data from public databases of industrial property rights (UIBM, EUIPO, WIPO) within legal limits; data from watch and monitoring services; data from counterparties and their lawyers in litigation. Collection is limited to what is necessary to protect the right."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "UIBM (Ufficio Italiano Brevetti e Marchi), EUIPO e WIPO/OMPI per i depositi e gli adempimenti (destinatari istituzionali / titolari autonomi)",
+        "en": "UIBM (Italian Patent and Trademark Office), EUIPO and WIPO for filings and formalities (institutional recipients / independent controllers)"
+      },
+      {
+        "it": "Autorità giudiziarie e organi competenti nel contenzioso IP e nelle azioni contro la contraffazione (destinatari istituzionali)",
+        "en": "Judicial authorities and competent bodies in IP litigation and anti-counterfeiting actions (institutional recipients)"
+      },
+      {
+        "it": "Mandatari, corrispondenti e agenti, anche esteri, per i depositi e le procedure internazionali",
+        "en": "Attorneys, correspondents and agents, including foreign ones, for international filings and procedures"
+      },
+      {
+        "it": "Controparti e relativi difensori",
+        "en": "Counterparties and their lawyers"
+      },
+      {
+        "it": "Fornitore del software gestionale, dei servizi di sorveglianza marchi/brevetti e dei servizi cloud (responsabile del trattamento)",
+        "en": "Provider of the management software, trademark/patent watch services and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / sorveglianza / cloud dello studio]",
+          "en": "[Enter the name of the firm's management / watch / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale dei titoli e delle pratiche IP, servizi di sorveglianza e monitoraggio e servizi cloud connessi",
+          "en": "Document management of IP rights and matters, watch and monitoring services and connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare DPA ex art. 28 e sub-responsabili (anche extra-UE). UIBM, EUIPO, WIPO/OMPI, mandatari e corrispondenti operano come destinatari istituzionali o titolari autonomi nell'esercizio delle proprie funzioni, non come responsabili dello studio.",
+          "en": "Verify the Art. 28 DPA and sub-processors (including non-EU). UIBM, EUIPO, WIPO, attorneys and correspondents act as institutional recipients or independent controllers in exercising their functions, not as the firm's processors."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Possibili flussi per depositi internazionali e corrispondenti esteri; verificare i fornitori IT/cloud]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "Nelle procedure internazionali di deposito e nei rapporti con corrispondenti esteri possono verificarsi flussi verso Paesi terzi; molti dati dei titoli sono peraltro pubblici. Verificare la base del trasferimento e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile) e i sub-responsabili extra-UE nei servizi cloud e di sorveglianza.",
+          "en": "In international filing procedures and dealings with foreign correspondents, flows to third countries may occur; much of the titles' data is moreover public. Verify the transfer basis and apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable) and the non-EU sub-processors in the cloud and watch services."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico e per l'intero ciclo di vita dei titoli gestiti (incluse scadenze e rinnovi) e, successivamente, per il tempo necessario alla prova dell'attività, alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the engagement and for the entire life cycle of the managed rights (including deadlines and renewals) and, thereafter, for the time necessary to evidence the activity, protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione per la durata dell'incarico e dei titoli gestiti (con relative scadenze e rinnovi) e, per il contenzioso, fino alla definizione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention for the duration of the engagement and of the managed rights (with their deadlines and renewals) and, for litigation, until conclusion and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai fascicoli e ai titoli IP con autenticazione forte e profili di privilegio",
+          "en": "Access control to IP files and rights with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei dati e delle connessioni, in transito e at-rest",
+          "en": "Encryption of data and connections, in transit and at rest"
+        },
+        {
+          "it": "Sistemi di gestione delle scadenze e dei rinnovi con tracciabilità delle operazioni",
+          "en": "Deadline and renewal management systems with traceability of operations"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni sui fascicoli IP",
+          "en": "Traceability of accesses and operations on IP files"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza previsti dalla normativa forense e deontologica applicabile, nonché dall'art. 622 c.p.",
+          "en": "Compliance with professional secrecy and the duty of confidentiality under the applicable rules for lawyers and legal ethics, as well as Art. 622 of the Italian Criminal Code"
+        },
+        {
+          "it": "Minimizzazione dei dati raccolti nelle attività di sorveglianza e nel contenzioso",
+          "en": "Minimisation of data collected in watch activities and litigation"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy di uffici competenti, mandatari e corrispondenti (destinatari istituzionali / titolari autonomi)",
+          "en": "Documented qualification of the privacy roles of competent offices, attorneys and correspondents (institutional recipients / independent controllers)"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) addetti alle pratiche IP",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling IP matters"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sulla gestione dei titoli IP e del contenzioso, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy dei soggetti coinvolti]",
+        "en": "[Refer to internal policies on managing IP rights and litigation, the DPAs with providers and the privacy-role qualifications of the parties involved]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati (es. monitoraggio automatizzato di contraffazioni online) con effetti significativi, valutandone la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if automated tools are used (e.g. automated online counterfeiting monitoring) with significant effects, assessing whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione della proprietà intellettuale, dei marchi e dei brevetti.",
+        "en": "Not applicable to managing intellectual property, trademarks and patents."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per l'assistenza ordinaria. Da valutare in presenza di monitoraggio sistematico e su larga scala (es. sorveglianza online estesa) o di trattamenti di dati ex art. 9/10 connessi a contenziosi particolarmente delicati.",
+        "en": "Generally not required for ordinary assistance. Assess in case of systematic and large-scale monitoring (e.g. extensive online watch) or of Art. 9/10 data processing connected to particularly sensitive litigation."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; Codice della proprietà industriale (d.lgs. 30/2005); artt. 473-474 e 517 c.p. (tutela penale dei segni distintivi e dei prodotti); art. 622 c.p. e normativa forense e deontologica sul segreto professionale; art. 2946 c.c. UIBM, EUIPO e WIPO/OMPI sono destinatari istituzionali e titolari autonomi nell'esercizio delle proprie funzioni. [DA VERIFICARE: versione vigente del Codice della proprietà industriale e delle procedure internazionali di deposito (es. sistema di Madrid e PCT)].",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian Industrial Property Code (d.lgs. 30/2005); Arts. 473-474 and 517 of the Italian Criminal Code (criminal protection of distinctive signs and products); Art. 622 Italian Criminal Code and the legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. UIBM, EUIPO and WIPO are institutional recipients and independent controllers in exercising their functions. [TO BE VERIFIED: the current version of the Industrial Property Code and of the international filing procedures (e.g. the Madrid System and the PCT)]."
+    }
+  }
+}
