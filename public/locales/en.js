@@ -130,6 +130,9 @@ export default {
     catalogoDisclaimer: 'Templates are carefully drafted starting points, but must be adapted to your context and verified. They do not constitute legal advice.',
     catalogoCercaPlaceholder: 'Search a template\u2026',
     catalogoCercaAria: 'Search templates',
+    catalogoFiltroSettore: 'Filter templates by sector',
+    catalogoSettoreTutti: 'All sectors',
+    catalogoSettoreSoloComuni: 'For this sector, common templates are currently available. Sector-specific templates will be added progressively.',
     catalogoNessunRisultato: 'No template matches your search.',
     btnCrea: 'Add',
     btnChiudi: 'Close',
@@ -189,6 +192,23 @@ export default {
       amministrazione: 'Administration',
       legale: 'Legal',
       web: 'Web'
+    },
+    settore: {
+      comune: 'General',
+      pa: 'Public Administration',
+      universita: 'University',
+      caf: 'Tax assistance centre (CAF)',
+      studi_legali: 'Law firms',
+      sanita: 'Healthcare / Medical practices',
+      scuole: 'Schools',
+      commercialisti_consulenti_lavoro: 'Accountants / Labour consultants',
+      terzo_settore: 'Non-profit / Associations',
+      condomini: 'Condominiums / Property managers',
+      ecommerce_retail: 'E-commerce / Retail',
+      assicurazioni: 'Insurance / Brokers',
+      immobiliare: 'Real estate / Agencies',
+      it_provider: 'IT providers / Software houses',
+      hospitality: 'Hospitality / Accommodation'
     },
     art6: {
       consenso: 'Consent',

@@ -35,6 +35,7 @@ import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo } from 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
   const CATEGORIA_LABEL  = { it: localeIt.enums.categoria, en: localeEn.enums.categoria };
+  const SETTORE_LABEL    = { it: localeIt.enums.settore, en: localeEn.enums.settore };
   const ART6_LABEL       = { it: localeIt.enums.art6,      en: localeEn.enums.art6 };
   const LOCALI = { it: localeIt, en: localeEn };
 
@@ -107,6 +108,7 @@ function ropa30App() {
     templates: [],
     templatesFiltrati: [],
     queryCatalogo: '',
+    filtroSettore: '',
     _catalogoCaricato: false,
     catalogoAperto: false,
     creazioneInCorso: false,
@@ -170,6 +172,7 @@ function ropa30App() {
         this.$watch('queryRicerca', () => { this._filtra(); });
         this.$watch('filtroUnita', () => { this._filtra(); });
         this.$watch('queryCatalogo', () => { this._filtraCatalogo(); });
+        this.$watch('filtroSettore', () => { this._filtraCatalogo(); });
       } catch (err) {
         console.error('[ropa30] init() error:', err);
         this.view = 'onboarding';
@@ -463,9 +466,12 @@ function ropa30App() {
         const nomeLoc = this._loc(t.nome);
         const descrizioneLoc = this._loc(t.descrizioneTemplate);
         const categoriaLabel = catmap[t.categoria] || t.categoria || '';
-        const blob = (nomeLoc + ' ' + descrizioneLoc + ' ' + categoriaLabel).toLowerCase();
+        const settoreCode = t.settore || 'comune';
+        const settmap = SETTORE_LABEL[this.lang] || SETTORE_LABEL.it;
+        const settoreLabel = settmap[settoreCode] || settoreCode || '';
+        const blob = (nomeLoc + ' ' + descrizioneLoc + ' ' + categoriaLabel + ' ' + settoreLabel).toLowerCase();
         return {
-          id: t.templateId, categoriaLabel, nomeLoc,
+          id: t.templateId, categoriaLabel, nomeLoc, settore: settoreCode, settoreLabel,
           descrizioneLoc: this._tronca(descrizioneLoc, 160), _blob: blob
         };
       });
@@ -473,8 +479,29 @@ function ropa30App() {
     },
     _filtraCatalogo() {
       const q = (this.queryCatalogo || '').trim().toLowerCase();
-      if (!q) { this.templatesFiltrati = this.templates; return; }
-      this.templatesFiltrati = this.templates.filter((t) => t._blob.indexOf(q) !== -1);
+      const set = this.filtroSettore || '';
+      this.templatesFiltrati = this.templates.filter((t) => {
+        const okQ = !q || t._blob.indexOf(q) !== -1;
+        let okS = true;
+        if (set === 'comune') okS = (t.settore === 'comune');
+        else if (set) okS = (t.settore === 'comune' || t.settore === set);
+        return okQ && okS;
+      });
+    },
+    get settoriDisponibili() {
+      return ['comune', 'pa', 'universita', 'caf', 'studi_legali', 'sanita',
+        'scuole', 'commercialisti_consulenti_lavoro', 'terzo_settore', 'condomini',
+        'ecommerce_retail', 'assicurazioni', 'immobiliare', 'it_provider', 'hospitality'];
+    },
+    get settoreSenzaTemplate() {
+      const set = this.filtroSettore || '';
+      if (!set || set === 'comune') return false;
+      const haDedicati = (this.templates || []).some((t) => t.settore === set);
+      return !haDedicati;
+    },
+    get settoriOpzioni() {
+      const m = (SETTORE_LABEL[this.lang] || SETTORE_LABEL.it) || {};
+      return this.settoriDisponibili.map((code) => ({ code: code, label: m[code] || code }));
     },
     pulisciCatalogo() { this.queryCatalogo = ''; },
 

@@ -130,6 +130,9 @@ export default {
     catalogoDisclaimer: 'I template sono punti di partenza redatti con cura, ma vanno adattati alla tua realt\u00e0 e verificati. Non costituiscono consulenza legale.',
     catalogoCercaPlaceholder: 'Cerca un template\u2026',
     catalogoCercaAria: 'Cerca tra i template',
+    catalogoFiltroSettore: 'Filtra i template per settore',
+    catalogoSettoreTutti: 'Tutti i settori',
+    catalogoSettoreSoloComuni: 'Per questo settore sono attualmente disponibili i template comuni. I template specifici saranno aggiunti progressivamente.',
     catalogoNessunRisultato: 'Nessun template corrisponde alla ricerca.',
     btnCrea: 'Aggiungi',
     btnChiudi: 'Chiudi',
@@ -189,6 +192,23 @@ export default {
       amministrazione: 'Amministrazione',
       legale: 'Legale',
       web: 'Web'
+    },
+    settore: {
+      comune: 'Generale',
+      pa: 'Pubblica Amministrazione',
+      universita: 'Universit\xE0',
+      caf: 'CAF / Assistenza fiscale',
+      studi_legali: 'Studi legali',
+      sanita: 'Sanit\xE0 / Studi medici',
+      scuole: 'Scuole / Istituti scolastici',
+      commercialisti_consulenti_lavoro: 'Commercialisti / Consulenti del lavoro',
+      terzo_settore: 'Terzo Settore / Associazioni',
+      condomini: 'Condomini / Amministratori',
+      ecommerce_retail: 'E-commerce / Retail',
+      assicurazioni: 'Assicurazioni / Intermediari',
+      immobiliare: 'Immobiliare / Agenzie',
+      it_provider: 'IT provider / Software house',
+      hospitality: 'Strutture ricettive / Hospitality'
     },
     art6: {
       consenso: 'Consenso',
