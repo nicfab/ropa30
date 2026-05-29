@@ -1,0 +1,323 @@
+{
+  "templateId": "tpl-it-020-studi-legali-consulenti-tecnici-periti-investigatori",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione consulenti tecnici, periti, investigatori privati e ausiliari",
+    "en": "Management of technical consultants, experts, private investigators and auxiliaries"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali connesso al ricorso, da parte dello studio, ad ausiliari tecnici per l'esecuzione degli incarichi: consulenti tecnici di parte (CTP), periti, investigatori privati autorizzati, traduttori, interpreti e altri ausiliari. Riguarda il conferimento dell'incarico a tali soggetti, la trasmissione dei dati necessari, la ricezione di relazioni, perizie e risultanze investigative e la qualificazione dei rispettivi ruoli privacy. Comprende le indagini difensive, che possono toccare dati ex art. 9/art. 10. Il taglio riguarda i rapporti con gli ausiliari tecnici, distinto dalla conduzione della lite (template contenzioso) e dai rapporti con la parte avversa e i legali esterni (template dedicato).",
+    "en": "Processing of personal data connected to the firm's use of technical auxiliaries to perform engagements: party-appointed technical consultants, experts, authorized private investigators, translators, interpreters and other auxiliaries. It concerns granting the engagement to such parties, transmitting the necessary data, receiving reports, expert opinions and investigative findings, and qualifying the respective privacy roles. It includes defensive investigations, which may involve Art. 9/Art. 10 data. The scope concerns relations with technical auxiliaries, distinct from conducting the dispute (litigation template) and relations with the opposing side and external lawyers (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO SUGLI AUSILIARI TECNICI. Copre i rapporti con CTP, periti, investigatori privati e altri ausiliari, NON la conduzione della lite (template contenzioso) né i rapporti con la parte avversa (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) QUALIFICAZIONE DEI RUOLI CASO PER CASO: gli ausiliari possono operare come RESPONSABILI ex art. 28 (quando trattano i dati per conto e secondo le istruzioni dello studio) o come TITOLARI AUTONOMI (quando agiscono secondo autonomia tecnica/professionale propria); la scelta va verificata in concreto e formalizzata; (c) INVESTIGATORI PRIVATI: attività regolata, soggetta ad autorizzazione, con disciplina specifica del trattamento; di regola titolari autonomi, ma la qualificazione può variare in concreto in base a istruzioni, autonomia e finalità del trattamento; le indagini difensive (L. 397/2000 e art. 391-bis ss. c.p.p.) possono comportare dati ex art. 9/art. 10 e vanno svolte nei limiti di legge e di pertinenza; (d) ART. 9(2)(f) per i dati trattati nell'attività difensiva/giudiziale; (e) MINIMIZZAZIONE dei dati trasmessi all'ausiliario; (f) SEGRETO PROFESSIONALE esteso agli ausiliari, con istruzioni e vincoli di riservatezza; (g) DPIA da valutare per indagini sistematiche o su larga scala. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "SCOPE ON TECHNICAL AUXILIARIES. Covers relations with party-appointed consultants, experts, private investigators and other auxiliaries, NOT conducting the dispute (litigation template) or relations with the opposing side (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) CASE-BY-CASE ROLE QUALIFICATION: auxiliaries may act as Art. 28 PROCESSORS (when they process data on behalf of and according to the firm's instructions) or as INDEPENDENT CONTROLLERS (when they act under their own technical/professional autonomy); the choice must be verified in practice and formalised; (c) PRIVATE INVESTIGATORS: a regulated activity, subject to authorisation, with specific processing rules; defensive investigations (Law 397/2000 and Art. 391-bis ff. of the Italian Code of Criminal Procedure) may involve Art. 9/Art. 10 data and must be carried out within legal and relevance limits; (d) ART. 9(2)(f) for data processed in the defense/judicial activity; (e) MINIMISATION of data transmitted to the auxiliary; (f) PROFESSIONAL SECRECY extended to auxiliaries, with instructions and confidentiality constraints; (g) DPIA to be assessed for systematic or large-scale investigations. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "ctp_periti",
+        "label": "Consulenti tecnici di parte, periti e ausiliari (perizie, relazioni, traduzioni)",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "investigazioni_difensive",
+        "label": "Investigatori privati e indagini difensive (L. 397/2000, art. 391-bis ss. c.p.p.)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ],
+    "en": [
+      {
+        "id": "ctp_periti",
+        "label": "Party-appointed consultants, experts and auxiliaries (expert opinions, reports, translations)",
+        "art6": "contratto_e_legittimo_interesse"
+      },
+      {
+        "id": "investigazioni_difensive",
+        "label": "Private investigators and defensive investigations (Law 397/2000, Art. 391-bis ff. CCP)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione consulenti tecnici, periti, investigatori privati e ausiliari",
+      "en": "Management of technical consultants, experts, private investigators and auxiliaries"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali connesso al ricorso ad ausiliari tecnici per l'esecuzione degli incarichi: consulenti tecnici di parte, periti, investigatori privati autorizzati, traduttori, interpreti e altri ausiliari; conferimento dell'incarico, trasmissione dei dati necessari, ricezione di perizie, relazioni e risultanze investigative, qualificazione dei ruoli privacy.",
+      "en": "Processing of personal data connected to the use of technical auxiliaries to perform engagements: party-appointed technical consultants, experts, authorized private investigators, translators, interpreters and other auxiliaries; granting of the engagement, transmission of the necessary data, receipt of expert opinions, reports and investigative findings, qualification of privacy roles."
+    },
+    "finalita": [
+      {
+        "it": "Conferimento di incarichi a consulenti tecnici di parte, periti, traduttori e altri ausiliari per l'esecuzione della pratica",
+        "en": "Granting engagements to party-appointed technical consultants, experts, translators and other auxiliaries to perform the case"
+      },
+      {
+        "it": "Trasmissione agli ausiliari dei dati e dei documenti necessari allo svolgimento dell'incarico tecnico",
+        "en": "Transmission to auxiliaries of the data and documents necessary to perform the technical engagement"
+      },
+      {
+        "it": "Ricezione e gestione di perizie, relazioni tecniche, traduzioni e risultanze degli ausiliari",
+        "en": "Receipt and management of expert opinions, technical reports, translations and auxiliaries' findings"
+      },
+      {
+        "it": "Affidamento di indagini difensive a investigatori privati autorizzati, nei limiti di legge e di pertinenza",
+        "en": "Entrusting defensive investigations to authorized private investigators, within legal and relevance limits"
+      },
+      {
+        "it": "Qualificazione, formalizzazione e tracciamento dei rapporti e dei flussi di dati con gli ausiliari tecnici",
+        "en": "Qualification, formalisation and tracking of relations and data flows with technical auxiliaries"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: il ricorso agli ausiliari tecnici è svolto nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, terzi e soggetti sottoposti a indagine difensiva, nei limiti di quanto necessario all'incarico tecnico/investigativo. Art. 6(1)(c) GDPR: adempimenti e obblighi di legge connessi, in particolare per le indagini difensive e per l'attività regolata degli investigatori privati. Il rapporto contrattuale con l'ausiliario, quando trattato, è autonomo rapporto di servizio da qualificare.",
+        "en": "GDPR Art. 6(1)(b): the use of technical auxiliaries is carried out within the professional mandate granted by the client. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, third parties and persons subject to defensive investigation, within the limits of what is necessary for the technical/investigative engagement. GDPR Art. 6(1)(c): connected legal obligations, in particular for defensive investigations and the regulated activity of private investigators. The contractual relationship with the auxiliary, where processed, is a separate service relationship to be qualified."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse copre il trattamento dei dati di controparti, terzi e soggetti coinvolti nelle attività tecniche e investigative, nei limiti di quanto necessario alla tutela del diritto del cliente. Per le indagini difensive il trattamento è particolarmente delicato e va circoscritto a quanto strettamente pertinente e necessario. Non costituisce base per finalità ulteriori.",
+          "en": "Legitimate interest covers processing data of counterparties, third parties and persons involved in the technical and investigative activities, within the limits of what is necessary to protect the client's right. For defensive investigations, processing is particularly sensitive and must be confined to what is strictly relevant and necessary. It is not a basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati trasmessi all'ausiliario; pertinenza dell'incarico tecnico/investigativo; istruzioni e vincoli di riservatezza estesi agli ausiliari; rispetto del segreto professionale; per le indagini difensive, svolgimento nei limiti di legge e di pertinenza con investigatori autorizzati; qualificazione documentata del ruolo privacy di ciascun ausiliario.",
+          "en": "Minimisation of data transmitted to the auxiliary; relevance of the technical/investigative engagement; instructions and confidentiality constraints extended to auxiliaries; respect for professional secrecy; for defensive investigations, conduct within legal and relevance limits with authorized investigators; documented qualification of each auxiliary's privacy role."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati trattate nell'ambito delle attività tecniche e delle indagini difensive, quando necessarie per accertare, esercitare o difendere un diritto in sede giudiziaria, o comunque nell'ambito dell'attività difensiva. Per attività non contenziose, la condizione di liceità ex art. 9 va valutata caso per caso, senza presumere automaticamente l'applicabilità dell'art. 9(2)(f).",
+        "en": "GDPR Art. 9(2)(f) for special categories of data processed in the technical activities and defensive investigations, when necessary to establish, exercise or defend a right in court, or otherwise within the defense activity. For non-contentious activities, the Art. 9 lawfulness condition must be assessed case by case, without automatically presuming the applicability of Art. 9(2)(f)."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Le attività degli ausiliari, in particolare le indagini difensive (L. 397/2000 e art. 391-bis ss. c.p.p.), possono comportare il trattamento di dati relativi a condanne penali, reati, procedimenti, indagini o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico e nei limiti della normativa applicabile. Particolare cautela per i dati raccolti nel corso delle investigazioni.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The auxiliaries' activities, in particular defensive investigations (Law 397/2000 and Art. 391-bis ff. CCP), may involve processing data on criminal convictions, offences, proceedings, investigations or measures; processing is permitted only if relevant and necessary to the engagement and within the limits of applicable law. Particular caution for data collected during investigations."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Consulenti tecnici di parte, periti, traduttori, interpreti e altri ausiliari (dati di contatto e di incarico)",
+        "en": "Party-appointed technical consultants, experts, translators, interpreters and other auxiliaries (contact and engagement data)"
+      },
+      {
+        "it": "Investigatori privati autorizzati e relativi referenti",
+        "en": "Authorized private investigators and their contacts"
+      },
+      {
+        "it": "Clienti per conto dei quali sono conferiti gli incarichi tecnici e investigativi",
+        "en": "Clients on whose behalf the technical and investigative engagements are granted"
+      },
+      {
+        "it": "Controparti, terzi e soggetti sottoposti a indagine difensiva i cui dati sono trattati dagli ausiliari",
+        "en": "Counterparties, third parties and persons subject to defensive investigation whose data is processed by the auxiliaries"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi, di contatto e professionali degli ausiliari incaricati",
+        "en": "Identification, contact and professional data of the appointed auxiliaries"
+      },
+      {
+        "it": "Dati e documenti trasmessi agli ausiliari per lo svolgimento dell'incarico",
+        "en": "Data and documents transmitted to auxiliaries to perform the engagement"
+      },
+      {
+        "it": "Perizie, relazioni tecniche, traduzioni e risultanze investigative ricevute",
+        "en": "Expert opinions, technical reports, translations and investigative findings received"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 trattati nelle attività tecniche e investigative, nei limiti delle condizioni applicabili",
+        "en": "Special categories of data (Art. 9) and any Art. 10 data processed in the technical and investigative activities, within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati raccolti nel corso delle indagini difensive, nei limiti di legge e di pertinenza",
+        "en": "Any data collected during defensive investigations, within legal and relevance limits"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente; dati e documenti predisposti dallo studio e trasmessi agli ausiliari; perizie, relazioni e risultanze investigative prodotte dagli ausiliari; dati raccolti dagli investigatori nel corso delle indagini difensive nei limiti di legge; dati da fonti pubbliche o registri nei limiti di legge. La raccolta e la trasmissione sono limitate a quanto necessario all'incarico tecnico/investigativo.",
+      "en": "Data provided by the client; data and documents prepared by the firm and transmitted to auxiliaries; expert opinions, reports and investigative findings produced by auxiliaries; data collected by investigators during defensive investigations within legal limits; data from public sources or registers within legal limits. Collection and transmission are limited to what is necessary for the technical/investigative engagement."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Consulenti tecnici di parte e periti (responsabili ex art. 28 o titolari autonomi, secondo l'incarico e l'autonomia tecnica)",
+        "en": "Party-appointed technical consultants and experts (Art. 28 processors or independent controllers, depending on the engagement and technical autonomy)"
+      },
+      {
+        "it": "Investigatori privati autorizzati (di regola titolari autonomi per l'attività regolata, salvo diversa qualificazione concreta)",
+        "en": "Authorized private investigators (generally independent controllers for the regulated activity, unless a different qualification applies in practice)"
+      },
+      {
+        "it": "Traduttori, interpreti e altri ausiliari (responsabili ex art. 28 o titolari autonomi, secondo l'incarico)",
+        "en": "Translators, interpreters and other auxiliaries (Art. 28 processors or independent controllers, depending on the engagement)"
+      },
+      {
+        "it": "Autorità giudiziarie ove perizie e risultanze confluiscano negli atti (destinatari istituzionali)",
+        "en": "Judicial authorities where expert opinions and findings flow into the acts (institutional recipients)"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome dell'ausiliario nominato responsabile (es. CTP, traduttore) e/o del fornitore software/cloud dello studio]",
+          "en": "[Enter the name of the auxiliary appointed as processor (e.g. party-appointed consultant, translator) and/or the firm's software/cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Svolgimento dell'incarico tecnico per conto dello studio (quando l'ausiliario opera come responsabile) e/o gestione documentale e servizi cloud connessi",
+          "en": "Performance of the technical engagement on behalf of the firm (when the auxiliary acts as processor) and/or document management and connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA / atto di nomina a responsabile, ove l'ausiliario operi come responsabile]",
+          "en": "[Reference to the DPA / processor appointment, where the auxiliary acts as processor]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Qualificare caso per caso: l'ausiliario è responsabile ex art. 28 quando tratta i dati per conto e secondo le istruzioni dello studio; è titolare autonomo quando agisce secondo autonomia tecnica/professionale propria. Gli investigatori privati operano di regola come titolari autonomi nell'attività regolata e autorizzata. Formalizzare la nomina a responsabile ove pertinente; verificare sub-responsabili, anche extra-UE.",
+          "en": "Qualify case by case: the auxiliary is an Art. 28 processor when it processes data on behalf of and according to the firm's instructions; it is an independent controller when it acts under its own technical/professional autonomy. Private investigators generally act as independent controllers in the regulated and authorized activity. Formalise the processor appointment where relevant; verify sub-processors, including non-EU ones."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare ausiliari e fornitori IT/cloud]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati trasmessi agli ausiliari, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali ausiliari o sub-responsabili extra-UE; se presenti trasferimenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Data transmitted to auxiliaries, covered by professional secrecy and including Art. 9/Art. 10 data, should preferably be processed within the EU. Verify any non-EU auxiliaries or sub-processors; if transfers occur, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico cui le attività tecniche/investigative si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the engagement to which the technical/investigative activities refer and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione di perizie, relazioni e risultanze investigative per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; particolare attenzione alla minimizzazione e alla cancellazione dei dati raccolti nelle indagini difensive non più necessari; litigation hold documentato in caso di contenzioso; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of expert opinions, reports and investigative findings for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; particular attention to minimisation and deletion of data collected in defensive investigations no longer needed; documented litigation hold in case of litigation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi ai dati trasmessi agli ausiliari e alle risultanze ricevute, con autenticazione forte e profili di privilegio",
+          "en": "Access control to data transmitted to auxiliaries and findings received, with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest, nei flussi con gli ausiliari",
+          "en": "Encryption of connections and documents, in transit and at rest, in the flows with auxiliaries"
+        },
+        {
+          "it": "Tracciabilità della trasmissione dei dati agli ausiliari e della ricezione delle risultanze",
+          "en": "Traceability of data transmission to auxiliaries and receipt of findings"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+          "en": "Periodic backups with at-rest encryption and access control"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Qualificazione documentata del ruolo privacy di ciascun ausiliario (responsabile ex art. 28 o titolare autonomo) e relativa formalizzazione",
+          "en": "Documented qualification of each auxiliary's privacy role (Art. 28 processor or independent controller) and related formalisation"
+        },
+        {
+          "it": "Istruzioni e vincoli di riservatezza estesi agli ausiliari, con rispetto del segreto professionale",
+          "en": "Instructions and confidentiality constraints extended to auxiliaries, with respect for professional secrecy"
+        },
+        {
+          "it": "Minimizzazione dei dati trasmessi all'ausiliario, limitati a quanto necessario all'incarico tecnico/investigativo",
+          "en": "Minimisation of data transmitted to the auxiliary, limited to what is necessary for the technical/investigative engagement"
+        },
+        {
+          "it": "Per le indagini difensive: ricorso a investigatori autorizzati e svolgimento nei limiti di legge e di pertinenza (L. 397/2000, art. 391-bis ss. c.p.p.)",
+          "en": "For defensive investigations: use of authorized investigators and conduct within legal and relevance limits (Law 397/2000, Art. 391-bis ff. CCP)"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono i rapporti con gli ausiliari",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling relations with auxiliaries"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sui rapporti con gli ausiliari, agli atti di nomina a responsabile ove pertinenti, alla disciplina delle indagini difensive e ai DPA con i fornitori]",
+        "en": "[Refer to internal policies on relations with auxiliaries, processor appointments where relevant, the rules on defensive investigations and the DPAs with providers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se gli ausiliari utilizzano strumenti automatizzati con effetti significativi (es. analisi automatizzata di dati nelle indagini); valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if auxiliaries use automated tools with significant effects (e.g. automated data analysis in investigations); assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione di consulenti tecnici, periti, investigatori e ausiliari.",
+        "en": "Not applicable to managing technical consultants, experts, investigators and auxiliaries."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare con particolare attenzione per le indagini difensive sistematiche o su larga scala, o quando comportino il trattamento di dati ex art. 9/art. 10 o tecniche potenzialmente invasive (es. osservazione, geolocalizzazione, ove lecitamente utilizzabile e nei limiti della normativa applicabile): in tali casi una DPIA ai sensi dell'art. 35 GDPR può essere necessaria.",
+        "en": "To be assessed with particular attention for systematic or large-scale defensive investigations, or where they involve processing Art. 9/Art. 10 data or potentially intrusive techniques (e.g. observation, geolocation): in such cases a DPIA under GDPR Art. 35 may be necessary."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10, 28, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; L. 397/2000 e art. 391-bis ss. c.p.p. (indagini difensive); normativa sull'attività degli investigatori privati autorizzati; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; gli ausiliari sono responsabili ex art. 28 o titolari autonomi secondo la qualificazione concreta; gli investigatori privati operano di regola come titolari autonomi nell'attività regolata.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 28, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Law 397/2000 and Art. 391-bis ff. CCP (defensive investigations); rules on the activity of authorized private investigators; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; auxiliaries are Art. 28 processors or independent controllers depending on the actual qualification; private investigators generally act as independent controllers in the regulated activity."
+    }
+  }
+}

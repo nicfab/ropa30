@@ -1,0 +1,319 @@
+{
+  "templateId": "tpl-it-019-studi-legali-controparti-difensori-domiciliatari",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione rapporti con controparti, difensori avversari e domiciliatari",
+    "en": "Management of relations with counterparties, opposing lawyers and domiciliary lawyers"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali connesso ai rapporti dello studio con la parte avversa e con altri professionisti legali esterni: controparti e relativi difensori avversari, avvocati domiciliatari e corrispondenti. Riguarda gli scambi nel contraddittorio (corrispondenza, diffide, trattative, scambio di atti e documenti) e il coordinamento con i legali esterni che assistono lo studio in altri fori o per attività delegate. Il taglio riguarda la relazione con tali soggetti e la qualificazione dei rispettivi ruoli privacy, distinto dalla conduzione complessiva della lite (template contenzioso) e dalla relazione istituzionale con gli uffici (template dedicato).",
+    "en": "Processing of personal data connected to the firm's relations with the opposing side and with other external legal professionals: counterparties and their opposing lawyers, domiciliary and corresponding lawyers. It concerns exchanges in cross-examination (correspondence, formal notices, negotiations, exchange of acts and documents) and coordination with external lawyers assisting the firm in other jurisdictions or for delegated activities. The scope concerns the relationship with such parties and the qualification of their respective privacy roles, distinct from the overall conduct of the dispute (litigation template) and the institutional relationship with the offices (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO SUI RAPPORTI CON L'ALTRA PARTE E I LEGALI ESTERNI. Copre i flussi con controparti, difensori avversari, domiciliatari e corrispondenti, NON la conduzione complessiva della lite (template contenzioso) né la relazione con gli uffici (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) CONTROPARTI e DIFENSORI AVVERSARI sono TITOLARI AUTONOMI: lo scambio di dati avviene nei limiti del contraddittorio e della tutela del diritto del cliente; (c) DOMICILIATARI e CORRISPONDENTI sono DI REGOLA TITOLARI AUTONOMI nello svolgimento dell'attività professionale secondo autonomia tecnica, NON responsabili ex art. 28; la qualificazione va comunque verificata in base al concreto atteggiarsi del rapporto; (d) la BASE PREVALENTE per i dati di terzi è il LEGITTIMO INTERESSE alla tutela del diritto del cliente, con divieto di usi ulteriori; affianca la base contrattuale (mandato) e l'obbligo legale (contraddittorio); (e) ART. 9(2)(f) e ART. 10 possibili negli atti e nella corrispondenza scambiata; (f) MINIMIZZAZIONE e SEGRETO PROFESSIONALE nelle comunicazioni con la controparte. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "SCOPE ON RELATIONS WITH THE OTHER SIDE AND EXTERNAL LAWYERS. Covers flows with counterparties, opposing lawyers, domiciliary and corresponding lawyers, NOT the overall conduct of the dispute (litigation template) or the relationship with the offices (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) COUNTERPARTIES and OPPOSING LAWYERS are INDEPENDENT CONTROLLERS: data exchange takes place within the limits of cross-examination and protection of the client's right; (c) DOMICILIARY and CORRESPONDING lawyers are GENERALLY INDEPENDENT CONTROLLERS in carrying out professional activity under technical autonomy, NOT Art. 28 processors; the qualification must in any case be verified based on how the relationship actually operates; (d) the PREVAILING BASIS for third-party data is the LEGITIMATE INTEREST in protecting the client's right, with no further uses; it sits alongside the contractual basis (mandate) and the legal obligation (cross-examination); (e) ART. 9(2)(f) and ART. 10 possible in the acts and correspondence exchanged; (f) MINIMISATION and PROFESSIONAL SECRECY in communications with the counterparty. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "controparti_difensori",
+        "label": "Rapporti con controparti e difensori avversari (contraddittorio, corrispondenza, scambio atti)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "domiciliatari_corrispondenti",
+        "label": "Coordinamento con domiciliatari e corrispondenti (titolari autonomi)",
+        "art6": "legittimo_interesse"
+      }
+    ],
+    "en": [
+      {
+        "id": "controparti_difensori",
+        "label": "Relations with counterparties and opposing lawyers (cross-examination, correspondence, exchange of acts)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "domiciliatari_corrispondenti",
+        "label": "Coordination with domiciliary and corresponding lawyers (independent controllers)",
+        "art6": "legittimo_interesse"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione rapporti con controparti, difensori avversari e domiciliatari",
+      "en": "Management of relations with counterparties, opposing lawyers and domiciliary lawyers"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali connesso ai rapporti con controparti, difensori avversari, avvocati domiciliatari e corrispondenti: corrispondenza e diffide, trattative, scambio di atti e documenti nel contraddittorio, coordinamento con legali esterni per attività delegate o per altri fori, nell'ambito degli incarichi professionali.",
+      "en": "Processing of personal data connected to relations with counterparties, opposing lawyers, domiciliary and corresponding lawyers: correspondence and formal notices, negotiations, exchange of acts and documents in cross-examination, coordination with external lawyers for delegated activities or other jurisdictions, within professional engagements."
+    },
+    "finalita": [
+      {
+        "it": "Gestione della corrispondenza, delle diffide e delle comunicazioni con controparti e difensori avversari",
+        "en": "Management of correspondence, formal notices and communications with counterparties and opposing lawyers"
+      },
+      {
+        "it": "Scambio di atti e documenti nel contraddittorio e gestione delle trattative connesse alla posizione",
+        "en": "Exchange of acts and documents in cross-examination and management of negotiations connected to the position"
+      },
+      {
+        "it": "Coordinamento con avvocati domiciliatari e corrispondenti per attività delegate o presso altri fori",
+        "en": "Coordination with domiciliary and corresponding lawyers for delegated activities or in other jurisdictions"
+      },
+      {
+        "it": "Trasmissione e ricezione dei dati necessari al coordinamento difensivo con i legali esterni",
+        "en": "Transmission and receipt of data necessary for defense coordination with external lawyers"
+      },
+      {
+        "it": "Documentazione e tracciamento dei flussi con la parte avversa e con i professionisti esterni",
+        "en": "Documentation and tracking of flows with the opposing side and external professionals"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(f) GDPR: base PREVALENTE per il trattamento dei dati di controparti, difensori avversari e terzi coinvolti, fondata sul legittimo interesse alla tutela del diritto del cliente, nei limiti del contraddittorio, ferma restando la base contrattuale per il rapporto con il cliente. Art. 6(1)(b) GDPR: i rapporti con i legali esterni (domiciliatari, corrispondenti) e il coordinamento difensivo sono svolti nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimenti connessi al contraddittorio processuale e agli obblighi di legge. Il rapporto con il cliente è inquadrato nel template 'Gestione clienti e incarichi professionali'.",
+        "en": "GDPR Art. 6(1)(f): PREVAILING basis for processing data of counterparties, opposing lawyers and third parties involved, grounded in the legitimate interest in protecting the client's right, within the limits of cross-examination. GDPR Art. 6(1)(b): relations with external lawyers (domiciliary, corresponding) and defense coordination are carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): obligations connected to procedural cross-examination and legal requirements. The client relationship is framed in the 'Client and engagement management' template."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse copre il trattamento dei dati di controparti, difensori avversari e terzi coinvolti nei rapporti con la parte avversa, nei limiti di quanto necessario al contraddittorio e alla tutela del diritto del cliente. Non costituisce base per finalità ulteriori né per usi diversi dalla posizione trattata.",
+          "en": "Legitimate interest covers processing data of counterparties, opposing lawyers and third parties involved in relations with the opposing side, within the limits of what is necessary for cross-examination and protection of the client's right. It is not a basis for further purposes or uses other than the position handled."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati comunicati alla controparte; pertinenza della corrispondenza e degli atti scambiati; rispetto del segreto professionale; divieto di usi ulteriori dei dati della parte avversa; coordinamento documentato con domiciliatari e corrispondenti sui flussi di dati.",
+          "en": "Minimisation of data communicated to the counterparty; relevance of correspondence and acts exchanged; respect for professional secrecy; prohibition of further uses of the opposing side's data; documented coordination with domiciliary and corresponding lawyers on data flows."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute nella corrispondenza e negli atti scambiati con controparti e difensori avversari, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o nella fase stragiudiziale strettamente connessa.",
+        "en": "GDPR Art. 9(2)(f) for special categories of data contained in the correspondence and acts exchanged with counterparties and opposing lawyers, processed to establish, exercise or defend a right in court, or in the strictly connected out-of-court phase."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). La corrispondenza e gli atti scambiati con la parte avversa o con i legali esterni possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto al contraddittorio e all'incarico, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The correspondence and acts exchanged with the opposing side or external lawyers may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to cross-examination and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Controparti (persone fisiche) e referenti di controparti persone giuridiche",
+        "en": "Counterparties (natural persons) and contacts of corporate counterparties"
+      },
+      {
+        "it": "Difensori avversari e relativi referenti e collaboratori",
+        "en": "Opposing lawyers and their contacts and collaborators"
+      },
+      {
+        "it": "Avvocati domiciliatari e corrispondenti e relativi collaboratori",
+        "en": "Domiciliary and corresponding lawyers and their collaborators"
+      },
+      {
+        "it": "Terzi soggetti i cui dati emergono nella corrispondenza o negli atti scambiati",
+        "en": "Third parties whose data appears in the correspondence or acts exchanged"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto di controparti, difensori avversari, domiciliatari e corrispondenti",
+        "en": "Identification and contact data of counterparties, opposing lawyers, domiciliary and corresponding lawyers"
+      },
+      {
+        "it": "Corrispondenza, diffide, comunicazioni e verbali di trattativa",
+        "en": "Correspondence, formal notices, communications and negotiation records"
+      },
+      {
+        "it": "Atti e documenti scambiati nel contraddittorio e relativi alla posizione",
+        "en": "Acts and documents exchanged in cross-examination and relating to the position"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 contenuti negli atti e nella corrispondenza, nei limiti delle condizioni applicabili",
+        "en": "Special categories of data (Art. 9) and any Art. 10 data contained in the acts and correspondence, within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati patrimoniali, reddituali o economici rilevanti per la posizione o la trattativa",
+        "en": "Any asset, income or economic data relevant to the position or the negotiation"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati forniti dal cliente; dati provenienti da controparti e difensori avversari nel corso del contraddittorio e delle trattative; dati scambiati con domiciliatari e corrispondenti per il coordinamento difensivo; dati da fonti pubbliche o registri nei limiti di legge. La raccolta è limitata a quanto necessario al contraddittorio e all'incarico.",
+      "en": "Data provided by the client; data from counterparties and opposing lawyers during cross-examination and negotiations; data exchanged with domiciliary and corresponding lawyers for defense coordination; data from public sources or registers within legal limits. Collection is limited to what is necessary for cross-examination and the engagement."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Controparti e relativi difensori avversari: titolari autonomi, nei limiti del contraddittorio",
+        "en": "Counterparties and their opposing lawyers: independent controllers, within the limits of cross-examination"
+      },
+      {
+        "it": "Avvocati domiciliatari e corrispondenti: di regola titolari autonomi per l'attività svolta secondo autonomia professionale",
+        "en": "Domiciliary and corresponding lawyers: generally independent controllers for activity carried out under professional autonomy"
+      },
+      {
+        "it": "Autorità giudiziarie e cancellerie ove gli scambi confluiscano in atti processuali (destinatari istituzionali)",
+        "en": "Judicial authorities and registries where the exchanges flow into procedural acts (institutional recipients)"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale e tracciamento della corrispondenza e dei flussi con controparti e legali esterni, servizi cloud connessi",
+          "en": "Document management and tracking of correspondence and flows with counterparties and external lawyers, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Il DPA ex art. 28 riguarda i fornitori di servizi (software, cloud). Controparti, difensori avversari, domiciliatari e corrispondenti NON sono responsabili dello studio: sono di regola titolari autonomi. La qualificazione dei domiciliatari/corrispondenti va comunque verificata in base al concreto atteggiarsi del rapporto. Verificare DPA e sub-responsabili, anche extra-UE, dei soli fornitori.",
+          "en": "The Art. 28 DPA concerns service providers (software, cloud). Counterparties, opposing lawyers, domiciliary and corresponding lawyers are NOT the firm's processors: they are generally independent controllers. The qualification of domiciliary/corresponding lawyers must in any case be verified based on how the relationship actually operates. Verify the DPA and sub-processors, including non-EU ones, of the providers only."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati scambiati con controparti e legali esterni, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei soli servizi IT/cloud dello studio; in caso di domiciliatari/corrispondenti extra-UE valutare la qualificazione del ruolo e i conseguenti flussi. Se presenti trasferimenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Data exchanged with counterparties and external lawyers, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the firm's IT/cloud services only; in case of non-EU domiciliary/corresponding lawyers, assess the role qualification and the resulting flows. If transfers occur, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata della posizione cui i rapporti si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the position to which the relations refer and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione della corrispondenza e degli atti scambiati per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of correspondence and exchanged acts for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi alla corrispondenza e ai flussi con controparti e legali esterni, con autenticazione forte e profili di privilegio",
+          "en": "Access control to correspondence and flows with counterparties and external lawyers, with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest, e canali sicuri nelle comunicazioni",
+          "en": "Encryption of connections and documents, in transit and at rest, and secure channels in communications"
+        },
+        {
+          "it": "Tracciabilità delle comunicazioni e degli scambi con la parte avversa e i professionisti esterni",
+          "en": "Traceability of communications and exchanges with the opposing side and external professionals"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+          "en": "Periodic backups with at-rest encryption and access control"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza nei rapporti con la parte avversa e i legali esterni",
+          "en": "Compliance with professional secrecy and the duty of confidentiality in relations with the opposing side and external lawyers"
+        },
+        {
+          "it": "Minimizzazione dei dati comunicati alla controparte e divieto di usi ulteriori dei dati della parte avversa",
+          "en": "Minimisation of data communicated to the counterparty and prohibition of further uses of the opposing side's data"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy: controparti e difensori avversari come titolari autonomi; domiciliatari e corrispondenti di regola titolari autonomi, verificando il concreto atteggiarsi del rapporto",
+          "en": "Documented qualification of privacy roles: counterparties and opposing lawyers as independent controllers; domiciliary and corresponding lawyers generally independent controllers, verifying how the relationship actually operates"
+        },
+        {
+          "it": "Coordinamento documentato con domiciliatari e corrispondenti sui flussi di dati",
+          "en": "Documented coordination with domiciliary and corresponding lawyers on data flows"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che curano i rapporti con la parte avversa e i legali esterni",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling relations with the opposing side and external lawyers"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sui rapporti con controparti e legali esterni e sul segreto professionale, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy di domiciliatari e corrispondenti]",
+        "en": "[Refer to internal policies on relations with counterparties and external lawyers and professional secrecy, the DPAs with providers and the privacy-role qualifications of domiciliary and corresponding lawyers]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano automatismi con effetti significativi nella gestione dei rapporti con controparti e legali esterni; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if using automated mechanisms with significant effects in managing relations with counterparties and external lawyers; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile ai rapporti con controparti, difensori avversari e domiciliatari.",
+        "en": "Not applicable to relations with counterparties, opposing lawyers and domiciliary lawyers."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per la gestione ordinaria dei rapporti con controparti e legali esterni. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9/art. 10 nei flussi con la parte avversa.",
+        "en": "Generally not required for ordinary management of relations with counterparties and external lawyers. Assess in case of systematic or large-scale processing of Art. 9/Art. 10 data in the flows with the opposing side."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile e penale (contraddittorio); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; controparti e difensori avversari sono titolari autonomi; domiciliatari e corrispondenti sono di regola titolari autonomi, con qualificazione da verificare in base al concreto rapporto.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian codes of civil and criminal procedure (cross-examination); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; counterparties and opposing lawyers are independent controllers; domiciliary and corresponding lawyers are generally independent controllers, with qualification to be verified based on the actual relationship."
+    }
+  }
+}

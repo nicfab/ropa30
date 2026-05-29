@@ -1,0 +1,323 @@
+{
+  "templateId": "tpl-it-018-studi-legali-autorita-giudiziarie-cancellerie",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione rapporti con autorità giudiziarie, cancellerie e ufficiali giudiziari",
+    "en": "Management of relations with judicial authorities, court registries and bailiffs"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali connesso ai rapporti dello studio con i destinatari istituzionali dell'attività giudiziaria: autorità giudiziarie (giudici, uffici di procura), cancellerie, uffici giudiziari e ufficiali giudiziari (UNEP). Riguarda i flussi di trasmissione, comunicazione, richiesta e ricezione di atti, istanze, copie, certificati e provvedimenti verso e da tali soggetti, che operano come destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle rispettive funzioni. Il taglio riguarda la relazione istituzionale, distinto dal canale tecnico di trasmissione (template PCT/notifiche) e dalla conduzione della lite (template contenzioso).",
+    "en": "Processing of personal data connected to the firm's relations with the institutional recipients of judicial activity: judicial authorities (judges, prosecutor offices), court registries, court offices and bailiffs. It concerns the flows of transmission, communication, request and receipt of acts, applications, copies, certificates and measures to and from such parties, which act as independent controllers / public bodies in exercising their functions. The scope concerns the institutional relationship, distinct from the technical transmission channel (e-filing/service template) and conducting the dispute (litigation template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO SULLA RELAZIONE ISTITUZIONALE. Copre i flussi di dati con autorità giudiziarie, cancellerie, uffici giudiziari e ufficiali giudiziari, NON il canale tecnico (template PCT/notifiche) né la conduzione della lite (template contenzioso). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) i destinatari istituzionali (giudici, procure, cancellerie, UNEP) sono TITOLARI AUTONOMI/SOGGETTI PUBBLICI nell'esercizio delle proprie funzioni giurisdizionali e amministrative: NON sono responsabili ex art. 28 dello studio, e a essi non si applica un DPA; (c) la BASE CONTRATTUALE permane: pur essendo il destinatario istituzionale, il trattamento da parte dello studio nasce dall'esecuzione del mandato professionale verso il cliente; si affiancano obbligo legale (adempimenti e ordini dell'autorità) e legittimo interesse (dati di terzi); (d) ART. 9(2)(f) e ART. 10 frequenti negli atti scambiati; (e) MINIMIZZAZIONE nelle istanze e nelle richieste di copie/certificati; (f) SEGRETO PROFESSIONALE e tutela dei dati di terzi nei rapporti con gli uffici. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "INSTITUTIONAL-RELATIONSHIP SCOPE. Covers data flows with judicial authorities, registries, court offices and bailiffs, NOT the technical channel (e-filing/service template) or conducting the dispute (litigation template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) the institutional recipients (judges, prosecutor offices, registries, bailiff service) are INDEPENDENT CONTROLLERS / PUBLIC BODIES in exercising their judicial and administrative functions: they are NOT the firm's Art. 28 processors, and no DPA applies to them; (c) the CONTRACTUAL BASIS remains: although the recipient is institutional, processing by the firm arises from performing the professional mandate towards the client; legal obligation (compliance and authority orders) and legitimate interest (third-party data) sit alongside it; (d) ART. 9(2)(f) and ART. 10 frequent in the exchanged acts; (e) MINIMISATION in applications and requests for copies/certificates; (f) PROFESSIONAL SECRECY and protection of third-party data in dealings with the offices. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "rapporti_autorita_cancellerie",
+        "label": "Rapporti con autorità giudiziarie e cancellerie (istanze, copie, certificati, comunicazioni)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "rapporti_ufficiali_giudiziari",
+        "label": "Rapporti con ufficiali giudiziari/UNEP (notifiche, esecuzioni, atti)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ],
+    "en": [
+      {
+        "id": "rapporti_autorita_cancellerie",
+        "label": "Relations with judicial authorities and registries (applications, copies, certificates, communications)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "rapporti_ufficiali_giudiziari",
+        "label": "Relations with bailiffs/bailiff service (service, enforcement, acts)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione rapporti con autorità giudiziarie, cancellerie e ufficiali giudiziari",
+      "en": "Management of relations with judicial authorities, court registries and bailiffs"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali connesso ai rapporti dello studio con autorità giudiziarie, cancellerie, uffici giudiziari e ufficiali giudiziari (UNEP): trasmissione e ricezione di atti, istanze, richieste di copie e certificati, comunicazioni, richieste di notifica ed esecuzione, nell'ambito degli incarichi professionali.",
+      "en": "Processing of personal data connected to the firm's relations with judicial authorities, registries, court offices and bailiffs: transmission and receipt of acts, applications, requests for copies and certificates, communications, service and enforcement requests, within professional engagements."
+    },
+    "finalita": [
+      {
+        "it": "Trasmissione e ricezione di atti, istanze e comunicazioni verso e da autorità giudiziarie e cancellerie",
+        "en": "Transmission and receipt of acts, applications and communications to and from judicial authorities and registries"
+      },
+      {
+        "it": "Richiesta e ricezione di copie di atti, fascicoli, provvedimenti e certificati presso gli uffici giudiziari",
+        "en": "Request and receipt of copies of acts, files, measures and certificates from court offices"
+      },
+      {
+        "it": "Gestione dei rapporti con ufficiali giudiziari e UNEP per notifiche, pignoramenti ed esecuzioni",
+        "en": "Management of relations with bailiffs and the bailiff service for service, attachments and enforcement"
+      },
+      {
+        "it": "Adempimenti e riscontro a ordini, richieste e comunicazioni dell'autorità giudiziaria",
+        "en": "Compliance with and response to orders, requests and communications of the judicial authority"
+      },
+      {
+        "it": "Documentazione e tracciamento dei flussi con i destinatari istituzionali nell'ambito delle pratiche",
+        "en": "Documentation and tracking of flows with institutional recipients within cases"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: i rapporti con i destinatari istituzionali sono svolti nell'ambito del mandato professionale conferito dal cliente; pur essendo il destinatario istituzionale, il trattamento da parte dello studio resta collegato all'esecuzione del mandato verso il cliente. Art. 6(1)(c) GDPR: adempimenti processuali, ordini e richieste dell'autorità giudiziaria, obblighi di legge sui rapporti con gli uffici. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti e terzi coinvolti nei flussi con gli uffici, nei limiti di quanto necessario all'incarico.",
+        "en": "GDPR Art. 6(1)(b): relations with institutional recipients are carried out within the professional mandate granted by the client; although the recipient is institutional, processing by the firm remains connected to performing the mandate towards the client. GDPR Art. 6(1)(c): procedural obligations, orders and requests of the judicial authority, legal obligations on dealings with the offices. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties and third parties involved in the flows with the offices, within the limits of what is necessary to the engagement."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, terzi citati negli atti e nelle istanze) presenti nei flussi con i destinatari istituzionali, necessari alla tutela del diritto del cliente. Non costituisce base giuridica per finalità ulteriori.",
+          "en": "Legitimate interest is limited to processing data of third parties (counterparties, third parties named in acts and applications) present in the flows with institutional recipients, necessary to protect the client's right. It is not a legal basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati contenuti nelle istanze e nelle richieste di copie/certificati; pertinenza delle comunicazioni; rispetto del segreto professionale; tracciabilità dei flussi con gli uffici; accesso riservato ai soggetti coinvolti nella pratica.",
+          "en": "Minimisation of data contained in applications and requests for copies/certificates; relevance of communications; respect for professional secrecy; traceability of flows with the offices; access reserved to persons involved in the case."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute negli atti, nelle istanze e nelle comunicazioni scambiate con i destinatari istituzionali, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o quando le autorità giurisdizionali esercitano le loro funzioni.",
+        "en": "GDPR Art. 9(2)(f) for special categories of data contained in the acts, applications and communications exchanged with institutional recipients, processed to establish, exercise or defend a right in court, or when judicial authorities act in their judicial capacity."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli atti, le istanze e i certificati scambiati con autorità giudiziarie e cancellerie possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico e all'adempimento, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The acts, applications and certificates exchanged with judicial authorities and registries may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to the engagement and compliance, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti per conto dei quali si tengono i rapporti con gli uffici",
+        "en": "Clients on whose behalf relations with the offices are maintained"
+      },
+      {
+        "it": "Controparti e relativi difensori coinvolti nei flussi con gli uffici",
+        "en": "Counterparties and their lawyers involved in the flows with the offices"
+      },
+      {
+        "it": "Magistrati, personale di cancelleria, ufficiali giudiziari e referenti degli uffici (dati di contatto e di servizio)",
+        "en": "Judges, registry staff, bailiffs and office contacts (contact and service data)"
+      },
+      {
+        "it": "Terzi soggetti i cui dati emergono negli atti, nelle istanze o nei certificati scambiati",
+        "en": "Third parties whose data appears in the acts, applications or certificates exchanged"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto delle parti e dei referenti degli uffici",
+        "en": "Identification and contact data of the parties and office contacts"
+      },
+      {
+        "it": "Atti, istanze, richieste di copie e certificati, comunicazioni e provvedimenti scambiati",
+        "en": "Acts, applications, requests for copies and certificates, communications and measures exchanged"
+      },
+      {
+        "it": "Dati relativi a notifiche, pignoramenti ed esecuzioni gestiti tramite ufficiali giudiziari/UNEP",
+        "en": "Data on service, attachments and enforcement handled through bailiffs/bailiff service"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 contenuti negli atti scambiati, nei limiti delle condizioni applicabili",
+        "en": "Special categories of data (Art. 9) and any Art. 10 data contained in the exchanged acts, within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati patrimoniali, reddituali o economici rilevanti per esecuzioni e procedure",
+        "en": "Any asset, income or economic data relevant to enforcement and procedures"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati e atti predisposti dallo studio sulla base del mandato; dati forniti dal cliente; atti, copie, certificati e provvedimenti ricevuti da autorità giudiziarie, cancellerie e uffici giudiziari; esiti e verbali ricevuti da ufficiali giudiziari/UNEP; dati da fonti pubbliche o registri nei limiti di legge.",
+      "en": "Data and acts prepared by the firm under the mandate; data provided by the client; acts, copies, certificates and measures received from judicial authorities, registries and court offices; outcomes and records received from bailiffs/bailiff service; data from public sources or registers within legal limits."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Autorità giudiziarie (giudici, uffici di procura): destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle funzioni giurisdizionali",
+        "en": "Judicial authorities (judges, prosecutor offices): independent controllers / public bodies in exercising judicial functions"
+      },
+      {
+        "it": "Cancellerie e uffici giudiziari: destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle funzioni amministrative connesse",
+        "en": "Court registries and offices: independent controllers / public bodies in exercising connected administrative functions"
+      },
+      {
+        "it": "Ufficiali giudiziari e UNEP: destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, per notifiche ed esecuzioni",
+        "en": "Bailiffs and the bailiff service: independent controllers / public bodies for service and enforcement"
+      },
+      {
+        "it": "Avvocati domiciliatari e corrispondenti che curano i rapporti con uffici di altri fori (di regola titolari autonomi)",
+        "en": "Domiciliary and corresponding lawyers handling relations with offices of other jurisdictions (generally independent controllers)"
+      },
+      {
+        "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+        "en": "Provider of the firm's management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+          "en": "[Enter the name of the firm's management software / cloud provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale e tracciamento dei flussi con gli uffici giudiziari, servizi cloud connessi",
+          "en": "Document management and tracking of flows with court offices, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Il DPA ex art. 28 riguarda i fornitori di servizi (software, cloud), NON le autorità giudiziarie, le cancellerie e gli ufficiali giudiziari, che sono destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle proprie funzioni. Verificare DPA e sub-responsabili, anche extra-UE, dei soli fornitori.",
+          "en": "The Art. 28 DPA concerns service providers (software, cloud), NOT the judicial authorities, registries and bailiffs, which are independent controllers / public bodies in exercising their functions. Verify the DPA and sub-processors, including non-EU ones, of the providers only."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati scambiati con i destinatari istituzionali, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. I rapporti con gli uffici giudiziari avvengono in ambito nazionale; verificare eventuali sub-responsabili extra-UE nei soli servizi IT/cloud dello studio; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Data exchanged with institutional recipients, covered by professional secrecy, should preferably be processed within the EU. Relations with court offices take place at national level; verify any non-EU sub-processors in the firm's IT/cloud services only; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata della pratica cui i rapporti si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the case to which the relations refer and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione di atti, istanze, copie, certificati ed esiti dei rapporti con gli uffici per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of acts, applications, copies, certificates and outcomes of relations with the offices for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi alla documentazione dei rapporti con gli uffici con autenticazione forte e profili di privilegio",
+          "en": "Access control to the documentation of relations with the offices with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest, e uso di canali sicuri nelle comunicazioni",
+          "en": "Encryption of connections and documents, in transit and at rest, and use of secure channels in communications"
+        },
+        {
+          "it": "Tracciabilità delle comunicazioni e dei flussi con autorità, cancellerie e ufficiali giudiziari",
+          "en": "Traceability of communications and flows with authorities, registries and bailiffs"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+          "en": "Periodic backups with at-rest encryption and access control"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza nei rapporti con gli uffici",
+          "en": "Compliance with professional secrecy and the duty of confidentiality in dealings with the offices"
+        },
+        {
+          "it": "Minimizzazione dei dati contenuti in istanze, richieste di copie e comunicazioni",
+          "en": "Minimisation of data contained in applications, requests for copies and communications"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy: destinatari istituzionali come destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità,, non responsabili dello studio",
+          "en": "Documented qualification of privacy roles: institutional recipients as independent controllers / public bodies, not the firm's processors"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che curano i rapporti con gli uffici",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling relations with the offices"
+        },
+        {
+          "it": "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con il segreto professionale e la tutela del diritto in giudizio",
+          "en": "Procedure for handling rights requests, balanced with professional secrecy and protection of the right in court"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sui rapporti con gli uffici giudiziari e sul segreto professionale, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy]",
+        "en": "[Refer to internal policies on relations with court offices and professional secrecy, the DPAs with providers and the privacy-role qualifications]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano automatismi con effetti significativi nella gestione dei rapporti con gli uffici; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if using automated mechanisms with significant effects in managing relations with the offices; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile ai rapporti con autorità giudiziarie, cancellerie e ufficiali giudiziari.",
+        "en": "Not applicable to relations with judicial authorities, registries and bailiffs."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per la gestione ordinaria dei rapporti con gli uffici. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9/art. 10 veicolati attraverso tali flussi.",
+        "en": "Generally not required for ordinary management of relations with the offices. Assess in case of systematic or large-scale processing of Art. 9/Art. 10 data carried through such flows."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile e penale e normativa sull'ordinamento giudiziario e sugli ufficiali giudiziari (UNEP); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; autorità giudiziarie, cancellerie e ufficiali giudiziari sono destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle proprie funzioni; la base contrattuale verso il cliente permane anche quando il destinatario è istituzionale.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian codes of civil and criminal procedure and rules on the judicial system and bailiffs; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; judicial authorities, registries and bailiffs are independent controllers / public bodies in exercising their functions; the contractual basis towards the client remains even when the recipient is institutional."
+    }
+  }
+}

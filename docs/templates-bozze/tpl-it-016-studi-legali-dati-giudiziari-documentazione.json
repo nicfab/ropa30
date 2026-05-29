@@ -1,0 +1,323 @@
+{
+  "templateId": "tpl-it-016-studi-legali-dati-giudiziari-documentazione",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione dati giudiziari e documentazione processuale",
+    "en": "Management of judicial data and procedural documentation"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati giudiziari e della documentazione processuale acquisita, prodotta o conservata dallo studio: provvedimenti e sentenze dell'autorità giudiziaria, atti dei procedimenti, certificati del casellario giudiziale e dei carichi pendenti, dati relativi a condanne penali, reati, indagini e misure. Il taglio riguarda la governance della categoria di dato (in particolare art. 9 e art. 10) e il ciclo di vita della documentazione giudiziaria — acquisizione, organizzazione, accesso, minimizzazione e conservazione — trasversalmente alle singole pratiche, ed è distinto dalla conduzione della lite (template contenzioso) e dalla gestione del fascicolo (template dedicato).",
+    "en": "Processing of judicial data and procedural documentation acquired, produced or retained by the firm: measures and judgments of the judicial authority, acts of proceedings, criminal-record and pending-charges certificates, data on criminal convictions, offences, investigations and measures. The scope concerns the governance of the data category (in particular Art. 9 and Art. 10) and the lifecycle of judicial documentation — acquisition, organisation, access, minimisation and retention — across individual cases, and is distinct from conducting the dispute (litigation template) and case-file management (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO SULLA CATEGORIA DI DATO. Copre la governance dei dati giudiziari e della documentazione processuale in quanto tali, NON la conduzione della lite (template contenzioso) né la tenuta generale del fascicolo (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO del trattamento; (b) ART. 10 CENTRALE: i dati relativi a condanne penali, reati, procedimenti, indagini e misure (incluse risultanze del casellario giudiziale e dei carichi pendenti) vanno trattati solo se pertinenti e necessari rispetto all'incarico, nei limiti dell'art. 2-octies Codice privacy e delle finalità di assistenza, consulenza, difesa o tutela dei diritti; distinguere gli atti di procedimenti CIVILI (di per sé non dati art. 10) dai dati relativi a condanne/reati/misure; (c) ART. 9(2)(f): le categorie particolari contenute nella documentazione processuale sono trattate nell'ambito giudiziale/difensivo; (d) MINIMIZZAZIONE e CONTROLLO ACCESSI sono qui particolarmente rilevanti, data la concentrazione di dati sensibili e giudiziari; (e) SEGRETO PROFESSIONALE su tutta la documentazione; (f) DPIA: da valutare con maggiore attenzione, perché il trattamento sistematico o su larga scala di dati ex art. 9/art. 10 può richiederla. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "DATA-CATEGORY SCOPE. Covers the governance of judicial data and procedural documentation as such, NOT conducting the dispute (litigation template) or general case-file keeping (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) ART. 10 CENTRAL: data on criminal convictions, offences, proceedings, investigations and measures (including criminal-record and pending-charges results) must be processed only if relevant and necessary to the engagement, within the limits of Art. 2-octies of the Italian Privacy Code and the purposes of assistance, advice, defense or protection of rights; civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence/measure data; (c) ART. 9(2)(f): special categories contained in procedural documentation are processed within the judicial/defense context; (d) MINIMISATION and ACCESS CONTROL are particularly relevant here, given the concentration of sensitive and judicial data; (e) PROFESSIONAL SECRECY on all documentation; (f) DPIA: to be assessed with greater attention, since systematic or large-scale processing of Art. 9/Art. 10 data may require it. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "documentazione_giudiziale",
+        "label": "Documentazione di procedimenti giudiziari (atti, provvedimenti, sentenze)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "dati_art10_casellario",
+        "label": "Dati ex art. 10 e certificati (casellario, carichi pendenti)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ],
+    "en": [
+      {
+        "id": "documentazione_giudiziale",
+        "label": "Judicial-proceedings documentation (acts, measures, judgments)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "dati_art10_casellario",
+        "label": "Art. 10 data and certificates (criminal record, pending charges)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione dati giudiziari e documentazione processuale",
+      "en": "Management of judicial data and procedural documentation"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati giudiziari e della documentazione processuale acquisita, prodotta o conservata dallo studio nell'ambito degli incarichi: provvedimenti, sentenze, atti dei procedimenti, certificati del casellario e dei carichi pendenti, dati relativi a condanne penali, reati, indagini e misure, con governance della categoria di dato, dell'accesso, della minimizzazione e della conservazione.",
+      "en": "Processing of judicial data and procedural documentation acquired, produced or retained by the firm within engagements: measures, judgments, acts of proceedings, criminal-record and pending-charges certificates, data on criminal convictions, offences, investigations and measures, with governance of the data category, access, minimisation and retention."
+    },
+    "finalita": [
+      {
+        "it": "Acquisizione, organizzazione e gestione della documentazione processuale (atti, provvedimenti, sentenze) necessaria all'incarico",
+        "en": "Acquisition, organisation and management of procedural documentation (acts, measures, judgments) necessary to the engagement"
+      },
+      {
+        "it": "Trattamento dei dati relativi a condanne penali e reati (art. 10) e delle categorie particolari (art. 9) ove pertinenti e necessari alla posizione",
+        "en": "Processing of data on criminal convictions and offences (Art. 10) and special categories (Art. 9) where relevant and necessary to the position"
+      },
+      {
+        "it": "Acquisizione e gestione di certificati del casellario giudiziale, dei carichi pendenti e di analoghe risultanze, nei limiti di legge",
+        "en": "Acquisition and management of criminal-record certificates, pending-charges results and similar records, within legal limits"
+      },
+      {
+        "it": "Governance dell'accesso, della minimizzazione e della tracciabilità sui dati giudiziari e sulla documentazione sensibile",
+        "en": "Governance of access, minimisation and traceability over judicial data and sensitive documentation"
+      },
+      {
+        "it": "Conservazione e successiva cancellazione o anonimizzazione della documentazione giudiziaria secondo le esigenze di tutela e gli obblighi di legge",
+        "en": "Retention and subsequent deletion or anonymisation of judicial documentation according to protection needs and legal obligations"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: la documentazione giudiziaria è acquisita e trattata nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimenti processuali, ordini dell'autorità giudiziaria e obblighi di conservazione di atti e documenti. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, testimoni e terzi che emergono nella documentazione processuale, nei limiti di quanto necessario all'incarico.",
+        "en": "GDPR Art. 6(1)(b): judicial documentation is acquired and processed within the professional mandate granted by the client. GDPR Art. 6(1)(c): procedural obligations, judicial-authority orders and obligations to retain acts and documents. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, witnesses and third parties appearing in procedural documentation, within the limits of what is necessary to the engagement."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, testimoni, terzi citati negli atti) presenti nella documentazione processuale, necessari alla tutela del diritto del cliente. Non costituisce base giuridica per finalità ulteriori né per conservazioni eccedenti.",
+          "en": "Legitimate interest is limited to processing data of third parties (counterparties, witnesses, third parties named in the acts) present in procedural documentation, necessary to protect the client's right. It is not a legal basis for further purposes or excessive retention."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione e pertinenza dei dati giudiziari trattati; accesso riservato ai soli soggetti coinvolti nella pratica; rispetto del segreto professionale; tracciabilità degli accessi alla documentazione sensibile; conservazione limitata alle esigenze di tutela e agli obblighi di legge.",
+          "en": "Minimisation and relevance of judicial data processed; access reserved to persons involved in the case only; respect for professional secrecy; traceability of access to sensitive documentation; retention limited to protection needs and legal obligations."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute nella documentazione processuale (del cliente, della controparte o di terzi), trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o comunque nell'ambito dell'attività difensiva. Per documentazione relativa ad attività non contenziosa, la condizione di liceità ex art. 9 va valutata caso per caso, senza presumere automaticamente l'applicabilità dell'art. 9(2)(f).",
+        "en": "GDPR Art. 9(2)(f) for special categories of data contained in procedural documentation (of the client, counterparty or third parties), processed to establish, exercise or defend a right in court, or otherwise within the defense activity. For documentation relating to non-contentious activity, the Art. 9 lawfulness condition must be assessed case by case, without automatically presuming the applicability of Art. 9(2)(f)."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Questo trattamento costituisce il presidio organizzativo principale per la gestione dei dati ex art. 10 trattati dallo studio: condanne penali, reati, procedimenti penali, indagini, misure, atti giudiziari e risultanze del casellario giudiziale e dei carichi pendenti. Il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico, nei limiti della normativa applicabile e delle finalità di assistenza, consulenza, difesa o tutela dei diritti. Vanno distinti gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). This processing activity is the firm's primary locus of Art. 10 data: criminal convictions, offences, criminal proceedings, investigations, measures, judicial acts and criminal-record and pending-charges results. Processing is permitted only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from data on criminal convictions, offences or security measures."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti e soggetti assistiti cui si riferisce la documentazione giudiziaria",
+        "en": "Clients and assisted persons to whom the judicial documentation refers"
+      },
+      {
+        "it": "Controparti, imputati, indagati, persone offese e altre parti dei procedimenti",
+        "en": "Counterparties, defendants, suspects, victims and other parties to the proceedings"
+      },
+      {
+        "it": "Testimoni, periti, consulenti tecnici e ausiliari menzionati negli atti",
+        "en": "Witnesses, experts, technical consultants and auxiliaries mentioned in the acts"
+      },
+      {
+        "it": "Terzi soggetti i cui dati emergono nella documentazione processuale",
+        "en": "Third parties whose data appears in the procedural documentation"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi e di contatto dei soggetti menzionati negli atti e nei provvedimenti",
+        "en": "Identification and contact data of persons named in the acts and measures"
+      },
+      {
+        "it": "Atti dei procedimenti, provvedimenti, sentenze, verbali e documenti probatori",
+        "en": "Acts of proceedings, measures, judgments, records and evidentiary documents"
+      },
+      {
+        "it": "Dati relativi a condanne penali, reati, indagini e misure (art. 10), inclusi certificati del casellario e dei carichi pendenti, ove pertinenti e necessari",
+        "en": "Data on criminal convictions, offences, investigations and measures (Art. 10), including criminal-record and pending-charges certificates, where relevant and necessary"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9) contenute nella documentazione, trattate nei limiti delle condizioni applicabili",
+        "en": "Special categories of data (Art. 9) contained in the documentation, processed within the limits of applicable conditions"
+      },
+      {
+        "it": "Eventuali dati patrimoniali, reddituali o economici risultanti dagli atti",
+        "en": "Any asset, income or economic data resulting from the acts"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Documentazione fornita dal cliente; atti e provvedimenti acquisiti dall'autorità giudiziaria e dalle cancellerie; certificati del casellario giudiziale e dei carichi pendenti richiesti nei limiti di legge; documenti provenienti da controparti, difensori e consulenti tecnici; dati da fonti pubbliche o registri nei limiti di legge. La raccolta di dati giudiziari è limitata a quanto pertinente e necessario all'incarico.",
+      "en": "Documentation provided by the client; acts and measures acquired from the judicial authority and court registries; criminal-record and pending-charges certificates requested within legal limits; documents from counterparties, lawyers and technical consultants; data from public sources or registers within legal limits. Collection of judicial data is limited to what is relevant and necessary to the engagement."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Autorità giudiziarie, cancellerie e uffici giudiziari (destinatari istituzionali)",
+        "en": "Judicial authorities, court registries and court offices (institutional recipients)"
+      },
+      {
+        "it": "Avvocati domiciliatari e corrispondenti (di regola titolari autonomi)",
+        "en": "Domiciliary and corresponding lawyers (generally independent controllers)"
+      },
+      {
+        "it": "Consulenti tecnici di parte e periti (responsabili o titolari autonomi, secondo l'incarico)",
+        "en": "Party-appointed technical consultants and experts (processors or independent controllers, depending on the engagement)"
+      },
+      {
+        "it": "Fornitore del software gestionale documentale e dei servizi cloud (responsabile del trattamento)",
+        "en": "Provider of the document-management software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software gestionale documentale / archiviazione / cloud dello studio]",
+          "en": "[Enter the name of the firm's document-management / archiving / cloud software provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Gestione documentale, archiviazione e conservazione della documentazione processuale e dei dati giudiziari, servizi cloud connessi",
+          "en": "Document management, archiving and retention of procedural documentation and judicial data, connected cloud services"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. La documentazione giudiziaria è coperta da segreto professionale e contiene dati ex art. 9/art. 10: prestare particolare attenzione alla sicurezza e alla localizzazione del processing.",
+          "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. Judicial documentation is covered by professional secrecy and contains Art. 9/Art. 10 data: pay particular attention to security and the location of processing."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e di archiviazione documentale]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "I dati giudiziari e la documentazione processuale, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi documentali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Judicial data and procedural documentation, covered by professional secrecy and including Art. 9/Art. 10 data, should preferably be processed within the EU. Verify any non-EU sub-processors in document and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata dell'incarico cui la documentazione si riferisce e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+        "en": "For the duration of the engagement to which the documentation refers and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+      },
+      "criteri": {
+        "it": "Conservazione della documentazione giudiziaria per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; particolare attenzione alla minimizzazione e alla cancellazione dei dati ex art. 9/art. 10 non più necessari; verifica periodica e cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of judicial documentation for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; particular attention to minimisation and deletion of Art. 9/Art. 10 data no longer needed; periodic review and deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Controllo accessi alla documentazione giudiziaria con autenticazione forte e profili di privilegio",
+          "en": "Access control to judicial documentation with strong authentication and privilege profiles"
+        },
+        {
+          "it": "Cifratura dei documenti sensibili e delle connessioni, in transito e at-rest",
+          "en": "Encryption of sensitive documents and connections, in transit and at rest"
+        },
+        {
+          "it": "Tracciabilità degli accessi e delle operazioni sui dati ex art. 9/art. 10 e sulla documentazione processuale",
+          "en": "Traceability of accesses and operations on Art. 9/Art. 10 data and procedural documentation"
+        },
+        {
+          "it": "Segregazione e accesso strettamente limitato ai dati giudiziari più sensibili",
+          "en": "Segregation and strictly limited access to the most sensitive judicial data"
+        },
+        {
+          "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+          "en": "Periodic backups with at-rest encryption and access control"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Rispetto del segreto professionale e del dovere di riservatezza su tutta la documentazione giudiziaria",
+          "en": "Compliance with professional secrecy and the duty of confidentiality on all judicial documentation"
+        },
+        {
+          "it": "Principio di minimizzazione nell'acquisizione e nella conservazione dei dati ex art. 10, limitati a quanto pertinente e necessario",
+          "en": "Minimisation principle in acquiring and retaining Art. 10 data, limited to what is relevant and necessary"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR), inclusi praticanti e collaboratori",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29), including trainees and collaborators"
+        },
+        {
+          "it": "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con il segreto professionale e la tutela del diritto in giudizio",
+          "en": "Procedure for handling rights requests, balanced with professional secrecy and protection of the right in court"
+        },
+        {
+          "it": "Procedura di verifica periodica della documentazione conservata e di cancellazione dei dati giudiziari non più necessari",
+          "en": "Procedure for periodic review of retained documentation and deletion of judicial data no longer needed"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle policy interne sulla gestione dei dati giudiziari e della documentazione sensibile, sul segreto professionale, ai DPA con i fornitori e alle nomine dei soggetti coinvolti]",
+        "en": "[Refer to internal policies on managing judicial data and sensitive documentation, professional secrecy, the DPAs with providers and the appointments of the parties involved]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati di classificazione o analisi della documentazione giudiziaria con effetti significativi; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if using automated tools for classifying or analysing judicial documentation with significant effects; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione dei dati giudiziari e della documentazione processuale.",
+        "en": "Not applicable to managing judicial data and procedural documentation."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Da valutare con particolare attenzione: il trattamento sistematico o su larga scala di dati ex art. 9 e soprattutto ex art. 10 può rendere necessaria una DPIA ai sensi dell'art. 35 GDPR, anche alla luce dei criteri dell'autorità di controllo. Valutare in funzione dei volumi, della sistematicità e della concentrazione di dati giudiziari trattati.",
+        "en": "To be assessed with particular attention: systematic or large-scale processing of Art. 9 and especially Art. 10 data may make a DPIA necessary under GDPR Art. 35, also in light of the supervisory authority's criteria. Assess based on the volumes, systematic nature and concentration of judicial data processed."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; normativa sul casellario giudiziale; art. 622 c.p. e normativa forense e deontologica sul segreto professionale; art. 2946 c.c. (prescrizione ordinaria). Lo studio è titolare autonomo. Questo trattamento concentra i dati ex art. 9/art. 10 dello studio: massima attenzione a minimizzazione, accesso e conservazione.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; criminal-record rules; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code (ordinary prescription). The firm is an independent controller. This processing activity concentrates the firm's Art. 9/Art. 10 data: maximum attention to minimisation, access and retention."
+    }
+  }
+}

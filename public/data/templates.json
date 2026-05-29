@@ -5116,6 +5116,1621 @@
           "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-octies, 2-undecies; Art. 24 Italian Constitution (right of defense); Law 397/2000 and Arts. 391-bis ff. Italian Code of Criminal Procedure (defensive investigations); Art. 622 Italian Criminal Code and legal professional secrecy and legal ethics rules. The firm/defense lawyer is an independent controller."
         }
       }
+    },
+    {
+      "templateId": "tpl-it-016-studi-legali-dati-giudiziari-documentazione",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione dati giudiziari e documentazione processuale",
+        "en": "Management of judicial data and procedural documentation"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati giudiziari e della documentazione processuale acquisita, prodotta o conservata dallo studio: provvedimenti e sentenze dell'autorità giudiziaria, atti dei procedimenti, certificati del casellario giudiziale e dei carichi pendenti, dati relativi a condanne penali, reati, indagini e misure. Il taglio riguarda la governance della categoria di dato (in particolare art. 9 e art. 10) e il ciclo di vita della documentazione giudiziaria — acquisizione, organizzazione, accesso, minimizzazione e conservazione — trasversalmente alle singole pratiche, ed è distinto dalla conduzione della lite (template contenzioso) e dalla gestione del fascicolo (template dedicato).",
+        "en": "Processing of judicial data and procedural documentation acquired, produced or retained by the firm: measures and judgments of the judicial authority, acts of proceedings, criminal-record and pending-charges certificates, data on criminal convictions, offences, investigations and measures. The scope concerns the governance of the data category (in particular Art. 9 and Art. 10) and the lifecycle of judicial documentation — acquisition, organisation, access, minimisation and retention — across individual cases, and is distinct from conducting the dispute (litigation template) and case-file management (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO SULLA CATEGORIA DI DATO. Copre la governance dei dati giudiziari e della documentazione processuale in quanto tali, NON la conduzione della lite (template contenzioso) né la tenuta generale del fascicolo (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO del trattamento; (b) ART. 10 CENTRALE: i dati relativi a condanne penali, reati, procedimenti, indagini e misure (incluse risultanze del casellario giudiziale e dei carichi pendenti) vanno trattati solo se pertinenti e necessari rispetto all'incarico, nei limiti dell'art. 2-octies Codice privacy e delle finalità di assistenza, consulenza, difesa o tutela dei diritti; distinguere gli atti di procedimenti CIVILI (di per sé non dati art. 10) dai dati relativi a condanne/reati/misure; (c) ART. 9(2)(f): le categorie particolari contenute nella documentazione processuale sono trattate nell'ambito giudiziale/difensivo; (d) MINIMIZZAZIONE e CONTROLLO ACCESSI sono qui particolarmente rilevanti, data la concentrazione di dati sensibili e giudiziari; (e) SEGRETO PROFESSIONALE su tutta la documentazione; (f) DPIA: da valutare con maggiore attenzione, perché il trattamento sistematico o su larga scala di dati ex art. 9/art. 10 può richiederla. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "DATA-CATEGORY SCOPE. Covers the governance of judicial data and procedural documentation as such, NOT conducting the dispute (litigation template) or general case-file keeping (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) ART. 10 CENTRAL: data on criminal convictions, offences, proceedings, investigations and measures (including criminal-record and pending-charges results) must be processed only if relevant and necessary to the engagement, within the limits of Art. 2-octies of the Italian Privacy Code and the purposes of assistance, advice, defense or protection of rights; civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence/measure data; (c) ART. 9(2)(f): special categories contained in procedural documentation are processed within the judicial/defense context; (d) MINIMISATION and ACCESS CONTROL are particularly relevant here, given the concentration of sensitive and judicial data; (e) PROFESSIONAL SECRECY on all documentation; (f) DPIA: to be assessed with greater attention, since systematic or large-scale processing of Art. 9/Art. 10 data may require it. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "documentazione_giudiziale",
+            "label": "Documentazione di procedimenti giudiziari (atti, provvedimenti, sentenze)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "dati_art10_casellario",
+            "label": "Dati ex art. 10 e certificati (casellario, carichi pendenti)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "documentazione_giudiziale",
+            "label": "Judicial-proceedings documentation (acts, measures, judgments)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "dati_art10_casellario",
+            "label": "Art. 10 data and certificates (criminal record, pending charges)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione dati giudiziari e documentazione processuale",
+          "en": "Management of judicial data and procedural documentation"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati giudiziari e della documentazione processuale acquisita, prodotta o conservata dallo studio nell'ambito degli incarichi: provvedimenti, sentenze, atti dei procedimenti, certificati del casellario e dei carichi pendenti, dati relativi a condanne penali, reati, indagini e misure, con governance della categoria di dato, dell'accesso, della minimizzazione e della conservazione.",
+          "en": "Processing of judicial data and procedural documentation acquired, produced or retained by the firm within engagements: measures, judgments, acts of proceedings, criminal-record and pending-charges certificates, data on criminal convictions, offences, investigations and measures, with governance of the data category, access, minimisation and retention."
+        },
+        "finalita": [
+          {
+            "it": "Acquisizione, organizzazione e gestione della documentazione processuale (atti, provvedimenti, sentenze) necessaria all'incarico",
+            "en": "Acquisition, organisation and management of procedural documentation (acts, measures, judgments) necessary to the engagement"
+          },
+          {
+            "it": "Trattamento dei dati relativi a condanne penali e reati (art. 10) e delle categorie particolari (art. 9) ove pertinenti e necessari alla posizione",
+            "en": "Processing of data on criminal convictions and offences (Art. 10) and special categories (Art. 9) where relevant and necessary to the position"
+          },
+          {
+            "it": "Acquisizione e gestione di certificati del casellario giudiziale, dei carichi pendenti e di analoghe risultanze, nei limiti di legge",
+            "en": "Acquisition and management of criminal-record certificates, pending-charges results and similar records, within legal limits"
+          },
+          {
+            "it": "Governance dell'accesso, della minimizzazione e della tracciabilità sui dati giudiziari e sulla documentazione sensibile",
+            "en": "Governance of access, minimisation and traceability over judicial data and sensitive documentation"
+          },
+          {
+            "it": "Conservazione e successiva cancellazione o anonimizzazione della documentazione giudiziaria secondo le esigenze di tutela e gli obblighi di legge",
+            "en": "Retention and subsequent deletion or anonymisation of judicial documentation according to protection needs and legal obligations"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: la documentazione giudiziaria è acquisita e trattata nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimenti processuali, ordini dell'autorità giudiziaria e obblighi di conservazione di atti e documenti. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, testimoni e terzi che emergono nella documentazione processuale, nei limiti di quanto necessario all'incarico.",
+            "en": "GDPR Art. 6(1)(b): judicial documentation is acquired and processed within the professional mandate granted by the client. GDPR Art. 6(1)(c): procedural obligations, judicial-authority orders and obligations to retain acts and documents. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, witnesses and third parties appearing in procedural documentation, within the limits of what is necessary to the engagement."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, testimoni, terzi citati negli atti) presenti nella documentazione processuale, necessari alla tutela del diritto del cliente. Non costituisce base giuridica per finalità ulteriori né per conservazioni eccedenti.",
+              "en": "Legitimate interest is limited to processing data of third parties (counterparties, witnesses, third parties named in the acts) present in procedural documentation, necessary to protect the client's right. It is not a legal basis for further purposes or excessive retention."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione e pertinenza dei dati giudiziari trattati; accesso riservato ai soli soggetti coinvolti nella pratica; rispetto del segreto professionale; tracciabilità degli accessi alla documentazione sensibile; conservazione limitata alle esigenze di tutela e agli obblighi di legge.",
+              "en": "Minimisation and relevance of judicial data processed; access reserved to persons involved in the case only; respect for professional secrecy; traceability of access to sensitive documentation; retention limited to protection needs and legal obligations."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute nella documentazione processuale (del cliente, della controparte o di terzi), trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o comunque nell'ambito dell'attività difensiva. Per documentazione relativa ad attività non contenziosa, la condizione di liceità ex art. 9 va valutata caso per caso, senza presumere automaticamente l'applicabilità dell'art. 9(2)(f).",
+            "en": "GDPR Art. 9(2)(f) for special categories of data contained in procedural documentation (of the client, counterparty or third parties), processed to establish, exercise or defend a right in court, or otherwise within the defense activity. For documentation relating to non-contentious activity, the Art. 9 lawfulness condition must be assessed case by case, without automatically presuming the applicability of Art. 9(2)(f)."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Questo trattamento costituisce il presidio organizzativo principale per la gestione dei dati ex art. 10 trattati dallo studio: condanne penali, reati, procedimenti penali, indagini, misure, atti giudiziari e risultanze del casellario giudiziale e dei carichi pendenti. Il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico, nei limiti della normativa applicabile e delle finalità di assistenza, consulenza, difesa o tutela dei diritti. Vanno distinti gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). This processing activity is the firm's primary locus of Art. 10 data: criminal convictions, offences, criminal proceedings, investigations, measures, judicial acts and criminal-record and pending-charges results. Processing is permitted only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from data on criminal convictions, offences or security measures."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti e soggetti assistiti cui si riferisce la documentazione giudiziaria",
+            "en": "Clients and assisted persons to whom the judicial documentation refers"
+          },
+          {
+            "it": "Controparti, imputati, indagati, persone offese e altre parti dei procedimenti",
+            "en": "Counterparties, defendants, suspects, victims and other parties to the proceedings"
+          },
+          {
+            "it": "Testimoni, periti, consulenti tecnici e ausiliari menzionati negli atti",
+            "en": "Witnesses, experts, technical consultants and auxiliaries mentioned in the acts"
+          },
+          {
+            "it": "Terzi soggetti i cui dati emergono nella documentazione processuale",
+            "en": "Third parties whose data appears in the procedural documentation"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto dei soggetti menzionati negli atti e nei provvedimenti",
+            "en": "Identification and contact data of persons named in the acts and measures"
+          },
+          {
+            "it": "Atti dei procedimenti, provvedimenti, sentenze, verbali e documenti probatori",
+            "en": "Acts of proceedings, measures, judgments, records and evidentiary documents"
+          },
+          {
+            "it": "Dati relativi a condanne penali, reati, indagini e misure (art. 10), inclusi certificati del casellario e dei carichi pendenti, ove pertinenti e necessari",
+            "en": "Data on criminal convictions, offences, investigations and measures (Art. 10), including criminal-record and pending-charges certificates, where relevant and necessary"
+          },
+          {
+            "it": "Categorie particolari di dati (art. 9) contenute nella documentazione, trattate nei limiti delle condizioni applicabili",
+            "en": "Special categories of data (Art. 9) contained in the documentation, processed within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati patrimoniali, reddituali o economici risultanti dagli atti",
+            "en": "Any asset, income or economic data resulting from the acts"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Documentazione fornita dal cliente; atti e provvedimenti acquisiti dall'autorità giudiziaria e dalle cancellerie; certificati del casellario giudiziale e dei carichi pendenti richiesti nei limiti di legge; documenti provenienti da controparti, difensori e consulenti tecnici; dati da fonti pubbliche o registri nei limiti di legge. La raccolta di dati giudiziari è limitata a quanto pertinente e necessario all'incarico.",
+          "en": "Documentation provided by the client; acts and measures acquired from the judicial authority and court registries; criminal-record and pending-charges certificates requested within legal limits; documents from counterparties, lawyers and technical consultants; data from public sources or registers within legal limits. Collection of judicial data is limited to what is relevant and necessary to the engagement."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Autorità giudiziarie, cancellerie e uffici giudiziari (destinatari istituzionali)",
+            "en": "Judicial authorities, court registries and court offices (institutional recipients)"
+          },
+          {
+            "it": "Avvocati domiciliatari e corrispondenti (di regola titolari autonomi)",
+            "en": "Domiciliary and corresponding lawyers (generally independent controllers)"
+          },
+          {
+            "it": "Consulenti tecnici di parte e periti (responsabili o titolari autonomi, secondo l'incarico)",
+            "en": "Party-appointed technical consultants and experts (processors or independent controllers, depending on the engagement)"
+          },
+          {
+            "it": "Fornitore del software gestionale documentale e dei servizi cloud (responsabile del trattamento)",
+            "en": "Provider of the document-management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale documentale / archiviazione / cloud dello studio]",
+              "en": "[Enter the name of the firm's document-management / archiving / cloud software provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione documentale, archiviazione e conservazione della documentazione processuale e dei dati giudiziari, servizi cloud connessi",
+              "en": "Document management, archiving and retention of procedural documentation and judicial data, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Verificare la presenza e l'adeguatezza del DPA ex art. 28 e l'eventuale presenza di sub-responsabili, anche extra-UE. La documentazione giudiziaria è coperta da segreto professionale e contiene dati ex art. 9/art. 10: prestare particolare attenzione alla sicurezza e alla localizzazione del processing.",
+              "en": "Verify the presence and adequacy of the Art. 28 DPA and any sub-processors, including non-EU ones. Judicial documentation is covered by professional secrecy and contains Art. 9/Art. 10 data: pay particular attention to security and the location of processing."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e di archiviazione documentale]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati giudiziari e la documentazione processuale, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi documentali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Judicial data and procedural documentation, covered by professional secrecy and including Art. 9/Art. 10 data, should preferably be processed within the EU. Verify any non-EU sub-processors in document and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata dell'incarico cui la documentazione si riferisce e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the engagement to which the documentation refers and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione della documentazione giudiziaria per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; particolare attenzione alla minimizzazione e alla cancellazione dei dati ex art. 9/art. 10 non più necessari; verifica periodica e cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of judicial documentation for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; particular attention to minimisation and deletion of Art. 9/Art. 10 data no longer needed; periodic review and deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi alla documentazione giudiziaria con autenticazione forte e profili di privilegio",
+              "en": "Access control to judicial documentation with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura dei documenti sensibili e delle connessioni, in transito e at-rest",
+              "en": "Encryption of sensitive documents and connections, in transit and at rest"
+            },
+            {
+              "it": "Tracciabilità degli accessi e delle operazioni sui dati ex art. 9/art. 10 e sulla documentazione processuale",
+              "en": "Traceability of accesses and operations on Art. 9/Art. 10 data and procedural documentation"
+            },
+            {
+              "it": "Segregazione e accesso strettamente limitato ai dati giudiziari più sensibili",
+              "en": "Segregation and strictly limited access to the most sensitive judicial data"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups with at-rest encryption and access control"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Rispetto del segreto professionale e del dovere di riservatezza su tutta la documentazione giudiziaria",
+              "en": "Compliance with professional secrecy and the duty of confidentiality on all judicial documentation"
+            },
+            {
+              "it": "Principio di minimizzazione nell'acquisizione e nella conservazione dei dati ex art. 10, limitati a quanto pertinente e necessario",
+              "en": "Minimisation principle in acquiring and retaining Art. 10 data, limited to what is relevant and necessary"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR), inclusi praticanti e collaboratori",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29), including trainees and collaborators"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con il segreto professionale e la tutela del diritto in giudizio",
+              "en": "Procedure for handling rights requests, balanced with professional secrecy and protection of the right in court"
+            },
+            {
+              "it": "Procedura di verifica periodica della documentazione conservata e di cancellazione dei dati giudiziari non più necessari",
+              "en": "Procedure for periodic review of retained documentation and deletion of judicial data no longer needed"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sulla gestione dei dati giudiziari e della documentazione sensibile, sul segreto professionale, ai DPA con i fornitori e alle nomine dei soggetti coinvolti]",
+            "en": "[Refer to internal policies on managing judicial data and sensitive documentation, professional secrecy, the DPAs with providers and the appointments of the parties involved]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano strumenti automatizzati di classificazione o analisi della documentazione giudiziaria con effetti significativi; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated tools for classifying or analysing judicial documentation with significant effects; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione dei dati giudiziari e della documentazione processuale.",
+            "en": "Not applicable to managing judicial data and procedural documentation."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Da valutare con particolare attenzione: il trattamento sistematico o su larga scala di dati ex art. 9 e soprattutto ex art. 10 può rendere necessaria una DPIA ai sensi dell'art. 35 GDPR, anche alla luce dei criteri dell'autorità di controllo. Valutare in funzione dei volumi, della sistematicità e della concentrazione di dati giudiziari trattati.",
+            "en": "To be assessed with particular attention: systematic or large-scale processing of Art. 9 and especially Art. 10 data may make a DPIA necessary under GDPR Art. 35, also in light of the supervisory authority's criteria. Assess based on the volumes, systematic nature and concentration of judicial data processed."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; normativa sul casellario giudiziale; art. 622 c.p. e normativa forense e deontologica sul segreto professionale; art. 2946 c.c. (prescrizione ordinaria). Lo studio è titolare autonomo. Questo trattamento concentra i dati ex art. 9/art. 10 dello studio: massima attenzione a minimizzazione, accesso e conservazione.",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; criminal-record rules; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code (ordinary prescription). The firm is an independent controller. This processing activity concentrates the firm's Art. 9/Art. 10 data: maximum attention to minimisation, access and retention."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-017-studi-legali-notifiche-depositi-pct",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione notifiche, depositi telematici e PCT",
+        "en": "Management of service of process, e-filing and electronic court proceedings"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali connesso all'uso degli strumenti di trasmissione e deposito telematico degli atti: processo civile telematico (PCT) e processo penale telematico, depositi telematici, notificazioni (a mezzo PEC ai sensi della normativa applicabile, tramite UNEP e ufficiali giudiziari), firme digitali e marche temporali, uso del Punto di Accesso e dei gestori di posta certificata. Il taglio riguarda il canale tecnico di trasmissione e i flussi di invio/notifica, distinto dalla conduzione della lite (template contenzioso) e dalla relazione istituzionale con gli uffici giudiziari (template dedicato).",
+        "en": "Processing of personal data connected to the use of electronic transmission and filing tools: electronic civil and criminal court proceedings, e-filing, service of process (by certified email under applicable rules, through the bailiff service and bailiffs), digital signatures and timestamps, use of the Access Point and certified-email providers. The scope concerns the technical transmission channel and the sending/service flows, distinct from conducting the dispute (litigation template) and the institutional relationship with court offices (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO SUL CANALE TECNICO. Copre gli strumenti e i flussi di trasmissione/deposito/notifica telematica, NON la conduzione della lite (template contenzioso) né la relazione istituzionale con autorità e cancellerie (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO del trattamento dei dati che invia/deposita/notifica; (b) RUOLI PRIVACY DEI SOGGETTI DELLA FILIERA: il gestore dei sistemi del processo telematico (Ministero della Giustizia) opera come titolare autonomo/soggetto pubblico nell'esercizio delle proprie funzioni; il Punto di Accesso e il gestore della PEC vanno qualificati (spesso responsabili ex art. 28 o fornitori di servizio fiduciario, secondo il rapporto); il fornitore del software gestionale/redazione atti è di regola responsabile; (c) gli atti depositati/notificati contengono frequentemente dati ex art. 9 e art. 10: massima attenzione alla MINIMIZZAZIONE di quanto trasmesso; (d) SEGRETO PROFESSIONALE e sicurezza dei canali (PEC, firma digitale, marca temporale); (e) attenzione alla corretta gestione delle ricevute di accettazione/consegna PEC, che contengono dati personali. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "TECHNICAL-CHANNEL SCOPE. Covers the tools and flows of electronic transmission/filing/service, NOT conducting the dispute (litigation template) or the institutional relationship with authorities and registries (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER of the data it sends/files/serves; (b) PRIVACY ROLES IN THE CHAIN: the operator of the electronic-proceedings systems (Ministry of Justice) acts as an independent controller / public body in exercising its functions; the Access Point and the certified-email provider must be qualified (often Art. 28 processors or trust-service providers, depending on the relationship); the document-management / drafting software provider is generally a processor; (c) filed/served acts frequently contain Art. 9 and Art. 10 data: maximum attention to MINIMISATION of what is transmitted; (d) PROFESSIONAL SECRECY and security of channels (certified email, digital signature, timestamp); (e) attention to the proper handling of certified-email acceptance/delivery receipts, which contain personal data. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "deposito_telematico",
+            "label": "Deposito telematico di atti e documenti (PCT/processo penale telematico)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "notifiche",
+            "label": "Notificazioni (PEC, UNEP, ufficiali giudiziari)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "deposito_telematico",
+            "label": "Electronic filing of acts and documents (civil/criminal e-proceedings)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "notifiche",
+            "label": "Service of process (certified email, bailiff service, bailiffs)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione notifiche, depositi telematici e PCT",
+          "en": "Management of service of process, e-filing and electronic court proceedings"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali connesso al deposito telematico degli atti, alle notificazioni (PEC, UNEP, ufficiali giudiziari) e all'uso degli strumenti del processo telematico: software di redazione/deposito, Punto di Accesso, gestore PEC, firme digitali e marche temporali, gestione delle ricevute di accettazione e consegna.",
+          "en": "Processing of personal data connected to the electronic filing of acts, service of process (certified email, bailiff service, bailiffs) and the use of electronic-proceedings tools: drafting/filing software, Access Point, certified-email provider, digital signatures and timestamps, management of acceptance and delivery receipts."
+        },
+        "finalita": [
+          {
+            "it": "Deposito telematico di atti e documenti presso gli uffici giudiziari secondo le regole del processo telematico",
+            "en": "Electronic filing of acts and documents with court offices according to electronic-proceedings rules"
+          },
+          {
+            "it": "Notificazione di atti a mezzo PEC, tramite UNEP e ufficiali giudiziari, nei limiti della normativa applicabile",
+            "en": "Service of acts by certified email, through the bailiff service and bailiffs, within the limits of applicable rules"
+          },
+          {
+            "it": "Apposizione e verifica di firme digitali, marche temporali e attestazioni di conformità",
+            "en": "Affixing and verification of digital signatures, timestamps and conformity attestations"
+          },
+          {
+            "it": "Gestione e conservazione delle ricevute di accettazione e consegna e degli esiti dei depositi e delle notifiche",
+            "en": "Management and retention of acceptance and delivery receipts and the outcomes of filings and service"
+          },
+          {
+            "it": "Adempimenti procedurali e di legge connessi alla trasmissione telematica degli atti",
+            "en": "Procedural and legal obligations connected to the electronic transmission of acts"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: la trasmissione e il deposito telematico sono svolti nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimenti processuali e obblighi di legge sulle modalità di deposito e notificazione telematica e sulla conservazione delle ricevute. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, destinatari delle notifiche e terzi presenti negli atti trasmessi, nei limiti di quanto necessario all'adempimento processuale.",
+            "en": "GDPR Art. 6(1)(b): electronic transmission and filing are carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): procedural obligations and legal requirements on electronic filing and service methods and on the retention of receipts. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, service recipients and third parties present in the transmitted acts, within the limits of what is necessary for procedural compliance."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, destinatari delle notifiche, terzi citati negli atti) coinvolti nella trasmissione telematica, necessari alla tutela del diritto del cliente e all'adempimento processuale. Non costituisce base giuridica per finalità ulteriori.",
+              "en": "Legitimate interest is limited to processing data of third parties (counterparties, service recipients, third parties named in the acts) involved in electronic transmission, necessary to protect the client's right and for procedural compliance. It is not a legal basis for further purposes."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati trasmessi e depositati; verifica della pertinenza degli allegati; uso di canali sicuri (PEC, firma digitale, marca temporale); conservazione delle ricevute limitata alle esigenze probatorie e di legge; rispetto del segreto professionale.",
+              "en": "Minimisation of transmitted and filed data; verification of the relevance of attachments; use of secure channels (certified email, digital signature, timestamp); retention of receipts limited to evidentiary and legal needs; respect for professional secrecy."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute negli atti depositati o notificati, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria. La trasmissione telematica è strumentale all'attività giudiziale/difensiva; va comunque rispettato il principio di minimizzazione su quanto effettivamente trasmesso.",
+            "en": "GDPR Art. 9(2)(f) for special categories of data contained in filed or served acts, processed to establish, exercise or defend a right in court. Electronic transmission is instrumental to the judicial/defense activity; the minimisation principle must in any case be respected for what is actually transmitted."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli atti depositati o notificati possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'adempimento processuale e all'incarico, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). Filed or served acts may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to procedural compliance and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti per conto dei quali sono depositati o notificati gli atti",
+            "en": "Clients on whose behalf acts are filed or served"
+          },
+          {
+            "it": "Controparti e relativi difensori destinatari delle notifiche",
+            "en": "Counterparties and their lawyers receiving service"
+          },
+          {
+            "it": "Terzi soggetti i cui dati sono contenuti negli atti depositati o notificati",
+            "en": "Third parties whose data is contained in filed or served acts"
+          },
+          {
+            "it": "Soggetti destinatari di notificazioni a mezzo PEC, UNEP o ufficiale giudiziario",
+            "en": "Recipients of service by certified email, bailiff service or bailiff"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi, di contatto e indirizzi PEC dei soggetti coinvolti nella trasmissione",
+            "en": "Identification, contact data and certified-email addresses of persons involved in the transmission"
+          },
+          {
+            "it": "Atti, documenti e allegati depositati o notificati e relativi metadati",
+            "en": "Acts, documents and attachments filed or served and related metadata"
+          },
+          {
+            "it": "Ricevute di accettazione e consegna, esiti dei depositi e attestazioni di conformità",
+            "en": "Acceptance and delivery receipts, filing outcomes and conformity attestations"
+          },
+          {
+            "it": "Dati associati a firme digitali, marche temporali e credenziali di accesso ai sistemi del processo telematico",
+            "en": "Data associated with digital signatures, timestamps and access credentials to electronic-proceedings systems"
+          },
+          {
+            "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 contenuti negli atti, nei limiti delle condizioni applicabili",
+            "en": "Special categories of data (Art. 9) and any Art. 10 data contained in the acts, within the limits of applicable conditions"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati e atti predisposti dallo studio sulla base del mandato; dati forniti dal cliente; indirizzi PEC da pubblici registri (es. registri di posta certificata previsti dalla legge); ricevute ed esiti generati dai sistemi del processo telematico, dal gestore PEC e dagli uffici giudiziari. La trasmissione è limitata a quanto necessario all'adempimento processuale.",
+          "en": "Data and acts prepared by the firm under the mandate; data provided by the client; certified-email addresses from public registers (e.g. the certified-email registers provided for by law); receipts and outcomes generated by the electronic-proceedings systems, the certified-email provider and court offices. Transmission is limited to what is necessary for procedural compliance."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Gestore dei sistemi del processo telematico (Ministero della Giustizia): titolare autonomo/soggetto pubblico nell'esercizio delle proprie funzioni",
+            "en": "Operator of the electronic-proceedings systems (Ministry of Justice): independent controller / public body in exercising its functions"
+          },
+          {
+            "it": "Uffici giudiziari, cancellerie e UNEP destinatari dei depositi e delle richieste di notifica",
+            "en": "Court offices, registries and bailiff service receiving filings and service requests"
+          },
+          {
+            "it": "Controparti e relativi difensori destinatari delle notifiche, nei limiti del contraddittorio",
+            "en": "Counterparties and their lawyers receiving service, within the limits of cross-examination"
+          },
+          {
+            "it": "Punto di Accesso e gestore della PEC (gestore PEC / prestatore di servizi fiduciari, ove applicabile)",
+            "en": "Access Point and certified-email provider (processors or trust-service providers, depending on the relationship)"
+          },
+          {
+            "it": "Fornitore del software di redazione/deposito e dei servizi cloud (responsabile del trattamento)",
+            "en": "Provider of the drafting/filing software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software di redazione/deposito telematico, del Punto di Accesso e/o del gestore PEC]",
+              "en": "[Enter the name of the e-filing/drafting software provider, the Access Point and/or the certified-email provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Fornitura degli strumenti di redazione, deposito telematico, trasmissione PEC e accesso ai sistemi del processo telematico",
+              "en": "Provision of the drafting, e-filing, certified-email transmission and electronic-proceedings access tools"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Qualificare il ruolo di ciascun soggetto della filiera: il fornitore del software e il Punto di Accesso sono spesso responsabili ex art. 28; il gestore PEC può operare anche come fornitore di servizio fiduciario; il Ministero della Giustizia è titolare autonomo/soggetto pubblico. Verificare DPA e sub-responsabili, anche extra-UE.",
+              "en": "Qualify the role of each party in the chain: the software provider and the Access Point are often Art. 28 processors; the certified-email provider may also act as a trust-service provider; the Ministry of Justice is an independent controller / public body. Verify the DPA and sub-processors, including non-EU ones."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori del software, del Punto di Accesso e della PEC]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "Gli atti e i dati trasmessi telematicamente, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di deposito, PEC e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Acts and data transmitted electronically, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in filing, certified-email and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata del procedimento cui gli atti si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione; le ricevute di accettazione e consegna sono conservate per le esigenze probatorie connesse alla validità della trasmissione, tenuto conto dei termini di prescrizione applicabili.",
+            "en": "For the duration of the proceedings to which the acts refer and, thereafter, for the time necessary to protect rights and meet retention obligations; acceptance and delivery receipts are retained for the evidentiary needs connected to the validity of the transmission, taking into account the applicable prescription terms."
+          },
+          "criteri": {
+            "it": "Conservazione di atti, ricevute ed esiti per il periodo necessario a documentare la validità di depositi e notifiche e a difendersi da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of acts, receipts and outcomes for the period necessary to document the validity of filings and service and to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Uso di canali sicuri per il deposito telematico e la notificazione (PEC, firma digitale, marca temporale)",
+              "en": "Use of secure channels for electronic filing and service (certified email, digital signature, timestamp)"
+            },
+            {
+              "it": "Controllo accessi ai sistemi di redazione/deposito con autenticazione forte e gestione delle credenziali",
+              "en": "Access control to drafting/filing systems with strong authentication and credential management"
+            },
+            {
+              "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest",
+              "en": "Encryption of connections and documents, in transit and at rest"
+            },
+            {
+              "it": "Conservazione protetta delle ricevute di accettazione e consegna e degli esiti dei depositi",
+              "en": "Protected retention of acceptance and delivery receipts and filing outcomes"
+            },
+            {
+              "it": "Tracciabilità delle operazioni di deposito e notifica",
+              "en": "Traceability of filing and service operations"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Minimizzazione dei dati e degli allegati effettivamente trasmessi o depositati",
+              "en": "Minimisation of data and attachments actually transmitted or filed"
+            },
+            {
+              "it": "Rispetto del segreto professionale sugli atti trasmessi e sulle relative ricevute",
+              "en": "Compliance with professional secrecy on transmitted acts and related receipts"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono depositi e notifiche",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling filings and service"
+            },
+            {
+              "it": "Qualificazione documentata dei ruoli privacy dei soggetti della filiera (Punto di Accesso, gestore PEC, fornitore software)",
+              "en": "Documented qualification of the privacy roles of the parties in the chain (Access Point, certified-email provider, software provider)"
+            },
+            {
+              "it": "Procedura per la gestione delle anomalie di deposito/notifica e per la conservazione delle relative evidenze",
+              "en": "Procedure for handling filing/service anomalies and retaining the related evidence"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle regole tecniche del processo telematico, alle policy interne sull'uso di PEC e firma digitale, ai DPA con i fornitori e alle nomine dei soggetti coinvolti]",
+            "en": "[Refer to the technical rules of electronic proceedings, internal policies on the use of certified email and digital signature, the DPAs with providers and the appointments of the parties involved]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano automatismi con effetti significativi nella gestione di depositi e notifiche; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated mechanisms with significant effects in managing filings and service; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione di notifiche, depositi telematici e PCT.",
+            "en": "Not applicable to managing service of process, e-filing and electronic court proceedings."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria per l'uso ordinario degli strumenti telematici. Da valutare in presenza di volumi particolarmente elevati o di trattamenti sistematici di dati ex art. 9/art. 10 veicolati attraverso i canali telematici.",
+            "en": "Generally not required for the ordinary use of electronic tools. Assess in case of particularly high volumes or systematic processing of Art. 9/Art. 10 data carried through the electronic channels."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; normativa sul processo civile telematico e penale telematico, sulle notificazioni a mezzo PEC e sui registri di posta certificata; regolamento eIDAS sui servizi fiduciari (firma digitale, marca temporale); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; il Ministero della Giustizia è titolare autonomo/soggetto pubblico; Punto di Accesso e gestore PEC vanno qualificati caso per caso.",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; rules on electronic civil and criminal proceedings, service by certified email and certified-email registers; eIDAS Regulation on trust services (digital signature, timestamp); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the Ministry of Justice is an independent controller / public body; the Access Point and certified-email provider must be qualified case by case."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-018-studi-legali-autorita-giudiziarie-cancellerie",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione rapporti con autorità giudiziarie, cancellerie e ufficiali giudiziari",
+        "en": "Management of relations with judicial authorities, court registries and bailiffs"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali connesso ai rapporti dello studio con i destinatari istituzionali dell'attività giudiziaria: autorità giudiziarie (giudici, uffici di procura), cancellerie, uffici giudiziari e ufficiali giudiziari (UNEP). Riguarda i flussi di trasmissione, comunicazione, richiesta e ricezione di atti, istanze, copie, certificati e provvedimenti verso e da tali soggetti, che operano come destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle rispettive funzioni. Il taglio riguarda la relazione istituzionale, distinto dal canale tecnico di trasmissione (template PCT/notifiche) e dalla conduzione della lite (template contenzioso).",
+        "en": "Processing of personal data connected to the firm's relations with the institutional recipients of judicial activity: judicial authorities (judges, prosecutor offices), court registries, court offices and bailiffs. It concerns the flows of transmission, communication, request and receipt of acts, applications, copies, certificates and measures to and from such parties, which act as independent controllers / public bodies in exercising their functions. The scope concerns the institutional relationship, distinct from the technical transmission channel (e-filing/service template) and conducting the dispute (litigation template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO SULLA RELAZIONE ISTITUZIONALE. Copre i flussi di dati con autorità giudiziarie, cancellerie, uffici giudiziari e ufficiali giudiziari, NON il canale tecnico (template PCT/notifiche) né la conduzione della lite (template contenzioso). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) i destinatari istituzionali (giudici, procure, cancellerie, UNEP) sono TITOLARI AUTONOMI/SOGGETTI PUBBLICI nell'esercizio delle proprie funzioni giurisdizionali e amministrative: NON sono responsabili ex art. 28 dello studio, e a essi non si applica un DPA; (c) la BASE CONTRATTUALE permane: pur essendo il destinatario istituzionale, il trattamento da parte dello studio nasce dall'esecuzione del mandato professionale verso il cliente; si affiancano obbligo legale (adempimenti e ordini dell'autorità) e legittimo interesse (dati di terzi); (d) ART. 9(2)(f) e ART. 10 frequenti negli atti scambiati; (e) MINIMIZZAZIONE nelle istanze e nelle richieste di copie/certificati; (f) SEGRETO PROFESSIONALE e tutela dei dati di terzi nei rapporti con gli uffici. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "INSTITUTIONAL-RELATIONSHIP SCOPE. Covers data flows with judicial authorities, registries, court offices and bailiffs, NOT the technical channel (e-filing/service template) or conducting the dispute (litigation template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) the institutional recipients (judges, prosecutor offices, registries, bailiff service) are INDEPENDENT CONTROLLERS / PUBLIC BODIES in exercising their judicial and administrative functions: they are NOT the firm's Art. 28 processors, and no DPA applies to them; (c) the CONTRACTUAL BASIS remains: although the recipient is institutional, processing by the firm arises from performing the professional mandate towards the client; legal obligation (compliance and authority orders) and legitimate interest (third-party data) sit alongside it; (d) ART. 9(2)(f) and ART. 10 frequent in the exchanged acts; (e) MINIMISATION in applications and requests for copies/certificates; (f) PROFESSIONAL SECRECY and protection of third-party data in dealings with the offices. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "rapporti_autorita_cancellerie",
+            "label": "Rapporti con autorità giudiziarie e cancellerie (istanze, copie, certificati, comunicazioni)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "rapporti_ufficiali_giudiziari",
+            "label": "Rapporti con ufficiali giudiziari/UNEP (notifiche, esecuzioni, atti)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "rapporti_autorita_cancellerie",
+            "label": "Relations with judicial authorities and registries (applications, copies, certificates, communications)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "rapporti_ufficiali_giudiziari",
+            "label": "Relations with bailiffs/bailiff service (service, enforcement, acts)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione rapporti con autorità giudiziarie, cancellerie e ufficiali giudiziari",
+          "en": "Management of relations with judicial authorities, court registries and bailiffs"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali connesso ai rapporti dello studio con autorità giudiziarie, cancellerie, uffici giudiziari e ufficiali giudiziari (UNEP): trasmissione e ricezione di atti, istanze, richieste di copie e certificati, comunicazioni, richieste di notifica ed esecuzione, nell'ambito degli incarichi professionali.",
+          "en": "Processing of personal data connected to the firm's relations with judicial authorities, registries, court offices and bailiffs: transmission and receipt of acts, applications, requests for copies and certificates, communications, service and enforcement requests, within professional engagements."
+        },
+        "finalita": [
+          {
+            "it": "Trasmissione e ricezione di atti, istanze e comunicazioni verso e da autorità giudiziarie e cancellerie",
+            "en": "Transmission and receipt of acts, applications and communications to and from judicial authorities and registries"
+          },
+          {
+            "it": "Richiesta e ricezione di copie di atti, fascicoli, provvedimenti e certificati presso gli uffici giudiziari",
+            "en": "Request and receipt of copies of acts, files, measures and certificates from court offices"
+          },
+          {
+            "it": "Gestione dei rapporti con ufficiali giudiziari e UNEP per notifiche, pignoramenti ed esecuzioni",
+            "en": "Management of relations with bailiffs and the bailiff service for service, attachments and enforcement"
+          },
+          {
+            "it": "Adempimenti e riscontro a ordini, richieste e comunicazioni dell'autorità giudiziaria",
+            "en": "Compliance with and response to orders, requests and communications of the judicial authority"
+          },
+          {
+            "it": "Documentazione e tracciamento dei flussi con i destinatari istituzionali nell'ambito delle pratiche",
+            "en": "Documentation and tracking of flows with institutional recipients within cases"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: i rapporti con i destinatari istituzionali sono svolti nell'ambito del mandato professionale conferito dal cliente; pur essendo il destinatario istituzionale, il trattamento da parte dello studio resta collegato all'esecuzione del mandato verso il cliente. Art. 6(1)(c) GDPR: adempimenti processuali, ordini e richieste dell'autorità giudiziaria, obblighi di legge sui rapporti con gli uffici. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti e terzi coinvolti nei flussi con gli uffici, nei limiti di quanto necessario all'incarico.",
+            "en": "GDPR Art. 6(1)(b): relations with institutional recipients are carried out within the professional mandate granted by the client; although the recipient is institutional, processing by the firm remains connected to performing the mandate towards the client. GDPR Art. 6(1)(c): procedural obligations, orders and requests of the judicial authority, legal obligations on dealings with the offices. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties and third parties involved in the flows with the offices, within the limits of what is necessary to the engagement."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, terzi citati negli atti e nelle istanze) presenti nei flussi con i destinatari istituzionali, necessari alla tutela del diritto del cliente. Non costituisce base giuridica per finalità ulteriori.",
+              "en": "Legitimate interest is limited to processing data of third parties (counterparties, third parties named in acts and applications) present in the flows with institutional recipients, necessary to protect the client's right. It is not a legal basis for further purposes."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati contenuti nelle istanze e nelle richieste di copie/certificati; pertinenza delle comunicazioni; rispetto del segreto professionale; tracciabilità dei flussi con gli uffici; accesso riservato ai soggetti coinvolti nella pratica.",
+              "en": "Minimisation of data contained in applications and requests for copies/certificates; relevance of communications; respect for professional secrecy; traceability of flows with the offices; access reserved to persons involved in the case."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute negli atti, nelle istanze e nelle comunicazioni scambiate con i destinatari istituzionali, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o quando le autorità giurisdizionali esercitano le loro funzioni.",
+            "en": "GDPR Art. 9(2)(f) for special categories of data contained in the acts, applications and communications exchanged with institutional recipients, processed to establish, exercise or defend a right in court, or when judicial authorities act in their judicial capacity."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli atti, le istanze e i certificati scambiati con autorità giudiziarie e cancellerie possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico e all'adempimento, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The acts, applications and certificates exchanged with judicial authorities and registries may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to the engagement and compliance, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Clienti per conto dei quali si tengono i rapporti con gli uffici",
+            "en": "Clients on whose behalf relations with the offices are maintained"
+          },
+          {
+            "it": "Controparti e relativi difensori coinvolti nei flussi con gli uffici",
+            "en": "Counterparties and their lawyers involved in the flows with the offices"
+          },
+          {
+            "it": "Magistrati, personale di cancelleria, ufficiali giudiziari e referenti degli uffici (dati di contatto e di servizio)",
+            "en": "Judges, registry staff, bailiffs and office contacts (contact and service data)"
+          },
+          {
+            "it": "Terzi soggetti i cui dati emergono negli atti, nelle istanze o nei certificati scambiati",
+            "en": "Third parties whose data appears in the acts, applications or certificates exchanged"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto delle parti e dei referenti degli uffici",
+            "en": "Identification and contact data of the parties and office contacts"
+          },
+          {
+            "it": "Atti, istanze, richieste di copie e certificati, comunicazioni e provvedimenti scambiati",
+            "en": "Acts, applications, requests for copies and certificates, communications and measures exchanged"
+          },
+          {
+            "it": "Dati relativi a notifiche, pignoramenti ed esecuzioni gestiti tramite ufficiali giudiziari/UNEP",
+            "en": "Data on service, attachments and enforcement handled through bailiffs/bailiff service"
+          },
+          {
+            "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 contenuti negli atti scambiati, nei limiti delle condizioni applicabili",
+            "en": "Special categories of data (Art. 9) and any Art. 10 data contained in the exchanged acts, within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati patrimoniali, reddituali o economici rilevanti per esecuzioni e procedure",
+            "en": "Any asset, income or economic data relevant to enforcement and procedures"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati e atti predisposti dallo studio sulla base del mandato; dati forniti dal cliente; atti, copie, certificati e provvedimenti ricevuti da autorità giudiziarie, cancellerie e uffici giudiziari; esiti e verbali ricevuti da ufficiali giudiziari/UNEP; dati da fonti pubbliche o registri nei limiti di legge.",
+          "en": "Data and acts prepared by the firm under the mandate; data provided by the client; acts, copies, certificates and measures received from judicial authorities, registries and court offices; outcomes and records received from bailiffs/bailiff service; data from public sources or registers within legal limits."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Autorità giudiziarie (giudici, uffici di procura): destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle funzioni giurisdizionali",
+            "en": "Judicial authorities (judges, prosecutor offices): independent controllers / public bodies in exercising judicial functions"
+          },
+          {
+            "it": "Cancellerie e uffici giudiziari: destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle funzioni amministrative connesse",
+            "en": "Court registries and offices: independent controllers / public bodies in exercising connected administrative functions"
+          },
+          {
+            "it": "Ufficiali giudiziari e UNEP: destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, per notifiche ed esecuzioni",
+            "en": "Bailiffs and the bailiff service: independent controllers / public bodies for service and enforcement"
+          },
+          {
+            "it": "Avvocati domiciliatari e corrispondenti che curano i rapporti con uffici di altri fori (di regola titolari autonomi)",
+            "en": "Domiciliary and corresponding lawyers handling relations with offices of other jurisdictions (generally independent controllers)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+              "en": "[Enter the name of the firm's management software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione documentale e tracciamento dei flussi con gli uffici giudiziari, servizi cloud connessi",
+              "en": "Document management and tracking of flows with court offices, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Il DPA ex art. 28 riguarda i fornitori di servizi (software, cloud), NON le autorità giudiziarie, le cancellerie e gli ufficiali giudiziari, che sono destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle proprie funzioni. Verificare DPA e sub-responsabili, anche extra-UE, dei soli fornitori.",
+              "en": "The Art. 28 DPA concerns service providers (software, cloud), NOT the judicial authorities, registries and bailiffs, which are independent controllers / public bodies in exercising their functions. Verify the DPA and sub-processors, including non-EU ones, of the providers only."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati scambiati con i destinatari istituzionali, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. I rapporti con gli uffici giudiziari avvengono in ambito nazionale; verificare eventuali sub-responsabili extra-UE nei soli servizi IT/cloud dello studio; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Data exchanged with institutional recipients, covered by professional secrecy, should preferably be processed within the EU. Relations with court offices take place at national level; verify any non-EU sub-processors in the firm's IT/cloud services only; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata della pratica cui i rapporti si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the case to which the relations refer and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione di atti, istanze, copie, certificati ed esiti dei rapporti con gli uffici per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of acts, applications, copies, certificates and outcomes of relations with the offices for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi alla documentazione dei rapporti con gli uffici con autenticazione forte e profili di privilegio",
+              "en": "Access control to the documentation of relations with the offices with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest, e uso di canali sicuri nelle comunicazioni",
+              "en": "Encryption of connections and documents, in transit and at rest, and use of secure channels in communications"
+            },
+            {
+              "it": "Tracciabilità delle comunicazioni e dei flussi con autorità, cancellerie e ufficiali giudiziari",
+              "en": "Traceability of communications and flows with authorities, registries and bailiffs"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups with at-rest encryption and access control"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Rispetto del segreto professionale e del dovere di riservatezza nei rapporti con gli uffici",
+              "en": "Compliance with professional secrecy and the duty of confidentiality in dealings with the offices"
+            },
+            {
+              "it": "Minimizzazione dei dati contenuti in istanze, richieste di copie e comunicazioni",
+              "en": "Minimisation of data contained in applications, requests for copies and communications"
+            },
+            {
+              "it": "Qualificazione documentata dei ruoli privacy: destinatari istituzionali come destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità,, non responsabili dello studio",
+              "en": "Documented qualification of privacy roles: institutional recipients as independent controllers / public bodies, not the firm's processors"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che curano i rapporti con gli uffici",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling relations with the offices"
+            },
+            {
+              "it": "Procedura per la gestione delle richieste di esercizio dei diritti, bilanciata con il segreto professionale e la tutela del diritto in giudizio",
+              "en": "Procedure for handling rights requests, balanced with professional secrecy and protection of the right in court"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sui rapporti con gli uffici giudiziari e sul segreto professionale, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy]",
+            "en": "[Refer to internal policies on relations with court offices and professional secrecy, the DPAs with providers and the privacy-role qualifications]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano automatismi con effetti significativi nella gestione dei rapporti con gli uffici; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated mechanisms with significant effects in managing relations with the offices; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile ai rapporti con autorità giudiziarie, cancellerie e ufficiali giudiziari.",
+            "en": "Not applicable to relations with judicial authorities, registries and bailiffs."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria per la gestione ordinaria dei rapporti con gli uffici. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9/art. 10 veicolati attraverso tali flussi.",
+            "en": "Generally not required for ordinary management of relations with the offices. Assess in case of systematic or large-scale processing of Art. 9/Art. 10 data carried through such flows."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile e penale e normativa sull'ordinamento giudiziario e sugli ufficiali giudiziari (UNEP); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; autorità giudiziarie, cancellerie e ufficiali giudiziari sono destinatari istituzionali che trattano i dati secondo il proprio autonomo regime di titolarità, nell'esercizio delle proprie funzioni; la base contrattuale verso il cliente permane anche quando il destinatario è istituzionale.",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian codes of civil and criminal procedure and rules on the judicial system and bailiffs; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; judicial authorities, registries and bailiffs are independent controllers / public bodies in exercising their functions; the contractual basis towards the client remains even when the recipient is institutional."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-019-studi-legali-controparti-difensori-domiciliatari",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione rapporti con controparti, difensori avversari e domiciliatari",
+        "en": "Management of relations with counterparties, opposing lawyers and domiciliary lawyers"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali connesso ai rapporti dello studio con la parte avversa e con altri professionisti legali esterni: controparti e relativi difensori avversari, avvocati domiciliatari e corrispondenti. Riguarda gli scambi nel contraddittorio (corrispondenza, diffide, trattative, scambio di atti e documenti) e il coordinamento con i legali esterni che assistono lo studio in altri fori o per attività delegate. Il taglio riguarda la relazione con tali soggetti e la qualificazione dei rispettivi ruoli privacy, distinto dalla conduzione complessiva della lite (template contenzioso) e dalla relazione istituzionale con gli uffici (template dedicato).",
+        "en": "Processing of personal data connected to the firm's relations with the opposing side and with other external legal professionals: counterparties and their opposing lawyers, domiciliary and corresponding lawyers. It concerns exchanges in cross-examination (correspondence, formal notices, negotiations, exchange of acts and documents) and coordination with external lawyers assisting the firm in other jurisdictions or for delegated activities. The scope concerns the relationship with such parties and the qualification of their respective privacy roles, distinct from the overall conduct of the dispute (litigation template) and the institutional relationship with the offices (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO SUI RAPPORTI CON L'ALTRA PARTE E I LEGALI ESTERNI. Copre i flussi con controparti, difensori avversari, domiciliatari e corrispondenti, NON la conduzione complessiva della lite (template contenzioso) né la relazione con gli uffici (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) CONTROPARTI e DIFENSORI AVVERSARI sono TITOLARI AUTONOMI: lo scambio di dati avviene nei limiti del contraddittorio e della tutela del diritto del cliente; (c) DOMICILIATARI e CORRISPONDENTI sono DI REGOLA TITOLARI AUTONOMI nello svolgimento dell'attività professionale secondo autonomia tecnica, NON responsabili ex art. 28; la qualificazione va comunque verificata in base al concreto atteggiarsi del rapporto; (d) la BASE PREVALENTE per i dati di terzi è il LEGITTIMO INTERESSE alla tutela del diritto del cliente, con divieto di usi ulteriori; affianca la base contrattuale (mandato) e l'obbligo legale (contraddittorio); (e) ART. 9(2)(f) e ART. 10 possibili negli atti e nella corrispondenza scambiata; (f) MINIMIZZAZIONE e SEGRETO PROFESSIONALE nelle comunicazioni con la controparte. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "SCOPE ON RELATIONS WITH THE OTHER SIDE AND EXTERNAL LAWYERS. Covers flows with counterparties, opposing lawyers, domiciliary and corresponding lawyers, NOT the overall conduct of the dispute (litigation template) or the relationship with the offices (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) COUNTERPARTIES and OPPOSING LAWYERS are INDEPENDENT CONTROLLERS: data exchange takes place within the limits of cross-examination and protection of the client's right; (c) DOMICILIARY and CORRESPONDING lawyers are GENERALLY INDEPENDENT CONTROLLERS in carrying out professional activity under technical autonomy, NOT Art. 28 processors; the qualification must in any case be verified based on how the relationship actually operates; (d) the PREVAILING BASIS for third-party data is the LEGITIMATE INTEREST in protecting the client's right, with no further uses; it sits alongside the contractual basis (mandate) and the legal obligation (cross-examination); (e) ART. 9(2)(f) and ART. 10 possible in the acts and correspondence exchanged; (f) MINIMISATION and PROFESSIONAL SECRECY in communications with the counterparty. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "controparti_difensori",
+            "label": "Rapporti con controparti e difensori avversari (contraddittorio, corrispondenza, scambio atti)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "domiciliatari_corrispondenti",
+            "label": "Coordinamento con domiciliatari e corrispondenti (titolari autonomi)",
+            "art6": "legittimo_interesse"
+          }
+        ],
+        "en": [
+          {
+            "id": "controparti_difensori",
+            "label": "Relations with counterparties and opposing lawyers (cross-examination, correspondence, exchange of acts)",
+            "art6": "legittimo_interesse_e_obbligo"
+          },
+          {
+            "id": "domiciliatari_corrispondenti",
+            "label": "Coordination with domiciliary and corresponding lawyers (independent controllers)",
+            "art6": "legittimo_interesse"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione rapporti con controparti, difensori avversari e domiciliatari",
+          "en": "Management of relations with counterparties, opposing lawyers and domiciliary lawyers"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali connesso ai rapporti con controparti, difensori avversari, avvocati domiciliatari e corrispondenti: corrispondenza e diffide, trattative, scambio di atti e documenti nel contraddittorio, coordinamento con legali esterni per attività delegate o per altri fori, nell'ambito degli incarichi professionali.",
+          "en": "Processing of personal data connected to relations with counterparties, opposing lawyers, domiciliary and corresponding lawyers: correspondence and formal notices, negotiations, exchange of acts and documents in cross-examination, coordination with external lawyers for delegated activities or other jurisdictions, within professional engagements."
+        },
+        "finalita": [
+          {
+            "it": "Gestione della corrispondenza, delle diffide e delle comunicazioni con controparti e difensori avversari",
+            "en": "Management of correspondence, formal notices and communications with counterparties and opposing lawyers"
+          },
+          {
+            "it": "Scambio di atti e documenti nel contraddittorio e gestione delle trattative connesse alla posizione",
+            "en": "Exchange of acts and documents in cross-examination and management of negotiations connected to the position"
+          },
+          {
+            "it": "Coordinamento con avvocati domiciliatari e corrispondenti per attività delegate o presso altri fori",
+            "en": "Coordination with domiciliary and corresponding lawyers for delegated activities or in other jurisdictions"
+          },
+          {
+            "it": "Trasmissione e ricezione dei dati necessari al coordinamento difensivo con i legali esterni",
+            "en": "Transmission and receipt of data necessary for defense coordination with external lawyers"
+          },
+          {
+            "it": "Documentazione e tracciamento dei flussi con la parte avversa e con i professionisti esterni",
+            "en": "Documentation and tracking of flows with the opposing side and external professionals"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(f) GDPR: base PREVALENTE per il trattamento dei dati di controparti, difensori avversari e terzi coinvolti, fondata sul legittimo interesse alla tutela del diritto del cliente, nei limiti del contraddittorio, ferma restando la base contrattuale per il rapporto con il cliente. Art. 6(1)(b) GDPR: i rapporti con i legali esterni (domiciliatari, corrispondenti) e il coordinamento difensivo sono svolti nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimenti connessi al contraddittorio processuale e agli obblighi di legge. Il rapporto con il cliente è inquadrato nel template 'Gestione clienti e incarichi professionali'.",
+            "en": "GDPR Art. 6(1)(f): PREVAILING basis for processing data of counterparties, opposing lawyers and third parties involved, grounded in the legitimate interest in protecting the client's right, within the limits of cross-examination. GDPR Art. 6(1)(b): relations with external lawyers (domiciliary, corresponding) and defense coordination are carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): obligations connected to procedural cross-examination and legal requirements. The client relationship is framed in the 'Client and engagement management' template."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse copre il trattamento dei dati di controparti, difensori avversari e terzi coinvolti nei rapporti con la parte avversa, nei limiti di quanto necessario al contraddittorio e alla tutela del diritto del cliente. Non costituisce base per finalità ulteriori né per usi diversi dalla posizione trattata.",
+              "en": "Legitimate interest covers processing data of counterparties, opposing lawyers and third parties involved in relations with the opposing side, within the limits of what is necessary for cross-examination and protection of the client's right. It is not a basis for further purposes or uses other than the position handled."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati comunicati alla controparte; pertinenza della corrispondenza e degli atti scambiati; rispetto del segreto professionale; divieto di usi ulteriori dei dati della parte avversa; coordinamento documentato con domiciliatari e corrispondenti sui flussi di dati.",
+              "en": "Minimisation of data communicated to the counterparty; relevance of correspondence and acts exchanged; respect for professional secrecy; prohibition of further uses of the opposing side's data; documented coordination with domiciliary and corresponding lawyers on data flows."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute nella corrispondenza e negli atti scambiati con controparti e difensori avversari, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria, o nella fase stragiudiziale strettamente connessa.",
+            "en": "GDPR Art. 9(2)(f) for special categories of data contained in the correspondence and acts exchanged with counterparties and opposing lawyers, processed to establish, exercise or defend a right in court, or in the strictly connected out-of-court phase."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). La corrispondenza e gli atti scambiati con la parte avversa o con i legali esterni possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto al contraddittorio e all'incarico, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The correspondence and acts exchanged with the opposing side or external lawyers may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to cross-examination and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Controparti (persone fisiche) e referenti di controparti persone giuridiche",
+            "en": "Counterparties (natural persons) and contacts of corporate counterparties"
+          },
+          {
+            "it": "Difensori avversari e relativi referenti e collaboratori",
+            "en": "Opposing lawyers and their contacts and collaborators"
+          },
+          {
+            "it": "Avvocati domiciliatari e corrispondenti e relativi collaboratori",
+            "en": "Domiciliary and corresponding lawyers and their collaborators"
+          },
+          {
+            "it": "Terzi soggetti i cui dati emergono nella corrispondenza o negli atti scambiati",
+            "en": "Third parties whose data appears in the correspondence or acts exchanged"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi e di contatto di controparti, difensori avversari, domiciliatari e corrispondenti",
+            "en": "Identification and contact data of counterparties, opposing lawyers, domiciliary and corresponding lawyers"
+          },
+          {
+            "it": "Corrispondenza, diffide, comunicazioni e verbali di trattativa",
+            "en": "Correspondence, formal notices, communications and negotiation records"
+          },
+          {
+            "it": "Atti e documenti scambiati nel contraddittorio e relativi alla posizione",
+            "en": "Acts and documents exchanged in cross-examination and relating to the position"
+          },
+          {
+            "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 contenuti negli atti e nella corrispondenza, nei limiti delle condizioni applicabili",
+            "en": "Special categories of data (Art. 9) and any Art. 10 data contained in the acts and correspondence, within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati patrimoniali, reddituali o economici rilevanti per la posizione o la trattativa",
+            "en": "Any asset, income or economic data relevant to the position or the negotiation"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente; dati provenienti da controparti e difensori avversari nel corso del contraddittorio e delle trattative; dati scambiati con domiciliatari e corrispondenti per il coordinamento difensivo; dati da fonti pubbliche o registri nei limiti di legge. La raccolta è limitata a quanto necessario al contraddittorio e all'incarico.",
+          "en": "Data provided by the client; data from counterparties and opposing lawyers during cross-examination and negotiations; data exchanged with domiciliary and corresponding lawyers for defense coordination; data from public sources or registers within legal limits. Collection is limited to what is necessary for cross-examination and the engagement."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Controparti e relativi difensori avversari: titolari autonomi, nei limiti del contraddittorio",
+            "en": "Counterparties and their opposing lawyers: independent controllers, within the limits of cross-examination"
+          },
+          {
+            "it": "Avvocati domiciliatari e corrispondenti: di regola titolari autonomi per l'attività svolta secondo autonomia professionale",
+            "en": "Domiciliary and corresponding lawyers: generally independent controllers for activity carried out under professional autonomy"
+          },
+          {
+            "it": "Autorità giudiziarie e cancellerie ove gli scambi confluiscano in atti processuali (destinatari istituzionali)",
+            "en": "Judicial authorities and registries where the exchanges flow into procedural acts (institutional recipients)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome del fornitore del software gestionale / cloud dello studio]",
+              "en": "[Enter the name of the firm's management software / cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Gestione documentale e tracciamento della corrispondenza e dei flussi con controparti e legali esterni, servizi cloud connessi",
+              "en": "Document management and tracking of correspondence and flows with counterparties and external lawyers, connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA con il fornitore]",
+              "en": "[Reference to the DPA with the provider]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Il DPA ex art. 28 riguarda i fornitori di servizi (software, cloud). Controparti, difensori avversari, domiciliatari e corrispondenti NON sono responsabili dello studio: sono di regola titolari autonomi. La qualificazione dei domiciliatari/corrispondenti va comunque verificata in base al concreto atteggiarsi del rapporto. Verificare DPA e sub-responsabili, anche extra-UE, dei soli fornitori.",
+              "en": "The Art. 28 DPA concerns service providers (software, cloud). Counterparties, opposing lawyers, domiciliary and corresponding lawyers are NOT the firm's processors: they are generally independent controllers. The qualification of domiciliary/corresponding lawyers must in any case be verified based on how the relationship actually operates. Verify the DPA and sub-processors, including non-EU ones, of the providers only."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati scambiati con controparti e legali esterni, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei soli servizi IT/cloud dello studio; in caso di domiciliatari/corrispondenti extra-UE valutare la qualificazione del ruolo e i conseguenti flussi. Se presenti trasferimenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Data exchanged with counterparties and external lawyers, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in the firm's IT/cloud services only; in case of non-EU domiciliary/corresponding lawyers, assess the role qualification and the resulting flows. If transfers occur, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata della posizione cui i rapporti si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the position to which the relations refer and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione della corrispondenza e degli atti scambiati per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of correspondence and exchanged acts for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi alla corrispondenza e ai flussi con controparti e legali esterni, con autenticazione forte e profili di privilegio",
+              "en": "Access control to correspondence and flows with counterparties and external lawyers, with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest, e canali sicuri nelle comunicazioni",
+              "en": "Encryption of connections and documents, in transit and at rest, and secure channels in communications"
+            },
+            {
+              "it": "Tracciabilità delle comunicazioni e degli scambi con la parte avversa e i professionisti esterni",
+              "en": "Traceability of communications and exchanges with the opposing side and external professionals"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups with at-rest encryption and access control"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Rispetto del segreto professionale e del dovere di riservatezza nei rapporti con la parte avversa e i legali esterni",
+              "en": "Compliance with professional secrecy and the duty of confidentiality in relations with the opposing side and external lawyers"
+            },
+            {
+              "it": "Minimizzazione dei dati comunicati alla controparte e divieto di usi ulteriori dei dati della parte avversa",
+              "en": "Minimisation of data communicated to the counterparty and prohibition of further uses of the opposing side's data"
+            },
+            {
+              "it": "Qualificazione documentata dei ruoli privacy: controparti e difensori avversari come titolari autonomi; domiciliatari e corrispondenti di regola titolari autonomi, verificando il concreto atteggiarsi del rapporto",
+              "en": "Documented qualification of privacy roles: counterparties and opposing lawyers as independent controllers; domiciliary and corresponding lawyers generally independent controllers, verifying how the relationship actually operates"
+            },
+            {
+              "it": "Coordinamento documentato con domiciliatari e corrispondenti sui flussi di dati",
+              "en": "Documented coordination with domiciliary and corresponding lawyers on data flows"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che curano i rapporti con la parte avversa e i legali esterni",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling relations with the opposing side and external lawyers"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sui rapporti con controparti e legali esterni e sul segreto professionale, ai DPA con i fornitori e alle qualificazioni dei ruoli privacy di domiciliatari e corrispondenti]",
+            "en": "[Refer to internal policies on relations with counterparties and external lawyers and professional secrecy, the DPAs with providers and the privacy-role qualifications of domiciliary and corresponding lawyers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se si utilizzano automatismi con effetti significativi nella gestione dei rapporti con controparti e legali esterni; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Generally not present. Complete if using automated mechanisms with significant effects in managing relations with counterparties and external lawyers; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile ai rapporti con controparti, difensori avversari e domiciliatari.",
+            "en": "Not applicable to relations with counterparties, opposing lawyers and domiciliary lawyers."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Di regola non necessaria per la gestione ordinaria dei rapporti con controparti e legali esterni. Da valutare in presenza di trattamenti sistematici o su larga scala di dati ex art. 9/art. 10 nei flussi con la parte avversa.",
+            "en": "Generally not required for ordinary management of relations with counterparties and external lawyers. Assess in case of systematic or large-scale processing of Art. 9/Art. 10 data in the flows with the opposing side."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile e penale (contraddittorio); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; controparti e difensori avversari sono titolari autonomi; domiciliatari e corrispondenti sono di regola titolari autonomi, con qualificazione da verificare in base al concreto rapporto.",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian codes of civil and criminal procedure (cross-examination); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; counterparties and opposing lawyers are independent controllers; domiciliary and corresponding lawyers are generally independent controllers, with qualification to be verified based on the actual relationship."
+        }
+      }
+    },
+    {
+      "templateId": "tpl-it-020-studi-legali-consulenti-tecnici-periti-investigatori",
+      "official": true,
+      "categoria": "legale",
+      "settore": "studi_legali",
+      "icon": "⚖️",
+      "nome": {
+        "it": "Gestione consulenti tecnici, periti, investigatori privati e ausiliari",
+        "en": "Management of technical consultants, experts, private investigators and auxiliaries"
+      },
+      "descrizioneTemplate": {
+        "it": "Trattamento dei dati personali connesso al ricorso, da parte dello studio, ad ausiliari tecnici per l'esecuzione degli incarichi: consulenti tecnici di parte (CTP), periti, investigatori privati autorizzati, traduttori, interpreti e altri ausiliari. Riguarda il conferimento dell'incarico a tali soggetti, la trasmissione dei dati necessari, la ricezione di relazioni, perizie e risultanze investigative e la qualificazione dei rispettivi ruoli privacy. Comprende le indagini difensive, che possono toccare dati ex art. 9/art. 10. Il taglio riguarda i rapporti con gli ausiliari tecnici, distinto dalla conduzione della lite (template contenzioso) e dai rapporti con la parte avversa e i legali esterni (template dedicato).",
+        "en": "Processing of personal data connected to the firm's use of technical auxiliaries to perform engagements: party-appointed technical consultants, experts, authorized private investigators, translators, interpreters and other auxiliaries. It concerns granting the engagement to such parties, transmitting the necessary data, receiving reports, expert opinions and investigative findings, and qualifying the respective privacy roles. It includes defensive investigations, which may involve Art. 9/Art. 10 data. The scope concerns relations with technical auxiliaries, distinct from conducting the dispute (litigation template) and relations with the opposing side and external lawyers (dedicated template)."
+      },
+      "noteTemplate": {
+        "it": "TAGLIO SUGLI AUSILIARI TECNICI. Copre i rapporti con CTP, periti, investigatori privati e altri ausiliari, NON la conduzione della lite (template contenzioso) né i rapporti con la parte avversa (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO; (b) QUALIFICAZIONE DEI RUOLI CASO PER CASO: gli ausiliari possono operare come RESPONSABILI ex art. 28 (quando trattano i dati per conto e secondo le istruzioni dello studio) o come TITOLARI AUTONOMI (quando agiscono secondo autonomia tecnica/professionale propria); la scelta va verificata in concreto e formalizzata; (c) INVESTIGATORI PRIVATI: attività regolata, soggetta ad autorizzazione, con disciplina specifica del trattamento; di regola titolari autonomi, ma la qualificazione può variare in concreto in base a istruzioni, autonomia e finalità del trattamento; le indagini difensive (L. 397/2000 e art. 391-bis ss. c.p.p.) possono comportare dati ex art. 9/art. 10 e vanno svolte nei limiti di legge e di pertinenza; (d) ART. 9(2)(f) per i dati trattati nell'attività difensiva/giudiziale; (e) MINIMIZZAZIONE dei dati trasmessi all'ausiliario; (f) SEGRETO PROFESSIONALE esteso agli ausiliari, con istruzioni e vincoli di riservatezza; (g) DPIA da valutare per indagini sistematiche o su larga scala. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+        "en": "SCOPE ON TECHNICAL AUXILIARIES. Covers relations with party-appointed consultants, experts, private investigators and other auxiliaries, NOT conducting the dispute (litigation template) or relations with the opposing side (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER; (b) CASE-BY-CASE ROLE QUALIFICATION: auxiliaries may act as Art. 28 PROCESSORS (when they process data on behalf of and according to the firm's instructions) or as INDEPENDENT CONTROLLERS (when they act under their own technical/professional autonomy); the choice must be verified in practice and formalised; (c) PRIVATE INVESTIGATORS: a regulated activity, subject to authorisation, with specific processing rules; defensive investigations (Law 397/2000 and Art. 391-bis ff. of the Italian Code of Criminal Procedure) may involve Art. 9/Art. 10 data and must be carried out within legal and relevance limits; (d) ART. 9(2)(f) for data processed in the defense/judicial activity; (e) MINIMISATION of data transmitted to the auxiliary; (f) PROFESSIONAL SECRECY extended to auxiliaries, with instructions and confidentiality constraints; (g) DPIA to be assessed for systematic or large-scale investigations. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+      },
+      "scenari": {
+        "it": [
+          {
+            "id": "ctp_periti",
+            "label": "Consulenti tecnici di parte, periti e ausiliari (perizie, relazioni, traduzioni)",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "investigazioni_difensive",
+            "label": "Investigatori privati e indagini difensive (L. 397/2000, art. 391-bis ss. c.p.p.)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ],
+        "en": [
+          {
+            "id": "ctp_periti",
+            "label": "Party-appointed consultants, experts and auxiliaries (expert opinions, reports, translations)",
+            "art6": "contratto_e_legittimo_interesse"
+          },
+          {
+            "id": "investigazioni_difensive",
+            "label": "Private investigators and defensive investigations (Law 397/2000, Art. 391-bis ff. CCP)",
+            "art6": "legittimo_interesse_e_obbligo"
+          }
+        ]
+      },
+      "preset": {
+        "tipoRegistro": "titolare",
+        "nome": {
+          "it": "Gestione consulenti tecnici, periti, investigatori privati e ausiliari",
+          "en": "Management of technical consultants, experts, private investigators and auxiliaries"
+        },
+        "descrizione": {
+          "it": "Trattamento dei dati personali connesso al ricorso ad ausiliari tecnici per l'esecuzione degli incarichi: consulenti tecnici di parte, periti, investigatori privati autorizzati, traduttori, interpreti e altri ausiliari; conferimento dell'incarico, trasmissione dei dati necessari, ricezione di perizie, relazioni e risultanze investigative, qualificazione dei ruoli privacy.",
+          "en": "Processing of personal data connected to the use of technical auxiliaries to perform engagements: party-appointed technical consultants, experts, authorized private investigators, translators, interpreters and other auxiliaries; granting of the engagement, transmission of the necessary data, receipt of expert opinions, reports and investigative findings, qualification of privacy roles."
+        },
+        "finalita": [
+          {
+            "it": "Conferimento di incarichi a consulenti tecnici di parte, periti, traduttori e altri ausiliari per l'esecuzione della pratica",
+            "en": "Granting engagements to party-appointed technical consultants, experts, translators and other auxiliaries to perform the case"
+          },
+          {
+            "it": "Trasmissione agli ausiliari dei dati e dei documenti necessari allo svolgimento dell'incarico tecnico",
+            "en": "Transmission to auxiliaries of the data and documents necessary to perform the technical engagement"
+          },
+          {
+            "it": "Ricezione e gestione di perizie, relazioni tecniche, traduzioni e risultanze degli ausiliari",
+            "en": "Receipt and management of expert opinions, technical reports, translations and auxiliaries' findings"
+          },
+          {
+            "it": "Affidamento di indagini difensive a investigatori privati autorizzati, nei limiti di legge e di pertinenza",
+            "en": "Entrusting defensive investigations to authorized private investigators, within legal and relevance limits"
+          },
+          {
+            "it": "Qualificazione, formalizzazione e tracciamento dei rapporti e dei flussi di dati con gli ausiliari tecnici",
+            "en": "Qualification, formalisation and tracking of relations and data flows with technical auxiliaries"
+          }
+        ],
+        "baseGiuridica": {
+          "art6": [
+            "contratto",
+            "obbligo_legale",
+            "legittimo_interesse"
+          ],
+          "dettagliArt6": {
+            "it": "Art. 6(1)(b) GDPR: il ricorso agli ausiliari tecnici è svolto nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, terzi e soggetti sottoposti a indagine difensiva, nei limiti di quanto necessario all'incarico tecnico/investigativo. Art. 6(1)(c) GDPR: adempimenti e obblighi di legge connessi, in particolare per le indagini difensive e per l'attività regolata degli investigatori privati. Il rapporto contrattuale con l'ausiliario, quando trattato, è autonomo rapporto di servizio da qualificare.",
+            "en": "GDPR Art. 6(1)(b): the use of technical auxiliaries is carried out within the professional mandate granted by the client. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, third parties and persons subject to defensive investigation, within the limits of what is necessary for the technical/investigative engagement. GDPR Art. 6(1)(c): connected legal obligations, in particular for defensive investigations and the regulated activity of private investigators. The contractual relationship with the auxiliary, where processed, is a separate service relationship to be qualified."
+          },
+          "legittimoInteresseDettagli": {
+            "descrizione": {
+              "it": "Il legittimo interesse copre il trattamento dei dati di controparti, terzi e soggetti coinvolti nelle attività tecniche e investigative, nei limiti di quanto necessario alla tutela del diritto del cliente. Per le indagini difensive il trattamento è particolarmente delicato e va circoscritto a quanto strettamente pertinente e necessario. Non costituisce base per finalità ulteriori.",
+              "en": "Legitimate interest covers processing data of counterparties, third parties and persons involved in the technical and investigative activities, within the limits of what is necessary to protect the client's right. For defensive investigations, processing is particularly sensitive and must be confined to what is strictly relevant and necessary. It is not a basis for further purposes."
+            },
+            "garanzieAdottate": {
+              "it": "Minimizzazione dei dati trasmessi all'ausiliario; pertinenza dell'incarico tecnico/investigativo; istruzioni e vincoli di riservatezza estesi agli ausiliari; rispetto del segreto professionale; per le indagini difensive, svolgimento nei limiti di legge e di pertinenza con investigatori autorizzati; qualificazione documentata del ruolo privacy di ciascun ausiliario.",
+              "en": "Minimisation of data transmitted to the auxiliary; relevance of the technical/investigative engagement; instructions and confidentiality constraints extended to auxiliaries; respect for professional secrecy; for defensive investigations, conduct within legal and relevance limits with authorized investigators; documented qualification of each auxiliary's privacy role."
+            },
+            "bilanciamentoRichiesto": true,
+            "bilanciamentoEffettuato": false,
+            "riferimentoBilanciamento": {
+              "it": "",
+              "en": ""
+            }
+          },
+          "art9": [
+            "giustizia"
+          ],
+          "dettagliArt9": {
+            "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati trattate nell'ambito delle attività tecniche e delle indagini difensive, quando necessarie per accertare, esercitare o difendere un diritto in sede giudiziaria, o comunque nell'ambito dell'attività difensiva. Per attività non contenziose, la condizione di liceità ex art. 9 va valutata caso per caso, senza presumere automaticamente l'applicabilità dell'art. 9(2)(f).",
+            "en": "GDPR Art. 9(2)(f) for special categories of data processed in the technical activities and defensive investigations, when necessary to establish, exercise or defend a right in court, or otherwise within the defense activity. For non-contentious activities, the Art. 9 lawfulness condition must be assessed case by case, without automatically presuming the applicability of Art. 9(2)(f)."
+          }
+        },
+        "datiCondannePenaliReati": {
+          "presenti": true,
+          "normativaAutorizzativa": {
+            "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Le attività degli ausiliari, in particolare le indagini difensive (L. 397/2000 e art. 391-bis ss. c.p.p.), possono comportare il trattamento di dati relativi a condanne penali, reati, procedimenti, indagini o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico e nei limiti della normativa applicabile. Particolare cautela per i dati raccolti nel corso delle investigazioni.",
+            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The auxiliaries' activities, in particular defensive investigations (Law 397/2000 and Art. 391-bis ff. CCP), may involve processing data on criminal convictions, offences, proceedings, investigations or measures; processing is permitted only if relevant and necessary to the engagement and within the limits of applicable law. Particular caution for data collected during investigations."
+          }
+        },
+        "categorieInteressati": [
+          {
+            "it": "Consulenti tecnici di parte, periti, traduttori, interpreti e altri ausiliari (dati di contatto e di incarico)",
+            "en": "Party-appointed technical consultants, experts, translators, interpreters and other auxiliaries (contact and engagement data)"
+          },
+          {
+            "it": "Investigatori privati autorizzati e relativi referenti",
+            "en": "Authorized private investigators and their contacts"
+          },
+          {
+            "it": "Clienti per conto dei quali sono conferiti gli incarichi tecnici e investigativi",
+            "en": "Clients on whose behalf the technical and investigative engagements are granted"
+          },
+          {
+            "it": "Controparti, terzi e soggetti sottoposti a indagine difensiva i cui dati sono trattati dagli ausiliari",
+            "en": "Counterparties, third parties and persons subject to defensive investigation whose data is processed by the auxiliaries"
+          }
+        ],
+        "categorieDati": [
+          {
+            "it": "Dati identificativi, di contatto e professionali degli ausiliari incaricati",
+            "en": "Identification, contact and professional data of the appointed auxiliaries"
+          },
+          {
+            "it": "Dati e documenti trasmessi agli ausiliari per lo svolgimento dell'incarico",
+            "en": "Data and documents transmitted to auxiliaries to perform the engagement"
+          },
+          {
+            "it": "Perizie, relazioni tecniche, traduzioni e risultanze investigative ricevute",
+            "en": "Expert opinions, technical reports, translations and investigative findings received"
+          },
+          {
+            "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 trattati nelle attività tecniche e investigative, nei limiti delle condizioni applicabili",
+            "en": "Special categories of data (Art. 9) and any Art. 10 data processed in the technical and investigative activities, within the limits of applicable conditions"
+          },
+          {
+            "it": "Eventuali dati raccolti nel corso delle indagini difensive, nei limiti di legge e di pertinenza",
+            "en": "Any data collected during defensive investigations, within legal and relevance limits"
+          }
+        ],
+        "fonteDeiDati": "misto",
+        "fonteDeiDatiDettagli": {
+          "it": "Dati forniti dal cliente; dati e documenti predisposti dallo studio e trasmessi agli ausiliari; perizie, relazioni e risultanze investigative prodotte dagli ausiliari; dati raccolti dagli investigatori nel corso delle indagini difensive nei limiti di legge; dati da fonti pubbliche o registri nei limiti di legge. La raccolta e la trasmissione sono limitate a quanto necessario all'incarico tecnico/investigativo.",
+          "en": "Data provided by the client; data and documents prepared by the firm and transmitted to auxiliaries; expert opinions, reports and investigative findings produced by auxiliaries; data collected by investigators during defensive investigations within legal limits; data from public sources or registers within legal limits. Collection and transmission are limited to what is necessary for the technical/investigative engagement."
+        },
+        "categorieDestinatari": [
+          {
+            "it": "Consulenti tecnici di parte e periti (responsabili ex art. 28 o titolari autonomi, secondo l'incarico e l'autonomia tecnica)",
+            "en": "Party-appointed technical consultants and experts (Art. 28 processors or independent controllers, depending on the engagement and technical autonomy)"
+          },
+          {
+            "it": "Investigatori privati autorizzati (di regola titolari autonomi per l'attività regolata, salvo diversa qualificazione concreta)",
+            "en": "Authorized private investigators (generally independent controllers for the regulated activity, unless a different qualification applies in practice)"
+          },
+          {
+            "it": "Traduttori, interpreti e altri ausiliari (responsabili ex art. 28 o titolari autonomi, secondo l'incarico)",
+            "en": "Translators, interpreters and other auxiliaries (Art. 28 processors or independent controllers, depending on the engagement)"
+          },
+          {
+            "it": "Autorità giudiziarie ove perizie e risultanze confluiscano negli atti (destinatari istituzionali)",
+            "en": "Judicial authorities where expert opinions and findings flow into the acts (institutional recipients)"
+          },
+          {
+            "it": "Fornitore del software gestionale e dei servizi cloud dello studio (responsabile del trattamento)",
+            "en": "Provider of the firm's management software and cloud services (data processor)"
+          }
+        ],
+        "responsabiliEsterni": [
+          {
+            "denominazione": {
+              "it": "[Inserire il nome dell'ausiliario nominato responsabile (es. CTP, traduttore) e/o del fornitore software/cloud dello studio]",
+              "en": "[Enter the name of the auxiliary appointed as processor (e.g. party-appointed consultant, translator) and/or the firm's software/cloud provider]"
+            },
+            "sede": {
+              "it": "[Sede legale e Paesi di processing]",
+              "en": "[Registered office and processing countries]"
+            },
+            "finalita": {
+              "it": "Svolgimento dell'incarico tecnico per conto dello studio (quando l'ausiliario opera come responsabile) e/o gestione documentale e servizi cloud connessi",
+              "en": "Performance of the technical engagement on behalf of the firm (when the auxiliary acts as processor) and/or document management and connected cloud services"
+            },
+            "accordoArt28Presente": false,
+            "riferimentoContratto": {
+              "it": "[Riferimento al DPA / atto di nomina a responsabile, ove l'ausiliario operi come responsabile]",
+              "en": "[Reference to the DPA / processor appointment, where the auxiliary acts as processor]"
+            },
+            "notaRuoloPrivacy": {
+              "it": "Qualificare caso per caso: l'ausiliario è responsabile ex art. 28 quando tratta i dati per conto e secondo le istruzioni dello studio; è titolare autonomo quando agisce secondo autonomia tecnica/professionale propria. Gli investigatori privati operano di regola come titolari autonomi nell'attività regolata e autorizzata. Formalizzare la nomina a responsabile ove pertinente; verificare sub-responsabili, anche extra-UE.",
+              "en": "Qualify case by case: the auxiliary is an Art. 28 processor when it processes data on behalf of and according to the firm's instructions; it is an independent controller when it acts under its own technical/professional autonomy. Private investigators generally act as independent controllers in the regulated and authorized activity. Formalise the processor appointment where relevant; verify sub-processors, including non-EU ones."
+            }
+          }
+        ],
+        "trasferimentiExtraUE": [
+          {
+            "paese": "[Di regola intra-UE; verificare ausiliari e fornitori IT/cloud]",
+            "garanziaApplicata": "da_verificare",
+            "riferimentoDocumentazione": {
+              "it": "I dati trasmessi agli ausiliari, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali ausiliari o sub-responsabili extra-UE; se presenti trasferimenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+              "en": "Data transmitted to auxiliaries, covered by professional secrecy and including Art. 9/Art. 10 data, should preferably be processed within the EU. Verify any non-EU auxiliaries or sub-processors; if transfers occur, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+            }
+          }
+        ],
+        "tempiConservazione": {
+          "periodo": {
+            "it": "Per la durata dell'incarico cui le attività tecniche/investigative si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione, tenuto conto dei termini di prescrizione applicabili e della prescrizione dell'azione di responsabilità professionale.",
+            "en": "For the duration of the engagement to which the technical/investigative activities refer and, thereafter, for the time necessary to protect rights and meet retention obligations, taking into account the applicable prescription terms and the prescription of the professional-liability action."
+          },
+          "criteri": {
+            "it": "Conservazione di perizie, relazioni e risultanze investigative per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; particolare attenzione alla minimizzazione e alla cancellazione dei dati raccolti nelle indagini difensive non più necessari; litigation hold documentato in caso di contenzioso; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+            "en": "Retention of expert opinions, reports and investigative findings for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; particular attention to minimisation and deletion of data collected in defensive investigations no longer needed; documented litigation hold in case of litigation; periodic review; deletion or anonymisation when needs cease."
+          },
+          "azioneFinale": "cancellazione_o_anonimizzazione"
+        },
+        "misureSicurezza": {
+          "tecniche": [
+            {
+              "it": "Controllo accessi ai dati trasmessi agli ausiliari e alle risultanze ricevute, con autenticazione forte e profili di privilegio",
+              "en": "Access control to data transmitted to auxiliaries and findings received, with strong authentication and privilege profiles"
+            },
+            {
+              "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest, nei flussi con gli ausiliari",
+              "en": "Encryption of connections and documents, in transit and at rest, in the flows with auxiliaries"
+            },
+            {
+              "it": "Tracciabilità della trasmissione dei dati agli ausiliari e della ricezione delle risultanze",
+              "en": "Traceability of data transmission to auxiliaries and receipt of findings"
+            },
+            {
+              "it": "Backup periodici con cifratura at-rest e controllo degli accessi",
+              "en": "Periodic backups with at-rest encryption and access control"
+            }
+          ],
+          "organizzative": [
+            {
+              "it": "Qualificazione documentata del ruolo privacy di ciascun ausiliario (responsabile ex art. 28 o titolare autonomo) e relativa formalizzazione",
+              "en": "Documented qualification of each auxiliary's privacy role (Art. 28 processor or independent controller) and related formalisation"
+            },
+            {
+              "it": "Istruzioni e vincoli di riservatezza estesi agli ausiliari, con rispetto del segreto professionale",
+              "en": "Instructions and confidentiality constraints extended to auxiliaries, with respect for professional secrecy"
+            },
+            {
+              "it": "Minimizzazione dei dati trasmessi all'ausiliario, limitati a quanto necessario all'incarico tecnico/investigativo",
+              "en": "Minimisation of data transmitted to the auxiliary, limited to what is necessary for the technical/investigative engagement"
+            },
+            {
+              "it": "Per le indagini difensive: ricorso a investigatori autorizzati e svolgimento nei limiti di legge e di pertinenza (L. 397/2000, art. 391-bis ss. c.p.p.)",
+              "en": "For defensive investigations: use of authorized investigators and conduct within legal and relevance limits (Law 397/2000, Art. 391-bis ff. CCP)"
+            },
+            {
+              "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono i rapporti con gli ausiliari",
+              "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling relations with auxiliaries"
+            }
+          ],
+          "rinvioDocumentale": {
+            "it": "[Rinvio alle policy interne sui rapporti con gli ausiliari, agli atti di nomina a responsabile ove pertinenti, alla disciplina delle indagini difensive e ai DPA con i fornitori]",
+            "en": "[Refer to internal policies on relations with auxiliaries, processor appointments where relevant, the rules on defensive investigations and the DPAs with providers]"
+          }
+        },
+        "processiDecisionaliAutomatizzati": {
+          "presenti": false,
+          "descrizione": {
+            "it": "Di regola non presenti. Compilare se gli ausiliari utilizzano strumenti automatizzati con effetti significativi (es. analisi automatizzata di dati nelle indagini); valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+            "en": "Generally not present. Complete if auxiliaries use automated tools with significant effects (e.g. automated data analysis in investigations); assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "conseguenze": {
+            "it": "",
+            "en": ""
+          },
+          "dirittiInteressato": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "profilazioneMarketing": {
+          "presente": false,
+          "descrizione": {
+            "it": "Non applicabile alla gestione di consulenti tecnici, periti, investigatori e ausiliari.",
+            "en": "Not applicable to managing technical consultants, experts, investigators and auxiliaries."
+          },
+          "logica": {
+            "it": "",
+            "en": ""
+          },
+          "baseGiuridicaSpecifica": {
+            "it": "",
+            "en": ""
+          }
+        },
+        "valutazioneDiImpatto": {
+          "effettuata": false,
+          "riferimentoDocumento": {
+            "it": "Da valutare con particolare attenzione per le indagini difensive sistematiche o su larga scala, o quando comportino il trattamento di dati ex art. 9/art. 10 o tecniche potenzialmente invasive (es. osservazione, geolocalizzazione, ove lecitamente utilizzabile e nei limiti della normativa applicabile): in tali casi una DPIA ai sensi dell'art. 35 GDPR può essere necessaria.",
+            "en": "To be assessed with particular attention for systematic or large-scale defensive investigations, or where they involve processing Art. 9/Art. 10 data or potentially intrusive techniques (e.g. observation, geolocation): in such cases a DPIA under GDPR Art. 35 may be necessary."
+          }
+        },
+        "note": {
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10, 28, 35; Codice privacy (d.lgs. 196/2003) art. 2-octies; L. 397/2000 e art. 391-bis ss. c.p.p. (indagini difensive); normativa sull'attività degli investigatori privati autorizzati; art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; gli ausiliari sono responsabili ex art. 28 o titolari autonomi secondo la qualificazione concreta; gli investigatori privati operano di regola come titolari autonomi nell'attività regolata.",
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 28, 35; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Law 397/2000 and Art. 391-bis ff. CCP (defensive investigations); rules on the activity of authorized private investigators; Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; auxiliaries are Art. 28 processors or independent controllers depending on the actual qualification; private investigators generally act as independent controllers in the regulated activity."
+        }
+      }
     }
   ]
 }

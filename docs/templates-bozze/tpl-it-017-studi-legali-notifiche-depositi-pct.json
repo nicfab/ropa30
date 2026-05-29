@@ -1,0 +1,327 @@
+{
+  "templateId": "tpl-it-017-studi-legali-notifiche-depositi-pct",
+  "official": true,
+  "categoria": "legale",
+  "settore": "studi_legali",
+  "icon": "⚖️",
+  "nome": {
+    "it": "Gestione notifiche, depositi telematici e PCT",
+    "en": "Management of service of process, e-filing and electronic court proceedings"
+  },
+  "descrizioneTemplate": {
+    "it": "Trattamento dei dati personali connesso all'uso degli strumenti di trasmissione e deposito telematico degli atti: processo civile telematico (PCT) e processo penale telematico, depositi telematici, notificazioni (a mezzo PEC ai sensi della normativa applicabile, tramite UNEP e ufficiali giudiziari), firme digitali e marche temporali, uso del Punto di Accesso e dei gestori di posta certificata. Il taglio riguarda il canale tecnico di trasmissione e i flussi di invio/notifica, distinto dalla conduzione della lite (template contenzioso) e dalla relazione istituzionale con gli uffici giudiziari (template dedicato).",
+    "en": "Processing of personal data connected to the use of electronic transmission and filing tools: electronic civil and criminal court proceedings, e-filing, service of process (by certified email under applicable rules, through the bailiff service and bailiffs), digital signatures and timestamps, use of the Access Point and certified-email providers. The scope concerns the technical transmission channel and the sending/service flows, distinct from conducting the dispute (litigation template) and the institutional relationship with court offices (dedicated template)."
+  },
+  "noteTemplate": {
+    "it": "TAGLIO SUL CANALE TECNICO. Copre gli strumenti e i flussi di trasmissione/deposito/notifica telematica, NON la conduzione della lite (template contenzioso) né la relazione istituzionale con autorità e cancellerie (template dedicato). PUNTI CRITICI: (a) lo studio è TITOLARE AUTONOMO del trattamento dei dati che invia/deposita/notifica; (b) RUOLI PRIVACY DEI SOGGETTI DELLA FILIERA: il gestore dei sistemi del processo telematico (Ministero della Giustizia) opera come titolare autonomo/soggetto pubblico nell'esercizio delle proprie funzioni; il Punto di Accesso e il gestore della PEC vanno qualificati (spesso responsabili ex art. 28 o fornitori di servizio fiduciario, secondo il rapporto); il fornitore del software gestionale/redazione atti è di regola responsabile; (c) gli atti depositati/notificati contengono frequentemente dati ex art. 9 e art. 10: massima attenzione alla MINIMIZZAZIONE di quanto trasmesso; (d) SEGRETO PROFESSIONALE e sicurezza dei canali (PEC, firma digitale, marca temporale); (e) attenzione alla corretta gestione delle ricevute di accettazione/consegna PEC, che contengono dati personali. Basi giuridiche, condizioni art. 9/10, conservazione e DPIA sono BOZZE tecniche da validare dal DPO.",
+    "en": "TECHNICAL-CHANNEL SCOPE. Covers the tools and flows of electronic transmission/filing/service, NOT conducting the dispute (litigation template) or the institutional relationship with authorities and registries (dedicated template). CRITICAL POINTS: (a) the firm is an INDEPENDENT CONTROLLER of the data it sends/files/serves; (b) PRIVACY ROLES IN THE CHAIN: the operator of the electronic-proceedings systems (Ministry of Justice) acts as an independent controller / public body in exercising its functions; the Access Point and the certified-email provider must be qualified (often Art. 28 processors or trust-service providers, depending on the relationship); the document-management / drafting software provider is generally a processor; (c) filed/served acts frequently contain Art. 9 and Art. 10 data: maximum attention to MINIMISATION of what is transmitted; (d) PROFESSIONAL SECRECY and security of channels (certified email, digital signature, timestamp); (e) attention to the proper handling of certified-email acceptance/delivery receipts, which contain personal data. Legal bases, Art. 9/10 conditions, retention and DPIA are technical DRAFTS to be validated by the DPO."
+  },
+  "scenari": {
+    "it": [
+      {
+        "id": "deposito_telematico",
+        "label": "Deposito telematico di atti e documenti (PCT/processo penale telematico)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "notifiche",
+        "label": "Notificazioni (PEC, UNEP, ufficiali giudiziari)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ],
+    "en": [
+      {
+        "id": "deposito_telematico",
+        "label": "Electronic filing of acts and documents (civil/criminal e-proceedings)",
+        "art6": "legittimo_interesse_e_obbligo"
+      },
+      {
+        "id": "notifiche",
+        "label": "Service of process (certified email, bailiff service, bailiffs)",
+        "art6": "legittimo_interesse_e_obbligo"
+      }
+    ]
+  },
+  "preset": {
+    "tipoRegistro": "titolare",
+    "nome": {
+      "it": "Gestione notifiche, depositi telematici e PCT",
+      "en": "Management of service of process, e-filing and electronic court proceedings"
+    },
+    "descrizione": {
+      "it": "Trattamento dei dati personali connesso al deposito telematico degli atti, alle notificazioni (PEC, UNEP, ufficiali giudiziari) e all'uso degli strumenti del processo telematico: software di redazione/deposito, Punto di Accesso, gestore PEC, firme digitali e marche temporali, gestione delle ricevute di accettazione e consegna.",
+      "en": "Processing of personal data connected to the electronic filing of acts, service of process (certified email, bailiff service, bailiffs) and the use of electronic-proceedings tools: drafting/filing software, Access Point, certified-email provider, digital signatures and timestamps, management of acceptance and delivery receipts."
+    },
+    "finalita": [
+      {
+        "it": "Deposito telematico di atti e documenti presso gli uffici giudiziari secondo le regole del processo telematico",
+        "en": "Electronic filing of acts and documents with court offices according to electronic-proceedings rules"
+      },
+      {
+        "it": "Notificazione di atti a mezzo PEC, tramite UNEP e ufficiali giudiziari, nei limiti della normativa applicabile",
+        "en": "Service of acts by certified email, through the bailiff service and bailiffs, within the limits of applicable rules"
+      },
+      {
+        "it": "Apposizione e verifica di firme digitali, marche temporali e attestazioni di conformità",
+        "en": "Affixing and verification of digital signatures, timestamps and conformity attestations"
+      },
+      {
+        "it": "Gestione e conservazione delle ricevute di accettazione e consegna e degli esiti dei depositi e delle notifiche",
+        "en": "Management and retention of acceptance and delivery receipts and the outcomes of filings and service"
+      },
+      {
+        "it": "Adempimenti procedurali e di legge connessi alla trasmissione telematica degli atti",
+        "en": "Procedural and legal obligations connected to the electronic transmission of acts"
+      }
+    ],
+    "baseGiuridica": {
+      "art6": [
+        "contratto",
+        "obbligo_legale",
+        "legittimo_interesse"
+      ],
+      "dettagliArt6": {
+        "it": "Art. 6(1)(b) GDPR: la trasmissione e il deposito telematico sono svolti nell'ambito del mandato professionale conferito dal cliente. Art. 6(1)(c) GDPR: adempimenti processuali e obblighi di legge sulle modalità di deposito e notificazione telematica e sulla conservazione delle ricevute. Art. 6(1)(f) GDPR: legittimo interesse alla tutela del diritto del cliente, esteso al trattamento dei dati di controparti, destinatari delle notifiche e terzi presenti negli atti trasmessi, nei limiti di quanto necessario all'adempimento processuale.",
+        "en": "GDPR Art. 6(1)(b): electronic transmission and filing are carried out within the professional mandate granted by the client. GDPR Art. 6(1)(c): procedural obligations and legal requirements on electronic filing and service methods and on the retention of receipts. GDPR Art. 6(1)(f): legitimate interest in protecting the client's right, extended to processing data of counterparties, service recipients and third parties present in the transmitted acts, within the limits of what is necessary for procedural compliance."
+      },
+      "legittimoInteresseDettagli": {
+        "descrizione": {
+          "it": "Il legittimo interesse è circoscritto al trattamento dei dati di soggetti terzi (controparti, destinatari delle notifiche, terzi citati negli atti) coinvolti nella trasmissione telematica, necessari alla tutela del diritto del cliente e all'adempimento processuale. Non costituisce base giuridica per finalità ulteriori.",
+          "en": "Legitimate interest is limited to processing data of third parties (counterparties, service recipients, third parties named in the acts) involved in electronic transmission, necessary to protect the client's right and for procedural compliance. It is not a legal basis for further purposes."
+        },
+        "garanzieAdottate": {
+          "it": "Minimizzazione dei dati trasmessi e depositati; verifica della pertinenza degli allegati; uso di canali sicuri (PEC, firma digitale, marca temporale); conservazione delle ricevute limitata alle esigenze probatorie e di legge; rispetto del segreto professionale.",
+          "en": "Minimisation of transmitted and filed data; verification of the relevance of attachments; use of secure channels (certified email, digital signature, timestamp); retention of receipts limited to evidentiary and legal needs; respect for professional secrecy."
+        },
+        "bilanciamentoRichiesto": true,
+        "bilanciamentoEffettuato": false,
+        "riferimentoBilanciamento": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "art9": [
+        "giustizia"
+      ],
+      "dettagliArt9": {
+        "it": "Art. 9(2)(f) GDPR per le categorie particolari di dati contenute negli atti depositati o notificati, trattate per accertare, esercitare o difendere un diritto in sede giudiziaria. La trasmissione telematica è strumentale all'attività giudiziale/difensiva; va comunque rispettato il principio di minimizzazione su quanto effettivamente trasmesso.",
+        "en": "GDPR Art. 9(2)(f) for special categories of data contained in filed or served acts, processed to establish, exercise or defend a right in court. Electronic transmission is instrumental to the judicial/defense activity; the minimisation principle must in any case be respected for what is actually transmitted."
+      }
+    },
+    "datiCondannePenaliReati": {
+      "presenti": true,
+      "normativaAutorizzativa": {
+        "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli atti depositati o notificati possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'adempimento processuale e all'incarico, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
+        "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). Filed or served acts may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to procedural compliance and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+      }
+    },
+    "categorieInteressati": [
+      {
+        "it": "Clienti per conto dei quali sono depositati o notificati gli atti",
+        "en": "Clients on whose behalf acts are filed or served"
+      },
+      {
+        "it": "Controparti e relativi difensori destinatari delle notifiche",
+        "en": "Counterparties and their lawyers receiving service"
+      },
+      {
+        "it": "Terzi soggetti i cui dati sono contenuti negli atti depositati o notificati",
+        "en": "Third parties whose data is contained in filed or served acts"
+      },
+      {
+        "it": "Soggetti destinatari di notificazioni a mezzo PEC, UNEP o ufficiale giudiziario",
+        "en": "Recipients of service by certified email, bailiff service or bailiff"
+      }
+    ],
+    "categorieDati": [
+      {
+        "it": "Dati identificativi, di contatto e indirizzi PEC dei soggetti coinvolti nella trasmissione",
+        "en": "Identification, contact data and certified-email addresses of persons involved in the transmission"
+      },
+      {
+        "it": "Atti, documenti e allegati depositati o notificati e relativi metadati",
+        "en": "Acts, documents and attachments filed or served and related metadata"
+      },
+      {
+        "it": "Ricevute di accettazione e consegna, esiti dei depositi e attestazioni di conformità",
+        "en": "Acceptance and delivery receipts, filing outcomes and conformity attestations"
+      },
+      {
+        "it": "Dati associati a firme digitali, marche temporali e credenziali di accesso ai sistemi del processo telematico",
+        "en": "Data associated with digital signatures, timestamps and access credentials to electronic-proceedings systems"
+      },
+      {
+        "it": "Categorie particolari di dati (art. 9) ed eventuali dati ex art. 10 contenuti negli atti, nei limiti delle condizioni applicabili",
+        "en": "Special categories of data (Art. 9) and any Art. 10 data contained in the acts, within the limits of applicable conditions"
+      }
+    ],
+    "fonteDeiDati": "misto",
+    "fonteDeiDatiDettagli": {
+      "it": "Dati e atti predisposti dallo studio sulla base del mandato; dati forniti dal cliente; indirizzi PEC da pubblici registri (es. registri di posta certificata previsti dalla legge); ricevute ed esiti generati dai sistemi del processo telematico, dal gestore PEC e dagli uffici giudiziari. La trasmissione è limitata a quanto necessario all'adempimento processuale.",
+      "en": "Data and acts prepared by the firm under the mandate; data provided by the client; certified-email addresses from public registers (e.g. the certified-email registers provided for by law); receipts and outcomes generated by the electronic-proceedings systems, the certified-email provider and court offices. Transmission is limited to what is necessary for procedural compliance."
+    },
+    "categorieDestinatari": [
+      {
+        "it": "Gestore dei sistemi del processo telematico (Ministero della Giustizia): titolare autonomo/soggetto pubblico nell'esercizio delle proprie funzioni",
+        "en": "Operator of the electronic-proceedings systems (Ministry of Justice): independent controller / public body in exercising its functions"
+      },
+      {
+        "it": "Uffici giudiziari, cancellerie e UNEP destinatari dei depositi e delle richieste di notifica",
+        "en": "Court offices, registries and bailiff service receiving filings and service requests"
+      },
+      {
+        "it": "Controparti e relativi difensori destinatari delle notifiche, nei limiti del contraddittorio",
+        "en": "Counterparties and their lawyers receiving service, within the limits of cross-examination"
+      },
+      {
+        "it": "Punto di Accesso e gestore della PEC (gestore PEC / prestatore di servizi fiduciari, ove applicabile)",
+        "en": "Access Point and certified-email provider (processors or trust-service providers, depending on the relationship)"
+      },
+      {
+        "it": "Fornitore del software di redazione/deposito e dei servizi cloud (responsabile del trattamento)",
+        "en": "Provider of the drafting/filing software and cloud services (data processor)"
+      }
+    ],
+    "responsabiliEsterni": [
+      {
+        "denominazione": {
+          "it": "[Inserire il nome del fornitore del software di redazione/deposito telematico, del Punto di Accesso e/o del gestore PEC]",
+          "en": "[Enter the name of the e-filing/drafting software provider, the Access Point and/or the certified-email provider]"
+        },
+        "sede": {
+          "it": "[Sede legale e Paesi di processing]",
+          "en": "[Registered office and processing countries]"
+        },
+        "finalita": {
+          "it": "Fornitura degli strumenti di redazione, deposito telematico, trasmissione PEC e accesso ai sistemi del processo telematico",
+          "en": "Provision of the drafting, e-filing, certified-email transmission and electronic-proceedings access tools"
+        },
+        "accordoArt28Presente": false,
+        "riferimentoContratto": {
+          "it": "[Riferimento al DPA con il fornitore]",
+          "en": "[Reference to the DPA with the provider]"
+        },
+        "notaRuoloPrivacy": {
+          "it": "Qualificare il ruolo di ciascun soggetto della filiera: il fornitore del software e il Punto di Accesso sono spesso responsabili ex art. 28; il gestore PEC può operare anche come fornitore di servizio fiduciario; il Ministero della Giustizia è titolare autonomo/soggetto pubblico. Verificare DPA e sub-responsabili, anche extra-UE.",
+          "en": "Qualify the role of each party in the chain: the software provider and the Access Point are often Art. 28 processors; the certified-email provider may also act as a trust-service provider; the Ministry of Justice is an independent controller / public body. Verify the DPA and sub-processors, including non-EU ones."
+        }
+      }
+    ],
+    "trasferimentiExtraUE": [
+      {
+        "paese": "[Di regola intra-UE; verificare i fornitori del software, del Punto di Accesso e della PEC]",
+        "garanziaApplicata": "da_verificare",
+        "riferimentoDocumentazione": {
+          "it": "Gli atti e i dati trasmessi telematicamente, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di deposito, PEC e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
+          "en": "Acts and data transmitted electronically, covered by professional secrecy, should preferably be processed within the EU. Verify any non-EU sub-processors in filing, certified-email and cloud services; if present, apply the appropriate safeguard (SCC + TIA, adequacy, DPF where applicable)."
+        }
+      }
+    ],
+    "tempiConservazione": {
+      "periodo": {
+        "it": "Per la durata del procedimento cui gli atti si riferiscono e, successivamente, per il tempo necessario alla tutela dei diritti e agli obblighi di conservazione; le ricevute di accettazione e consegna sono conservate per le esigenze probatorie connesse alla validità della trasmissione, tenuto conto dei termini di prescrizione applicabili.",
+        "en": "For the duration of the proceedings to which the acts refer and, thereafter, for the time necessary to protect rights and meet retention obligations; acceptance and delivery receipts are retained for the evidentiary needs connected to the validity of the transmission, taking into account the applicable prescription terms."
+      },
+      "criteri": {
+        "it": "Conservazione di atti, ricevute ed esiti per il periodo necessario a documentare la validità di depositi e notifiche e a difendersi da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
+        "en": "Retention of acts, receipts and outcomes for the period necessary to document the validity of filings and service and to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+      },
+      "azioneFinale": "cancellazione_o_anonimizzazione"
+    },
+    "misureSicurezza": {
+      "tecniche": [
+        {
+          "it": "Uso di canali sicuri per il deposito telematico e la notificazione (PEC, firma digitale, marca temporale)",
+          "en": "Use of secure channels for electronic filing and service (certified email, digital signature, timestamp)"
+        },
+        {
+          "it": "Controllo accessi ai sistemi di redazione/deposito con autenticazione forte e gestione delle credenziali",
+          "en": "Access control to drafting/filing systems with strong authentication and credential management"
+        },
+        {
+          "it": "Cifratura delle connessioni e dei documenti, in transito e at-rest",
+          "en": "Encryption of connections and documents, in transit and at rest"
+        },
+        {
+          "it": "Conservazione protetta delle ricevute di accettazione e consegna e degli esiti dei depositi",
+          "en": "Protected retention of acceptance and delivery receipts and filing outcomes"
+        },
+        {
+          "it": "Tracciabilità delle operazioni di deposito e notifica",
+          "en": "Traceability of filing and service operations"
+        }
+      ],
+      "organizzative": [
+        {
+          "it": "Minimizzazione dei dati e degli allegati effettivamente trasmessi o depositati",
+          "en": "Minimisation of data and attachments actually transmitted or filed"
+        },
+        {
+          "it": "Rispetto del segreto professionale sugli atti trasmessi e sulle relative ricevute",
+          "en": "Compliance with professional secrecy on transmitted acts and related receipts"
+        },
+        {
+          "it": "Designazione e istruzioni agli operatori autorizzati (ex art. 29 GDPR) che gestiscono depositi e notifiche",
+          "en": "Designation and instructions to authorized operators (under GDPR Art. 29) handling filings and service"
+        },
+        {
+          "it": "Qualificazione documentata dei ruoli privacy dei soggetti della filiera (Punto di Accesso, gestore PEC, fornitore software)",
+          "en": "Documented qualification of the privacy roles of the parties in the chain (Access Point, certified-email provider, software provider)"
+        },
+        {
+          "it": "Procedura per la gestione delle anomalie di deposito/notifica e per la conservazione delle relative evidenze",
+          "en": "Procedure for handling filing/service anomalies and retaining the related evidence"
+        }
+      ],
+      "rinvioDocumentale": {
+        "it": "[Rinvio alle regole tecniche del processo telematico, alle policy interne sull'uso di PEC e firma digitale, ai DPA con i fornitori e alle nomine dei soggetti coinvolti]",
+        "en": "[Refer to the technical rules of electronic proceedings, internal policies on the use of certified email and digital signature, the DPAs with providers and the appointments of the parties involved]"
+      }
+    },
+    "processiDecisionaliAutomatizzati": {
+      "presenti": false,
+      "descrizione": {
+        "it": "Di regola non presenti. Compilare se si utilizzano automatismi con effetti significativi nella gestione di depositi e notifiche; valutarne la riconducibilità all'art. 22 GDPR e le garanzie applicabili.",
+        "en": "Generally not present. Complete if using automated mechanisms with significant effects in managing filings and service; assess whether they fall under GDPR Art. 22 and the applicable safeguards."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "conseguenze": {
+        "it": "",
+        "en": ""
+      },
+      "dirittiInteressato": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "profilazioneMarketing": {
+      "presente": false,
+      "descrizione": {
+        "it": "Non applicabile alla gestione di notifiche, depositi telematici e PCT.",
+        "en": "Not applicable to managing service of process, e-filing and electronic court proceedings."
+      },
+      "logica": {
+        "it": "",
+        "en": ""
+      },
+      "baseGiuridicaSpecifica": {
+        "it": "",
+        "en": ""
+      }
+    },
+    "valutazioneDiImpatto": {
+      "effettuata": false,
+      "riferimentoDocumento": {
+        "it": "Di regola non necessaria per l'uso ordinario degli strumenti telematici. Da valutare in presenza di volumi particolarmente elevati o di trattamenti sistematici di dati ex art. 9/art. 10 veicolati attraverso i canali telematici.",
+        "en": "Generally not required for the ordinary use of electronic tools. Assess in case of particularly high volumes or systematic processing of Art. 9/Art. 10 data carried through the electronic channels."
+      }
+    },
+    "note": {
+      "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10; Codice privacy (d.lgs. 196/2003) art. 2-octies; normativa sul processo civile telematico e penale telematico, sulle notificazioni a mezzo PEC e sui registri di posta certificata; regolamento eIDAS sui servizi fiduciari (firma digitale, marca temporale); art. 622 c.p. e normativa forense/deontologica sul segreto professionale; art. 2946 c.c. Lo studio è titolare autonomo; il Ministero della Giustizia è titolare autonomo/soggetto pubblico; Punto di Accesso e gestore PEC vanno qualificati caso per caso.",
+      "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; rules on electronic civil and criminal proceedings, service by certified email and certified-email registers; eIDAS Regulation on trust services (digital signature, timestamp); Art. 622 Italian Criminal Code and legal-profession and ethical rules on professional secrecy; Art. 2946 Italian Civil Code. The firm is an independent controller; the Ministry of Justice is an independent controller / public body; the Access Point and certified-email provider must be qualified case by case."
+    }
+  }
+}
