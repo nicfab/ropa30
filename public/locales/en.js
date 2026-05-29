@@ -241,8 +241,8 @@ export default {
       descrizione: 'Description',
       tipoRegistro: 'Record type',
       dataInizioTrattamento: 'Processing start date',
-      macroStruttura: 'Macro-structure',
-      articolazione: 'Unit / Office',
+      unitaOrganizzativa: 'Organizational units',
+      uoUnita: 'Unit / Office',
       codiceUtente: 'Internal code',
 
       // Sec. 2 — Purposes

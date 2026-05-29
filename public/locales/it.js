@@ -241,8 +241,8 @@ export default {
       descrizione: 'Descrizione',
       tipoRegistro: 'Tipo di registro',
       dataInizioTrattamento: 'Data di inizio del trattamento',
-      macroStruttura: 'Macro-struttura',
-      articolazione: 'Articolazione / Ufficio',
+      unitaOrganizzativa: 'Unit\xE0 organizzative',
+      uoUnita: 'Unit\xE0 / Ufficio',
       codiceUtente: 'Codice interno',
 
       // Sez. 2 — Finalit\u00e0

@@ -194,6 +194,34 @@ function migrateSettingsV2toV3(s) {
 }
 
 // ----------------------------------------------------------------------------
+// MIGRATION v3 -> v4 — unitaOrganizzativa: drop macroStruttura, rename
+// articolazione -> unita (bilingual preserved). codice and macroStruttura dropped.
+// v3 shape: [ { codice, macroStruttura: {it,en}, articolazione: {it,en} } ]
+// v4 shape: [ { codice, unita: {it,en} } ]
+// ----------------------------------------------------------------------------
+function migrateProcessingActivityV3toV4(rec) {
+  const r = { ...rec };
+  const lista = Array.isArray(r.unitaOrganizzativa) ? r.unitaOrganizzativa : [];
+  r.unitaOrganizzativa = lista.map((u) => {
+    const o = u || {};
+    const artic = o.articolazione;
+    const unita = (artic && typeof artic === 'object')
+      ? { it: artic.it || '', en: artic.en || '' }
+      : bilingue();
+    return { unita: unita };
+  });
+  r.schemaVersion = 4;
+  return r;
+}
+
+// Settings have no unitaOrganizzativa; v3 -> v4 is a structural no-op.
+function migrateSettingsV3toV4(s) {
+  const out = { ...(s || {}) };
+  out.schemaVersion = 4;
+  return out;
+}
+
+// ----------------------------------------------------------------------------
 // MIGRATION DISPATCHERS — apply step migrations in order up to SCHEMA_VERSION.
 // Idempotent: a record already at the latest version is returned unchanged.
 //  - `lang`            : language used to bilingual-ize legacy v1 string fields
@@ -204,6 +232,7 @@ function migrateProcessingActivity(rec, lang, linguaPrincipale) {
   const v = (typeof r.schemaVersion === 'number') ? r.schemaVersion : 1;
   if (v < 2) r = migrateProcessingActivityV1toV2(r, lang);
   if ((r.schemaVersion || 2) < 3) r = migrateProcessingActivityV2toV3(r, linguaPrincipale);
+  if ((r.schemaVersion || 3) < 4) r = migrateProcessingActivityV3toV4(r);
   return r;
 }
 
@@ -212,6 +241,7 @@ function migrateSettings(rec, lang) {
   const v = (typeof r.schemaVersion === 'number') ? r.schemaVersion : 1;
   if (v < 2) r = migrateSettingsV1toV2(r, lang);
   if ((r.schemaVersion || 2) < 3) r = migrateSettingsV2toV3(r);
+  if ((r.schemaVersion || 3) < 4) r = migrateSettingsV3toV4(r);
   return r;
 }
 
@@ -265,6 +295,26 @@ db.version(3).stores({
   const paTable = tx.table('processingActivities');
   await paTable.toCollection().modify((rec) => {
     const migrated = migrateProcessingActivityV2toV3(rec, lp);
+    for (const k of Object.keys(rec)) { if (!(k in migrated)) delete rec[k]; }
+    Object.assign(rec, migrated);
+  });
+});
+
+// v4: unitaOrganizzativa units drop macroStruttura; articolazione -> unita.
+// Migrates existing v3 records in IndexedDB. Bilingual values are preserved.
+db.version(4).stores({
+  settings:            '&id, tenantId',
+  processingActivities:'&id, tenantId, tipoRegistro, codiceUtente, [tenantId+tipoRegistro]',
+  auditLog:            '&id, tenantId, timestamp, targetType, targetId'
+}).upgrade(async (tx) => {
+  const settingsTable = tx.table('settings');
+  const st = await settingsTable.get('default');
+  if (st) {
+    await settingsTable.put(migrateSettingsV3toV4(st));
+  }
+  const paTable = tx.table('processingActivities');
+  await paTable.toCollection().modify((rec) => {
+    const migrated = migrateProcessingActivityV3toV4(rec);
     for (const k of Object.keys(rec)) { if (!(k in migrated)) delete rec[k]; }
     Object.assign(rec, migrated);
   });

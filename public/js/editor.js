@@ -92,11 +92,18 @@ function rigaTrasferimento(entry, detail, enums, titolo) {
     ctlTestoBil('riferimentoDocumentazione', '', C.trRiferimento, e.riferimentoDocumentazione, true)
   ] };
 }
+function rigaUnitaOrganizzativa(entry, detail, titolo) {
+  const C = detail.campi; const e = entry || {};
+  return { rigaTitolo: titolo || '', campi: [
+    ctlTestoBil('unita', '', C.uoUnita, e.unita, false)
+  ] };
+}
 function righeDaArray(gruppoTipo, arr, detail, enums, baseLabel) {
   const a = Array.isArray(arr) ? arr : [];
   const tit = (i) => (baseLabel || '') + ' ' + (i + 1);
   if (gruppoTipo === 'responsabiliEsterni') return a.map((e, i) => rigaResponsabile(e, detail, tit(i)));
   if (gruppoTipo === 'trasferimentiExtraUE') return a.map((e, i) => rigaTrasferimento(e, detail, enums, tit(i)));
+  if (gruppoTipo === 'unitaOrganizzativa') return a.map((e, i) => rigaUnitaOrganizzativa(e, detail, tit(i)));
   return [];
 }
 
@@ -114,8 +121,7 @@ export function buildEditModel(record, { lingue, detail, enums }) {
     ctlTestoBil('descrizione', 'descrizione', C.descrizione, g('descrizione'), true),
     ctlEnum1('tipoRegistro', 'tipoRegistro', C.tipoRegistro, g('tipoRegistro'), enums.tipoRegistro),
     ctlData('dataInizioTrattamento', 'dataInizioTrattamento', C.dataInizioTrattamento, g('dataInizioTrattamento')),
-    ctlPiano('macroStruttura', 'unitaOrganizzativa.macroStruttura', C.macroStruttura, g('unitaOrganizzativa.macroStruttura')),
-    ctlPiano('articolazione', 'unitaOrganizzativa.articolazione', C.articolazione, g('unitaOrganizzativa.articolazione')),
+    ctlGruppi('unitaOrganizzativa', 'unitaOrganizzativa', C.unitaOrganizzativa, righeDaArray('unitaOrganizzativa', g('unitaOrganizzativa'), detail, enums, C.unitaOrganizzativa), 'unitaOrganizzativa', C.unitaOrganizzativa),
     ctlPiano('codiceUtente', 'codiceUtente', C.codiceUtente, g('codiceUtente'))
   ] });
 
@@ -250,5 +256,6 @@ export function nuovaVoceLista() {
 export function nuovaRigaGruppo(gruppoTipo, { detail, enums, titolo }) {
   if (gruppoTipo === 'responsabiliEsterni') return rigaResponsabile({}, detail, titolo || '');
   if (gruppoTipo === 'trasferimentiExtraUE') return rigaTrasferimento({}, detail, enums, titolo || '');
+  if (gruppoTipo === 'unitaOrganizzativa') return rigaUnitaOrganizzativa({}, detail, titolo || '');
   return { rigaTitolo: titolo || '', campi: [] };
 }

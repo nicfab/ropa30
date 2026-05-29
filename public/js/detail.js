@@ -160,7 +160,6 @@ export function buildDettaglio(record, lang, deps) {
 
   // ---- Sez. 1 — Identificazione --------------------------------------------
   const bg = r.baseGiuridica || {};
-  const uo = r.unitaOrganizzativa || {};
   sezioni.push({
     id: 'identificazione',
     titolo: S.identificazione,
@@ -169,8 +168,9 @@ export function buildDettaglio(record, lang, deps) {
       campoTesto(C.descrizione, r.descrizione, lang, ST),
       campoEnum(C.tipoRegistro, r.tipoRegistro, E.tipoRegistro, ST),
       campoData(C.dataInizioTrattamento, r.dataInizioTrattamento, lang, ST),
-      campoTesto(C.macroStruttura, { it: uo.macroStruttura || '', en: uo.macroStruttura || '' }, lang, ST),
-      campoTesto(C.articolazione, { it: uo.articolazione || '', en: uo.articolazione || '' }, lang, ST),
+      campoGruppi(C.unitaOrganizzativa, r.unitaOrganizzativa, [
+        { chiave: 'unita', label: C.uoUnita, tipo: 'testo' }
+      ], lang, ST),
       campoTesto(C.codiceUtente, { it: r.codiceUtente || '', en: r.codiceUtente || '' }, lang, ST)
     ]
   });

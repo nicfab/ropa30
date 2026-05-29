@@ -24,7 +24,7 @@
 // new settings language structure. Migration from v1 is handled in db.js
 // (Dexie version(2) upgrade): v1 plain-string texts are moved into the primary
 // language slot; the other language is left empty (no automatic translation).
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 
 // ----------------------------------------------------------------------------
 // APP + BACKUP FORMAT VERSIONS
@@ -60,10 +60,10 @@ export function bilingue(it = '', en = '') {
 
 // ----------------------------------------------------------------------------
 // FACTORY: empty organizational unit (department/office) for unitaOrganizzativa[].
-// macroStruttura/articolazione are bilingual org names; codice is a neutral code.
+// unita is the bilingual org-unit name (dept/office/area); codice is a neutral code.
 // ----------------------------------------------------------------------------
 export function unitaOrgVuota() {
-  return { codice: '', macroStruttura: bilingue(), articolazione: bilingue() };
+  return { unita: bilingue() };
 }
 
 // ============================================================================
@@ -234,7 +234,7 @@ export function createDefaultProcessingActivity({ id }) {
     // ---- Internal classification ----
     // unitaOrganizzativa: list of organizational units (departments/offices) this
     // activity belongs to. Default (a): single unit; but a list supports (b) an
-    // activity shared across units. macroStruttura/articolazione are bilingual
+    // activity shared across units. unita is the bilingual org-unit name
     // (org names), codice is a technical/neutral code (not bilingual).
     unitaOrganizzativa: [],
     codiceUtente: '',
