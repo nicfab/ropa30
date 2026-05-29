@@ -274,7 +274,7 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="sm:col-span-2">
                   <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDenominazione"></label>
-                  <input id="f-denominazione" type="text" x-model="denominazione"
+                  <input id="f-denominazione" type="text" x-model="denominazione" maxlength="150"
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
@@ -456,37 +456,22 @@
           <section aria-labelledby="lista-title">
 
             <!-- Intestazione registro -->
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div class="flex flex-col gap-4">
               <div>
                 <p class="text-sm font-medium uppercase tracking-wide text-brand-500" x-text="L.listaTitolo">Registro dei trattamenti</p>
-                <h1 id="lista-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
-                    x-text="denominazione">UNIFG</h1>
+                <h1 id="lista-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight truncate"
+                    x-bind:title="denominazione" x-text="denominazione">UNIFG</h1>
               </div>
-              <div class="flex items-center gap-2 shrink-0">
+              <div class="flex items-center gap-2">
                 <button type="button" x-on:click="apriCatalogo"
                         class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium shadow-sm hover:bg-brand-800">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                   <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
                 </button>
-                <button type="button" x-on:click="esportaBackup" x-bind:disabled="backupInCorso"
-                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed">
-                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-download" /></svg>
-                  <span x-text="L.btnEsporta">Esporta / Backup</span>
-                </button>
-                <button type="button" x-on:click="apriSelezioneFile"
+                <button type="button" x-on:click="apriAzioniMenu"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
-                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-upload" /></svg>
-                  <span x-text="L.restoreImporta">Importa / Ripristina</span>
-                </button>
-                <button type="button" x-on:click="apriExportMenu"
-                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
-                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-download" /></svg>
-                  <span x-text="L.exportRegistro">Esporta registro</span>
-                </button>
-                <button type="button" x-on:click="vaiAOnboarding"
-                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
-                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-edit" /></svg>
-                  <span x-text="L.listaModificaTitolare">Modifica dati titolare</span>
+                  <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
+                  <span x-text="L.btnAzioni">Azioni</span>
                 </button>
               </div>
             </div>
@@ -653,6 +638,46 @@
             </template>
 
               <!-- Dialog conferma RESTORE (Fase 3) -->
+
+              <!-- Dialog AZIONI -->
+              <template x-if="isAzioniMenuOpen">
+                <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+                     x-on:keydown.escape.window="chiudiAzioniMenu"
+                     x-on:click.self="chiudiAzioniMenu">
+                  <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                       role="dialog" aria-modal="true" aria-labelledby="azioni-title">
+                    <h2 id="azioni-title" class="text-lg font-bold text-brand-900" x-text="L.azioniTitolo">Azioni sul registro</h2>
+                    <p class="mt-2 text-sm text-brand-700" x-text="L.azioniSottotitolo"></p>
+                    <div class="mt-4 space-y-2">
+                      <button type="button" x-on:click="azioniBackup" x-bind:disabled="backupInCorso"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-download" /></svg>
+                        <span class="font-semibold text-brand-900" x-text="L.btnEsporta">Esporta / Backup</span>
+                      </button>
+                      <button type="button" x-on:click="azioniImporta"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-upload" /></svg>
+                        <span class="font-semibold text-brand-900" x-text="L.restoreImporta">Importa / Ripristina</span>
+                      </button>
+                      <button type="button" x-on:click="azioniEsportaRegistro"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-download" /></svg>
+                        <span class="font-semibold text-brand-900" x-text="L.exportRegistro">Esporta registro</span>
+                      </button>
+                      <button type="button" x-on:click="azioniModificaTitolare"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-edit" /></svg>
+                        <span class="font-semibold text-brand-900" x-text="L.listaModificaTitolare">Modifica dati titolare</span>
+                      </button>
+                    </div>
+                    <div class="mt-5 flex justify-end">
+                      <button type="button" x-on:click="chiudiAzioniMenu"
+                              class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                              x-text="L.azioniChiudi">Chiudi</button>
+                    </div>
+                  </div>
+                </div>
+              </template>
 
               <!-- Dialog ESPORTA REGISTRO (Fase 4) -->
               <template x-if="isExportMenuOpen">
@@ -1204,7 +1229,7 @@
     <!-- Footer -->
     <footer class="border-t border-brand-200 bg-white">
       <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-brand-700
-                  flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="flex items-center gap-2">
           <a href="https://nicfab.eu" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 font-semibold text-brand-800 hover:underline">
@@ -1212,6 +1237,29 @@
                  class="h-7 w-auto" />
             <span><span x-text="footerAuthor">Realizzato da</span> Nicola Fabiano</span>
           </a>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <a href="https://codeberg.org/nicfab/ropa30" target="_blank" rel="noopener noreferrer"
+             x-bind:aria-label="L.footerRepoAria"
+             class="inline-flex items-center gap-1.5 text-brand-700 hover:text-brand-900 hover:underline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <span x-text="L.footerRepoLabel">Codice e segnalazioni</span>
+          </a>
+          <span class="text-brand-300" aria-hidden="true">&middot;</span>
+          <button type="button" x-on:click="mailSupport"
+                  x-bind:aria-label="L.footerEmailAria"
+                  class="inline-flex items-center gap-1.5 text-brand-700 hover:text-brand-900 hover:underline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <polyline points="22 6 12 13 2 6"></polyline>
+            </svg>
+            <span x-text="L.footerEmailLabel">Email</span>
+          </button>
         </div>
         <div x-text="footerLicense">Rilasciato sotto AGPL-3.0-or-later</div>
       </div>

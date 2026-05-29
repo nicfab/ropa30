@@ -70,6 +70,7 @@ function ropa30App() {
     restoreError: false,          // styles the outcome message as error
     // ---- Export registro (Fase 4) ----
     isExportMenuOpen: false,      // export dialog visibility
+    isAzioniMenuOpen: false,      // azioni dialog visibility
     exportMessage: '',            // localized export outcome
     exportError: false,
     // ---- PWA ----
@@ -222,6 +223,30 @@ function ropa30App() {
     },
     chiudiExportMenu() {
       this.isExportMenuOpen = false;
+    },
+
+    // ---- Menu Azioni (dialog) ----
+    apriAzioniMenu() {
+      this.isAzioniMenuOpen = true;
+    },
+    chiudiAzioniMenu() {
+      this.isAzioniMenuOpen = false;
+    },
+    azioniBackup() {
+      this.isAzioniMenuOpen = false;
+      this.esportaBackup();
+    },
+    azioniImporta() {
+      this.isAzioniMenuOpen = false;
+      this.apriSelezioneFile();
+    },
+    azioniEsportaRegistro() {
+      this.isAzioniMenuOpen = false;
+      this.apriExportMenu();
+    },
+    azioniModificaTitolare() {
+      this.isAzioniMenuOpen = false;
+      this.vaiAOnboarding();
     },
     _modelloRegistro() {
       const loc = LOCALI[this.lang] || LOCALI.it;
@@ -455,6 +480,13 @@ function ropa30App() {
       this.trattamentiFiltrati = this.trattamenti.filter((t) => t._blob.indexOf(q) !== -1);
     },
     pulisciRicerca() { this.queryRicerca = ''; },
+
+    // ---- Footer: contatto email (indirizzo non in chiaro nel markup) ----
+    mailSupport() {
+      const localPart = 'support';
+      const domain = 'ropa30.eu';
+      window.location.href = 'mailto:' + localPart + '@' + domain;
+    },
 
     // ---- Create from template ----
     async creaDaTemplate(event) {

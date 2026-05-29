@@ -24,6 +24,14 @@ export default {
     brandTagline: 'The GDPR Article 30 register, simplified.',
     footerLicense: 'Released under AGPL-3.0-or-later',
     footerAuthor: 'Built by',
+    footerRepoLabel: 'Source & issues',
+    footerEmailLabel: 'Email',
+    footerRepoAria: 'Source code and issues on Codeberg (opens in a new tab)',
+    footerEmailAria: 'Send a support email',
+    btnAzioni: 'Actions',
+    azioniTitolo: 'Register actions',
+    azioniSottotitolo: 'Backup, restore, export and controller details.',
+    azioniChiudi: 'Close',
 
     welcomeTitolo: 'Records of processing activities',
 

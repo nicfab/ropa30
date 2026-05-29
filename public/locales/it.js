@@ -24,6 +24,14 @@ export default {
     brandTagline: 'Il registro dei trattamenti GDPR, semplice.',
     footerLicense: 'Rilasciato sotto AGPL-3.0-or-later',
     footerAuthor: 'Realizzato da',
+    footerRepoLabel: 'Codice e segnalazioni',
+    footerEmailLabel: 'Email',
+    footerRepoAria: 'Codice sorgente e segnalazioni su Codeberg (apre una nuova scheda)',
+    footerEmailAria: 'Scrivi un\x27email di supporto',
+    btnAzioni: 'Azioni',
+    azioniTitolo: 'Azioni sul registro',
+    azioniSottotitolo: 'Backup, ripristino, esportazione e dati del titolare.',
+    azioniChiudi: 'Chiudi',
 
     welcomeTitolo: 'Registro delle attività di trattamento',
 
