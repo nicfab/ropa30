@@ -80,7 +80,7 @@ function contentXml(model, labels) {
     + ' office:version="1.2">'
     + '<office:body><office:spreadsheet>'
     + tabellaTitolare
-    + '<table:table table:name="Registro">'
+    + '<table:table table:name="' + (labels.sheetRegistro || 'Registro') + '">'
     + '<table:table-column table:number-columns-repeated="' + Math.max(1, model.headers.length) + '"/>'
     + rows.join('')
     + '</table:table>'
@@ -113,7 +113,7 @@ export function esportaRegistroOds(model, labels = {}, date = new Date()) {
   const blob = new Blob([zipped], { type: MIMETYPE });
 
   const url = URL.createObjectURL(blob);
-  const filename = nomeFileRegistro('ods', date, model.meta.estratto);
+  const filename = nomeFileRegistro('ods', date, model.meta.estratto, labels.fileSlug);
   try {
     const a = document.createElement('a');
     a.href = url;

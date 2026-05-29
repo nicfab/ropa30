@@ -9,7 +9,7 @@
  */
 
 // Build a filesystem-friendly filename: ropa30-registro-YYYYMMDD-HHMMSS.xlsx
-export function nomeFileRegistro(ext, date = new Date(), estratto = null) {
+export function nomeFileRegistro(ext, date = new Date(), estratto = null, baseSlug = 'registro-completo') {
   const p = (n) => String(n).padStart(2, '0');
   const Y = date.getFullYear();
   const M = p(date.getMonth() + 1);
@@ -17,7 +17,7 @@ export function nomeFileRegistro(ext, date = new Date(), estratto = null) {
   const h = p(date.getHours());
   const m = p(date.getMinutes());
   const s = p(date.getSeconds());
-  let tipo = 'registro-completo';
+  let tipo = baseSlug || 'registro-completo';
   if (estratto && estratto.estratto) {
     const slug = String(estratto.unita || '').toLowerCase()
       .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'unita';
@@ -80,14 +80,14 @@ export function esportaRegistroXlsx(model, labels = {}, date = new Date()) {
     wsT['!cols'] = [{ wch: 24 }, { wch: 50 }];
     XLSX.utils.book_append_sheet(wb, wsT, 'Titolare');
   }
-  XLSX.utils.book_append_sheet(wb, ws, 'Registro');
+  XLSX.utils.book_append_sheet(wb, ws, labels.sheetRegistro || 'Registro');
 
   const out = XLSX.write(wb, { type: 'array', bookType: 'xlsx' });
   const blob = new Blob([out], {
     type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
   });
 
-  const filename = nomeFileRegistro('xlsx', date, model.meta.estratto);
+  const filename = nomeFileRegistro('xlsx', date, model.meta.estratto, labels.fileSlug);
   scaricaBlob(blob, filename);
   return filename;
 }

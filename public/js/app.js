@@ -298,13 +298,20 @@ function ropa30App() {
       this.isAzioniMenuOpen = false;
       this.vaiAOnboarding();
     },
+    get titoloRegistroExport() {
+      const base = this.L.printTitoloRegistro || '';
+      if (this.registroAttivo === 'responsabile') return base + (this.L.printSuffissoResponsabile || '');
+      return base + (this.L.printSuffissoTitolare || '');
+    },
     _exportLabels() {
       return {
-        titolo: this.L.printTitoloRegistro,
+        titolo: this.titoloRegistroExport,
         generatoIl: this.L.printGeneratoIl,
         titolareTitolo: this.L.tdTitolo,
         estrattoTitolo: this.L.estrattoTitolo,
-        estrattoUnita: this.L.estrattoUnita
+        estrattoUnita: this.L.estrattoUnita,
+        sheetRegistro: (this.registroAttivo === 'responsabile') ? 'Registro responsabile' : 'Registro titolare',
+        fileSlug: (this.registroAttivo === 'responsabile') ? 'registro-responsabile' : 'registro-titolare'
       };
     },
     _modelloRegistro() {

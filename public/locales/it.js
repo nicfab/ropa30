@@ -177,6 +177,8 @@ export default {
     restoreErroreFile: 'Il file selezionato non è un backup valido di ropa30',
     restoreErroreRipristino: 'Si è verificato un errore durante il ripristino. I dati non sono stati modificati.',
     printTitoloRegistro: 'Registro delle attività di trattamento',
+    printSuffissoTitolare: ' — Titolare (art. 30(1))',
+    printSuffissoResponsabile: ' — Responsabile (art. 30(2))',
     printGeneratoIl: 'Generato il',
     exportRegistro: 'Esporta registro',
     exportTitolo: 'Esporta il registro',

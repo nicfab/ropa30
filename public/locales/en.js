@@ -177,6 +177,8 @@ export default {
     restoreErroreFile: 'The selected file is not a valid ropa30 backup',
     restoreErroreRipristino: 'An error occurred during the restore. Your data was not modified.',
     printTitoloRegistro: 'Records of processing activities',
+    printSuffissoTitolare: ' — Controller (Art. 30(1))',
+    printSuffissoResponsabile: ' — Processor (Art. 30(2))',
     printGeneratoIl: 'Generated on',
     exportRegistro: 'Export register',
     exportTitolo: 'Export the register',
