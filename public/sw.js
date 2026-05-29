@@ -2,19 +2,27 @@
  * ropa30 — sw.js (Service Worker)
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
- * Offline support for a local-first PWA. Precaches the app's static assets and
- * serves them cache-first, so ropa30 keeps working without a network. User data
- * lives in IndexedDB (Dexie) and is NOT handled here — the SW only caches assets.
+ * Offline support for a local-first PWA.
  *
- * Cache is versioned: bump CACHE_NAME on every release to invalidate the old one.
- * Update model is simple (skipWaiting + clients.claim): the new SW takes over on
- * the next load, no prompt.
+ * Update model: NETWORK-FIRST for same-origin assets (app shell, JS, CSS,
+ * modules). When online, the SW always fetches the latest file from the
+ * network and refreshes the cache, so the user can never receive a mix of
+ * new markup with stale logic. When offline, the SW falls back to the last
+ * cached copy, so ropa30 keeps working without a network.
+ *
+ * User data lives in IndexedDB (Dexie) and is NOT handled here — the SW only
+ * caches static assets.
+ *
+ * CACHE_NAME is still versioned as cache hygiene (old caches are dropped on
+ * activate), but correctness of updates does NOT depend on bumping it: the
+ * network-first strategy guarantees fresh files whenever the user is online.
  */
 
-const CACHE_NAME = 'ropa30-v1';
+const CACHE_NAME = 'ropa30-v2';
 
-// Core assets to precache. Relative paths (scope-friendly: works at site root or
-// in a subdirectory). Keep in sync with index.html and the module import graph.
+// Core assets to precache for the first offline visit. Relative paths
+// (scope-friendly: works at site root or in a subdirectory). Keep in sync
+// with index.html and the module import graph.
 const PRECACHE = [
   './',
   './index.html',
@@ -49,7 +57,7 @@ const PRECACHE = [
   './icons/apple-touch-icon.png'
 ];
 
-// Install: precache core assets, then activate immediately.
+// Install: precache core assets (for offline), then activate immediately.
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -69,8 +77,10 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch: cache-first for same-origin GET; network fallback (and cache it).
-// Navigations fall back to the cached index.html (single-page app).
+// Fetch: NETWORK-FIRST for same-origin GET. On a successful network response
+// we refresh the cache and return the fresh file. On network failure (offline)
+// we fall back to the cached copy. Navigations fall back to the cached
+// index.html (single-page app).
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
@@ -80,22 +90,29 @@ self.addEventListener('fetch', (event) => {
 
   if (req.mode === 'navigate') {
     event.respondWith(
-      caches.match('./index.html').then((cached) => cached || fetch(req))
+      fetch(req)
+        .then((res) => {
+          if (res && res.status === 200 && res.type === 'basic') {
+            const copy = res.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match('./index.html'))
     );
     return;
   }
 
   event.respondWith(
-    caches.match(req).then((cached) => {
-      if (cached) return cached;
-      return fetch(req).then((res) => {
-        // Cache successful, basic (same-origin) responses for next time.
+    fetch(req)
+      .then((res) => {
+        // Refresh the cache with the latest same-origin asset.
         if (res && res.status === 200 && res.type === 'basic') {
           const copy = res.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
         }
         return res;
-      }).catch(() => cached);
-    })
+      })
+      .catch(() => caches.match(req))
   );
 });
