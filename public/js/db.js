@@ -691,6 +691,17 @@ export function normalizeBilingualShapes(r) {
   } else {
     r.responsabiliEsterni = [];
   }
+  if (Array.isArray(r.titolariPerContoDelQuale)) {
+    r.titolariPerContoDelQuale = r.titolariPerContoDelQuale.map((tc) => {
+      const x = tc || {};
+      x.denominazione = bil(x.denominazione);
+      x.contatti = (typeof x.contatti === 'string') ? x.contatti : '';
+      x.ruolo = (typeof x.ruolo === 'string') ? x.ruolo : '';
+      return x;
+    });
+  } else {
+    r.titolariPerContoDelQuale = [];
+  }
 
   if (Array.isArray(r.trasferimentiExtraUE)) {
     r.trasferimentiExtraUE = r.trasferimentiExtraUE.map((tr) => {

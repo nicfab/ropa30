@@ -35,6 +35,10 @@
 // Returns { value, missingTranslation }.
 function resolveTesto(obj, lang, stati) {
   const vuoto = stati.vuoto;
+  if (typeof obj === 'string') {
+    const s = obj.trim();
+    return { value: s || vuoto, missingTranslation: false };
+  }
   if (!obj || typeof obj !== 'object') {
     return { value: vuoto, missingTranslation: false };
   }
@@ -160,20 +164,24 @@ export function buildDettaglio(record, lang, deps) {
 
   // ---- Sez. 1 — Identificazione --------------------------------------------
   const bg = r.baseGiuridica || {};
-  sezioni.push({
-    id: 'identificazione',
-    titolo: S.identificazione,
-    campi: [
-      campoTesto(C.nome, r.nome, lang, ST),
-      campoTesto(C.descrizione, r.descrizione, lang, ST),
-      campoEnum(C.tipoRegistro, r.tipoRegistro, E.tipoRegistro, ST),
-      campoData(C.dataInizioTrattamento, r.dataInizioTrattamento, lang, ST),
-      campoGruppi(C.unitaOrganizzativa, r.unitaOrganizzativa, [
-        { chiave: 'unita', label: C.uoUnita, tipo: 'testo' }
-      ], lang, ST),
-      campoTesto(C.codiceUtente, { it: r.codiceUtente || '', en: r.codiceUtente || '' }, lang, ST)
-    ]
-  });
+  const campiIdent = [
+    campoTesto(C.nome, r.nome, lang, ST),
+    campoTesto(C.descrizione, r.descrizione, lang, ST),
+    campoEnum(C.tipoRegistro, r.tipoRegistro, E.tipoRegistro, ST),
+    campoData(C.dataInizioTrattamento, r.dataInizioTrattamento, lang, ST),
+    campoGruppi(C.unitaOrganizzativa, r.unitaOrganizzativa, [
+      { chiave: 'unita', label: C.uoUnita, tipo: 'testo' }
+    ], lang, ST),
+    campoTesto(C.codiceUtente, { it: r.codiceUtente || '', en: r.codiceUtente || '' }, lang, ST)
+  ];
+  if (r.tipoRegistro === 'responsabile') {
+    campiIdent.push(campoGruppi(C.titolariPerContoDelQuale, r.titolariPerContoDelQuale, [
+      { chiave: 'denominazione', label: C.tcDenominazione, tipo: 'testo' },
+      { chiave: 'contatti', label: C.tcContatti, tipo: 'testo' },
+      { chiave: 'ruolo', label: C.tcRuolo, tipo: 'testo' }
+    ], lang, ST));
+  }
+  sezioni.push({ id: 'identificazione', titolo: S.identificazione, campi: campiIdent });
 
   // ---- Sez. 2 — Finalità ----------------------------------------------------
   sezioni.push({

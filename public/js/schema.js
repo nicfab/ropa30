@@ -230,6 +230,9 @@ export function createDefaultProcessingActivity({ id }) {
     tenantId: DEFAULT_TENANT_ID,
     schemaVersion: SCHEMA_VERSION,
     tipoRegistro: TIPO_REGISTRO.TITOLARE,
+    // ---- Art. 30(2)(a) — Titolari per conto dei quali il responsabile agisce ----
+    // Popolato solo per tipoRegistro === 'responsabile'. Vuoto per i titolari.
+    titolariPerContoDelQuale: [],
 
     // ---- Internal classification ----
     // unitaOrganizzativa: list of organizational units (departments/offices) this
