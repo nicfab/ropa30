@@ -16,7 +16,9 @@ import {
   AUDIT_TARGET,
   createDefaultSettings,
   createDefaultProcessingActivity,
-  createAuditEntry
+  createAuditEntry,
+  unitaOrgVuota,
+  bilingue
 } from './schema.js';
 import { validateBackupEnvelope } from './importers/validate.js';
 
@@ -137,9 +139,82 @@ function migrateProcessingActivityV1toV2(rec, lang) {
   r.valutazioneDiImpatto = vi;
 
   r.note = toBil(r.note, lang);
-  r.schemaVersion = SCHEMA_VERSION;
+  r.schemaVersion = 2; // step migration: V1->V2 sets v2 explicitly (chain continues to V3)
   return r;
 }
+
+// ----------------------------------------------------------------------------
+// MIGRATION v2 -> v3 — unitaOrganizzativa: single object -> list of bilingual units
+//
+// v2 shape: unitaOrganizzativa: { macroStruttura: '<string>', articolazione: '<string>' }
+// v3 shape: unitaOrganizzativa: [ { codice: '', macroStruttura: {it,en}, articolazione: {it,en} } ]
+//
+// Rules:
+//  - already an array            -> left as-is (idempotent)
+//  - object with empty strings   -> []  (no unit assigned)
+//  - object with any value       -> [ one bilingual unit ], strings mapped onto
+//                                    `linguaPrincipale` (the register's main
+//                                    language), the other language left empty.
+//  - missing/undefined           -> []
+// Only unitaOrganizzativa changes; everything else is preserved.
+// ----------------------------------------------------------------------------
+function migrateProcessingActivityV2toV3(rec, linguaPrincipale) {
+  const r = { ...rec };
+  const lp = (linguaPrincipale === 'en') ? 'en' : 'it';
+  const uo = r.unitaOrganizzativa;
+
+  if (Array.isArray(uo)) {
+    // Already v3 list: keep it (defensive idempotency).
+    r.unitaOrganizzativa = uo;
+  } else if (uo && typeof uo === 'object') {
+    const macro = (typeof uo.macroStruttura === 'string') ? uo.macroStruttura : '';
+    const artic = (typeof uo.articolazione === 'string') ? uo.articolazione : '';
+    if (macro === '' && artic === '') {
+      r.unitaOrganizzativa = [];
+    } else {
+      const unit = unitaOrgVuota();
+      unit.macroStruttura = (lp === 'en') ? bilingue('', macro) : bilingue(macro, '');
+      unit.articolazione  = (lp === 'en') ? bilingue('', artic) : bilingue(artic, '');
+      r.unitaOrganizzativa = [unit];
+    }
+  } else {
+    r.unitaOrganizzativa = [];
+  }
+
+  r.schemaVersion = 3;
+  return r;
+}
+
+// Settings have no unitaOrganizzativa; v2 -> v3 is a structural no-op that only
+// bumps the version, so the migration chain stays consistent across stores.
+function migrateSettingsV2toV3(s) {
+  const out = { ...(s || {}) };
+  out.schemaVersion = 3;
+  return out;
+}
+
+// ----------------------------------------------------------------------------
+// MIGRATION DISPATCHERS — apply step migrations in order up to SCHEMA_VERSION.
+// Idempotent: a record already at the latest version is returned unchanged.
+//  - `lang`            : language used to bilingual-ize legacy v1 string fields
+//  - `linguaPrincipale`: register main language, used for v2->v3 org-unit names
+// ----------------------------------------------------------------------------
+function migrateProcessingActivity(rec, lang, linguaPrincipale) {
+  let r = rec || {};
+  const v = (typeof r.schemaVersion === 'number') ? r.schemaVersion : 1;
+  if (v < 2) r = migrateProcessingActivityV1toV2(r, lang);
+  if ((r.schemaVersion || 2) < 3) r = migrateProcessingActivityV2toV3(r, linguaPrincipale);
+  return r;
+}
+
+function migrateSettings(rec, lang) {
+  let r = rec || {};
+  const v = (typeof r.schemaVersion === 'number') ? r.schemaVersion : 1;
+  if (v < 2) r = migrateSettingsV1toV2(r, lang);
+  if ((r.schemaVersion || 2) < 3) r = migrateSettingsV2toV3(r);
+  return r;
+}
+
 function migrateSettingsV1toV2(s, lang) {
   const out = { ...(s || {}) };
   out.uiLanguage = (lang === 'en') ? 'en' : 'it';
@@ -147,7 +222,7 @@ function migrateSettingsV1toV2(s, lang) {
   delete out.lingua;
   out.titolare = { ...(out.titolare || {}) };
   if (typeof out.titolare.sitoWeb !== 'string') out.titolare.sitoWeb = '';
-  out.schemaVersion = SCHEMA_VERSION;
+  out.schemaVersion = 2; // step migration: V1->V2 sets v2 explicitly
   return out;
 }
 
@@ -173,14 +248,55 @@ db.version(2).stores({
   });
 });
 
+// v3: unitaOrganizzativa becomes a list of bilingual organizational units.
+// Migrates existing v2 records in IndexedDB. Org-unit names are mapped onto the
+// register's main language (settings.registro.linguaPrincipale).
+db.version(3).stores({
+  settings:            '&id, tenantId',
+  processingActivities:'&id, tenantId, tipoRegistro, codiceUtente, [tenantId+tipoRegistro]',
+  auditLog:            '&id, tenantId, timestamp, targetType, targetId'
+}).upgrade(async (tx) => {
+  const settingsTable = tx.table('settings');
+  const st = await settingsTable.get('default');
+  const lp = (st && st.registro && st.registro.linguaPrincipale === 'en') ? 'en' : 'it';
+  if (st) {
+    await settingsTable.put(migrateSettingsV2toV3(st));
+  }
+  const paTable = tx.table('processingActivities');
+  await paTable.toCollection().modify((rec) => {
+    const migrated = migrateProcessingActivityV2toV3(rec, lp);
+    for (const k of Object.keys(rec)) { if (!(k in migrated)) delete rec[k]; }
+    Object.assign(rec, migrated);
+  });
+});
+
+
 // ============================================================================
 // UUID
 // ============================================================================
 function newUUID() {
+  // Preferred: native UUID (requires a secure context: https or localhost).
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
     return crypto.randomUUID();
   }
-  throw new Error('crypto.randomUUID() is not available in this browser.');
+  // Fallback 1: build an RFC-4122 v4 UUID from crypto.getRandomValues
+  // (available in more contexts than randomUUID, e.g. plain-http IP hosts).
+  if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+    const b = new Uint8Array(16);
+    crypto.getRandomValues(b);
+    b[6] = (b[6] & 0x0f) | 0x40; // version 4
+    b[8] = (b[8] & 0x3f) | 0x80; // variant 10
+    const h = [];
+    for (let i = 0; i < 16; i++) h.push(b[i].toString(16).padStart(2, '0'));
+    return h[0]+h[1]+h[2]+h[3]+'-'+h[4]+h[5]+'-'+h[6]+h[7]+'-'+h[8]+h[9]+'-'+h[10]+h[11]+h[12]+h[13]+h[14]+h[15];
+  }
+  // Fallback 2 (last resort): Math.random-based v4. Lower-quality randomness,
+  // but guarantees the app keeps working in any context instead of crashing.
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = (c === 'x') ? r : ((r & 0x3) | 0x8);
+    return v.toString(16);
+  });
 }
 
 // ============================================================================
@@ -342,19 +458,20 @@ export async function importAllData(envelope, { mode = 'replace' } = {}) {
     lang = srcDefault.lingua;
   }
 
+  // Register main language (for v2->v3 org-unit names), from imported settings.
+  const impDefault = src.settings.find((s) => s && s.id === 'default');
+  const linguaPrincipale =
+    (impDefault && impDefault.registro && impDefault.registro.linguaPrincipale === 'en') ? 'en'
+    : (impDefault && impDefault.registro && impDefault.registro.linguaPrincipale === 'it') ? 'it'
+    : lang;
+
   const prepSettings = src.settings.map((s) => {
-    let rec = s;
-    if (!rec || typeof rec.schemaVersion !== 'number' || rec.schemaVersion < SCHEMA_VERSION) {
-      rec = migrateSettingsV1toV2(rec || {}, lang);
-    }
+    const rec = migrateSettings(s || {}, lang);
     return { ...rec, tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION };
   });
 
   const prepPAs = src.processingActivities.map((r) => {
-    let rec = r;
-    if (typeof rec.schemaVersion !== 'number' || rec.schemaVersion < SCHEMA_VERSION) {
-      rec = migrateProcessingActivityV1toV2(rec, lang);
-    }
+    const rec = migrateProcessingActivity(r, lang, linguaPrincipale);
     return { ...rec, tenantId: DEFAULT_TENANT_ID, schemaVersion: SCHEMA_VERSION };
   });
 

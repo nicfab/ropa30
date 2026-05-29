@@ -114,6 +114,10 @@
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 5v14M5 12h14" />
       </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5" />
+      </symbol>
       <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4.75 19.25 9 18l9.5-9.5a1.77 1.77 0 0 0-2.5-2.5L6.5 15.5l-1.75 3.75Z" />
@@ -173,10 +177,94 @@
     <!-- Main -->
     <main id="main" class="flex-1">
       <div x-bind:class="wrapperClass">
+        <!-- Global restore file input (reachable from any view: welcome, list). -->
+        <input type="file" id="restore-file-input" accept="application/json" class="hidden" x-on:change="fileSelezionato">
+        <!-- Global restore confirmation dialog (reachable from any view). -->
+        <template x-if="isRestoreConfirmOpen">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+               x-on:keydown.escape.window="annullaRestore"
+               x-on:click.self="annullaRestore">
+            <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                 role="dialog" aria-modal="true" aria-labelledby="restore-conf-title">
+              <h2 id="restore-conf-title" class="text-lg font-bold text-brand-900" x-text="L.restoreTitoloConferma">Confermi il ripristino?</h2>
+              <p class="mt-2 text-sm text-brand-700" x-text="L.restoreTestoConferma"></p>
+              <p x-show="restoreFaraBackup"
+                 class="mt-2 text-sm text-brand-800 bg-warning-500/10 border-l-4 border-warning-500 rounded-r-lg p-2"
+                 x-text="L.restoreDisclaimerBackup"></p>
+              <dl class="mt-4 rounded-lg bg-brand-50 p-3 text-sm">
+                <div class="flex justify-between gap-4">
+                  <dt class="text-brand-600" x-text="L.restoreRiepilogoTrattamenti">Trattamenti nel file:</dt>
+                  <dd class="font-semibold text-brand-900" x-text="restoreCountPA"></dd>
+                </div>
+                <div class="mt-1 flex justify-between gap-4">
+                  <dt class="text-brand-600" x-text="L.restoreRiepilogoData">Backup creato il:</dt>
+                  <dd class="text-brand-900" x-text="restoreDataExport"></dd>
+                </div>
+              </dl>
+              <div class="mt-5 flex flex-wrap justify-end gap-2">
+                <button type="button" x-on:click="annullaRestore"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                        x-text="L.restoreAnnulla">Annulla</button>
+                <button type="button" x-on:click="confermaRestore" x-bind:disabled="restoreInCorso"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                        x-text="L.restoreConferma">Ripristina (sostituisci tutto)</button>
+              </div>
+            </div>
+          </div>
+        </template>
+
 
         <!-- ===================== ONBOARDING ===================== -->
+        <!-- ===================== WELCOME (prima configurazione) ===================== -->
+        <template x-if="isViewWelcome">
+          <section aria-labelledby="welcome-title" class="max-w-2xl mx-auto">
+            <p class="text-2xl font-bold text-brand-700 tracking-tight">ropa30</p>
+            <h1 id="welcome-title" class="mt-2 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
+                x-text="L.welcomeTitolo">Registro delle attività di trattamento</h1>
+            <p class="mt-4 text-brand-700 leading-relaxed" x-text="L.welcomeIntro"></p>
+
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-start gap-2 text-brand-800">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-accent-600" aria-hidden="true"><use href="#icon-check" /></svg>
+                <span x-text="L.welcomePunto1"></span>
+              </li>
+              <li class="flex items-start gap-2 text-brand-800">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-accent-600" aria-hidden="true"><use href="#icon-check" /></svg>
+                <span x-text="L.welcomePunto2"></span>
+              </li>
+              <li class="flex items-start gap-2 text-brand-800">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-accent-600" aria-hidden="true"><use href="#icon-check" /></svg>
+                <span x-text="L.welcomePunto3"></span>
+              </li>
+            </ul>
+
+            <h2 class="mt-10 text-lg font-semibold text-brand-800" x-text="L.welcomeComeIniziare">Come vuoi iniziare?</h2>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <button type="button" x-on:click="welcomeImportaBackup"
+                      class="text-left rounded-2xl border border-brand-300 bg-white p-5 hover:border-brand-500 hover:bg-brand-50 transition">
+                <span class="flex items-center gap-2 font-semibold text-brand-900">
+                  <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-upload" /></svg>
+                  <span x-text="L.welcomeImportTitolo">Ho già un backup</span>
+                </span>
+                <span class="mt-1 block text-sm text-brand-600" x-text="L.welcomeImportTesto"></span>
+              </button>
+              <button type="button" x-on:click="welcomeIniziaDaZero"
+                      class="text-left rounded-2xl border border-brand-300 bg-white p-5 hover:border-brand-500 hover:bg-brand-50 transition">
+                <span class="flex items-center gap-2 font-semibold text-brand-900">
+                  <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-plus" /></svg>
+                  <span x-text="L.welcomeNuovoTitolo">Inizia da zero</span>
+                </span>
+                <span class="mt-1 block text-sm text-brand-600" x-text="L.welcomeNuovoTesto"></span>
+              </button>
+            </div>
+
+            <p class="mt-6 text-sm text-brand-600" x-text="L.welcomeNota"></p>
+          </section>
+        </template>
+
         <template x-if="isViewOnboarding">
-          <section aria-labelledby="onb-title">
+          <section aria-labelledby="onb-title"
+                   x-on:input="segnaTitolareDirty" x-on:change="segnaTitolareDirty">
             <h1 id="onb-title" class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
                 x-text="L.onbTitolo">Configura il registro</h1>
             <p class="mt-3 text-brand-700 leading-relaxed" x-text="L.onbSottotitolo"></p>
@@ -330,12 +418,36 @@
             <p class="mt-6 text-sm text-brand-600" x-text="L.onbObbligatorio"></p>
             <p class="mt-2 text-sm text-danger-600" x-show="erroreSalvataggio" x-text="L.onbErrore"></p>
 
-            <div class="mt-6">
+            <div class="mt-6 flex flex-wrap items-center gap-3">
               <button type="button" x-on:click="salvaOnboarding" x-bind:disabled="salvaDisabilitato"
                       class="inline-flex items-center gap-2 rounded bg-brand-700 px-5 py-2.5 text-white
                              hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
                       x-text="L.btnSalva">Salva e continua</button>
+              <button type="button" x-show="isModificaTitolare" x-on:click="annullaModificaTitolare"
+                      class="inline-flex items-center gap-2 rounded border border-brand-300 px-5 py-2.5 text-brand-700 hover:bg-brand-50"
+                      x-text="L.editorAnnulla">Annulla</button>
             </div>
+
+            <!-- Conferma annullamento modifica titolare (dirty-guard) -->
+            <template x-if="chiediConfermaAnnullaTitolare">
+              <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+                   x-on:keydown.escape.window="annullaAnnullaTitolare"
+                   x-on:click.self="annullaAnnullaTitolare">
+                <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                     role="dialog" aria-modal="true" aria-labelledby="conf-tit-title">
+                  <h2 id="conf-tit-title" class="text-lg font-bold text-brand-900" x-text="L.editorConfermaTitolo">Modifiche non salvate</h2>
+                  <p class="mt-2 text-sm text-brand-700" x-text="L.editorConfermaTesto"></p>
+                  <div class="mt-5 flex flex-wrap justify-end gap-2">
+                    <button type="button" x-on:click="annullaAnnullaTitolare"
+                            class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                            x-text="L.editorConfermaResta">Continua a modificare</button>
+                    <button type="button" x-on:click="confermaAnnullaTitolare"
+                            class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700"
+                            x-text="L.editorConfermaEsci">Esci senza salvare</button>
+                  </div>
+                </div>
+              </div>
+            </template>
           </section>
         </template>
 
@@ -366,7 +478,6 @@
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-upload" /></svg>
                   <span x-text="L.restoreImporta">Importa / Ripristina</span>
                 </button>
-                <input type="file" id="restore-file-input" accept="application/json" class="hidden" x-on:change="fileSelezionato">
                 <button type="button" x-on:click="apriExportMenu"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-download" /></svg>
@@ -542,35 +653,6 @@
             </template>
 
               <!-- Dialog conferma RESTORE (Fase 3) -->
-              <template x-if="isRestoreConfirmOpen">
-                <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
-                     x-on:keydown.escape.window="annullaRestore"
-                     x-on:click.self="annullaRestore">
-                  <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
-                       role="dialog" aria-modal="true" aria-labelledby="restore-conf-title">
-                    <h2 id="restore-conf-title" class="text-lg font-bold text-brand-900" x-text="L.restoreTitoloConferma">Confermi il ripristino?</h2>
-                    <p class="mt-2 text-sm text-brand-700" x-text="L.restoreTestoConferma"></p>
-                    <dl class="mt-4 rounded-lg bg-brand-50 p-3 text-sm">
-                      <div class="flex justify-between gap-4">
-                        <dt class="text-brand-600" x-text="L.restoreRiepilogoTrattamenti">Trattamenti nel file:</dt>
-                        <dd class="font-semibold text-brand-900" x-text="restoreCountPA"></dd>
-                      </div>
-                      <div class="mt-1 flex justify-between gap-4">
-                        <dt class="text-brand-600" x-text="L.restoreRiepilogoData">Backup creato il:</dt>
-                        <dd class="text-brand-900" x-text="restoreDataExport"></dd>
-                      </div>
-                    </dl>
-                    <div class="mt-5 flex flex-wrap justify-end gap-2">
-                      <button type="button" x-on:click="annullaRestore"
-                              class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
-                              x-text="L.restoreAnnulla">Annulla</button>
-                      <button type="button" x-on:click="confermaRestore" x-bind:disabled="restoreInCorso"
-                              class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
-                              x-text="L.restoreConferma">Ripristina (sostituisci tutto)</button>
-                    </div>
-                  </div>
-                </div>
-              </template>
 
               <!-- Dialog ESPORTA REGISTRO (Fase 4) -->
               <template x-if="isExportMenuOpen">

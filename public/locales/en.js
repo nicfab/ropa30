@@ -25,6 +25,32 @@ export default {
     footerLicense: 'Released under AGPL-3.0-or-later',
     footerAuthor: 'Built by',
 
+    welcomeTitolo: 'Records of processing activities',
+
+    welcomeIntro: 'ropa30 lets you create, update and export the Records of processing activities required by Art. 30 GDPR, local-first and without sending data to external servers.',
+
+    welcomePunto1: 'Structure compliant with Art. 30 of Regulation (EU) 2016/679',
+
+    welcomePunto2: 'Local-first: no account, no cloud, data kept in your browser',
+
+    welcomePunto3: 'Open source, with register export to PDF, XLSX and ODS',
+
+    welcomeComeIniziare: 'How would you like to start?',
+
+    welcomeImportTitolo: 'I already have a backup',
+
+    welcomeImportTesto: 'Import a JSON backup file and restore an existing register.',
+
+    welcomeImportBtn: 'Import backup',
+
+    welcomeNuovoTitolo: 'Start from scratch',
+
+    welcomeNuovoTesto: 'Set up the register by entering the data controller’s details.',
+
+    welcomeNuovoBtn: 'Start',
+
+    welcomeNota: 'To start from scratch you need at least: controller name, register language and controller seat.',
+
     onbTitolo: 'Set up your register',
     onbSottotitolo: 'Enter the data controller\u2019s details and, if appointed, the Data Protection Officer (DPO). These details form the header of your Article 30 GDPR register. Everything stays on your device: it never leaves the browser.',
     onbSezioneTitolare: 'Data controller',
@@ -48,7 +74,7 @@ export default {
     lblDataCreazione: 'Creation date',
     hintLingueRegistro: 'Choose which languages to draft the register in. Enable one or both; the primary language is used by default.',
     erroreNessunaLingua: 'Select at least one language for the register.',
-    onbObbligatorio: '* Required. Also provide at least an email or a certified email (PEC) for the controller.',
+    onbObbligatorio: '* Required to save: name, at least one register language, and the controller’s registered seat (city and country).',
     onbErrore: 'An error occurred while saving. Please try again.',
     btnSalva: 'Save and continue',
 
@@ -103,7 +129,8 @@ export default {
     editorComprimiTutto: 'Collapse all',
     restoreImporta: 'Import / Restore',
     restoreTitoloConferma: 'Confirm restore?',
-    restoreTestoConferma: 'You are about to restore content from the backup file. This REPLACES all current data and cannot be undone. A backup of the current data will be downloaded automatically before restoring.',
+    restoreDisclaimerBackup: 'For safety, before overwriting your current data, ropa30 will automatically download a JSON backup of the current state.',
+    restoreTestoConferma: 'You are about to restore content from the backup file. This REPLACES all current data and cannot be undone.',
     restoreRiepilogoTrattamenti: 'Processing activities in file:',
     restoreRiepilogoData: 'Backup created on:',
     restoreConferma: 'Restore (replace everything)',

@@ -65,6 +65,7 @@ function ropa30App() {
     restoreSummary: null,         // { counts, exportedAt } shown in the confirm dialog
     isRestoreConfirmOpen: false,  // confirmation dialog visibility
     restoreInCorso: false,        // guard against double submit
+    restoreFaraBackup: false,     // true if a safety backup will be downloaded before restore
     restoreMessage: '',           // localized outcome message
     restoreError: false,          // styles the outcome message as error
     // ---- Export registro (Fase 4) ----
@@ -92,6 +93,11 @@ function ropa30App() {
     editErroreSalva: false,
     editNomeMancante: false,
     chiediConfermaAnnulla: false,
+    // ---- Titolare onboarding/modifica (dirty-guard) ----
+    isModificaTitolare: false,    // true when entered via 'Modifica dati titolare'
+    titolareDirty: false,         // a controller field has been changed
+    chiediConfermaAnnullaTitolare: false,
+    _snapTitolare: null,          // snapshot for dirty-check and restore-on-cancel
 
     // Catalog
     _rawTemplates: [],
@@ -107,37 +113,38 @@ function ropa30App() {
     backupInCorso: false,
     erroreBackup: false,
 
+    // Load controller + DPO + register languages from settings into state.
+    // Used by init() and after a restore (so the UI reflects imported settings).
+    async _caricaTitolareDaSettings() {
+      const settings = await getSettings();
+      const lng = (settings.uiLanguage === 'en' || settings.uiLanguage === 'it') ? settings.uiLanguage : 'it';
+      this.lang = lng;
+      document.documentElement.setAttribute('lang', lng);
+      this.settingsCreatedAt = (settings.metadata && settings.metadata.createdAt) || '';
+      const t = settings.titolare || {};
+      const ind = t.indirizzo || {};
+      this.denominazione = t.denominazione || '';
+      this.formaGiuridica = t.formaGiuridica || '';
+      this.codiceFiscale = t.codiceFiscale || '';
+      this.partitaIVA = t.partitaIVA || '';
+      this.telefono = t.telefono || '';
+      this.via = ind.via || ''; this.civico = ind.civico || ''; this.cap = ind.cap || '';
+      this.citta = ind.citta || ''; this.provincia = ind.provincia || ''; this.paese = ind.paese || 'IT';
+      this.email = t.email || ''; this.pec = t.pec || ''; this.sitoWeb = t.sitoWeb || '';
+      const d = settings.dpo || {};
+      this.dpoNominato = !!d.nominato;
+      this.dpoNome = d.nome || ''; this.dpoEmail = d.email || ''; this.dpoPec = d.pec || '';
+      const reg = settings.registro || { lingue: ['it'], linguaPrincipale: 'it' };
+      const lingue = Array.isArray(reg.lingue) && reg.lingue.length ? reg.lingue : ['it'];
+      this.regIt = lingue.indexOf('it') !== -1;
+      this.regEn = lingue.indexOf('en') !== -1;
+      if (!this.regIt && !this.regEn) this.regIt = true;
+      const princ = (reg.linguaPrincipale === 'en' || reg.linguaPrincipale === 'it') ? reg.linguaPrincipale : 'it';
+      this.regPrincipale = (this[princ === 'en' ? 'regEn' : 'regIt']) ? princ : (this.regIt ? 'it' : 'en');
+    },
     async init() {
       try {
-        const settings = await getSettings();
-        const lng = (settings.uiLanguage === 'en' || settings.uiLanguage === 'it') ? settings.uiLanguage : 'it';
-        this.lang = lng;
-        document.documentElement.setAttribute('lang', lng);
-        this.settingsCreatedAt = (settings.metadata && settings.metadata.createdAt) || '';
-
-        const t = settings.titolare || {};
-        const ind = t.indirizzo || {};
-        this.denominazione = t.denominazione || '';
-        this.formaGiuridica = t.formaGiuridica || '';
-        this.codiceFiscale = t.codiceFiscale || '';
-        this.partitaIVA = t.partitaIVA || '';
-        this.telefono = t.telefono || '';
-        this.via = ind.via || ''; this.civico = ind.civico || ''; this.cap = ind.cap || '';
-        this.citta = ind.citta || ''; this.provincia = ind.provincia || ''; this.paese = ind.paese || 'IT';
-        this.email = t.email || ''; this.pec = t.pec || ''; this.sitoWeb = t.sitoWeb || '';
-
-        const d = settings.dpo || {};
-        this.dpoNominato = !!d.nominato;
-        this.dpoNome = d.nome || ''; this.dpoEmail = d.email || ''; this.dpoPec = d.pec || '';
-
-        // Register languages from settings.registro.
-        const reg = settings.registro || { lingue: ['it'], linguaPrincipale: 'it' };
-        const lingue = Array.isArray(reg.lingue) && reg.lingue.length ? reg.lingue : ['it'];
-        this.regIt = lingue.indexOf('it') !== -1;
-        this.regEn = lingue.indexOf('en') !== -1;
-        if (!this.regIt && !this.regEn) this.regIt = true;
-        const princ = (reg.linguaPrincipale === 'en' || reg.linguaPrincipale === 'it') ? reg.linguaPrincipale : 'it';
-        this.regPrincipale = (this[princ === 'en' ? 'regEn' : 'regIt']) ? princ : (this.regIt ? 'it' : 'en');
+        await this._caricaTitolareDaSettings();
 
         await this._assicuraCatalogo();
         await this.caricaTrattamenti();
@@ -153,7 +160,9 @@ function ropa30App() {
           console.warn('[ropa30] storage.persist non disponibile:', e);
         }
 
-        this.view = (this.denominazione.trim() === '') ? 'onboarding' : 'lista';
+        // First run (no controller yet) -> welcome screen (import vs start fresh);
+        // otherwise straight to the list.
+        this.view = (this.denominazione.trim() === '') ? 'welcome' : 'lista';
 
         this.$watch('lang', () => { this._mappaTrattamenti(); this._mappaTemplates(); if (this.view === 'dettaglio' && this.trattamentoCorrente) { this.trattamentoVm = this._costruisciVm(this.trattamentoCorrente); } });
         this.$watch('queryRicerca', () => { this._filtra(); });
@@ -175,6 +184,7 @@ function ropa30App() {
     get footerAuthor()      { return translations[this.lang].footerAuthor; },
 
     // ---- View flags ----
+    get isViewWelcome() { return this.view === 'welcome'; },
     get isViewOnboarding() { return this.view === 'onboarding'; },
     get isViewLista()      { return this.view === 'lista'; },
     get isViewDettaglio() { return this.view === 'dettaglio'; },
@@ -284,10 +294,13 @@ function ropa30App() {
 
     // ---- Onboarding validation ----
     get nonSalvabile() {
+      // Art.30(1)(a): the controller must be identified and locatable. We require
+      // the name plus the registered seat (city + country). Email/PEC/phone stay
+      // optional (a phone number does not identify a controller; a seat does).
       const hasDen = this.denominazione.trim().length > 0;
-      const hasCont = this.email.trim().length > 0 || this.pec.trim().length > 0;
+      const hasSede = this.citta.trim().length > 0 && this.paese.trim().length > 0;
       const hasLingua = this.regIt || this.regEn;
-      return !(hasDen && hasCont && hasLingua);
+      return !(hasDen && hasSede && hasLingua);
     },
     get salvaDisabilitato() { return this.nonSalvabile || this.saving; },
     get dataCreazioneVisuale() {
@@ -509,6 +522,12 @@ function ropa30App() {
         }
         this.restoreEnvelope = envelope;
         this.restoreSummary = summary;
+        // A preventive backup is made only if there is existing data worth
+        // protecting (controller name set, or processing activities present).
+        // From a cold start (welcome / empty DB) there is nothing to back up.
+        this.restoreFaraBackup =
+          this.denominazione.trim() !== '' ||
+          (Array.isArray(this._rawTrattamenti) && this._rawTrattamenti.length > 0);
         this.isRestoreConfirmOpen = true;
       } catch (err) {
         console.error('[ropa30] fileSelezionato() error:', err);
@@ -525,18 +544,22 @@ function ropa30App() {
       this.restoreError = false;
       this.restoreMessage = '';
       try {
-        // 1) Safety net: download a backup of the CURRENT data first.
-        try {
-          const current = await exportAllData();
-          scaricaBackup(current);
-        } catch (e) {
-          console.error('[ropa30] auto-backup before restore failed:', e);
+        // 1) Safety net: download a backup of the CURRENT data first,
+        // but ONLY if there is existing data (skip on cold start / empty DB).
+        if (this.restoreFaraBackup) {
+          try {
+            const current = await exportAllData();
+            scaricaBackup(current);
+          } catch (e) {
+            console.error('[ropa30] auto-backup before restore failed:', e);
+          }
         }
         // 2) Replace the database with the imported envelope.
         // Deep-clone to strip the Alpine Proxy (Dexie cannot structured-clone a Proxy).
         const plainEnvelope = JSON.parse(JSON.stringify(this.restoreEnvelope));
         const result = await importAllData(plainEnvelope, { mode: 'replace' });
-        // 3) Refresh the list and close.
+        // 3) Reload controller/settings AND the list into state (no manual refresh).
+        await this._caricaTitolareDaSettings();
         await this.caricaTrattamenti();
         this.isRestoreConfirmOpen = false;
         this.restoreEnvelope = null;
@@ -563,7 +586,62 @@ function ropa30App() {
 
 
     // ---- Navigation ----
-    vaiAOnboarding() { this.erroreSalvataggio = false; this.view = 'onboarding'; },
+    // Welcome -> start fresh: open the controller form (first-run, not edit mode).
+    welcomeIniziaDaZero() {
+      this.erroreSalvataggio = false;
+      this.isModificaTitolare = false;
+      this.titolareDirty = false;
+      this._snapTitolare = null;
+      this.view = 'onboarding';
+    },
+    // Welcome -> import: kick off the existing restore flow (file picker).
+    welcomeImportaBackup() {
+      this.apriSelezioneFile();
+    },
+    // Enter the controller form in EDIT mode (from 'Modifica dati titolare').
+    vaiAOnboarding() {
+      this.erroreSalvataggio = false;
+      this.isModificaTitolare = true;
+      this._snapTitolare = this._snapshotTitolare();
+      this.titolareDirty = false;
+      this.chiediConfermaAnnullaTitolare = false;
+      this.view = 'onboarding';
+    },
+    // Capture all controller/DPO/language fields, for dirty-check and restore.
+    _snapshotTitolare() {
+      return {
+        denominazione: this.denominazione, formaGiuridica: this.formaGiuridica,
+        codiceFiscale: this.codiceFiscale, partitaIVA: this.partitaIVA, telefono: this.telefono,
+        via: this.via, civico: this.civico, cap: this.cap, citta: this.citta,
+        provincia: this.provincia, paese: this.paese, email: this.email, pec: this.pec,
+        sitoWeb: this.sitoWeb, dpoNominato: this.dpoNominato, dpoNome: this.dpoNome,
+        dpoEmail: this.dpoEmail, dpoPec: this.dpoPec,
+        regIt: this.regIt, regEn: this.regEn, regPrincipale: this.regPrincipale
+      };
+    },
+    // Restore controller fields from the snapshot (discard edits on cancel).
+    _ripristinaTitolare() {
+      const sN = this._snapTitolare;
+      if (!sN) return;
+      for (const k of Object.keys(sN)) { this[k] = sN[k]; }
+    },
+    // Mark the controller form dirty (bound to field inputs in the view).
+    segnaTitolareDirty() { if (this.isModificaTitolare) this.titolareDirty = true; },
+    // Cancel controller editing: ask confirmation only if there are unsaved edits.
+    annullaModificaTitolare() {
+      if (this.titolareDirty) { this.chiediConfermaAnnullaTitolare = true; return; }
+      this._uscitaDaTitolare();
+    },
+    confermaAnnullaTitolare() { this._uscitaDaTitolare(); },
+    annullaAnnullaTitolare() { this.chiediConfermaAnnullaTitolare = false; },
+    _uscitaDaTitolare() {
+      this._ripristinaTitolare();
+      this.titolareDirty = false;
+      this.isModificaTitolare = false;
+      this.chiediConfermaAnnullaTitolare = false;
+      this._snapTitolare = null;
+      this.view = 'lista';
+    },
     vaiAllaLista()   { this.view = 'lista'; },
 
     // ---- Detail (read-only) ----
@@ -826,6 +904,10 @@ function ropa30App() {
           registro: { lingue, linguaPrincipale: principale }
         });
 
+        this.isModificaTitolare = false;
+        this.titolareDirty = false;
+        this._snapTitolare = null;
+        this.chiediConfermaAnnullaTitolare = false;
         this.view = 'lista';
       } catch (err) {
         console.error('[ropa30] salvaOnboarding() error:', err);

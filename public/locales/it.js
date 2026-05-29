@@ -25,6 +25,32 @@ export default {
     footerLicense: 'Rilasciato sotto AGPL-3.0-or-later',
     footerAuthor: 'Realizzato da',
 
+    welcomeTitolo: 'Registro delle attività di trattamento',
+
+    welcomeIntro: 'ropa30 consente di creare, aggiornare ed esportare il Registro delle attività di trattamento previsto dall’art. 30 GDPR, in modalità local-first e senza inviare dati a server esterni.',
+
+    welcomePunto1: 'Struttura conforme all’art. 30 del Regolamento (UE) 2016/679',
+
+    welcomePunto2: 'Local-first: nessun account, nessun cloud, dati conservati nel browser',
+
+    welcomePunto3: 'Open source e con export del registro in PDF, XLSX e ODS',
+
+    welcomeComeIniziare: 'Come vuoi iniziare?',
+
+    welcomeImportTitolo: 'Ho già un backup',
+
+    welcomeImportTesto: 'Importa un file JSON di backup e ripristina un registro già creato.',
+
+    welcomeImportBtn: 'Importa backup',
+
+    welcomeNuovoTitolo: 'Inizia da zero',
+
+    welcomeNuovoTesto: 'Configura il registro inserendo i dati del titolare del trattamento.',
+
+    welcomeNuovoBtn: 'Inizia',
+
+    welcomeNota: 'Per iniziare da zero sono necessari almeno: denominazione del titolare, lingua del registro e sede del titolare.',
+
     onbTitolo: 'Configura il registro',
     onbSottotitolo: 'Inserisci i dati del titolare del trattamento e, se nominato, del Responsabile della protezione dei dati (DPO). Questi dati costituiscono l\u2019intestazione del tuo registro ex art. 30 GDPR. Restano sul tuo dispositivo: non lasciano mai il browser.',
     onbSezioneTitolare: 'Titolare del trattamento',
@@ -48,7 +74,7 @@ export default {
     lblDataCreazione: 'Data di creazione',
     hintLingueRegistro: 'Scegli in quali lingue redigere il registro. Puoi abilitarne una o entrambe; la lingua principale \u00e8 quella usata per impostazione predefinita.',
     erroreNessunaLingua: 'Seleziona almeno una lingua per il registro.',
-    onbObbligatorio: '* Campo obbligatorio. Indica inoltre almeno una email o una PEC del titolare.',
+    onbObbligatorio: '* Campi obbligatori per salvare: denominazione, almeno una lingua del registro e la sede del titolare (città e Stato).',
     onbErrore: 'Si \u00e8 verificato un errore durante il salvataggio. Riprova.',
     btnSalva: 'Salva e continua',
 
@@ -103,7 +129,8 @@ export default {
     editorComprimiTutto: 'Comprimi tutto',
     restoreImporta: 'Importa / Ripristina',
     restoreTitoloConferma: 'Confermi il ripristino?',
-    restoreTestoConferma: 'Stai per ripristinare il contenuto dal file di backup. Questa operazione SOSTITUISCE tutti i dati attuali ed è irreversibile. Prima del ripristino verrà scaricato automaticamente un backup dei dati attuali.',
+    restoreDisclaimerBackup: 'Per sicurezza, prima di sovrascrivere i dati attuali, ropa30 scaricherà automaticamente un backup JSON dello stato corrente.',
+    restoreTestoConferma: 'Stai per ripristinare il contenuto dal file di backup. Questa operazione SOSTITUISCE tutti i dati attuali ed è irreversibile.',
     restoreRiepilogoTrattamenti: 'Trattamenti nel file:',
     restoreRiepilogoData: 'Backup creato il:',
     restoreConferma: 'Ripristina (sostituisci tutto)',
