@@ -20,6 +20,12 @@ e della sicurezza.
 
 ---
 
+## Documentazione
+
+📖 **Guida utente (IT/EN):** [codeberg.org/nicfab/ropa30/wiki](https://codeberg.org/nicfab/ropa30/wiki)
+
+---
+
 ## Perché ropa30?
 
 La maggior parte degli strumenti per il registro dei trattamenti rientra in una
