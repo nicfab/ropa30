@@ -28,6 +28,8 @@ export default {
     footerEmailLabel: 'Email',
     footerRepoAria: 'Source code and issues on Codeberg (opens in a new tab)',
     footerEmailAria: 'Send a support email',
+    footerGuidaLabel: 'Guide',
+    footerGuidaUrl: 'https://codeberg.org/nicfab/ropa30/wiki/Home-en',
     btnAzioni: 'Actions',
     tabRegistroTitolare: 'Controller register',
     tabRegistroResponsabile: 'Processor register',
