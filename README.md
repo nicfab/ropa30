@@ -19,6 +19,12 @@ background — while remaining rigorous from a legal and security standpoint.
 
 ---
 
+## Documentation
+
+📖 **User guide (IT/EN):** [codeberg.org/nicfab/ropa30/wiki](https://codeberg.org/nicfab/ropa30/wiki)
+
+---
+
 ## Why ropa30?
 
 Most ROPA tools on the market are either:
