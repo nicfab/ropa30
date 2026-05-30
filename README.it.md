@@ -1,3 +1,5 @@
+![ropa30 — Il registro dei trattamenti GDPR, semplice.](public/og-image.jpg)
+
 # ropa30
 
 > Il registro dei trattamenti GDPR, semplice.
