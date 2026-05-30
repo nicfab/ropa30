@@ -45,6 +45,10 @@ export default {
 
     welcomePunto3: 'Open source e con export del registro in PDF, XLSX e ODS',
 
+    welcomePunto4: 'Backup in formato JSON per conservare i tuoi dati e ripristinarli quando vuoi',
+
+    welcomeNotaStorage: 'I dati restano salvati nel tuo browser. Il browser potrebbe chiederti di consentire l\u2019archiviazione persistente: concederla aiuta a ridurre il rischio che i dati vengano rimossi automaticamente. In ogni caso, esporta regolarmente un backup JSON per conservare il registro al sicuro.',
+
     welcomeComeIniziare: 'Come vuoi iniziare?',
 
     welcomeImportTitolo: 'Ho già un backup',

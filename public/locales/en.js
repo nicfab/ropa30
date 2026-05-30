@@ -45,6 +45,10 @@ export default {
 
     welcomePunto3: 'Open source, with register export to PDF, XLSX and ODS',
 
+    welcomePunto4: 'JSON backup to keep your data safe and restore it whenever you need',
+
+    welcomeNotaStorage: 'Your data stays saved in your browser. The browser may ask you to allow persistent storage: granting it helps reduce the risk of your data being removed automatically. In any case, export a JSON backup regularly to keep your register safe.',
+
     welcomeComeIniziare: 'How would you like to start?',
 
     welcomeImportTitolo: 'I already have a backup',
