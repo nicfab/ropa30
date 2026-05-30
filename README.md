@@ -1,4 +1,4 @@
-![ropa30 — The GDPR Article 30 register, simplified.](public/og-image.jpg)
+![ropa30 — The GDPR Article 30 register, simplified.](https://ropa30.eu/og-image.jpg)
 
 # ropa30
 
