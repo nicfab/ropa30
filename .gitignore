@@ -146,6 +146,9 @@ vite.config.ts.timestamp-*
 
 
 # ---> ropa30 project-specific
+# Script di deploy personale (NON versionare)
+deploy.sh
+
 # Backup locali dei template e di altri file (creati durante l'editing)
 *.bak
 *.backup-*
