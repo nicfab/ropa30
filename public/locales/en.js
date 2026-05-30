@@ -196,7 +196,7 @@ export default {
     exportTitolo: 'Export the register',
     exportSottotitolo: 'Choose the document format to generate.',
     exportPdf: 'PDF',
-    exportPdfDesc: 'For printing, archiving and exhibition.',
+    exportPdfDesc: 'For printing, retention and submission.',
     exportXlsx: 'XLSX',
     exportXlsxDesc: 'For processing in Microsoft Excel.',
     exportOds: 'ODS',
