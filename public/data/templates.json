@@ -2086,7 +2086,7 @@
       },
       "noteTemplate": {
         "it": "Struttura analoga al template clientela B2B, ma con il Titolare nel ruolo di committente/cliente del fornitore. Base giuridica: art. 6(1)(b) se il fornitore è persona fisica/ditta individuale (parte del contratto); art. 6(1)(f) per i dati dei referenti di fornitori-società; art. 6(1)(c) per gli obblighi fiscali e contabili. Per gli appalti pubblici (rilevante per il settore PA) si aggiungono verifiche specifiche (DURC, requisiti, antimafia) con basi giuridiche proprie.",
-        "en": "Structure analogous to the B2B customer template, but with the Controller in the role of client/customer of the supplier. Legal basis: Art. 6(1)(b) if the supplier is a natural person/sole proprietor (party to the contract); Art. 6(1)(f) for data of contacts of supplier-companies; Art. 6(1)(c) for tax and accounting obligations. For public procurement (relevant for the PA sector), specific checks are added (DURC, requirements, anti-mafia) with their own legal bases."
+        "en": "Structure analogous to the B2B customer template, but with the Controller in the role of client/customer of the supplier. Legal basis: Art. 6(1)(b) if the supplier is a natural person/sole proprietor (party to the contract); Art. 6(1)(f) for data of contacts of supplier-companies; Art. 6(1)(c) for tax and accounting obligations. For public procurement, specific checks are added (contribution-compliance certification, eligibility requirements, anti-organised-crime checks) with their own legal bases."
       },
       "scenari": {
         "it": [
@@ -2150,7 +2150,7 @@
           ],
           "dettagliArt6": {
             "it": "Art. 6(1)(b) GDPR per l'esecuzione del contratto, quando il fornitore è persona fisica/ditta individuale/professionista (parte del contratto). Art. 6(1)(f) GDPR (legittimo interesse) per il trattamento dei dati dei referenti/contatti di fornitori che sono persone giuridiche. Art. 6(1)(c) GDPR per gli obblighi fiscali, contabili e, ove applicabile, per le verifiche di legge (es. DURC negli appalti).",
-            "en": "GDPR Art. 6(1)(b) for contract performance, when the supplier is a natural person/sole proprietor/professional (party to the contract). GDPR Art. 6(1)(f) (legitimate interest) for processing data of contacts/representatives of suppliers that are legal entities. GDPR Art. 6(1)(c) for tax, accounting and, where applicable, legal verification obligations (e.g. DURC in procurement)."
+            "en": "GDPR Art. 6(1)(b) for contract performance, when the supplier is a natural person/sole proprietor/professional (party to the contract). GDPR Art. 6(1)(f) (legitimate interest) for processing data of contacts/representatives of suppliers that are legal entities. GDPR Art. 6(1)(c) for tax, accounting and, where applicable, legal verification obligations (e.g. contribution-compliance certification in procurement)."
           },
           "legittimoInteresseDettagli": {
             "descrizione": {
@@ -2178,7 +2178,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Negli appalti pubblici possono rilevare dati relativi a condanne penali / antimafia (art. 10 GDPR, Codice antimafia d.lgs. 159/2011, Codice dei contratti pubblici). In tal caso il trattamento ha base normativa specifica. Per il settore privato, di regola non si trattano tali dati, salvo specifici obblighi normativi o verifiche richieste da normative settoriali applicabili.",
-            "en": "In public procurement, criminal-conviction / anti-mafia data may be relevant (GDPR Art. 10, Italian Anti-Mafia Code d.lgs. 159/2011, Public Contracts Code). In that case processing has a specific legal basis. In the private sector, such data is generally not processed, except for specific legal obligations or verifications required by applicable sector legislation."
+            "en": "In public procurement, criminal-conviction or anti-organised-crime data may be relevant (Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards, and applicable anti-organised-crime and public-procurement rules). In that case processing has a specific legal basis. In the private sector, such data is generally not processed, except for specific legal obligations or verifications required by applicable sector legislation."
           }
         },
         "categorieInteressati": [
@@ -2218,7 +2218,7 @@
           },
           {
             "it": "Eventuali dati per verifiche di legge negli appalti pubblici (DURC, requisiti, autocertificazioni)",
-            "en": "Any data for legal verifications in public procurement (DURC, requirements, self-certifications)"
+            "en": "Any data for legal verifications in public procurement (contribution-compliance certification, eligibility requirements, self-certifications)"
           },
           {
             "it": "Eventuali verifiche antiriciclaggio, liste sanzioni o due diligence reputazionale, solo ove richieste o giustificate dalla normativa applicabile o dal settore di attività",
@@ -2249,7 +2249,7 @@
           },
           {
             "it": "Enti pubblici per verifiche di legge (INPS/INAIL per DURC, Prefettura per antimafia negli appalti)",
-            "en": "Public bodies for legal verifications (INPS/INAIL for DURC, Prefecture for anti-mafia in procurement)"
+            "en": "Public bodies for legal verifications (social-security and workplace-insurance authorities for contribution-compliance certification, the competent authority for anti-organised-crime checks in procurement)"
           },
           {
             "it": "Eventuali auditor, organismi di certificazione o clienti che richiedano verifiche sulla supply chain, nei limiti applicabili",
@@ -2290,11 +2290,11 @@
         "tempiConservazione": {
           "periodo": {
             "it": "Per la durata del rapporto contrattuale + termini di prescrizione e obblighi fiscali (di regola 10 anni ex art. 2220 c.c.).",
-            "en": "For the duration of the contractual relationship + prescription terms and tax obligations (as a rule 10 years under Italian Civil Code Art. 2220)."
+            "en": "For the duration of the contractual relationship and for the applicable limitation periods and tax retention obligations."
           },
           "criteri": {
             "it": "I dati contrattuali e fiscali sono conservati 10 anni ex art. 2220 c.c. I dati di contatto dei referenti sono aggiornati periodicamente; cancellati, anonimizzati o sostituiti al termine del rapporto, salvo necessità di tutela legale. Negli appalti pubblici si applicano i termini di conservazione documentale previsti dalla normativa di settore.",
-            "en": "Contractual and tax data are kept for 10 years under Italian Civil Code Art. 2220. Contact data of representatives are periodically updated; deleted, anonymized or replaced at the end of the relationship, except for legal protection needs. In public procurement, the document retention terms set by sector legislation apply."
+            "en": "Contractual and tax data are kept under applicable tax and accounting retention rules. Contact data of representatives are periodically updated; deleted, anonymized or replaced at the end of the relationship, except for legal protection needs. In public procurement, the document retention terms set by sector legislation apply."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -2387,7 +2387,7 @@
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 13, 14; Codice privacy (d.lgs. 196/2003); art. 2220 c.c. (conservazione documenti contabili); per gli appalti pubblici: d.lgs. 36/2023 (Codice dei contratti pubblici), d.lgs. 159/2011 (Codice antimafia), normativa DURC.",
-          "en": "Relevant legal references: GDPR Arts. 6, 13, 14; Italian Privacy Code (d.lgs. 196/2003); Italian Civil Code Art. 2220 (retention of accounting documents); for public procurement: d.lgs. 36/2023 (Public Contracts Code), d.lgs. 159/2011 (Anti-Mafia Code), DURC legislation."
+          "en": "Relevant legal references: GDPR Arts. 6, 13, 14; applicable tax and accounting retention rules; for public procurement: applicable public-procurement rules, anti-organised-crime checks and contribution-compliance certification rules."
         }
       }
     },
