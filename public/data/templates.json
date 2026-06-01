@@ -1381,7 +1381,7 @@
       },
       "noteTemplate": {
         "it": "Il cliente consumatore è direttamente l'interessato. La base giuridica primaria è l'esecuzione del contratto (art. 6(1)(b)). ATTENZIONE: il marketing verso i clienti NON è coperto dalla base contrattuale e va gestito separatamente (consenso o soft opt-in ex art. 130 Codice privacy — vedi template Newsletter). Per l'e-commerce, valuta anche cookie e tracciamento (template separato). Se tratti dati di minori, applica cautele specifiche, distinguendo tra servizi della società dell'informazione basati sul consenso ex art. 8 GDPR e rapporti contrattuali soggetti anche alle regole civilistiche sulla capacità del minore.",
-        "en": "The consumer customer is directly the data subject. The primary legal basis is contract performance (Art. 6(1)(b)). WARNING: marketing toward customers is NOT covered by the contractual basis and must be managed separately (consent or soft opt-in under Italian Privacy Code Art. 130 — see Newsletter template). For e-commerce, also assess cookies and tracking (separate template). If processing minors' data, apply specific safeguards, distinguishing between information-society services based on consent under GDPR Art. 8 and contractual relationships also subject to civil-law rules on the minor's capacity."
+        "en": "The consumer customer is directly the data subject. The primary legal basis is contract performance (Art. 6(1)(b)). WARNING: marketing toward customers is NOT covered by the contractual basis and must be managed separately (consent or soft opt-in under Art. 13 of Directive 2002/58/EC — see Newsletter template). For e-commerce, also assess cookies and tracking (separate template). If processing minors' data, apply specific safeguards, distinguishing between information-society services based on consent under GDPR Art. 8 and contractual relationships also subject to civil-law rules on the minor's capacity."
       },
       "scenari": {
         "it": [
@@ -1445,7 +1445,7 @@
           ],
           "dettagliArt6": {
             "it": "Art. 6(1)(b) GDPR: esecuzione del contratto di vendita/servizio di cui l'interessato è parte. Art. 6(1)(c) GDPR: adempimenti fiscali e contabili (fatturazione, conservazione documenti). Art. 6(1)(f) GDPR per la gestione di resi, contestazioni, prevenzione frodi e tutela dei diritti del Titolare. Il marketing NON è coperto da queste basi e richiede consenso o soft opt-in (art. 130 Codice privacy).",
-            "en": "GDPR Art. 6(1)(b): performance of the sales/service contract to which the data subject is a party. GDPR Art. 6(1)(c): tax and accounting obligations (invoicing, document retention). GDPR Art. 6(1)(f) for managing returns, disputes, fraud prevention and protection of the Controller's rights. Marketing is NOT covered by these bases and requires consent or soft opt-in (Italian Privacy Code Art. 130)."
+            "en": "GDPR Art. 6(1)(b): performance of the sales/service contract to which the data subject is a party. GDPR Art. 6(1)(c): tax and accounting obligations (invoicing, document retention). GDPR Art. 6(1)(f) for managing returns, disputes, fraud prevention and protection of the Controller's rights. Marketing is NOT covered by these bases and requires consent or soft opt-in (Art. 13 of Directive 2002/58/EC)."
           },
           "legittimoInteresseDettagli": {
             "descrizione": {
@@ -1623,11 +1623,11 @@
         "tempiConservazione": {
           "periodo": {
             "it": "Per la durata del rapporto + termini fiscali e di garanzia (di regola 10 anni ex art. 2220 c.c. per i documenti contabili).",
-            "en": "For the duration of the relationship + tax and warranty terms (as a rule 10 years under Italian Civil Code Art. 2220 for accounting documents)."
+            "en": "For the duration of the relationship and for the applicable tax, accounting and warranty retention periods."
           },
           "criteri": {
             "it": "Dati contrattuali e fiscali: 10 anni ex art. 2220 c.c. Dati dell'account cliente: fino alla cancellazione dell'account o, in caso di inattività prolungata, secondo un termine definito nella policy interna, previa eventuale comunicazione all'interessato ove opportuno. Dati di consegna: per il tempo necessario all'evasione dell'ordine e alla gestione di resi/garanzie.",
-            "en": "Contractual and tax data: 10 years under Italian Civil Code Art. 2220. Customer account data: until account deletion or, in case of prolonged inactivity, according to a term defined in the internal policy, with prior notice to the data subject where appropriate. Delivery data: for the time needed to fulfill the order and manage returns/warranties."
+            "en": "Contractual and tax data: retained under applicable tax and accounting retention rules. Customer account data: until account deletion or, in case of prolonged inactivity, according to a term defined in the internal policy, with prior notice to the data subject where appropriate. Delivery data: for the time needed to fulfill the order and manage returns/warranties."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -1728,7 +1728,7 @@
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 8 (minori), 13, 22; Codice privacy (d.lgs. 196/2003) art. 130 (marketing); Codice del Consumo (d.lgs. 206/2005) per gli aspetti contrattuali; art. 2220 c.c. (conservazione documenti contabili); standard PCI-DSS per i dati di pagamento.",
-          "en": "Relevant legal references: GDPR Arts. 6, 8 (minors), 13, 22; Italian Privacy Code (d.lgs. 196/2003) Art. 130 (marketing); Italian Consumer Code (d.lgs. 206/2005) for contractual aspects; Italian Civil Code Art. 2220 (retention of accounting documents); PCI-DSS standard for payment data."
+          "en": "Relevant legal references: GDPR Arts. 6, 8 (minors), 13, 22; Art. 13 of Directive 2002/58/EC (marketing); applicable consumer-protection rules for contractual aspects; applicable tax and accounting retention rules; PCI-DSS standard for payment data."
         }
       }
     },
