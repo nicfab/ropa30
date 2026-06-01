@@ -3569,7 +3569,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Negli studi legali il trattamento di dati relativi a condanne penali, reati, procedimenti penali, indagini, misure o atti giudiziari può essere fisiologico, ma deve avvenire solo se pertinente e necessario rispetto all'incarico, nei limiti della normativa applicabile e delle finalità di assistenza, consulenza, difesa o tutela dei diritti. Vanno distinti gli atti di procedimenti civili (che non costituiscono di per sé dati ex art. 10) dai dati relativi a condanne penali, reati o misure di sicurezza.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). In law firms, processing of data on criminal convictions, offences, criminal proceedings, investigations, measures or judicial acts may be ordinary, but must take place only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. A distinction must be made between civil-proceedings acts (which do not in themselves constitute Art. 10 data) and data on criminal convictions, offences or security measures."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. In law firms, processing of data on criminal convictions, offences, criminal proceedings, investigations, measures or judicial acts may be ordinary, but must take place only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. A distinction must be made between civil-proceedings acts (which do not in themselves constitute Art. 10 data) and data on criminal convictions, offences or security measures."
           }
         },
         "categorieInteressati": [
@@ -3904,7 +3904,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy. Il fascicolo può contenere dati relativi a condanne penali e reati quando l'incarico di riferimento lo comporta; tali dati seguono la liceità e i limiti dell'incarico e ricevono protezione rafforzata nell'archiviazione.",
-            "en": "GDPR Art. 10 and Art. 2-octies Italian Privacy Code. The file may contain data on criminal convictions and offences where the underlying engagement involves them; such data follows the lawfulness and limits of the engagement and receives enhanced protection in archiving."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. The file may contain data on criminal convictions and offences where the underlying engagement involves them; such data follows the lawfulness and limits of the engagement and receives enhanced protection in archiving."
           }
         },
         "categorieInteressati": [
@@ -4246,7 +4246,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy. Nel contenzioso il trattamento di dati su condanne penali, reati, procedimenti o misure può essere necessario alla difesa; vanno distinti gli atti di procedimenti civili (di per sé non dati ex art. 10) dai dati relativi a condanne/reati. Trattamento limitato a quanto pertinente e necessario alla lite.",
-            "en": "GDPR Art. 10 and Art. 2-octies Italian Privacy Code. In litigation, processing data on criminal convictions, offences, proceedings or measures may be necessary for the defense; civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data. Processing limited to what is relevant and necessary to the dispute."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. In litigation, processing data on criminal convictions, offences, proceedings or measures may be necessary for the defense; civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data. Processing limited to what is relevant and necessary to the dispute."
           }
         },
         "categorieInteressati": [
@@ -4570,7 +4570,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Di regola NON trattati nella consulenza ordinaria non contenziosa (default: presenti = No). Se la consulenza implica dati giudiziari o profili penali (es. due diligence su profili 231, compliance penale), il titolare deve valorizzare art. 10 GDPR e art. 2-octies Codice privacy, con trattamento limitato a quanto pertinente e necessario e apposita base.",
-            "en": "Generally NOT processed in ordinary non-contentious advice (default: present = No). If the advice involves judicial data or criminal aspects (e.g. due diligence on Legislative Decree 231 profiles, criminal compliance), the controller must populate GDPR Art. 10 and Art. 2-octies Italian Privacy Code, with processing limited to what is relevant and necessary and an appropriate basis."
+            "en": "Generally NOT processed in ordinary non-contentious advice (default: present = No). If the advice involves judicial data or criminal aspects (e.g. due diligence on Legislative Decree 231 profiles, criminal compliance), the controller must populate Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards, with processing limited to what is relevant and necessary and an appropriate basis."
           }
         },
         "categorieInteressati": [
@@ -4885,7 +4885,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Nella difesa in giudizio, in particolare penale, il trattamento di dati relativi a condanne penali, reati, imputazioni, indagini e misure di sicurezza e' centrale e necessario all'esercizio del diritto di difesa, nei limiti della normativa processuale e di protezione dei dati. Particolare attenzione al segreto investigativo e alla disciplina delle indagini difensive.",
-            "en": "GDPR Art. 10 and Art. 2-octies Italian Privacy Code (d.lgs. 196/2003). In defense in court, particularly criminal, processing data on criminal convictions, offences, charges, investigations and security measures is central and necessary to exercising the right of defense, within the limits of procedural and data-protection rules. Particular attention to investigative secrecy and the defensive-investigations rules."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. In defense in court, particularly criminal, processing data on criminal convictions, offences, charges, investigations and security measures is central and necessary to exercising the right of defense, within the limits of procedural and data-protection rules. Particular attention to investigative secrecy and the defensive-investigations rules."
           }
         },
         "categorieInteressati": [
@@ -5231,7 +5231,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Questo trattamento costituisce il presidio organizzativo principale per la gestione dei dati ex art. 10 trattati dallo studio: condanne penali, reati, procedimenti penali, indagini, misure, atti giudiziari e risultanze del casellario giudiziale e dei carichi pendenti. Il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico, nei limiti della normativa applicabile e delle finalità di assistenza, consulenza, difesa o tutela dei diritti. Vanno distinti gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). This processing activity is the firm's primary locus of Art. 10 data: criminal convictions, offences, criminal proceedings, investigations, measures, judicial acts and criminal-record and pending-charges results. Processing is permitted only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from data on criminal convictions, offences or security measures."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. This processing activity is the firm's primary locus of Art. 10 data: criminal convictions, offences, criminal proceedings, investigations, measures, judicial acts and criminal-record and pending-charges results. Processing is permitted only if relevant and necessary to the engagement, within the limits of applicable law and the purposes of assistance, advice, defense or protection of rights. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from data on criminal convictions, offences or security measures."
           }
         },
         "categorieInteressati": [
@@ -5339,7 +5339,7 @@
           },
           "criteri": {
             "it": "Conservazione della documentazione giudiziaria per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; particolare attenzione alla minimizzazione e alla cancellazione dei dati ex art. 9/art. 10 non più necessari; verifica periodica e cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of judicial documentation for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; particular attention to minimisation and deletion of Art. 9/Art. 10 data no longer needed; periodic review and deletion or anonymisation when needs cease."
+            "en": "Retention of judicial documentation for the period necessary to defend against any professional-liability actions (generally until the applicable limitation period for liability claims elapses) and for legal obligations; documented litigation hold in case of litigation; particular attention to minimisation and deletion of Art. 9/Art. 10 data no longer needed; periodic review and deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -5554,7 +5554,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli atti depositati o notificati possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'adempimento processuale e all'incarico, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). Filed or served acts may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to procedural compliance and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. Filed or served acts may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to procedural compliance and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
           }
         },
         "categorieInteressati": [
@@ -5666,7 +5666,7 @@
           },
           "criteri": {
             "it": "Conservazione di atti, ricevute ed esiti per il periodo necessario a documentare la validità di depositi e notifiche e a difendersi da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of acts, receipts and outcomes for the period necessary to document the validity of filings and service and to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention of acts, receipts and outcomes for the period necessary to document the validity of filings and service and to defend against any professional-liability actions (generally until the applicable limitation period for liability claims elapses); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -5881,7 +5881,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli atti, le istanze e i certificati scambiati con autorità giudiziarie e cancellerie possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico e all'adempimento, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The acts, applications and certificates exchanged with judicial authorities and registries may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to the engagement and compliance, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. The acts, applications and certificates exchanged with judicial authorities and registries may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to the engagement and compliance, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
           }
         },
         "categorieInteressati": [
@@ -5993,7 +5993,7 @@
           },
           "criteri": {
             "it": "Conservazione di atti, istanze, copie, certificati ed esiti dei rapporti con gli uffici per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of acts, applications, copies, certificates and outcomes of relations with the offices for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention of acts, applications, copies, certificates and outcomes of relations with the offices for the period necessary to defend against any professional-liability actions (generally until the applicable limitation period for liability claims elapses) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -6204,7 +6204,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). La corrispondenza e gli atti scambiati con la parte avversa o con i legali esterni possono contenere dati relativi a condanne penali, reati, procedimenti o misure; il trattamento è ammesso solo se pertinente e necessario rispetto al contraddittorio e all'incarico, nei limiti della normativa applicabile. Distinguere gli atti di procedimenti civili, che non costituiscono di per sé dati ex art. 10 salvo che contengano informazioni relative a condanne penali, reati, misure o procedimenti penali.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The correspondence and acts exchanged with the opposing side or external lawyers may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to cross-examination and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. The correspondence and acts exchanged with the opposing side or external lawyers may contain data on criminal convictions, offences, proceedings or measures; processing is permitted only if relevant and necessary to cross-examination and the engagement, within the limits of applicable law. Civil-proceedings acts (not in themselves Art. 10 data) must be distinguished from conviction/offence data."
           }
         },
         "categorieInteressati": [
@@ -6312,7 +6312,7 @@
           },
           "criteri": {
             "it": "Conservazione della corrispondenza e degli atti scambiati per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of correspondence and exchanged acts for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention of correspondence and exchanged acts for the period necessary to defend against any professional-liability actions (generally until the applicable limitation period for liability claims elapses) and for legal obligations; documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -6635,7 +6635,7 @@
           },
           "criteri": {
             "it": "Conservazione di perizie, relazioni e risultanze investigative per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di legge; particolare attenzione alla minimizzazione e alla cancellazione dei dati raccolti nelle indagini difensive non più necessari; litigation hold documentato in caso di contenzioso; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of expert opinions, reports and investigative findings for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for legal obligations; particular attention to minimisation and deletion of data collected in defensive investigations no longer needed; documented litigation hold in case of litigation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention of expert opinions, reports and investigative findings for the period necessary to defend against any professional-liability actions (generally until the applicable limitation period for liability claims elapses) and for legal obligations; particular attention to minimisation and deletion of data collected in defensive investigations no longer needed; documented litigation hold in case of litigation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -7162,7 +7162,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Di regola non presenti come finalità propria: la verifica dei conflitti non ha per oggetto dati ex art. 10. Qualora un nominativo o una posizione facciano incidentalmente riferimento a procedimenti penali, il dato va minimizzato e mantenuto nel fascicolo pertinente, non nel registro conflitti. Se il titolare ritiene di trattarli, valutare la condizione ex art. 10 GDPR e art. 2-octies Codice privacy.",
-            "en": "Generally not present as an autonomous purpose: the conflict check does not target Art. 10 data. Should a name or position incidentally refer to criminal proceedings, the data must be minimised and kept in the relevant case file, not in the conflicts register. If the controller decides to process it, assess the condition under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code."
+            "en": "Generally not present as an autonomous purpose: the conflict check does not target Art. 10 data. Should a name or position incidentally refer to criminal proceedings, the data must be minimised and kept in the relevant case file, not in the conflicts register. If the controller decides to process it, assess the condition under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards."
           }
         },
         "categorieInteressati": [
@@ -7262,7 +7262,7 @@
           },
           "criteri": {
             "it": "Conservazione del registro conflitti e degli esiti delle verifiche per il periodo necessario alla prova delle verifiche svolte (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione costante; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of the conflicts register and the outcomes of the checks for the period necessary to prove the checks carried out (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); constant minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention of the conflicts register and the outcomes of the checks for the period necessary to prove the checks carried out (generally until the applicable limitation period for liability claims elapses); constant minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -7468,7 +7468,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). La procura o il mandato possono riguardare procedimenti penali o accedere a dati giudiziari (es. procura per la difesa penale); il trattamento di tali dati è ammesso solo se pertinente e necessario rispetto all'incarico rappresentato, nei limiti della normativa applicabile.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The power of attorney or mandate may concern criminal proceedings or relate to judicial data (e.g. power of attorney for criminal defense); processing of such data is permitted only if relevant and necessary to the represented engagement, within the limits of applicable law."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. The power of attorney or mandate may concern criminal proceedings or relate to judicial data (e.g. power of attorney for criminal defense); processing of such data is permitted only if relevant and necessary to the represented engagement, within the limits of applicable law."
           }
         },
         "categorieInteressati": [
@@ -7576,7 +7576,7 @@
           },
           "criteri": {
             "it": "Conservazione delle procure e dei mandati per documentare i poteri rappresentativi esercitati e per la difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato in caso di contenzioso; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention of powers of attorney and mandates to evidence the representative powers exercised and to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention of powers of attorney and mandates to evidence the representative powers exercised and to defend against any professional-liability actions (generally until the applicable limitation period for liability claims elapses); documented litigation hold in case of litigation; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -7780,7 +7780,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Non presenti come finalità propria. L'agenda non deve contenere, se non nei limiti strettamente necessari, dati relativi a condanne penali e reati; eventuali riferimenti a tali dati devono restare nel fascicolo o nella documentazione della pratica. Qualora il titolare scelga di indicare in agenda il tipo di procedimento (anche penale), valutare la minimizzazione e la condizione ex art. 10 GDPR e art. 2-octies Codice privacy.",
-            "en": "Not present as an autonomous purpose. The calendar must not contain, except within strictly necessary limits, data on criminal convictions and offences; any reference to such data must remain in the case file or case documentation. Should the controller choose to indicate the type of proceedings (including criminal) in the calendar, assess minimisation and the condition under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code."
+            "en": "Not present as an autonomous purpose. The calendar must not contain, except within strictly necessary limits, data on criminal convictions and offences; any reference to such data must remain in the case file or case documentation. Should the controller choose to indicate the type of proceedings (including criminal) in the calendar, assess minimisation and the condition under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards."
           }
         },
         "categorieInteressati": [
@@ -7884,7 +7884,7 @@
           },
           "criteri": {
             "it": "Conservazione delle registrazioni di agenda e scadenzario per documentare la diligenza nel rispetto dei termini (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione delle registrazioni non più necessarie.",
-            "en": "Retention of calendar and deadline records to document diligence in meeting deadlines (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation of records no longer needed."
+            "en": "Retention of calendar and deadline records to document diligence in meeting deadlines (generally until the applicable limitation period for liability claims elapses); minimisation; periodic review; deletion or anonymisation of records no longer needed."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -8090,7 +8090,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Gli archivi possono contenere dati relativi a condanne penali, reati, procedimenti o misure presenti nei fascicoli chiusi; la conservazione è ammessa solo se pertinente e necessaria agli obblighi di legge e alla difesa da azioni di responsabilità, nei limiti della normativa applicabile, con cancellazione a scadenza del periodo di conservazione.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The archives may contain data on criminal convictions, offences, proceedings or measures present in the closed case files; retention is permitted only if relevant and necessary to legal obligations and to defend against liability actions, within the limits of applicable law, with deletion at the expiry of the retention period."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. The archives may contain data on criminal convictions, offences, proceedings or measures present in the closed case files; retention is permitted only if relevant and necessary to legal obligations and to defend against liability actions, within the limits of applicable law, with deletion at the expiry of the retention period."
           }
         },
         "categorieInteressati": [
@@ -8198,7 +8198,7 @@
           },
           "criteri": {
             "it": "Criteri e tempi di conservazione documentati per categoria di fascicolo; conservazione (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate, e dei termini di conservazione antiriciclaggio/fiscali); litigation hold documentato in caso di contenzioso; riesame periodico delle scadenze; cancellazione o distruzione sicura e documentata a fine periodo. Per categorie soggette a obblighi specifici (es. dati AML) può essere imposta la cancellazione.",
-            "en": "Documented retention criteria and terms per case-file category; retention (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules, and the anti-money-laundering/tax retention terms); documented litigation hold in case of litigation; periodic review of deadlines; secure and documented deletion or destruction at the end of the period. For categories subject to specific obligations (e.g. AML data), deletion may be required."
+            "en": "Documented retention criteria and terms per case-file category; retention (generally until the applicable limitation period for liability claims elapses, and the anti-money-laundering/tax retention terms); documented litigation hold in case of litigation; periodic review of deadlines; secure and documented deletion or destruction at the end of the period. For categories subject to specific obligations (e.g. AML data), deletion may be required."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -8411,7 +8411,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Di regola non presenti: il recupero crediti ha natura civile/contrattuale e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora il recupero si intrecci con profili penali (es. assegni o insoluti con rilievo penale), il trattamento di tali dati va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
-            "en": "Generally not present: debt recovery is civil/contractual in nature and the acts of civil proceedings do not in themselves constitute Art. 10 data. Should recovery intersect with criminal aspects (e.g. cheques or unpaid items with criminal relevance), processing of such data must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+            "en": "Generally not present: debt recovery is civil/contractual in nature and the acts of civil proceedings do not in themselves constitute Art. 10 data. Should recovery intersect with criminal aspects (e.g. cheques or unpaid items with criminal relevance), processing of such data must be assessed under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards, only if relevant and necessary."
           }
         },
         "categorieInteressati": [
@@ -8519,7 +8519,7 @@
           },
           "criteri": {
             "it": "Conservazione per la durata del recupero e secondo le istruzioni del titolare; dopo la chiusura, conservazione limitata alla prova dell'attività svolta e alla difesa da contestazioni (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention for the duration of recovery and according to the controller's instructions; after closure, retention limited to evidencing the activity carried out and defending against complaints (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention for the duration of recovery and according to the controller's instructions; after closure, retention limited to evidencing the activity carried out and defending against complaints (generally until the applicable limitation period for liability claims elapses); minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -8730,7 +8730,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Di regola non presenti: l'esecuzione forzata ha natura civile e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora, in casi specifici, emergano dati relativi a reati o procedimenti penali pertinenti alla procedura, il trattamento va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
-            "en": "Generally not present: compulsory enforcement is civil in nature and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings relevant to the procedure emerge, processing must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+            "en": "Generally not present: compulsory enforcement is civil in nature and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings relevant to the procedure emerge, processing must be assessed under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards, only if relevant and necessary."
           }
         },
         "categorieInteressati": [
@@ -8842,7 +8842,7 @@
           },
           "criteri": {
             "it": "Conservazione fino alla conclusione della procedura (distribuzione del ricavato/estinzione) e al decorso dei termini di impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention until the procedure concludes (distribution of proceeds/extinction) and the appeal terms elapse; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention until the procedure concludes (distribution of proceeds/extinction) and the appeal terms elapse; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); documented litigation hold; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -9049,7 +9049,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Nelle procedure concorsuali, in particolare nella liquidazione giudiziale, possono rilevare dati relativi a reati e procedimenti penali (es. reati nelle procedure di crisi, segnalazioni all'autorità giudiziaria); il trattamento è ammesso solo se pertinente e necessario all'incarico e alla procedura, nei limiti della normativa applicabile. Gli atti dei procedimenti civili connessi non costituiscono di per sé dati ex art. 10.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). In insolvency procedures, in particular judicial liquidation, data on offences and criminal proceedings may be relevant (e.g. offences in crisis procedures, reports to the judicial authority); processing is permitted only if relevant and necessary to the engagement and the procedure, within the limits of applicable law. Acts of connected civil proceedings do not in themselves constitute Art. 10 data."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. In insolvency procedures, in particular judicial liquidation, data on offences and criminal proceedings may be relevant (e.g. offences in crisis procedures, reports to the judicial authority); processing is permitted only if relevant and necessary to the engagement and the procedure, within the limits of applicable law. Acts of connected civil proceedings do not in themselves constitute Art. 10 data."
           }
         },
         "categorieInteressati": [
@@ -9161,7 +9161,7 @@
           },
           "criteri": {
             "it": "Conservazione fino alla chiusura della procedura e al decorso dei termini di impugnazione/reclamo; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); litigation hold documentato; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention until the procedure closes and the appeal/complaint terms elapse; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); documented litigation hold; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention until the procedure closes and the appeal/complaint terms elapse; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); documented litigation hold; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -9368,7 +9368,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Di regola non pertinenti: gli strumenti ADR riguardano tipicamente materie civili e commerciali e gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10. Qualora, in casi specifici, emergano dati relativi a reati o procedimenti penali, il trattamento va valutato ai sensi dell'art. 10 GDPR e dell'art. 2-octies Codice privacy, solo se pertinente e necessario.",
-            "en": "Generally not relevant: ADR tools typically concern civil and commercial matters and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings emerge, processing must be assessed under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code, only if relevant and necessary."
+            "en": "Generally not relevant: ADR tools typically concern civil and commercial matters and civil-proceedings acts do not in themselves constitute Art. 10 data. Should, in specific cases, data on offences or criminal proceedings emerge, processing must be assessed under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards, only if relevant and necessary."
           }
         },
         "categorieInteressati": [
@@ -9480,7 +9480,7 @@
           },
           "criteri": {
             "it": "Conservazione fino alla conclusione del procedimento (accordo, lodo, mancato accordo) e per il tempo necessario all'esecuzione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); rispetto della riservatezza della mediazione; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention until the procedure concludes (agreement, award, no agreement) and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); respect for the confidentiality of mediation; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention until the procedure concludes (agreement, award, no agreement) and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); respect for the confidentiality of mediation; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -9685,7 +9685,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Nel ruolo di titolare (rapporto di consulenza) di regola non sono trattati dati relativi a condanne penali e reati. Qualora il cliente affidi allo studio attività che comportino il trattamento di dati ex art. 10 GDPR, questi appartengono ai trattamenti del cliente titolare, sotto la condizione di cui all'art. 10 GDPR e all'art. 2-octies del Codice privacy individuata dal cliente, e lo studio opera come responsabile ex art. 28.",
-            "en": "In the controller role (consultancy relationship) data on criminal convictions and offences are generally not processed. Should the client entrust the firm with activities involving Art. 10 GDPR data, these belong to the processing of the client controller, under the condition set out in GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code identified by the client, and the firm acts as a processor under Art. 28."
+            "en": "In the controller role (consultancy relationship) data on criminal convictions and offences are generally not processed. Should the client entrust the firm with activities involving Art. 10 GDPR data, these belong to the processing of the client controller, under the condition set out in Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards identified by the client, and the firm acts as a processor under Art. 28."
           }
         },
         "categorieInteressati": [
@@ -9789,7 +9789,7 @@
           },
           "criteri": {
             "it": "Conservazione per la durata dell'incarico; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); per i dati trattati come responsabile, restituzione o cancellazione su istruzione del cliente; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention for the duration of the engagement; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); for data processed as processor, return or deletion upon the client's instruction; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention for the duration of the engagement; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); for data processed as processor, return or deletion upon the client's instruction; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -10133,7 +10133,7 @@
           },
           "criteri": {
             "it": "Conservazione fino alla conclusione dell'operazione o dell'incarico e per il periodo di efficacia delle garanzie contrattuali; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); chiusura e cancellazione tempestiva delle data room al termine dell'operazione; minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention until the transaction or engagement concludes and for the period the contractual warranties are effective; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); prompt closure and deletion of data rooms at the end of the transaction; minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention until the transaction or engagement concludes and for the period the contractual warranties are effective; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); prompt closure and deletion of data rooms at the end of the transaction; minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -10456,7 +10456,7 @@
           },
           "criteri": {
             "it": "Conservazione per la durata dell'incarico e dei titoli gestiti (con relative scadenze e rinnovi) e, per il contenzioso, fino alla definizione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention for the duration of the engagement and of the managed rights (with their deadlines and renewals) and, for litigation, until conclusion and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention for the duration of the engagement and of the managed rights (with their deadlines and renewals) and, for litigation, until conclusion and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); minimisation; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -10663,7 +10663,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Possono emergere dati relativi a condanne penali e reati (es. licenziamenti per giusta causa connessi a condotte penalmente rilevanti del lavoratore), trattati solo ove pertinenti e necessari rispetto all'incarico, ai sensi dell'art. 10 GDPR e dell'art. 2-octies del Codice privacy. Gli atti dei procedimenti civili, incluse le cause di lavoro, non costituiscono di per sé dati ex art. 10.",
-            "en": "Data on criminal convictions and offences may emerge (e.g. for-cause dismissals connected to criminally relevant conduct of the worker), processed only where relevant and necessary in relation to the engagement, under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts, including employment cases, do not in themselves constitute Art. 10 data."
+            "en": "Data on criminal convictions and offences may emerge (e.g. for-cause dismissals connected to criminally relevant conduct of the worker), processed only where relevant and necessary in relation to the engagement, under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. Civil-proceedings acts, including employment cases, do not in themselves constitute Art. 10 data."
           }
         },
         "categorieInteressati": [
@@ -10775,7 +10775,7 @@
           },
           "criteri": {
             "it": "Conservazione fino alla conclusione della vertenza o del contenzioso e per il tempo necessario all'esecuzione e all'eventuale impugnazione; successivamente conservazione limitata alla prova dell'attività e alla difesa da azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate); minimizzazione e cancellazione anticipata dei dati sulla salute non più necessari; verifica periodica; cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention until the dispute or litigation concludes and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules); minimisation and early deletion of health data no longer necessary; periodic review; deletion or anonymisation when needs cease."
+            "en": "Retention until the dispute or litigation concludes and for the time necessary for enforcement and any challenge; thereafter retention limited to evidencing the activity and defending against professional-liability actions (generally until the applicable limitation period for liability claims elapses); minimisation and early deletion of health data no longer necessary; periodic review; deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
