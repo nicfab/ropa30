@@ -2743,7 +2743,7 @@
       },
       "noteTemplate": {
         "it": "TRATTAMENTO DELICATO. Base giuridica: art. 6(1)(f) GDPR (legittimo interesse alla tutela dei diritti) e art. 6(1)(c) per gli adempimenti processuali e gli ordini dell'autorità. PUNTI CRITICI: (a) l'avvocato esterno è TITOLARE AUTONOMO del trattamento, NON responsabile ex art. 28; (b) la società di recupero crediti è responsabile se opera su mandato/istruzioni, ma titolare autonomo in caso di cessione del credito; (c) DIVIETO di comunicare a terzi (familiari, colleghi, vicini, datori di lavoro) informazioni sul debito — principio ribadito dal Garante (vademecum recupero crediti e, da ultimo, provv. n. 193 del 12 marzo 2026); (d) distinguere gli atti giudiziari civili dai dati ex art. 10 (condanne penali/reati): non tutti gli atti di causa sono 'dati art. 10'. L'eventuale scoring di solvibilità o l'uso di informazioni commerciali va valutato separatamente.",
-        "en": "SENSITIVE PROCESSING. Legal basis: GDPR Art. 6(1)(f) (legitimate interest in protecting rights) and Art. 6(1)(c) for procedural obligations and authority orders. CRITICAL POINTS: (a) the external lawyer is an INDEPENDENT CONTROLLER, NOT an Art. 28 processor; (b) the debt-recovery company is a processor if acting on mandate/instructions, but an independent controller in case of debt assignment; (c) PROHIBITION on communicating to third parties (family members, colleagues, neighbors, employers) information about the debt — a principle reaffirmed by the Italian Garante (debt-recovery vademecum and, most recently, provision no. 193 of 12 March 2026); (d) distinguish civil judicial acts from Art. 10 data (criminal convictions/offences): not all litigation documents are 'Art. 10 data'. Any solvency scoring or use of commercial information must be assessed separately."
+        "en": "SENSITIVE PROCESSING. Legal basis: GDPR Art. 6(1)(f) (legitimate interest in protecting rights) and Art. 6(1)(c) for procedural obligations and authority orders. CRITICAL POINTS: (a) the external lawyer is an INDEPENDENT CONTROLLER, NOT an Art. 28 processor; (b) the debt-recovery company is a processor if acting on mandate/instructions, but an independent controller in case of debt assignment; (c) PROHIBITION on communicating to third parties (family members, colleagues, neighbors, employers) information about the debt — a principle grounded in the GDPR principles of lawfulness, data minimisation and confidentiality, and reaffirmed by applicable supervisory guidance on debt recovery; (d) distinguish civil judicial acts from Art. 10 data (criminal convictions/offences): not all litigation documents are 'Art. 10 data'. Any solvency scoring or use of commercial information must be assessed separately."
       },
       "scenari": {
         "it": [
@@ -2815,7 +2815,7 @@
           "legittimoInteresseDettagli": {
             "descrizione": {
               "it": "Legittimo interesse del Titolare alla tutela dei propri diritti di credito e alla difesa in giudizio. Per la comunicazione a terzi delle informazioni sul debito, il legittimo interesse NON è idoneo: il Garante ha chiarito che non sussiste base giuridica per divulgare a familiari, comproprietari o altri terzi lo stato debitorio (provv. n. 193 del 12 marzo 2026 e vademecum recupero crediti).",
-              "en": "Legitimate interest of the Controller in protecting its credit rights and defending itself in court. For communicating debt information to third parties, legitimate interest is NOT adequate: the Italian Garante clarified that there is no legal basis to disclose the debt status to family members, co-owners or other third parties (provision no. 193 of 12 March 2026 and debt-recovery vademecum)."
+              "en": "Legitimate interest of the Controller in protecting its credit rights and defending itself in court. For communicating debt information to third parties, legitimate interest is NOT adequate: there is no legal basis to disclose the debt status to family members, co-owners or other third parties, consistently with applicable supervisory guidance on debt recovery."
             },
             "garanzieAdottate": {
               "it": "Trattamento limitato ai dati necessari alla tutela del diritto; comunicazioni indirizzate al solo debitore con plichi chiusi e privi di diciture esterne rivelatrici; divieto di comunicazione a terzi; documentazione delle attività; minimizzazione e rispetto della dignità del debitore.",
@@ -2840,7 +2840,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Vanno distinti i dati relativi a procedimenti giudiziari CIVILI (atti di causa, decreti ingiuntivi, precetti, pignoramenti, provvedimenti dell'autorità) — che non costituiscono di per sé dati ex art. 10 — dagli eventuali dati relativi a condanne penali, reati o misure di sicurezza ex art. 10 GDPR, trattabili solo se emergenti nel contenzioso e nei limiti dell'art. 2-octies Codice privacy.",
-            "en": "A distinction must be made between data relating to CIVIL judicial proceedings (litigation acts, injunctions, writs, attachments, authority measures) — which do not in themselves constitute Art. 10 data — and any data relating to criminal convictions, offences or security measures under GDPR Art. 10, which may be processed only if arising in the litigation and within the limits of Italian Privacy Code Art. 2-octies."
+            "en": "A distinction must be made between data relating to CIVIL judicial proceedings (litigation acts, injunctions, writs, attachments, authority measures) — which do not in themselves constitute Art. 10 data — and any data relating to criminal convictions, offences or security measures under Art. 10 GDPR, which may be processed only if arising in the litigation and where authorised by Union or Member State law providing appropriate safeguards."
           }
         },
         "categorieInteressati": [
@@ -3011,7 +3011,7 @@
           ],
           "rinvioDocumentale": {
             "it": "[Rinvio al vademecum del Garante sul recupero crediti, alle policy interne, alle istruzioni ai recuperatori esterni e alle nomine/qualificazioni dei soggetti coinvolti]",
-            "en": "[Refer to the Italian Garante's debt-recovery vademecum, internal policies, instructions to external recovery agents and the appointments/qualifications of the parties involved]"
+            "en": "[Refer to applicable supervisory guidance on debt recovery, internal policies, instructions to external recovery agents and the appointments/qualifications of the parties involved]"
           }
         },
         "processiDecisionaliAutomatizzati": {
@@ -3057,7 +3057,7 @@
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9(2)(f), 10, 22; Codice privacy (d.lgs. 196/2003) art. 2-octies; codice di procedura civile; vademecum del Garante sul recupero crediti (provvedimento generale 30 novembre 2005); provvedimento del Garante n. 193 del 12 marzo 2026 (divieto di comunicazione del debito a terzi/familiari).",
-          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10, 22; Italian Privacy Code (d.lgs. 196/2003) Art. 2-octies; Italian Code of Civil Procedure; Italian Garante's debt-recovery vademecum (general provision 30 November 2005); Italian Garante provision no. 193 of 12 March 2026 (prohibition on communicating debt to third parties/family members)."
+          "en": "Relevant legal references: GDPR Arts. 6, 9(2)(f), 10 (the latter where authorised by Union or Member State law providing appropriate safeguards), 22; applicable civil procedure rules; applicable supervisory guidance on debt recovery, including guidance on the prohibition on communicating debt information to third parties or family members."
         }
       }
     },
