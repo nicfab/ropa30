@@ -1076,7 +1076,7 @@
       },
       "noteTemplate": {
         "it": "Anche nel B2B i dati dei referenti (persone fisiche) sono dati personali e ricadono nel GDPR. La base giuridica per l'esecuzione del contratto è l'art. 6(1)(b) se il referente è esso stesso parte, oppure il legittimo interesse (art. 6(1)(f)) per la gestione dei contatti del cliente-azienda. Per eventuale marketing B2B verso i referenti, distinguere tra comunicazioni strettamente funzionali al rapporto commerciale in essere e comunicazioni promozionali autonome, che richiedono base giuridica separata e rispetto dell'art. 130 Codice privacy. I dati della società (P.IVA, ragione sociale) di per sé non sono dati personali, ma quelli delle persone fisiche di riferimento lo sono; per le ditte individuali la P.IVA può essere riconducibile alla persona fisica.",
-        "en": "Even in B2B, data of contacts (natural persons) are personal data and fall under the GDPR. The legal basis for contract performance is Art. 6(1)(b) if the contact is themselves a party, or legitimate interest (Art. 6(1)(f)) for managing the customer-company's contacts. For any B2B marketing toward contacts, distinguish between communications strictly functional to the existing commercial relationship and autonomous promotional communications, which require a separate legal basis and compliance with Italian Privacy Code Art. 130. Company data (VAT number, business name) are not personal data per se, but those of the reference natural persons are; for sole proprietors the VAT number may be traceable to the natural person."
+        "en": "Even in B2B, data of contacts (natural persons) are personal data and fall under the GDPR. The legal basis for contract performance is Art. 6(1)(b) if the contact is themselves a party, or legitimate interest (Art. 6(1)(f)) for managing the customer-company's contacts. For any B2B marketing toward contacts, distinguish between communications strictly functional to the existing commercial relationship and autonomous promotional communications, which require a separate legal basis and compliance with Art. 13 of Directive 2002/58/EC. Company data (VAT number, business name) are not personal data per se, but those of the reference natural persons are; for sole proprietors the VAT number may be traceable to the natural person."
       },
       "scenari": {
         "it": [
@@ -1268,11 +1268,11 @@
         "tempiConservazione": {
           "periodo": {
             "it": "Per la durata del rapporto contrattuale + termini di prescrizione e obblighi fiscali (di regola 10 anni ex art. 2220 c.c.).",
-            "en": "For the duration of the contractual relationship + prescription terms and tax obligations (as a rule 10 years under Italian Civil Code Art. 2220)."
+            "en": "For the duration of the contractual relationship + the applicable limitation periods and tax obligations, according to applicable tax and accounting retention rules."
           },
           "criteri": {
             "it": "I dati contrattuali e fiscali sono conservati 10 anni ex art. 2220 c.c. I dati di contatto dei referenti sono conservati per la durata del rapporto e aggiornati periodicamente; cancellati, anonimizzati o sostituiti al termine del rapporto, salvo necessità di tutela legale.",
-            "en": "Contractual and tax data are kept for 10 years under Italian Civil Code Art. 2220. Contact data of representatives are kept for the duration of the relationship and periodically updated; deleted, anonymized or replaced at the end of the relationship, except for legal protection needs."
+            "en": "Contractual and tax data are kept for the period required by applicable tax and accounting retention rules. Contact data of representatives are kept for the duration of the relationship and periodically updated; deleted, anonymized or replaced at the end of the relationship, except for legal protection needs."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -1341,7 +1341,7 @@
           "presente": false,
           "descrizione": {
             "it": "Compilare se si effettua profilazione dei referenti per finalità commerciali/marketing. Per il marketing B2B verso i referenti, valutare la base giuridica appropriata (consenso o soft opt-in ex art. 130 Codice privacy).",
-            "en": "Complete if profiling contacts for commercial/marketing purposes. For B2B marketing toward contacts, assess the appropriate legal basis (consent or soft opt-in under Italian Privacy Code Art. 130)."
+            "en": "Complete if profiling contacts for commercial/marketing purposes. For B2B marketing toward contacts, assess the appropriate legal basis (consent or soft opt-in under Art. 13 of Directive 2002/58/EC)."
           },
           "logica": {
             "it": "",
@@ -1361,7 +1361,7 @@
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 13, 14; Codice privacy (d.lgs. 196/2003) art. 130 (per marketing); art. 2220 c.c. (conservazione documenti contabili).",
-          "en": "Relevant legal references: GDPR Arts. 6, 13, 14; Italian Privacy Code (d.lgs. 196/2003) Art. 130 (for marketing); Italian Civil Code Art. 2220 (retention of accounting documents)."
+          "en": "Relevant legal references: GDPR Arts. 6, 13, 14; Directive 2002/58/EC Art. 13 (for marketing); applicable tax and accounting retention rules."
         }
       }
     },
