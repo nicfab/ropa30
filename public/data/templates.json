@@ -2403,11 +2403,11 @@
       },
       "descrizioneTemplate": {
         "it": "Trattamento dei dati personali necessari alla tenuta della contabilità, alla fatturazione (anche elettronica tramite SdI), agli adempimenti fiscali e tributari e alla conservazione delle scritture contabili. Il presente trattamento riguarda la sola dimensione contabile, fiscale e documentale dei dati personali, distinta dalle finalità operative già censite nei trattamenti relativi a clienti, fornitori, personale e altri rapporti contrattuali.",
-        "en": "Processing of personal data necessary for bookkeeping, invoicing (including e-invoicing via the Italian SdI), tax obligations and retention of accounting records. This processing concerns only the accounting, tax and documentary dimension of personal data, distinct from the operational purposes already recorded in the activities relating to customers, suppliers, personnel and other contractual relationships."
+        "en": "Processing of personal data necessary for bookkeeping, invoicing (including electronic invoicing), tax obligations and retention of accounting records. This processing concerns only the accounting, tax and documentary dimension of personal data, distinct from the operational purposes already recorded in the activities relating to customers, suppliers, personnel and other contractual relationships. This processing activity is jurisdiction-sensitive and must be adapted to the applicable national tax, accounting and electronic-invoicing framework."
       },
       "noteTemplate": {
         "it": "Trattamento fondato prevalentemente sull'art. 6(1)(c) GDPR (obbligo legale): tenuta delle scritture contabili (artt. 2214-2220 c.c.), normativa IVA (d.P.R. 633/1972), TUIR, fatturazione elettronica tramite il Sistema di Interscambio (SdI) gestito dall'Agenzia delle Entrate. Questo trattamento è 'trasversale': i dati di clienti, fornitori e personale sono già censiti nei rispettivi trattamenti; qui rileva la sola finalità contabile-fiscale. ATTENZIONE: il Garante ha più volte evidenziato criticità della fatturazione elettronica, poiché i documenti fiscali (in particolare allegati e descrizioni) possono contenere incidentalmente dati particolari (es. prestazioni sanitarie o forensi) fiscalmente irrilevanti. Applicare minimizzazione. Valutare la conservazione digitale/sostitutiva a norma e i relativi fornitori.",
-        "en": "Processing primarily based on GDPR Art. 6(1)(c) (legal obligation): keeping of accounting records (Italian Civil Code Arts. 2214-2220), VAT legislation (d.P.R. 633/1972), TUIR, e-invoicing via the Interchange System (SdI) managed by the Italian Revenue Agency. This processing is 'cross-cutting': customer, supplier and personnel data are already recorded in their respective activities; here only the accounting-tax purpose is relevant. WARNING: the Italian Garante has repeatedly highlighted criticalities of e-invoicing, since tax documents (particularly attachments and descriptions) may incidentally contain special-category data (e.g. healthcare or legal services) that is fiscally irrelevant. Apply data minimisation. Assess compliant digital/substitute retention and the related providers."
+        "en": "Processing primarily based on GDPR Art. 6(1)(c) (legal obligation): keeping of accounting records, applicable VAT rules and income-tax rules, and electronic invoicing through the applicable national electronic-invoicing/clearance system. This processing is 'cross-cutting': customer, supplier and personnel data are already recorded in their respective activities; here only the accounting-tax purpose is relevant. WARNING: supervisory authorities have repeatedly highlighted criticalities of electronic invoicing, since tax documents (particularly attachments and descriptions) may incidentally contain special-category data (e.g. healthcare or legal services) that is fiscally irrelevant. Apply data minimisation. Assess compliant digital/substitute retention and the related providers."
       },
       "scenari": {
         "it": [
@@ -2433,7 +2433,7 @@
         },
         "descrizione": {
           "it": "Trattamento dei dati personali per la tenuta della contabilità e delle scritture obbligatorie, la fatturazione attiva e passiva (anche elettronica via SdI), gli adempimenti fiscali, tributari e dichiarativi, e la conservazione (anche digitale/sostitutiva) della documentazione contabile e fiscale.",
-          "en": "Processing of personal data for keeping accounts and mandatory records, active and passive invoicing (including e-invoicing via SdI), tax, fiscal and declaratory obligations, and retention (including digital/substitute) of accounting and tax documentation."
+          "en": "Processing of personal data for keeping accounts and mandatory records, active and passive invoicing (including electronic invoicing), tax, fiscal and declaratory obligations, and retention (including digital/substitute) of accounting and tax documentation."
         },
         "finalita": [
           {
@@ -2442,7 +2442,7 @@
           },
           {
             "it": "Emissione e ricezione di fatture (anche elettroniche tramite SdI)",
-            "en": "Issuing and receiving invoices (including e-invoices via SdI)"
+            "en": "Issuing and receiving invoices (including electronic invoices)"
           },
           {
             "it": "Adempimenti fiscali, tributari e dichiarativi (IVA, imposte, certificazioni)",
@@ -2463,7 +2463,7 @@
           ],
           "dettagliArt6": {
             "it": "Art. 6(1)(c) GDPR: adempimento di obblighi legali in materia contabile, fiscale e tributaria. In particolare: artt. 2214-2220 c.c. (libri e scritture contabili, conservazione), d.P.R. 633/1972 (IVA), d.P.R. 917/1986 (TUIR), normativa sulla fatturazione elettronica e sul Sistema di Interscambio (SdI), normativa sulla conservazione digitale a norma (CAD, d.lgs. 82/2005, e linee guida AgID).",
-            "en": "GDPR Art. 6(1)(c): compliance with legal obligations in accounting, tax and fiscal matters. In particular: Italian Civil Code Arts. 2214-2220 (accounting books and records, retention), d.P.R. 633/1972 (VAT), d.P.R. 917/1986 (TUIR), e-invoicing and Interchange System (SdI) legislation, compliant digital retention legislation (CAD, d.lgs. 82/2005, and AgID guidelines)."
+            "en": "GDPR Art. 6(1)(c): compliance with legal obligations in accounting, tax and fiscal matters. In particular: applicable accounting, VAT and income-tax rules; electronic invoicing through the applicable national electronic-invoicing/clearance system; and applicable rules on electronic documents, digital archiving and document preservation."
           },
           "legittimoInteresseDettagli": {
             "descrizione": {
@@ -2484,7 +2484,7 @@
           "art9": [],
           "dettagliArt9": {
             "it": "Di regola non sono trattate categorie particolari di dati. Tuttavia, fatture, note spese o documenti giustificativi possono contenere incidentalmente dati particolari (es. prestazioni sanitarie, appartenenza sindacale) o relativi a reati. In tali casi il trattamento deve restare limitato alla finalità fiscale-contabile, soggetto a minimizzazione, senza alcuna ulteriore elaborazione. Il Garante ha evidenziato questa criticità specificamente per la fatturazione elettronica.",
-            "en": "As a rule, special categories of data are not processed. However, invoices, expense reports or supporting documents may incidentally contain special-category data (e.g. healthcare services, trade union membership) or criminal-related data. In such cases processing must remain limited to the accounting-tax purpose, subject to minimisation, without any further processing. The Italian Garante has highlighted this criticality specifically for e-invoicing."
+            "en": "As a rule, special categories of data are not processed. However, invoices, expense reports or supporting documents may incidentally contain special-category data (e.g. healthcare services, trade union membership) or criminal-related data. In such cases processing must remain limited to the accounting-tax purpose, subject to minimisation, without any further processing. Supervisory authorities have highlighted this criticality specifically for electronic invoicing."
           }
         },
         "datiCondannePenaliReati": {
@@ -2550,7 +2550,7 @@
           },
           {
             "it": "Agenzia delle Entrate / Sistema di Interscambio (SdI), quale destinatario/gestore istituzionale del flusso di fatturazione elettronica previsto dalla normativa vigente (non responsabile ex art. 28 del Titolare)",
-            "en": "Italian Revenue Agency / Interchange System (SdI), as institutional recipient/manager of the e-invoicing flow required by law (not an Art. 28 processor of the Controller)"
+            "en": "The competent tax authority and the applicable national electronic-invoicing/clearance system, as institutional recipient/manager of the electronic-invoicing flow required by law (not an Art. 28 processor of the Controller)"
           },
           {
             "it": "Fornitore del servizio di conservazione digitale/sostitutiva dei documenti fiscali e contabili, se esternalizzato (responsabile del trattamento, salvo diversa qualificazione da verificare)",
@@ -2622,11 +2622,11 @@
         "tempiConservazione": {
           "periodo": {
             "it": "Di regola 10 anni ex art. 2220 c.c. e normativa fiscale, a decorrere dalla data dell'ultima registrazione o dalla scadenza dei termini di accertamento.",
-            "en": "As a rule 10 years under Italian Civil Code Art. 2220 and tax legislation, starting from the date of the last entry or the expiry of assessment terms."
+            "en": "As a rule, under applicable tax and accounting retention rules, starting from the date of the last entry or the expiry of assessment terms."
           },
           "criteri": {
             "it": "Documenti e scritture contabili: 10 anni ex art. 2220 c.c. Termini fiscali specifici secondo la normativa tributaria applicabile. In caso di accertamenti, verifiche fiscali, contenzioso o sospensione/interruzione dei termini, la conservazione può protrarsi per il tempo necessario alla definizione del procedimento e alla tutela dei diritti. Conservazione digitale a norma secondo il CAD e le linee guida AgID.",
-            "en": "Accounting documents and records: 10 years under Italian Civil Code Art. 2220. Specific tax terms according to applicable tax legislation. In case of assessments, tax audits, litigation or suspension/interruption of terms, retention may extend for the time necessary to conclude the procedure and protect rights. Compliant digital retention according to the CAD and AgID guidelines."
+            "en": "Accounting documents and records: retained under applicable tax and accounting retention rules. Specific tax terms according to applicable tax legislation. In case of assessments, tax audits, litigation or suspension/interruption of terms, retention may extend for the time necessary to conclude the procedure and protect rights. Compliant digital retention under applicable rules on electronic documents, digital archiving and document preservation."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -2723,7 +2723,7 @@
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9, 10; artt. 2214-2220 c.c.; d.P.R. 633/1972 (IVA); d.P.R. 917/1986 (TUIR); normativa sulla fatturazione elettronica e SdI; CAD (d.lgs. 82/2005) e linee guida AgID sulla conservazione; provvedimenti del Garante sulla fatturazione elettronica (criticità sul possibile contenuto di dati particolari nei documenti fiscali).",
-          "en": "Relevant legal references: GDPR Arts. 6, 9, 10; Italian Civil Code Arts. 2214-2220; d.P.R. 633/1972 (VAT); d.P.R. 917/1986 (TUIR); e-invoicing and SdI legislation; CAD (d.lgs. 82/2005) and AgID retention guidelines; Italian Garante provisions on e-invoicing (criticalities on the possible presence of special-category data in tax documents)."
+          "en": "Relevant legal references: GDPR Arts. 6, 9, 10; applicable tax and accounting retention rules; Directive 2006/112/EC (VAT Directive), as transposed or otherwise applicable; applicable income-tax rules; applicable electronic-invoicing rules and the applicable national electronic-invoicing/clearance system; applicable rules on electronic documents, digital archiving and document preservation; supervisory guidance on electronic invoicing (criticalities on the possible presence of special-category data in tax documents)."
         }
       }
     },
