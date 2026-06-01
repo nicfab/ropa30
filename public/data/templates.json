@@ -3077,7 +3077,7 @@
       },
       "noteTemplate": {
         "it": "DOPPIO BINARIO GDPR/ePRIVACY. Per cookie e strumenti di tracciamento occorre distinguere la base giuridica del trattamento dei dati personali (art. 6 GDPR) dalla condizione di liceità per l'archiviazione/accesso a informazioni nel terminale dell'utente (art. 122 Codice privacy). Riferimento: Linee guida del Garante cookie e altri strumenti di tracciamento, provv. n. 231 del 10 giugno 2021 (G.U. n. 163 del 9 luglio 2021). PUNTI CRITICI: (a) i cookie tecnici e gli analytics equiparati ai tecnici (a determinate condizioni) NON richiedono consenso, ma vanno indicati nell'informativa; (b) i cookie di profilazione/marketing/terze parti richiedono consenso preventivo; (c) lo scrolling o la prosecuzione della navigazione NON costituiscono valido consenso; (d) il cookie wall è ammesso solo in ipotesi eccezionali, previa verifica di un'alternativa equivalente senza consenso; (e) i tracciatori non tecnici vanno bloccati PRIMA dell'acquisizione del consenso; (f) i form sul sito rinviano ai trattamenti specifici collegati ai dati conferiti.",
-        "en": "GDPR/ePRIVACY DUAL TRACK. For cookies and tracking tools, distinguish the legal basis for personal data processing (GDPR Art. 6) from the lawfulness condition for storing/accessing information on the user's terminal (Italian Privacy Code Art. 122). Reference: Italian Garante guidelines on cookies and other tracking tools, provision no. 231 of 10 June 2021 (Official Gazette no. 163 of 9 July 2021). CRITICAL POINTS: (a) technical cookies and analytics equated to technical ones (under certain conditions) do NOT require consent, but must be indicated in the notice; (b) profiling/marketing/third-party cookies require prior consent; (c) scrolling or continued navigation do NOT constitute valid consent; (d) the cookie wall is allowed only in exceptional cases, subject to verifying an equivalent alternative without consent; (e) non-technical trackers must be blocked BEFORE obtaining consent; (f) forms on the site refer to the specific activities connected to the data provided."
+        "en": "GDPR/ePRIVACY DUAL TRACK. For cookies and tracking tools, distinguish the legal basis for personal data processing (GDPR Art. 6) from the lawfulness condition for storing/accessing information on the user's terminal equipment (Art. 5(3) of Directive 2002/58/EC). Reference: EDPB Guidelines 2/2023 on the technical scope of Art. 5(3) of the ePrivacy Directive, and applicable supervisory guidance on cookies and other tracking tools. CRITICAL POINTS: (a) technical cookies and analytics equated to technical ones (under certain conditions) do NOT require consent, but must be indicated in the notice; (b) profiling/marketing/third-party cookies require prior consent; (c) scrolling or continued navigation do NOT constitute valid consent; (d) the cookie wall is allowed only in exceptional cases, subject to verifying an equivalent alternative without consent; (e) non-technical trackers must be blocked BEFORE obtaining consent; (f) forms on the site refer to the specific activities connected to the data provided."
       },
       "scenari": {
         "it": [
@@ -3164,7 +3164,7 @@
           ],
           "dettagliArt6": {
             "it": "Per cookie e altri strumenti di tracciamento occorre distinguere la base giuridica del trattamento dei dati personali ai sensi dell'art. 6 GDPR dalla condizione di liceità per l'archiviazione di informazioni o l'accesso a informazioni già archiviate nel terminale dell'utente ai sensi dell'art. 122 Codice privacy. I cookie tecnici e gli analytics equiparati ai tecnici alle condizioni indicate dal Garante non richiedono consenso ex art. 122, fermo restando l'obbligo di informativa. I cookie di profilazione, marketing, advertising comportamentale, social plugin, pixel, tag e strumenti analoghi non tecnici richiedono consenso preventivo, libero, specifico, informato e revocabile. I log tecnici e di sicurezza si fondano sull'art. 6(1)(f) GDPR (legittimo interesse alla sicurezza e al corretto funzionamento del sito).",
-            "en": "For cookies and other tracking tools, a distinction must be made between the legal basis for processing personal data under GDPR Art. 6 and the lawfulness condition for storing information or accessing information already stored on the user's terminal under Italian Privacy Code Art. 122. Technical cookies and analytics equated to technical ones under the conditions indicated by the Garante do not require consent under Art. 122, without prejudice to the information obligation. Profiling, marketing, behavioral advertising, social plugins, pixels, tags and similar non-technical tools require prior, free, specific, informed and revocable consent. Technical and security logs are based on GDPR Art. 6(1)(f) (legitimate interest in the security and proper functioning of the site)."
+            "en": "For cookies and other tracking tools, a distinction must be made between the legal basis for processing personal data under GDPR Art. 6 and the lawfulness condition for storing information or accessing information already stored on the user's terminal equipment under Art. 5(3) of Directive 2002/58/EC. Technical cookies and analytics equated to technical ones under the conditions indicated by applicable supervisory guidance do not require consent under Art. 5(3) of Directive 2002/58/EC, without prejudice to the information obligation. Profiling, marketing, behavioral advertising, social plugins, pixels, tags and similar non-technical tools require prior, free, specific, informed and revocable consent. Technical and security logs are based on GDPR Art. 6(1)(f) (legitimate interest in the security and proper functioning of the site)."
           },
           "legittimoInteresseDettagli": {
             "descrizione": {
@@ -3331,7 +3331,7 @@
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Molti strumenti di terze parti (analytics, advertising, social plugin) comportano trasferimenti extra-UE. Verificare per ciascuno: ruolo privacy, finalità, durata, garanzie (adeguatezza, SCC + TIA, certificazione DPF ove pertinente). Il Garante è intervenuto su strumenti analytics di terze parti per trasferimenti USA privi di adeguate garanzie.",
-              "en": "Many third-party tools (analytics, advertising, social plugins) involve non-EU transfers. Verify for each: privacy role, purpose, duration, safeguards (adequacy, SCC + TIA, DPF certification where relevant). The Italian Garante has intervened on third-party analytics tools for US transfers lacking adequate safeguards."
+              "en": "Many third-party tools (analytics, advertising, social plugins) involve non-EU transfers. Verify for each: privacy role, purpose, duration, safeguards (adequacy, SCC + TIA, DPF certification where relevant). Supervisory authorities have intervened on third-party analytics tools for US transfers lacking adequate safeguards."
             }
           }
         ],
@@ -3412,7 +3412,7 @@
           "presenti": false,
           "descrizione": {
             "it": "Compilare se il tracciamento alimenta profilazione o advertising comportamentale con decisioni automatizzate significative. La profilazione online tramite cookie non tecnici richiede comunque consenso ex art. 122 Codice privacy e adeguata informativa.",
-            "en": "Complete if tracking feeds profiling or behavioral advertising with significant automated decisions. Online profiling via non-technical cookies requires consent under Italian Privacy Code Art. 122 and adequate information in any case."
+            "en": "Complete if tracking feeds profiling or behavioral advertising with significant automated decisions. Online profiling via non-technical cookies requires consent under Art. 5(3) of Directive 2002/58/EC and adequate information in any case."
           },
           "logica": {
             "it": "",
@@ -3431,7 +3431,7 @@
           "presente": false,
           "descrizione": {
             "it": "Compilare se sono attivi cookie/strumenti di profilazione o marketing. Tali strumenti richiedono consenso preventivo, libero, specifico, informato e revocabile ex art. 122 Codice privacy, raccolto tramite banner/CMP conforme alle Linee guida del Garante (provv. 231/2021). I tracciatori non tecnici vanno bloccati fino al consenso.",
-            "en": "Complete if profiling or marketing cookies/tools are active. Such tools require prior, free, specific, informed and revocable consent under Italian Privacy Code Art. 122, collected via a banner/CMP compliant with the Garante guidelines (provv. 231/2021). Non-technical trackers must be blocked until consent."
+            "en": "Complete if profiling or marketing cookies/tools are active. Such tools require prior, free, specific, informed and revocable consent under Art. 5(3) of Directive 2002/58/EC, collected via a banner/CMP compliant with EDPB Guidelines 2/2023 and applicable supervisory guidance. Non-technical trackers must be blocked until consent."
           },
           "logica": {
             "it": "",
@@ -3439,7 +3439,7 @@
           },
           "baseGiuridicaSpecifica": {
             "it": "Consenso ex art. 122 Codice privacy + art. 6(1)(a) GDPR.",
-            "en": "Consent under Italian Privacy Code Art. 122 + GDPR Art. 6(1)(a)."
+            "en": "Consent under Art. 5(3) of Directive 2002/58/EC + GDPR Art. 6(1)(a)."
           }
         },
         "valutazioneDiImpatto": {
@@ -3451,7 +3451,7 @@
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 13, 22, 26 (contitolarità), 49; Codice privacy (d.lgs. 196/2003) art. 122 (archiviazione/accesso a informazioni nel terminale); Direttiva 2002/58/CE (ePrivacy); Linee guida del Garante cookie e altri strumenti di tracciamento, provv. n. 231 del 10 giugno 2021 (G.U. n. 163 del 9 luglio 2021); per la contitolarità su strumenti di terze parti, cfr. Corte di Giustizia UE, Fashion ID (C-40/17) e Wirtschaftsakademie (C-210/16); provvedimenti del Garante in materia di analytics di terze parti e trasferimenti extra-UE.",
-          "en": "Relevant legal references: GDPR Arts. 6, 13, 22, 26 (joint controllership), 49; Italian Privacy Code (d.lgs. 196/2003) Art. 122 (storage/access to information on the terminal); Directive 2002/58/EC (ePrivacy); Italian Garante guidelines on cookies and other tracking tools, provision no. 231 of 10 June 2021 (Official Gazette no. 163 of 9 July 2021); for joint controllership on third-party tools, cf. CJEU, Fashion ID (C-40/17) and Wirtschaftsakademie (C-210/16); Italian Garante provisions on third-party analytics and non-EU transfers."
+          "en": "Relevant legal references: GDPR Arts. 6, 13, 22, 26 (joint controllership), 49; Art. 5(3) of Directive 2002/58/EC (ePrivacy — storage/access to information on the terminal equipment); EDPB Guidelines 2/2023 on the technical scope of Art. 5(3) of the ePrivacy Directive; for joint controllership on third-party tools, cf. CJEU, Fashion ID (C-40/17) and Wirtschaftsakademie (C-210/16); applicable supervisory guidance on third-party analytics and non-EU transfers."
         }
       }
     },
