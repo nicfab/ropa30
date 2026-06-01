@@ -184,8 +184,8 @@
             "en": "Until consent is withdrawn or objection is exercised; periodic review at least yearly."
           },
           "criteri": {
-            "it": "I dati sono conservati per tutta la durata della finalità marketing. La revoca del consenso o l'esercizio dell'opposizione (es. tramite link di disiscrizione) comporta la cessazione immediata dell'invio e la cancellazione dei dati entro un termine definito nella procedura interna, di regola non superiore a 30 giorni. Verifica periodica, almeno annuale, dell'attualità della lista, della validità della base giuridica e dell'effettiva interazione degli iscritti. È conservata una traccia minima dell'opposizione (email + data) ai fini probatori per il periodo di prescrizione applicabile.",
-            "en": "Data is kept for the entire duration of the marketing purpose. Withdrawal of consent or objection (e.g. via unsubscribe link) results in immediate cessation of sending and data deletion within a term defined in the internal procedure, ordinarily not exceeding 30 days. Periodic review, at least yearly, of list freshness, lawful basis validity, and actual subscriber engagement. Minimal record of the objection (email + date) is kept for evidentiary purposes for the applicable prescription period."
+            "it": "I dati sono conservati per la durata della finalità newsletter/marketing e sono soggetti a verifica periodica, almeno annuale, della validità della base giuridica, dell'attualità della lista, dell'interazione degli iscritti e della necessità di ulteriore conservazione. La verifica può comportare, ove opportuno, cancellazione, sospensione dell'invio, richiesta di riconferma o aggiornamento delle preferenze. La revoca del consenso o l'esercizio dell'opposizione comporta la cessazione immediata dell'invio e la cancellazione dei dati entro un termine definito nella procedura interna, di regola non superiore a 30 giorni, salvo la conservazione di una traccia minima dell'opposizione ai fini probatori per il periodo di prescrizione applicabile.",
+            "en": "Data are kept for the duration of the newsletter/marketing purpose and are subject to periodic review, at least annually, of the validity of the legal basis, list freshness, subscriber engagement and the need for further retention. The review may lead, where appropriate, to deletion, suspension of sending, re-confirmation or updating of preferences. Withdrawal of consent or objection results in immediate cessation of sending and deletion of the data within a term defined in the internal procedure, ordinarily not exceeding 30 days, without prejudice to the retention of a minimal suppression record for evidentiary purposes for the applicable limitation period."
           },
           "azioneFinale": "cancellazione"
         },
@@ -261,8 +261,8 @@
             "en": ""
           },
           "baseGiuridicaSpecifica": {
-            "it": "Per la profilazione marketing è di regola necessario un consenso specifico e granulare ulteriore rispetto a quello per la newsletter ordinaria.",
-            "en": "Marketing profiling generally requires a specific and granular consent additional to the one for ordinary newsletter."
+            "it": "Per la profilazione marketing è di regola necessario un consenso specifico e granulare ulteriore rispetto a quello per la newsletter ordinaria. Inoltre, il tracciamento delle interazioni via email, quali pixel di apertura, click tracking o strumenti analoghi, ove comporti l'archiviazione di informazioni nel terminale dell'utente o l'accesso a informazioni già archiviate, richiede una distinta verifica ai sensi dell'art. 122 del Codice privacy, che recepisce l'art. 5(3) della Direttiva 2002/58/CE. In tali casi, salvo eventuali eccezioni tecniche applicabili, è richiesto il consenso dell'utente, autonomo rispetto alla base giuridica del trattamento di marketing ai sensi del GDPR.",
+            "en": "Marketing profiling generally requires a specific and granular consent additional to the one for the ordinary newsletter. In addition, tracking interactions via email, such as open pixels, click tracking or similar tools, where it involves storing information on the user's terminal equipment or accessing information already stored, requires a separate assessment under Art. 122 of the Italian Privacy Code, which transposes Art. 5(3) of Directive 2002/58/EC. In such cases, unless a technical exemption applies, the user's consent is required, independently from the GDPR legal basis for the marketing processing."
           }
         },
         "valutazioneDiImpatto": {
@@ -273,8 +273,8 @@
           }
         },
         "note": {
-          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 7, 13, 21, 22; Codice privacy (d.lgs. 196/2003) artt. 130, 140-bis; Linee guida EDPB 05/2020 sul consenso; provvedimenti del Garante italiano in materia di marketing e profilazione.",
-          "en": "Relevant legal references: GDPR Arts. 6, 7, 13, 21, 22; Italian Privacy Code (d.lgs. 196/2003) Arts. 130, 140-bis; EDPB Guidelines 05/2020 on consent; Italian Garante provisions on marketing and profiling."
+          "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 7, 13, 21, 22; Codice privacy (d.lgs. 196/2003) artt. 122, 130, 140-bis; Direttiva 2002/58/CE art. 5(3); Linee guida EDPB 05/2020 sul consenso; Linee guida EDPB 2/2023 sull'ambito tecnico dell'art. 5(3) ePrivacy; provvedimenti del Garante italiano in materia di marketing, profilazione e strumenti di tracciamento.",
+          "en": "Relevant legal references: GDPR Arts. 6, 7, 13, 21, 22; Italian Privacy Code (d.lgs. 196/2003) Arts. 122, 130, 140-bis; Directive 2002/58/EC Art. 5(3); EDPB Guidelines 05/2020 on consent; EDPB Guidelines 2/2023 on the technical scope of Art. 5(3) ePrivacy; Italian Garante provisions on marketing, profiling and tracking tools."
         }
       }
     },
