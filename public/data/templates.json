@@ -294,7 +294,7 @@
       },
       "noteTemplate": {
         "it": "TRATTAMENTO COMPLESSO. Il rapporto di lavoro raggruppa molteplici basi giuridiche: (a) art. 6(1)(b) GDPR per l'esecuzione del contratto; (b) art. 6(1)(c) GDPR per gli obblighi di legge (contributivi INPS, fiscali, INAIL, libro unico, ecc.); (c) art. 9(2)(b) GDPR + art. 88 GDPR + art. 2-sexies Codice privacy per i dati sanitari connessi all'idoneità o all'infortunio. Per gli impianti audiovisivi e gli altri strumenti dai quali derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, occorre verificare la riconducibilità all'art. 4 St. Lav., distinguendo tra strumenti di lavoro, strumenti di registrazione degli accessi/presenze e strumenti soggetti ad accordo sindacale o autorizzazione ITL. Le attività di ricerca e selezione del personale/candidati possono essere censite in una distinta attività di trattamento, se gestite con processi, basi giuridiche, tempi di conservazione o fornitori diversi. Il trattamento dei dati connesso a segnalazioni whistleblowing ex d.lgs. 24/2023 dovrebbe essere censito in una distinta attività di trattamento, ove applicabile.",
-        "en": "COMPLEX PROCESSING. The employment relationship covers multiple lawful bases: (a) GDPR Art. 6(1)(b) for contract performance; (b) GDPR Art. 6(1)(c) for legal obligations (Italian INPS contributions, tax, INAIL, single employee register, etc.); (c) GDPR Art. 9(2)(b) + Art. 88 + Italian Privacy Code Art. 2-sexies for health data related to fitness for work or injuries. For audiovisual systems and other tools from which the possibility of remote monitoring of workers' activity may also arise, verify the applicability of Art. 4 of the Workers' Statute, distinguishing between work tools, access/attendance recording tools, and tools subject to union agreement or Labour Inspectorate authorization. Recruitment and personnel selection activities may be recorded as a distinct processing activity, if managed with different processes, legal bases, retention periods or providers. Processing of data related to whistleblowing reports under d.lgs. 24/2023 should be recorded as a distinct processing activity, where applicable."
+        "en": "COMPLEX PROCESSING. The employment relationship covers multiple lawful bases: (a) GDPR Art. 6(1)(b) for contract performance; (b) GDPR Art. 6(1)(c) for legal obligations (social-security contributions, tax, workplace-insurance, mandatory personnel records, etc.); (c) GDPR Art. 9(2)(b) and Art. 88 for health data related to fitness for work or injuries. For audiovisual systems and other tools from which the possibility of remote monitoring of workers' activity may also arise, verify the applicable employment-context safeguards under Art. 88 GDPR and applicable national rules, distinguishing between work tools, access/attendance recording tools, and tools subject to collective agreement or the competent labour authority's authorisation. Recruitment and personnel selection activities may be recorded as a distinct processing activity, if managed with different processes, legal bases, retention periods or providers. Processing of data related to whistleblowing reports under Directive (EU) 2019/1937 on the protection of persons who report breaches of Union law, as transposed or otherwise applicable, should be recorded as a distinct processing activity, where applicable."
       },
       "scenari": {
         "it": [
@@ -351,7 +351,7 @@
           },
           {
             "it": "Sorveglianza sanitaria ex d.lgs. 81/2008 e gestione idoneità al lavoro",
-            "en": "Health surveillance under d.lgs. 81/2008 and management of fitness for work"
+            "en": "Health surveillance under applicable occupational health and safety rules and management of fitness for work"
           },
           {
             "it": "Formazione obbligatoria e professionale",
@@ -373,7 +373,7 @@
           ],
           "dettagliArt6": {
             "it": "Art. 6(1)(b) GDPR: esecuzione del contratto individuale di lavoro. Art. 6(1)(c) GDPR: adempimento di obblighi legali cui è soggetto il Titolare, in particolare: d.lgs. 165/2001 (per lavoro pubblico); d.lgs. 81/2015 e successive modifiche (disciplina dei rapporti di lavoro); l. 300/1970 (Statuto dei Lavoratori); d.lgs. 81/2008 (TUSL — salute e sicurezza); normativa fiscale (TUIR, IRPEF, sostituti d'imposta); normativa previdenziale (INPS, INAIL); art. 88 GDPR sui trattamenti nel contesto lavorativo. Per i dati relativi alla salute (idoneità, infortuni, malattia): art. 9(2)(b) GDPR + art. 2-sexies Codice privacy + d.lgs. 81/2008.",
-            "en": "GDPR Art. 6(1)(b): performance of the individual employment contract. GDPR Art. 6(1)(c): compliance with legal obligations to which the Controller is subject, in particular: d.lgs. 165/2001 (for public-sector employment); d.lgs. 81/2015 as amended (employment relationships discipline); l. 300/1970 (Workers' Statute); d.lgs. 81/2008 (Italian Consolidated Safety Act); tax legislation (TUIR, IRPEF, withholding agents); social security legislation (INPS, INAIL); GDPR Art. 88 on processing in employment context. For health-related data (fitness for work, injuries, sickness): GDPR Art. 9(2)(b) + Italian Privacy Code Art. 2-sexies + d.lgs. 81/2008."
+            "en": "GDPR Art. 6(1)(b): performance of the individual employment contract. GDPR Art. 6(1)(c): compliance with legal obligations to which the Controller is subject, including applicable public-sector employment, employment-law, occupational health and safety, tax, social-security and workplace-insurance rules, and GDPR Art. 88 on processing in the employment context. For health-related data (fitness for work, injuries, sickness): GDPR Art. 9(2)(b) and applicable occupational health and safety rules."
           },
           "legittimoInteresseDettagli": {
             "descrizione": {
@@ -397,14 +397,14 @@
           ],
           "dettagliArt9": {
             "it": "Art. 9(2)(b) GDPR (assolvimento obblighi e diritti specifici del Titolare o dell'interessato in materia di diritto del lavoro e sicurezza sociale) e art. 9(2)(h) (medicina del lavoro, valutazione idoneità). Riferimento art. 88 GDPR e art. 2-sexies Codice privacy. I dati sanitari sono trattati esclusivamente dal medico competente o sotto la sua diretta responsabilità.",
-            "en": "GDPR Art. 9(2)(b) (compliance with obligations and specific rights of the Controller or data subject in employment and social security law) and Art. 9(2)(h) (occupational medicine, fitness assessment). Reference to GDPR Art. 88 and Italian Privacy Code Art. 2-sexies. Health data is processed exclusively by the occupational physician or under their direct responsibility."
+            "en": "GDPR Art. 9(2)(b) (compliance with obligations and specific rights of the Controller or data subject in employment and social security law) and Art. 9(2)(h) (occupational medicine, fitness assessment). Reference to GDPR Art. 88. Health data is processed exclusively by the occupational physician or under their direct responsibility."
           }
         },
         "datiCondannePenaliReati": {
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Eventuale trattamento di dati relativi a condanne penali (art. 10 GDPR + art. 2-octies Codice privacy) è limitato a ipotesi normativamente previste (es. certificato del casellario giudiziale per specifiche mansioni, antiriciclaggio, art. 25-bis d.P.R. 313/2002).",
-            "en": "Any processing of criminal-conviction data (GDPR Art. 10 + Italian Privacy Code Art. 2-octies) is limited to legally prescribed scenarios (e.g. criminal record certificate for specific positions, anti-money laundering, art. 25-bis d.P.R. 313/2002)."
+            "en": "Any processing of criminal-conviction data (Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards) is limited to legally prescribed scenarios (e.g. criminal-record certificate for specific positions, anti-money-laundering and applicable rules on criminal records)."
           }
         },
         "categorieInteressati": [
@@ -448,7 +448,7 @@
           },
           {
             "it": "Dati fiscali e previdenziali (codice fiscale, posizione INPS, INAIL, detrazioni, familiari a carico)",
-            "en": "Tax and social security data (tax code, INPS and INAIL position, deductions, dependants)"
+            "en": "Tax and social security data (tax identification number, social-security and workplace-insurance position, deductions, dependants)"
           },
           {
             "it": "Dati relativi alla salute (categorie particolari art. 9): idoneità alla mansione, infortuni, malattie, certificati medici",
@@ -464,7 +464,7 @@
           },
           {
             "it": "Eventuali dati biometrici (categoria particolare art. 9), solo in presenza di adeguata condizione di liceità ex art. 9 GDPR, base normativa applicabile, verifica di necessità e proporzionalità, e, ove il sistema comporti controllo a distanza, nel rispetto dell'art. 4 St. Lav.",
-            "en": "Biometric data, if any (special category Art. 9), only in the presence of an adequate condition of lawfulness under GDPR Art. 9, applicable legal basis, verification of necessity and proportionality, and, where the system involves remote monitoring, in compliance with Art. 4 of the Workers' Statute."
+            "en": "Biometric data, if any (special category Art. 9), only in the presence of an adequate condition of lawfulness under GDPR Art. 9, applicable legal basis, verification of necessity and proportionality, and, where the system involves remote monitoring, in compliance with Art. 88 GDPR and applicable employment-context safeguards."
           }
         ],
         "fonteDeiDati": "misto",
@@ -491,7 +491,7 @@
           },
           {
             "it": "Enti pubblici (INPS, INAIL, Agenzia delle Entrate, Ispettorato del Lavoro)",
-            "en": "Public bodies (INPS, INAIL, Italian Revenue Agency, Labour Inspectorate)"
+            "en": "Public bodies (social-security and workplace-insurance authorities, the competent tax authority, the competent labour authority)"
           },
           {
             "it": "Istituti previdenziali e assistenziali, fondi pensione integrativa",
@@ -571,7 +571,7 @@
           },
           "criteri": {
             "it": "Documentazione fiscale e contributiva: 10 anni ex art. 2220 c.c. e normativa fiscale. Libro unico del lavoro: 5 anni dall'ultima registrazione (art. 39 d.l. 112/2008). Documenti relativi a TFR e quietanze: 10 anni. Documenti sanitari (cartella sanitaria e di rischio): secondo i termini previsti dal d.lgs. 81/2008 e dalla normativa speciale applicabile, con conservazioni più lunghe per specifiche esposizioni a rischio. Procedimenti disciplinari: fino al termine di prescrizione e comunque non oltre il necessario. In caso di contenzioso: fino al termine dello stesso e dei termini di impugnazione. Verifica periodica delle scadenze e cancellazione tempestiva dei dati non più necessari.",
-            "en": "Tax and social security documentation: 10 years under Italian Civil Code Art. 2220 and tax legislation. Single employee register: 5 years from last entry (Art. 39 d.l. 112/2008). Severance pay and receipt documents: 10 years. Health documents (health and risk file): according to the terms provided by d.lgs. 81/2008 and applicable special legislation, with longer retention for specific risk exposures. Disciplinary proceedings: until prescription term, and in any case not beyond what is necessary. In case of litigation: until conclusion and lapse of appeal terms. Periodic review of deadlines and prompt deletion of data no longer needed."
+            "en": "Tax and social security documentation: under applicable tax and accounting retention rules. Mandatory personnel records: for the period provided by applicable employment and social-security rules. Severance pay and receipt documents: for the applicable retention period. Health documents (health and risk file): according to the terms provided by applicable occupational health and safety rules and applicable special legislation, with longer retention for specific risk exposures. Disciplinary proceedings: until the applicable limitation period, and in any case not beyond what is necessary. In case of litigation: until conclusion and lapse of appeal terms. Periodic review of deadlines and prompt deletion of data no longer needed."
           },
           "azioneFinale": "cancellazione"
         },
@@ -609,11 +609,11 @@
             },
             {
               "it": "Nomina del medico competente ai sensi del d.lgs. 81/2008 e definizione dei flussi informativi consentiti, nel rispetto dell'autonomia professionale e della riservatezza dei dati sanitari",
-              "en": "Appointment of the occupational physician under d.lgs. 81/2008 and definition of permitted information flows, respecting professional autonomy and confidentiality of health data"
+              "en": "Appointment of the occupational physician under applicable occupational health and safety rules and definition of permitted information flows, respecting professional autonomy and confidentiality of health data"
             },
             {
               "it": "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
-              "en": "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent"
+              "en": "Designation and instructions to system administrators, in compliance with applicable supervisory guidance on system administrators"
             },
             {
               "it": "Formazione periodica del personale HR e dei responsabili sui temi della protezione dei dati",
@@ -633,7 +633,7 @@
             },
             {
               "it": "Verifica della compatibilità di eventuali sistemi di controllo a distanza con l'art. 4 St. Lav. (accordo sindacale o autorizzazione ITL)",
-              "en": "Verification of compatibility of any remote monitoring systems with Art. 4 of the Workers' Statute (union agreement or Labour Inspectorate authorization)"
+              "en": "Verification of compatibility of any remote monitoring systems with Art. 88 GDPR and applicable employment-context safeguards (collective agreement or the competent labour authority's authorisation)"
             },
             {
               "it": "Politica di clean desk e gestione documentazione cartacea",
@@ -642,14 +642,14 @@
           ],
           "rinvioDocumentale": {
             "it": "[Rinvio al Documento di Valutazione dei Rischi (DVR) ex d.lgs. 81/2008, al regolamento aziendale, alle policy interne sulla protezione dei dati, al codice disciplinare e all'eventuale accordo sindacale ex art. 4 St. Lav.]",
-            "en": "[Refer to the Risk Assessment Document (DVR) under d.lgs. 81/2008, the company internal regulations, internal data protection policies, the disciplinary code, and any union agreement under Art. 4 of the Workers' Statute]"
+            "en": "[Refer to the risk assessment document under applicable occupational health and safety rules, the company internal regulations, internal data protection policies, the disciplinary code, and any collective agreement under Art. 88 GDPR and applicable employment-context safeguards]"
           }
         },
         "processiDecisionaliAutomatizzati": {
           "presenti": false,
           "descrizione": {
             "it": "Compilare se sono utilizzati sistemi di decisione automatizzata o di monitoraggio nel rapporto di lavoro. Attenzione: l'art. 22 GDPR e il d.lgs. 152/1997, come modificato dal d.lgs. 104/2022 e dal d.l. 48/2023, impongono specifici obblighi informativi in caso di utilizzo di sistemi decisionali o di monitoraggio automatizzati nel rapporto di lavoro.",
-            "en": "Complete if automated decision-making or monitoring systems are used in the employment relationship. Note: GDPR Art. 22 and d.lgs. 152/1997, as amended by d.lgs. 104/2022 and d.l. 48/2023, impose specific information obligations where automated decision-making or monitoring systems are used in the employment relationship."
+            "en": "Complete if automated decision-making or monitoring systems are used in the employment relationship. Note: GDPR Art. 22 and Directive (EU) 2019/1152 on transparent and predictable working conditions, as transposed or otherwise applicable, impose specific information obligations where automated decision-making or monitoring systems are used in the employment relationship."
           },
           "logica": {
             "it": "",
@@ -683,12 +683,12 @@
           "effettuata": false,
           "riferimentoDocumento": {
             "it": "DPIA ex art. 35 GDPR raccomandata o richiesta in presenza di: sistemi di controllo a distanza (videosorveglianza, geolocalizzazione, monitoraggio attività informatica); uso di dati biometrici; sistemi di decisione automatizzata sui lavoratori; trattamenti su larga scala di dati sanitari. Verifica l'elenco dei trattamenti soggetti a DPIA pubblicato dal Garante (provv. 11 ottobre 2018 e successivi aggiornamenti).",
-            "en": "DPIA under GDPR Art. 35 recommended or required when: remote monitoring systems are in use (CCTV, geolocation, IT activity monitoring); biometric data is used; automated decision-making systems concerning workers; large-scale processing of health data. Verify the list of processing subject to DPIA published by the Italian Garante (provv. 11 October 2018 and subsequent updates)."
+            "en": "DPIA under GDPR Art. 35 recommended or required when: remote monitoring systems are in use (CCTV, geolocation, IT activity monitoring); biometric data is used; automated decision-making systems concerning workers; large-scale processing of health data. Verify the list of processing operations subject to DPIA published by the competent supervisory authority."
           }
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 6, 9, 22, 35, 88; Codice privacy (d.lgs. 196/2003) artt. 2-sexies, 2-octies, 111, 113-114; Statuto dei Lavoratori (l. 300/1970) art. 4; d.lgs. 81/2008 (TUSL); d.lgs. 81/2015; d.lgs. 104/2022; d.l. 48/2023 conv. in l. 85/2023; d.lgs. 152/1997 art. 1-bis; Direttiva (UE) 2024/2831 sul lavoro tramite piattaforme digitali, ove applicabile; Linee guida del Garante 1° marzo 2007 sulla posta elettronica e internet nei rapporti di lavoro; provvedimenti del Garante in materia di videosorveglianza, geolocalizzazione, biometria, amministratori di sistema; raccomandazioni del Working Party 29 / EDPB sui trattamenti sul lavoro (WP249 e successivi).",
-          "en": "Relevant legal references: GDPR Arts. 6, 9, 22, 35, 88; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-sexies, 2-octies, 111, 113-114; Workers' Statute (l. 300/1970) Art. 4; d.lgs. 81/2008 (Italian Consolidated Safety Act); d.lgs. 81/2015; d.lgs. 104/2022; d.l. 48/2023 conv. in l. 85/2023; d.lgs. 152/1997 art. 1-bis; Directive (EU) 2024/2831 on platform work, where applicable; Italian Garante Guidelines of 1 March 2007 on email and internet in employment; Italian Garante provisions on CCTV, geolocation, biometrics, system administrators; Working Party 29 / EDPB recommendations on processing in employment (WP249 and subsequent)."
+          "en": "Relevant legal references: GDPR Arts. 6, 9, 22, 35, 88; applicable public-sector employment, employment-law and occupational health and safety rules; Art. 88 GDPR and applicable employment-context safeguards (including on remote monitoring); Directive (EU) 2019/1152 on transparent and predictable working conditions, as transposed or otherwise applicable; Directive (EU) 2024/2831 on platform work, where applicable; applicable supervisory guidance on email and internet use in employment, CCTV, geolocation, biometrics and system administrators; Article 29 Working Party / EDPB recommendations on processing in the employment context (WP249 and subsequent)."
         }
       }
     },
