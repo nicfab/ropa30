@@ -704,11 +704,11 @@
       },
       "descrizioneTemplate": {
         "it": "Installazione e gestione di un sistema di videosorveglianza fissa per finalità di sicurezza del patrimonio, sicurezza delle persone e prevenzione di atti illeciti. Il template assume riprese in ambienti aziendali o pertinenze, non destinate a controllo continuativo dei lavoratori. Se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, occorre rispettare l'art. 4 St. Lav.",
-        "en": "Installation and management of a fixed video surveillance system for purposes of property security, personal safety, and prevention of unlawful acts. The template assumes recordings in business premises or appurtenances, not intended for continuous worker monitoring. If the system also entails the possibility of remote monitoring of workers' activity, Art. 4 of the Workers' Statute must be observed."
+        "en": "Installation and management of a fixed video surveillance system for purposes of property security, personal safety, and prevention of unlawful acts. The template assumes recordings in business premises or appurtenances, not intended for continuous worker monitoring. If the system also entails the possibility of remote monitoring of workers' activity, Art. 88 GDPR and applicable employment-context safeguards must be observed."
       },
       "noteTemplate": {
         "it": "TRATTAMENTO POTENZIALMENTE AD ALTO RISCHIO, da valutare in concreto in base a scala, aree riprese, interessati coinvolti, eventuale presenza di lavoratori, tecnologie utilizzate e modalità di conservazione. La videosorveglianza richiede particolare cautela: (a) DPIA ex art. 35 GDPR da effettuare prima dell'attivazione nei casi in cui il trattamento presenti rischio elevato, in particolare nei casi indicati dall'elenco del Garante (provv. 11 ottobre 2018) e dalle Linee guida EDPB 3/2019; (b) cartelli informativi conformi al modello del Garante visibili PRIMA dell'area sorvegliata (informativa di primo livello) e informativa estesa (secondo livello) facilmente accessibile; (c) se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, art. 4 St. Lav.: accordo sindacale o autorizzazione ITL preventiva; (d) tempi di conservazione DI REGOLA non superiori a 24/72 ore, prolungabili solo per specifiche esigenze documentate; (e) divieto di riprese verso aree non strettamente necessarie (vicini, strade pubbliche, ecc.) — verifica accuratamente l'angolo delle telecamere; (f) puntamento e angolazione devono rispettare il principio di minimizzazione. Verifica le Linee guida EDPB 3/2019, il provvedimento del Garante 8 aprile 2010 (nei limiti di compatibilità con il GDPR) e le FAQ del Garante in materia di videosorveglianza.",
-        "en": "POTENTIALLY HIGH-RISK PROCESSING, to be assessed in concrete terms based on scale, recorded areas, data subjects involved, possible presence of workers, technologies used, and retention methods. Video surveillance requires particular caution: (a) DPIA under GDPR Art. 35 to be carried out before activation where the processing presents high risk, in particular in the cases indicated by the Italian Garante's list (provv. 11 October 2018) and by EDPB Guidelines 3/2019; (b) information signs in compliance with the Garante's model, visible BEFORE the surveilled area (first-level notice) and an easily accessible extended (second-level) notice; (c) if the system also entails the possibility of remote monitoring of workers' activity, Art. 4 of the Workers' Statute applies: prior union agreement or Labour Inspectorate authorization; (d) retention periods AS A RULE not exceeding 24/72 hours, extendable only for specific documented needs; (e) prohibition of filming areas not strictly necessary (neighbors, public roads, etc.) — carefully verify camera angles; (f) camera positioning and angle must respect the data minimisation principle. Verify EDPB Guidelines 3/2019, the Italian Garante provision of 8 April 2010 (within the limits of GDPR compatibility), and the Garante's FAQ on video surveillance."
+        "en": "POTENTIALLY HIGH-RISK PROCESSING, to be assessed in concrete terms based on scale, recorded areas, data subjects involved, possible presence of workers, technologies used, and retention methods. Video surveillance requires particular caution: (a) DPIA under GDPR Art. 35 to be carried out before activation where the processing presents high risk, in particular in the cases indicated by the list published by the competent supervisory authority and by EDPB Guidelines 3/2019; (b) information signs in compliance with applicable supervisory guidance, visible BEFORE the surveilled area (first-level notice) and an easily accessible extended (second-level) notice; (c) if the system also entails the possibility of remote monitoring of workers' activity, Art. 88 GDPR and applicable employment-context safeguards apply: prior collective agreement or the competent labour authority's authorisation; (d) retention periods limited to a short period proportionate to the purpose, extendable only for specific documented needs; (e) prohibition of filming areas not strictly necessary (neighbors, public roads, etc.) — carefully verify camera angles; (f) camera positioning and angle must respect the data minimisation principle. Verify EDPB Guidelines 3/2019 and applicable supervisory guidance on video surveillance."
       },
       "scenari": {
         "it": [
@@ -776,7 +776,7 @@
           ],
           "dettagliArt6": {
             "it": "Art. 6(1)(f) GDPR: legittimo interesse del Titolare alla tutela del patrimonio, alla sicurezza delle persone e alla prevenzione di atti illeciti. Il legittimo interesse va documentato in una valutazione di bilanciamento (LIA) che dimostri necessità, proporzionalità e prevalenza rispetto ai diritti e libertà degli interessati. Se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori, è necessario il rispetto dell'art. 4 St. Lav. (l. 300/1970): accordo sindacale con le RSA/RSU o, in mancanza, autorizzazione dell'Ispettorato Territoriale del Lavoro. Riferimenti: EDPB Guidelines 3/2019 sul trattamento dei dati personali attraverso dispositivi video (adottate il 29 gennaio 2020); provvedimento del Garante 8 aprile 2010, nei limiti di compatibilità con il GDPR; FAQ e provvedimenti del Garante in materia di videosorveglianza.",
-            "en": "GDPR Art. 6(1)(f): legitimate interest of the Controller in protecting property, ensuring personal safety, and preventing unlawful acts. The legitimate interest must be documented in a balancing assessment (LIA) demonstrating necessity, proportionality, and prevalence over data subjects' rights and freedoms. If the system also entails the possibility of remote monitoring of workers' activity, compliance with Art. 4 of the Workers' Statute (l. 300/1970) is required: union agreement with the workers' representatives or, failing that, authorization from the Local Labour Inspectorate. References: EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); Italian Garante provision of 8 April 2010, within the limits of GDPR compatibility; Garante FAQ and provisions on video surveillance."
+            "en": "GDPR Art. 6(1)(f): legitimate interest of the Controller in protecting property, ensuring personal safety, and preventing unlawful acts. The legitimate interest must be documented in a balancing assessment (LIA) demonstrating necessity, proportionality, and prevalence over data subjects' rights and freedoms. If the system also entails the possibility of remote monitoring of workers' activity, compliance with Art. 88 GDPR and applicable employment-context safeguards is required: collective agreement with the workers' representatives or, failing that, the competent labour authority's authorisation. References: EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); applicable supervisory guidance on video surveillance."
           },
           "legittimoInteresseDettagli": {
             "descrizione": {
@@ -785,7 +785,7 @@
             },
             "garanzieAdottate": {
               "it": "Limitazione delle aree di ripresa allo stretto necessario (no zone non pertinenti, no postazioni di lavoro salvo specifica autorizzazione ex art. 4 St. Lav.); informativa di primo livello (cartello conforme al modello del Garante) ben visibile prima dell'area sorvegliata; informativa di secondo livello facilmente accessibile, anche tramite QR code, link breve, reception, bacheca o altro canale indicato nel cartello; tempi di conservazione minimi (di regola 24-72 ore); accesso alle immagini riservato a soggetti designati; cifratura del salvataggio; audit periodico del sistema.",
-              "en": "Limitation of camera coverage to what is strictly necessary (no irrelevant areas, no workstations except with specific authorization under Workers' Statute Art. 4); first-level notice (sign compliant with the Garante's model) clearly visible before the surveilled area; second-level notice easily accessible, including via QR code, short link, reception, notice board or other channel indicated on the sign; minimum retention periods (as a rule 24-72 hours); image access restricted to designated personnel; encrypted storage; periodic system audit."
+              "en": "Limitation of camera coverage to what is strictly necessary (no irrelevant areas, no workstations except with specific authorization under Art. 88 GDPR and applicable employment-context safeguards); first-level notice (sign compliant with applicable supervisory guidance) clearly visible before the surveilled area; second-level notice easily accessible, including via QR code, short link, reception, notice board or other channel indicated on the sign; minimum retention periods (a short period proportionate to the purpose); image access restricted to designated personnel; encrypted storage; periodic system audit."
             },
             "bilanciamentoRichiesto": true,
             "bilanciamentoEffettuato": false,
@@ -804,7 +804,7 @@
           "presenti": false,
           "normativaAutorizzativa": {
             "it": "Eventuali immagini relative a fatti illeciti penalmente rilevanti possono essere estratte, conservate e trasmesse all'autorità giudiziaria o alle forze dell'ordine nei limiti necessari alla tutela dei diritti del Titolare o all'adempimento di richieste dell'autorità. Il trattamento sistematico di dati ex art. 10 GDPR richiede specifica base normativa ai sensi dell'art. 2-octies Codice privacy.",
-            "en": "Images relating to criminally relevant unlawful acts may be extracted, retained, and transmitted to judicial authorities or law enforcement within the limits necessary to protect the Controller's rights or to comply with authority requests. Systematic processing of data under GDPR Art. 10 requires a specific legal basis under Italian Privacy Code Art. 2-octies."
+            "en": "Images relating to criminally relevant unlawful acts may be extracted, retained, and transmitted to judicial authorities or law enforcement within the limits necessary to protect the Controller's rights or to comply with authority requests. Systematic processing of data under Art. 10 GDPR requires a specific legal basis, where authorised by Union or Member State law providing appropriate safeguards."
           }
         },
         "categorieInteressati": [
@@ -814,7 +814,7 @@
           },
           {
             "it": "Lavoratori (subordinati e parasubordinati), se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività lavorativa — in presenza di art. 4 St. Lav.",
-            "en": "Workers (employees and para-subordinate), if the system also entails the possibility of remote monitoring of work activity — Art. 4 of the Workers' Statute applies"
+            "en": "Workers (employees and para-subordinate), if the system also entails the possibility of remote monitoring of work activity — Art. 88 GDPR and applicable employment-context safeguards apply"
           },
           {
             "it": "Eventuali terzi che entrino occasionalmente nell'area sorvegliata",
@@ -842,7 +842,7 @@
         "fonteDeiDati": "interessato",
         "fonteDeiDatiDettagli": {
           "it": "Immagini acquisite direttamente dalle telecamere all'interno dell'area sorvegliata. L'interessato è informato della raccolta tramite cartelli informativi conformi al modello del Garante.",
-          "en": "Images acquired directly from cameras within the surveilled area. The data subject is informed of the collection through information signs compliant with the Garante's model."
+          "en": "Images acquired directly from cameras within the surveilled area. The data subject is informed of the collection through information signs compliant with applicable supervisory guidance."
         },
         "categorieDestinatari": [
           {
@@ -919,7 +919,7 @@
         "tempiConservazione": {
           "periodo": {
             "it": "Di regola 24 ore, prolungabili fino a 72 ore per specifiche esigenze; estensioni ulteriori solo se documentate e proporzionate (es. festività prolungate, esercizi con rischio elevato e furti ripetuti documentati). Il Garante ha sanzionato conservazioni indebitamente prolungate.",
-            "en": "As a rule 24 hours, extendable up to 72 hours for specific needs; further extensions only if documented and proportionate (e.g. extended holidays, establishments with high risk and documented repeated thefts). The Italian Garante has sanctioned undue retention extensions."
+            "en": "As a rule, a short retention period proportionate to the purpose; further extensions only if documented and proportionate (e.g. extended holidays, establishments with high risk and documented repeated thefts). Supervisory authorities have sanctioned undue retention extensions."
           },
           "criteri": {
             "it": "Il termine è determinato in base alla finalità (sicurezza/prevenzione di atti illeciti) e al principio di minimizzazione. Cancellazione automatica al termine del periodo tramite sovrascrittura. In caso di evento rilevante (es. furto, intrusione), le immagini relative possono essere estratte e conservate per il periodo necessario al perseguimento giudiziario o difensivo. L'estrazione di immagini per eventi rilevanti deve essere limitata alle sole sequenze necessarie e documentata con separato verbale o ticket interno.",
@@ -969,11 +969,11 @@
             },
             {
               "it": "Designazione e istruzioni agli amministratori di sistema, conformemente al provvedimento del Garante 27 novembre 2008 e successivi",
-              "en": "Designation and instructions to system administrators, in compliance with the Italian Garante provision of 27 November 2008 and subsequent"
+              "en": "Designation and instructions to system administrators, in compliance with applicable supervisory guidance on system administrators"
             },
             {
               "it": "Installazione di cartelli informativi conformi al modello del Garante, prima dell'area sorvegliata, ben visibili",
-              "en": "Installation of information signs compliant with the Garante's model, before the surveilled area, clearly visible"
+              "en": "Installation of information signs compliant with applicable supervisory guidance, before the surveilled area, clearly visible"
             },
             {
               "it": "Disponibilità dell'informativa estesa (secondo livello) facilmente accessibile, anche tramite QR code, link breve, reception o bacheca",
@@ -993,11 +993,11 @@
             },
             {
               "it": "Divieto di utilizzo dell'impianto per controlli continuativi, massivi o generalizzati sull'attività lavorativa; eventuale utilizzo delle immagini a fini disciplinari solo nei limiti dell'art. 4 St. Lav., previa adeguata informazione ai lavoratori e nel rispetto delle garanzie applicabili",
-              "en": "Prohibition of using the system for continuous, massive or generalized monitoring of work activity; any use of images for disciplinary purposes only within the limits of Workers' Statute Art. 4, with prior adequate information to workers and respecting applicable safeguards"
+              "en": "Prohibition of using the system for continuous, massive or generalized monitoring of work activity; any use of images for disciplinary purposes only within the limits of Art. 88 GDPR and applicable employment-context safeguards, with prior adequate information to workers and respecting applicable safeguards"
             },
             {
               "it": "Verifica preventiva della necessità di accordo sindacale o autorizzazione ITL ex art. 4 St. Lav. se dall'impianto derivi anche la possibilità di controllo a distanza dell'attività dei lavoratori",
-              "en": "Prior verification of the need for union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4 if the system also entails the possibility of remote monitoring of workers' activity"
+              "en": "Prior verification of the need for a collective agreement or the competent labour authority's authorisation under Art. 88 GDPR and applicable employment-context safeguards if the system also entails the possibility of remote monitoring of workers' activity"
             },
             {
               "it": "DPIA ex art. 35 GDPR redatta prima dell'attivazione del sistema, nei casi in cui il trattamento presenti rischio elevato",
@@ -1010,14 +1010,14 @@
           ],
           "rinvioDocumentale": {
             "it": "[Rinvio alla LIA (Legitimate Interest Assessment); alla DPIA, ove richiesta; al disciplinare tecnico interno sulla videosorveglianza; al modello di cartello informativo conforme al Garante; all'eventuale accordo sindacale o autorizzazione ITL ex art. 4 St. Lav.]",
-            "en": "[Refer to the LIA (Legitimate Interest Assessment); the DPIA, where required; the internal technical regulation on video surveillance; the information sign model compliant with the Garante; any union agreement or Labour Inspectorate authorization under Workers' Statute Art. 4]"
+            "en": "[Refer to the LIA (Legitimate Interest Assessment); the DPIA, where required; the internal technical regulation on video surveillance; the information sign model compliant with applicable supervisory guidance; any collective agreement or the competent labour authority's authorisation under Art. 88 GDPR and applicable employment-context safeguards]"
           }
         },
         "processiDecisionaliAutomatizzati": {
           "presenti": false,
           "descrizione": {
             "it": "Compilare se il sistema utilizza analisi automatizzate delle immagini (es. riconoscimento facciale, riconoscimento di comportamenti, analisi predittive). Attenzione: il riconoscimento facciale è dato biometrico ex art. 9 GDPR, richiede base giuridica specifica. Riferimento: disciplina nazionale sulla moratoria dei sistemi di riconoscimento facciale, originariamente introdotta dal d.l. 139/2021 e successivamente prorogata, attualmente fino al 31 dicembre 2027, salvo ulteriori modifiche normative.",
-            "en": "Complete if the system uses automated image analysis (e.g. facial recognition, behavior recognition, predictive analysis). Note: facial recognition is biometric data under GDPR Art. 9 and requires a specific legal basis. Reference: national rules on the moratorium on facial recognition systems, originally introduced by d.l. 139/2021 and subsequently extended, currently until 31 December 2027, unless further legislative amendments are adopted."
+            "en": "Complete if the system uses automated image analysis (e.g. facial recognition, behavior recognition, predictive analysis). Note: facial recognition is biometric data under GDPR Art. 9 and requires a specific legal basis. Reference: applicable national rules, including any moratorium or restrictions on facial-recognition systems in publicly accessible spaces, and the relevant provisions of Regulation (EU) 2024/1689 (AI Act) on remote biometric identification."
           },
           "logica": {
             "it": "",
@@ -1051,12 +1051,12 @@
           "effettuata": false,
           "riferimentoDocumento": {
             "it": "DPIA ex art. 35 GDPR da effettuare prima dell'attivazione nei casi in cui il trattamento presenti rischio elevato, in particolare nei casi indicati dall'elenco del Garante (provv. 11 ottobre 2018, doc. web 9058979) e dalle Linee guida EDPB: videosorveglianza su larga scala, in zone particolarmente sensibili, con riconoscimento biometrico, con analisi automatica dei comportamenti, monitoraggio sistematico di aree accessibili al pubblico. La DPIA deve essere redatta PRIMA dell'attivazione del sistema. [Inserire il riferimento al documento DPIA].",
-            "en": "DPIA under GDPR Art. 35 to be carried out before activation where the processing presents high risk, in particular in the cases indicated by the Italian Garante's list (provv. 11 October 2018, doc. web 9058979) and by EDPB Guidelines: large-scale video surveillance, in particularly sensitive areas, with biometric recognition, with automated behavior analysis, systematic monitoring of publicly accessible areas. The DPIA must be prepared BEFORE system activation. [Enter the reference to the DPIA document]."
+            "en": "DPIA under GDPR Art. 35 to be carried out before activation where the processing presents high risk, in particular in the cases indicated by the list published by the competent supervisory authority and by EDPB Guidelines: large-scale video surveillance, in particularly sensitive areas, with biometric recognition, with automated behavior analysis, systematic monitoring of publicly accessible areas. The DPIA must be prepared BEFORE system activation. [Enter the reference to the DPIA document]."
           }
         },
         "note": {
           "it": "Riferimenti normativi rilevanti: GDPR artt. 5, 6, 13, 22, 35; Codice privacy (d.lgs. 196/2003) artt. 2-octies, 2-ter; Statuto dei Lavoratori (l. 300/1970) art. 4; art. 615-bis c.p. (interferenze illecite nella vita privata); EDPB Guidelines 3/2019 sul trattamento dei dati personali attraverso dispositivi video (adottate il 29 gennaio 2020); provvedimento del Garante 8 aprile 2010 in materia di videosorveglianza (nei limiti di compatibilità con il GDPR); FAQ del Garante sulla videosorveglianza; provvedimento del Garante 27 novembre 2008 sugli amministratori di sistema; provvedimento del Garante 11 ottobre 2018 sull'elenco delle tipologie di trattamento soggette a DPIA (doc. web 9058979); disciplina nazionale sulla moratoria dei sistemi di riconoscimento facciale, introdotta dal d.l. 139/2021 e prorogata fino al 31 dicembre 2027 (salvo ulteriori modifiche). Nota: eventuali telecamere non funzionanti o simulate vanno valutate separatamente, poiché possono comunque incidere sui diritti degli interessati e sui rapporti di lavoro, pur non comportando trattamento di dati personali se non acquisiscono immagini.",
-          "en": "Relevant legal references: GDPR Arts. 5, 6, 13, 22, 35; Italian Privacy Code (d.lgs. 196/2003) Arts. 2-octies, 2-ter; Workers' Statute (l. 300/1970) Art. 4; art. 615-bis Italian Criminal Code (unlawful interference with private life); EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); Italian Garante provision of 8 April 2010 on video surveillance (within the limits of GDPR compatibility); Garante FAQ on video surveillance; Italian Garante provision of 27 November 2008 on system administrators; Italian Garante provision of 11 October 2018 on the list of processing subject to DPIA (doc. web 9058979); national rules on the moratorium on facial recognition systems, introduced by d.l. 139/2021 and extended until 31 December 2027 (unless further amendments). Note: any non-functioning or dummy cameras must be assessed separately, as they may still affect data subjects' rights and employment relationships, even if they do not involve processing of personal data when they capture no images."
+          "en": "Relevant legal references: GDPR Arts. 5, 6, 13, 22, 35; Art. 88 GDPR and applicable employment-context safeguards; applicable criminal-law protection against unlawful interference with private life; EDPB Guidelines 3/2019 on processing of personal data through video devices (adopted 29 January 2020); applicable supervisory guidance on video surveillance and system administrators; applicable supervisory list of processing operations subject to DPIA; applicable national rules, including any moratorium or restrictions on facial-recognition systems, and the relevant provisions of Regulation (EU) 2024/1689 (AI Act) on remote biometric identification. Note: any non-functioning or dummy cameras must be assessed separately, as they may still affect data subjects' rights and employment relationships, even if they do not involve processing of personal data when they capture no images."
         }
       }
     },
