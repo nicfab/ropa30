@@ -3685,7 +3685,7 @@
           },
           "criteri": {
             "it": "Conservazione per la durata del mandato; dopo la chiusura, conservazione del fascicolo per il periodo necessario alla difesa da eventuali azioni di responsabilità professionale (di regola fino al decorso del termine di prescrizione applicabile, art. 2946 c.c. e norme correlate) e per gli obblighi di conservazione antiriciclaggio (d.lgs. 231/2007) e fiscali. Eventuale litigation hold documentato in caso di contenzioso. Verifica periodica e cancellazione o anonimizzazione al venir meno delle esigenze.",
-            "en": "Retention for the duration of the mandate; after closure, retention of the case file for the period necessary to defend against any professional-liability actions (generally until the applicable prescription term elapses, Art. 2946 Italian Civil Code and related rules) and for anti-money-laundering (d.lgs. 231/2007) and tax retention obligations. Documented litigation hold in case of litigation. Periodic review and deletion or anonymisation when needs cease."
+            "en": "Retention for the duration of the mandate; after closure, retention of the case file for the period necessary to defend against any professional-liability actions, generally until the applicable limitation period for liability claims elapses, and for anti-money-laundering and tax retention obligations, under EU anti-money laundering and counter-terrorist financing rules, as transposed or otherwise applicable, and applicable tax and accounting retention rules. Documented litigation hold in case of litigation. Periodic review and deletion or anonymisation when needs cease."
           },
           "azioneFinale": "cancellazione_o_anonimizzazione"
         },
@@ -6523,7 +6523,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003). Le attività degli ausiliari, in particolare le indagini difensive (L. 397/2000 e art. 391-bis ss. c.p.p.), possono comportare il trattamento di dati relativi a condanne penali, reati, procedimenti, indagini o misure; il trattamento è ammesso solo se pertinente e necessario rispetto all'incarico e nei limiti della normativa applicabile. Particolare cautela per i dati raccolti nel corso delle investigazioni.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003). The auxiliaries' activities, in particular defensive investigations (Law 397/2000 and Art. 391-bis ff. CCP), may involve processing data on criminal convictions, offences, proceedings, investigations or measures; processing is permitted only if relevant and necessary to the engagement and within the limits of applicable law. Particular caution for data collected during investigations."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. The auxiliaries' activities, in particular defence investigations, under applicable national rules, may involve processing data on criminal convictions, offences, proceedings, investigations or measures; processing is permitted only if relevant and necessary to the engagement and within the limits of applicable law. Particular caution for data collected during investigations."
           }
         },
         "categorieInteressati": [
@@ -6842,7 +6842,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Art. 10 GDPR e art. 2-octies Codice privacy (d.lgs. 196/2003), in combinato con gli obblighi del d.lgs. 231/2007. Nell'adeguata verifica, in particolare rafforzata, possono emergere dati relativi a condanne penali, reati o procedimenti (es. controlli su PEP, liste sanzionatorie, fonti reputazionali e informazioni su provenienza dei fondi); il trattamento è ammesso solo se pertinente e necessario all'adempimento antiriciclaggio, nei limiti della normativa applicabile.",
-            "en": "GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code (d.lgs. 196/2003), in combination with the obligations of d.lgs. 231/2007. During due diligence, in particular enhanced due diligence, data on criminal convictions, offences or proceedings may emerge (e.g. PEP screening, sanctions lists, reputational sources and information on the source of funds); processing is permitted only if relevant and necessary for anti-money-laundering compliance, within the limits of applicable law."
+            "en": "Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards, in combination with EU anti-money laundering and counter-terrorist financing rules, as transposed or otherwise applicable. During due diligence, in particular enhanced due diligence, data on criminal convictions, offences or proceedings may emerge (e.g. PEP screening, sanctions lists, reputational sources and information on the source of funds); processing is permitted only if relevant and necessary for anti-money-laundering compliance, within the limits of applicable law."
           }
         },
         "categorieInteressati": [
@@ -9994,7 +9994,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Possono emergere, nelle verifiche di compliance e reputazionali connesse alle operazioni (es. modelli organizzativi ex d.lgs. 231/2001, anticorruzione, adeguata verifica), dati relativi a condanne penali e reati, trattati solo ove pertinenti e necessari rispetto all'incarico, ai sensi dell'art. 10 GDPR e dell'art. 2-octies del Codice privacy. Gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10.",
-            "en": "In compliance and reputational checks connected to the transactions (e.g. organisational models under d.lgs. 231/2001, anti-corruption, customer due diligence) data on criminal convictions and offences may emerge, processed only where relevant and necessary in relation to the engagement, under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts do not in themselves constitute Art. 10 data."
+            "en": "In compliance and reputational checks connected to the transactions (e.g. corporate compliance and organisational models, anti-corruption, customer due diligence) data on criminal convictions and offences may emerge, processed only where relevant and necessary in relation to the engagement, under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. Civil-proceedings acts do not in themselves constitute Art. 10 data."
           }
         },
         "categorieInteressati": [
@@ -10340,7 +10340,7 @@
           "presenti": true,
           "normativaAutorizzativa": {
             "it": "Nelle azioni contro la contraffazione e nel relativo contenzioso possono emergere dati relativi a condanne penali e reati (es. contraffazione e alterazione di segni distintivi e brevetti, vendita di prodotti con segni mendaci: artt. 473-474 e 517 c.p.), trattati solo ove pertinenti e necessari rispetto all'incarico, ai sensi dell'art. 10 GDPR e dell'art. 2-octies del Codice privacy. Gli atti dei procedimenti civili non costituiscono di per sé dati ex art. 10.",
-            "en": "In anti-counterfeiting actions and the related litigation, data on criminal convictions and offences may emerge (e.g. counterfeiting and alteration of distinctive signs and patents, sale of goods bearing false marks: Arts. 473-474 and 517 of the Italian Criminal Code), processed only where relevant and necessary in relation to the engagement, under GDPR Art. 10 and Art. 2-octies of the Italian Privacy Code. Civil-proceedings acts do not in themselves constitute Art. 10 data."
+            "en": "In anti-counterfeiting actions and the related litigation, data on criminal convictions and offences may emerge (e.g. counterfeiting and alteration of distinctive signs and patents, sale of goods bearing false marks, as criminal offences under applicable national law), processed only where relevant and necessary in relation to the engagement, under Art. 10 GDPR, where authorised by Union or Member State law providing appropriate safeguards. Civil-proceedings acts do not in themselves constitute Art. 10 data."
           }
         },
         "categorieInteressati": [
