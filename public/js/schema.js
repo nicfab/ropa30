@@ -166,13 +166,16 @@ export const AUDIT_TARGET = {
 // ============================================================================
 export function createDefaultSettings() {
   const now = new Date().toISOString();
+  // First-run UI language: follow the browser (en -> en, otherwise default).
+  const lang = ((typeof navigator !== 'undefined' && navigator.language ? navigator.language : LINGUA_DEFAULT)
+                 .slice(0, 2).toLowerCase() === 'en') ? 'en' : 'it';
   return {
     id: 'default',
     tenantId: DEFAULT_TENANT_ID,
     schemaVersion: SCHEMA_VERSION,
 
     // Interface language (display only).
-    uiLanguage: LINGUA_DEFAULT,
+    uiLanguage: lang,
 
     titolare: {
       denominazione: '',
@@ -208,8 +211,8 @@ export function createDefaultSettings() {
 
     // Register languages: enabled set + primary (invariant: principale ∈ lingue).
     registro: {
-      lingue: [LINGUA_DEFAULT],
-      linguaPrincipale: LINGUA_DEFAULT
+      lingue: [lang],
+      linguaPrincipale: lang
     },
 
     metadata: {
