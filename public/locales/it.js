@@ -49,6 +49,8 @@ export default {
 
     welcomePunto4: 'Backup in formato JSON per conservare i tuoi dati e ripristinarli quando vuoi',
 
+    welcomeNotaLingua: 'L’interfaccia è in italiano perché è la lingua impostata nel tuo browser. Se preferisci un’altra lingua, puoi selezionarla dal menu a tendina in alto a destra: da quel momento ropa30 la userà sempre su questo computer, anche se chiudi e riapri la pagina.',
+
     welcomeNotaStorage: 'I dati restano salvati nel tuo browser. Il browser potrebbe chiederti di consentire l\u2019archiviazione persistente: concederla aiuta a ridurre il rischio che i dati vengano rimossi automaticamente. In ogni caso, esporta regolarmente un backup JSON per conservare il registro al sicuro.',
 
     welcomeComeIniziare: 'Come vuoi iniziare?',
