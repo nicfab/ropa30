@@ -4,6 +4,8 @@
 
 > The GDPR Article 30 register, simplified.
 
+[![DOI](https://zenodo.org/badge/1252698280.svg)](https://doi.org/10.5281/zenodo.21720639)
+
 **ropa30** is a free and open-source web application that helps small businesses,
 freelancers, associations, and Data Protection Officers (DPOs) maintain their
 **Record of Processing Activities (ROPA)** as required by Article 30 of the EU

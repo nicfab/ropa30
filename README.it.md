@@ -4,6 +4,8 @@
 
 > Il registro dei trattamenti GDPR, semplice.
 
+[![DOI](https://zenodo.org/badge/1252698280.svg)](https://doi.org/10.5281/zenodo.21720639)
+
 **ropa30** è un'applicazione web gratuita e open source che aiuta piccole imprese,
 liberi professionisti, associazioni e Responsabili della Protezione dei Dati (DPO)
 a tenere il proprio **Registro delle Attività di Trattamento** previsto
