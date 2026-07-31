@@ -1,4 +1,4 @@
-![ropa30 — The GDPR Article 30 register, simplified.](https://codeberg.org/nicfab/ropa30/raw/branch/main/public/og-image.jpg)
+![ropa30 — The GDPR Article 30 register, simplified.](public/og-image.jpg)
 
 # ropa30
 

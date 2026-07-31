@@ -1,4 +1,4 @@
-![ropa30 — Il registro dei trattamenti GDPR, semplice.](https://codeberg.org/nicfab/ropa30/raw/branch/main/public/og-image.jpg)
+![ropa30 — Il registro dei trattamenti GDPR, semplice.](public/og-image.jpg)
 
 # ropa30
 
