@@ -9,9 +9,9 @@
   "templates": [
     {
       "templateId": "tpl-it-005-newsletter-email",
-      "version": 1,
+      "version": 2,
       "issued": "2026-07-31",
-      "modified": "2026-07-31",
+      "modified": "2026-11-24",
       "changelog": [
         {
           "version": 1,
@@ -19,6 +19,14 @@
           "notes": {
             "it": "Versione iniziale",
             "en": "Initial version"
+          }
+        },
+        {
+          "version": 2,
+          "date": "2026-11-24",
+          "notes": {
+            "it": "Trasferimento extra-UE: la garanzia passa da «Clausole contrattuali tipo» a «Da verificare», poiché il paese e il fornitore sono ancora da individuare.",
+            "en": "Transfer outside the EU: the safeguard changes from “Standard contractual clauses” to “To be verified”, since the country and the provider are still to be identified."
           }
         }
       ],
@@ -170,7 +178,7 @@
         "trasferimentiExtraUE": [
           {
             "paese": "[Verificare in base al fornitore scelto]",
-            "garanziaApplicata": "scc",
+            "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Se il fornitore ha sede o sub-responsabili extra-UE (frequentemente USA): Clausole Contrattuali Tipo della Commissione Europea (decisione 2021/914) integrate con eventuale Transfer Impact Assessment (TIA). Verificare anche eventuale certificazione EU-US Data Privacy Framework, ove applicabile.",
               "en": "If the provider is based or has sub-processors outside the EU (frequently in the USA): EU Standard Contractual Clauses (Commission Decision 2021/914) supplemented by Transfer Impact Assessment (TIA). Also verify any EU-US Data Privacy Framework certification, where applicable."
@@ -7629,9 +7637,9 @@
     },
     {
       "templateId": "tpl-it-023-studi-legali-procure-deleghe-mandati",
-      "version": 1,
+      "version": 2,
       "issued": "2026-07-31",
-      "modified": "2026-07-31",
+      "modified": "2026-11-24",
       "changelog": [
         {
           "version": 1,
@@ -7639,6 +7647,14 @@
           "notes": {
             "it": "Versione iniziale",
             "en": "Initial version"
+          }
+        },
+        {
+          "version": 2,
+          "date": "2026-11-24",
+          "notes": {
+            "it": "Fonte dei dati: il valore non valido «diretta» è stato corretto in «misto», coerente con il dettaglio della fonte (dati forniti dal cliente e da sostituti/domiciliatari o dallo studio).",
+            "en": "Data source: the invalid value “diretta” has been corrected to “mixed”, consistent with the source details (data provided by the client and by substitutes/domiciliary lawyers or by the firm)."
           }
         }
       ],
@@ -7796,7 +7812,7 @@
             "en": "Any data on criminal proceedings (Art. 10), where the power of attorney concerns criminal defense, if relevant and necessary"
           }
         ],
-        "fonteDeiDati": "diretta",
+        "fonteDeiDati": "misto",
         "fonteDeiDatiDettagli": {
           "it": "Dati forniti direttamente dal cliente al momento del conferimento della procura o del mandato, inclusi i dati per l'autentica della sottoscrizione; eventuali dati di sostituti/domiciliatari forniti dagli stessi o dallo studio. La raccolta è limitata a quanto necessario alla formazione e alla prova dei poteri rappresentativi.",
           "en": "Data provided directly by the client when granting the power of attorney or mandate, including the data for signature authentication; any data of substitutes/domiciliary lawyers provided by them or by the firm. Collection is limited to what is necessary to create and evidence the representative powers."
@@ -11285,9 +11301,9 @@
     },
     {
       "templateId": "tpl-it-034-email-marketing-soft-optin",
-      "version": 1,
+      "version": 2,
       "issued": "2026-07-31",
-      "modified": "2026-07-31",
+      "modified": "2026-11-24",
       "changelog": [
         {
           "version": 1,
@@ -11295,6 +11311,14 @@
           "notes": {
             "it": "Versione iniziale",
             "en": "Initial version"
+          }
+        },
+        {
+          "version": 2,
+          "date": "2026-11-24",
+          "notes": {
+            "it": "Trasferimento extra-UE: la garanzia passa da «Clausole contrattuali tipo» a «Da verificare», poiché il paese e il fornitore sono ancora da individuare.",
+            "en": "Transfer outside the EU: the safeguard changes from “Standard contractual clauses” to “To be verified”, since the country and the provider are still to be identified."
           }
         }
       ],
@@ -11461,7 +11485,7 @@
         "trasferimentiExtraUE": [
           {
             "paese": "[Verificare in base al fornitore scelto]",
-            "garanziaApplicata": "scc",
+            "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Se il fornitore ha sede o sub-responsabili extra-UE (frequentemente USA): Clausole Contrattuali Tipo della Commissione Europea (decisione 2021/914) integrate con eventuale Transfer Impact Assessment (TIA). Verificare anche eventuale certificazione EU-US Data Privacy Framework, ove applicabile.",
               "en": "If the provider is based or has sub-processors outside the EU (frequently in the USA): EU Standard Contractual Clauses (Commission Decision 2021/914) supplemented by Transfer Impact Assessment (TIA). Also verify any EU-US Data Privacy Framework certification, where applicable."
