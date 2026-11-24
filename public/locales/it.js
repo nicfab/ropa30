@@ -76,7 +76,7 @@ export default {
     onbSezioneContatti: 'Contatti',
     onbSezioneDpo: 'Responsabile della protezione dei dati (DPO)',
     onbSezioneRegistro: 'Registro',
-    lblDenominazione: 'Denominazione *',
+    lblDenominazione: 'Denominazione',
     lblFormaGiuridica: 'Forma giuridica',
     lblCodiceFiscale: 'Codice fiscale',
     lblPartitaIVA: 'Partita IVA',
@@ -92,7 +92,8 @@ export default {
     lblDataCreazione: 'Data di creazione',
     hintLingueRegistro: 'Scegli in quali lingue redigere il registro. Puoi abilitarne una o entrambe; la lingua principale \u00e8 quella usata per impostazione predefinita.',
     erroreNessunaLingua: 'Seleziona almeno una lingua per il registro.',
-    onbObbligatorio: '* Campi obbligatori per salvare: denominazione, almeno una lingua del registro e la sede del titolare (città e Stato).',
+    onbObbligatorio: '* Campi obbligatori per salvare: denominazione, città, Paese, email e almeno una lingua del registro.',
+    erroreEmail: 'Inserisci un indirizzo email valido.',
     onbErrore: 'Si \u00e8 verificato un errore durante il salvataggio. Riprova.',
     btnSalva: 'Salva e continua',
 

@@ -415,14 +415,19 @@ function ropa30App() {
     get mostraPrincipaleEn() { return this.regEn; },
 
     // ---- Onboarding validation ----
+    get emailNonValida() {
+      const e = (this.email || '').trim();
+      return e.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    },
     get nonSalvabile() {
-      // Art.30(1)(a): the controller must be identified and locatable. We require
-      // the name plus the registered seat (city + country). Email/PEC/phone stay
-      // optional (a phone number does not identify a controller; a seat does).
+      // Art. 30(1)(a): name and contact details of the controller. Required set
+      // (legal choice of the author): name, registered seat (city + country) and
+      // a valid email address. PEC, phone and postal address stay optional.
       const hasDen = this.denominazione.trim().length > 0;
       const hasSede = this.citta.trim().length > 0 && this.paese.trim().length > 0;
+      const hasEmail = (this.email || '').trim().length > 0 && !this.emailNonValida;
       const hasLingua = this.regIt || this.regEn;
-      return !(hasDen && hasSede && hasLingua);
+      return !(hasDen && hasSede && hasEmail && hasLingua);
     },
     get salvaDisabilitato() { return this.nonSalvabile || this.saving; },
     get dataCreazioneVisuale() {

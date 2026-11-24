@@ -347,8 +347,8 @@
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneTitolare"></legend>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="sm:col-span-2">
-                  <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDenominazione"></label>
-                  <input id="f-denominazione" type="text" x-model="denominazione" maxlength="150"
+                  <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblDenominazione"></span> <span aria-hidden="true">*</span></label>
+                  <input id="f-denominazione" aria-required="true" type="text" x-model="denominazione" maxlength="150"
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
@@ -393,8 +393,8 @@
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-4">
-                  <label for="f-citta" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCitta"></label>
-                  <input id="f-citta" type="text" x-model="citta"
+                  <label for="f-citta" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblCitta"></span> <span aria-hidden="true">*</span></label>
+                  <input id="f-citta" aria-required="true" type="text" x-model="citta"
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-3">
@@ -403,8 +403,8 @@
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-3">
-                  <label for="f-paese" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPaese"></label>
-                  <input id="f-paese" type="text" x-model="paese"
+                  <label for="f-paese" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblPaese"></span> <span aria-hidden="true">*</span></label>
+                  <input id="f-paese" aria-required="true" type="text" x-model="paese"
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
@@ -414,9 +414,10 @@
               <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneContatti"></legend>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblEmail"></label>
-                  <input id="f-email" type="email" x-model="email"
+                  <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblEmail"></span> <span aria-hidden="true">*</span></label>
+                  <input id="f-email" aria-required="true" type="email" x-model="email"
                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                  <p class="mt-1 text-sm text-danger-600" x-show="emailNonValida" x-text="L.erroreEmail"></p>
                 </div>
                 <div>
                   <label for="f-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPec"></label>
@@ -461,7 +462,7 @@
               <p class="text-sm text-brand-600 mb-4" x-text="L.hintLingueRegistro"></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <span class="block text-sm font-medium text-brand-800 mb-2" x-text="L.lblLingueRegistro"></span>
+                  <span class="block text-sm font-medium text-brand-800 mb-2"><span x-text="L.lblLingueRegistro"></span> <span aria-hidden="true">*</span></span>
                   <div class="flex items-center gap-6">
                     <label class="inline-flex items-center gap-2 text-brand-800">
                       <input type="checkbox" x-model="regIt" x-on:change="validaLingueRegistro" class="h-4 w-4 accent-brand-700" />

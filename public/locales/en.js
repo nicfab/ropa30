@@ -76,7 +76,7 @@ export default {
     onbSezioneContatti: 'Contacts',
     onbSezioneDpo: 'Data Protection Officer (DPO)',
     onbSezioneRegistro: 'Register',
-    lblDenominazione: 'Name *',
+    lblDenominazione: 'Name',
     lblFormaGiuridica: 'Legal form',
     lblCodiceFiscale: 'Tax code',
     lblPartitaIVA: 'VAT number',
@@ -92,7 +92,8 @@ export default {
     lblDataCreazione: 'Creation date',
     hintLingueRegistro: 'Choose which languages to draft the register in. Enable one or both; the primary language is used by default.',
     erroreNessunaLingua: 'Select at least one language for the register.',
-    onbObbligatorio: '* Required to save: name, at least one register language, and the controller’s registered seat (city and country).',
+    onbObbligatorio: '* Required to save: name, city, country, email and at least one register language.',
+    erroreEmail: 'Enter a valid email address.',
     onbErrore: 'An error occurred while saving. Please try again.',
     btnSalva: 'Save and continue',
 
