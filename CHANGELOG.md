@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Template catalogue: each template now carries `version` (integer),
+  `issued` and `modified` (ISO 8601 dates) and a bilingual `changelog`,
+  with terms aligned to W3C DCAT 3 / Dublin Core (`dcat:version`,
+  `dcterms:issued`, `dcterms:modified`, `adms:versionNotes`) (#1).
+- Detail view: creation and last-modified dates, the source template with
+  its version and date, and an informative notice with the changelog notes
+  when a newer template version is available. Records are never changed
+  automatically (#1).
+- `CITATION.cff` with citation metadata for GitHub and Zenodo, declaring
+  the AGPL-3.0-or-later licence (Zenodo previously recorded AGPL-3.0-only).
+
+### Changed
+- Onboarding: the controller's email address is now required, together
+  with name, city and country (Art. 30(1)(a) GDPR). Required fields are
+  marked with an asterisk and `aria-required`; an invalid email address
+  is flagged.
+- Records created from a template now store the version of that specific
+  template (`sourceTemplateVersion`) instead of the catalogue version.
+
 ## [1.0.0] - 2026-07-31
 
 First public release.
