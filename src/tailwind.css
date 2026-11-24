@@ -133,6 +133,50 @@
 }
 
 /* ----------------------------------------------------------------------------
+ * DARK THEME — follows the operating-system preference (prefers-color-scheme).
+ * Implemented by redefining the theme colour variables, so every utility
+ * class (bg-*, text-*, border-*, including opacity variants) adapts without
+ * touching the HTML. The brand scale is inverted for text roles; "white"
+ * becomes the card/dialog/input surface and neutral-50 the page background;
+ * brand-950 stays dark (used only for the modal backdrop).
+ * Screen only: printing always uses the light, document-oriented styles.
+ * Contrast checked against WCAG 2.1 AA (text >= 4.5:1, input borders >= 3:1).
+ * -------------------------------------------------------------------------- */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-white:      oklch(0.22 0.02 220);   /* surfaces: cards, dialogs, inputs */
+    --color-neutral-50: oklch(0.17 0.015 220);  /* page background */
+
+    --color-brand-50:  oklch(0.25 0.025 220);
+    --color-brand-100: oklch(0.28 0.03 220);
+    --color-brand-200: oklch(0.40 0.04 220);
+    --color-brand-300: oklch(0.52 0.05 220);
+    --color-brand-400: oklch(0.64 0.08 220);
+    --color-brand-500: oklch(0.72 0.08 220);
+    --color-brand-600: oklch(0.78 0.06 220);
+    --color-brand-700: oklch(0.84 0.04 220);
+    --color-brand-800: oklch(0.90 0.02 220);
+    --color-brand-900: oklch(0.95 0.01 220);
+    --color-brand-950: oklch(0.08 0.01 220);
+
+    --color-accent-50:  oklch(0.25 0.04 155);
+    --color-accent-100: oklch(0.30 0.05 155);
+    --color-accent-200: oklch(0.40 0.06 155);
+    --color-accent-600: oklch(0.78 0.13 155);
+    --color-accent-700: oklch(0.82 0.12 155);
+
+    --color-warning-500: oklch(0.78 0.14 75);
+    --color-warning-600: oklch(0.82 0.13 75);
+
+    --color-danger-500: oklch(0.70 0.15 25);
+    --color-danger-600: oklch(0.75 0.14 25);
+    --color-danger-700: oklch(0.68 0.16 25);
+  }
+}
+
+/* ----------------------------------------------------------------------------
  * PRINT — document-oriented register (Fase 4).
  * On screen #print-area is hidden; in print it becomes the ONLY visible content
  * (app chrome hidden), rendering a clean Art.30 register for archiving/exhibit.
