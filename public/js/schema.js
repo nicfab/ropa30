@@ -4,7 +4,7 @@
  *
  * Data model for ROPA (Record of Processing Activities), GDPR Art. 30(1).
  *
- * MULTILINGUAL MODEL (schema v2):
+ * MULTILINGUAL MODEL (introduced in schema v2):
  * - Free-text, editorial fields are bilingual objects: { it: '', en: '' }.
  * - Codes/enums (legal bases, sources, final actions, transfer guarantees),
  *   booleans, dates, IDs and technical references remain plain values; their
@@ -20,10 +20,12 @@
 // ============================================================================
 // SCHEMA VERSION
 // ============================================================================
-// v2: introduces the multilingual model (bilingual free-text fields) and the
-// new settings language structure. Migration from v1 is handled in db.js
-// (Dexie version(2) upgrade): v1 plain-string texts are moved into the primary
-// language slot; the other language is left empty (no automatic translation).
+// History (step migrations in db.js, applied in order up to SCHEMA_VERSION):
+// v2: multilingual model (bilingual free-text fields) and the settings language
+//     structure; v1 plain-string texts are moved into the primary language
+//     slot, the other language is left empty (no automatic translation).
+// v3: unitaOrganizzativa becomes a list of bilingual units.
+// v4: each unitaOrganizzativa item is reduced to { unita: {it,en} }.
 export const SCHEMA_VERSION = 4;
 
 // ----------------------------------------------------------------------------
@@ -60,7 +62,7 @@ export function bilingue(it = '', en = '') {
 
 // ----------------------------------------------------------------------------
 // FACTORY: empty organizational unit (department/office) for unitaOrganizzativa[].
-// unita is the bilingual org-unit name (dept/office/area); codice is a neutral code.
+// unita is the bilingual org-unit name (dept/office/area).
 // ----------------------------------------------------------------------------
 export function unitaOrgVuota() {
   return { unita: bilingue() };
@@ -136,16 +138,6 @@ export const AZIONE_FINALE_DATI = {
 };
 
 // ============================================================================
-// SETTORE
-// ============================================================================
-export const SETTORE = {
-  COMUNE:      'comune',
-  PA:          'pa',
-  UNIVERSITA:  'universita',
-  CAF:         'caf'
-};
-
-// ============================================================================
 // TIPI DI AUDIT LOG
 // ============================================================================
 export const AUDIT_AZIONE = {
@@ -164,7 +156,7 @@ export const AUDIT_TARGET = {
 };
 
 // ============================================================================
-// FACTORY: default Settings (schema v2)
+// FACTORY: default Settings
 // ============================================================================
 export function createDefaultSettings() {
   const now = new Date().toISOString();
@@ -225,7 +217,7 @@ export function createDefaultSettings() {
 }
 
 // ============================================================================
-// FACTORY: default Processing Activity (schema v2 — multilingual)
+// FACTORY: default Processing Activity (multilingual)
 // ============================================================================
 export function createDefaultProcessingActivity({ id }) {
   const now = new Date().toISOString();
@@ -242,8 +234,8 @@ export function createDefaultProcessingActivity({ id }) {
     // ---- Internal classification ----
     // unitaOrganizzativa: list of organizational units (departments/offices) this
     // activity belongs to. Default (a): single unit; but a list supports (b) an
-    // activity shared across units. unita is the bilingual org-unit name
-    // (org names), codice is a technical/neutral code (not bilingual).
+    // activity shared across units. Each item is { unita: {it,en} }, the
+    // bilingual org-unit name.
     unitaOrganizzativa: [],
     codiceUtente: '',
 
