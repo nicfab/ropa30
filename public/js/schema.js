@@ -153,12 +153,14 @@ export const AUDIT_AZIONE = {
   UPDATED:   'updated',
   DELETED:   'deleted',
   IMPORTED:  'imported',
-  EXPORTED:  'exported'
+  EXPORTED:  'exported',
+  RESTORED:  'restored'   // full restore from a backup (replaces the whole database)
 };
 
 export const AUDIT_TARGET = {
   SETTINGS:            'settings',
-  PROCESSING_ACTIVITY: 'processingActivity'
+  PROCESSING_ACTIVITY: 'processingActivity',
+  DATABASE:            'database'           // whole-database operations (restore, reset)
 };
 
 // ============================================================================

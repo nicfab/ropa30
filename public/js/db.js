@@ -538,8 +538,8 @@ export async function importAllData(envelope, { mode = 'replace' } = {}) {
   });
 
   await logAudit({
-    azione: 'RESTORE',
-    targetType: 'database',
+    azione: AUDIT_AZIONE.RESTORED,
+    targetType: AUDIT_TARGET.DATABASE,
     targetId: 'all',
     summary: 'Ripristino da backup: ' + prepPAs.length + ' trattamenti (file del ' + (summary.exportedAt || 'n/d') + ')'
   });
@@ -563,8 +563,8 @@ export async function resetAllData() {
     await db.settings.put(createDefaultSettings());
   });
   await logAudit({
-    azione: 'DELETED',
-    targetType: 'database',
+    azione: AUDIT_AZIONE.DELETED,
+    targetType: AUDIT_TARGET.DATABASE,
     targetId: 'all',
     summary: 'Reset totale: cancellati impostazioni, trattamenti e registro attivita'
   });
