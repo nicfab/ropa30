@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.3.0] - 2026-11-24
 
+Archived: DOI [10.5281/zenodo.24513054](https://doi.org/10.5281/zenodo.24513054) ·
+SWHID [`swh:1:dir:3dd70c8b4ecf1afc38fa16bf3ff1657c64262853`](https://archive.softwareheritage.org/swh:1:dir:3dd70c8b4ecf1afc38fa16bf3ff1657c64262853;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:4507b42c52b24095a4c990a234b5dc83ed4235d3;anchor=swh:1:rel:784f4bca8e57a0f7263ff59f37d1f072b865b9e3)
+
 ### Added
 - Data specification, draft 0.1: JSON Schema (2020-12) files published under
   `/schema/v0/`, describing the register settings, processing activities,
