@@ -195,7 +195,7 @@ for (const t of catalog.templates) {
   const scenEn = (t.scenari?.en || []).map((s) => s.id + ':' + s.art6).join();
   const problems = [];
   if (last.version !== t.version) problems.push(`version ${t.version} != last changelog ${last.version}`);
-  if (last.date !== t.modified) problems.push(`modified ${t.modified} != last changelog date ${last.date}`);
+  if (t.modified < last.date) problems.push(`modified ${t.modified} earlier than last changelog date ${last.date}`);
   if (first.date !== t.issued) problems.push(`issued ${t.issued} != first changelog date ${first.date}`);
   if (!increasing) problems.push('changelog versions not increasing');
   if (t.modified < t.issued) problems.push('modified before issued');

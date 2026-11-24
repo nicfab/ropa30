@@ -3,7 +3,7 @@
   "$id": "https://ropa30.eu/schema/v0/template-catalog.schema.json",
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - template catalogue",
-  "description": "Catalogue of the templates from which processing activities can be created (public/data/templates.json). Each template is versioned in line with W3C DCAT 3 and Dublin Core: 'version' (dcat:version), 'issued' (dcterms:issued), 'modified' (dcterms:modified) and 'changelog[].notes' (adms:versionNotes). Not expressible in JSON Schema and checked by the test suite: the last changelog entry has the template's version and the 'modified' date; the first has the 'issued' date; versions in the changelog are increasing.",
+  "description": "Catalogue of the templates from which processing activities can be created (public/data/templates.json). Each template is versioned in line with W3C DCAT 3 and Dublin Core: 'version' (dcat:version), 'issued' (dcterms:issued), 'modified' (dcterms:modified) and 'changelog[].notes' (adms:versionNotes). Not expressible in JSON Schema and checked by the test suite: the last changelog entry has the template's version; 'modified' is not earlier than its date (an editorial change updates 'modified' without a new version); the first entry has the 'issued' date; versions in the changelog are increasing.",
   "x-spec-version": "0.1.0-draft",
   "type": "object",
   "properties": {
@@ -59,7 +59,7 @@
         },
         "modified": {
           "$ref": "common.schema.json#/$defs/date",
-          "description": "Date of the current version.",
+          "description": "Date of the last change, substantive or editorial (an editorial change updates it without a new version).",
           "x-dcat": "dcterms:modified"
         },
         "changelog": {
