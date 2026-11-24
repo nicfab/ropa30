@@ -50,24 +50,27 @@ nessun account da creare, nessun cloud a cui fidarsi.
 
 ## Principi cardine
 
-- **🔒 Privacy by design, non per promessa.** I tuoi dati non lasciano mai
-  il tuo dispositivo. Nessuna telemetria, nessun analytics, nessuna richiesta
-  a terze parti, nessuna sincronizzazione cloud. Tutto è memorizzato localmente
-  nel browser tramite IndexedDB.
+- **🔒 Privacy by design, non per promessa.** I dati del tuo registro non
+  lasciano mai il tuo dispositivo. Nessuna telemetria, nessuno script di
+  tracciamento, nessuna richiesta a terze parti, nessuna sincronizzazione cloud.
+  Tutto è memorizzato localmente nel browser tramite IndexedDB.
 
-- **🌍 Open source — AGPL-3.0.** Libero di usare, studiare, modificare,
+- **🌍 Open source — AGPL-3.0-or-later.** Libero di usare, studiare, modificare,
   condividere. Qualsiasi opera derivata — compresi servizi web costruiti su
   ropa30 — deve restare open source. Stessa filosofia di Nextcloud, Mastodon,
   Bitwarden.
 
-- **🧭 Conforme agli standard.** ropa30 implementa il modello dati definito da
-  [UROPA](https://github.com/uropa-project/uropa) per piena interoperabilità
-  con altri strumenti GDPR tramite import/export JSON standardizzato.
+- **🧭 Allineato agli standard.** Il modello dati segue l'art. 30 GDPR campo per
+  campo. Le date sono in formato ISO 8601 e il catalogo dei modelli usa i
+  termini W3C DCAT / Dublin Core per le versioni (`version`, `issued`,
+  `modified`). I dati sono esportabili in JSON; una specifica dei dati pubblica
+  (JSON Schema) è in roadmap.
 
-- **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessuna configurazione,
-  nessun manuale obbligatorio. Una procedura guidata accompagna il primo
-  utilizzo. Ogni campo dei moduli include spiegazioni in linguaggio chiaro dei
-  concetti GDPR rilevanti.
+- **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessun account,
+  nessuna configurazione oltre a una breve impostazione iniziale dei dati del
+  titolare. I modelli pronti all'uso permettono di creare un trattamento
+  completo in pochi clic. Le indicazioni GDPR in linguaggio chiaro per ogni
+  campo sono in roadmap.
 
 - **🇪🇺 Infrastruttura europea e sovrana.** Lo sviluppo principale avviene su
   [Codeberg](https://codeberg.org/nicfab/ropa30), un'istanza Forgejo non-profit

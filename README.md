@@ -47,22 +47,23 @@ to configure, no account to create, no cloud to trust.
 
 ## Core principles
 
-- **🔒 Privacy by design, not by promise.** Your data never leaves your device.
-  No telemetry, no analytics, no third-party requests, no cloud sync.
-  Everything is stored locally in your browser using IndexedDB.
+- **🔒 Privacy by design, not by promise.** Your register data never leaves
+  your device. No telemetry, no tracking scripts, no third-party requests, no
+  cloud sync. Everything is stored locally in your browser using IndexedDB.
 
-- **🌍 Open source — AGPL-3.0.** Free to use, study, modify, and share. Any
+- **🌍 Open source — AGPL-3.0-or-later.** Free to use, study, modify, and share. Any
   derivative work — including web services built on top of ropa30 — must
   remain open source. The same spirit as Nextcloud, Mastodon, and Bitwarden.
 
-- **🧭 Standards-aligned.** ropa30 implements the data model defined by
-  [UROPA](https://github.com/uropa-project/uropa) for full interoperability
-  with other GDPR tools through standardized JSON import/export.
+- **🧭 Standards-aligned.** The data model follows Article 30 GDPR field by
+  field. Dates use ISO 8601, and the template catalogue uses W3C DCAT / Dublin
+  Core terms for versioning (`version`, `issued`, `modified`). Data can be
+  exported as JSON; a public data specification (JSON Schema) is on the roadmap.
 
-- **🌱 Steve Jobs simplicity.** No installation, no configuration, no manuals
-  required. A guided onboarding wizard walks first-time users through the
-  setup. Every form field carries plain-language explanations of the relevant
-  GDPR concepts.
+- **🌱 Steve Jobs simplicity.** No installation, no account, no configuration
+  beyond a short initial setup of the controller's details. Ready-made
+  templates let you create a complete processing activity in a few clicks.
+  Plain-language GDPR guidance for each field is on the roadmap.
 
 - **🇪🇺 European, sovereign infrastructure.** Primary development happens on
   [Codeberg](https://codeberg.org/nicfab/ropa30), a non-profit Forgejo
