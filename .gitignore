@@ -156,9 +156,6 @@ deploy.sh
 # File temporanei di lavoro
 /tmp/ropa30_*.json
 
-# File di contesto locale per Claude Code (NON versionare)
-CLAUDE.md
-
 # macOS
 .DS_Store
 docs/templates-bozze/Archive.zip
