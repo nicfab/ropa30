@@ -9,6 +9,19 @@
   "templates": [
     {
       "templateId": "tpl-it-005-newsletter-email",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "marketing",
       "settore": "comune",
@@ -266,6 +279,19 @@
     },
     {
       "templateId": "tpl-it-001-rapporto-lavoro",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "risorse_umane",
       "settore": "comune",
@@ -680,6 +706,19 @@
     },
     {
       "templateId": "tpl-it-008-videosorveglianza",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "sicurezza",
       "settore": "comune",
@@ -1048,6 +1087,19 @@
     },
     {
       "templateId": "tpl-it-003-clientela-b2b",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "clientela",
       "settore": "comune",
@@ -1353,6 +1405,19 @@
     },
     {
       "templateId": "tpl-it-004-clientela-b2c",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "clientela",
       "settore": "comune",
@@ -1720,6 +1785,19 @@
     },
     {
       "templateId": "tpl-it-002-gestione-candidature",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "risorse_umane",
       "settore": "comune",
@@ -2058,6 +2136,19 @@
     },
     {
       "templateId": "tpl-it-006-gestione-fornitori",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "fornitori",
       "settore": "comune",
@@ -2379,6 +2470,19 @@
     },
     {
       "templateId": "tpl-it-007-contabilita-fiscale",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "amministrazione",
       "settore": "comune",
@@ -2715,6 +2819,19 @@
     },
     {
       "templateId": "tpl-it-009-contenzioso-recupero-crediti",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "comune",
@@ -3049,6 +3166,19 @@
     },
     {
       "templateId": "tpl-it-010-sito-web-cookie",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "web",
       "settore": "comune",
@@ -3443,6 +3573,19 @@
     },
     {
       "templateId": "tpl-it-011-studi-legali-clienti-incarichi",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -3778,6 +3921,19 @@
     },
     {
       "templateId": "tpl-it-012-studi-legali-fascicoli-pratiche",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -4120,6 +4276,19 @@
     },
     {
       "templateId": "tpl-it-013-studi-legali-contenzioso",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -4447,6 +4616,19 @@
     },
     {
       "templateId": "tpl-it-014-studi-legali-consulenza",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -4759,6 +4941,19 @@
     },
     {
       "templateId": "tpl-it-015-studi-legali-difesa-giudizio",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -5105,6 +5300,19 @@
     },
     {
       "templateId": "tpl-it-016-studi-legali-dati-giudiziari-documentazione",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -5428,6 +5636,19 @@
     },
     {
       "templateId": "tpl-it-017-studi-legali-notifiche-depositi-pct",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -5755,6 +5976,19 @@
     },
     {
       "templateId": "tpl-it-018-studi-legali-autorita-giudiziarie-cancellerie",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -6078,6 +6312,19 @@
     },
     {
       "templateId": "tpl-it-019-studi-legali-controparti-difensori-domiciliatari",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -6397,6 +6644,19 @@
     },
     {
       "templateId": "tpl-it-020-studi-legali-consulenti-tecnici-periti-investigatori",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -6720,6 +6980,19 @@
     },
     {
       "templateId": "tpl-it-021-studi-legali-antiriciclaggio-adeguata-verifica",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -7039,6 +7312,19 @@
     },
     {
       "templateId": "tpl-it-022-studi-legali-conflitti-interesse",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -7343,6 +7629,19 @@
     },
     {
       "templateId": "tpl-it-023-studi-legali-procure-deleghe-mandati",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -7657,6 +7956,19 @@
     },
     {
       "templateId": "tpl-it-024-studi-legali-agenda-udienze-scadenze",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -7965,6 +8277,19 @@
     },
     {
       "templateId": "tpl-it-025-studi-legali-archiviazione-conservazione-fascicoli",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -8287,6 +8612,19 @@
     },
     {
       "templateId": "tpl-it-026-studi-legali-recupero-crediti",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -8604,6 +8942,19 @@
     },
     {
       "templateId": "tpl-it-027-studi-legali-esecuzioni-pignoramenti",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -8923,6 +9274,19 @@
     },
     {
       "templateId": "tpl-it-028-studi-legali-procedure-concorsuali",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -9242,6 +9606,19 @@
     },
     {
       "templateId": "tpl-it-029-studi-legali-adr-mediazione",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -9561,6 +9938,19 @@
     },
     {
       "templateId": "tpl-it-030-studi-legali-consulenza-privacy-compliance",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -9870,6 +10260,19 @@
     },
     {
       "templateId": "tpl-it-031-studi-legali-societario-contrattuale",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -10214,6 +10617,19 @@
     },
     {
       "templateId": "tpl-it-032-studi-legali-proprieta-intellettuale-marchi",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -10537,6 +10953,19 @@
     },
     {
       "templateId": "tpl-it-033-studi-legali-giuslavoristico-per-cliente",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "legale",
       "settore": "studi_legali",
@@ -10856,6 +11285,19 @@
     },
     {
       "templateId": "tpl-it-034-email-marketing-soft-optin",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "marketing",
       "settore": "comune",
@@ -11128,6 +11570,19 @@
     },
     {
       "templateId": "tpl-it-035-marketing-profiling-email-tracking",
+      "version": 1,
+      "issued": "2026-07-31",
+      "modified": "2026-07-31",
+      "changelog": [
+        {
+          "version": 1,
+          "date": "2026-07-31",
+          "notes": {
+            "it": "Versione iniziale",
+            "en": "Initial version"
+          }
+        }
+      ],
       "official": true,
       "categoria": "marketing",
       "settore": "comune",
