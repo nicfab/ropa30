@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-24
+
+### Added
+- Optional encrypted backup: the full backup can be encrypted in the browser
+  with a password chosen by the user (key derived with PBKDF2-SHA-256,
+  600,000 iterations and a random salt; AES-256-GCM encryption with
+  authenticated parameters). Encrypted backups are recognised on restore,
+  which asks for the password; plain backups and the automatic safety
+  backups are unchanged.
+- Unit tests for the backup encryption module
+  (`tests/backup-crypto.test.mjs`).
+
+### Changed
+- The warning under the register now points to the encrypted backup as an
+  alternative to the plain one.
+
 ## [1.1.0] - 2026-11-24
 
 Archived: DOI [10.5281/zenodo.24503773](https://doi.org/10.5281/zenodo.24503773) ·
@@ -95,5 +111,6 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.2.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.2.0
 [1.1.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.1.0
 [1.0.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.0.0
