@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use ROPA30, please cite it using the metadata below."
+title: "ROPA30"
+type: software
+abstract: >-
+  ROPA30 is a free, open-source, local-first web application for keeping
+  the records of processing activities required by Article 30 of Regulation
+  (EU) 2016/679 (GDPR), both the controller's record (Art. 30(1)) and the
+  processor's record (Art. 30(2)). It provides a bilingual (Italian/English)
+  library of pre-filled templates for common processing activities and
+  exports records to XLSX, ODS and PDF. It has no backend and makes no
+  external connections: all data is stored locally in the user's browser.
+authors:
+  - family-names: Fabiano
+    given-names: Nicola
+    orcid: "https://orcid.org/0000-0002-8188-7656"
+    affiliation: "Studio Legale Fabiano"
+license: AGPL-3.0-or-later
+doi: "10.5281/zenodo.21720639"
+url: "https://ropa30.eu"
+repository-code: "https://codeberg.org/nicfab/ropa30"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21720639"
+    description: "Concept DOI (all versions)"
+  - type: url
+    value: "https://github.com/nicfab/ropa30"
+    description: "Mirror repository on GitHub"
+keywords:
+  - GDPR
+  - "Article 30"
+  - "record of processing activities"
+  - ROPA
+  - "data protection"
+  - "local-first"
