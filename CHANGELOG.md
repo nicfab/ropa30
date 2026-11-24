@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-11-24
+
+### Added
+- Data specification, draft 0.1: JSON Schema (2020-12) files published under
+  `/schema/v0/`, describing the register settings, processing activities,
+  audit log entries, plain and encrypted backups and the template catalogue.
+  Each field is annotated with its GDPR reference (`x-gdpr`: record,
+  provision, nature of the requirement). Test suite `tests/schema.test.mjs`
+  (`npm run test:schema`), which also validates backup files.
+- Dark theme, applied automatically when the operating system uses dark mode
+  (screen only: printouts stay light).
+
+### Changed
+- Templates: the country of extra-EU transfers is now bilingual, like the
+  other template texts; English-language users previously saw the Italian
+  placeholder. The `modified` date of all templates is updated (editorial
+  change, no new version).
+- Backups now record the actual application version in `_meta.appVersion`
+  (previously `0.0.0`).
+
+### Fixed
+- Template 023 (powers of attorney, delegations and mandates): invalid
+  data-source value replaced by "mixed" (template version 2).
+- Templates 005 and 034: the safeguard for extra-EU transfers is now
+  "to be verified" instead of standard contractual clauses, since the country
+  and the provider are still to be identified (template version 2).
+- Templates 001 and 008: scenario codes made identical in both languages.
+- Activity log: restore and reset are now recorded with the standard values
+  (`restored`, `deleted`, target `database`); existing entries are not
+  rewritten.
+- Build-time dependency `source-map-js` updated (GHSA-68fv-2mgg-jv7q); it is
+  not shipped with the application.
+
 ## [1.2.0] - 2026-11-24
 
 Archived: DOI [10.5281/zenodo.24509679](https://doi.org/10.5281/zenodo.24509679) ·
@@ -114,6 +147,7 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.3.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.3.0
 [1.2.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.2.0
 [1.1.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.1.0
 [1.0.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.0.0
