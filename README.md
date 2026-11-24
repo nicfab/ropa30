@@ -82,7 +82,7 @@ to configure, no account to create, no cloud to trust.
 - Catalogue of 35 ready-to-use templates (12 general-purpose, 23 for law firms) across a 15-sector classification, with versioning and update notices
 - Organisational units, with filtering in the activity list and in exports
 - Export to PDF, XLSX and ODS
-- Full JSON backup and restore
+- Full JSON backup and restore, with optional password-based encryption (AES-256)
 - Local-first: all data stays in the browser (IndexedDB), with no backend and no external connections
 - Installable, offline-capable Progressive Web App
 
@@ -90,7 +90,6 @@ to configure, no account to create, no cloud to trust.
 
 - [ ] Inline GDPR guidance (tooltips) in the editor
 - [ ] Sector-specific templates for the other sectors of the classification (e.g. public administration, universities, Italian tax assistance centres (CAF), healthcare, schools)
-- [ ] Optional encrypted backup (WebCrypto, AES-256)
 - [ ] WCAG 2.1 AA accessibility audit
 - [ ] Dark mode
 - [ ] Lightweight DPIA module (Article 35)

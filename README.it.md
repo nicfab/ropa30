@@ -89,7 +89,7 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Catalogo di 35 modelli pronti all'uso (12 generali, 23 per studi legali), con classificazione in 15 settori, versioni e avviso di aggiornamento
 - Unità organizzative, con filtro nell'elenco dei trattamenti e negli export
 - Esportazione in PDF, XLSX e ODS
-- Backup e ripristino completi in JSON
+- Backup e ripristino completi in JSON, con cifratura facoltativa tramite password (AES-256)
 - Local-first: tutti i dati restano nel browser (IndexedDB), senza backend né connessioni esterne
 - Progressive Web App installabile e utilizzabile offline
 
@@ -97,7 +97,6 @@ nessun account da creare, nessun cloud a cui fidarsi.
 
 - [ ] Indicazioni GDPR contestuali (tooltip) nell'editor
 - [ ] Modelli specifici per gli altri settori della classificazione (es. pubblica amministrazione, università, CAF, sanità, scuole)
-- [ ] Backup cifrato opzionale (WebCrypto, AES-256)
 - [ ] Audit di accessibilità WCAG 2.1 AA
 - [ ] Tema scuro
 - [ ] Modulo DPIA leggero (art. 35)
