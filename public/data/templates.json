@@ -177,7 +177,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare in base al fornitore scelto]",
+            "paese": {
+              "it": "[Verificare in base al fornitore scelto]",
+              "en": "[To be verified based on the chosen provider]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Se il fornitore ha sede o sub-responsabili extra-UE (frequentemente USA): Clausole Contrattuali Tipo della Commissione Europea (decisione 2021/914) integrate con eventuale Transfer Impact Assessment (TIA). Verificare anche eventuale certificazione EU-US Data Privacy Framework, ove applicabile.",
@@ -576,7 +579,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare in base ai fornitori coinvolti — di regola UE, ma verificare cloud provider e sub-responsabili]",
+            "paese": {
+              "it": "[Verificare in base ai fornitori coinvolti — di regola UE, ma verificare cloud provider e sub-responsabili]",
+              "en": "[To be verified based on the providers involved — normally EU, but check cloud providers and sub-processors]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Per dati di lavoro è preferibile evitare trasferimenti extra-UE. Se inevitabili (es. cloud provider con sub-responsabili USA), applicare la garanzia appropriata (SCC + TIA, decisione di adeguatezza, EU-US Data Privacy Framework ove applicabile, ecc.). Verificare attentamente la presenza di sub-responsabili extra-UE nei contratti dei fornitori.",
@@ -941,7 +947,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Per la videosorveglianza è fortemente sconsigliato il salvataggio in cloud extra-UE. Se il fornitore ha sub-responsabili extra-UE, verificare attentamente]",
+            "paese": {
+              "it": "[Per la videosorveglianza è fortemente sconsigliato il salvataggio in cloud extra-UE. Se il fornitore ha sub-responsabili extra-UE, verificare attentamente]",
+              "en": "[For video surveillance, storage in cloud services outside the EU is strongly discouraged. If the provider has sub-processors outside the EU, verify carefully]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Le immagini di videosorveglianza possono presentare rischi elevati per i diritti e le libertà degli interessati, soprattutto in caso di conservazione cloud, accesso remoto, larga scala o aree accessibili al pubblico. La conservazione in cloud extra-UE va evitata; se inevitabile (es. sub-responsabili USA del fornitore), applicare SCC + TIA approfondito, verificare la presenza di certificazione EU-US Data Privacy Framework, valutare alternative europee.",
@@ -1303,7 +1312,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare in base ai fornitori — molti CRM hanno sub-responsabili extra-UE]",
+            "paese": {
+              "it": "[Verificare in base ai fornitori — molti CRM hanno sub-responsabili extra-UE]",
+              "en": "[To be verified based on the providers — many CRMs have sub-processors outside the EU]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Verificare la presenza di sub-responsabili extra-UE nei fornitori CRM/cloud. Se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -1671,7 +1683,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare — molti payment provider e piattaforme e-commerce hanno infrastrutture extra-UE]",
+            "paese": {
+              "it": "[Verificare — molti payment provider e piattaforme e-commerce hanno infrastrutture extra-UE]",
+              "en": "[To be verified — many payment providers and e-commerce platforms have infrastructure outside the EU]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Payment provider e piattaforme e-commerce spesso hanno sub-responsabili extra-UE (frequentemente USA). Verificare e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -2030,7 +2045,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare — molti ATS e portali di recruiting hanno infrastrutture extra-UE]",
+            "paese": {
+              "it": "[Verificare — molti ATS e portali di recruiting hanno infrastrutture extra-UE]",
+              "en": "[To be verified — many applicant tracking systems (ATS) and recruiting portals have infrastructure outside the EU]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Verificare la presenza di sub-responsabili extra-UE nei fornitori ATS/portali. Se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -2364,7 +2382,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare in base ai fornitori IT coinvolti]",
+            "paese": {
+              "it": "[Verificare in base ai fornitori IT coinvolti]",
+              "en": "[To be verified based on the IT providers involved]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Verificare la presenza di sub-responsabili extra-UE nei fornitori gestionale/ERP/cloud. Se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -2709,7 +2730,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare in base ai fornitori software/conservazione coinvolti]",
+            "paese": {
+              "it": "[Verificare in base ai fornitori software/conservazione coinvolti]",
+              "en": "[To be verified based on the software and digital preservation providers involved]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Verificare la presenza di sub-responsabili extra-UE nei fornitori software contabili/conservazione. Se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -3052,7 +3076,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare eventuali fornitori IT di gestione del contenzioso]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare eventuali fornitori IT di gestione del contenzioso]",
+              "en": "[Normally within the EU; check any IT providers used for litigation management]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati del contenzioso vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei software di gestione legale.",
@@ -3451,7 +3478,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare per ciascuno strumento di terze parti — frequentemente USA per analytics/advertising/social plugin]",
+            "paese": {
+              "it": "[Verificare per ciascuno strumento di terze parti — frequentemente USA per analytics/advertising/social plugin]",
+              "en": "[To be verified for each third-party tool — frequently USA for analytics/advertising/social plugins]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Molti strumenti di terze parti (analytics, advertising, social plugin) comportano trasferimenti extra-UE. Verificare per ciascuno: ruolo privacy, finalità, durata, garanzie (adeguatezza, SCC + TIA, certificazione DPF ove pertinente). Il Garante è intervenuto su strumenti analytics di terze parti per trasferimenti USA privi di adeguate garanzie.",
@@ -3807,7 +3837,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+              "en": "[Normally within the EU; check the firm's IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati dei fascicoli, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei software gestionali e nei servizi cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -4166,7 +4199,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori di gestione documentale/cloud]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori di gestione documentale/cloud]",
+              "en": "[Normally within the EU; check the document management/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I fascicoli, coperti da segreto professionale, vanno conservati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -4510,7 +4546,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud del contenzioso]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud del contenzioso]",
+              "en": "[Normally within the EU; check the IT/cloud providers used for litigation]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati del contenzioso, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -4835,7 +4874,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+              "en": "[Normally within the EU; check the firm's IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati della consulenza, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -5194,7 +5236,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Fortemente preferibile intra-UE per dati penali/investigativi; verificare i fornitori IT/cloud]",
+            "paese": {
+              "it": "[Fortemente preferibile intra-UE per dati penali/investigativi; verificare i fornitori IT/cloud]",
+              "en": "[Processing within the EU is strongly preferable for criminal/investigative data; check the IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati della difesa, in particolare penali e investigativi, coperti da segreto, vanno trattati preferibilmente in ambito UE. Verificare con particolare rigore eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile) valutando l'elevata sensibilità.",
@@ -5526,7 +5571,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e di archiviazione documentale]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud e di archiviazione documentale]",
+              "en": "[Normally within the EU; check the IT/cloud and document archiving providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati giudiziari e la documentazione processuale, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi documentali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -5866,7 +5914,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori del software, del Punto di Accesso e della PEC]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori del software, del Punto di Accesso e della PEC]",
+              "en": "[Normally within the EU; check the providers of the software, the Access Point and the certified email service (PEC)]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Gli atti e i dati trasmessi telematicamente, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di deposito, PEC e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -6206,7 +6257,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+              "en": "[Normally within the EU; check the firm's IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati scambiati con i destinatari istituzionali, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. I rapporti con gli uffici giudiziari avvengono in ambito nazionale; verificare eventuali sub-responsabili extra-UE nei soli servizi IT/cloud dello studio; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -6538,7 +6592,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+              "en": "[Normally within the EU; check the firm's IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati scambiati con controparti e legali esterni, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei soli servizi IT/cloud dello studio; in caso di domiciliatari/corrispondenti extra-UE valutare la qualificazione del ruolo e i conseguenti flussi. Se presenti trasferimenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -6874,7 +6931,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare ausiliari e fornitori IT/cloud]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare ausiliari e fornitori IT/cloud]",
+              "en": "[Normally within the EU; check auxiliaries and IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati trasmessi agli ausiliari, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali ausiliari o sub-responsabili extra-UE; se presenti trasferimenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -7202,7 +7262,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori di screening e i servizi cloud/AML]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori di screening e i servizi cloud/AML]",
+              "en": "[Normally within the EU; check the screening providers and cloud/AML services]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati AML, nominativi e vincolati a obblighi di legge, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di screening su liste/PEP e nei servizi cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -7527,7 +7590,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud dello studio]",
+              "en": "[Normally within the EU; check the firm's IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati del registro conflitti, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -7862,7 +7928,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e di firma digitale]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud e di firma digitale]",
+              "en": "[Normally within the EU; check the IT/cloud and digital signature providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati di procure e mandati, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali, di firma digitale e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -8183,7 +8252,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i servizi di calendario/sincronizzazione e cloud]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i servizi di calendario/sincronizzazione e cloud]",
+              "en": "[Normally within the EU; check the calendar/sync and cloud services]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati dell'agenda, pur minimi, sono coperti da segreto professionale e vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di calendario, posta e sincronizzazione cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -8510,7 +8582,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i servizi di conservazione, cloud e distruzione]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i servizi di conservazione, cloud e distruzione]",
+              "en": "[Normally within the EU; check the digital preservation, cloud and destruction services]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Gli archivi dei fascicoli, coperti da segreto professionale e comprensivi di dati ex art. 9/art. 10, vanno conservati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi di conservazione/cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -8844,7 +8919,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud di recupero crediti]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud di recupero crediti]",
+              "en": "[Normally within the EU; check the IT/cloud providers used for debt collection]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati delle posizioni debitorie vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -9180,7 +9258,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud delle esecuzioni]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud delle esecuzioni]",
+              "en": "[Normally within the EU; check the IT/cloud providers used for enforcement proceedings]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati delle procedure esecutive, coperti da segreto professionale, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE nei servizi gestionali e cloud; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -9512,7 +9593,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud delle procedure concorsuali]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud delle procedure concorsuali]",
+              "en": "[Normally within the EU; check the IT/cloud providers used for insolvency proceedings]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati delle procedure concorsuali, coperti da segreto professionale e potenzialmente comprensivi di dati ex art. 9/art. 10, vanno trattati preferibilmente in ambito UE. Verificare eventuali sub-responsabili extra-UE; se presenti, applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -9844,7 +9928,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e eventuali arbitrati internazionali]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud ed eventuali arbitrati internazionali]",
+              "en": "[Normally within the EU; check the IT/cloud providers and any international arbitration proceedings]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati dei procedimenti ADR, coperti da segreto professionale e da riservatezza, vanno trattati preferibilmente in ambito UE. Negli arbitrati internazionali possono verificarsi flussi verso Paesi terzi: verificare la base del trasferimento e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile). Verificare inoltre eventuali sub-responsabili extra-UE nei servizi cloud.",
@@ -10166,7 +10253,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e i relativi sub-responsabili]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud e i relativi sub-responsabili]",
+              "en": "[Normally within the EU; check the IT/cloud providers and their sub-processors]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati del rapporto di consulenza, coperti da segreto professionale e riservatezza, vanno trattati preferibilmente in ambito UE. Verificare la catena dei fornitori IT/cloud e gli eventuali sub-responsabili extra-UE; applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -10523,7 +10613,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Possibili flussi in operazioni cross-border; verificare data room e fornitori IT/cloud]",
+            "paese": {
+              "it": "[Possibili flussi in operazioni cross-border; verificare data room e fornitori IT/cloud]",
+              "en": "[Possible flows in cross-border transactions; check data rooms and IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Nelle operazioni cross-border e nelle data room con controparti o fornitori extra-UE possono verificarsi trasferimenti verso Paesi terzi: verificare la base del trasferimento e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile). Verificare inoltre i sub-responsabili extra-UE nei servizi cloud e di data room.",
@@ -10859,7 +10952,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Possibili flussi per depositi internazionali e corrispondenti esteri; verificare i fornitori IT/cloud]",
+            "paese": {
+              "it": "[Possibili flussi per depositi internazionali e corrispondenti esteri; verificare i fornitori IT/cloud]",
+              "en": "[Possible flows for international filings and foreign correspondents; check the IT/cloud providers]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Nelle procedure internazionali di deposito e nei rapporti con corrispondenti esteri possono verificarsi flussi verso Paesi terzi; molti dati dei titoli sono peraltro pubblici. Verificare la base del trasferimento e applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile) e i sub-responsabili extra-UE nei servizi cloud e di sorveglianza.",
@@ -11191,7 +11287,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Di regola intra-UE; verificare i fornitori IT/cloud e i relativi sub-responsabili]",
+            "paese": {
+              "it": "[Di regola intra-UE; verificare i fornitori IT/cloud e i relativi sub-responsabili]",
+              "en": "[Normally within the EU; check the IT/cloud providers and their sub-processors]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "I dati delle pratiche giuslavoristiche, coperti da segreto professionale e comprensivi di dati sulla salute, vanno trattati preferibilmente in ambito UE. Verificare la catena dei fornitori IT/cloud e gli eventuali sub-responsabili extra-UE; applicare la garanzia appropriata (SCC + TIA, adeguatezza, DPF ove applicabile).",
@@ -11484,7 +11583,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare in base al fornitore scelto]",
+            "paese": {
+              "it": "[Verificare in base al fornitore scelto]",
+              "en": "[To be verified based on the chosen provider]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Se il fornitore ha sede o sub-responsabili extra-UE (frequentemente USA): Clausole Contrattuali Tipo della Commissione Europea (decisione 2021/914) integrate con eventuale Transfer Impact Assessment (TIA). Verificare anche eventuale certificazione EU-US Data Privacy Framework, ove applicabile.",
@@ -11791,7 +11893,10 @@
         ],
         "trasferimentiExtraUE": [
           {
-            "paese": "[Verificare per ciascuno strumento — frequentemente USA per tracking/analytics di terze parti]",
+            "paese": {
+              "it": "[Verificare per ciascuno strumento — frequentemente USA per tracking/analytics di terze parti]",
+              "en": "[To be verified for each tool — frequently USA for third-party tracking/analytics]"
+            },
             "garanziaApplicata": "da_verificare",
             "riferimentoDocumentazione": {
               "it": "Gli strumenti di tracciamento/profilazione, in particolare di terze parti, comportano frequentemente trasferimenti extra-UE. Verificare per ciascuno: ruolo privacy, finalità, durata, garanzie (adeguatezza, SCC + TIA, certificazione DPF ove pertinente).",
