@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2026-11-24
 
+Archived: DOI [10.5281/zenodo.24503773](https://doi.org/10.5281/zenodo.24503773) ·
+SWHID [`swh:1:dir:400126305c3d263b2d79a6f52868d6082c99dd40`](https://archive.softwareheritage.org/swh:1:dir:400126305c3d263b2d79a6f52868d6082c99dd40;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:0afe0cd51fe9bd9af3158bc58fbaa10a8810863b;anchor=swh:1:rev:79def8bd1062f913d50df77914ea86709a2265d5)
+
 ### Added
 - Template catalogue: each template now carries `version` (integer),
   `issued` and `modified` (ISO 8601 dates) and a bilingual `changelog`,
@@ -30,6 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   template (`sourceTemplateVersion`) instead of the catalogue version.
 
 ## [1.0.0] - 2026-07-31
+
+Archived: DOI [10.5281/zenodo.21720640](https://doi.org/10.5281/zenodo.21720640) ·
+SWHID [`swh:1:dir:14cc4764aa39167e52a3ce0abbc9017e48647a6b`](https://archive.softwareheritage.org/swh:1:dir:14cc4764aa39167e52a3ce0abbc9017e48647a6b;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:0afe0cd51fe9bd9af3158bc58fbaa10a8810863b;anchor=swh:1:rev:4c5ea6808708e3c24c01aea1382eef992c06bbfc)
 
 First public release.
 
