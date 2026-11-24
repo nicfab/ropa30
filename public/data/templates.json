@@ -333,12 +333,12 @@
           {
             "id": "dipendenti_standard",
             "label": "Employees (subordinate employment)",
-            "art6": "contract_and_obligation"
+            "art6": "contratto_e_obbligo"
           },
           {
             "id": "collaboratori",
             "label": "Coordinated and continuous collaborators (para-subordinate)",
-            "art6": "contract_and_obligation"
+            "art6": "contratto_e_obbligo"
           }
         ]
       },
@@ -765,17 +765,17 @@
           {
             "id": "esercizio_commerciale",
             "label": "Commercial establishment open to public",
-            "art6": "legitimate_interest"
+            "art6": "legittimo_interesse"
           },
           {
             "id": "azienda_dipendenti",
             "label": "Business with employees (may require Workers' Statute Art. 4)",
-            "art6": "legitimate_interest_art4"
+            "art6": "legittimo_interesse_art4"
           },
           {
             "id": "pertinenze_private",
             "label": "Business appurtenances not open to public",
-            "art6": "legitimate_interest"
+            "art6": "legittimo_interesse"
           }
         ]
       },
