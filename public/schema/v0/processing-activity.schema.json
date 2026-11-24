@@ -1,0 +1,719 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ropa30.eu/schema/v0/processing-activity.schema.json",
+  "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
+  "title": "ROPA30 - processing activity",
+  "description": "One entry of the record of processing activities (GDPR Art. 30). The same structure serves the controller's record (Art. 30(1)) and the processor's record (Art. 30(2)); 'tipoRegistro' tells which. Field names are those actually stored by ROPA30 (Italian GDPR terminology). Empty values are valid, because a record may be incomplete while it is being drafted: legal completeness is described by the x-gdpr annotations, not by 'required'.",
+  "x-spec-version": "0.1.0-draft",
+  "x-ropa30": {
+    "dataModelVersion": 4
+  },
+  "allOf": [
+    {
+      "$ref": "#/$defs/fields"
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "tenantId",
+        "schemaVersion",
+        "tipoRegistro",
+        "titolariPerContoDelQuale",
+        "unitaOrganizzativa",
+        "codiceUtente",
+        "sourceTemplateId",
+        "sourceTemplateVersion",
+        "sourceTemplateLanguage",
+        "nome",
+        "descrizione",
+        "dataInizioTrattamento",
+        "finalita",
+        "baseGiuridica",
+        "datiCondannePenaliReati",
+        "categorieInteressati",
+        "categorieDati",
+        "fonteDeiDati",
+        "fonteDeiDatiDettagli",
+        "categorieDestinatari",
+        "responsabiliEsterni",
+        "trasferimentiExtraUE",
+        "tempiConservazione",
+        "misureSicurezza",
+        "processiDecisionaliAutomatizzati",
+        "profilazioneMarketing",
+        "valutazioneDiImpatto",
+        "note",
+        "metadata"
+      ]
+    }
+  ],
+  "$defs": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Technical identifier of the record, unique within the register."
+        },
+        "tenantId": {
+          "type": "string",
+          "description": "Technical partition identifier; currently always \"default\"."
+        },
+        "schemaVersion": {
+          "const": 4,
+          "description": "Version of the data model. This specification describes version 4."
+        },
+        "tipoRegistro": {
+          "$ref": "common.schema.json#/$defs/registerType",
+          "description": "Record the entry belongs to: 'titolare' = controller's record (Art. 30(1)); 'responsabile' = processor's record (Art. 30(2))."
+        },
+        "titolariPerContoDelQuale": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/titolarePerContoDelQuale"
+          },
+          "description": "Processor's record only: the controllers on whose behalf the processor acts. Empty in the controller's record. Not yet editable in the user interface (planned).",
+          "x-ropa30": {
+            "ui": "planned"
+          },
+          "x-gdpr": [
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "unitaOrganizzativa": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/unitaOrganizzativa"
+          },
+          "description": "Organisational units (departments, offices) the activity belongs to; more than one if the activity is shared.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "codiceUtente": {
+          "type": "string",
+          "description": "Free code assigned by the user (internal classification).",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "sourceTemplateId": {
+          "type": "string",
+          "description": "Provenance: identifier of the template the record was created from; empty if created from scratch."
+        },
+        "sourceTemplateVersion": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Provenance: version of the template the record was created from (template 'version'); null if created from scratch or unknown."
+        },
+        "sourceTemplateLanguage": {
+          "$ref": "common.schema.json#/$defs/languageOrEmpty",
+          "description": "Provenance: language in which the template was applied; empty if created from scratch."
+        },
+        "nome": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Name of the processing activity. In the processor's record it identifies the category of processing carried out on behalf of the controller.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(b)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "descrizione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Description of the processing activity. In the processor's record it describes the category of processing carried out on behalf of the controller.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(b)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "dataInizioTrattamento": {
+          "$ref": "common.schema.json#/$defs/dateOrEmpty",
+          "description": "Date on which the processing started.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "finalita": {
+          "$ref": "common.schema.json#/$defs/bilingualTextList",
+          "description": "Purposes of the processing.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(b)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "baseGiuridica": {
+          "$ref": "#/$defs/baseGiuridica",
+          "description": "Legal basis and, for special categories of data, the condition for processing. Not required by Art. 30(1)(b), which requires the purposes only; recorded for accountability.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 5(2); Art. 6(1); Art. 9(2)",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "datiCondannePenaliReati": {
+          "$ref": "#/$defs/datiCondannePenaliReati",
+          "description": "Personal data relating to criminal convictions and offences.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 10",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "categorieInteressati": {
+          "$ref": "common.schema.json#/$defs/bilingualTextList",
+          "description": "Categories of data subjects.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(c)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "categorieDati": {
+          "$ref": "common.schema.json#/$defs/bilingualTextList",
+          "description": "Categories of personal data.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(c)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "fonteDeiDati": {
+          "$ref": "common.schema.json#/$defs/dataSourceStored",
+          "description": "Source of the personal data.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 14(2)(f)",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "fonteDeiDatiDettagli": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Details on the source of the personal data.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 14(2)(f)",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "categorieDestinatari": {
+          "$ref": "common.schema.json#/$defs/bilingualTextList",
+          "description": "Categories of recipients to whom the personal data have been or will be disclosed, including recipients in third countries or international organisations.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(d)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "responsabiliEsterni": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/responsabileEsterno"
+          },
+          "description": "Processors engaged by the controller for this activity.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 28",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "trasferimentiExtraUE": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trasferimento"
+          },
+          "description": "Transfers of personal data to a third country or an international organisation, with the identification of the country or organisation and the safeguards; for transfers under the second subparagraph of Art. 49(1), the documentation of suitable safeguards.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(e)",
+              "requirement": "where-applicable"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(c)",
+              "requirement": "where-applicable"
+            }
+          ]
+        },
+        "tempiConservazione": {
+          "$ref": "#/$defs/tempiConservazione",
+          "description": "Envisaged time limits for erasure of the different categories of data.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(f)",
+              "requirement": "where-possible"
+            }
+          ]
+        },
+        "misureSicurezza": {
+          "$ref": "#/$defs/misureSicurezza",
+          "description": "General description of the technical and organisational security measures referred to in Art. 32(1).",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(g)",
+              "requirement": "where-possible"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(d)",
+              "requirement": "where-possible"
+            }
+          ]
+        },
+        "processiDecisionaliAutomatizzati": {
+          "$ref": "#/$defs/processiDecisionaliAutomatizzati",
+          "description": "Automated individual decision-making, including profiling.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 22",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "profilazioneMarketing": {
+          "$ref": "#/$defs/profilazioneMarketing",
+          "description": "Profiling for direct marketing purposes.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 4(4); Art. 21(2)",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "valutazioneDiImpatto": {
+          "$ref": "#/$defs/valutazioneDiImpatto",
+          "description": "Data protection impact assessment.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 35",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "note": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Free notes.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "createdAt": {
+              "$ref": "common.schema.json#/$defs/dateTime",
+              "description": "Creation of the record."
+            },
+            "updatedAt": {
+              "$ref": "common.schema.json#/$defs/dateTime",
+              "description": "Last update of the record."
+            },
+            "version": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Revision counter of the record."
+            }
+          },
+          "required": [
+            "createdAt",
+            "updatedAt",
+            "version"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "description": "All fields of a processing activity, none required. Used as is for template presets (see template-catalog.schema.json); the record itself requires all of them."
+    },
+    "titolarePerContoDelQuale": {
+      "type": "object",
+      "properties": {
+        "denominazione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Name of the controller."
+        },
+        "contatti": {
+          "type": "string",
+          "description": "Contact details of the controller."
+        },
+        "ruolo": {
+          "type": "string",
+          "description": "Role (free text)."
+        }
+      },
+      "required": [
+        "denominazione",
+        "contatti",
+        "ruolo"
+      ],
+      "additionalProperties": false,
+      "description": "Controller on whose behalf the processor acts."
+    },
+    "unitaOrganizzativa": {
+      "type": "object",
+      "properties": {
+        "unita": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Name of the organisational unit."
+        }
+      },
+      "required": [
+        "unita"
+      ],
+      "additionalProperties": false,
+      "description": "Organisational unit."
+    },
+    "baseGiuridica": {
+      "type": "object",
+      "properties": {
+        "art6": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/legalBasisArt6"
+          },
+          "uniqueItems": true,
+          "description": "Legal bases under Art. 6(1)."
+        },
+        "dettagliArt6": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Details on the legal basis (e.g. the legal obligation or the contract)."
+        },
+        "legittimoInteresseDettagli": {
+          "type": "object",
+          "properties": {
+            "descrizione": {
+              "$ref": "common.schema.json#/$defs/bilingualText",
+              "description": "The legitimate interest pursued."
+            },
+            "garanzieAdottate": {
+              "$ref": "common.schema.json#/$defs/bilingualText",
+              "description": "Safeguards adopted."
+            },
+            "bilanciamentoEffettuato": {
+              "type": "boolean",
+              "description": "Whether the balancing test has been carried out."
+            },
+            "bilanciamentoRichiesto": {
+              "type": "boolean",
+              "description": "Whether a balancing test is required."
+            },
+            "riferimentoBilanciamento": {
+              "$ref": "common.schema.json#/$defs/bilingualText",
+              "description": "Reference to the balancing test document."
+            }
+          },
+          "required": [
+            "descrizione",
+            "garanzieAdottate",
+            "bilanciamentoEffettuato",
+            "bilanciamentoRichiesto",
+            "riferimentoBilanciamento"
+          ],
+          "additionalProperties": false,
+          "description": "Details on legitimate interests (Art. 6(1)(f))."
+        },
+        "art9": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/conditionArt9"
+          },
+          "uniqueItems": true,
+          "description": "Conditions under Art. 9(2) for special categories of data."
+        },
+        "dettagliArt9": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Details on the Art. 9(2) condition."
+        }
+      },
+      "required": [
+        "art6",
+        "dettagliArt6",
+        "legittimoInteresseDettagli",
+        "art9",
+        "dettagliArt9"
+      ],
+      "additionalProperties": false,
+      "description": "Legal basis."
+    },
+    "datiCondannePenaliReati": {
+      "type": "object",
+      "properties": {
+        "presenti": {
+          "type": "boolean",
+          "description": "Whether such data are processed."
+        },
+        "normativaAutorizzativa": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Union or Member State law authorising the processing (Art. 10)."
+        }
+      },
+      "required": [
+        "presenti",
+        "normativaAutorizzativa"
+      ],
+      "additionalProperties": false
+    },
+    "responsabileEsterno": {
+      "type": "object",
+      "properties": {
+        "denominazione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Name of the processor."
+        },
+        "sede": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Seat of the processor."
+        },
+        "finalita": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Purpose of the engagement."
+        },
+        "accordoArt28Presente": {
+          "type": "boolean",
+          "description": "Whether a contract or other legal act under Art. 28(3) is in place."
+        },
+        "riferimentoContratto": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reference to the contract or legal act."
+        },
+        "notaRuoloPrivacy": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Note on the data protection role."
+        }
+      },
+      "required": [
+        "denominazione",
+        "sede",
+        "finalita",
+        "accordoArt28Presente",
+        "riferimentoContratto"
+      ],
+      "additionalProperties": false,
+      "description": "Processor engaged by the controller."
+    },
+    "trasferimento": {
+      "type": "object",
+      "properties": {
+        "paese": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Third country or international organisation."
+        },
+        "garanziaApplicata": {
+          "$ref": "common.schema.json#/$defs/transferSafeguard",
+          "description": "Safeguard applied to the transfer."
+        },
+        "riferimentoDocumentazione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reference to the documentation of the safeguards."
+        }
+      },
+      "required": [
+        "paese",
+        "garanziaApplicata",
+        "riferimentoDocumentazione"
+      ],
+      "additionalProperties": false,
+      "description": "Transfer to a third country or an international organisation."
+    },
+    "tempiConservazione": {
+      "type": "object",
+      "properties": {
+        "periodo": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Retention period."
+        },
+        "criteri": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Criteria used to determine the retention period."
+        },
+        "azioneFinale": {
+          "$ref": "common.schema.json#/$defs/finalAction",
+          "description": "Action at the end of the retention period."
+        }
+      },
+      "required": [
+        "periodo",
+        "criteri",
+        "azioneFinale"
+      ],
+      "additionalProperties": false
+    },
+    "misureSicurezza": {
+      "type": "object",
+      "properties": {
+        "tecniche": {
+          "$ref": "common.schema.json#/$defs/bilingualTextList",
+          "description": "Technical measures."
+        },
+        "organizzative": {
+          "$ref": "common.schema.json#/$defs/bilingualTextList",
+          "description": "Organisational measures."
+        },
+        "rinvioDocumentale": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reference to further documentation of the measures."
+        }
+      },
+      "required": [
+        "tecniche",
+        "organizzative",
+        "rinvioDocumentale"
+      ],
+      "additionalProperties": false
+    },
+    "processiDecisionaliAutomatizzati": {
+      "type": "object",
+      "properties": {
+        "presenti": {
+          "type": "boolean",
+          "description": "Whether automated decision-making takes place."
+        },
+        "descrizione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Description."
+        },
+        "logica": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Logic involved."
+        },
+        "conseguenze": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Significance and envisaged consequences for the data subject."
+        },
+        "dirittiInteressato": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Safeguards and rights of the data subject (Art. 22(3))."
+        }
+      },
+      "required": [
+        "presenti",
+        "descrizione",
+        "logica",
+        "conseguenze",
+        "dirittiInteressato"
+      ],
+      "additionalProperties": false
+    },
+    "profilazioneMarketing": {
+      "type": "object",
+      "properties": {
+        "presente": {
+          "type": "boolean",
+          "description": "Whether profiling for direct marketing takes place."
+        },
+        "descrizione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Description."
+        },
+        "logica": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Logic involved."
+        },
+        "baseGiuridicaSpecifica": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Specific legal basis."
+        }
+      },
+      "required": [
+        "presente",
+        "descrizione",
+        "logica",
+        "baseGiuridicaSpecifica"
+      ],
+      "additionalProperties": false
+    },
+    "valutazioneDiImpatto": {
+      "type": "object",
+      "properties": {
+        "effettuata": {
+          "type": "boolean",
+          "description": "Whether a data protection impact assessment has been carried out."
+        },
+        "riferimentoDocumento": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reference to the assessment document."
+        }
+      },
+      "required": [
+        "effettuata",
+        "riferimentoDocumento"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

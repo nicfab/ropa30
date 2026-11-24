@@ -1,0 +1,447 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ropa30.eu/schema/v0/settings.schema.json",
+  "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
+  "title": "ROPA30 - register settings",
+  "description": "Settings of the register: the organisation keeping it, its representative, the data protection officer, joint controllers and the register languages. In the controller's record the organisation is the controller; in the processor's record it is the processor. Empty values are valid (e.g. before onboarding is completed).",
+  "x-spec-version": "0.1.0-draft",
+  "x-ropa30": {
+    "dataModelVersion": 4
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Technical identifier of the settings record; currently always \"default\"."
+    },
+    "tenantId": {
+      "type": "string",
+      "description": "Technical partition identifier; currently always \"default\"."
+    },
+    "schemaVersion": {
+      "const": 4,
+      "description": "Version of the data model. This specification describes version 4."
+    },
+    "uiLanguage": {
+      "$ref": "common.schema.json#/$defs/language",
+      "description": "Language of the user interface (display only; does not affect the data)."
+    },
+    "titolare": {
+      "description": "The organisation keeping the register: the controller (Art. 30(1)) or, in the processor's record, the processor (Art. 30(2)). The field name is historical.",
+      "type": "object",
+      "properties": {
+        "denominazione": {
+          "type": "string",
+          "description": "Name of the organisation.",
+          "x-ropa30": {
+            "requiredInUI": true
+          },
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "mandatory"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "formaGiuridica": {
+          "type": "string",
+          "description": "Legal form.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "partitaIVA": {
+          "type": "string",
+          "description": "VAT number.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "codiceFiscale": {
+          "type": "string",
+          "description": "Tax code.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "indirizzo": {
+          "description": "Postal address (contact details).",
+          "type": "object",
+          "properties": {
+            "via": {
+              "type": "string",
+              "description": "Street."
+            },
+            "civico": {
+              "type": "string",
+              "description": "Street number."
+            },
+            "cap": {
+              "type": "string",
+              "description": "Postal code."
+            },
+            "citta": {
+              "type": "string",
+              "description": "City.",
+              "x-ropa30": {
+                "requiredInUI": true
+              }
+            },
+            "provincia": {
+              "type": "string",
+              "description": "Province or region."
+            },
+            "paese": {
+              "type": "string",
+              "description": "Country.",
+              "x-ropa30": {
+                "requiredInUI": true
+              }
+            }
+          },
+          "required": [
+            "via",
+            "civico",
+            "cap",
+            "citta",
+            "provincia",
+            "paese"
+          ],
+          "additionalProperties": false,
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "mandatory"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "email": {
+          "$ref": "common.schema.json#/$defs/emailOrEmpty",
+          "description": "E-mail address (contact details). Art. 30 requires contact details; ROPA30 requires at least the e-mail address and the city and country of the seat.",
+          "x-ropa30": {
+            "requiredInUI": true
+          },
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "mandatory"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "mandatory"
+            }
+          ]
+        },
+        "pec": {
+          "$ref": "common.schema.json#/$defs/emailOrEmpty",
+          "description": "Certified e-mail address (PEC, Italian registered e-mail): additional contact detail.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "telefono": {
+          "type": "string",
+          "description": "Telephone number: additional contact detail.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "sitoWeb": {
+          "type": "string",
+          "description": "Website.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "settoreAttivita": {
+          "type": "string",
+          "description": "Sector of activity.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "requirement": "supplementary"
+            },
+            {
+              "register": "processor",
+              "requirement": "supplementary"
+            }
+          ]
+        },
+        "rappresentante": {
+          "description": "Representative in the Union of a controller or processor not established in the Union (Art. 27).",
+          "type": "object",
+          "properties": {
+            "presente": {
+              "type": "boolean",
+              "description": "Whether a representative has been designated."
+            },
+            "denominazione": {
+              "type": "string",
+              "description": "Name of the representative."
+            },
+            "contatto": {
+              "type": "string",
+              "description": "Contact details of the representative."
+            }
+          },
+          "required": [
+            "presente",
+            "denominazione",
+            "contatto"
+          ],
+          "additionalProperties": false,
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "where-applicable"
+            },
+            {
+              "register": "processor",
+              "provision": "Art. 30(2)(a)",
+              "requirement": "where-applicable"
+            }
+          ]
+        }
+      },
+      "required": [
+        "denominazione",
+        "formaGiuridica",
+        "partitaIVA",
+        "codiceFiscale",
+        "indirizzo",
+        "email",
+        "pec",
+        "telefono",
+        "sitoWeb",
+        "settoreAttivita",
+        "rappresentante"
+      ],
+      "additionalProperties": false
+    },
+    "dpo": {
+      "description": "Data protection officer (Arts. 37-39).",
+      "type": "object",
+      "properties": {
+        "nominato": {
+          "type": "boolean",
+          "description": "Whether a data protection officer has been designated."
+        },
+        "nome": {
+          "type": "string",
+          "description": "Name."
+        },
+        "email": {
+          "$ref": "common.schema.json#/$defs/emailOrEmpty",
+          "description": "E-mail address."
+        },
+        "pec": {
+          "$ref": "common.schema.json#/$defs/emailOrEmpty",
+          "description": "Certified e-mail address (PEC)."
+        },
+        "telefono": {
+          "type": "string",
+          "description": "Telephone number."
+        },
+        "indirizzo": {
+          "type": "string",
+          "description": "Postal address."
+        },
+        "contattoPubblico": {
+          "type": "string",
+          "description": "Contact details as published (Art. 37(7))."
+        }
+      },
+      "required": [
+        "nominato",
+        "nome",
+        "email",
+        "pec",
+        "telefono",
+        "indirizzo",
+        "contattoPubblico"
+      ],
+      "additionalProperties": false,
+      "x-gdpr": [
+        {
+          "register": "controller",
+          "provision": "Art. 30(1)(a)",
+          "requirement": "where-applicable"
+        },
+        {
+          "register": "processor",
+          "provision": "Art. 30(2)(a)",
+          "requirement": "where-applicable"
+        }
+      ]
+    },
+    "contitolari": {
+      "description": "Joint controllers (Art. 26). RESERVED: the structure of the items is not yet defined and the field cannot yet be edited in the user interface; it is currently always an empty list.",
+      "type": "array",
+      "x-ropa30": {
+        "status": "reserved"
+      },
+      "x-gdpr": [
+        {
+          "register": "controller",
+          "provision": "Art. 30(1)(a)",
+          "requirement": "where-applicable"
+        }
+      ]
+    },
+    "registro": {
+      "description": "Languages of the register. The primary language must be one of the enabled languages.",
+      "type": "object",
+      "properties": {
+        "lingue": {
+          "description": "Enabled register languages (one or two).",
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/language"
+          },
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "linguaPrincipale": {
+          "$ref": "common.schema.json#/$defs/language",
+          "description": "Primary register language."
+        }
+      },
+      "required": [
+        "lingue",
+        "linguaPrincipale"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "linguaPrincipale": {
+                "const": "it"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "lingue": {
+                "type": "array",
+                "contains": {
+                  "const": "it"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "linguaPrincipale": {
+                "const": "en"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "lingue": {
+                "type": "array",
+                "contains": {
+                  "const": "en"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "$ref": "common.schema.json#/$defs/dateTime"
+        },
+        "updatedAt": {
+          "$ref": "common.schema.json#/$defs/dateTime"
+        }
+      },
+      "required": [
+        "createdAt",
+        "updatedAt"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "tenantId",
+    "schemaVersion",
+    "uiLanguage",
+    "titolare",
+    "dpo",
+    "contitolari",
+    "registro",
+    "metadata"
+  ],
+  "additionalProperties": false
+}

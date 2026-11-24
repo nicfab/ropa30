@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ropa30.eu/schema/v0/audit-entry.schema.json",
+  "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
+  "title": "ROPA30 - audit log entry",
+  "description": "One entry of the ROPA30 activity log, which records operations on the register (creation, update and deletion of items, restore and reset of the database). Entries are never rewritten: values written by earlier versions remain valid as legacy values.",
+  "x-spec-version": "0.1.0-draft",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Technical identifier of the entry."
+    },
+    "tenantId": {
+      "type": "string",
+      "description": "Technical partition identifier; currently always \"default\"."
+    },
+    "timestamp": {
+      "$ref": "common.schema.json#/$defs/dateTime",
+      "description": "When the operation took place."
+    },
+    "azione": {
+      "$ref": "common.schema.json#/$defs/auditActionStored",
+      "description": "Operation performed."
+    },
+    "targetType": {
+      "$ref": "common.schema.json#/$defs/auditTarget",
+      "description": "Kind of item affected."
+    },
+    "targetId": {
+      "type": "string",
+      "description": "Identifier of the item affected ('all' for whole-database operations)."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short human-readable description, in the language of the interface at the time of the operation."
+    }
+  },
+  "required": [
+    "id",
+    "tenantId",
+    "timestamp",
+    "azione",
+    "targetType",
+    "targetId",
+    "summary"
+  ],
+  "additionalProperties": false
+}
