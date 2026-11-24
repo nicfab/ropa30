@@ -5,6 +5,7 @@
 > The GDPR Article 30 register, simplified.
 
 [![DOI](https://zenodo.org/badge/1252698280.svg)](https://doi.org/10.5281/zenodo.21720639)
+[![Software Heritage](https://archive.softwareheritage.org/badge/origin/https://codeberg.org/nicfab/ropa30.git/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://codeberg.org/nicfab/ropa30.git)
 
 **ropa30** is a free and open-source web application that helps small businesses,
 freelancers, associations, and Data Protection Officers (DPOs) maintain their
@@ -99,6 +100,12 @@ to configure, no account to create, no cloud to trust.
 or follow [@nicfab@fosstodon.org](https://fosstodon.org/@nicfab) for updates.
 
 ---
+
+## Citation and archiving
+
+- **Cite ROPA30 (all versions):** DOI [10.5281/zenodo.21720639](https://doi.org/10.5281/zenodo.21720639). This DOI always resolves to the latest release; citation metadata are in [`CITATION.cff`](CITATION.cff).
+- **Source code archive:** ROPA30 is preserved in the [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https://codeberg.org/nicfab/ropa30.git), which assigns each version an intrinsic, verifiable identifier (SWHID, ISO/IEC 18670).
+- Version-specific DOIs and SWHIDs are listed for each release in the [CHANGELOG](CHANGELOG.md).
 
 ## License
 

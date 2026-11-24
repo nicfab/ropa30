@@ -5,6 +5,7 @@
 > Il registro dei trattamenti GDPR, semplice.
 
 [![DOI](https://zenodo.org/badge/1252698280.svg)](https://doi.org/10.5281/zenodo.21720639)
+[![Software Heritage](https://archive.softwareheritage.org/badge/origin/https://codeberg.org/nicfab/ropa30.git/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://codeberg.org/nicfab/ropa30.git)
 
 **ropa30** è un'applicazione web gratuita e open source che aiuta piccole imprese,
 liberi professionisti, associazioni e Responsabili della Protezione dei Dati (DPO)
@@ -104,6 +105,12 @@ nessun account da creare, nessun cloud a cui fidarsi.
 oppure [@nicfab@fosstodon.org](https://fosstodon.org/@nicfab) per gli aggiornamenti.
 
 ---
+
+## Citazione e archiviazione
+
+- **Citare ROPA30 (tutte le versioni):** DOI [10.5281/zenodo.21720639](https://doi.org/10.5281/zenodo.21720639). Questo DOI rimanda sempre all'ultima release; i metadati di citazione sono nel file [`CITATION.cff`](CITATION.cff).
+- **Archivio del codice sorgente:** ROPA30 è conservato nell'[archivio Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://codeberg.org/nicfab/ropa30.git), che assegna a ogni versione un identificativo intrinseco e verificabile (SWHID, ISO/IEC 18670).
+- DOI e SWHID specifici di ciascuna versione sono indicati, release per release, nel [CHANGELOG](CHANGELOG.md).
 
 ## Licenza
 
