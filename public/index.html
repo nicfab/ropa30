@@ -140,6 +140,8 @@
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M19 12H5M12 19l-7-7 7-7" />
       </symbol>
+      <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
       <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
@@ -236,6 +238,76 @@
                 <button type="button" x-on:click="confermaReset" x-bind:disabled="resetInCorso"
                         class="inline-flex items-center gap-2 text-sm rounded-lg bg-danger-600 px-3 py-2 text-white font-medium hover:bg-danger-700 disabled:opacity-50 disabled:cursor-not-allowed"
                         x-text="L.resetConferma">Svuota tutti i dati</button>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Global encrypted-backup dialog (password + confirmation). -->
+        <template x-if="isBackupCifratoOpen">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+               x-on:keydown.escape.window="annullaBackupCifrato"
+               x-on:click.self="annullaBackupCifrato">
+            <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                 role="dialog" aria-modal="true" aria-labelledby="bc-title">
+              <h2 id="bc-title" class="text-lg font-bold text-brand-900" x-text="L.bcTitolo">Backup cifrato</h2>
+              <p class="mt-2 text-sm text-brand-700" x-text="L.bcTesto"></p>
+              <div class="mt-4 space-y-3">
+                <div>
+                  <label for="bc-password" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.bcLblPassword">Password</label>
+                  <input id="bc-password" type="password" x-model="bcPassword" autocomplete="new-password"
+                         aria-describedby="bc-hint" class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                  <p id="bc-hint" class="mt-1 text-xs text-brand-600" x-text="L.bcMinimo"></p>
+                  <p class="mt-1 text-sm text-danger-600" x-show="bcPasswordCorta" x-text="L.bcErroreCorta"></p>
+                </div>
+                <div>
+                  <label for="bc-conferma" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.bcLblConferma">Conferma password</label>
+                  <input id="bc-conferma" type="password" x-model="bcConferma" autocomplete="new-password"
+                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                  <p class="mt-1 text-sm text-danger-600" x-show="bcNonCoincide" x-text="L.bcErroreDiversa"></p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-brand-800 bg-warning-500/10 border-l-4 border-warning-500 rounded-r-lg p-2"
+                 x-text="L.bcAvvisoPerdita"></p>
+              <label class="mt-3 flex items-start gap-2 text-sm text-brand-800">
+                <input type="checkbox" x-model="bcCapito" class="mt-0.5 h-4 w-4 accent-brand-700" />
+                <span x-text="L.bcLblCapito"></span>
+              </label>
+              <p class="mt-2 text-sm text-danger-600" role="alert" x-show="bcErrore" x-text="bcErrore"></p>
+              <div class="mt-5 flex flex-wrap justify-end gap-2">
+                <button type="button" x-on:click="annullaBackupCifrato"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                        x-text="L.bcAnnulla">Annulla</button>
+                <button type="button" x-on:click="confermaBackupCifrato" x-bind:disabled="bcDisabilitato"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg bg-brand-700 px-3 py-2 text-white font-medium hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                        x-text="L.bcScarica">Cifra e scarica</button>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Global dialog: password for an encrypted backup (restore). -->
+        <template x-if="isRestorePasswordOpen">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4"
+               x-on:keydown.escape.window="annullaPasswordRestore"
+               x-on:click.self="annullaPasswordRestore">
+            <div class="w-full max-w-md rounded-2xl bg-white shadow-xl p-5"
+                 role="dialog" aria-modal="true" aria-labelledby="rp-title">
+              <h2 id="rp-title" class="text-lg font-bold text-brand-900" x-text="L.rpTitolo">Backup cifrato</h2>
+              <p class="mt-2 text-sm text-brand-700" x-text="L.rpTesto"></p>
+              <div class="mt-4">
+                <label for="rp-password" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.rpLblPassword">Password</label>
+                <input id="rp-password" type="password" x-model="rpPassword" autocomplete="current-password"
+                       x-on:keydown.enter="confermaPasswordRestore" class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+              </div>
+              <p class="mt-2 text-sm text-danger-600" role="alert" x-show="rpErrore" x-text="rpErrore"></p>
+              <div class="mt-5 flex flex-wrap justify-end gap-2">
+                <button type="button" x-on:click="annullaPasswordRestore"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-2 text-brand-700 hover:bg-brand-50"
+                        x-text="L.rpAnnulla">Annulla</button>
+                <button type="button" x-on:click="confermaPasswordRestore" x-bind:disabled="rpDisabilitato"
+                        class="inline-flex items-center gap-2 text-sm rounded-lg bg-brand-700 px-3 py-2 text-white font-medium hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                        x-text="L.rpConferma">Apri</button>
               </div>
             </div>
           </div>
@@ -757,6 +829,11 @@
                               class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50 disabled:opacity-50 disabled:cursor-not-allowed">
                         <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-download" /></svg>
                         <span class="font-semibold text-brand-900" x-text="L.btnEsporta">Esporta / Backup</span>
+                      </button>
+                      <button type="button" x-on:click="azioniBackupCifrato"
+                              class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">
+                        <svg class="w-5 h-5 shrink-0 text-brand-500" aria-hidden="true"><use href="#icon-lock" /></svg>
+                        <span class="font-semibold text-brand-900" x-text="L.btnBackupCifrato">Backup cifrato</span>
                       </button>
                       <button type="button" x-on:click="azioniImporta"
                               class="w-full flex items-center gap-3 rounded-lg border border-brand-300 px-4 py-3 text-left hover:bg-brand-50">

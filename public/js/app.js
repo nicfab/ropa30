@@ -29,6 +29,7 @@ import localeEn from '../locales/en.js';
 import { buildDettaglio } from './detail.js';
 import { scaricaBackup } from './exporters/backup.js';
 import { leggiFileBackup } from './importers/restore.js';
+import { encryptEnvelope, decryptEnvelope, isEncryptedEnvelope, MIN_PASSWORD_LENGTH } from './crypto/backup-crypto.js';
 import { buildModelloRegistro } from './exporters/registro-common.js';
 import { esportaRegistroXlsx } from './exporters/xlsx.js';
 import { esportaRegistroOds } from './exporters/ods.js';
@@ -72,6 +73,18 @@ function ropa30App() {
     restoreFaraBackup: false,     // true if a safety backup will be downloaded before restore
     restoreMessage: '',           // localized outcome message
     restoreError: false,          // styles the outcome message as error
+    // ---- Encrypted backup (optional) ----
+    isBackupCifratoOpen: false,   // export dialog (password + confirmation)
+    bcPassword: '',
+    bcConferma: '',
+    bcCapito: false,              // "I understand the password cannot be recovered"
+    bcInCorso: false,
+    bcErrore: '',
+    isRestorePasswordOpen: false, // restore dialog asking for the password
+    restoreCifrato: null,         // encrypted envelope awaiting the password
+    rpPassword: '',
+    rpInCorso: false,
+    rpErrore: '',
     // ---- Export registro (Fase 4) ----
     isExportMenuOpen: false,      // export dialog visibility
     isAzioniMenuOpen: false,      // azioni dialog visibility
@@ -288,6 +301,11 @@ function ropa30App() {
     azioniBackup() {
       this.isAzioniMenuOpen = false;
       this.esportaBackup();
+    },
+    azioniBackupCifrato() {
+      this.isAzioniMenuOpen = false;
+      this._azzeraBackupCifrato();
+      this.isBackupCifratoOpen = true;
     },
     azioniImporta() {
       this.isAzioniMenuOpen = false;
@@ -741,6 +759,51 @@ function ropa30App() {
       }
     },
 
+    // ---- Encrypted backup (optional) ----
+    _azzeraBackupCifrato() {
+      this.bcPassword = '';
+      this.bcConferma = '';
+      this.bcCapito = false;
+      this.bcErrore = '';
+    },
+    // Length measured on the NFC form, as in crypto/backup-crypto.js.
+    _lunghezzaPw(pw) { return (pw || '').normalize('NFC').length; },
+    get bcPasswordCorta() {
+      const n = this._lunghezzaPw(this.bcPassword);
+      return n > 0 && n < MIN_PASSWORD_LENGTH;
+    },
+    get bcNonCoincide() {
+      return this.bcConferma.length > 0 && this.bcPassword !== this.bcConferma;
+    },
+    get bcDisabilitato() {
+      return this.bcInCorso ||
+        this._lunghezzaPw(this.bcPassword) < MIN_PASSWORD_LENGTH ||
+        this.bcPassword !== this.bcConferma ||
+        !this.bcCapito;
+    },
+    annullaBackupCifrato() {
+      this.isBackupCifratoOpen = false;
+      this._azzeraBackupCifrato();
+    },
+    async confermaBackupCifrato() {
+      if (this.bcDisabilitato) return;
+      this.bcInCorso = true;
+      this.bcErrore = '';
+      try {
+        const envelope = await exportAllData();
+        const cifrato = await encryptEnvelope(envelope, this.bcPassword);
+        scaricaBackup(cifrato, new Date(), '-cifrato');
+        this.isBackupCifratoOpen = false;
+        this._azzeraBackupCifrato();
+      } catch (err) {
+        const code = (err && err.message) || '';
+        console.error('[ropa30] confermaBackupCifrato() error:', code);
+        this.bcErrore = (code === 'CRYPTO_UNAVAILABLE') ? this.L.cryptoNonDisponibile : this.L.bcErrore;
+      } finally {
+        this.bcInCorso = false;
+      }
+    },
+
     // ---- Restore from backup file (Fase 3) ----
     // Opens the hidden <input type="file"> programmatically.
     apriSelezioneFile() {
@@ -758,28 +821,74 @@ function ropa30App() {
       this.restoreMessage = '';
       this.restoreError = false;
       try {
-        const envelope = await leggiFileBackup(file);
-        const { ok, errors, summary } = validateBackupEnvelope(envelope);
-        if (!ok) {
-          this.restoreError = true;
-          this.restoreMessage = (this.L.restoreErroreFile || 'File non valido') + ' (' + errors.join(', ') + ')';
+        const letto = await leggiFileBackup(file);
+        if (isEncryptedEnvelope(letto)) {
+          // Encrypted backup: ask for the password; confermaPasswordRestore()
+          // then continues with the decrypted envelope.
+          this.restoreCifrato = letto;
+          this.rpPassword = '';
+          this.rpErrore = '';
+          this.isRestorePasswordOpen = true;
           return;
         }
-        this.restoreEnvelope = envelope;
-        this.restoreSummary = summary;
-        // A preventive backup is made only if there is existing data worth
-        // protecting (controller name set, or processing activities present).
-        // From a cold start (welcome / empty DB) there is nothing to back up.
-        this.restoreFaraBackup =
-          this.denominazione.trim() !== '' ||
-          (Array.isArray(this._rawTrattamenti) && this._rawTrattamenti.length > 0);
-        this.isRestoreConfirmOpen = true;
+        this._preparaRestore(letto);
       } catch (err) {
         console.error('[ropa30] fileSelezionato() error:', err);
         this.restoreError = true;
         const code = (err && err.message) || 'READ_ERROR';
         this.restoreMessage = (this.L.restoreErroreFile || 'File non valido') + ' (' + code + ')';
       }
+    },
+
+    // Validates a (plain or decrypted) envelope and opens the confirmation
+    // dialog. NEVER touches the DB here.
+    _preparaRestore(envelope) {
+      const { ok, errors, summary } = validateBackupEnvelope(envelope);
+      if (!ok) {
+        this.restoreError = true;
+        this.restoreMessage = (this.L.restoreErroreFile || 'File non valido') + ' (' + errors.join(', ') + ')';
+        return;
+      }
+      this.restoreEnvelope = envelope;
+      this.restoreSummary = summary;
+      // A preventive backup is made only if there is existing data worth
+      // protecting (controller name set, or processing activities present).
+      // From a cold start (welcome / empty DB) there is nothing to back up.
+      this.restoreFaraBackup =
+        this.denominazione.trim() !== '' ||
+        (Array.isArray(this._rawTrattamenti) && this._rawTrattamenti.length > 0);
+      this.isRestoreConfirmOpen = true;
+    },
+
+    // ---- Restore of an encrypted backup: password step ----
+    get rpDisabilitato() { return this.rpInCorso || this.rpPassword.length === 0; },
+    async confermaPasswordRestore() {
+      if (this.rpDisabilitato || !this.restoreCifrato) return;
+      this.rpInCorso = true;
+      this.rpErrore = '';
+      try {
+        // Deep-clone to strip the Alpine Proxy before decoding.
+        const plain = JSON.parse(JSON.stringify(this.restoreCifrato));
+        const envelope = await decryptEnvelope(plain, this.rpPassword);
+        this.isRestorePasswordOpen = false;
+        this.restoreCifrato = null;
+        this.rpPassword = '';
+        this._preparaRestore(envelope);
+      } catch (err) {
+        const code = (err && err.message) || '';
+        console.error('[ropa30] confermaPasswordRestore() error:', code);
+        if (code === 'DECRYPT_FAILED') this.rpErrore = this.L.rpErrorePassword;
+        else if (code === 'CRYPTO_UNAVAILABLE') this.rpErrore = this.L.cryptoNonDisponibile;
+        else this.rpErrore = (this.L.restoreErroreFile || 'File non valido') + ' (' + code + ')';
+      } finally {
+        this.rpInCorso = false;
+      }
+    },
+    annullaPasswordRestore() {
+      this.isRestorePasswordOpen = false;
+      this.restoreCifrato = null;
+      this.rpPassword = '';
+      this.rpErrore = '';
     },
 
     // Confirmed restore: auto-backup current state, then replace, then reload.

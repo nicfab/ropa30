@@ -8,8 +8,9 @@
  * the envelope into a downloadable JSON file under a strict CSP (no inline,
  * no network): Blob + URL.createObjectURL + a synthetic <a download>.
  *
- * The exported JSON is NOT encrypted: it contains personal data. The UI must
- * warn the user to keep the file in a safe place (handled in the locales).
+ * A plain backup is NOT encrypted: it contains personal data, and the UI warns
+ * the user to keep the file in a safe place. The optional encrypted backup is
+ * produced by crypto/backup-crypto.js and saved through the same function.
  */
 
 // ----------------------------------------------------------------------------
@@ -17,7 +18,7 @@
 // only — no spaces, colons or other filesystem-unfriendly characters).
 // Exported separately so it can be unit-tested in Node without a DOM.
 // ----------------------------------------------------------------------------
-export function nomeFileBackup(date = new Date()) {
+export function nomeFileBackup(date = new Date(), suffisso = '') {
   const p = (n) => String(n).padStart(2, '0');
   const Y = date.getFullYear();
   const M = p(date.getMonth() + 1);
@@ -25,7 +26,7 @@ export function nomeFileBackup(date = new Date()) {
   const h = p(date.getHours());
   const m = p(date.getMinutes());
   const s = p(date.getSeconds());
-  return `ropa30-backup-${Y}${M}${D}-${h}${m}${s}.json`;
+  return `ropa30-backup-${Y}${M}${D}-${h}${m}${s}${suffisso}.json`;
 }
 
 // ----------------------------------------------------------------------------
@@ -33,8 +34,8 @@ export function nomeFileBackup(date = new Date()) {
 // file. Returns the filename used. Throws on serialization failure so the
 // caller (app.js) can surface a localized error.
 // ----------------------------------------------------------------------------
-export function scaricaBackup(envelope, date = new Date()) {
-  const filename = nomeFileBackup(date);
+export function scaricaBackup(envelope, date = new Date(), suffisso = '') {
+  const filename = nomeFileBackup(date, suffisso);
   const json = JSON.stringify(envelope, null, 2);
   const blob = new Blob([json], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
