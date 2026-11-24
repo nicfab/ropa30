@@ -70,34 +70,36 @@ to configure, no account to create, no cloud to trust.
 
 ---
 
-## Features (roadmap)
+## Features
 
-### MVP (v1.0)
+### Available
 
-- [x] Project scaffolding
-- [ ] Local data model (IndexedDB) for controllers, DPO, and processing activities
-- [ ] Bilingual interface (Italian / English) from day one
-- [ ] Guided onboarding wizard
-- [ ] Form-based editor for each processing activity with inline GDPR tooltips
-- [ ] One-click PDF export (audit-ready, suitable for supervisory authority requests)
-- [ ] ODS export (editable spreadsheet)
-- [ ] JSON backup / restore + UROPA-compatible export
-- [ ] Offline-first (full PWA, installable as a desktop or mobile app)
+- Records of processing activities for controllers (Art. 30(1)) and processors (Art. 30(2))
+- Bilingual interface and data model (Italian / English)
+- Onboarding for controller and DPO details
+- Form-based editor for each processing activity
+- Catalogue of 35 ready-to-use templates (12 general-purpose, 23 for law firms) across a 15-sector classification, with versioning and update notices
+- Organisational units, with filtering in the activity list and in exports
+- Export to PDF, XLSX and ODS
+- Full JSON backup and restore
+- Local-first: all data stays in the browser (IndexedDB), with no backend and no external connections
+- Installable, offline-capable Progressive Web App
 
-### Post-MVP
+### Roadmap
 
-- [ ] Records for processors (Article 30(2))
+- [ ] Inline GDPR guidance (tooltips) in the editor
+- [ ] Sector-specific templates for the other sectors of the classification (e.g. public administration, universities, Italian tax assistance centres (CAF), healthcare, schools)
 - [ ] Optional encrypted backup (WebCrypto, AES-256)
 - [ ] WCAG 2.1 AA accessibility audit
 - [ ] Dark mode
 - [ ] Lightweight DPIA module (Article 35)
+- [ ] Published data specification (JSON Schema) for interoperability
 
 ---
 
 ## Status
 
-🚧 **Early development.** Currently building the MVP. Watch this repository
-or follow [@nicfab@fosstodon.org](https://fosstodon.org/@nicfab) for updates.
+✅ **Released and in active development.** See the [CHANGELOG](CHANGELOG.md) for releases; the app is live at [ropa30.eu](https://ropa30.eu). Watch this repository or follow [@nicfab@fosstodon.org](https://fosstodon.org/@nicfab) for updates.
 
 ---
 

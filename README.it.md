@@ -75,34 +75,36 @@ nessun account da creare, nessun cloud a cui fidarsi.
 
 ---
 
-## Funzionalità (roadmap)
+## Funzionalità
 
-### MVP (v1.0)
+### Disponibili
 
-- [x] Struttura iniziale del progetto
-- [ ] Modello dati locale (IndexedDB) per titolari, DPO e attività di trattamento
-- [ ] Interfaccia bilingue (italiano / inglese) sin dal primo rilascio
-- [ ] Procedura guidata di primo utilizzo
-- [ ] Editor a moduli per ogni trattamento con tooltip GDPR in linguaggio chiaro
-- [ ] Esportazione PDF con un click (pronta per richieste dell'Autorità Garante)
-- [ ] Esportazione ODS (foglio elettronico modificabile)
-- [ ] Backup / ripristino JSON + esportazione compatibile UROPA
-- [ ] Offline-first (PWA completa, installabile come app desktop o mobile)
+- Registri delle attività di trattamento del titolare (art. 30, par. 1) e del responsabile (art. 30, par. 2)
+- Interfaccia e modello dati bilingui (italiano / inglese)
+- Configurazione iniziale con i dati del titolare e del DPO
+- Editor a moduli per ogni trattamento
+- Catalogo di 35 modelli pronti all'uso (12 generali, 23 per studi legali), con classificazione in 15 settori, versioni e avviso di aggiornamento
+- Unità organizzative, con filtro nell'elenco dei trattamenti e negli export
+- Esportazione in PDF, XLSX e ODS
+- Backup e ripristino completi in JSON
+- Local-first: tutti i dati restano nel browser (IndexedDB), senza backend né connessioni esterne
+- Progressive Web App installabile e utilizzabile offline
 
-### Post-MVP
+### Roadmap
 
-- [ ] Registro dei responsabili del trattamento (art. 30, par. 2)
+- [ ] Indicazioni GDPR contestuali (tooltip) nell'editor
+- [ ] Modelli specifici per gli altri settori della classificazione (es. pubblica amministrazione, università, CAF, sanità, scuole)
 - [ ] Backup cifrato opzionale (WebCrypto, AES-256)
 - [ ] Audit di accessibilità WCAG 2.1 AA
 - [ ] Tema scuro
 - [ ] Modulo DPIA leggero (art. 35)
+- [ ] Specifica dei dati pubblicata (JSON Schema) per l'interoperabilità
 
 ---
 
 ## Stato
 
-🚧 **Sviluppo iniziale.** Stiamo costruendo l'MVP. Segui questo repository
-oppure [@nicfab@fosstodon.org](https://fosstodon.org/@nicfab) per gli aggiornamenti.
+✅ **Rilasciato e in sviluppo attivo.** Le release sono descritte nel [CHANGELOG](CHANGELOG.md); l'app è online su [ropa30.eu](https://ropa30.eu). Segui questo repository oppure [@nicfab@fosstodon.org](https://fosstodon.org/@nicfab) per gli aggiornamenti.
 
 ---
 
