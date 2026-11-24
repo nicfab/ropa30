@@ -58,7 +58,8 @@ to configure, no account to create, no cloud to trust.
 - **🧭 Standards-aligned.** The data model follows Article 30 GDPR field by
   field. Dates use ISO 8601, and the template catalogue uses W3C DCAT / Dublin
   Core terms for versioning (`version`, `issued`, `modified`). Data can be
-  exported as JSON; a public data specification (JSON Schema) is on the roadmap.
+  exported as JSON, and the data format is documented by a public data
+  specification (JSON Schema, draft 0.1): see [`public/schema/v0`](public/schema/v0/README.md).
 
 - **🌱 Steve Jobs simplicity.** No installation, no account, no configuration
   beyond a short initial setup of the controller's details. Ready-made
@@ -85,15 +86,18 @@ to configure, no account to create, no cloud to trust.
 - Full JSON backup and restore, with optional password-based encryption (AES-256)
 - Local-first: all data stays in the browser (IndexedDB), with no backend and no external connections
 - Installable, offline-capable Progressive Web App
+- Dark theme, following the operating system setting
+- Public data specification, draft 0.1 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v0`](public/schema/v0/README.md)
 
 ### Roadmap
 
 - [ ] Inline GDPR guidance (tooltips) in the editor
 - [ ] Sector-specific templates for the other sectors of the classification (e.g. public administration, universities, Italian tax assistance centres (CAF), healthcare, schools)
 - [ ] WCAG 2.1 AA accessibility audit
-- [ ] Dark mode
 - [ ] Lightweight DPIA module (Article 35)
-- [ ] Published data specification (JSON Schema) for interoperability
+- [ ] Joint controllers (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts (Art. 30(2)(a)): data model ready, editor to be added
+- [ ] Data specification: stable version (v1)
+- [ ] Update of the spreadsheet export library (SheetJS)
 
 ---
 

@@ -63,8 +63,9 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - **🧭 Allineato agli standard.** Il modello dati segue l'art. 30 GDPR campo per
   campo. Le date sono in formato ISO 8601 e il catalogo dei modelli usa i
   termini W3C DCAT / Dublin Core per le versioni (`version`, `issued`,
-  `modified`). I dati sono esportabili in JSON; una specifica dei dati pubblica
-  (JSON Schema) è in roadmap.
+  `modified`). I dati sono esportabili in JSON e il loro formato è documentato
+  da una specifica dei dati pubblica (JSON Schema, bozza 0.1): vedi
+  [`public/schema/v0`](public/schema/v0/README.md).
 
 - **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessun account,
   nessuna configurazione oltre a una breve impostazione iniziale dei dati del
@@ -92,15 +93,18 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Backup e ripristino completi in JSON, con cifratura facoltativa tramite password (AES-256)
 - Local-first: tutti i dati restano nel browser (IndexedDB), senza backend né connessioni esterne
 - Progressive Web App installabile e utilizzabile offline
+- Tema scuro, che segue l'impostazione del sistema operativo
+- Specifica dei dati pubblica, bozza 0.1 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v0`](public/schema/v0/README.md)
 
 ### Roadmap
 
 - [ ] Indicazioni GDPR contestuali (tooltip) nell'editor
 - [ ] Modelli specifici per gli altri settori della classificazione (es. pubblica amministrazione, università, CAF, sanità, scuole)
 - [ ] Audit di accessibilità WCAG 2.1 AA
-- [ ] Tema scuro
 - [ ] Modulo DPIA leggero (art. 35)
-- [ ] Specifica dei dati pubblicata (JSON Schema) per l'interoperabilità
+- [ ] Contitolari (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce (art. 30, par. 2, lett. a): modello dati pronto, manca l'editor
+- [ ] Specifica dei dati: versione stabile (v1)
+- [ ] Aggiornamento della libreria per l'esportazione dei fogli di calcolo (SheetJS)
 
 ---
 
