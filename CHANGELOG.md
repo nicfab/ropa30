@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-24
+
 ### Added
 - Template catalogue: each template now carries `version` (integer),
   `issued` and `modified` (ISO 8601 dates) and a bilingual `changelog`,
@@ -87,4 +89,5 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.1.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.1.0
 [1.0.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.0.0
