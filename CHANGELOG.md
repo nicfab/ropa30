@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.0] - 2026-11-24
 
+Archived: DOI [10.5281/zenodo.24509679](https://doi.org/10.5281/zenodo.24509679) ·
+SWHID [`swh:1:dir:220f55e5ec3cc7488f967076789fe6a98f454d70`](https://archive.softwareheritage.org/swh:1:dir:220f55e5ec3cc7488f967076789fe6a98f454d70;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:1f74be65d3da1875c71e2113df16df42c7588b2a;anchor=swh:1:rel:47bd52e7d5219af7afd85480960f69909520218c)
+
 ### Added
 - Optional encrypted backup: the full backup can be encrypted in the browser
   with a password chosen by the user (key derived with PBKDF2-SHA-256,
