@@ -59,8 +59,8 @@ First public release.
 - Template instantiation factory: a template becomes a ready-to-edit
   processing activity.
 - Sector classification with 15 sectors, filtering and empty-state message.
-- Template families: municipalities (10 templates), law firms (23
-  templates), and cross-sector templates covering employment, recruitment,
+- Template families: general-purpose (12 templates) and law firms (23
+  templates). The general-purpose templates cover employment, recruitment,
   B2B and B2C customers, supplier management, accounting and tax,
   video surveillance, litigation and debt recovery, website and cookies,
   and newsletter/marketing (split into three variants).
