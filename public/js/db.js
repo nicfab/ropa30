@@ -634,7 +634,11 @@ export async function createProcessingActivityFromTemplate(templateId, tipoRegis
   normalizeBilingualShapes(merged);
 
   merged.sourceTemplateId = template.templateId;
-  merged.sourceTemplateVersion = typeof catalog.version === 'number' ? catalog.version : null;
+  // Provenance: version of the specific template (fallback: library version,
+  // for catalogs without per-template versioning).
+  merged.sourceTemplateVersion = typeof template.version === 'number'
+    ? template.version
+    : (typeof catalog.version === 'number' ? catalog.version : null);
   merged.sourceTemplateLanguage = '';
   merged.id = base.id;
   merged.tenantId = DEFAULT_TENANT_ID;
