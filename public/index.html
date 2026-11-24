@@ -866,6 +866,19 @@
               </p>
               <h1 id="det-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
                   x-text="trattamentoTitolo">—</h1>
+              <p class="mt-2 text-sm text-brand-600" x-show="provenienzaVm.date" x-text="provenienzaVm.date"></p>
+              <p class="mt-1 text-sm text-brand-600" x-show="provenienzaVm.template" x-text="provenienzaVm.template"></p>
+              <div x-show="provenienzaVm.aggiornamento" role="status"
+                   class="mt-4 rounded-lg border border-brand-300 bg-white p-3">
+                <p class="font-semibold text-brand-900" x-text="provenienzaVm.aggTitolo"></p>
+                <p class="mt-1 text-sm text-brand-700" x-text="provenienzaVm.aggTesto"></p>
+                <p class="mt-2 text-sm font-medium text-brand-800" x-text="L.provAggNovita"></p>
+                <ul class="mt-1 list-disc pl-5 space-y-1 text-sm text-brand-700">
+                  <template x-for="(n, ni) in provenienzaVm.aggNote" x-bind:key="ni">
+                    <li x-text="n"></li>
+                  </template>
+                </ul>
+              </div>
             </div>
 
             <!-- Indice di navigazione (sticky) -->

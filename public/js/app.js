@@ -430,6 +430,60 @@ function ropa30App() {
       return !(hasDen && hasSede && hasEmail && hasLingua);
     },
     get salvaDisabilitato() { return this.nonSalvabile || this.saving; },
+    // ---- Detail: dates, template provenance and update notice ----
+    _fmtData(v) {
+      if (!v) return '';
+      try {
+        // Date-only strings (YYYY-MM-DD) are built as local dates (no TZ shift).
+        const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v));
+        const dt = m ? new Date(+m[1], +m[2] - 1, +m[3]) : new Date(v);
+        if (isNaN(dt.getTime())) return String(v);
+        const locale = this.lang === 'en' ? 'en-GB' : 'it-IT';
+        return dt.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+      } catch (e) { return String(v); }
+    },
+    _sostituisci(tpl, vals) {
+      return String(tpl || '').replace(/\{(\w+)\}/g, (s, k) => (k in vals ? String(vals[k]) : s));
+    },
+    get provenienzaVm() {
+      const vm = { date: '', template: '', aggiornamento: false, aggTitolo: '', aggTesto: '', aggNote: [] };
+      const r = this.trattamentoCorrente;
+      if (!r) return vm;
+      const L = this.L;
+      const md = r.metadata || {};
+      const parti = [];
+      if (md.createdAt) parti.push(this._sostituisci(L.provCreato, { data: this._fmtData(md.createdAt) }));
+      if (md.updatedAt) parti.push(this._sostituisci(L.provModificato, { data: this._fmtData(md.updatedAt) }));
+      vm.date = parti.join(' \u00b7 ');
+      const tid = r.sourceTemplateId;
+      if (!tid) return vm;
+      const t = (this._rawTemplates || []).find((x) => x.templateId === tid);
+      if (!t) return vm;
+      const nome = this._loc(t.nome) || tid;
+      const vRec = typeof r.sourceTemplateVersion === 'number' ? r.sourceTemplateVersion : null;
+      const log = Array.isArray(t.changelog) ? t.changelog : [];
+      const voceRec = vRec !== null ? log.find((c) => c.version === vRec) : null;
+      if (vRec === null) {
+        vm.template = this._sostituisci(L.provTemplate, { nome });
+      } else {
+        vm.template = this._sostituisci(voceRec ? L.provTemplateVersioneData : L.provTemplateVersione,
+          { nome, v: vRec, data: voceRec ? this._fmtData(voceRec.date) : '' });
+      }
+      // Update notice: informative only, the record is never changed automatically.
+      if (vRec !== null && typeof t.version === 'number' && t.version > vRec) {
+        const voceNuova = log.find((c) => c.version === t.version);
+        vm.aggiornamento = true;
+        vm.aggTitolo = L.provAggTitolo;
+        vm.aggTesto = this._sostituisci(voceNuova ? L.provAggTestoData : L.provAggTesto,
+          { nome, v: t.version, data: voceNuova ? this._fmtData(voceNuova.date) : '' });
+        vm.aggNote = log
+          .filter((c) => typeof c.version === 'number' && c.version > vRec)
+          .sort((a, b) => b.version - a.version)
+          .map((c) => this._sostituisci(L.provAggNota,
+            { v: c.version, data: this._fmtData(c.date), nota: this._loc(c.notes) || '' }));
+      }
+      return vm;
+    },
     get dataCreazioneVisuale() {
       if (!this.settingsCreatedAt) return '\u2014';
       try {
