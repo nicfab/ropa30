@@ -11,6 +11,9 @@ repository root, on `main`, with a clean working tree.
 - [ ] Choose the version number following [SemVer](https://semver.org/):
       MAJOR for incompatible changes, MINOR for new compatible features,
       PATCH for fixes.
+- [ ] Set the version: `APP_VERSION` in `public/js/schema.js` and
+      `npm version X.Y.Z --no-git-tag-version` (package.json and
+      package-lock.json).
 - [ ] If a template changed substantively (legally reviewed change), update it
       in `public/data/templates.json`: bump `version`, set `modified`, and add
       a `changelog` entry with bilingual `notes`. Editorial fixes only update
