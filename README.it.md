@@ -70,8 +70,8 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessun account,
   nessuna configurazione oltre a una breve impostazione iniziale dei dati del
   titolare. I modelli pronti all'uso permettono di creare un trattamento
-  completo in pochi clic. Le indicazioni GDPR in linguaggio chiaro per ogni
-  campo sono in roadmap.
+  completo in pochi clic, e per ogni campo sono disponibili indicazioni GDPR
+  in linguaggio chiaro.
 
 - **🇪🇺 Infrastruttura europea e sovrana.** Lo sviluppo principale avviene su
   [Codeberg](https://codeberg.org/nicfab/ropa30), un'istanza Forgejo non-profit
@@ -85,9 +85,10 @@ nessun account da creare, nessun cloud a cui fidarsi.
 
 - Registri delle attività di trattamento del titolare (art. 30, par. 1) e del responsabile (art. 30, par. 2)
 - Interfaccia e modello dati bilingui (italiano / inglese)
-- Configurazione iniziale con i dati del titolare e del DPO
+- Scheda dell'organizzazione con i dati del titolare o del responsabile, del suo rappresentante nell'Unione (art. 27) e del DPO
 - Editor a moduli per ogni trattamento
-- Catalogo di 35 modelli pronti all'uso (12 generali, 23 per studi legali), con classificazione in 15 settori, versioni e avviso di aggiornamento
+- Indicazioni GDPR contestuali per ogni campo dell'editor e per ogni sezione della scheda dell'organizzazione
+- Catalogo di 35 modelli pronti all'uso (12 generali, 23 per studi legali), da adattare alla propria organizzazione, con versioni e avviso di aggiornamento
 - Unità organizzative, con filtro nell'elenco dei trattamenti e negli export
 - Esportazione in PDF, XLSX e ODS
 - Backup e ripristino completi in JSON, con cifratura facoltativa tramite password (AES-256)
@@ -95,14 +96,12 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Progressive Web App installabile e utilizzabile offline
 - Tema scuro, che segue l'impostazione del sistema operativo
 - Contitolari per ciascun trattamento (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce, con rappresentante e DPO ove applicabili (art. 30, par. 2, lett. a)
-- Miglioramenti di accessibilità verso WCAG 2.1 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre), verificati da test automatici
+- Accessibilità verso WCAG 2.2 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre, dimensione delle aree cliccabili), verificata da test automatici e da un audit axe-core delle schermate principali
 - Specifica dei dati pubblica, bozza 0.2 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v0`](public/schema/v0/README.md)
 
 ### Roadmap
 
-- [ ] Indicazioni GDPR contestuali (tooltip) nell'editor
-- [ ] Modelli specifici per gli altri settori della classificazione (es. pubblica amministrazione, università, CAF, sanità, scuole)
-- [ ] WCAG 2.1 AA: verifica manuale con lettori di schermo e tastiera
+- [ ] Accessibilità: verifica manuale con lettori di schermo e tastiera
 - [ ] Specifica dei dati: versione stabile (v1)
 
 ---

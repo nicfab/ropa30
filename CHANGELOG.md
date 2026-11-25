@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-11-25
+
+### Added
+- Contextual GDPR guidance: an information button next to each editor field
+  and each section of the organisation sheet opens a short plain-language
+  explanation, in Italian and English, with the relevant GDPR provisions and,
+  where useful, the Italian rules (Personal Data Protection Code, decisions of
+  the Garante).
+- Organisation sheet: representative in the Union of a controller or processor
+  not established in the Union (Art. 27), with name and contact details
+  (Art. 30(1)(a) and 30(2)(a)). It appears with the organisation's details in
+  the printed register and in the XLSX and ODS exports.
+
+### Changed
+- Template catalogue: the sector filter lists only the sectors for which the
+  catalogue contains templates.
+- Organisation sheet: the DPO checkbox now reads "A DPO has been designated"
+  (Art. 37).
+
+### Fixed
+- Accessibility (WCAG 2.2 AA), following an automated audit with axe-core of
+  the main screens, in light and dark theme and in both languages: the
+  accessible name of the source-code link now contains its visible text; the
+  activity cards in the list keep their heading and summary exposed to
+  assistive technologies, with the activity name as a button; the
+  controller/processor register switch announces which register is selected;
+  landmark and group names are translated; the section indexes of the detail
+  view and of the editor have targets of at least 24 px.
+
 ## [1.4.0] - 2026-11-25
 
 Archived: DOI [10.5281/zenodo.24526324](https://doi.org/10.5281/zenodo.24526324) ·
@@ -184,6 +213,7 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.5.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.5.0
 [1.4.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.4.0
 [1.3.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.3.0
 [1.2.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.2.0

@@ -63,8 +63,8 @@ to configure, no account to create, no cloud to trust.
 
 - **🌱 Steve Jobs simplicity.** No installation, no account, no configuration
   beyond a short initial setup of the controller's details. Ready-made
-  templates let you create a complete processing activity in a few clicks.
-  Plain-language GDPR guidance for each field is on the roadmap.
+  templates let you create a complete processing activity in a few clicks,
+  and plain-language GDPR guidance is available for each field.
 
 - **🇪🇺 European, sovereign infrastructure.** Primary development happens on
   [Codeberg](https://codeberg.org/nicfab/ropa30), a non-profit Forgejo
@@ -78,9 +78,10 @@ to configure, no account to create, no cloud to trust.
 
 - Records of processing activities for controllers (Art. 30(1)) and processors (Art. 30(2))
 - Bilingual interface and data model (Italian / English)
-- Onboarding for controller and DPO details
+- Organisation sheet with the details of the controller or processor, its representative in the Union (Art. 27) and the DPO
 - Form-based editor for each processing activity
-- Catalogue of 35 ready-to-use templates (12 general-purpose, 23 for law firms) across a 15-sector classification, with versioning and update notices
+- Contextual GDPR guidance for each editor field and each section of the organisation sheet
+- Catalogue of 35 ready-to-use templates (12 general-purpose, 23 for law firms), to be adapted to each organisation, with versioning and update notices
 - Organisational units, with filtering in the activity list and in exports
 - Export to PDF, XLSX and ODS
 - Full JSON backup and restore, with optional password-based encryption (AES-256)
@@ -88,14 +89,12 @@ to configure, no account to create, no cloud to trust.
 - Installable, offline-capable Progressive Web App
 - Dark theme, following the operating system setting
 - Joint controllers for each processing activity (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts, with their representative and DPO where applicable (Art. 30(2)(a))
-- Accessibility improvements towards WCAG 2.1 AA (accessible names, contrast, keyboard focus in dialogs), checked by automated tests
+- Accessibility towards WCAG 2.2 AA (accessible names, contrast, keyboard focus in dialogs, target size), checked by automated tests and by an axe-core audit of the main screens
 - Public data specification, draft 0.2 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v0`](public/schema/v0/README.md)
 
 ### Roadmap
 
-- [ ] Inline GDPR guidance (tooltips) in the editor
-- [ ] Sector-specific templates for the other sectors of the classification (e.g. public administration, universities, Italian tax assistance centres (CAF), healthcare, schools)
-- [ ] WCAG 2.1 AA: manual verification with screen readers and keyboard
+- [ ] Accessibility: manual verification with screen readers and keyboard
 - [ ] Data specification: stable version (v1)
 
 ---
