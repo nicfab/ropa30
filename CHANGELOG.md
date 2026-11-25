@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.4.0] - 2026-11-25
 
+Archived: DOI [10.5281/zenodo.24526324](https://doi.org/10.5281/zenodo.24526324) ·
+SWHID [`swh:1:dir:f437b989e58a74bb951fb1e8304f5aa7814a3ae0`](https://archive.softwareheritage.org/swh:1:dir:f437b989e58a74bb951fb1e8304f5aa7814a3ae0;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:ec37ed4a401f6456f4262294133e18c1c504d6da;anchor=swh:1:rel:d279c6b2459ece77d8650d9edbffcebe008b1368)
+
 ### Added
 - Controller's record: joint controllers (Art. 26) recorded for each processing
   activity, with name, contact details and reference to the arrangement
