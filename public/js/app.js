@@ -612,16 +612,18 @@ function ropa30App() {
         return okQ && okS;
       });
     },
+    // Sectors offered by the catalogue filter: only those that actually have
+    // templates in the catalogue, in the canonical order of the sector list
+    // (any sector not in that list follows, in catalogue order). A sector added
+    // to templates.json appears in the filter without code changes.
     get settoriDisponibili() {
-      return ['comune', 'pa', 'universita', 'caf', 'studi_legali', 'sanita',
-        'scuole', 'commercialisti_consulenti_lavoro', 'terzo_settore', 'condomini',
-        'ecommerce_retail', 'assicurazioni', 'immobiliare', 'it_provider', 'hospitality'];
-    },
-    get settoreSenzaTemplate() {
-      const set = this.filtroSettore || '';
-      if (!set || set === 'comune') return false;
-      const haDedicati = (this.templates || []).some((t) => t.settore === set);
-      return !haDedicati;
+      const ordine = Object.keys((SETTORE_LABEL[this.lang] || SETTORE_LABEL.it) || {});
+      const presenti = [];
+      for (const t of (this.templates || [])) {
+        if (t.settore && presenti.indexOf(t.settore) === -1) presenti.push(t.settore);
+      }
+      const noti = ordine.filter((code) => presenti.indexOf(code) !== -1);
+      return noti.concat(presenti.filter((code) => ordine.indexOf(code) === -1));
     },
     get settoriOpzioni() {
       const m = (SETTORE_LABEL[this.lang] || SETTORE_LABEL.it) || {};
@@ -635,6 +637,8 @@ function ropa30App() {
       this._rawTrattamenti = await listProcessingActivities(this.registroAttivo);
       this._mappaTrattamenti();
     },
+    get ariaPressedTitolare() { return this.registroAttivo === 'titolare' ? 'true' : 'false'; },
+    get ariaPressedResponsabile() { return this.registroAttivo === 'responsabile' ? 'true' : 'false'; },
     get clsTabTitolare() {
       const base = 'px-5 py-2.5 text-base font-medium rounded-lg border ';
       if (this.registroAttivo === 'titolare') return base + 'bg-brand-700 text-white border-brand-700';

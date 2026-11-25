@@ -641,10 +641,10 @@
                 <h1 id="lista-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight truncate"
                     x-bind:title="denominazione" x-text="denominazione">UNIFG</h1>
               </div>
-              <div class="flex items-center gap-2" role="tablist" aria-label="Tipo di registro">
-                <button type="button" role="tab" x-on:click="cambiaRegistro('titolare')"
+              <div class="flex items-center gap-2" role="group" x-bind:aria-label="L.ariaTipoRegistro">
+                <button type="button" x-on:click="cambiaRegistro('titolare')" x-bind:aria-pressed="ariaPressedTitolare"
                         x-bind:class="clsTabTitolare" x-text="L.tabRegistroTitolare">Registro del titolare</button>
-                <button type="button" role="tab" x-on:click="cambiaRegistro('responsabile')"
+                <button type="button" x-on:click="cambiaRegistro('responsabile')" x-bind:aria-pressed="ariaPressedResponsabile"
                         x-bind:class="clsTabResponsabile" x-text="L.tabRegistroResponsabile">Registro del responsabile</button>
               </div>
               <div class="flex items-center gap-2">
@@ -704,12 +704,8 @@
                     <article class="group rounded-xl border border-brand-200 bg-white p-4 sm:p-5 shadow-sm
                                     transition hover:shadow-md hover:border-brand-300 cursor-pointer"
                              x-bind:class="tr.cssEvidenzia"
-                             role="button"
-                             tabindex="0"
                              x-bind:data-id="tr.id"
-                             x-on:click="apriDettaglio"
-                             x-on:keydown.enter="apriDettaglio"
-                             x-on:keydown.space.prevent="apriDettaglio">
+                             x-on:click="apriDettaglio">
                       <div class="flex items-start gap-4">
                         <span class="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center
                                      rounded-lg bg-brand-100 text-brand-700">
@@ -717,7 +713,7 @@
                         </span>
                         <div class="min-w-0 flex-1">
                           <div class="flex flex-wrap items-center gap-2">
-                            <h2 class="text-lg font-semibold text-brand-900"><span x-bind:class="tr.cssNome" x-text="tr.nome"></span> <span x-show="tr.nomeMancante" class="ml-1 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600" x-text="tr.badgeMancante"></span></h2>
+                            <h2 class="text-lg font-semibold text-brand-900"><button type="button" x-bind:data-id="tr.id" x-on:click.stop="apriDettaglio" class="rounded text-left hover:underline"><span x-bind:class="tr.cssNome" x-text="tr.nome"></span> <span x-show="tr.nomeMancante" class="ml-1 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600" x-text="tr.badgeMancante"></span></button></h2>
                             <span class="shrink-0 rounded-full bg-brand-100 px-2 py-0.5 text-xs font-medium text-brand-700"
                                   x-show="tr.mostraCategoria" x-text="tr.categoriaLabel"></span>
                           </div>
@@ -806,10 +802,6 @@
                     </div>
                   </div>
 
-                  <template x-if="settoreSenzaTemplate">
-                    <p class="border-b border-brand-100 bg-brand-50 px-4 py-3 sm:px-5 text-sm text-brand-700"
-                       x-text="L.catalogoSettoreSoloComuni"></p>
-                  </template>
                   <ul class="max-h-[55vh] overflow-y-auto divide-y divide-brand-100">
                     <template x-for="tpl in templatesFiltrati" x-bind:key="tpl.id">
                       <li class="flex items-start gap-4 p-4 sm:px-5 hover:bg-brand-50">
@@ -991,12 +983,12 @@
             </div>
 
             <!-- Indice di navigazione (sticky) -->
-            <nav aria-label="Sezioni" class="sticky top-0 z-10 -mx-4 mt-6 border-y border-brand-200 bg-brand-50/95 px-4 py-2 backdrop-blur">
+            <nav x-bind:aria-label="L.ariaSezioni" class="sticky top-0 z-10 -mx-4 mt-6 border-y border-brand-200 bg-brand-50/95 px-4 py-2 backdrop-blur">
               <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs">
                 <template x-for="(sez, i) in trattamentoVm.sezioni" x-bind:key="sez.id">
                   <li>
                     <a x-bind:href="sez.ancora"
-                       class="text-brand-600 hover:text-brand-900 hover:underline">
+                       class="inline-block py-1.5 text-brand-600 hover:text-brand-900 hover:underline">
                       <span x-text="sez.indice"></span><span x-text="sez.titolo"></span>
                     </a>
                   </li>
@@ -1121,7 +1113,7 @@
             </div>
 
             <!-- Indice di navigazione (sticky) -->
-            <nav aria-label="Sezioni" class="sticky top-[3.25rem] z-10 -mx-4 mt-6 border-y border-brand-200 bg-brand-50/95 px-4 py-2 backdrop-blur">
+            <nav x-bind:aria-label="L.ariaSezioni" class="sticky top-[3.25rem] z-10 -mx-4 mt-6 border-y border-brand-200 bg-brand-50/95 px-4 py-2 backdrop-blur">
               <div class="mb-2 flex gap-2">
                 <button type="button" x-on:click="espandiTutto" class="text-xs rounded border border-brand-300 px-2 py-1 text-brand-700 hover:bg-white" x-text="L.editorEspandiTutto">Espandi tutto</button>
                 <button type="button" x-on:click="comprimiTutto" class="text-xs rounded border border-brand-300 px-2 py-1 text-brand-700 hover:bg-white" x-text="L.editorComprimiTutto">Comprimi tutto</button>
@@ -1129,7 +1121,7 @@
               <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs">
                 <template x-for="(sez, i) in editModel.sezioni" x-bind:key="sez.id">
                   <li>
-                    <button type="button" x-bind:data-sez="i" x-on:click="apriEscrollaSezione" class="text-brand-600 hover:text-brand-900 hover:underline">
+                    <button type="button" x-bind:data-sez="i" x-on:click="apriEscrollaSezione" class="py-1.5 text-brand-600 hover:text-brand-900 hover:underline">
                       <span x-text="sez.indice"></span><span x-text="sez.titolo"></span>
                     </button>
                   </li>

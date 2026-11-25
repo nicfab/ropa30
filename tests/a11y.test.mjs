@@ -12,7 +12,9 @@
  *      role="dialog", aria-modal and an aria-labelledby that exists;
  *   4. every editor control carries its precomputed accessible name;
  *   5. the organisation sheet has the Art. 27 representative fields and one
- *      named guidance button per section, each controlling an existing region.
+ *      named guidance button per section, each controlling an existing region;
+ *   6. regressions for the issues found by the axe-core audit in a browser
+ *      (label in name, localised names, roles, target size).
  *
  *   node tests/a11y.test.mjs
  */
@@ -193,6 +195,32 @@ for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
   const mancano = lbl.filter((k) => !loc.ui[k]);
   check(`representative labels present (${lang})`, mancano.length === 0, mancano.join(', '));
 }
+
+// ---------------------------------------------------------------------------
+// 6. Regressions found by the axe-core browser audit (WCAG 2.2 A/AA)
+// ---------------------------------------------------------------------------
+console.log('6. Browser audit regressions');
+for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
+  const U = loc.ui;
+  // 2.5.3 Label in Name: the accessible name contains the visible text.
+  check(`footer links: accessible name contains the visible text (${lang})`,
+    U.footerRepoAria.toLowerCase().startsWith(U.footerRepoLabel.toLowerCase())
+    && U.footerEmailAria.toLowerCase().includes(U.footerEmailLabel.toLowerCase()));
+  check(`localised names for landmarks and groups (${lang})`, !!U.ariaSezioni && !!U.ariaTipoRegistro);
+}
+const staticAria = [...html.matchAll(/\saria-label="([^"]*)"/g)].map((m) => m[1]);
+check('no hard-coded (untranslated) aria-label', staticAria.length === 0, staticAria.join(', '));
+check('no role="button" on structural elements (keeps headings and lists exposed)',
+  !/<(article|section|li|div)\b(?:[^>"']|"[^"]*"|'[^']*')*role="button"/s.test(html));
+check('no role="tab" without the full tab pattern', !/role="tab"/.test(html));
+check('register switch exposes its state with aria-pressed',
+  /cambiaRegistro\('titolare'\)" x-bind:aria-pressed=/.test(html) && /cambiaRegistro\('responsabile'\)" x-bind:aria-pressed=/.test(html));
+check('list card name is a real button', /x-on:click\.stop="apriDettaglio"/.test(html));
+// 2.5.8 Target Size (Minimum): section indexes in detail and editor are >= 24px high.
+check('detail section index targets are at least 24px high',
+  /x-bind:href="sez\.ancora"\s+class="inline-block py-1\.5 /.test(html));
+check('editor section index targets are at least 24px high',
+  /x-on:click="apriEscrollaSezione" class="py-1\.5 /.test(html));
 
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);
