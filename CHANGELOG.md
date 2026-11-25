@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.6.0] - 2026-11-25
 
+Archived: DOI [10.5281/zenodo.24529174](https://doi.org/10.5281/zenodo.24529174) ·
+SWHID [`swh:1:dir:aa985aa635ce54d7b19b0667f5fcc2c7640c98fb`](https://archive.softwareheritage.org/swh:1:dir:aa985aa635ce54d7b19b0667f5fcc2c7640c98fb;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:177bf7e05ebf5f7b8ae9094646d046c9981d5605;anchor=swh:1:rel:d6bb10d4b2432acdef9224d0d644bda04ca1979a)
+
 ### Added
 - Data specification, version 1.0 (stable): JSON Schema files published under
   `/schema/v1/`. They describe the same data as draft 0.2 (data model 5, backup
