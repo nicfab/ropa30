@@ -684,7 +684,7 @@ function ropa30App() {
 
         return {
           id: r.id, nome, nomeMancante, badgeMancante,
-          cssNome: nomeMancante ? 'italic text-brand-400' : '',
+          cssNome: nomeMancante ? 'italic text-brand-500' : '',
           finalitaSintesi, basiSintesi, categoriaLabel,
           mostraCategoria: categoriaLabel.length > 0,
           cssEvidenzia: evidenziato ? 'ring-2 ring-brand-400' : '',
@@ -1304,6 +1304,73 @@ function ropa30App() {
 document.addEventListener('alpine:init', () => {
   window.Alpine.data('ropa30App', ropa30App);
 });
+
+// ============================================================================
+// ACCESSIBILITY: focus management for modal dialogs (WCAG 2.1 AA 2.4.3, 2.1.2).
+// Every [role=dialog][aria-modal=true] that becomes visible receives focus (its
+// first text field, otherwise the dialog itself, so that screen readers announce
+// its title); Tab and Shift+Tab stay inside the topmost open dialog; when the
+// dialog closes, focus returns to the control that opened it. Escape is already
+// handled by each dialog. Plain DOM code, no Alpine expressions (CSP-safe).
+// ============================================================================
+(function gestioneFocusDialoghi() {
+  const SEL_DIALOGO = '[role="dialog"][aria-modal="true"]';
+  const SEL_FOCUS = 'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), '
+    + 'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  const SEL_CAMPI = 'input:not([disabled]):not([type="hidden"]):not([type="checkbox"]):not([type="file"]), '
+    + 'select:not([disabled]), textarea:not([disabled])';
+  const visibile = (el) => !!el && el.isConnected && el.getClientRects().length > 0
+    && getComputedStyle(el).visibility !== 'hidden';
+  const focalizzabili = (d) => Array.from(d.querySelectorAll(SEL_FOCUS)).filter(visibile);
+  const pila = [];          // [{ dialogo, apertoDa }]
+  let ultimoApritore = null; // last opener outside any dialog
+
+  function focalizzaIniziale(d) {
+    if (!visibile(d) || d.contains(document.activeElement)) return;
+    const campo = Array.from(d.querySelectorAll(SEL_CAMPI)).find(visibile);
+    if (campo) { campo.focus(); return; }
+    if (!d.hasAttribute('tabindex')) d.setAttribute('tabindex', '-1');
+    d.focus();
+  }
+  function sincronizza() {
+    const aperti = Array.from(document.querySelectorAll(SEL_DIALOGO)).filter(visibile);
+    for (let i = pila.length - 1; i >= 0; i--) {
+      if (aperti.includes(pila[i].dialogo)) continue;
+      const { apertoDa } = pila.splice(i, 1)[0];
+      if (i === pila.length) {
+        const cima = pila[pila.length - 1];
+        if (cima) focalizzaIniziale(cima.dialogo);
+        else if (visibile(apertoDa)) apertoDa.focus();
+        else if (visibile(ultimoApritore)) ultimoApritore.focus();
+      }
+    }
+    for (const d of aperti) {
+      if (pila.some((x) => x.dialogo === d)) continue;
+      const apertoDa = document.activeElement;
+      if (apertoDa && !apertoDa.closest(SEL_DIALOGO)) ultimoApritore = apertoDa;
+      pila.push({ dialogo: d, apertoDa });
+      requestAnimationFrame(() => focalizzaIniziale(d));
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab' || !pila.length) return;
+    const d = pila[pila.length - 1].dialogo;
+    const f = focalizzabili(d);
+    if (!f.length) { e.preventDefault(); return; }
+    const primo = f[0];
+    const ultimo = f[f.length - 1];
+    if (!d.contains(document.activeElement)) { e.preventDefault(); primo.focus(); }
+    else if (e.shiftKey && (document.activeElement === primo || document.activeElement === d)) { e.preventDefault(); ultimo.focus(); }
+    else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primo.focus(); }
+  });
+  const avvia = () => {
+    new MutationObserver(sincronizza).observe(document.body, {
+      subtree: true, childList: true, attributes: true, attributeFilter: ['style', 'class', 'hidden']
+    });
+    sincronizza();
+  };
+  if (document.body) avvia(); else document.addEventListener('DOMContentLoaded', avvia);
+})();
 
 // ============================================================================
 // DEVELOPMENT: expose db API for console testing.

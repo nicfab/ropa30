@@ -184,7 +184,7 @@
           <label for="lang-switcher" class="text-sm text-brand-700 sr-only sm:not-sr-only"
                  x-text="langSwitcherLabel">Lingua</label>
           <select id="lang-switcher"
-                  class="text-sm border border-brand-300 rounded px-2 py-1 bg-white text-brand-900"
+                  class="text-sm border border-brand-400 rounded px-2 py-1 bg-white text-brand-900"
                   x-on:change="setLang">
             <option value="it" x-bind:selected="isItalianSelected">Italiano</option>
             <option value="en" x-bind:selected="isEnglishSelected">English</option>
@@ -257,14 +257,14 @@
                 <div>
                   <label for="bc-password" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.bcLblPassword">Password</label>
                   <input id="bc-password" type="password" x-model="bcPassword" autocomplete="new-password"
-                         aria-describedby="bc-hint" class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         aria-describedby="bc-hint" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                   <p id="bc-hint" class="mt-1 text-xs text-brand-600" x-text="L.bcMinimo"></p>
                   <p class="mt-1 text-sm text-danger-600" x-show="bcPasswordCorta" x-text="L.bcErroreCorta"></p>
                 </div>
                 <div>
                   <label for="bc-conferma" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.bcLblConferma">Conferma password</label>
                   <input id="bc-conferma" type="password" x-model="bcConferma" autocomplete="new-password"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                   <p class="mt-1 text-sm text-danger-600" x-show="bcNonCoincide" x-text="L.bcErroreDiversa"></p>
                 </div>
               </div>
@@ -299,7 +299,7 @@
               <div class="mt-4">
                 <label for="rp-password" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.rpLblPassword">Password</label>
                 <input id="rp-password" type="password" x-model="rpPassword" autocomplete="current-password"
-                       x-on:keydown.enter="confermaPasswordRestore" class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                       x-on:keydown.enter="confermaPasswordRestore" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
               </div>
               <p class="mt-2 text-sm text-danger-600" role="alert" x-show="rpErrore" x-text="rpErrore"></p>
               <div class="mt-5 flex flex-wrap justify-end gap-2">
@@ -353,7 +353,7 @@
         <!-- ===================== WELCOME (prima configurazione) ===================== -->
         <template x-if="isViewWelcome">
           <section aria-labelledby="welcome-title" class="max-w-2xl mx-auto">
-            <img src="og-image.jpg" alt="ropa30 — The GDPR Article 30 register, simplified." class="w-full h-auto rounded-xl mb-6" />
+            <img src="og-image.jpg" lang="en" alt="ropa30 — The GDPR Article 30 register, simplified." class="w-full h-auto rounded-xl mb-6" />
             <h1 id="welcome-title" class="mt-2 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
                 x-text="L.welcomeTitolo">Registro delle attività di trattamento</h1>
             <p class="mt-4 text-brand-700 leading-relaxed" x-text="L.welcomeIntro"></p>
@@ -422,27 +422,27 @@
                 <div class="sm:col-span-2">
                   <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblDenominazione"></span> <span aria-hidden="true">*</span></label>
                   <input id="f-denominazione" aria-required="true" type="text" x-model="denominazione" maxlength="150"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-forma" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblFormaGiuridica"></label>
                   <input id="f-forma" type="text" x-model="formaGiuridica"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-cf" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCodiceFiscale"></label>
                   <input id="f-cf" type="text" x-model="codiceFiscale"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-piva" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPartitaIVA"></label>
                   <input id="f-piva" type="text" x-model="partitaIVA"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-tel" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblTelefono"></label>
                   <input id="f-tel" type="tel" x-model="telefono"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
@@ -453,32 +453,32 @@
                 <div class="sm:col-span-4">
                   <label for="f-via" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblVia"></label>
                   <input id="f-via" type="text" x-model="via"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-2">
                   <label for="f-civico" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCivico"></label>
                   <input id="f-civico" type="text" x-model="civico"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-2">
                   <label for="f-cap" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblCap"></label>
                   <input id="f-cap" type="text" x-model="cap"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-4">
                   <label for="f-citta" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblCitta"></span> <span aria-hidden="true">*</span></label>
                   <input id="f-citta" aria-required="true" type="text" x-model="citta"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-3">
                   <label for="f-prov" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblProvincia"></label>
                   <input id="f-prov" type="text" x-model="provincia"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-3">
                   <label for="f-paese" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblPaese"></span> <span aria-hidden="true">*</span></label>
                   <input id="f-paese" aria-required="true" type="text" x-model="paese"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
@@ -489,18 +489,18 @@
                 <div>
                   <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblEmail"></span> <span aria-hidden="true">*</span></label>
                   <input id="f-email" aria-required="true" type="email" x-model="email"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                   <p class="mt-1 text-sm text-danger-600" x-show="emailNonValida" x-text="L.erroreEmail"></p>
                 </div>
                 <div>
                   <label for="f-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPec"></label>
                   <input id="f-pec" type="email" x-model="pec"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div class="sm:col-span-2">
                   <label for="f-sito" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblSitoWeb"></label>
                   <input id="f-sito" type="url" x-model="sitoWeb"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
@@ -515,17 +515,17 @@
                 <div class="sm:col-span-2">
                   <label for="f-dpo-nome" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoNome"></label>
                   <input id="f-dpo-nome" type="text" x-model="dpoNome"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-dpo-email" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoEmail"></label>
                   <input id="f-dpo-email" type="email" x-model="dpoEmail"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
                 <div>
                   <label for="f-dpo-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoPec"></label>
                   <input id="f-dpo-pec" type="email" x-model="dpoPec"
-                         class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
               </div>
             </fieldset>
@@ -551,7 +551,7 @@
                 <div>
                   <label for="f-principale" class="block text-sm font-medium text-brand-800 mb-2" x-text="L.lblLinguaPrincipale"></label>
                   <select id="f-principale" x-model="regPrincipale"
-                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
                     <option value="it" x-show="mostraPrincipaleIt">Italiano</option>
                     <option value="en" x-show="mostraPrincipaleEn">English</option>
                   </select>
@@ -617,12 +617,12 @@
                         x-bind:class="clsTabResponsabile" x-text="L.tabRegistroResponsabile">Registro del responsabile</button>
               </div>
               <div class="flex items-center gap-2">
-                <button type="button" x-on:click="apriCatalogo"
+                <button type="button" x-on:click="apriCatalogo" aria-haspopup="dialog"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                   <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
                 </button>
-                <button type="button" x-on:click="apriAzioniMenu"
+                <button type="button" x-on:click="apriAzioniMenu" aria-haspopup="dialog"
                         class="inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
                   <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-chevron-down" /></svg>
                   <span x-text="L.btnAzioni">Azioni</span>
@@ -633,8 +633,8 @@
             <p class="mt-4 text-sm text-danger-600" x-show="erroreCreazione" x-text="L.creazioneErrore"></p>
             <p class="mt-2 text-xs text-brand-500" x-text="L.backupAvviso"></p>
             <p class="mt-2 text-sm text-danger-600" x-show="erroreBackup" x-text="L.erroreBackup"></p>
-            <p x-show="restoreMessage" x-bind:class="restoreMsgClass" x-text="restoreMessage"></p>
-            <p x-show="exportMessage" x-bind:class="exportMsgClass" x-text="exportMessage"></p>
+            <p x-show="restoreMessage" x-bind:class="restoreMsgClass" x-text="restoreMessage" role="status"></p>
+            <p x-show="exportMessage" x-bind:class="exportMsgClass" x-text="exportMessage" role="status"></p>
 
             <!-- Ricerca nella lista (solo se ci sono trattamenti) -->
             <template x-if="haTrattamenti">
@@ -646,7 +646,7 @@
                     </span>
                     <input type="search" x-model="queryRicerca"
                            x-bind:placeholder="L.cercaPlaceholder" x-bind:aria-label="L.cercaAria"
-                           class="w-full rounded-lg border border-brand-300 bg-white pl-9 pr-3 py-2.5 text-brand-900" />
+                           class="w-full rounded-lg border border-brand-400 bg-white pl-9 pr-3 py-2.5 text-brand-900" />
                   </div>
                   <button type="button" x-on:click="pulisciRicerca" x-show="queryRicerca.length > 0"
                           class="shrink-0 text-sm rounded-lg border border-brand-300 px-3 py-2.5 text-brand-700 hover:bg-white"
@@ -654,7 +654,7 @@
                   <select x-show="unitaDisponibili.length > 0"
                           x-model="filtroUnita"
                           x-bind:aria-label="L.filtroUnitaLabel"
-                          class="shrink-0 text-sm rounded-lg border border-brand-300 bg-white px-3 py-2.5 text-brand-700">
+                          class="shrink-0 text-sm rounded-lg border border-brand-400 bg-white px-3 py-2.5 text-brand-700">
                     <option value="" x-text="L.filtroUnitaTutte">Tutte le unità</option>
                     <template x-for="u in unitaDisponibili" x-bind:key="u">
                       <option x-bind:value="u" x-text="u"></option>
@@ -725,7 +725,7 @@
                 <h2 class="mt-4 text-lg font-semibold text-brand-800" x-text="L.listaVuotaTitolo">Nessun trattamento</h2>
                 <p class="mt-2 text-brand-600 max-w-prose mx-auto" x-text="L.listaVuotaTesto"></p>
                 <div class="mt-6">
-                  <button type="button" x-on:click="apriCatalogo"
+                  <button type="button" x-on:click="apriCatalogo" aria-haspopup="dialog"
                           class="inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2 text-white font-medium hover:bg-brand-800">
                     <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                     <span x-text="L.btnAggiungiTrattamento">Aggiungi trattamento</span>
@@ -761,12 +761,12 @@
                       </span>
                       <input type="search" x-model="queryCatalogo"
                              x-bind:placeholder="L.catalogoCercaPlaceholder" x-bind:aria-label="L.catalogoCercaAria"
-                             class="w-full rounded-lg border border-brand-300 bg-white pl-9 pr-3 py-2 text-brand-900" />
+                             class="w-full rounded-lg border border-brand-400 bg-white pl-9 pr-3 py-2 text-brand-900" />
                     </div>
                     <div class="mt-3">
                       <select x-model="filtroSettore"
                               x-bind:aria-label="L.catalogoFiltroSettore"
-                              class="w-full rounded-lg border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                              class="w-full rounded-lg border border-brand-400 bg-white px-3 py-2 text-brand-900">
                         <option value="" x-text="L.catalogoSettoreTutti">Tutti i settori</option>
                         <template x-for="opt in settoriOpzioni" x-bind:key="opt.code">
                           <option x-bind:value="opt.code" x-text="opt.label"></option>
@@ -939,7 +939,7 @@
             <div class="mt-6">
               <p class="text-sm font-medium uppercase tracking-wide text-brand-500">
                 <span x-text="L.listaTitolo">Registro dei trattamenti</span>
-                <span class="text-brand-400"> · </span>
+                <span class="text-brand-500" aria-hidden="true"> · </span>
                 <span x-text="denominazione">UNIFG</span>
               </p>
               <h1 id="det-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
@@ -978,7 +978,7 @@
               <template x-for="sez in trattamentoVm.sezioni" x-bind:key="sez.id">
                 <section x-bind:id="sez.id" class="scroll-mt-16">
                   <h2 class="flex items-baseline gap-2 text-xl font-bold text-brand-900 border-b border-brand-200 pb-2">
-                    <span class="text-brand-400 text-base font-semibold" x-text="sez.indice"></span>
+                    <span class="text-brand-500 text-base font-semibold" x-text="sez.indice"></span>
                     <span x-text="sez.titolo"></span>
                   </h2>
 
@@ -1075,14 +1075,14 @@
                       x-text="L.editorAnnulla">Annulla</button>
             </div>
 
-            <p class="mt-3 text-sm text-danger-600" x-show="editNomeMancante" x-text="L.editorNomeMancante"></p>
-            <p class="mt-2 text-sm text-danger-600" x-show="editErroreSalva" x-text="L.editorErroreSalva"></p>
+            <p class="mt-3 text-sm text-danger-600" x-show="editNomeMancante" x-text="L.editorNomeMancante" role="alert"></p>
+            <p class="mt-2 text-sm text-danger-600" x-show="editErroreSalva" x-text="L.editorErroreSalva" role="alert"></p>
 
             <!-- Intestazione -->
             <div class="mt-6">
               <p class="text-sm font-medium uppercase tracking-wide text-brand-500">
                 <span x-text="L.editorTitolo">Modifica trattamento</span>
-                <span class="text-brand-400"> · </span>
+                <span class="text-brand-500" aria-hidden="true"> · </span>
                 <span x-text="denominazione">UNIFG</span>
               </p>
               <h1 id="edit-title" class="mt-1 text-3xl sm:text-4xl font-bold text-brand-900 tracking-tight"
@@ -1110,11 +1110,11 @@
               <template x-for="(sez, si) in editModel.sezioni" x-bind:key="sez.id">
                 <section x-bind:id="sez.idEdit" class="scroll-mt-20 rounded-xl border border-brand-200 bg-white shadow-sm">
                   <h2>
-                    <button type="button" x-bind:data-sez="si" x-on:click="toggleSezione"
+                    <button type="button" x-bind:data-sez="si" x-on:click="toggleSezione" x-bind:aria-expanded="sez.aperta ? 'true' : 'false'"
                             class="flex w-full items-center gap-2 text-left text-xl font-bold text-brand-900 px-4 sm:px-6 py-4 hover:bg-brand-50/50 rounded-xl">
                       <svg class="w-5 h-5 shrink-0 text-brand-400" aria-hidden="true" x-show="sez.aperta"><use href="#icon-chevron-down" /></svg>
                       <svg class="w-5 h-5 shrink-0 text-brand-400" aria-hidden="true" x-show="!sez.aperta"><use href="#icon-chevron-right" /></svg>
-                      <span class="text-brand-400 text-base font-semibold" x-text="sez.indice"></span>
+                      <span class="text-brand-500 text-base font-semibold" x-text="sez.indice"></span>
                       <span x-text="sez.titolo"></span>
                     </button>
                   </h2>
@@ -1128,25 +1128,25 @@
                         <template x-if="campo.isTestoBil">
                           <div class="grid gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
                             <div x-show="editMostraIt">
-                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaIt"></label>
+                              <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaIt"></label>
                               <template x-if="campo.multilinea">
-                                <textarea rows="3" x-model="campo.valIt" x-on:input="segnaDirty"
-                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                <textarea rows="3" x-model="campo.valIt" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
+                                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                               </template>
                               <template x-if="!campo.multilinea">
-                                <input type="text" x-model="campo.valIt" x-on:input="segnaDirty"
-                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                <input type="text" x-model="campo.valIt" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
+                                       class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                               </template>
                             </div>
                             <div x-show="editMostraEn">
-                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaEn"></label>
+                              <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaEn"></label>
                               <template x-if="campo.multilinea">
-                                <textarea rows="3" x-model="campo.valEn" x-on:input="segnaDirty"
-                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                <textarea rows="3" x-model="campo.valEn" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
+                                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                               </template>
                               <template x-if="!campo.multilinea">
-                                <input type="text" x-model="campo.valEn" x-on:input="segnaDirty"
-                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                <input type="text" x-model="campo.valEn" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
+                                       class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                               </template>
                             </div>
                           </div>
@@ -1154,20 +1154,20 @@
 
                         <!-- piano: testo non bilingue -->
                         <template x-if="campo.isPiano">
-                          <input type="text" x-model="campo.val" x-on:input="segnaDirty"
-                                 class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                          <input type="text" x-model="campo.val" x-bind:aria-label="campo.aria" x-on:input="segnaDirty"
+                                 class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                         </template>
 
                         <!-- data -->
                         <template x-if="campo.isData">
-                          <input type="date" x-model="campo.val" x-on:change="segnaDirty"
-                                 class="rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                          <input type="date" x-model="campo.val" x-bind:aria-label="campo.aria" x-on:change="segnaDirty"
+                                 class="rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                         </template>
 
                         <!-- enum1: select -->
                         <template x-if="campo.isEnum1">
-                          <select x-model="campo.val" x-on:change="segnaDirty"
-                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                          <select x-model="campo.val" x-bind:aria-label="campo.aria" x-on:change="segnaDirty"
+                                  class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
                             <template x-for="opz in campo.opzioni" x-bind:key="opz.code">
                               <option x-bind:value="opz.code" x-text="opz.label"></option>
                             </template>
@@ -1201,25 +1201,25 @@
                                   <span class="block text-sm font-medium text-brand-700 mb-1" x-text="figlio.label"></span>
                                   <div class="grid gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
                                     <div x-show="editMostraIt">
-                                      <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaIt"></label>
+                                      <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaIt"></label>
                                       <template x-if="figlio.multilinea">
-                                        <textarea rows="3" x-model="figlio.valIt" x-on:input="segnaDirty"
-                                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                        <textarea rows="3" x-model="figlio.valIt" x-bind:aria-label="figlio.ariaIt" x-on:input="segnaDirty"
+                                                  class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                       </template>
                                       <template x-if="!figlio.multilinea">
-                                        <input type="text" x-model="figlio.valIt" x-on:input="segnaDirty"
-                                               class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                        <input type="text" x-model="figlio.valIt" x-bind:aria-label="figlio.ariaIt" x-on:input="segnaDirty"
+                                               class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                       </template>
                                     </div>
                                     <div x-show="editMostraEn">
-                                      <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaEn"></label>
+                                      <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaEn"></label>
                                       <template x-if="figlio.multilinea">
-                                        <textarea rows="3" x-model="figlio.valEn" x-on:input="segnaDirty"
-                                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                        <textarea rows="3" x-model="figlio.valEn" x-bind:aria-label="figlio.ariaEn" x-on:input="segnaDirty"
+                                                  class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                       </template>
                                       <template x-if="!figlio.multilinea">
-                                        <input type="text" x-model="figlio.valEn" x-on:input="segnaDirty"
-                                               class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                        <input type="text" x-model="figlio.valEn" x-bind:aria-label="figlio.ariaEn" x-on:input="segnaDirty"
+                                               class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                       </template>
                                     </div>
                                   </div>
@@ -1237,14 +1237,14 @@
                                 <div class="flex items-start gap-2">
                                   <div class="grid flex-1 gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
                                     <div x-show="editMostraIt">
-                                      <input type="text" x-model="voce.valIt" x-on:input="segnaDirty"
+                                      <input type="text" x-model="voce.valIt" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
                                              x-bind:placeholder="L.editorColonnaIt"
-                                             class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                             class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                     </div>
                                     <div x-show="editMostraEn">
-                                      <input type="text" x-model="voce.valEn" x-on:input="segnaDirty"
+                                      <input type="text" x-model="voce.valEn" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
                                              x-bind:placeholder="L.editorColonnaEn"
-                                             class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                             class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                     </div>
                                   </div>
                                   <button type="button"
@@ -1288,33 +1288,33 @@
                                         <template x-if="sc.isTestoBil">
                                           <div class="grid gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
                                             <div x-show="editMostraIt">
-                                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaIt"></label>
+                                              <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaIt"></label>
                                               <template x-if="sc.multilinea">
-                                                <textarea rows="2" x-model="sc.valIt" x-on:input="segnaDirty"
-                                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                                <textarea rows="2" x-model="sc.valIt" x-bind:aria-label="sc.ariaIt" x-on:input="segnaDirty"
+                                                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                               </template>
                                               <template x-if="!sc.multilinea">
-                                                <input type="text" x-model="sc.valIt" x-on:input="segnaDirty"
-                                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                                <input type="text" x-model="sc.valIt" x-bind:aria-label="sc.ariaIt" x-on:input="segnaDirty"
+                                                       class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                               </template>
                                             </div>
                                             <div x-show="editMostraEn">
-                                              <label class="block text-xs text-brand-400 mb-0.5" x-text="L.editorColonnaEn"></label>
+                                              <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaEn"></label>
                                               <template x-if="sc.multilinea">
-                                                <textarea rows="2" x-model="sc.valEn" x-on:input="segnaDirty"
-                                                          class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900"></textarea>
+                                                <textarea rows="2" x-model="sc.valEn" x-bind:aria-label="sc.ariaEn" x-on:input="segnaDirty"
+                                                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                               </template>
                                               <template x-if="!sc.multilinea">
-                                                <input type="text" x-model="sc.valEn" x-on:input="segnaDirty"
-                                                       class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                                <input type="text" x-model="sc.valEn" x-bind:aria-label="sc.ariaEn" x-on:input="segnaDirty"
+                                                       class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                               </template>
                                             </div>
                                           </div>
                                         </template>
 
                                         <template x-if="sc.isPiano">
-                                          <input type="text" x-model="sc.val" x-on:input="segnaDirty"
-                                                 class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900" />
+                                          <input type="text" x-model="sc.val" x-bind:aria-label="sc.aria" x-on:input="segnaDirty"
+                                                 class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                         </template>
 
                                         <template x-if="sc.isBool">
@@ -1326,8 +1326,8 @@
                                         </template>
 
                                         <template x-if="sc.isEnum1">
-                                          <select x-model="sc.val" x-on:change="segnaDirty"
-                                                  class="w-full rounded border border-brand-300 bg-white px-3 py-2 text-brand-900">
+                                          <select x-model="sc.val" x-bind:aria-label="sc.aria" x-on:change="segnaDirty"
+                                                  class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
                                             <template x-for="opz in sc.opzioni" x-bind:key="opz.code">
                                               <option x-bind:value="opz.code" x-text="opz.label"></option>
                                             </template>

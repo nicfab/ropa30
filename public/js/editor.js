@@ -43,16 +43,17 @@ function opzioniDa(mappa) {
 function ctlTestoBil(chiave, path, label, bil, multilinea) {
   const b = bil || {};
   return { chiave, tipo: 'testoBil', isTestoBil: true, path, label,
-    valIt: b.it || '', valEn: b.en || '', multilinea: !!multilinea };
+    valIt: b.it || '', valEn: b.en || '', multilinea: !!multilinea,
+    ariaIt: (label || '') + ' (IT)', ariaEn: (label || '') + ' (EN)' };
 }
 function ctlPiano(chiave, path, label, val) {
-  return { chiave, tipo: 'piano', isPiano: true, path, label, val: val || '' };
+  return { chiave, tipo: 'piano', isPiano: true, path, label, val: val || '', aria: label || '' };
 }
 function ctlData(chiave, path, label, val) {
-  return { chiave, tipo: 'data', isData: true, path, label, val: val || '' };
+  return { chiave, tipo: 'data', isData: true, path, label, val: val || '', aria: label || '' };
 }
 function ctlEnum1(chiave, path, label, val, mappa) {
-  return { chiave, tipo: 'enum1', isEnum1: true, path, label, val: val || '', opzioni: opzioniDa(mappa) };
+  return { chiave, tipo: 'enum1', isEnum1: true, path, label, val: val || '', opzioni: opzioniDa(mappa), aria: label || '' };
 }
 function ctlEnumN(chiave, path, label, arr, mappa) {
   const sel = Array.isArray(arr) ? arr : [];
@@ -66,7 +67,8 @@ function ctlBool(chiave, path, label, val, figli) {
 }
 function ctlListaBil(chiave, path, label, arr, gruppoTipo, multilinea) {
   const voci = (Array.isArray(arr) ? arr : []).map((b) => ({ valIt: (b && b.it) || '', valEn: (b && b.en) || '' }));
-  return { chiave, tipo: 'listaBil', isListaBil: true, path, label, voci, gruppoTipo, multilinea: !!multilinea };
+  return { chiave, tipo: 'listaBil', isListaBil: true, path, label, voci, gruppoTipo, multilinea: !!multilinea,
+    ariaIt: (label || '') + ' (IT)', ariaEn: (label || '') + ' (EN)' };
 }
 // soloRegistro: '' (always shown) | 'titolare' | 'responsabile' (shown only for
 // that type of record; see aggiornaVisibilita()).

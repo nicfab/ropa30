@@ -35,8 +35,12 @@
   --color-brand-100: oklch(0.93 0.04 220);
   --color-brand-200: oklch(0.86 0.07 220);
   --color-brand-300: oklch(0.76 0.10 220);
-  --color-brand-400: oklch(0.65 0.13 220);
-  --color-brand-500: oklch(0.55 0.14 220);
+  /* brand-400/500 and warning-600 darkened for WCAG 2.1 AA contrast on white
+   * and brand-50: brand-400 >= 3:1 (icons, form borders, 1.4.11), brand-500
+   * >= 4.5:1 (text, 1.4.3); warning-600 >= 4.5:1 also on the warning badge
+   * background. Checked by tests/a11y.test.mjs. */
+  --color-brand-400: oklch(0.60 0.13 220);
+  --color-brand-500: oklch(0.51 0.14 220);
   --color-brand-600: oklch(0.45 0.13 220);
   --color-brand-700: oklch(0.37 0.11 220);
   --color-brand-800: oklch(0.30 0.08 220);
@@ -55,7 +59,7 @@
   --color-accent-900: oklch(0.26 0.07 155);
 
   --color-warning-500: oklch(0.74 0.15 75);
-  --color-warning-600: oklch(0.63 0.16 75);
+  --color-warning-600: oklch(0.51 0.16 75);
 
   --color-danger-500: oklch(0.60 0.18 25);
   --color-danger-600: oklch(0.50 0.18 25);
