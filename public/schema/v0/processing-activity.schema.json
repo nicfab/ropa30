@@ -4,9 +4,9 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - processing activity",
   "description": "One entry of the record of processing activities (GDPR Art. 30). The same structure serves the controller's record (Art. 30(1)) and the processor's record (Art. 30(2)); 'tipoRegistro' tells which. Field names are those actually stored by ROPA30 (Italian GDPR terminology). Empty values are valid, because a record may be incomplete while it is being drafted: legal completeness is described by the x-gdpr annotations, not by 'required'.",
-  "x-spec-version": "0.1.0-draft",
+  "x-spec-version": "0.2.0-draft",
   "x-ropa30": {
-    "dataModelVersion": 4
+    "dataModelVersion": 5
   },
   "allOf": [
     {
@@ -19,6 +19,7 @@
         "tenantId",
         "schemaVersion",
         "tipoRegistro",
+        "contitolari",
         "titolariPerContoDelQuale",
         "unitaOrganizzativa",
         "codiceUtente",
@@ -62,22 +63,33 @@
           "description": "Technical partition identifier; currently always \"default\"."
         },
         "schemaVersion": {
-          "const": 4,
-          "description": "Version of the data model. This specification describes version 4."
+          "const": 5,
+          "description": "Version of the data model. This specification describes version 5."
         },
         "tipoRegistro": {
           "$ref": "common.schema.json#/$defs/registerType",
           "description": "Record the entry belongs to: 'titolare' = controller's record (Art. 30(1)); 'responsabile' = processor's record (Art. 30(2))."
+        },
+        "contitolari": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contitolare"
+          },
+          "description": "Controller's record only: joint controllers of this processing activity (Art. 26), with name and contact details. Joint controllership concerns a specific processing, so it is recorded per activity.",
+          "x-gdpr": [
+            {
+              "register": "controller",
+              "provision": "Art. 30(1)(a)",
+              "requirement": "where-applicable"
+            }
+          ]
         },
         "titolariPerContoDelQuale": {
           "type": "array",
           "items": {
             "$ref": "#/$defs/titolarePerContoDelQuale"
           },
-          "description": "Processor's record only: the controllers on whose behalf the processor acts. Empty in the controller's record. Not yet editable in the user interface (planned).",
-          "x-ropa30": {
-            "ui": "planned"
-          },
+          "description": "Processor's record only: the controllers on whose behalf the processor acts, each with name and contact details and, where applicable, its representative and data protection officer.",
           "x-gdpr": [
             {
               "register": "processor",
@@ -400,6 +412,30 @@
       "additionalProperties": false,
       "description": "All fields of a processing activity, none required. Used as is for template presets (see template-catalog.schema.json); the record itself requires all of them."
     },
+    "contitolare": {
+      "type": "object",
+      "properties": {
+        "denominazione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Name of the joint controller."
+        },
+        "contatti": {
+          "type": "string",
+          "description": "Contact details of the joint controller."
+        },
+        "riferimentoAccordo": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reference to the arrangement between the joint controllers (Art. 26)."
+        }
+      },
+      "required": [
+        "denominazione",
+        "contatti",
+        "riferimentoAccordo"
+      ],
+      "additionalProperties": false,
+      "description": "Joint controller (Art. 26; Art. 30(1)(a)). The arrangement reference is supplementary."
+    },
     "titolarePerContoDelQuale": {
       "type": "object",
       "properties": {
@@ -411,18 +447,28 @@
           "type": "string",
           "description": "Contact details of the controller."
         },
-        "ruolo": {
+        "rappresentante": {
           "type": "string",
-          "description": "Role (free text)."
+          "description": "Representative of the controller (Art. 27), where designated: name and contact details."
+        },
+        "dpo": {
+          "type": "string",
+          "description": "Data protection officer of the controller, where designated: name and contact details."
+        },
+        "riferimentoContratto": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reference to the contract or other legal act under Art. 28(3)."
         }
       },
       "required": [
         "denominazione",
         "contatti",
-        "ruolo"
+        "rappresentante",
+        "dpo",
+        "riferimentoContratto"
       ],
       "additionalProperties": false,
-      "description": "Controller on whose behalf the processor acts."
+      "description": "Controller on whose behalf the processor acts (Art. 30(2)(a)). Representative and DPO are to be indicated where applicable; the contract reference is supplementary (Art. 28(3))."
     },
     "unitaOrganizzativa": {
       "type": "object",

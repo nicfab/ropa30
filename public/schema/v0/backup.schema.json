@@ -3,8 +3,8 @@
   "$id": "https://ropa30.eu/schema/v0/backup.schema.json",
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - backup file (plain)",
-  "description": "Complete, unencrypted backup of a ROPA30 register: export format 1, data model 4. The file is a faithful dump of the three stores (settings, processing activities, audit log), with no filtering or transformation. Backups produced by earlier versions with an older data model are migrated by the application on restore and are outside the scope of this schema. Not expressible in JSON Schema and checked by the test suite: each value in _meta.counts equals the length of the corresponding list in data.",
-  "x-spec-version": "0.1.0-draft",
+  "description": "Complete, unencrypted backup of a ROPA30 register: export format 1, data model 5. The file is a faithful dump of the three stores (settings, processing activities, audit log), with no filtering or transformation. Backups produced by earlier versions with an older data model are migrated by the application on restore and are outside the scope of this schema. Not expressible in JSON Schema and checked by the test suite: each value in _meta.counts equals the length of the corresponding list in data.",
+  "x-spec-version": "0.2.0-draft",
   "type": "object",
   "properties": {
     "_meta": {
@@ -25,7 +25,7 @@
           "description": "Version of the application that produced the file (semantic versioning)."
         },
         "schemaVersion": {
-          "const": 4,
+          "const": 5,
           "description": "Version of the data model of the records in 'data'."
         },
         "exportedAt": {

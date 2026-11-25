@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - common definitions",
   "description": "Shared types of the ROPA30 data specification: bilingual texts, dates and code lists. Codes are stored as language-neutral identifiers; their human-readable labels are provided by the application in each language and are never stored in the data.",
-  "x-spec-version": "0.1.0-draft",
+  "x-spec-version": "0.2.0-draft",
   "$defs": {
     "language": {
       "title": "Language",

@@ -68,8 +68,11 @@ function ctlListaBil(chiave, path, label, arr, gruppoTipo, multilinea) {
   const voci = (Array.isArray(arr) ? arr : []).map((b) => ({ valIt: (b && b.it) || '', valEn: (b && b.en) || '' }));
   return { chiave, tipo: 'listaBil', isListaBil: true, path, label, voci, gruppoTipo, multilinea: !!multilinea };
 }
-function ctlGruppi(chiave, path, label, righe, gruppoTipo, voceLabel) {
-  return { chiave, tipo: 'gruppi', isGruppi: true, path, label, righe, gruppoTipo, voceLabel: voceLabel || label };
+// soloRegistro: '' (always shown) | 'titolare' | 'responsabile' (shown only for
+// that type of record; see aggiornaVisibilita()).
+function ctlGruppi(chiave, path, label, righe, gruppoTipo, voceLabel, soloRegistro) {
+  return { chiave, tipo: 'gruppi', isGruppi: true, path, label, righe, gruppoTipo, voceLabel: voceLabel || label,
+    soloRegistro: soloRegistro || '' };
 }
 
 // --- Group-row builders (render existing rows AND add blank ones) ---
@@ -92,6 +95,26 @@ function rigaTrasferimento(entry, detail, enums, titolo) {
     ctlTestoBil('riferimentoDocumentazione', '', C.trRiferimento, e.riferimentoDocumentazione, true)
   ] };
 }
+// Art. 30(1)(a): joint controller (Art. 26), controller's record only.
+function rigaContitolare(entry, detail, titolo) {
+  const C = detail.campi; const e = entry || {};
+  return { rigaTitolo: titolo || '', campi: [
+    ctlTestoBil('denominazione', '', C.ctDenominazione, e.denominazione, false),
+    ctlPiano('contatti', '', C.ctContatti, e.contatti),
+    ctlTestoBil('riferimentoAccordo', '', C.ctRiferimentoAccordo, e.riferimentoAccordo, false)
+  ] };
+}
+// Art. 30(2)(a): controller on whose behalf the processor acts, processor's record only.
+function rigaTitolarePerConto(entry, detail, titolo) {
+  const C = detail.campi; const e = entry || {};
+  return { rigaTitolo: titolo || '', campi: [
+    ctlTestoBil('denominazione', '', C.tcDenominazione, e.denominazione, false),
+    ctlPiano('contatti', '', C.tcContatti, e.contatti),
+    ctlPiano('rappresentante', '', C.tcRappresentante, e.rappresentante),
+    ctlPiano('dpo', '', C.tcDpo, e.dpo),
+    ctlTestoBil('riferimentoContratto', '', C.tcRiferimentoContratto, e.riferimentoContratto, false)
+  ] };
+}
 function rigaUnitaOrganizzativa(entry, detail, titolo) {
   const C = detail.campi; const e = entry || {};
   return { rigaTitolo: titolo || '', campi: [
@@ -104,6 +127,8 @@ function righeDaArray(gruppoTipo, arr, detail, enums, baseLabel) {
   if (gruppoTipo === 'responsabiliEsterni') return a.map((e, i) => rigaResponsabile(e, detail, tit(i)));
   if (gruppoTipo === 'trasferimentiExtraUE') return a.map((e, i) => rigaTrasferimento(e, detail, enums, tit(i)));
   if (gruppoTipo === 'unitaOrganizzativa') return a.map((e, i) => rigaUnitaOrganizzativa(e, detail, tit(i)));
+  if (gruppoTipo === 'contitolari') return a.map((e, i) => rigaContitolare(e, detail, tit(i)));
+  if (gruppoTipo === 'titolariPerContoDelQuale') return a.map((e, i) => rigaTitolarePerConto(e, detail, tit(i)));
   return [];
 }
 
@@ -120,6 +145,8 @@ export function buildEditModel(record, { lingue, detail, enums }) {
     ctlTestoBil('nome', 'nome', C.nome, g('nome'), false),
     ctlTestoBil('descrizione', 'descrizione', C.descrizione, g('descrizione'), true),
     ctlEnum1('tipoRegistro', 'tipoRegistro', C.tipoRegistro, g('tipoRegistro'), enums.tipoRegistro),
+    ctlGruppi('contitolari', 'contitolari', C.contitolari, righeDaArray('contitolari', g('contitolari'), detail, enums, C.contitolari), 'contitolari', C.contitolari, 'titolare'),
+    ctlGruppi('titolariPerContoDelQuale', 'titolariPerContoDelQuale', C.titolariPerContoDelQuale, righeDaArray('titolariPerContoDelQuale', g('titolariPerContoDelQuale'), detail, enums, C.titolariPerContoDelQuale), 'titolariPerContoDelQuale', C.titolariPerContoDelQuale, 'responsabile'),
     ctlData('dataInizioTrattamento', 'dataInizioTrattamento', C.dataInizioTrattamento, g('dataInizioTrattamento')),
     ctlGruppi('unitaOrganizzativa', 'unitaOrganizzativa', C.unitaOrganizzativa, righeDaArray('unitaOrganizzativa', g('unitaOrganizzativa'), detail, enums, C.unitaOrganizzativa), 'unitaOrganizzativa', C.unitaOrganizzativa),
     ctlPiano('codiceUtente', 'codiceUtente', C.codiceUtente, g('codiceUtente'))
@@ -213,7 +240,25 @@ export function buildEditModel(record, { lingue, detail, enums }) {
   // Navigation helpers (CSP: precomputed strings), as in detail.js.
   sezioni.forEach((sez, i) => { sez.ancora = '#edit-' + sez.id; sez.indice = (i + 1) + '. '; sez.aperta = (i === 0); sez.idEdit = 'edit-' + sez.id; });
 
-  return { sezioni, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
+  const model = { sezioni, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
+  aggiornaVisibilita(model);
+  return model;
+}
+
+// --- Visibility by type of record (CSP: a plain boolean per control) ---
+// Controls with soloRegistro are shown only when the record type selected in
+// the editor matches; all other controls are always visible. Hidden controls
+// keep their values (nothing is lost if the user switches type and back).
+export function aggiornaVisibilita(editModel) {
+  if (!editModel || !Array.isArray(editModel.sezioni)) return;
+  let tipo = 'titolare';
+  for (const sez of editModel.sezioni) {
+    const c = sez.campi.find((x) => x.chiave === 'tipoRegistro');
+    if (c) { tipo = c.val || 'titolare'; break; }
+  }
+  for (const sez of editModel.sezioni) {
+    for (const c of sez.campi) c.visibile = !c.soloRegistro || c.soloRegistro === tipo;
+  }
 }
 
 // --- applyEditModel: write controls back onto `record` (a clone), return it ---
@@ -257,5 +302,7 @@ export function nuovaRigaGruppo(gruppoTipo, { detail, enums, titolo }) {
   if (gruppoTipo === 'responsabiliEsterni') return rigaResponsabile({}, detail, titolo || '');
   if (gruppoTipo === 'trasferimentiExtraUE') return rigaTrasferimento({}, detail, enums, titolo || '');
   if (gruppoTipo === 'unitaOrganizzativa') return rigaUnitaOrganizzativa({}, detail, titolo || '');
+  if (gruppoTipo === 'contitolari') return rigaContitolare({}, detail, titolo || '');
+  if (gruppoTipo === 'titolariPerContoDelQuale') return rigaTitolarePerConto({}, detail, titolo || '');
   return { rigaTitolo: titolo || '', campi: [] };
 }

@@ -33,7 +33,7 @@ import { encryptEnvelope, decryptEnvelope, isEncryptedEnvelope, MIN_PASSWORD_LEN
 import { buildModelloRegistro } from './exporters/registro-common.js';
 import { esportaRegistroXlsx } from './exporters/xlsx.js';
 import { esportaRegistroOds } from './exporters/ods.js';
-import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo } from './editor.js';
+import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo, aggiornaVisibilita } from './editor.js';
 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
@@ -1099,6 +1099,7 @@ function ropa30App() {
     segnaDirty() {
       this.editDirty = true;
       this._validaNomeEditor();
+      aggiornaVisibilita(this.editModel); // e.g. parties shown per type of record
     },
     async salvaTrattamento() {
       this._validaNomeEditor();

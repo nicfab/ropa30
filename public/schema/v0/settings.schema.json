@@ -3,10 +3,10 @@
   "$id": "https://ropa30.eu/schema/v0/settings.schema.json",
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - register settings",
-  "description": "Settings of the register: the organisation keeping it, its representative, the data protection officer, joint controllers and the register languages. In the controller's record the organisation is the controller; in the processor's record it is the processor. Empty values are valid (e.g. before onboarding is completed).",
-  "x-spec-version": "0.1.0-draft",
+  "description": "Settings of the register: the organisation keeping it, its representative, the data protection officer and the register languages. In the controller's record the organisation is the controller; in the processor's record it is the processor. Joint controllers are recorded per processing activity. Empty values are valid (e.g. before onboarding is completed).",
+  "x-spec-version": "0.2.0-draft",
   "x-ropa30": {
-    "dataModelVersion": 4
+    "dataModelVersion": 5
   },
   "type": "object",
   "properties": {
@@ -20,8 +20,8 @@
       "description": "Technical partition identifier; currently always \"default\"."
     },
     "schemaVersion": {
-      "const": 4,
-      "description": "Version of the data model. This specification describes version 4."
+      "const": 5,
+      "description": "Version of the data model. This specification describes version 5."
     },
     "uiLanguage": {
       "$ref": "common.schema.json#/$defs/language",
@@ -337,18 +337,9 @@
       ]
     },
     "contitolari": {
-      "description": "Joint controllers (Art. 26). RESERVED: the structure of the items is not yet defined and the field cannot yet be edited in the user interface; it is currently always an empty list.",
       "type": "array",
-      "x-ropa30": {
-        "status": "reserved"
-      },
-      "x-gdpr": [
-        {
-          "register": "controller",
-          "provision": "Art. 30(1)(a)",
-          "requirement": "where-applicable"
-        }
-      ]
+      "deprecated": true,
+      "description": "Legacy organisation-wide list of joint controllers (data model 4 and earlier). Never editable and normally absent: since data model 5 joint controllers are recorded per processing activity. A non-empty legacy list is preserved by the migration."
     },
     "registro": {
       "description": "Languages of the register. The primary language must be one of the enabled languages.",
@@ -439,7 +430,6 @@
     "uiLanguage",
     "titolare",
     "dpo",
-    "contitolari",
     "registro",
     "metadata"
   ],

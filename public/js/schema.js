@@ -26,7 +26,11 @@
 //     slot, the other language is left empty (no automatic translation).
 // v3: unitaOrganizzativa becomes a list of bilingual units.
 // v4: each unitaOrganizzativa item is reduced to { unita: {it,en} }.
-export const SCHEMA_VERSION = 4;
+// v5: joint controllers recorded per processing activity (contitolari);
+//     controllers on whose behalf the processor acts gain representative,
+//     DPO and contract reference (the ambiguous 'ruolo' is dropped);
+//     the organisation-wide settings.contitolari list is removed.
+export const SCHEMA_VERSION = 5;
 
 // ----------------------------------------------------------------------------
 // APP + BACKUP FORMAT VERSIONS
@@ -201,8 +205,6 @@ export function createDefaultSettings() {
       contattoPubblico: ''
     },
 
-    contitolari: [],
-
     // Register languages: enabled set + primary (invariant: principale ∈ lingue).
     registro: {
       lingue: [lang],
@@ -227,8 +229,14 @@ export function createDefaultProcessingActivity({ id }) {
     tenantId: DEFAULT_TENANT_ID,
     schemaVersion: SCHEMA_VERSION,
     tipoRegistro: TIPO_REGISTRO.TITOLARE,
+    // ---- Art. 30(1)(a) — Contitolari (art. 26), per trattamento ----
+    // Used when tipoRegistro === 'titolare'. Each entry:
+    //   { denominazione: {it,en}, contatti: '', riferimentoAccordo: {it,en} }
+    contitolari: [],
     // ---- Art. 30(2)(a) — Titolari per conto dei quali il responsabile agisce ----
-    // Popolato solo per tipoRegistro === 'responsabile'. Vuoto per i titolari.
+    // Used when tipoRegistro === 'responsabile'. Each entry:
+    //   { denominazione: {it,en}, contatti: '', rappresentante: '', dpo: '',
+    //     riferimentoContratto: {it,en} }
     titolariPerContoDelQuale: [],
 
     // ---- Internal classification ----

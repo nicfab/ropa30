@@ -1,8 +1,8 @@
-# ROPA30 data specification — draft 0.1
+# ROPA30 data specification — draft 0.2
 
 Machine-readable description of the data handled by [ROPA30](https://ropa30.eu), the local-first application for the record of processing activities under Article 30 of the GDPR (Regulation (EU) 2016/679).
 
-**Status: draft 0.1 (`0.1.0-draft`).** The `v0` path signals that the specification is not yet stable and may change without notice. A stable version will be published under `v1`.
+**Status: draft 0.2 (`0.2.0-draft`).** The `v0` path signals that the specification is not yet stable and may change without notice. A stable version will be published under `v1`.
 
 The specification describes the data as ROPA30 actually stores and exports it. Its purposes are:
 
@@ -17,8 +17,8 @@ All schemas follow [JSON Schema 2020-12](https://json-schema.org/draft/2020-12/s
 | File | Describes |
 |---|---|
 | `common.schema.json` | Shared types: bilingual text, dates, code lists |
-| `settings.schema.json` | Register settings: the organisation keeping the register, its representative, the DPO, joint controllers, register languages |
-| `processing-activity.schema.json` | One processing activity, for either the controller's or the processor's record |
+| `settings.schema.json` | Register settings: the organisation keeping the register, its representative, the DPO, register languages |
+| `processing-activity.schema.json` | One processing activity, for either the controller's or the processor's record, including joint controllers (controller's record) and the controllers on whose behalf the processor acts (processor's record) |
 | `audit-entry.schema.json` | One entry of the activity log |
 | `backup.schema.json` | Plain backup file |
 | `backup-encrypted.schema.json` | Password-encrypted backup file (PBKDF2-SHA-256 and AES-256-GCM) |
@@ -30,11 +30,11 @@ Three version numbers evolve independently:
 
 | Version | Current value | Where it appears |
 |---|---|---|
-| Specification | `0.1.0-draft` | `x-spec-version` in every schema |
-| Data model | `4` | `schemaVersion` in settings and processing activities |
+| Specification | `0.2.0-draft` | `x-spec-version` in every schema |
+| Data model | `5` | `schemaVersion` in settings and processing activities |
 | Backup format | `1` | `_meta.exportFormatVersion` in backups |
 
-This draft describes data model 4 and backup format 1. Backups produced by earlier versions with an older data model are migrated by the application when restored, and are outside the scope of these schemas.
+This draft describes data model 5 and backup format 1. Backups produced by earlier versions with an older data model are migrated by the application when restored, and are outside the scope of these schemas.
 
 ## Conventions
 

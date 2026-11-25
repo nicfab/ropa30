@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
  * Persistence layer for ropa30 (Dexie over IndexedDB). All data stays local.
- * Schema v2 (multilingual). Contains the v1->v2 migration and a bilingual
- * template factory (no flattening: presets keep both languages).
+ * Data model: see SCHEMA_VERSION in schema.js. Contains the step migrations
+ * (v1 -> current) and a bilingual template factory (no flattening: presets
+ * keep both languages).
  */
 
 import {
@@ -223,6 +224,53 @@ function migrateSettingsV3toV4(s) {
 }
 
 // ----------------------------------------------------------------------------
+// MIGRATION v4 -> v5 — parties under Art. 30(1)(a) and 30(2)(a).
+//  - processing activity: new per-activity list `contitolari` (joint
+//    controllers, Art. 26); `titolariPerContoDelQuale` entries gain
+//    `rappresentante`, `dpo` and `riferimentoContratto`. The ambiguous `ruolo`
+//    (never editable) is dropped: any text in it is appended to `contatti`,
+//    so nothing is lost.
+//  - settings: the organisation-wide `contitolari` list (never editable, hence
+//    normally empty) is removed when empty; a non-empty legacy list is kept.
+// Idempotent: entries already in v5 shape are returned equivalent.
+// ----------------------------------------------------------------------------
+function normContitolare(c) {
+  const x = c || {};
+  return {
+    denominazione: bil(x.denominazione),
+    contatti: (typeof x.contatti === 'string') ? x.contatti : '',
+    riferimentoAccordo: bil(x.riferimentoAccordo)
+  };
+}
+function normTitolarePerConto(t) {
+  const x = t || {};
+  let contatti = (typeof x.contatti === 'string') ? x.contatti : '';
+  const ruolo = (typeof x.ruolo === 'string') ? x.ruolo.trim() : '';
+  if (ruolo) contatti = contatti ? contatti + ' \u2014 ' + ruolo : ruolo;
+  return {
+    denominazione: bil(x.denominazione),
+    contatti,
+    rappresentante: (typeof x.rappresentante === 'string') ? x.rappresentante : '',
+    dpo: (typeof x.dpo === 'string') ? x.dpo : '',
+    riferimentoContratto: bil(x.riferimentoContratto)
+  };
+}
+function migrateProcessingActivityV4toV5(rec) {
+  const r = { ...rec };
+  r.contitolari = Array.isArray(r.contitolari) ? r.contitolari.map(normContitolare) : [];
+  r.titolariPerContoDelQuale = Array.isArray(r.titolariPerContoDelQuale)
+    ? r.titolariPerContoDelQuale.map(normTitolarePerConto) : [];
+  r.schemaVersion = 5;
+  return r;
+}
+function migrateSettingsV4toV5(s) {
+  const out = { ...(s || {}) };
+  if (Array.isArray(out.contitolari) && out.contitolari.length === 0) delete out.contitolari;
+  out.schemaVersion = 5;
+  return out;
+}
+
+// ----------------------------------------------------------------------------
 // MIGRATION DISPATCHERS — apply step migrations in order up to SCHEMA_VERSION.
 // Idempotent: a record already at the latest version is returned unchanged.
 //  - `lang`            : language used to bilingual-ize legacy v1 string fields
@@ -234,6 +282,7 @@ function migrateProcessingActivity(rec, lang, linguaPrincipale) {
   if (v < 2) r = migrateProcessingActivityV1toV2(r, lang);
   if ((r.schemaVersion || 2) < 3) r = migrateProcessingActivityV2toV3(r, linguaPrincipale);
   if ((r.schemaVersion || 3) < 4) r = migrateProcessingActivityV3toV4(r);
+  if ((r.schemaVersion || 4) < 5) r = migrateProcessingActivityV4toV5(r);
   return r;
 }
 
@@ -243,6 +292,7 @@ function migrateSettings(rec, lang) {
   if (v < 2) r = migrateSettingsV1toV2(r, lang);
   if ((r.schemaVersion || 2) < 3) r = migrateSettingsV2toV3(r);
   if ((r.schemaVersion || 3) < 4) r = migrateSettingsV3toV4(r);
+  if ((r.schemaVersion || 4) < 5) r = migrateSettingsV4toV5(r);
   return r;
 }
 
@@ -316,6 +366,26 @@ db.version(4).stores({
   const paTable = tx.table('processingActivities');
   await paTable.toCollection().modify((rec) => {
     const migrated = migrateProcessingActivityV3toV4(rec);
+    for (const k of Object.keys(rec)) { if (!(k in migrated)) delete rec[k]; }
+    Object.assign(rec, migrated);
+  });
+});
+
+// v5: joint controllers per processing activity; controllers on whose behalf
+// the processor acts gain representative, DPO and contract reference.
+db.version(5).stores({
+  settings:            '&id, tenantId',
+  processingActivities:'&id, tenantId, tipoRegistro, codiceUtente, [tenantId+tipoRegistro]',
+  auditLog:            '&id, tenantId, timestamp, targetType, targetId'
+}).upgrade(async (tx) => {
+  const settingsTable = tx.table('settings');
+  const st = await settingsTable.get('default');
+  if (st) {
+    await settingsTable.put(migrateSettingsV4toV5(st));
+  }
+  const paTable = tx.table('processingActivities');
+  await paTable.toCollection().modify((rec) => {
+    const migrated = migrateProcessingActivityV4toV5(rec);
     for (const k of Object.keys(rec)) { if (!(k in migrated)) delete rec[k]; }
     Object.assign(rec, migrated);
   });
@@ -713,17 +783,9 @@ export function normalizeBilingualShapes(r) {
   } else {
     r.responsabiliEsterni = [];
   }
-  if (Array.isArray(r.titolariPerContoDelQuale)) {
-    r.titolariPerContoDelQuale = r.titolariPerContoDelQuale.map((tc) => {
-      const x = tc || {};
-      x.denominazione = bil(x.denominazione);
-      x.contatti = (typeof x.contatti === 'string') ? x.contatti : '';
-      x.ruolo = (typeof x.ruolo === 'string') ? x.ruolo : '';
-      return x;
-    });
-  } else {
-    r.titolariPerContoDelQuale = [];
-  }
+  r.contitolari = Array.isArray(r.contitolari) ? r.contitolari.map(normContitolare) : [];
+  r.titolariPerContoDelQuale = Array.isArray(r.titolariPerContoDelQuale)
+    ? r.titolariPerContoDelQuale.map(normTitolarePerConto) : [];
 
   if (Array.isArray(r.trasferimentiExtraUE)) {
     r.trasferimentiExtraUE = r.trasferimentiExtraUE.map((tr) => {
@@ -769,4 +831,4 @@ export function normalizeBilingualShapes(r) {
 // ============================================================================
 // EXPORTS
 // ============================================================================
-export { db };
+export { db, migrateProcessingActivity, migrateSettings };

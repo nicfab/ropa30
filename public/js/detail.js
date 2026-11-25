@@ -174,11 +174,20 @@ export function buildDettaglio(record, lang, deps) {
     ], lang, ST),
     campoTesto(C.codiceUtente, { it: r.codiceUtente || '', en: r.codiceUtente || '' }, lang, ST)
   ];
+  // Parties under Art. 30(1)(a) / 30(2)(a), according to the type of record.
   if (r.tipoRegistro === 'responsabile') {
     campiIdent.push(campoGruppi(C.titolariPerContoDelQuale, r.titolariPerContoDelQuale, [
       { chiave: 'denominazione', label: C.tcDenominazione, tipo: 'testo' },
       { chiave: 'contatti', label: C.tcContatti, tipo: 'testo' },
-      { chiave: 'ruolo', label: C.tcRuolo, tipo: 'testo' }
+      { chiave: 'rappresentante', label: C.tcRappresentante, tipo: 'testo' },
+      { chiave: 'dpo', label: C.tcDpo, tipo: 'testo' },
+      { chiave: 'riferimentoContratto', label: C.tcRiferimentoContratto, tipo: 'testo' }
+    ], lang, ST));
+  } else {
+    campiIdent.push(campoGruppi(C.contitolari, r.contitolari, [
+      { chiave: 'denominazione', label: C.ctDenominazione, tipo: 'testo' },
+      { chiave: 'contatti', label: C.ctContatti, tipo: 'testo' },
+      { chiave: 'riferimentoAccordo', label: C.ctRiferimentoAccordo, tipo: 'testo' }
     ], lang, ST));
   }
   sezioni.push({ id: 'identificazione', titolo: S.identificazione, campi: campiIdent });

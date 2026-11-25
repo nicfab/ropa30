@@ -32,6 +32,7 @@ const addFormats = addFormatsModule.default ?? addFormatsModule;
 const SCHEMA_DIR = new URL('../public/schema/v0/', import.meta.url);
 const TEMPLATES = new URL('../public/data/templates.json', import.meta.url);
 const BASE = 'https://ropa30.eu/schema/v0/';
+const SPEC_VERSION = '0.2.0-draft';
 
 // ---------------------------------------------------------------------------
 // Setup
@@ -100,7 +101,7 @@ for (const f of files) {
   try { ajv.getSchema(BASE + f) || (ok = false); } catch (e) { ok = false; msg = e.message; }
   check(f, ok, msg);
   check(f + ': $id matches the file name', schemas[f].$id === BASE + f, schemas[f].$id);
-  check(f + ': x-spec-version', schemas[f]['x-spec-version'] === '0.1.0-draft');
+  check(f + ': x-spec-version ' + SPEC_VERSION, schemas[f]['x-spec-version'] === SPEC_VERSION);
 }
 
 // ---------------------------------------------------------------------------
@@ -162,7 +163,8 @@ Object.assign(full, {
   fonteDeiDati: 'misto', categorieDestinatari: [B('Consulente del lavoro')],
   responsabiliEsterni: [{ denominazione: B('Studio X'), sede: B('Roma'), finalita: B('Paghe'),
     accordoArt28Presente: true, riferimentoContratto: B('Contratto 2024'), notaRuoloPrivacy: B('') }],
-  trasferimentiExtraUE: [{ paese: B('Stati Uniti', 'United States'), garanziaApplicata: 'scc', riferimentoDocumentazione: B('') }]
+  trasferimentiExtraUE: [{ paese: B('Stati Uniti', 'United States'), garanziaApplicata: 'scc', riferimentoDocumentazione: B('') }],
+  contitolari: [{ denominazione: B('Ente partner'), contatti: 'privacy@partner.example', riferimentoAccordo: B('Accordo ex art. 26 del 2024') }]
 });
 full.baseGiuridica.art6 = ['contratto', 'obbligo_legale'];
 full.baseGiuridica.art9 = ['obblighi_lavoro'];
@@ -171,7 +173,9 @@ valid('processing-activity.schema.json', full, 'complete processing activity (co
 
 const proc = clone(full);
 proc.tipoRegistro = 'responsabile';
-proc.titolariPerContoDelQuale = [{ denominazione: B('Cliente S.p.A.'), contatti: 'privacy@cliente.example', ruolo: 'titolare' }];
+proc.contitolari = [];
+proc.titolariPerContoDelQuale = [{ denominazione: B('Cliente S.p.A.'), contatti: 'privacy@cliente.example',
+  rappresentante: '', dpo: 'dpo@cliente.example', riferimentoContratto: B('Nomina ex art. 28 del 2025') }];
 valid('processing-activity.schema.json', proc, 'processing activity (processor\'s record)');
 
 const legacy = clone(full); legacy.fonteDeiDati = 'diretta';
@@ -240,7 +244,11 @@ invalid(PA, mut(full, (o) => { o.finalita = ['solo testo']; }), 'plain string in
 invalid(PA, mut(full, (o) => { o.trasferimentiExtraUE[0].paese = 'USA'; }), 'paese as plain string');
 invalid(PA, mut(full, (o) => { o.dataInizioTrattamento = '15/01/2024'; }), 'date not in ISO 8601');
 invalid(PA, mut(full, (o) => { delete o.finalita; }), 'missing field');
-invalid(PA, mut(full, (o) => { o.schemaVersion = 3; }), 'other data model version');
+invalid(PA, mut(full, (o) => { o.schemaVersion = 4; }), 'other data model version');
+invalid(PA, mut(proc, (o) => { o.titolariPerContoDelQuale[0].ruolo = 'x'; }), 'legacy field "ruolo" (data model 4) rejected');
+invalid(PA, mut(proc, (o) => { delete o.titolariPerContoDelQuale[0].dpo; }), 'controller entry without "dpo"');
+invalid(PA, mut(full, (o) => { o.contitolari[0].contatti = { it: 'x', en: 'x' }; }), 'joint controller contacts must be text');
+valid('settings.schema.json', mut(settings, (o) => { o.contitolari = [{ nome: 'x' }]; }), 'legacy non-empty settings.contitolari accepted (deprecated)');
 invalid('settings.schema.json', mut(settings, (o) => { o.registro = { lingue: ['it'], linguaPrincipale: 'en' }; }),
   'primary language not among the enabled languages');
 invalid('settings.schema.json', mut(settings, (o) => { o.titolare.email = 'non-una-email'; }), 'invalid e-mail address');
