@@ -54,7 +54,10 @@ function ropa30App() {
     denominazione: '', formaGiuridica: '', codiceFiscale: '', partitaIVA: '', telefono: '',
     via: '', civico: '', cap: '', citta: '', provincia: '', paese: 'IT',
     email: '', pec: '', sitoWeb: '',
+    rappPresente: false, rappDenominazione: '', rappContatto: '',
     dpoNominato: false, dpoNome: '', dpoEmail: '', dpoPec: '',
+    // Organisation sheet: section-level guidance panels (open/closed).
+    guidaOrgAperta: { titolare: false, indirizzo: false, contatti: false, rappresentante: false, dpo: false, registro: false },
 
     // Register languages (M5): enabled set via checkboxes + primary.
     regIt: true,
@@ -155,6 +158,9 @@ function ropa30App() {
       this.via = ind.via || ''; this.civico = ind.civico || ''; this.cap = ind.cap || '';
       this.citta = ind.citta || ''; this.provincia = ind.provincia || ''; this.paese = ind.paese || 'IT';
       this.email = t.email || ''; this.pec = t.pec || ''; this.sitoWeb = t.sitoWeb || '';
+      const rp = t.rappresentante || {};
+      this.rappPresente = !!rp.presente;
+      this.rappDenominazione = rp.denominazione || ''; this.rappContatto = rp.contatto || '';
       const d = settings.dpo || {};
       this.dpoNominato = !!d.nominato;
       this.dpoNome = d.nome || ''; this.dpoEmail = d.email || ''; this.dpoPec = d.pec || '';
@@ -236,6 +242,10 @@ function ropa30App() {
       push(L.tdEmail, this.email);
       push(L.tdPec, this.pec);
       push(L.tdSitoWeb, this.sitoWeb);
+      if (this.rappPresente) {
+        push(L.tdRappresentante, this.rappDenominazione);
+        push(L.tdRappContatto, this.rappContatto);
+      }
       if (this.dpoNominato) {
         push(L.tdDpoNome, this.dpoNome);
         push(L.tdDpoEmail, this.dpoEmail);
@@ -968,7 +978,9 @@ function ropa30App() {
         codiceFiscale: this.codiceFiscale, partitaIVA: this.partitaIVA, telefono: this.telefono,
         via: this.via, civico: this.civico, cap: this.cap, citta: this.citta,
         provincia: this.provincia, paese: this.paese, email: this.email, pec: this.pec,
-        sitoWeb: this.sitoWeb, dpoNominato: this.dpoNominato, dpoNome: this.dpoNome,
+        sitoWeb: this.sitoWeb, rappPresente: this.rappPresente,
+        rappDenominazione: this.rappDenominazione, rappContatto: this.rappContatto,
+        dpoNominato: this.dpoNominato, dpoNome: this.dpoNome,
         dpoEmail: this.dpoEmail, dpoPec: this.dpoPec,
         regIt: this.regIt, regEn: this.regEn, regPrincipale: this.regPrincipale
       };
@@ -1097,6 +1109,28 @@ function ropa30App() {
       return out.length ? out : ['it'];
     },
     // Open/close the contextual GDPR guidance of an editor field (button data-guida).
+    // Organisation sheet guidance: texts and button names for the UI language.
+    get guidaOrgSezioni() {
+      const loc = LOCALI[this.lang] || LOCALI.it;
+      const G = loc.guidaOrg || {};
+      const P = (loc.guida && loc.guida._pulsante) || '';
+      const L = loc.ui;
+      const titoli = {
+        titolare: L.onbSezioneTitolare, indirizzo: L.onbSezioneIndirizzo,
+        contatti: L.onbSezioneContatti, rappresentante: L.onbSezioneRappresentante,
+        dpo: L.onbSezioneDpo, registro: L.onbSezioneRegistro
+      };
+      const out = {};
+      for (const k of Object.keys(titoli)) out[k] = { testo: G[k] || '', aria: P + ': ' + (titoli[k] || '') };
+      return out;
+    },
+    toggleGuidaOrg(event) {
+      const k = event && event.currentTarget && event.currentTarget.dataset
+        ? event.currentTarget.dataset.guidaOrg : '';
+      if (k && Object.prototype.hasOwnProperty.call(this.guidaOrgAperta, k)) {
+        this.guidaOrgAperta[k] = !this.guidaOrgAperta[k];
+      }
+    },
     toggleGuida(event) {
       const id = event && event.currentTarget && event.currentTarget.dataset
         ? event.currentTarget.dataset.guida : '';
@@ -1271,7 +1305,13 @@ function ropa30App() {
             paese: this.paese.trim() || 'IT'
           },
           email: this.email.trim(), pec: this.pec.trim(),
-          telefono: this.telefono.trim(), sitoWeb: this.sitoWeb.trim()
+          telefono: this.telefono.trim(), sitoWeb: this.sitoWeb.trim(),
+          // Art. 27 representative: Art. 30(1)(a) and 30(2)(a), where applicable.
+          rappresentante: {
+            presente: this.rappPresente,
+            denominazione: this.rappPresente ? this.rappDenominazione.trim() : '',
+            contatto: this.rappPresente ? this.rappContatto.trim() : ''
+          }
         };
         const dpo = {
           ...current.dpo,

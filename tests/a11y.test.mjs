@@ -10,7 +10,9 @@
  *      aria-labelledby, or - for checkboxes - an enclosing <label>;
  *   3. every <label for> points to an existing id; every modal dialog has
  *      role="dialog", aria-modal and an aria-labelledby that exists;
- *   4. every editor control carries its precomputed accessible name.
+ *   4. every editor control carries its precomputed accessible name;
+ *   5. the organisation sheet has the Art. 27 representative fields and one
+ *      named guidance button per section, each controlling an existing region.
  *
  *   node tests/a11y.test.mjs
  */
@@ -160,6 +162,36 @@ for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
     }
   }
   check(`all editor controls named (${lang})`, mancanti.length === 0, mancanti.join(', '));
+}
+
+// ---------------------------------------------------------------------------
+// 5. Organisation sheet: representative fields and section guidance
+// ---------------------------------------------------------------------------
+console.log('5. Organisation sheet');
+const SEZIONI_ORG = ['titolare', 'indirizzo', 'contatti', 'rappresentante', 'dpo', 'registro'];
+check('representative fields bound in the form (Art. 27, Art. 30(1)(a))',
+  /x-model="rappPresente"/.test(html) && /x-model="rappDenominazione"/.test(html) && /x-model="rappContatto"/.test(html)
+  && /x-show="rappPresente"/.test(html));
+const bottoniOrg = [...html.matchAll(/<button\b(?:[^>"']|"[^"]*"|'[^']*')*x-on:click="toggleGuidaOrg"(?:[^>"']|"[^"]*"|'[^']*')*>/gs)].map((m) => m[0]);
+check(`organisation guidance buttons found: ${bottoniOrg.length}`, bottoniOrg.length === SEZIONI_ORG.length);
+const chiaviOrg = bottoniOrg.map((b) => (b.match(/data-guida-org="([^"]+)"/) || [])[1]);
+check('one guidance button per organisation section',
+  JSON.stringify([...chiaviOrg].sort()) === JSON.stringify([...SEZIONI_ORG].sort()), chiaviOrg.join(', '));
+check('organisation guidance buttons expose name, state and an existing controlled region',
+  bottoniOrg.every((b) => {
+    const k = (b.match(/data-guida-org="([^"]+)"/) || [])[1];
+    return /x-bind:aria-label=/.test(b) && /x-bind:aria-expanded=/.test(b)
+      && b.includes(`aria-controls="guida-org-${k}"`) && ids.has(`guida-org-${k}`);
+  }));
+for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
+  const G = loc.guidaOrg || {};
+  const vuote = SEZIONI_ORG.filter((k) => typeof G[k] !== 'string' || G[k].trim().length < 20);
+  check(`organisation guidance texts present (${lang})`, vuote.length === 0, vuote.join(', '));
+  check(`organisation guidance has no extra keys (${lang})`,
+    Object.keys(G).every((k) => SEZIONI_ORG.includes(k)), Object.keys(G).join(', '));
+  const lbl = ['onbSezioneRappresentante', 'lblRappPresente', 'lblRappDenominazione', 'lblRappContatto', 'tdRappresentante', 'tdRappContatto'];
+  const mancano = lbl.filter((k) => !loc.ui[k]);
+  check(`representative labels present (${lang})`, mancano.length === 0, mancano.join(', '));
 }
 
 console.log(`\n${passed} passed, ${failed} failed`);

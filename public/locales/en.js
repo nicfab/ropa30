@@ -84,6 +84,10 @@ export default {
     lblVia: 'Street', lblCivico: 'No.', lblCap: 'Postal code', lblCitta: 'City',
     lblProvincia: 'Province', lblPaese: 'Country',
     lblEmail: 'Email', lblPec: 'Certified email (PEC)', lblSitoWeb: 'Website',
+    onbSezioneRappresentante: 'Representative in the Union (Art. 27)',
+    lblRappPresente: 'A representative in the Union has been designated',
+    lblRappDenominazione: 'Representative name',
+    lblRappContatto: 'Representative contact details',
     lblDpoNominato: 'A DPO has been appointed',
     lblDpoNome: 'DPO name',
     lblDpoEmail: 'DPO email', lblDpoPec: 'DPO certified email (PEC)',
@@ -148,6 +152,8 @@ export default {
     tdEmail: 'Email',
     tdPec: 'Certified email (PEC)',
     tdSitoWeb: 'Website',
+    tdRappresentante: 'Representative in the Union',
+    tdRappContatto: 'Representative contact details',
     tdDpoNome: 'DPO',
     tdDpoEmail: 'DPO email',
     tdDpoPec: 'DPO certified email (PEC)',
@@ -485,5 +491,14 @@ export default {
     dpiaEffettuata: 'State whether a data protection impact assessment has been carried out for this processing. It is mandatory where the processing is likely to result in a high risk to the rights and freedoms of natural persons (Art. 35(1)), in particular in the cases of Art. 35(3) and those listed by the supervisory authority (Art. 35(4)). In Italy, the list is set out in the Garante\u2019s decision No. 467 of 11 October 2018.',
     dpiaRiferimento: 'The details of the impact assessment document, for example title, date and version, so that it can be produced on request.',
     note: 'Optional. Any other information useful to understand the processing, for example decisions taken, ongoing reviews or references to other documents.'
+  },
+  // Section-level guidance for the organisation sheet (onboarding form).
+  guidaOrg: {
+    titolare: 'State the organisation keeping the record: the controller or, in the processor\u2019s record, the processor itself. Its name and contact details are mandatory content of the record (Art. 30(1)(a); 30(2)(a)). Legal form, tax code and VAT number are optional, but they identify the organisation unambiguously.',
+    indirizzo: 'The address of the registered office is part of the organisation\u2019s contact details. ROPA30 requires at least the city and the country.',
+    contatti: 'The e-mail address is the minimum contact detail required by ROPA30 for data protection matters; certified e-mail (PEC) is useful for communications with legal value. The website is optional.',
+    rappresentante: 'Fill in only if the organisation is not established in the European Union but offers goods or services there, or monitors the behaviour of persons in the Union: in that case it must designate a representative in the Union in writing (Art. 27), subject to the exceptions in paragraph 2. The representative\u2019s name and contact details must be included in the record (Art. 30(1)(a); 30(2)(a)).',
+    dpo: 'State whether a data protection officer has been designated. Designation is mandatory for public authorities and bodies and for organisations whose core activities consist of regular and systematic monitoring of data subjects on a large scale, or of large-scale processing of special categories of data or of data relating to criminal convictions and offences (Art. 37(1)). If designated, the DPO\u2019s name and contact details must be included in the record (Art. 30(1)(a); 30(2)(a)).',
+    registro: 'Choose the languages in which to keep the record: one or both. With two languages, the editor shows each text in Italian and English; the primary language is the reference language of the record. Exports use the interface language.'
   }
 };

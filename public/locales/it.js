@@ -84,6 +84,10 @@ export default {
     lblVia: 'Via', lblCivico: 'Civico', lblCap: 'CAP', lblCitta: 'Citt\u00e0',
     lblProvincia: 'Provincia', lblPaese: 'Paese',
     lblEmail: 'Email', lblPec: 'PEC', lblSitoWeb: 'Sito web',
+    onbSezioneRappresentante: 'Rappresentante nell\u2019Unione (art. 27)',
+    lblRappPresente: '\u00c8 stato designato un rappresentante nell\u2019Unione',
+    lblRappDenominazione: 'Nome / denominazione del rappresentante',
+    lblRappContatto: 'Dati di contatto del rappresentante',
     lblDpoNominato: '\u00c8 stato nominato un DPO',
     lblDpoNome: 'Nome / denominazione del DPO',
     lblDpoEmail: 'Email del DPO', lblDpoPec: 'PEC del DPO',
@@ -148,6 +152,8 @@ export default {
     tdEmail: 'Email',
     tdPec: 'PEC',
     tdSitoWeb: 'Sito web',
+    tdRappresentante: 'Rappresentante nell\u2019Unione',
+    tdRappContatto: 'Contatti del rappresentante',
     tdDpoNome: 'DPO',
     tdDpoEmail: 'Email DPO',
     tdDpoPec: 'PEC DPO',
@@ -485,5 +491,14 @@ export default {
     dpiaEffettuata: 'Indica se per questo trattamento \u00e8 stata effettuata una valutazione d\u2019impatto sulla protezione dei dati. \u00c8 obbligatoria quando il trattamento pu\u00f2 presentare un rischio elevato per i diritti e le libert\u00e0 delle persone (art. 35, par. 1), in particolare nei casi dell\u2019art. 35, par. 3, e in quelli indicati negli elenchi dell\u2019autorit\u00e0 di controllo (art. 35, par. 4). In Italia l\u2019elenco \u00e8 contenuto nel provvedimento del Garante n. 467 dell\u201911 ottobre 2018.',
     dpiaRiferimento: 'Gli estremi del documento di valutazione d\u2019impatto, per esempio titolo, data e versione, cos\u00ec da poterlo esibire su richiesta.',
     note: 'Facoltativo. Ogni altra informazione utile a comprendere il trattamento, per esempio decisioni prese, verifiche in corso o rinvii ad altri documenti.'
+  },
+  // Section-level guidance for the organisation sheet (onboarding form).
+  guidaOrg: {
+    titolare: 'Indica l\u2019organizzazione che tiene il registro: il titolare del trattamento oppure, nel registro del responsabile, il responsabile stesso. Il nome e i dati di contatto sono contenuto obbligatorio del registro (art. 30, par. 1, lett. a; par. 2, lett. a). Forma giuridica, codice fiscale e partita IVA sono facoltativi, ma identificano con certezza l\u2019organizzazione.',
+    indirizzo: 'L\u2019indirizzo della sede fa parte dei dati di contatto dell\u2019organizzazione. ROPA30 richiede almeno la citt\u00e0 e il Paese.',
+    contatti: 'L\u2019email \u00e8 il recapito minimo richiesto da ROPA30 per le questioni di protezione dei dati; la PEC \u00e8 utile per le comunicazioni con valore legale. Il sito web \u00e8 facoltativo.',
+    rappresentante: 'Compila solo se l\u2019organizzazione non \u00e8 stabilita nell\u2019Unione europea ma vi offre beni o servizi, oppure monitora il comportamento di persone che si trovano nell\u2019Unione: in tal caso deve designare per iscritto un rappresentante nell\u2019Unione (art. 27), salvo le eccezioni del par. 2. Il nome e i dati di contatto del rappresentante vanno indicati nel registro (art. 30, par. 1, lett. a; par. 2, lett. a).',
+    dpo: 'Indica se \u00e8 stato designato un responsabile della protezione dei dati. La designazione \u00e8 obbligatoria per le autorit\u00e0 e gli organismi pubblici e per chi, come attivit\u00e0 principale, effettua monitoraggi regolari e sistematici degli interessati su larga scala, oppure tratta su larga scala categorie particolari di dati o dati relativi a condanne penali e reati (art. 37, par. 1). Se designato, il nome e i dati di contatto del DPO vanno indicati nel registro (art. 30, par. 1, lett. a; par. 2, lett. a).',
+    registro: 'Scegli in quali lingue compilare il registro: una sola o entrambe. Con due lingue, l\u2019editor mostra ogni testo in italiano e in inglese; la lingua principale \u00e8 quella di riferimento del registro. L\u2019esportazione usa la lingua dell\u2019interfaccia.'
   }
 };

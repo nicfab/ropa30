@@ -422,7 +422,8 @@
             <p class="mt-3 text-brand-700 leading-relaxed" x-text="L.onbSottotitolo"></p>
 
             <fieldset class="mt-8 border-0 p-0 m-0">
-              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneTitolare"></legend>
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneTitolare"></span><button type="button" data-guida-org="titolare" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.titolare ? 'true' : 'false'" aria-controls="guida-org-titolare" x-bind:aria-label="guidaOrgSezioni.titolare.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-titolare" x-show="guidaOrgAperta.titolare" x-text="guidaOrgSezioni.titolare.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="sm:col-span-2">
                   <label for="f-denominazione" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblDenominazione"></span> <span aria-hidden="true">*</span></label>
@@ -453,7 +454,8 @@
             </fieldset>
 
             <fieldset class="mt-6 border-0 p-0 m-0">
-              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneIndirizzo"></legend>
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneIndirizzo"></span><button type="button" data-guida-org="indirizzo" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.indirizzo ? 'true' : 'false'" aria-controls="guida-org-indirizzo" x-bind:aria-label="guidaOrgSezioni.indirizzo.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-indirizzo" x-show="guidaOrgAperta.indirizzo" x-text="guidaOrgSezioni.indirizzo.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
               <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
                 <div class="sm:col-span-4">
                   <label for="f-via" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblVia"></label>
@@ -489,7 +491,8 @@
             </fieldset>
 
             <fieldset class="mt-6 border-0 p-0 m-0">
-              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneContatti"></legend>
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneContatti"></span><button type="button" data-guida-org="contatti" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.contatti ? 'true' : 'false'" aria-controls="guida-org-contatti" x-bind:aria-label="guidaOrgSezioni.contatti.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-contatti" x-show="guidaOrgAperta.contatti" x-text="guidaOrgSezioni.contatti.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblEmail"></span> <span aria-hidden="true">*</span></label>
@@ -511,7 +514,29 @@
             </fieldset>
 
             <fieldset class="mt-6 border-0 p-0 m-0">
-              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneDpo"></legend>
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneRappresentante"></span><button type="button" data-guida-org="rappresentante" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.rappresentante ? 'true' : 'false'" aria-controls="guida-org-rappresentante" x-bind:aria-label="guidaOrgSezioni.rappresentante.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-rappresentante" x-show="guidaOrgAperta.rappresentante" x-text="guidaOrgSezioni.rappresentante.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
+              <label class="inline-flex items-center gap-2 text-brand-800">
+                <input type="checkbox" x-model="rappPresente" class="h-4 w-4 accent-brand-700" />
+                <span x-text="L.lblRappPresente"></span>
+              </label>
+              <div class="mt-4 grid grid-cols-1 gap-4" x-show="rappPresente">
+                <div>
+                  <label for="f-rapp-nome" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblRappDenominazione"></label>
+                  <input id="f-rapp-nome" type="text" x-model="rappDenominazione" maxlength="150"
+                         class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
+                </div>
+                <div>
+                  <label for="f-rapp-contatto" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblRappContatto"></label>
+                  <textarea id="f-rapp-contatto" rows="2" x-model="rappContatto"
+                            class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="mt-6 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneDpo"></span><button type="button" data-guida-org="dpo" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.dpo ? 'true' : 'false'" aria-controls="guida-org-dpo" x-bind:aria-label="guidaOrgSezioni.dpo.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-dpo" x-show="guidaOrgAperta.dpo" x-text="guidaOrgSezioni.dpo.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
               <label class="inline-flex items-center gap-2 text-brand-800">
                 <input type="checkbox" x-model="dpoNominato" class="h-4 w-4 accent-brand-700" />
                 <span x-text="L.lblDpoNominato"></span>
@@ -536,7 +561,8 @@
             </fieldset>
 
             <fieldset class="mt-6 border-0 p-0 m-0">
-              <legend class="text-lg font-semibold text-brand-800 mb-4" x-text="L.onbSezioneRegistro"></legend>
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneRegistro"></span><button type="button" data-guida-org="registro" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.registro ? 'true' : 'false'" aria-controls="guida-org-registro" x-bind:aria-label="guidaOrgSezioni.registro.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-registro" x-show="guidaOrgAperta.registro" x-text="guidaOrgSezioni.registro.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
               <p class="text-sm text-brand-600 mb-4" x-text="L.hintLingueRegistro"></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
