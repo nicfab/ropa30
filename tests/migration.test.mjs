@@ -5,7 +5,7 @@
  * Tests of the data-model migrations in public/js/db.js (v4 -> v5 and the
  * idempotence of the chain), without a browser: Dexie is replaced by a stub
  * that only accepts the schema declarations, and every migrated record is
- * validated against the data specification (public/schema/v0).
+ * validated against the data specification (public/schema/v1).
  *
  *   node tests/migration.test.mjs
  */
@@ -26,12 +26,12 @@ const addFormats = addFormatsModule.default ?? addFormatsModule;
 const ajv = new Ajv2020({ allErrors: true, allowUnionTypes: true });
 addFormats(ajv);
 ajv.addVocabulary(['x-spec-version', 'x-gdpr', 'x-ropa30', 'x-dcat']);
-const DIR = new URL('../public/schema/v0/', import.meta.url);
+const DIR = new URL('../public/schema/v1/', import.meta.url);
 for (const f of readdirSync(DIR).filter((x) => x.endsWith('.schema.json'))) {
   ajv.addSchema(JSON.parse(readFileSync(new URL(f, DIR), 'utf8')));
 }
-const PA = ajv.getSchema('https://ropa30.eu/schema/v0/processing-activity.schema.json');
-const SET = ajv.getSchema('https://ropa30.eu/schema/v0/settings.schema.json');
+const PA = ajv.getSchema('https://ropa30.eu/schema/v1/processing-activity.schema.json');
+const SET = ajv.getSchema('https://ropa30.eu/schema/v1/settings.schema.json');
 
 let passed = 0;
 let failed = 0;

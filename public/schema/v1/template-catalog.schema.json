@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ropa30.eu/schema/v1/template-catalog.schema.json",
+  "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
+  "title": "ROPA30 - template catalogue",
+  "description": "Catalogue of the templates from which processing activities can be created (public/data/templates.json). Each template is versioned in line with W3C DCAT 3 and Dublin Core: 'version' (dcat:version), 'issued' (dcterms:issued), 'modified' (dcterms:modified) and 'changelog[].notes' (adms:versionNotes). Not expressible in JSON Schema and checked by the test suite: the last changelog entry has the template's version; 'modified' is not earlier than its date (an editorial change updates 'modified' without a new version); the first entry has the 'issued' date; versions in the changelog are increasing.",
+  "x-spec-version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "$schemaDescription": {
+      "type": "string",
+      "description": "Informal description of the catalogue."
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the catalogue format."
+    },
+    "language": {
+      "type": "string",
+      "description": "Language of the catalogue's original drafting."
+    },
+    "disclaimer": {
+      "$ref": "common.schema.json#/$defs/bilingualText",
+      "description": "Disclaimer shown with the templates."
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/template"
+      },
+      "description": "The templates."
+    }
+  },
+  "required": [
+    "version",
+    "templates"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "template": {
+      "type": "object",
+      "properties": {
+        "templateId": {
+          "type": "string",
+          "pattern": "^tpl-[a-z]{2}-[0-9]{3}-[a-z0-9-]+$",
+          "description": "Stable identifier of the template."
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Version of the template, increased only for substantive, legally reviewed changes.",
+          "x-dcat": "dcat:version"
+        },
+        "issued": {
+          "$ref": "common.schema.json#/$defs/date",
+          "description": "Date of first publication.",
+          "x-dcat": "dcterms:issued"
+        },
+        "modified": {
+          "$ref": "common.schema.json#/$defs/date",
+          "description": "Date of the last change, substantive or editorial (an editorial change updates it without a new version).",
+          "x-dcat": "dcterms:modified"
+        },
+        "changelog": {
+          "type": "array",
+          "minItems": 1,
+          "description": "History of the versions, oldest first.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "date": {
+                "$ref": "common.schema.json#/$defs/date"
+              },
+              "notes": {
+                "$ref": "common.schema.json#/$defs/bilingualText",
+                "description": "What changed in this version.",
+                "x-dcat": "adms:versionNotes"
+              }
+            },
+            "required": [
+              "version",
+              "date",
+              "notes"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "official": {
+          "type": "boolean",
+          "description": "Whether the template is part of the official ROPA30 catalogue."
+        },
+        "settore": {
+          "type": "string",
+          "pattern": "^[a-z_]+$",
+          "description": "Sector code (e.g. 'comune' for templates common to all sectors, 'studi_legali' for law firms); labels are defined by the application."
+        },
+        "categoria": {
+          "type": "string",
+          "description": "Category of the template."
+        },
+        "icon": {
+          "type": "string",
+          "description": "Name of the icon shown in the catalogue."
+        },
+        "nome": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Name of the template."
+        },
+        "descrizioneTemplate": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Description of the template."
+        },
+        "noteTemplate": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Notes for the user of the template."
+        },
+        "preset": {
+          "description": "Values copied into the new processing activity. Same fields as a processing activity (all optional), excluding technical and provenance fields. Legacy values are not allowed in templates.",
+          "allOf": [
+            {
+              "$ref": "processing-activity.schema.json#/$defs/fields"
+            },
+            {
+              "type": "object",
+              "propertyNames": {
+                "not": {
+                  "enum": [
+                    "id",
+                    "tenantId",
+                    "schemaVersion",
+                    "metadata",
+                    "sourceTemplateId",
+                    "sourceTemplateVersion",
+                    "sourceTemplateLanguage"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "fonteDeiDati": {
+                  "$ref": "common.schema.json#/$defs/dataSource"
+                }
+              }
+            }
+          ]
+        },
+        "scenari": {
+          "type": "object",
+          "description": "Typical scenarios of use of the template, informational (not used by the application to fill in the record).",
+          "properties": {
+            "it": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Identifier of the scenario (same in both languages)."
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "Label of the scenario."
+                  },
+                  "art6": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_]+$",
+                    "description": "Code of the typical legal-basis configuration of the scenario (it may combine several Art. 6(1) bases, e.g. 'contratto_e_obbligo'). Language-neutral: identical in both languages."
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "art6"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "en": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Identifier of the scenario (same in both languages)."
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "Label of the scenario."
+                  },
+                  "art6": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_]+$",
+                    "description": "Code of the typical legal-basis configuration of the scenario (it may combine several Art. 6(1) bases, e.g. 'contratto_e_obbligo'). Language-neutral: identical in both languages."
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "art6"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "it",
+            "en"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "templateId",
+        "version",
+        "issued",
+        "modified",
+        "changelog",
+        "official",
+        "settore",
+        "categoria",
+        "icon",
+        "nome",
+        "descrizioneTemplate",
+        "noteTemplate",
+        "preset",
+        "scenari"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

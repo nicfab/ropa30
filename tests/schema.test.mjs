@@ -2,7 +2,8 @@
  * ropa30 — tests/schema.test.mjs
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
- * Tests of the data specification (public/schema/v0/*.schema.json).
+ * Tests of the data specification (public/schema/v1/*.schema.json), version 1.0;
+ * the superseded draft 0.2 (public/schema/v0) must describe the same data.
  *
  *   node tests/schema.test.mjs                  run all checks
  *   node tests/schema.test.mjs FILE.json ...    also validate backup files
@@ -29,10 +30,10 @@ import { encryptEnvelope } from '../public/js/crypto/backup-crypto.js';
 const Ajv2020 = Ajv2020Module.default ?? Ajv2020Module;
 const addFormats = addFormatsModule.default ?? addFormatsModule;
 
-const SCHEMA_DIR = new URL('../public/schema/v0/', import.meta.url);
+const SCHEMA_DIR = new URL('../public/schema/v1/', import.meta.url);
 const TEMPLATES = new URL('../public/data/templates.json', import.meta.url);
-const BASE = 'https://ropa30.eu/schema/v0/';
-const SPEC_VERSION = '0.2.0-draft';
+const BASE = 'https://ropa30.eu/schema/v1/';
+const SPEC_VERSION = '1.0.0';
 
 // ---------------------------------------------------------------------------
 // Setup
@@ -274,6 +275,23 @@ for (const file of extra) {
   const mism = ['settings', 'processingActivities', 'auditLog']
     .filter((k) => !Array.isArray(d[k]) || c[k] !== d[k].length);
   check(`${file}: counts match the data`, mism.length === 0, mism.join(', '));
+}
+
+// ---------------------------------------------------------------------------
+// 8. Version 1.0 and the superseded draft 0.2 describe the same data
+// ---------------------------------------------------------------------------
+console.log('8. Version 1.0 and draft 0.2 (v0) describe the same data');
+{
+  const V0 = new URL('../public/schema/v0/', import.meta.url);
+  const f0 = readdirSync(V0).filter((f) => f.endsWith('.schema.json')).sort();
+  check('same schema files in v0 and v1', JSON.stringify(f0) === JSON.stringify(files), f0.join(', '));
+  for (const f of files) {
+    const s0 = JSON.parse(readFileSync(new URL(f, V0), 'utf8'));
+    check(`${f}: v0 frozen at 0.2.0-draft`, s0['x-spec-version'] === '0.2.0-draft'
+      && s0.$id === 'https://ropa30.eu/schema/v0/' + f);
+    const norm = (s) => JSON.stringify({ ...s, $id: '', 'x-spec-version': '' });
+    check(`${f}: identical to v0 except $id and x-spec-version`, norm(s0) === norm(schemas[f]));
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 
 Machine-readable description of the data handled by [ROPA30](https://ropa30.eu), the local-first application for the record of processing activities under Article 30 of the GDPR (Regulation (EU) 2016/679).
 
-**Status: draft 0.2 (`0.2.0-draft`).** The `v0` path signals that the specification is not yet stable and may change without notice. A stable version will be published under `v1`.
+**Status: superseded.** This draft is no longer updated: use the stable version, [`v1`](../v1/README.md). Draft 0.2 and version 1.0 describe the same data (data model 5, backup format 1).
 
 The specification describes the data as ROPA30 actually stores and exports it. Its purposes are:
 

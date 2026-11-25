@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ropa30.eu/schema/v1/common.schema.json",
+  "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
+  "title": "ROPA30 - common definitions",
+  "description": "Shared types of the ROPA30 data specification: bilingual texts, dates and code lists. Codes are stored as language-neutral identifiers; their human-readable labels are provided by the application in each language and are never stored in the data.",
+  "x-spec-version": "1.0.0",
+  "$defs": {
+    "language": {
+      "title": "Language",
+      "description": "Language code (ISO 639-1) supported by ROPA30.",
+      "type": "string",
+      "enum": ["it", "en"]
+    },
+    "languageOrEmpty": {
+      "title": "Language or empty",
+      "anyOf": [
+        { "$ref": "#/$defs/language" },
+        { "type": "string", "maxLength": 0 }
+      ]
+    },
+    "bilingualText": {
+      "title": "Bilingual text",
+      "description": "Free text in Italian and English. Either language may be empty: the register may be kept in one language only, and no automatic translation is performed.",
+      "type": "object",
+      "properties": {
+        "it": { "type": "string", "description": "Italian text." },
+        "en": { "type": "string", "description": "English text." }
+      },
+      "required": ["it", "en"],
+      "additionalProperties": false
+    },
+    "bilingualTextList": {
+      "title": "List of bilingual texts",
+      "type": "array",
+      "items": { "$ref": "#/$defs/bilingualText" }
+    },
+    "dateTime": {
+      "title": "Date and time",
+      "description": "ISO 8601 date and time with time zone (RFC 3339), e.g. 2026-11-24T18:30:00.000Z.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "date": {
+      "title": "Date",
+      "description": "ISO 8601 calendar date (YYYY-MM-DD).",
+      "type": "string",
+      "format": "date"
+    },
+    "dateOrEmpty": {
+      "title": "Date or empty",
+      "anyOf": [
+        { "$ref": "#/$defs/date" },
+        { "type": "string", "maxLength": 0 }
+      ]
+    },
+    "emailOrEmpty": {
+      "title": "E-mail address or empty",
+      "anyOf": [
+        { "type": "string", "format": "email" },
+        { "type": "string", "maxLength": 0 }
+      ]
+    },
+    "registerType": {
+      "title": "Type of record",
+      "description": "Which record the entry belongs to.",
+      "type": "string",
+      "oneOf": [
+        { "const": "titolare", "description": "Record of the controller (GDPR Art. 30(1))." },
+        { "const": "responsabile", "description": "Record of the processor (GDPR Art. 30(2))." }
+      ]
+    },
+    "legalBasisArt6": {
+      "title": "Legal basis (GDPR Art. 6(1))",
+      "type": "string",
+      "oneOf": [
+        { "const": "consenso", "description": "Art. 6(1)(a): consent." },
+        { "const": "contratto", "description": "Art. 6(1)(b): performance of a contract or pre-contractual steps." },
+        { "const": "obbligo_legale", "description": "Art. 6(1)(c): compliance with a legal obligation." },
+        { "const": "interesse_vitale", "description": "Art. 6(1)(d): vital interests." },
+        { "const": "interesse_pubblico", "description": "Art. 6(1)(e): public interest or exercise of official authority." },
+        { "const": "legittimo_interesse", "description": "Art. 6(1)(f): legitimate interests." }
+      ]
+    },
+    "conditionArt9": {
+      "title": "Condition for special categories of data (GDPR Art. 9(2))",
+      "type": "string",
+      "oneOf": [
+        { "const": "consenso_esplicito", "description": "Art. 9(2)(a): explicit consent." },
+        { "const": "obblighi_lavoro", "description": "Art. 9(2)(b): employment, social security and social protection law." },
+        { "const": "interesse_vitale", "description": "Art. 9(2)(c): vital interests." },
+        { "const": "associazioni", "description": "Art. 9(2)(d): not-for-profit bodies." },
+        { "const": "dati_resi_pubblici", "description": "Art. 9(2)(e): data manifestly made public by the data subject." },
+        { "const": "giustizia", "description": "Art. 9(2)(f): legal claims or courts acting in their judicial capacity." },
+        { "const": "interesse_pubblico", "description": "Art. 9(2)(g): substantial public interest." },
+        { "const": "medicina_lavoro", "description": "Art. 9(2)(h): preventive or occupational medicine, health or social care." },
+        { "const": "sanita_pubblica", "description": "Art. 9(2)(i): public interest in the area of public health." },
+        { "const": "archiviazione", "description": "Art. 9(2)(j): archiving, scientific or historical research, statistics." }
+      ]
+    },
+    "transferSafeguard": {
+      "title": "Safeguard for a transfer to a third country or international organisation (GDPR Chapter V)",
+      "type": "string",
+      "oneOf": [
+        { "const": "decisione_adeguatezza", "description": "Art. 45: adequacy decision." },
+        { "const": "scc", "description": "Art. 46(2)(c) and (d): standard data protection clauses." },
+        { "const": "bcr", "description": "Art. 46(2)(b) and Art. 47: binding corporate rules." },
+        { "const": "codice_condotta", "description": "Art. 46(2)(e): approved code of conduct." },
+        { "const": "certificazione", "description": "Art. 46(2)(f): approved certification mechanism." },
+        { "const": "deroga_art49", "description": "Art. 49: derogation for specific situations." },
+        { "const": "da_verificare", "description": "Not yet determined: to be verified (ROPA30 working value)." }
+      ]
+    },
+    "dataSource": {
+      "title": "Source of the personal data",
+      "type": "string",
+      "oneOf": [
+        { "const": "interessato", "description": "Collected from the data subject (cf. Art. 13)." },
+        { "const": "terzi", "description": "Not collected from the data subject (cf. Art. 14)." },
+        { "const": "fonti_pubbliche", "description": "Publicly accessible sources (cf. Art. 14(2)(f))." },
+        { "const": "misto", "description": "Mixed sources." }
+      ]
+    },
+    "dataSourceStored": {
+      "title": "Source of the personal data, as stored",
+      "description": "Current values, plus legacy values that may still be found in records created by earlier versions. Legacy values are never written by the current application and are never rewritten automatically.",
+      "anyOf": [
+        { "$ref": "#/$defs/dataSource" },
+        { "const": "diretta", "deprecated": true, "description": "Legacy value (directly from the data subject). Replaced by 'interessato' or 'misto'." }
+      ]
+    },
+    "finalAction": {
+      "title": "Action at the end of the retention period",
+      "type": "string",
+      "oneOf": [
+        { "const": "cancellazione", "description": "Erasure." },
+        { "const": "anonimizzazione", "description": "Anonymisation." },
+        { "const": "archiviazione", "description": "Archiving (e.g. archiving purposes under Art. 89)." },
+        { "const": "cancellazione_o_anonimizzazione", "description": "Erasure or anonymisation." }
+      ]
+    },
+    "auditAction": {
+      "title": "Audit action",
+      "type": "string",
+      "oneOf": [
+        { "const": "created", "description": "An item was created." },
+        { "const": "updated", "description": "An item was updated." },
+        { "const": "deleted", "description": "An item, or the whole database, was deleted." },
+        { "const": "imported", "description": "Data was imported (reserved)." },
+        { "const": "exported", "description": "Data was exported (reserved)." },
+        { "const": "restored", "description": "The whole database was replaced by a backup." }
+      ]
+    },
+    "auditActionStored": {
+      "title": "Audit action, as stored",
+      "description": "Current values, plus legacy values written by earlier versions. The audit log is never rewritten, so legacy values remain valid in historical entries.",
+      "anyOf": [
+        { "$ref": "#/$defs/auditAction" },
+        { "const": "RESTORE", "deprecated": true, "description": "Legacy value of 'restored'." },
+        { "const": "DELETED", "deprecated": true, "description": "Legacy value of 'deleted' (whole-database reset)." }
+      ]
+    },
+    "auditTarget": {
+      "title": "Audit target",
+      "type": "string",
+      "oneOf": [
+        { "const": "settings", "description": "The register settings (organisation, DPO, languages)." },
+        { "const": "processingActivity", "description": "A processing activity." },
+        { "const": "database", "description": "The whole database (restore, reset)." }
+      ]
+    },
+    "xGdpr": {
+      "$comment": "Meta-description of the x-gdpr annotation used in this specification (documentation only; not applied to data).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "register": { "enum": ["controller", "processor"] },
+          "provision": { "type": "string" },
+          "requirement": { "enum": ["mandatory", "where-applicable", "where-possible", "supplementary"] }
+        },
+        "required": ["register", "requirement"],
+        "additionalProperties": false
+      }
+    }
+  }
+}
