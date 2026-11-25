@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-11-25
+
+### Added
+- Data specification, version 1.0 (stable): JSON Schema files published under
+  `/schema/v1/`. They describe the same data as draft 0.2 (data model 5, backup
+  format 1) and follow compatibility rules based on Semantic Versioning. Draft
+  0.2 remains available under `/schema/v0/` and is no longer updated.
+- Accessibility statement (WCAG 2.2 AA) in the user guide, with the checks
+  carried out and the known limitations:
+  [Accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita) ·
+  [Accessibility](https://codeberg.org/nicfab/ropa30/wiki/Accessibility).
+
+### Changed
+- User guide updated for the representative in the Union, the contextual GDPR
+  guidance, the sector filter and the designation of the DPO. The list of
+  mandatory fields of the organisation sheet is corrected: the e-mail address
+  is also required.
+- The test suite validates data against version 1.0 of the specification and
+  checks that draft 0.2 describes the same data.
+
 ## [1.5.0] - 2026-11-25
 
 Archived: DOI [10.5281/zenodo.24528239](https://doi.org/10.5281/zenodo.24528239) ·
@@ -216,6 +236,7 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.6.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.6.0
 [1.5.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.5.0
 [1.4.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.4.0
 [1.3.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.3.0

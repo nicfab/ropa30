@@ -64,8 +64,8 @@ nessun account da creare, nessun cloud a cui fidarsi.
   campo. Le date sono in formato ISO 8601 e il catalogo dei modelli usa i
   termini W3C DCAT / Dublin Core per le versioni (`version`, `issued`,
   `modified`). I dati sono esportabili in JSON e il loro formato è documentato
-  da una specifica dei dati pubblica (JSON Schema, bozza 0.2): vedi
-  [`public/schema/v0`](public/schema/v0/README.md).
+  da una specifica dei dati pubblica (JSON Schema, versione 1.0): vedi
+  [`public/schema/v1`](public/schema/v1/README.md).
 
 - **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessun account,
   nessuna configurazione oltre a una breve impostazione iniziale dei dati del
@@ -96,13 +96,12 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Progressive Web App installabile e utilizzabile offline
 - Tema scuro, che segue l'impostazione del sistema operativo
 - Contitolari per ciascun trattamento (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce, con rappresentante e DPO ove applicabili (art. 30, par. 2, lett. a)
-- Accessibilità verso WCAG 2.2 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre, dimensione delle aree cliccabili), verificata da test automatici e da un audit axe-core delle schermate principali
-- Specifica dei dati pubblica, bozza 0.2 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v0`](public/schema/v0/README.md)
+- Accessibilità verso WCAG 2.2 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre, dimensione delle aree cliccabili), verificata da test automatici, da un audit axe-core delle schermate principali e dall'uso con la sola tastiera: vedi la [dichiarazione di accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita)
+- Specifica dei dati pubblica, versione 1.0 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v1`](public/schema/v1/README.md)
 
 ### Roadmap
 
-- [ ] Accessibilità: verifica manuale con lettori di schermo e tastiera
-- [ ] Specifica dei dati: versione stabile (v1)
+- [ ] Accessibilità: verifica con lettori di schermo (vedi i limiti noti nella [dichiarazione di accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita))
 
 ---
 
