@@ -64,7 +64,7 @@ nessun account da creare, nessun cloud a cui fidarsi.
   campo. Le date sono in formato ISO 8601 e il catalogo dei modelli usa i
   termini W3C DCAT / Dublin Core per le versioni (`version`, `issued`,
   `modified`). I dati sono esportabili in JSON e il loro formato è documentato
-  da una specifica dei dati pubblica (JSON Schema, bozza 0.1): vedi
+  da una specifica dei dati pubblica (JSON Schema, bozza 0.2): vedi
   [`public/schema/v0`](public/schema/v0/README.md).
 
 - **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessun account,
@@ -94,16 +94,16 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Local-first: tutti i dati restano nel browser (IndexedDB), senza backend né connessioni esterne
 - Progressive Web App installabile e utilizzabile offline
 - Tema scuro, che segue l'impostazione del sistema operativo
-- Specifica dei dati pubblica, bozza 0.1 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v0`](public/schema/v0/README.md)
+- Contitolari per ciascun trattamento (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce, con rappresentante e DPO ove applicabili (art. 30, par. 2, lett. a)
+- Miglioramenti di accessibilità verso WCAG 2.1 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre), verificati da test automatici
+- Specifica dei dati pubblica, bozza 0.2 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v0`](public/schema/v0/README.md)
 
 ### Roadmap
 
 - [ ] Indicazioni GDPR contestuali (tooltip) nell'editor
 - [ ] Modelli specifici per gli altri settori della classificazione (es. pubblica amministrazione, università, CAF, sanità, scuole)
-- [ ] Audit di accessibilità WCAG 2.1 AA
-- [ ] Contitolari (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce (art. 30, par. 2, lett. a): modello dati pronto, manca l'editor
+- [ ] WCAG 2.1 AA: verifica manuale con lettori di schermo e tastiera
 - [ ] Specifica dei dati: versione stabile (v1)
-- [ ] Aggiornamento della libreria per l'esportazione dei fogli di calcolo (SheetJS)
 
 ---
 

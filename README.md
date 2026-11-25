@@ -59,7 +59,7 @@ to configure, no account to create, no cloud to trust.
   field. Dates use ISO 8601, and the template catalogue uses W3C DCAT / Dublin
   Core terms for versioning (`version`, `issued`, `modified`). Data can be
   exported as JSON, and the data format is documented by a public data
-  specification (JSON Schema, draft 0.1): see [`public/schema/v0`](public/schema/v0/README.md).
+  specification (JSON Schema, draft 0.2): see [`public/schema/v0`](public/schema/v0/README.md).
 
 - **🌱 Steve Jobs simplicity.** No installation, no account, no configuration
   beyond a short initial setup of the controller's details. Ready-made
@@ -87,16 +87,16 @@ to configure, no account to create, no cloud to trust.
 - Local-first: all data stays in the browser (IndexedDB), with no backend and no external connections
 - Installable, offline-capable Progressive Web App
 - Dark theme, following the operating system setting
-- Public data specification, draft 0.1 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v0`](public/schema/v0/README.md)
+- Joint controllers for each processing activity (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts, with their representative and DPO where applicable (Art. 30(2)(a))
+- Accessibility improvements towards WCAG 2.1 AA (accessible names, contrast, keyboard focus in dialogs), checked by automated tests
+- Public data specification, draft 0.2 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v0`](public/schema/v0/README.md)
 
 ### Roadmap
 
 - [ ] Inline GDPR guidance (tooltips) in the editor
 - [ ] Sector-specific templates for the other sectors of the classification (e.g. public administration, universities, Italian tax assistance centres (CAF), healthcare, schools)
-- [ ] WCAG 2.1 AA accessibility audit
-- [ ] Joint controllers (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts (Art. 30(2)(a)): data model ready, editor to be added
+- [ ] WCAG 2.1 AA: manual verification with screen readers and keyboard
 - [ ] Data specification: stable version (v1)
-- [ ] Update of the spreadsheet export library (SheetJS)
 
 ---
 
