@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - backup file (plain)",
   "description": "Complete, unencrypted backup of a ROPA30 register: export format 1, data model 5. The file is a faithful dump of the three stores (settings, processing activities, audit log), with no filtering or transformation. Backups produced by earlier versions with an older data model are migrated by the application on restore and are outside the scope of this schema. Not expressible in JSON Schema and checked by the test suite: each value in _meta.counts equals the length of the corresponding list in data.",
-  "x-spec-version": "1.0.0",
+  "x-spec-version": "1.1.0",
   "type": "object",
   "properties": {
     "_meta": {

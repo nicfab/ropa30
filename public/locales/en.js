@@ -90,6 +90,20 @@ export default {
     lblRappPresente: 'A representative in the Union has been designated',
     lblRappDenominazione: 'Representative name',
     lblRappContatto: 'Representative contact details',
+    onbSezioneObbligo: 'Obligation to keep the record (Art. 30(5))',
+    lblPersoneImpiegate: 'Persons employed',
+    lblNaturaOrg: 'Nature of the organisation',
+    lblDpoBase: 'Basis for the designation of the DPO',
+    optNonIndicato: 'Not stated',
+    obbRegimeVigente: 'Article 30(5) applies in the text in force: the derogation covers enterprises and organisations employing fewer than 250 persons.',
+    obbRegimeOmnibus: 'Article 30(5) applies as amended by {riferimento}, in force from {data}: the derogation covers enterprises and organisations employing fewer than 1000 persons.',
+    filtroObbligoLabel: 'Filter by obligation to record',
+    filtroObbligoTutti: 'All processing activities',
+    filtroObbligoObbligatori: 'Recording mandatory',
+    filtroObbligoVolontari: 'Recording voluntary',
+    estrattoObbligo: 'Obligation to record',
+    editorEsitoTitolo: 'Result of the assessment (indicative)',
+    editorDpiaSuggerimento: 'An impact assessment has been carried out for this processing: the risk is, as a rule, high.',
     lblDpoNominato: 'A DPO has been designated',
     lblDpoNome: 'DPO name',
     lblDpoEmail: 'DPO email', lblDpoPec: 'DPO certified email (PEC)',
@@ -321,6 +335,31 @@ export default {
     tipoRegistro: {
       titolare: 'Controller',
       responsabile: 'Processor'
+    },
+    personeImpiegate: {
+      meno250: 'Fewer than 250',
+      da250a999: '250 to 999',
+      almeno1000: '1000 or more'
+    },
+    naturaOrganizzazione: {
+      privata: 'Private enterprise or organisation',
+      pubblica: 'Public authority or body'
+    },
+    baseDesignazioneDpo: {
+      art37_1_a: 'Art. 37(1)(a)',
+      art37_1_b: 'Art. 37(1)(b)',
+      art37_1_c: 'Art. 37(1)(c)',
+      facoltativa: 'Voluntary designation'
+    },
+    valutazione: {
+      da_valutare: 'To be assessed',
+      si: 'Yes',
+      no: 'No'
+    },
+    casiArt35par3: {
+      a: '(a) systematic and extensive evaluation of personal aspects, including profiling, with legal effects',
+      b: '(b) large-scale processing of special categories of data or of data relating to criminal convictions and offences',
+      c: '(c) systematic monitoring of a publicly accessible area on a large scale'
     }
   },
   detail: {
@@ -336,7 +375,8 @@ export default {
       conservazione: 'Retention',
       sicurezza: 'Security measures',
       automatizzati: 'Automated processing and profiling',
-      dpiaNote: 'Impact assessment and notes'
+      dpiaNote: 'Impact assessment and notes',
+      obbligo: 'Obligation to record (Art. 30(5))'
     },
     campi: {
       // Sec. 1 — Identification
@@ -424,7 +464,14 @@ export default {
       // Sec. 12 — DPIA and notes
       dpiaEffettuata: 'Data protection impact assessment carried out',
       dpiaRiferimento: 'Reference to the DPIA document',
-      note: 'Notes'
+      note: 'Notes',
+      obEsito: 'Result of the assessment (indicative)',
+      obRischioElevato: 'High risk to rights and freedoms (Art. 35)',
+      obCasiArt35: 'Cases of Art. 35(3)',
+      obAttivitaDpo: 'Core activity requiring a DPO (Art. 37(1)(b) or (c))',
+      obRischio: 'Risk to rights and freedoms',
+      obNonOccasionale: 'Processing not occasional',
+      obMotivazione: 'Reasons for the assessment'
     },
     stati: {
       vuoto: '\u2014',
@@ -491,7 +538,13 @@ export default {
     profBaseGiuridica: 'The legal basis of the profiling, which may differ from that of the main processing (Art. 6(1)). In Italy, for electronic marketing communications, see also Article 130 of the Code.',
     dpiaEffettuata: 'State whether a data protection impact assessment has been carried out for this processing. It is mandatory where the processing is likely to result in a high risk to the rights and freedoms of natural persons (Art. 35(1)), in particular in the cases of Art. 35(3) and those listed by the supervisory authority (Art. 35(4)). In Italy, the list is set out in the Garante\u2019s decision No. 467 of 11 October 2018.',
     dpiaRiferimento: 'The details of the impact assessment document, for example title, date and version, so that it can be produced on request.',
-    note: 'Optional. Any other information useful to understand the processing, for example decisions taken, ongoing reviews or references to other documents.'
+    note: 'Optional. Any other information useful to understand the processing, for example decisions taken, ongoing reviews or references to other documents.',
+    obRischioElevato: 'Assess whether the processing is likely to result in a high risk. Indicators of high risk are the cases of Art. 35(3) and those in the lists of the supervisory authority (in Italy, the Garante\u2019s decision No. 467 of 11 October 2018). The processing of special categories of data in the field of employment (Art. 9(2)(b)) does not in itself result in a high risk. If you have carried out an impact assessment, the risk is, as a rule, high.',
+    obCasiArt35: 'Select the cases of Art. 35(3) that apply to the processing. In these cases an impact assessment is mandatory and ROPA30 treats the processing as high risk.',
+    obAttivitaDpo: 'Answer yes if the processing is part of the core activities of the organisation and consists of regular and systematic monitoring of data subjects on a large scale (Art. 37(1)(b)) or of large-scale processing of special categories of data or of data relating to criminal convictions and offences (point (c)). Processing ancillary to the core activity, such as personnel management, does not as a rule qualify.',
+    obRischio: 'Assess whether the processing is likely to result in a risk to the rights and freedoms of data subjects (Art. 30(5), text in force). This criterion is broader than the high risk of Art. 35.',
+    obNonOccasionale: 'Processing is not occasional when it is carried out regularly or recurrently, even on a small scale, such as payroll or customer management.',
+    obMotivazione: 'Optional. Summarise the reasons for the assessment, so that you can demonstrate it on request (Art. 5(2)).'
   },
   // Section-level guidance for the organisation sheet (onboarding form).
   guidaOrg: {
@@ -500,6 +553,34 @@ export default {
     contatti: 'The e-mail address is the minimum contact detail required by ROPA30 for data protection matters; certified e-mail (PEC) is useful for communications with legal value. The website is optional.',
     rappresentante: 'Fill in only if the organisation is not established in the European Union but offers goods or services there, or monitors the behaviour of persons in the Union: in that case it must designate a representative in the Union in writing (Art. 27), subject to the exceptions in paragraph 2. The representative\u2019s name and contact details must be included in the record (Art. 30(1)(a); 30(2)(a)).',
     dpo: 'State whether a data protection officer has been designated. Designation is mandatory for public authorities and bodies and for organisations whose core activities consist of regular and systematic monitoring of data subjects on a large scale, or of large-scale processing of special categories of data or of data relating to criminal convictions and offences (Art. 37(1)). If designated, the DPO\u2019s name and contact details must be included in the record (Art. 30(1)(a); 30(2)(a)).',
-    registro: 'Choose the languages in which to keep the record: one or both. With two languages, the editor shows each text in Italian and English; the primary language is the reference language of the record. Exports use the interface language.'
+    registro: 'Choose the languages in which to keep the record: one or both. With two languages, the editor shows each text in Italian and English; the primary language is the reference language of the record. Exports use the interface language.',
+    obbligo: 'Article 30(5) exempts smaller organisations from the record, except for certain processing activities. State the number of persons employed (persons, not annual work units; if in doubt, choose the higher band) and the nature of the organisation: ROPA30 will indicate for each processing activity whether recording is mandatory. The result is indicative and does not replace the assessment of the controller or processor.'
+  },
+  // Art. 30(5): results of the assessment, reasons and editor notes.
+  obbligo: {
+    esiti: {
+      obbligatorio: 'Recording mandatory',
+      prudenziale: 'Mandatory (as a precaution)',
+      volontario: 'Recording voluntary (accountability)'
+    },
+    motivi: {
+      org_250: 'organisation employing 250 persons or more',
+      org_1000: 'organisation employing 1000 persons or more',
+      pubblica: 'public authority or body',
+      persone_non_indicate: 'number of persons employed not stated',
+      natura_non_indicata: 'nature of the organisation not stated',
+      rischio: 'risk to rights and freedoms',
+      non_occasionale: 'processing not occasional',
+      art9: 'special categories of data (Art. 9)',
+      art10: 'data relating to criminal convictions and offences (Art. 10)',
+      rischio_elevato: 'high risk (Art. 35)',
+      art35_3: 'case of Art. 35(3)',
+      dpo_37: 'core activity requiring a DPO (Art. 37(1)(b) or (c))',
+      da_valutare: 'assessment not completed'
+    },
+    note: {
+      omnibus4: 'Enterprises and organisations employing fewer than 1000 persons must record only the processing likely to result in a high risk to the rights and freedoms of data subjects within the meaning of Art. 35, in particular in the cases of paragraph 3, and in any event the processing constituting a core activity for which the designation of a DPO is mandatory (Art. 37(1)(b) or (c)). Public authorities and bodies remain obliged for all processing. Even where it is not mandatory, recording remains useful to demonstrate compliance (Art. 5(2) and Art. 24).',
+      vigente: 'Organisations employing fewer than 250 persons must record the processing that is likely to result in a risk to the rights and freedoms of data subjects, is not occasional, or includes special categories of data (Art. 9) or data relating to criminal convictions and offences (Art. 10). Special categories and criminal data are taken from sections 3 and 4.'
+    }
   }
 };

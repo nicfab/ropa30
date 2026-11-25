@@ -30,6 +30,11 @@
 //     controllers on whose behalf the processor acts gain representative,
 //     DPO and contract reference (the ambiguous 'ruolo' is dropped);
 //     the organisation-wide settings.contitolari list is removed.
+// Optional additions within data model 5 (data specification 1.1): the
+// assessment of the record-keeping obligation under Art. 30(5) —
+// settings.obbligoRegistro, settings.dpo.baseDesignazione and, for each
+// processing activity, obbligoRegistrazione. Missing values are read as
+// "not assessed"; no migration is needed.
 export const SCHEMA_VERSION = 5;
 
 // ----------------------------------------------------------------------------
@@ -160,6 +165,49 @@ export const AUDIT_TARGET = {
 };
 
 // ============================================================================
+// ART. 30(5) — OBLIGATION TO KEEP THE RECORD
+// ============================================================================
+// Persons employed by the organisation (band declared by the user).
+export const PERSONE_IMPIEGATE = {
+  MENO_250:     'meno250',
+  DA_250_A_999: 'da250a999',
+  ALMENO_1000:  'almeno1000'
+};
+// Nature of the organisation.
+export const NATURA_ORGANIZZAZIONE = {
+  PRIVATA:  'privata',
+  PUBBLICA: 'pubblica'
+};
+// Legal basis of the DPO designation (Art. 37(1) or voluntary).
+export const BASE_DESIGNAZIONE_DPO = {
+  ART37_1_A:  'art37_1_a',
+  ART37_1_B:  'art37_1_b',
+  ART37_1_C:  'art37_1_c',
+  FACOLTATIVA:'facoltativa'
+};
+// Answer to an assessment question.
+export const VALUTAZIONE = {
+  DA_VALUTARE: 'da_valutare',
+  SI:          'si',
+  NO:          'no'
+};
+// Cases of Art. 35(3), points (a), (b) and (c).
+export const CASI_ART35_PAR3 = { A: 'a', B: 'b', C: 'c' };
+// Version of Art. 30(5) applied by the assessment.
+export const REGIME_ART30_5 = {
+  VIGENTE:    'vigente',    // text in force: fewer than 250 persons
+  OMNIBUS_IV: 'omnibus4'    // as amended by the Omnibus IV Regulation: fewer than 1000
+};
+// Omnibus IV Regulation (procedure 2025/0130(COD)). Fill in on publication in
+// the Official Journal: the date of entry into force (ISO 8601, the twentieth
+// day following publication) and the reference of the act. Until then the
+// text in force is applied.
+export const OMNIBUS_IV = {
+  inVigoreDal: null,
+  riferimento: { it: '', en: '' }
+};
+
+// ============================================================================
 // FACTORY: default Settings
 // ============================================================================
 export function createDefaultSettings() {
@@ -202,7 +250,14 @@ export function createDefaultSettings() {
       pec: '',
       telefono: '',
       indirizzo: '',
-      contattoPubblico: ''
+      contattoPubblico: '',
+      baseDesignazione: ''               // BASE_DESIGNAZIONE_DPO code or ''
+    },
+
+    // Art. 30(5): data used to assess the obligation to keep the record.
+    obbligoRegistro: {
+      personeImpiegate: '',              // PERSONE_IMPIEGATE code or ''
+      natura: ''                         // NATURA_ORGANIZZAZIONE code or ''
     },
 
     // Register languages: enabled set + primary (invariant: principale ∈ lingue).
@@ -341,6 +396,19 @@ export function createDefaultProcessingActivity({ id }) {
 
     // ---- Free notes ----
     note: bilingue(),
+
+    // ---- Art. 30(5) — Assessment of the obligation to record this activity ----
+    // Omnibus IV text: rischioElevato, casiArt35par3, attivitaPrincipaleDpo.
+    // Text in force: rischio, nonOccasionale (special categories and criminal
+    // data are derived from baseGiuridica.art9 and datiCondannePenaliReati).
+    obbligoRegistrazione: {
+      rischioElevato: VALUTAZIONE.DA_VALUTARE,
+      casiArt35par3: [],
+      attivitaPrincipaleDpo: VALUTAZIONE.DA_VALUTARE,
+      rischio: VALUTAZIONE.DA_VALUTARE,
+      nonOccasionale: VALUTAZIONE.DA_VALUTARE,
+      motivazione: bilingue()
+    },
 
     // ---- Metadata ----
     metadata: {

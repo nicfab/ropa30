@@ -172,7 +172,7 @@ for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
 // 5. Organisation sheet: representative fields and section guidance
 // ---------------------------------------------------------------------------
 console.log('5. Organisation sheet');
-const SEZIONI_ORG = ['titolare', 'indirizzo', 'contatti', 'rappresentante', 'dpo', 'registro'];
+const SEZIONI_ORG = ['titolare', 'indirizzo', 'contatti', 'rappresentante', 'dpo', 'obbligo', 'registro'];
 check('representative fields bound in the form (Art. 27, Art. 30(1)(a))',
   /x-model="rappPresente"/.test(html) && /x-model="rappDenominazione"/.test(html) && /x-model="rappContatto"/.test(html)
   && /x-show="rappPresente"/.test(html));

@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - audit log entry",
   "description": "One entry of the ROPA30 activity log, which records operations on the register (creation, update and deletion of items, restore and reset of the database). Entries are never rewritten: values written by earlier versions remain valid as legacy values.",
-  "x-spec-version": "1.0.0",
+  "x-spec-version": "1.1.0",
   "type": "object",
   "properties": {
     "id": {

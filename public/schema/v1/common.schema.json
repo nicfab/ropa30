@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - common definitions",
   "description": "Shared types of the ROPA30 data specification: bilingual texts, dates and code lists. Codes are stored as language-neutral identifiers; their human-readable labels are provided by the application in each language and are never stored in the data.",
-  "x-spec-version": "1.0.0",
+  "x-spec-version": "1.1.0",
   "$defs": {
     "language": {
       "title": "Language",
@@ -137,6 +137,52 @@
         { "const": "anonimizzazione", "description": "Anonymisation." },
         { "const": "archiviazione", "description": "Archiving (e.g. archiving purposes under Art. 89)." },
         { "const": "cancellazione_o_anonimizzazione", "description": "Erasure or anonymisation." }
+      ]
+    },
+    "personsEmployed": {
+      "title": "Persons employed by the organisation (band)",
+      "description": "Band declared by the user, for the derogation of Art. 30(5). Persons, not annual work units.",
+      "type": "string",
+      "oneOf": [
+        { "const": "meno250", "description": "Fewer than 250." },
+        { "const": "da250a999", "description": "From 250 to 999." },
+        { "const": "almeno1000", "description": "1000 or more." }
+      ]
+    },
+    "organisationNature": {
+      "title": "Nature of the organisation",
+      "type": "string",
+      "oneOf": [
+        { "const": "privata", "description": "Private enterprise or organisation." },
+        { "const": "pubblica", "description": "Public authority or body." }
+      ]
+    },
+    "dpoDesignationBasis": {
+      "title": "Basis for the designation of the DPO",
+      "type": "string",
+      "oneOf": [
+        { "const": "art37_1_a", "description": "Mandatory: public authority or body (Art. 37(1)(a))." },
+        { "const": "art37_1_b", "description": "Mandatory: core activities of regular and systematic monitoring on a large scale (Art. 37(1)(b))." },
+        { "const": "art37_1_c", "description": "Mandatory: core activities of large-scale processing of special categories or criminal data (Art. 37(1)(c))." },
+        { "const": "facoltativa", "description": "Voluntary designation." }
+      ]
+    },
+    "assessment": {
+      "title": "Answer to an assessment question",
+      "type": "string",
+      "oneOf": [
+        { "const": "da_valutare", "description": "Not yet assessed." },
+        { "const": "si", "description": "Yes." },
+        { "const": "no", "description": "No." }
+      ]
+    },
+    "caseArt35par3": {
+      "title": "Case of Art. 35(3)",
+      "type": "string",
+      "oneOf": [
+        { "const": "a", "description": "Systematic and extensive evaluation of personal aspects, including profiling, with legal or similarly significant effects (Art. 35(3)(a))." },
+        { "const": "b", "description": "Large-scale processing of special categories of data or of data relating to criminal convictions and offences (Art. 35(3)(b))." },
+        { "const": "c", "description": "Systematic monitoring of a publicly accessible area on a large scale (Art. 35(3)(c))." }
       ]
     },
     "auditAction": {

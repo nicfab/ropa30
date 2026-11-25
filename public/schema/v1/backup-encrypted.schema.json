@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - backup file (encrypted)",
   "description": "Password-encrypted backup of a ROPA30 register. The plaintext is the UTF-8 JSON of a plain backup (backup.schema.json). Key derivation: PBKDF2-HMAC-SHA-256 on the password normalised to Unicode NFC, with the stated salt and iterations, producing a 256-bit AES key. Encryption: AES-256-GCM (128-bit tag appended to the ciphertext) with the stated IV. Additional authenticated data: the UTF-8 encoding of the header fields joined by '|', in this order: format, version, kdf.name, kdf.hash, kdf.iterations, kdf.salt, cipher.name, cipher.iv (iterations in decimal, salt and IV in their Base64 form as written in the file). Any change to the header therefore makes decryption fail.",
-  "x-spec-version": "1.0.0",
+  "x-spec-version": "1.1.0",
   "type": "object",
   "properties": {
     "format": {

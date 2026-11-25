@@ -19,9 +19,14 @@ export function nomeFileRegistro(ext, date = new Date(), estratto = null, baseSl
   const s = p(date.getSeconds());
   let tipo = baseSlug || 'registro-completo';
   if (estratto && estratto.estratto) {
-    const slug = String(estratto.unita || '').toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'unita';
-    tipo = 'estratto-unita-' + slug;
+    const codice = estratto.obbligoCodice || '';   // Art. 30(5) filter: 'obbligatori' | 'volontari'
+    if (estratto.unita || !codice) {
+      const slug = String(estratto.unita || '').toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'unita';
+      tipo = 'estratto-unita-' + slug + (codice ? '-' + codice : '');
+    } else {
+      tipo = 'estratto-' + codice;
+    }
   }
   return 'ropa30-' + tipo + '-' + Y + M + D + '-' + h + m + s + '.' + ext;
 }
@@ -54,9 +59,10 @@ export function esportaRegistroXlsx(model, labels = {}, date = new Date()) {
     ? (labels.estrattoTitolo || 'Estratto del Registro')
     : (labels.titolo || 'Registro dei trattamenti');
   headerRows.push([titoloBase + (model.meta.titolare ? ' — ' + model.meta.titolare : '')]);
-  if (est.estratto) {
+  if (est.estratto && (est.unita || !est.obbligo)) {
     headerRows.push([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]);
   }
+  if (est.obbligo) headerRows.push([(labels.estrattoObbligo || 'Obbligo di registrazione') + ': ' + est.obbligo]);
   headerRows.push([(labels.generatoIl || 'Generato il') + ': ' + model.meta.generatoIl]);
   headerRows.push([]); // spacer
 
@@ -73,7 +79,8 @@ export function esportaRegistroXlsx(model, labels = {}, date = new Date()) {
   const righe = Array.isArray(model.meta.titolareRighe) ? model.meta.titolareRighe : [];
   if (righe.length) {
     const tAoa = [[labels.titolareTitolo || 'Dati del titolare']];
-    if (est.estratto) tAoa.push([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]);
+    if (est.estratto && (est.unita || !est.obbligo)) tAoa.push([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]);
+    if (est.obbligo) tAoa.push([(labels.estrattoObbligo || 'Obbligo di registrazione') + ': ' + est.obbligo]);
     tAoa.push([]);
     for (const r of righe) tAoa.push([r.label, r.value]);
     const wsT = XLSX.utils.aoa_to_sheet(tAoa);

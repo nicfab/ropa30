@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - register settings",
   "description": "Settings of the register: the organisation keeping it, its representative, the data protection officer and the register languages. In the controller's record the organisation is the controller; in the processor's record it is the processor. Joint controllers are recorded per processing activity. Empty values are valid (e.g. before onboarding is completed).",
-  "x-spec-version": "1.0.0",
+  "x-spec-version": "1.1.0",
   "x-ropa30": {
     "dataModelVersion": 5
   },
@@ -311,6 +311,17 @@
         "contattoPubblico": {
           "type": "string",
           "description": "Contact details as published (Art. 37(7))."
+        },
+        "baseDesignazione": {
+          "anyOf": [
+            { "$ref": "common.schema.json#/$defs/dpoDesignationBasis" },
+            { "const": "" }
+          ],
+          "description": "Basis for the designation (Art. 37(1) or voluntary); empty if not stated. Added in specification 1.1.",
+          "x-gdpr": [
+            { "register": "controller", "provision": "Art. 30(5)", "requirement": "supplementary" },
+            { "register": "processor", "provision": "Art. 30(5)", "requirement": "supplementary" }
+          ]
         }
       },
       "required": [
@@ -334,6 +345,35 @@
           "provision": "Art. 30(2)(a)",
           "requirement": "where-applicable"
         }
+      ]
+    },
+    "obbligoRegistro": {
+      "description": "Data used for the indicative assessment of the obligation to keep the record under Art. 30(5). Added in specification 1.1; absent in data written by earlier versions.",
+      "type": "object",
+      "properties": {
+        "personeImpiegate": {
+          "anyOf": [
+            { "$ref": "common.schema.json#/$defs/personsEmployed" },
+            { "const": "" }
+          ],
+          "description": "Persons employed by the organisation (band); empty if not stated."
+        },
+        "natura": {
+          "anyOf": [
+            { "$ref": "common.schema.json#/$defs/organisationNature" },
+            { "const": "" }
+          ],
+          "description": "Nature of the organisation; empty if not stated. Public authorities and bodies do not benefit from the derogation as amended by the Omnibus IV Regulation (recital 8)."
+        }
+      },
+      "required": [
+        "personeImpiegate",
+        "natura"
+      ],
+      "additionalProperties": false,
+      "x-gdpr": [
+        { "register": "controller", "provision": "Art. 30(5)", "requirement": "supplementary" },
+        { "register": "processor", "provision": "Art. 30(5)", "requirement": "supplementary" }
       ]
     },
     "contitolari": {

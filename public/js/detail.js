@@ -12,7 +12,8 @@
  *   buildDettaglio(record, lang, deps) -> { sezioni: Section[] }
  *     record : raw processing activity (schema v2)
  *     lang   : 'it' | 'en' (active UI language)
- *     deps   : { detail, enums }
+ *     deps   : { detail, enums, obbligo? }
+ *              obbligo = { settings, regime, L } adds section 13 (Art. 30(5))
  *              detail = locale.detail  ({ sezioni, campi, stati })
  *              enums  = locale.enums   (code -> label maps)
  *
@@ -26,6 +27,8 @@
  *   active empty + other full  -> value = '—' (vuoto), missingTranslation = true   (badge)
  *   active empty + other empty -> value = '—' (vuoto), missingTranslation = false  (no badge)
  */
+
+import { valutaObbligo, descriviEsito } from './obbligo.js';
 
 // ---------------------------------------------------------------------------
 // Internal resolvers (pure)
@@ -346,6 +349,29 @@ export function buildDettaglio(record, lang, deps) {
   }
   campiDpia.push(campoTesto(C.note, r.note, lang, ST));
   sezioni.push({ id: 'dpiaNote', titolo: S.dpiaNote, campi: campiDpia });
+
+  // ---- Sez. 13 — Obbligo di registrazione (art. 30, par. 5) -----------------
+  // Only when the caller supplies the context (settings, version of Art. 30(5)
+  // applied, labels): deps.obbligo = { settings, regime, L }.
+  const OB = deps && deps.obbligo;
+  if (OB) {
+    const ob = r.obbligoRegistrazione || {};
+    const dv = (v) => v || 'da_valutare';
+    const esito = descriviEsito(valutaObbligo(r, OB.settings, OB.regime), OB.L);
+    const campiOb = [ campoTesto(C.obEsito, esito.testo, lang, ST) ];
+    if (OB.regime === 'omnibus4') {
+      campiOb.push(campoEnum(C.obRischioElevato, dv(ob.rischioElevato), E.valutazione, ST));
+      const casi = (Array.isArray(ob.casiArt35par3) ? ob.casiArt35par3 : [])
+        .map((c) => ((E.casiArt35par3 || {})[c]) || c);
+      campiOb.push(campoLista(C.obCasiArt35, casi, lang, ST));
+      campiOb.push(campoEnum(C.obAttivitaDpo, dv(ob.attivitaPrincipaleDpo), E.valutazione, ST));
+    } else {
+      campiOb.push(campoEnum(C.obRischio, dv(ob.rischio), E.valutazione, ST));
+      campiOb.push(campoEnum(C.obNonOccasionale, dv(ob.nonOccasionale), E.valutazione, ST));
+    }
+    campiOb.push(campoTesto(C.obMotivazione, ob.motivazione, lang, ST));
+    sezioni.push({ id: 'obbligo', titolo: S.obbligo, campi: campiOb, esito });
+  }
 
   // Enrich each section with navigation helpers (CSP: precomputed strings).
   sezioni.forEach((sez, i) => {

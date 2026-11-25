@@ -1,8 +1,8 @@
-# ROPA30 data specification — version 1.0
+# ROPA30 data specification — version 1.1
 
 Machine-readable description of the data handled by [ROPA30](https://ropa30.eu), the local-first application for the record of processing activities under Article 30 of the GDPR (Regulation (EU) 2016/679).
 
-**Status: stable, version 1.0 (`1.0.0`).** Changes follow the compatibility rules below. The earlier draft remains available under [`v0`](../v0/README.md) and is no longer updated.
+**Status: stable, version 1.1 (`1.1.0`).** Changes follow the compatibility rules below. The earlier draft remains available under [`v0`](../v0/README.md) and is no longer updated.
 
 The specification describes the data as ROPA30 actually stores and exports it. Its purposes are:
 
@@ -30,11 +30,11 @@ Three version numbers evolve independently:
 
 | Version | Current value | Where it appears |
 |---|---|---|
-| Specification | `1.0.0` | `x-spec-version` in every schema |
+| Specification | `1.1.0` | `x-spec-version` in every schema |
 | Data model | `5` | `schemaVersion` in settings and processing activities |
 | Backup format | `1` | `_meta.exportFormatVersion` in backups |
 
-Version 1.0 describes data model 5 and backup format 1. Backups produced by earlier versions with an older data model are migrated by the application when restored, and are outside the scope of these schemas.
+Version 1.1 describes data model 5 and backup format 1. Compared with version 1.0, it adds optional fields for the indicative assessment of the obligation to keep the record under Art. 30(5): `obbligoRegistro` and `dpo.baseDesignazione` in the settings, `obbligoRegistrazione` in each processing activity. Data valid under version 1.0 remains valid. Backups produced by earlier versions with an older data model are migrated by the application when restored, and are outside the scope of these schemas.
 
 ## Compatibility
 

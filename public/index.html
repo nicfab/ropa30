@@ -557,6 +557,41 @@
                   <input id="f-dpo-pec" type="email" x-model="dpoPec"
                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                 </div>
+                <div class="sm:col-span-2">
+                  <label for="f-dpo-base" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblDpoBase"></label>
+                  <select id="f-dpo-base" x-model="dpoBase" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
+                    <option value="" x-text="L.optNonIndicato"></option>
+                    <template x-for="o in opzioniDpoBase" x-bind:key="o.code">
+                      <option x-bind:value="o.code" x-text="o.label" x-bind:selected="o.code === dpoBase"></option>
+                    </template>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="mt-6 border-0 p-0 m-0">
+              <legend class="text-lg font-semibold text-brand-800 mb-4 flex items-center gap-1"><span x-text="L.onbSezioneObbligo"></span><button type="button" data-guida-org="obbligo" x-on:click="toggleGuidaOrg" x-bind:aria-expanded="guidaOrgAperta.obbligo ? 'true' : 'false'" aria-controls="guida-org-obbligo" x-bind:aria-label="guidaOrgSezioni.obbligo.aria" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></legend>
+              <p id="guida-org-obbligo" x-show="guidaOrgAperta.obbligo" x-text="guidaOrgSezioni.obbligo.testo" class="mb-4 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
+              <p id="obb-regime" class="text-sm text-brand-600 mb-4" x-text="regimeTesto"></p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="f-obb-persone" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPersoneImpiegate"></label>
+                  <select id="f-obb-persone" x-model="obbPersone" aria-describedby="obb-regime" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
+                    <option value="" x-text="L.optNonIndicato"></option>
+                    <template x-for="o in opzioniPersone" x-bind:key="o.code">
+                      <option x-bind:value="o.code" x-text="o.label" x-bind:selected="o.code === obbPersone"></option>
+                    </template>
+                  </select>
+                </div>
+                <div>
+                  <label for="f-obb-natura" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblNaturaOrg"></label>
+                  <select id="f-obb-natura" x-model="obbNatura" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
+                    <option value="" x-text="L.optNonIndicato"></option>
+                    <template x-for="o in opzioniNatura" x-bind:key="o.code">
+                      <option x-bind:value="o.code" x-text="o.label" x-bind:selected="o.code === obbNatura"></option>
+                    </template>
+                  </select>
+                </div>
               </div>
             </fieldset>
 
@@ -691,6 +726,13 @@
                       <option x-bind:value="u" x-text="u"></option>
                     </template>
                   </select>
+                  <select x-model="filtroObbligo"
+                          x-bind:aria-label="L.filtroObbligoLabel"
+                          class="shrink-0 text-sm rounded-lg border border-brand-400 bg-white px-3 py-2.5 text-brand-700">
+                    <option value="" x-text="L.filtroObbligoTutti">Tutti i trattamenti</option>
+                    <option value="obbligatori" x-text="L.filtroObbligoObbligatori">Registrazione obbligatoria</option>
+                    <option value="volontari" x-text="L.filtroObbligoVolontari">Registrazione volontaria</option>
+                  </select>
                 </div>
                 <p class="mt-2 text-xs text-brand-500" x-text="contatoreTesto"></p>
               </div>
@@ -716,6 +758,7 @@
                             <h2 class="text-lg font-semibold text-brand-900"><button type="button" x-bind:data-id="tr.id" x-on:click.stop="apriDettaglio" class="rounded text-left hover:underline"><span x-bind:class="tr.cssNome" x-text="tr.nome"></span> <span x-show="tr.nomeMancante" class="ml-1 rounded-full bg-warning-500/20 px-2 py-0.5 text-xs font-medium text-warning-600" x-text="tr.badgeMancante"></span></button></h2>
                             <span class="shrink-0 rounded-full bg-brand-100 px-2 py-0.5 text-xs font-medium text-brand-700"
                                   x-show="tr.mostraCategoria" x-text="tr.categoriaLabel"></span>
+                            <span x-bind:class="tr.cssEsito" x-text="tr.esitoLabel"></span>
                           </div>
                           <dl class="mt-2 space-y-1 text-sm">
                             <div class="flex gap-2">
@@ -1144,6 +1187,13 @@
                   </h2>
 
                   <div class="px-4 sm:px-6 pb-6 pt-2 space-y-5 border-t border-brand-100" x-show="sez.aperta">
+                    <template x-if="sez.isObbligo">
+                      <div>
+                        <p class="mb-3 text-sm text-brand-700" x-text="sez.nota"></p>
+                        <p x-bind:class="editEsitoCss" role="status"><span x-text="L.editorEsitoTitolo"></span>: <span x-text="editEsitoTesto"></span></p>
+                        <p x-show="editDpiaSuggerimento" class="mb-2 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800" x-text="L.editorDpiaSuggerimento"></p>
+                      </div>
+                    </template>
                     <template x-for="(campo, ci) in sez.campi" x-bind:key="ci">
                       <div x-show="campo.visibile">
                         <span class="flex items-center gap-1 text-sm font-medium text-brand-700 mb-1"><span x-text="campo.label"></span><button type="button" x-show="campo.haGuida" x-bind:data-guida="campo.idGuida" x-on:click="toggleGuida" x-bind:aria-expanded="campo.guidaAperta ? 'true' : 'false'" x-bind:aria-controls="campo.idGuida" x-bind:aria-label="campo.ariaGuida" class="inline-flex items-center justify-center rounded-full p-1 text-brand-500 hover:bg-brand-100 hover:text-brand-800"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-info" /></svg></button></span><p x-show="campo.guidaAperta" x-bind:id="campo.idGuida" x-text="campo.guida" class="mb-2 rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm text-brand-800"></p>
@@ -1420,7 +1470,7 @@
       <header class="print-header">
         <h1 x-text="titoloRegistroExport">Registro delle attività di trattamento</h1>
         <template x-if="registroStampa.estratto.estratto">
-          <p class="print-estratto"><span x-text="L.estrattoTitolo"></span> &mdash; <span x-text="L.estrattoUnita"></span>: <span x-text="registroStampa.estratto.unita"></span></p>
+          <p class="print-estratto"><span x-text="L.estrattoTitolo"></span><template x-if="registroStampa.estratto.unita"><span> &mdash; <span x-text="L.estrattoUnita"></span>: <span x-text="registroStampa.estratto.unita"></span></span></template><template x-if="registroStampa.estratto.obbligo"><span> &mdash; <span x-text="L.estrattoObbligo"></span>: <span x-text="registroStampa.estratto.obbligo"></span></span></template></p>
         </template>
         <table class="print-titolare">
           <template x-for="(r, ri) in registroStampa.titolareRighe" x-bind:key="ri">

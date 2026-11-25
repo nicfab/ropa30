@@ -4,7 +4,7 @@
   "$comment": "ROPA30 data specification. SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) Nicola Fabiano.",
   "title": "ROPA30 - processing activity",
   "description": "One entry of the record of processing activities (GDPR Art. 30). The same structure serves the controller's record (Art. 30(1)) and the processor's record (Art. 30(2)); 'tipoRegistro' tells which. Field names are those actually stored by ROPA30 (Italian GDPR terminology). Empty values are valid, because a record may be incomplete while it is being drafted: legal completeness is described by the x-gdpr annotations, not by 'required'.",
-  "x-spec-version": "1.0.0",
+  "x-spec-version": "1.1.0",
   "x-ropa30": {
     "dataModelVersion": 5
   },
@@ -368,6 +368,14 @@
               "provision": "Art. 35",
               "requirement": "supplementary"
             }
+          ]
+        },
+        "obbligoRegistrazione": {
+          "$ref": "#/$defs/obbligoRegistrazione",
+          "description": "Indicative assessment of the obligation to record this activity under Art. 30(5). Added in specification 1.1; absent in data written by earlier versions.",
+          "x-gdpr": [
+            { "register": "controller", "provision": "Art. 30(5)", "requirement": "supplementary" },
+            { "register": "processor", "provision": "Art. 30(5)", "requirement": "supplementary" }
           ]
         },
         "note": {
@@ -740,6 +748,47 @@
         "descrizione",
         "logica",
         "baseGiuridicaSpecifica"
+      ],
+      "additionalProperties": false
+    },
+    "obbligoRegistrazione": {
+      "type": "object",
+      "description": "Answers used to assess whether this activity must be recorded. Omnibus IV text of Art. 30(5): rischioElevato, casiArt35par3, attivitaPrincipaleDpo. Text in force: rischio, nonOccasionale (special categories and criminal data are taken from baseGiuridica.art9 and datiCondannePenaliReati). The result is computed by the application and is not stored.",
+      "properties": {
+        "rischioElevato": {
+          "$ref": "common.schema.json#/$defs/assessment",
+          "description": "Likely to result in a high risk to the rights and freedoms of data subjects (Art. 35)."
+        },
+        "casiArt35par3": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/caseArt35par3" },
+          "uniqueItems": true,
+          "description": "Cases of Art. 35(3) that apply."
+        },
+        "attivitaPrincipaleDpo": {
+          "$ref": "common.schema.json#/$defs/assessment",
+          "description": "Core activity requiring the designation of a DPO under Art. 37(1)(b) or (c)."
+        },
+        "rischio": {
+          "$ref": "common.schema.json#/$defs/assessment",
+          "description": "Text in force of Art. 30(5): likely to result in a risk to the rights and freedoms of data subjects."
+        },
+        "nonOccasionale": {
+          "$ref": "common.schema.json#/$defs/assessment",
+          "description": "Text in force of Art. 30(5): the processing is not occasional."
+        },
+        "motivazione": {
+          "$ref": "common.schema.json#/$defs/bilingualText",
+          "description": "Reasons for the assessment."
+        }
+      },
+      "required": [
+        "rischioElevato",
+        "casiArt35par3",
+        "attivitaPrincipaleDpo",
+        "rischio",
+        "nonOccasionale",
+        "motivazione"
       ],
       "additionalProperties": false
     },

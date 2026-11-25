@@ -54,7 +54,8 @@ function contentXml(model, labels) {
   if (righe.length) {
     const tRows = [];
     tRows.push(rigaXml([labels.titolareTitolo || 'Dati del titolare']));
-    if (est.estratto) tRows.push(rigaXml([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]));
+    if (est.estratto && (est.unita || !est.obbligo)) tRows.push(rigaXml([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]));
+    if (est.obbligo) tRows.push(rigaXml([(labels.estrattoObbligo || 'Obbligo di registrazione') + ': ' + est.obbligo]));
     tRows.push(rigaXml(['']));
     for (const r of righe) tRows.push(rigaXml([r.label, r.value]));
     tabellaTitolare = '<table:table table:name="Titolare">'
@@ -66,7 +67,8 @@ function contentXml(model, labels) {
   // Top info rows (single cell each), a spacer, then header row + data rows.
   const rows = [];
   rows.push(rigaXml([titolo]));
-  if (est.estratto) rows.push(rigaXml([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]));
+  if (est.estratto && (est.unita || !est.obbligo)) rows.push(rigaXml([(labels.estrattoUnita || 'Unità') + ': ' + est.unita]));
+  if (est.obbligo) rows.push(rigaXml([(labels.estrattoObbligo || 'Obbligo di registrazione') + ': ' + est.obbligo]));
   rows.push(rigaXml([generato]));
   rows.push(rigaXml(['']));
   rows.push(rigaXml(model.headers));

@@ -2,8 +2,8 @@
  * ropa30 — tests/schema.test.mjs
  * SPDX-License-Identifier: AGPL-3.0-or-later
  *
- * Tests of the data specification (public/schema/v1/*.schema.json), version 1.0;
- * the superseded draft 0.2 (public/schema/v0) must describe the same data.
+ * Tests of the data specification (public/schema/v1/*.schema.json), version 1.1;
+ * every rule of the superseded draft 0.2 (public/schema/v0) is kept unchanged.
  *
  *   node tests/schema.test.mjs                  run all checks
  *   node tests/schema.test.mjs FILE.json ...    also validate backup files
@@ -33,7 +33,7 @@ const addFormats = addFormatsModule.default ?? addFormatsModule;
 const SCHEMA_DIR = new URL('../public/schema/v1/', import.meta.url);
 const TEMPLATES = new URL('../public/data/templates.json', import.meta.url);
 const BASE = 'https://ropa30.eu/schema/v1/';
-const SPEC_VERSION = '1.0.0';
+const SPEC_VERSION = '1.1.0';
 
 // ---------------------------------------------------------------------------
 // Setup
@@ -278,9 +278,30 @@ for (const file of extra) {
 }
 
 // ---------------------------------------------------------------------------
-// 8. Version 1.0 and the superseded draft 0.2 describe the same data
+// 8. Version 1.x is a compatible extension of the superseded draft 0.2
 // ---------------------------------------------------------------------------
-console.log('8. Version 1.0 and draft 0.2 (v0) describe the same data');
+// Every rule of v0 is kept unchanged in v1 (so data valid under draft 0.2 and
+// under version 1.0 remains valid); v1 may only add optional properties and
+// new definitions (minor versions, see the compatibility rules).
+console.log('8. Version 1.x extends draft 0.2 (v0) compatibly');
+function estende(a, b, path, errori) {
+  if (Array.isArray(a)) {
+    if (JSON.stringify(a) !== JSON.stringify(b)) errori.push(path + ' changed');
+    return;
+  }
+  if (a && typeof a === 'object') {
+    if (!b || typeof b !== 'object' || Array.isArray(b)) { errori.push(path + ' removed'); return; }
+    for (const k of Object.keys(a)) {
+      if (k === '$id' || k === 'x-spec-version') continue;
+      if (!(k in b)) { errori.push(path + '/' + k + ' removed'); continue; }
+      estende(a[k], b[k], path + '/' + k, errori);
+    }
+    const mappa = path.endsWith('/properties') || path.endsWith('/$defs');
+    for (const k of Object.keys(b)) if (!(k in a) && !mappa) errori.push(path + '/' + k + ' added outside properties/$defs');
+    return;
+  }
+  if (a !== b) errori.push(path + ' changed');
+}
 {
   const V0 = new URL('../public/schema/v0/', import.meta.url);
   const f0 = readdirSync(V0).filter((f) => f.endsWith('.schema.json')).sort();
@@ -289,8 +310,9 @@ console.log('8. Version 1.0 and draft 0.2 (v0) describe the same data');
     const s0 = JSON.parse(readFileSync(new URL(f, V0), 'utf8'));
     check(`${f}: v0 frozen at 0.2.0-draft`, s0['x-spec-version'] === '0.2.0-draft'
       && s0.$id === 'https://ropa30.eu/schema/v0/' + f);
-    const norm = (s) => JSON.stringify({ ...s, $id: '', 'x-spec-version': '' });
-    check(`${f}: identical to v0 except $id and x-spec-version`, norm(s0) === norm(schemas[f]));
+    const errori = [];
+    estende(s0, schemas[f], '', errori);
+    check(`${f}: compatible extension of v0`, errori.length === 0, errori.slice(0, 5).join('; '));
   }
 }
 

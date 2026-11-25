@@ -825,6 +825,16 @@ export function normalizeBilingualShapes(r) {
   vi.riferimentoDocumento = bil(vi.riferimentoDocumento);
 
   r.note = bil(r.note);
+
+  // Art. 30(5) assessment (optional within data model 5).
+  const val = (v) => (v === 'si' || v === 'no') ? v : 'da_valutare';
+  const ob = r.obbligoRegistrazione || (r.obbligoRegistrazione = {});
+  ob.rischioElevato = val(ob.rischioElevato);
+  ob.casiArt35par3 = Array.isArray(ob.casiArt35par3) ? ob.casiArt35par3.filter((c) => ['a', 'b', 'c'].includes(c)) : [];
+  ob.attivitaPrincipaleDpo = val(ob.attivitaPrincipaleDpo);
+  ob.rischio = val(ob.rischio);
+  ob.nonOccasionale = val(ob.nonOccasionale);
+  ob.motivazione = bil(ob.motivazione);
   return r;
 }
 

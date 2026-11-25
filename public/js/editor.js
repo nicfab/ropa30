@@ -135,7 +135,7 @@ function righeDaArray(gruppoTipo, arr, detail, enums, baseLabel) {
 }
 
 // --- buildEditModel: record -> 12-section edit model ---
-export function buildEditModel(record, { lingue, detail, enums, guida, azioni }) {
+export function buildEditModel(record, { lingue, detail, enums, guida, azioni, regime, noteObbligo }) {
   const r = record || {};
   const C = detail.campi;
   const S = detail.sezioni;
@@ -239,10 +239,27 @@ export function buildEditModel(record, { lingue, detail, enums, guida, azioni })
     ctlTestoBil('note', 'note', C.note, g('note'), true)
   ] });
 
+  // 13 — Obbligo di registrazione (art. 30, par. 5). Only the questions of the
+  // version of Art. 30(5) in force are shown (soloRegime); the others keep
+  // their values. Missing values are read as 'da_valutare'.
+  const dv = (p) => g(p) || 'da_valutare';
+  const perRegime = (ctl, r) => Object.assign(ctl, { soloRegime: r });
+  sezioni.push({ id: 'obbligo', titolo: S.obbligo, isObbligo: true, campi: [
+    perRegime(ctlEnum1('obRischioElevato', 'obbligoRegistrazione.rischioElevato', C.obRischioElevato, dv('obbligoRegistrazione.rischioElevato'), enums.valutazione), 'omnibus4'),
+    perRegime(ctlEnumN('obCasiArt35', 'obbligoRegistrazione.casiArt35par3', C.obCasiArt35, g('obbligoRegistrazione.casiArt35par3'), enums.casiArt35par3), 'omnibus4'),
+    perRegime(ctlEnum1('obAttivitaDpo', 'obbligoRegistrazione.attivitaPrincipaleDpo', C.obAttivitaDpo, dv('obbligoRegistrazione.attivitaPrincipaleDpo'), enums.valutazione), 'omnibus4'),
+    perRegime(ctlEnum1('obRischio', 'obbligoRegistrazione.rischio', C.obRischio, dv('obbligoRegistrazione.rischio'), enums.valutazione), 'vigente'),
+    perRegime(ctlEnum1('obNonOccasionale', 'obbligoRegistrazione.nonOccasionale', C.obNonOccasionale, dv('obbligoRegistrazione.nonOccasionale'), enums.valutazione), 'vigente'),
+    ctlTestoBil('obMotivazione', 'obbligoRegistrazione.motivazione', C.obMotivazione, g('obbligoRegistrazione.motivazione'), true)
+  ] });
+
   // Navigation helpers (CSP: precomputed strings), as in detail.js.
   sezioni.forEach((sez, i) => { sez.ancora = '#edit-' + sez.id; sez.indice = (i + 1) + '. '; sez.aperta = (i === 0); sez.idEdit = 'edit-' + sez.id; });
 
-  const model = { sezioni, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
+  const reg = regime === 'omnibus4' ? 'omnibus4' : 'vigente';
+  const nob = sezioni.find((s) => s.isObbligo);
+  if (nob) nob.nota = (noteObbligo && noteObbligo[reg]) || '';
+  const model = { sezioni, regime: reg, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
   aggiornaVisibilita(model);
   applicaGuida(model, guida);
   applicaAzioni(model, azioni);
@@ -327,8 +344,10 @@ export function applicaAzioni(editModel, azioni) {
 
 // --- Visibility by type of record (CSP: a plain boolean per control) ---
 // Controls with soloRegistro are shown only when the record type selected in
-// the editor matches; all other controls are always visible. Hidden controls
-// keep their values (nothing is lost if the user switches type and back).
+// the editor matches; controls with soloRegime only for the version of
+// Art. 30(5) applied (editModel.regime); all other controls are always
+// visible. Hidden controls keep their values (nothing is lost if the user
+// switches type and back).
 export function aggiornaVisibilita(editModel) {
   if (!editModel || !Array.isArray(editModel.sezioni)) return;
   let tipo = 'titolare';
@@ -337,7 +356,10 @@ export function aggiornaVisibilita(editModel) {
     if (c) { tipo = c.val || 'titolare'; break; }
   }
   for (const sez of editModel.sezioni) {
-    for (const c of sez.campi) c.visibile = !c.soloRegistro || c.soloRegistro === tipo;
+    for (const c of sez.campi) {
+      c.visibile = (!c.soloRegistro || c.soloRegistro === tipo)
+        && (!c.soloRegime || c.soloRegime === (editModel.regime || 'vigente'));
+    }
   }
 }
 

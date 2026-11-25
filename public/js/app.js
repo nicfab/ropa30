@@ -27,12 +27,14 @@ import {
 import localeIt from '../locales/it.js';
 import localeEn from '../locales/en.js';
 import { buildDettaglio } from './detail.js';
+import { OMNIBUS_IV } from './schema.js';
 import { scaricaBackup } from './exporters/backup.js';
 import { leggiFileBackup } from './importers/restore.js';
 import { encryptEnvelope, decryptEnvelope, isEncryptedEnvelope, MIN_PASSWORD_LENGTH } from './crypto/backup-crypto.js';
 import { buildModelloRegistro } from './exporters/registro-common.js';
 import { esportaRegistroXlsx } from './exporters/xlsx.js';
 import { esportaRegistroOds } from './exporters/ods.js';
+import { valutaObbligo, descriviEsito, regimeInVigore, registrazioneDovuta } from './obbligo.js';
 import { buildEditModel, numeraVoci, applyEditModel, nuovaVoceLista, nuovaRigaGruppo, aggiornaVisibilita, trovaPerIdGuida } from './editor.js';
 
 function ropa30App() {
@@ -55,9 +57,11 @@ function ropa30App() {
     via: '', civico: '', cap: '', citta: '', provincia: '', paese: 'IT',
     email: '', pec: '', sitoWeb: '',
     rappPresente: false, rappDenominazione: '', rappContatto: '',
+    // Art. 30(5): persons employed, nature of the organisation, basis of the DPO designation.
+    obbPersone: '', obbNatura: '', dpoBase: '',
     dpoNominato: false, dpoNome: '', dpoEmail: '', dpoPec: '',
     // Organisation sheet: section-level guidance panels (open/closed).
-    guidaOrgAperta: { titolare: false, indirizzo: false, contatti: false, rappresentante: false, dpo: false, registro: false },
+    guidaOrgAperta: { titolare: false, indirizzo: false, contatti: false, rappresentante: false, dpo: false, obbligo: false, registro: false },
 
     // Register languages (M5): enabled set via checkboxes + primary.
     regIt: true,
@@ -69,6 +73,7 @@ function ropa30App() {
     registroAttivo: 'titolare',   // 'titolare' | 'responsabile' — quale registro art.30 e' in vista
     trattamenti: [],
     // ---- Restore (Fase 3) ----
+    editEsitoTesto: '', editEsitoCss: '', editDpiaSuggerimento: false,
     restoreEnvelope: null,        // parsed envelope awaiting user confirmation
     restoreSummary: null,         // { counts, exportedAt } shown in the confirm dialog
     isRestoreConfirmOpen: false,  // confirmation dialog visibility
@@ -102,6 +107,7 @@ function ropa30App() {
     trattamentiFiltrati: [],
     queryRicerca: '',
     filtroUnita: '',
+    filtroObbligo: '',            // '' | 'obbligatori' | 'volontari' (Art. 30(5))
     nuovoTrattamentoId: null,
 
     // Detail (read-only)
@@ -164,6 +170,10 @@ function ropa30App() {
       const d = settings.dpo || {};
       this.dpoNominato = !!d.nominato;
       this.dpoNome = d.nome || ''; this.dpoEmail = d.email || ''; this.dpoPec = d.pec || '';
+      this.dpoBase = d.baseDesignazione || '';
+      const ob = settings.obbligoRegistro || {};
+      this.obbPersone = ob.personeImpiegate || '';
+      this.obbNatura = ob.natura || '';
       const reg = settings.registro || { lingue: ['it'], linguaPrincipale: 'it' };
       const lingue = Array.isArray(reg.lingue) && reg.lingue.length ? reg.lingue : ['it'];
       this.regIt = lingue.indexOf('it') !== -1;
@@ -197,6 +207,9 @@ function ropa30App() {
         this.$watch('lang', () => { this._mappaTrattamenti(); this._mappaTemplates(); if (this.view === 'dettaglio' && this.trattamentoCorrente) { this.trattamentoVm = this._costruisciVm(this.trattamentoCorrente); } });
         this.$watch('queryRicerca', () => { this._filtra(); });
         this.$watch('filtroUnita', () => { this._filtra(); });
+        this.$watch('filtroObbligo', () => { this._filtra(); });
+        this.$watch('obbPersone', () => { this._mappaTrattamenti(); });
+        this.$watch('obbNatura', () => { this._mappaTrattamenti(); });
         this.$watch('queryCatalogo', () => { this._filtraCatalogo(); });
         this.$watch('filtroSettore', () => { this._filtraCatalogo(); });
       } catch (err) {
@@ -256,19 +269,23 @@ function ropa30App() {
     get recordsPerExport() {
       const records = Array.isArray(this._rawTrattamenti) ? this._rawTrattamenti : [];
       const u = this.filtroUnita || '';
-      if (!u) return records;
+      const o = this.filtroObbligo || '';
       return records.filter((r) => {
         const lista = Array.isArray(r.unitaOrganizzativa) ? r.unitaOrganizzativa : [];
-        return lista.some((x) => this._locConFallback(x && x.unita).testo === u);
+        const okU = !u || lista.some((x) => this._locConFallback(x && x.unita).testo === u);
+        const okO = !o || (o === 'obbligatori' ? registrazioneDovuta(this._esito(r).esito) : !registrazioneDovuta(this._esito(r).esito));
+        return okU && okO;
       });
     },
     get exportEstratto() {
       const u = this.filtroUnita || '';
-      return { estratto: !!u, unita: u };
+      const o = this.filtroObbligo || '';
+      const obbligo = o === 'obbligatori' ? this.L.filtroObbligoObbligatori : (o === 'volontari' ? this.L.filtroObbligoVolontari : '');
+      return { estratto: !!u || !!o, unita: u, obbligo, obbligoCodice: o };
     },
     get registroStampa() {
       const loc = LOCALI[this.lang] || LOCALI.it;
-      const deps = { detail: loc.detail, enums: loc.enums };
+      const deps = { detail: loc.detail, enums: loc.enums, obbligo: this._depsObbligo() };
       const records = this.recordsPerExport;
       const trattamenti = records.map((rec) => {
         const dett = buildDettaglio(rec, this.lang, deps);
@@ -364,13 +381,14 @@ function ropa30App() {
         titolareTitolo: (this.registroAttivo === 'responsabile') ? this.L.tdTitoloResponsabile : this.L.tdTitolo,
         estrattoTitolo: this.L.estrattoTitolo,
         estrattoUnita: this.L.estrattoUnita,
+        estrattoObbligo: this.L.estrattoObbligo,
         sheetRegistro: (this.registroAttivo === 'responsabile') ? 'Registro responsabile' : 'Registro titolare',
         fileSlug: (this.registroAttivo === 'responsabile') ? 'registro-responsabile' : 'registro-titolare'
       };
     },
     _modelloRegistro() {
       const loc = LOCALI[this.lang] || LOCALI.it;
-      const deps = { detail: loc.detail, enums: loc.enums };
+      const deps = { detail: loc.detail, enums: loc.enums, obbligo: this._depsObbligo() };
       const records = this.recordsPerExport;
       const titolare = {
         denominazione: this.denominazione || '',
@@ -712,6 +730,10 @@ function ropa30App() {
           mostraCategoria: categoriaLabel.length > 0,
           cssEvidenzia: evidenziato ? 'ring-2 ring-brand-400' : '',
           unitaList: unitaList,
+          ...(() => { const e = this._esito(r); return {
+            esito: e.esito, esitoLabel: e.label, esitoMotivi: e.motivi.join('; '),
+            cssEsito: 'shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ' + this._cssEsito(e.esito),
+            dovuto: registrazioneDovuta(e.esito) }; })(),
           _blob: blob
         };
       });
@@ -720,10 +742,12 @@ function ropa30App() {
     _filtra() {
       const q = (this.queryRicerca || '').trim().toLowerCase();
       const u = this.filtroUnita || '';
+      const o = this.filtroObbligo || '';
       this.trattamentiFiltrati = this.trattamenti.filter((t) => {
         const okQ = !q || t._blob.indexOf(q) !== -1;
         const okU = !u || (Array.isArray(t.unitaList) && t.unitaList.indexOf(u) !== -1);
-        return okQ && okU;
+        const okO = !o || (o === 'obbligatori' ? t.dovuto : !t.dovuto);
+        return okQ && okU && okO;
       });
     },
     get unitaDisponibili() {
@@ -994,7 +1018,8 @@ function ropa30App() {
         sitoWeb: this.sitoWeb, rappPresente: this.rappPresente,
         rappDenominazione: this.rappDenominazione, rappContatto: this.rappContatto,
         dpoNominato: this.dpoNominato, dpoNome: this.dpoNome,
-        dpoEmail: this.dpoEmail, dpoPec: this.dpoPec,
+        dpoEmail: this.dpoEmail, dpoPec: this.dpoPec, dpoBase: this.dpoBase,
+        obbPersone: this.obbPersone, obbNatura: this.obbNatura,
         regIt: this.regIt, regEn: this.regEn, regPrincipale: this.regPrincipale
       };
     },
@@ -1026,7 +1051,7 @@ function ropa30App() {
     // ---- Detail (read-only) ----
     _costruisciVm(record) {
       const loc = LOCALI[this.lang] || localeIt;
-      return buildDettaglio(record, this.lang, { detail: loc.detail, enums: loc.enums });
+      return buildDettaglio(record, this.lang, { detail: loc.detail, enums: loc.enums, obbligo: this._depsObbligo() });
     },
     async apriDettaglio(event) {
       const id = (event && event.currentTarget && event.currentTarget.dataset)
@@ -1102,8 +1127,10 @@ function ropa30App() {
         const loc = LOCALI[this.lang] || localeIt;
         this.editModel = buildEditModel(this.editRecord, {
           lingue: this.editLingue, detail: loc.detail, enums: loc.enums, guida: loc.guida,
-          azioni: this._azioniEditor()
+          azioni: this._azioniEditor(),
+          regime: this.regimeArt30, noteObbligo: (loc.obbligo && loc.obbligo.note) || {}
         });
+        this._aggiornaEsitoEditor();
         this.editTitolo = this._loc(record.nome) || this.L.sennaNome;
         this.editDirty = false;
         this.editErroreSalva = false;
@@ -1123,6 +1150,37 @@ function ropa30App() {
       return out.length ? out : ['it'];
     },
     // Open/close the contextual GDPR guidance of an editor field (button data-guida).
+    // ---- Art. 30(5): version applied and options of the organisation sheet ----
+    get regimeArt30() { return regimeInVigore(new Date(), OMNIBUS_IV); },
+    get regimeTesto() {
+      if (this.regimeArt30 !== 'omnibus4') return this.L.obbRegimeVigente;
+      const rif = (OMNIBUS_IV.riferimento && OMNIBUS_IV.riferimento[this.lang]) || '';
+      const data = new Date(OMNIBUS_IV.inVigoreDal).toLocaleDateString(this.lang === 'en' ? 'en-GB' : 'it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+      return this.L.obbRegimeOmnibus.replace('{riferimento}', rif).replace('{data}', data);
+    },
+    _opzioni(nome) {
+      const m = ((LOCALI[this.lang] || LOCALI.it).enums || {})[nome] || {};
+      return Object.keys(m).map((code) => ({ code, label: m[code] }));
+    },
+    get opzioniPersone() { return this._opzioni('personeImpiegate'); },
+    get opzioniNatura() { return this._opzioni('naturaOrganizzazione'); },
+    get opzioniDpoBase() { return this._opzioni('baseDesignazioneDpo'); },
+    get _settingsObbligo() {
+      return { obbligoRegistro: { personeImpiegate: this.obbPersone || '', natura: this.obbNatura || '' } };
+    },
+    _esito(record) {
+      const loc = LOCALI[this.lang] || LOCALI.it;
+      return descriviEsito(valutaObbligo(record, this._settingsObbligo, this.regimeArt30), loc.obbligo);
+    },
+    _cssEsito(esito) {
+      if (esito === 'obbligatorio') return 'bg-brand-700 text-white';
+      if (esito === 'prudenziale') return 'bg-warning-500/20 text-warning-600';
+      return 'bg-brand-100 text-brand-700';
+    },
+    _depsObbligo() {
+      const loc = LOCALI[this.lang] || LOCALI.it;
+      return { settings: this._settingsObbligo, regime: this.regimeArt30, L: loc.obbligo };
+    },
     // Organisation sheet guidance: texts and button names for the UI language.
     get guidaOrgSezioni() {
       const loc = LOCALI[this.lang] || LOCALI.it;
@@ -1132,7 +1190,7 @@ function ropa30App() {
       const titoli = {
         titolare: L.onbSezioneTitolare, indirizzo: L.onbSezioneIndirizzo,
         contatti: L.onbSezioneContatti, rappresentante: L.onbSezioneRappresentante,
-        dpo: L.onbSezioneDpo, registro: L.onbSezioneRegistro
+        dpo: L.onbSezioneDpo, obbligo: L.onbSezioneObbligo, registro: L.onbSezioneRegistro
       };
       const out = {};
       for (const k of Object.keys(titoli)) out[k] = { testo: G[k] || '', aria: P + ': ' + (titoli[k] || '') };
@@ -1151,8 +1209,20 @@ function ropa30App() {
       const c = trovaPerIdGuida(this.editModel, id);
       if (c) c.guidaAperta = !c.guidaAperta;
     },
+    // Live result of the Art. 30(5) assessment in the editor (section 13).
+    _aggiornaEsitoEditor() {
+      if (!this.editModel || !this.editRecord) return;
+      const rec = applyEditModel(JSON.parse(JSON.stringify(this.editRecord)), this.editModel);
+      const e = this._esito(rec);
+      this.editEsitoTesto = e.testo;
+      this.editEsitoCss = 'mb-4 rounded-lg px-3 py-2 text-sm font-medium ' + this._cssEsito(e.esito);
+      const dpia = !!(rec.valutazioneDiImpatto && rec.valutazioneDiImpatto.effettuata);
+      const ob = rec.obbligoRegistrazione || {};
+      this.editDpiaSuggerimento = this.regimeArt30 === 'omnibus4' && dpia && ob.rischioElevato !== 'si';
+    },
     segnaDirty() {
       this.editDirty = true;
+      this._aggiornaEsitoEditor();
       this._validaNomeEditor();
       aggiornaVisibilita(this.editModel); // e.g. parties shown per type of record
     },
@@ -1341,8 +1411,10 @@ function ropa30App() {
           nominato: this.dpoNominato,
           nome: this.dpoNominato ? this.dpoNome.trim() : '',
           email: this.dpoNominato ? this.dpoEmail.trim() : '',
-          pec: this.dpoNominato ? this.dpoPec.trim() : ''
+          pec: this.dpoNominato ? this.dpoPec.trim() : '',
+          baseDesignazione: this.dpoNominato ? (this.dpoBase || '') : ''
         };
+        const obbligoRegistro = { personeImpiegate: this.obbPersone || '', natura: this.obbNatura || '' };
 
         const lingue = [];
         if (this.regIt) lingue.push('it');
@@ -1352,7 +1424,7 @@ function ropa30App() {
         if (lingue.indexOf(principale) === -1) principale = lingue[0];
 
         await updateSettings({
-          titolare, dpo,
+          titolare, dpo, obbligoRegistro,
           registro: { lingue, linguaPrincipale: principale }
         });
 

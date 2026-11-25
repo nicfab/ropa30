@@ -90,6 +90,20 @@ export default {
     lblRappPresente: '\u00c8 stato designato un rappresentante nell\u2019Unione',
     lblRappDenominazione: 'Nome / denominazione del rappresentante',
     lblRappContatto: 'Dati di contatto del rappresentante',
+    onbSezioneObbligo: 'Obbligo di tenuta del registro (art. 30, par. 5)',
+    lblPersoneImpiegate: 'Persone impiegate',
+    lblNaturaOrg: 'Natura dell\u2019organizzazione',
+    lblDpoBase: 'Base della designazione del DPO',
+    optNonIndicato: 'Non indicato',
+    obbRegimeVigente: 'Si applica l\u2019art. 30, par. 5, nel testo vigente: la deroga riguarda le imprese e le organizzazioni che impiegano meno di 250 persone.',
+    obbRegimeOmnibus: 'Si applica l\u2019art. 30, par. 5, nel testo modificato dal {riferimento}, in vigore dal {data}: la deroga riguarda le imprese e le organizzazioni che impiegano meno di 1000 persone.',
+    filtroObbligoLabel: 'Filtra per obbligo di registrazione',
+    filtroObbligoTutti: 'Tutti i trattamenti',
+    filtroObbligoObbligatori: 'Registrazione obbligatoria',
+    filtroObbligoVolontari: 'Registrazione volontaria',
+    estrattoObbligo: 'Obbligo di registrazione',
+    editorEsitoTitolo: 'Esito della valutazione (indicativo)',
+    editorDpiaSuggerimento: 'Per questo trattamento risulta effettuata una valutazione d\u2019impatto: di norma il rischio \u00e8 elevato.',
     lblDpoNominato: '\u00c8 stato designato un DPO',
     lblDpoNome: 'Nome / denominazione del DPO',
     lblDpoEmail: 'Email del DPO', lblDpoPec: 'PEC del DPO',
@@ -321,6 +335,31 @@ export default {
     tipoRegistro: {
       titolare: 'Titolare del trattamento',
       responsabile: 'Responsabile del trattamento'
+    },
+    personeImpiegate: {
+      meno250: 'Meno di 250',
+      da250a999: 'Da 250 a 999',
+      almeno1000: '1000 o pi\u00f9'
+    },
+    naturaOrganizzazione: {
+      privata: 'Impresa o organizzazione privata',
+      pubblica: 'Autorit\u00e0 o organismo pubblico'
+    },
+    baseDesignazioneDpo: {
+      art37_1_a: 'Art. 37, par. 1, lett. a)',
+      art37_1_b: 'Art. 37, par. 1, lett. b)',
+      art37_1_c: 'Art. 37, par. 1, lett. c)',
+      facoltativa: 'Designazione facoltativa'
+    },
+    valutazione: {
+      da_valutare: 'Da valutare',
+      si: 'S\u00ec',
+      no: 'No'
+    },
+    casiArt35par3: {
+      a: 'a) valutazione sistematica e globale di aspetti personali, compresa la profilazione, con effetti giuridici',
+      b: 'b) trattamento su larga scala di categorie particolari di dati o di dati relativi a condanne penali e reati',
+      c: 'c) sorveglianza sistematica su larga scala di una zona accessibile al pubblico'
     }
   },
   detail: {
@@ -336,7 +375,8 @@ export default {
       conservazione: 'Conservazione',
       sicurezza: 'Misure di sicurezza',
       automatizzati: 'Processi automatizzati e profilazione',
-      dpiaNote: 'Valutazione d\u2019impatto e note'
+      dpiaNote: 'Valutazione d\u2019impatto e note',
+      obbligo: 'Obbligo di registrazione (art. 30, par. 5)'
     },
     campi: {
       // Sez. 1 — Identificazione
@@ -424,7 +464,14 @@ export default {
       // Sez. 12 — DPIA e note
       dpiaEffettuata: 'Valutazione d\u2019impatto effettuata',
       dpiaRiferimento: 'Riferimento al documento di DPIA',
-      note: 'Note'
+      note: 'Note',
+      obEsito: 'Esito della valutazione (indicativo)',
+      obRischioElevato: 'Rischio elevato per i diritti e le libert\u00e0 (art. 35)',
+      obCasiArt35: 'Casi dell\u2019art. 35, par. 3',
+      obAttivitaDpo: 'Attivit\u00e0 principale che richiede il DPO (art. 37, par. 1, lett. b o c)',
+      obRischio: 'Rischio per i diritti e le libert\u00e0',
+      obNonOccasionale: 'Trattamento non occasionale',
+      obMotivazione: 'Motivazione della valutazione'
     },
     stati: {
       vuoto: '\u2014',
@@ -491,7 +538,13 @@ export default {
     profBaseGiuridica: 'La base giuridica della profilazione, che pu\u00f2 non coincidere con quella del trattamento principale (art. 6, par. 1). In Italia, per le comunicazioni elettroniche di marketing, rileva anche l\u2019art. 130 del Codice.',
     dpiaEffettuata: 'Indica se per questo trattamento \u00e8 stata effettuata una valutazione d\u2019impatto sulla protezione dei dati. \u00c8 obbligatoria quando il trattamento pu\u00f2 presentare un rischio elevato per i diritti e le libert\u00e0 delle persone (art. 35, par. 1), in particolare nei casi dell\u2019art. 35, par. 3, e in quelli indicati negli elenchi dell\u2019autorit\u00e0 di controllo (art. 35, par. 4). In Italia l\u2019elenco \u00e8 contenuto nel provvedimento del Garante n. 467 dell\u201911 ottobre 2018.',
     dpiaRiferimento: 'Gli estremi del documento di valutazione d\u2019impatto, per esempio titolo, data e versione, cos\u00ec da poterlo esibire su richiesta.',
-    note: 'Facoltativo. Ogni altra informazione utile a comprendere il trattamento, per esempio decisioni prese, verifiche in corso o rinvii ad altri documenti.'
+    note: 'Facoltativo. Ogni altra informazione utile a comprendere il trattamento, per esempio decisioni prese, verifiche in corso o rinvii ad altri documenti.',
+    obRischioElevato: 'Valuta se il trattamento pu\u00f2 presentare un rischio elevato. Sono indici di rischio elevato i casi dell\u2019art. 35, par. 3, e quelli degli elenchi dell\u2019autorit\u00e0 di controllo (in Italia, provvedimento del Garante n. 467 dell\u201911 ottobre 2018). Il trattamento di categorie particolari di dati nell\u2019ambito del rapporto di lavoro (art. 9, par. 2, lett. b) non presenta di per s\u00e9 un rischio elevato. Se hai effettuato una valutazione d\u2019impatto, il rischio \u00e8 di norma elevato.',
+    obCasiArt35: 'Seleziona i casi dell\u2019art. 35, par. 3, in cui rientra il trattamento. In questi casi la valutazione d\u2019impatto \u00e8 obbligatoria e ROPA30 considera il trattamento ad alto rischio.',
+    obAttivitaDpo: 'Rispondi s\u00ec se il trattamento fa parte delle attivit\u00e0 principali dell\u2019organizzazione e consiste in un monitoraggio regolare e sistematico degli interessati su larga scala (art. 37, par. 1, lett. b) o nel trattamento su larga scala di categorie particolari di dati o di dati relativi a condanne penali e reati (lett. c). I trattamenti accessori all\u2019attivit\u00e0 principale, come la gestione del personale, di norma non rientrano.',
+    obRischio: 'Valuta se il trattamento pu\u00f2 presentare un rischio per i diritti e le libert\u00e0 degli interessati (art. 30, par. 5, nel testo vigente). Il criterio \u00e8 pi\u00f9 ampio del rischio elevato dell\u2019art. 35.',
+    obNonOccasionale: 'Un trattamento non \u00e8 occasionale quando \u00e8 svolto in modo regolare o ricorrente, anche se di modesta entit\u00e0, come la gestione delle paghe o dei clienti.',
+    obMotivazione: 'Facoltativo. Riassumi le ragioni della valutazione, per poterla dimostrare su richiesta (art. 5, par. 2).'
   },
   // Section-level guidance for the organisation sheet (onboarding form).
   guidaOrg: {
@@ -500,6 +553,34 @@ export default {
     contatti: 'L\u2019email \u00e8 il recapito minimo richiesto da ROPA30 per le questioni di protezione dei dati; la PEC \u00e8 utile per le comunicazioni con valore legale. Il sito web \u00e8 facoltativo.',
     rappresentante: 'Compila solo se l\u2019organizzazione non \u00e8 stabilita nell\u2019Unione europea ma vi offre beni o servizi, oppure monitora il comportamento di persone che si trovano nell\u2019Unione: in tal caso deve designare per iscritto un rappresentante nell\u2019Unione (art. 27), salvo le eccezioni del par. 2. Il nome e i dati di contatto del rappresentante vanno indicati nel registro (art. 30, par. 1, lett. a; par. 2, lett. a).',
     dpo: 'Indica se \u00e8 stato designato un responsabile della protezione dei dati. La designazione \u00e8 obbligatoria per le autorit\u00e0 e gli organismi pubblici e per chi, come attivit\u00e0 principale, effettua monitoraggi regolari e sistematici degli interessati su larga scala, oppure tratta su larga scala categorie particolari di dati o dati relativi a condanne penali e reati (art. 37, par. 1). Se designato, il nome e i dati di contatto del DPO vanno indicati nel registro (art. 30, par. 1, lett. a; par. 2, lett. a).',
-    registro: 'Scegli in quali lingue compilare il registro: una sola o entrambe. Con due lingue, l\u2019editor mostra ogni testo in italiano e in inglese; la lingua principale \u00e8 quella di riferimento del registro. L\u2019esportazione usa la lingua dell\u2019interfaccia.'
+    registro: 'Scegli in quali lingue compilare il registro: una sola o entrambe. Con due lingue, l\u2019editor mostra ogni testo in italiano e in inglese; la lingua principale \u00e8 quella di riferimento del registro. L\u2019esportazione usa la lingua dell\u2019interfaccia.',
+    obbligo: 'L\u2019art. 30, par. 5, esonera dal registro le organizzazioni pi\u00f9 piccole, salvo che per determinati trattamenti. Indica il numero di persone impiegate (persone, non unit\u00e0 lavorative annue; nel dubbio scegli la fascia superiore) e la natura dell\u2019organizzazione: ROPA30 indicher\u00e0 per ciascun trattamento se la registrazione \u00e8 obbligatoria. L\u2019esito \u00e8 indicativo e non sostituisce la valutazione del titolare o del responsabile.'
+  },
+  // Art. 30(5): results of the assessment, reasons and editor notes.
+  obbligo: {
+    esiti: {
+      obbligatorio: 'Registrazione obbligatoria',
+      prudenziale: 'Obbligatoria (in via prudenziale)',
+      volontario: 'Registrazione volontaria (accountability)'
+    },
+    motivi: {
+      org_250: 'organizzazione con 250 persone impiegate o pi\u00f9',
+      org_1000: 'organizzazione con 1000 persone impiegate o pi\u00f9',
+      pubblica: 'autorit\u00e0 o organismo pubblico',
+      persone_non_indicate: 'numero di persone impiegate non indicato',
+      natura_non_indicata: 'natura dell\u2019organizzazione non indicata',
+      rischio: 'rischio per i diritti e le libert\u00e0',
+      non_occasionale: 'trattamento non occasionale',
+      art9: 'categorie particolari di dati (art. 9)',
+      art10: 'dati relativi a condanne penali e reati (art. 10)',
+      rischio_elevato: 'rischio elevato (art. 35)',
+      art35_3: 'caso dell\u2019art. 35, par. 3',
+      dpo_37: 'attivit\u00e0 principale che richiede il DPO (art. 37, par. 1, lett. b o c)',
+      da_valutare: 'valutazione non completata'
+    },
+    note: {
+      omnibus4: 'Le imprese e le organizzazioni che impiegano meno di 1000 persone devono registrare solo i trattamenti che possono presentare un rischio elevato per i diritti e le libert\u00e0 degli interessati ai sensi dell\u2019art. 35, in particolare nei casi del par. 3, e in ogni caso quelli che costituiscono un\u2019attivit\u00e0 principale per cui \u00e8 obbligatoria la designazione del DPO (art. 37, par. 1, lett. b o c). Le autorit\u00e0 e gli organismi pubblici restano obbligati per tutti i trattamenti. Anche quando non \u00e8 obbligatoria, la registrazione resta utile per dimostrare la conformit\u00e0 (art. 5, par. 2, e art. 24).',
+      vigente: 'Le organizzazioni che impiegano meno di 250 persone devono registrare i trattamenti che possono presentare un rischio per i diritti e le libert\u00e0 degli interessati, che non sono occasionali o che riguardano categorie particolari di dati (art. 9) o dati relativi a condanne penali e reati (art. 10). Le categorie particolari e i dati giudiziari sono ricavati dalle sezioni 3 e 4.'
+    }
   }
 };
