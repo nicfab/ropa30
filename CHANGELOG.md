@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.5.0] - 2026-11-25
 
+Archived: DOI [10.5281/zenodo.24528239](https://doi.org/10.5281/zenodo.24528239) ·
+SWHID [`swh:1:dir:833bef4c6d8e5c7066e4a84cd6e23fda99728498`](https://archive.softwareheritage.org/swh:1:dir:833bef4c6d8e5c7066e4a84cd6e23fda99728498;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:ce155cd98a528373a8b04aa9bb0ec442dbce4f8f;anchor=swh:1:rel:7fae1c929b750bc9f6083d33cf36ec40a5fa93dc)
+
 ### Added
 - Contextual GDPR guidance: an information button next to each editor field
   and each section of the organisation sheet opens a short plain-language
