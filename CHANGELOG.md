@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-25
+
+### Added
+- Controller's record: joint controllers (Art. 26) recorded for each processing
+  activity, with name, contact details and reference to the arrangement
+  (Art. 30(1)(a)).
+- Processor's record: the controllers on whose behalf the processor acts can
+  now be entered, with name and contact details and, where applicable, their
+  representative and data protection officer, plus a reference to the contract
+  or other legal act under Art. 28(3) (Art. 30(2)(a)). They appear in the
+  detail view and in the PDF, XLSX and ODS exports.
+- Automated tests for the data-model migration, the editor and detail view,
+  the XLSX export and accessibility; `npm test` runs them all.
+
+### Changed
+- Data model 5, with automatic migration of existing data and of restored
+  backups; data specification draft 0.2.
+- The organisation-wide list of joint controllers in the settings, which could
+  never be filled in, is removed: joint controllership concerns a specific
+  processing activity.
+- Spreadsheet library SheetJS updated to 0.20.3 (GHSA-4r6h-8v6p-xvw6,
+  GHSA-5pgg-2g8v-p4x9).
+
+### Fixed
+- Accessibility (WCAG 2.1 AA): accessible names for all editor fields; contrast
+  of muted text, of the missing-translation badge and of form borders in the
+  light theme; keyboard focus moved into modal dialogs, kept inside them and
+  returned to the button that opened them; open/closed state of the editor
+  sections and status messages announced to assistive technologies.
+- English label "Controllers on whose behalf the firm acts" corrected.
+
 ## [1.3.0] - 2026-11-24
 
 Archived: DOI [10.5281/zenodo.24513054](https://doi.org/10.5281/zenodo.24513054) ·
@@ -150,6 +181,7 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.4.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.4.0
 [1.3.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.3.0
 [1.2.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.2.0
 [1.1.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.1.0
