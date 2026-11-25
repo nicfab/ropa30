@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.6.1] - 2026-11-25
 
+Archived: DOI [10.5281/zenodo.24529562](https://doi.org/10.5281/zenodo.24529562) ·
+SWHID [`swh:1:dir:8a5ef16f8b0dd55fc2bca4f0965cbe85a063b9c5`](https://archive.softwareheritage.org/swh:1:dir:8a5ef16f8b0dd55fc2bca4f0965cbe85a063b9c5;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:5522986a869367bec1668f79422569d657b722eb;anchor=swh:1:rel:12bb052e9fb67c3f148d0d0f2a48c8694bc4c6a1)
+
 ### Fixed
 - Accessibility, following a reading of all screens with a virtual screen
   reader, in Italian and English: the error messages of the e-mail and password
