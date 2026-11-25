@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.7.0] - 2026-11-25
 
+Archived: DOI [10.5281/zenodo.24531642](https://doi.org/10.5281/zenodo.24531642) ·
+SWHID [`swh:1:dir:269310a568f077107617df1a167c333dd72cda0d`](https://archive.softwareheritage.org/swh:1:dir:269310a568f077107617df1a167c333dd72cda0d;origin=https://codeberg.org/nicfab/ropa30.git;visit=swh:1:snp:da1e619c075d62cc3b51a8745a8a9cad9cd9b808;anchor=swh:1:rel:5cc5f918c977652be1d989ecd5cb5b1700c26db8)
+
 ### Added
 - Indicative assessment, for each processing activity, of the obligation to
   record it under Art. 30(5): new section of the organisation sheet (persons
