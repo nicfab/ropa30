@@ -94,7 +94,6 @@ to configure, no account to create, no cloud to trust.
 - [ ] Inline GDPR guidance (tooltips) in the editor
 - [ ] Sector-specific templates for the other sectors of the classification (e.g. public administration, universities, Italian tax assistance centres (CAF), healthcare, schools)
 - [ ] WCAG 2.1 AA accessibility audit
-- [ ] Lightweight DPIA module (Article 35)
 - [ ] Joint controllers (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts (Art. 30(2)(a)): data model ready, editor to be added
 - [ ] Data specification: stable version (v1)
 - [ ] Update of the spreadsheet export library (SheetJS)

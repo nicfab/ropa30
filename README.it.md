@@ -101,7 +101,6 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - [ ] Indicazioni GDPR contestuali (tooltip) nell'editor
 - [ ] Modelli specifici per gli altri settori della classificazione (es. pubblica amministrazione, università, CAF, sanità, scuole)
 - [ ] Audit di accessibilità WCAG 2.1 AA
-- [ ] Modulo DPIA leggero (art. 35)
 - [ ] Contitolari (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce (art. 30, par. 2, lett. a): modello dati pronto, manca l'editor
 - [ ] Specifica dei dati: versione stabile (v1)
 - [ ] Aggiornamento della libreria per l'esportazione dei fogli di calcolo (SheetJS)
