@@ -69,10 +69,10 @@ export default {
 
     welcomeNuovoBtn: 'Start',
 
-    welcomeNota: 'To start from scratch you need at least: controller name, register language and controller seat.',
+    welcomeNota: 'To start from scratch you need at least: controller name, controller seat (city and country), email address and register language.',
 
     onbTitolo: 'Set up your register',
-    onbSottotitolo: 'Enter the data controller\u2019s details and, if appointed, the Data Protection Officer (DPO). These details form the header of your Article 30 GDPR register. Everything stays on your device: it never leaves the browser.',
+    onbSottotitolo: 'Enter the data controller\u2019s details and, if designated, those of the representative in the Union and of the Data Protection Officer (DPO). These details form the header of your Article 30 GDPR register. Everything stays on your device: it never leaves the browser.',
     onbSezioneTitolare: 'Data controller',
     onbSezioneIndirizzo: 'Address',
     onbSezioneContatti: 'Contacts',

@@ -14,7 +14,9 @@
  *   5. the organisation sheet has the Art. 27 representative fields and one
  *      named guidance button per section, each controlling an existing region;
  *   6. regressions for the issues found by the axe-core audit in a browser
- *      (label in name, localised names, roles, target size).
+ *      (label in name, localised names, roles, target size);
+ *   7. regressions for the issues found by the virtual screen-reader audit
+ *      (error messages, groups, language of parts, distinct button names).
  *
  *   node tests/a11y.test.mjs
  */
@@ -221,6 +223,50 @@ check('detail section index targets are at least 24px high',
   /x-bind:href="sez\.ancora"\s+class="inline-block py-1\.5 /.test(html));
 check('editor section index targets are at least 24px high',
   /x-on:click="apriEscrollaSezione" class="py-1\.5 /.test(html));
+
+// ---------------------------------------------------------------------------
+// 7. Screen-reader output (findings of the virtual screen-reader audit)
+// ---------------------------------------------------------------------------
+console.log('7. Screen-reader output');
+check('email error linked to the field only while shown (3.3.1)',
+  /id="f-email"[^>]*x-bind:aria-invalid="emailAriaInvalid"[^>]*x-bind:aria-describedby="emailDescrittaDa"/s.test(html)
+  && /id="f-email-errore"/.test(html));
+check('encrypted-backup password errors linked to their fields',
+  /id="bc-password"[^>]*x-bind:aria-describedby="bcPasswordDescrittaDa"[^>]*x-bind:aria-invalid="bcPasswordAriaInvalid"/s.test(html)
+  && /id="bc-conferma"[^>]*x-bind:aria-describedby="bcConfermaDescrittaDa"/s.test(html)
+  && /id="bc-errore-corta"/.test(html) && /id="bc-errore-diversa"/.test(html));
+check('register-language checkboxes form a named group',
+  /role="group" aria-labelledby="lbl-lingue-registro"/.test(html) && ids.has('lbl-lingue-registro'));
+check('missing register language announced (role="alert")',
+  /role="alert" x-show="nessunaLinguaRegistro"/.test(html));
+const nIt = (html.match(/\.ariaIt"/g) || []).length;
+const nItLang = (html.match(/lang="it" x-bind:aria-label="[a-z]+\.ariaIt"/g) || []).length;
+const nEn = (html.match(/\.ariaEn"/g) || []).length;
+const nEnLang = (html.match(/lang="en" x-bind:aria-label="[a-z]+\.ariaEn"/g) || []).length;
+check(`language of parts: every Italian/English field declares its language (3.1.2): ${nItLang}/${nIt}, ${nEnLang}/${nEn}`,
+  nIt > 0 && nIt === nItLang && nEn === nEnLang);
+check('language names marked with their language', /<span lang="it">Italiano<\/span>/.test(html) && /<span lang="en">English<\/span>/.test(html)
+  && (html.match(/<option value="it" lang="it"/g) || []).length === 2 && (html.match(/<option value="en" lang="en"/g) || []).length === 2);
+check('catalogue "Add" buttons named after their template', /x-on:click="creaDaTemplate"[^>]*x-bind:aria-label="tpl\.ariaAggiungi"/s.test(html));
+check('list items: numbered names and named remove/add buttons',
+  /x-on:click="rimuoviVoce" x-bind:aria-label="voce\.ariaRimuovi"/.test(html)
+  && /x-on:click="aggiungiVoce" x-bind:aria-label="campo\.ariaAggiungi"/.test(html)
+  && /x-model="voce\.valIt" lang="it" x-bind:aria-label="voce\.ariaIt"/.test(html));
+check('group rows are named groups with named remove/add buttons',
+  /role="group" x-bind:aria-label="riga\.ariaGruppo"/.test(html)
+  && /x-on:click="rimuoviRiga" x-bind:aria-label="riga\.ariaRimuovi"/.test(html)
+  && /x-on:click="aggiungiRiga" x-bind:aria-label="campo\.ariaAggiungi"/.test(html));
+check('no generic "Remove" name left', !/x-bind:aria-label="L\.editorRimuovi"/.test(html));
+check('section indexes read with a space between number and title',
+  !/<span x-text="sez\.indice"><\/span><span/.test(html) && /<span x-text="sez\.indice"><\/span> <span x-text="sez\.titolo">/.test(html));
+check('author logo inside the footer link is decorative', /<img src="icons\/nicfab-logo\.png" alt=""/.test(html));
+for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
+  const U = loc.ui;
+  check(`welcome note lists all the fields required to save (${lang})`,
+    /email/i.test(U.welcomeNota) && U.onbObbligatorio.toLowerCase().includes('email'));
+}
+check('Italian labels cite provisions in Italian style',
+  !/art\. \d+\(\d/.test(JSON.stringify(localeIt.ui) + JSON.stringify(localeIt.detail)));
 
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

@@ -135,7 +135,7 @@ function righeDaArray(gruppoTipo, arr, detail, enums, baseLabel) {
 }
 
 // --- buildEditModel: record -> 12-section edit model ---
-export function buildEditModel(record, { lingue, detail, enums, guida }) {
+export function buildEditModel(record, { lingue, detail, enums, guida, azioni }) {
   const r = record || {};
   const C = detail.campi;
   const S = detail.sezioni;
@@ -245,6 +245,7 @@ export function buildEditModel(record, { lingue, detail, enums, guida }) {
   const model = { sezioni, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
   aggiornaVisibilita(model);
   applicaGuida(model, guida);
+  applicaAzioni(model, azioni);
   return model;
 }
 
@@ -288,6 +289,40 @@ export function trovaPerIdGuida(editModel, id) {
     }
   }
   return null;
+}
+
+// --- Names of repeated items and of the add/remove buttons (CSP: precomputed) ---
+// azioni: interface labels { aggiungiVoce, aggiungiElemento, rimuovi }. Each
+// item of a list gets ariaIt/ariaEn ("<field>, <n> (IT)") and ariaRimuovi
+// ("<remove>: <field>, <n>"); each row of a group gets ariaGruppo (the name of
+// its role="group") and ariaRimuovi; the field gets ariaAggiungi. Call again
+// after adding or removing an item, so that the numbering stays correct.
+export function numeraVoci(campo, azioni) {
+  if (!campo) return campo;
+  const A = azioni || {};
+  const pre = (s) => (s ? s + ': ' : '');
+  const base = campo.label || '';
+  if (campo.isListaBil && Array.isArray(campo.voci)) {
+    campo.ariaAggiungi = pre(A.aggiungiVoce) + base;
+    campo.voci.forEach((v, i) => {
+      const n = base + ', ' + (i + 1);
+      v.ariaIt = n + ' (IT)'; v.ariaEn = n + ' (EN)';
+      v.ariaRimuovi = pre(A.rimuovi) + n;
+    });
+  } else if (campo.isGruppi && Array.isArray(campo.righe)) {
+    campo.ariaAggiungi = pre(A.aggiungiElemento) + base;
+    campo.righe.forEach((r, i) => {
+      r.ariaGruppo = (campo.voceLabel || base) + ', ' + (i + 1);
+      r.ariaRimuovi = pre(A.rimuovi) + r.ariaGruppo;
+    });
+  }
+  return campo;
+}
+export function applicaAzioni(editModel, azioni) {
+  for (const sez of (editModel && editModel.sezioni) || []) {
+    for (const c of sez.campi) numeraVoci(c, azioni);
+  }
+  return editModel;
 }
 
 // --- Visibility by type of record (CSP: a plain boolean per control) ---

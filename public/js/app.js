@@ -33,7 +33,7 @@ import { encryptEnvelope, decryptEnvelope, isEncryptedEnvelope, MIN_PASSWORD_LEN
 import { buildModelloRegistro } from './exporters/registro-common.js';
 import { esportaRegistroXlsx } from './exporters/xlsx.js';
 import { esportaRegistroOds } from './exporters/ods.js';
-import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo, aggiornaVisibilita, trovaPerIdGuida } from './editor.js';
+import { buildEditModel, numeraVoci, applyEditModel, nuovaVoceLista, nuovaRigaGruppo, aggiornaVisibilita, trovaPerIdGuida } from './editor.js';
 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
@@ -447,6 +447,14 @@ function ropa30App() {
       const e = (this.email || '').trim();
       return e.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
     },
+    // Error messages linked to their fields (WCAG 3.3.1, 4.1.2): the
+    // description is present only while the error is shown.
+    get emailAriaInvalid() { return this.emailNonValida ? 'true' : 'false'; },
+    get emailDescrittaDa() { return this.emailNonValida ? 'f-email-errore' : null; },
+    get bcPasswordAriaInvalid() { return this.bcPasswordCorta ? 'true' : 'false'; },
+    get bcPasswordDescrittaDa() { return this.bcPasswordCorta ? 'bc-hint bc-errore-corta' : 'bc-hint'; },
+    get bcConfermaAriaInvalid() { return this.bcNonCoincide ? 'true' : 'false'; },
+    get bcConfermaDescrittaDa() { return this.bcNonCoincide ? 'bc-errore-diversa' : null; },
     get nonSalvabile() {
       // Art. 30(1)(a): name and contact details of the controller. Required set
       // (legal choice of the author): name, registered seat (city + country) and
@@ -596,7 +604,8 @@ function ropa30App() {
         const blob = (nomeLoc + ' ' + descrizioneLoc + ' ' + categoriaLabel + ' ' + settoreLabel).toLowerCase();
         return {
           id: t.templateId, categoriaLabel, nomeLoc, settore: settoreCode, settoreLabel,
-          descrizioneLoc: this._tronca(descrizioneLoc, 160), _blob: blob
+          descrizioneLoc: this._tronca(descrizioneLoc, 160), _blob: blob,
+          ariaAggiungi: this.L.btnCrea + ': ' + nomeLoc
         };
       });
       this._filtraCatalogo();
@@ -1092,7 +1101,8 @@ function ropa30App() {
         this.editLingue = Array.isArray(this.editRegistroLingue()) ? this.editRegistroLingue() : ['it'];
         const loc = LOCALI[this.lang] || localeIt;
         this.editModel = buildEditModel(this.editRecord, {
-          lingue: this.editLingue, detail: loc.detail, enums: loc.enums, guida: loc.guida
+          lingue: this.editLingue, detail: loc.detail, enums: loc.enums, guida: loc.guida,
+          azioni: this._azioniEditor()
         });
         this.editTitolo = this._loc(record.nome) || this.L.sennaNome;
         this.editDirty = false;
@@ -1214,10 +1224,16 @@ function ropa30App() {
       const campo = sez ? sez.campi[ci] : null;
       return { campo, idx };
     },
+    // Interface labels used to name repeated items and their buttons.
+    _azioniEditor() {
+      const L = this.L;
+      return { aggiungiVoce: L.editorAggiungiVoce, aggiungiElemento: L.editorAggiungiElemento, rimuovi: L.editorRimuovi };
+    },
     aggiungiVoce(event) {
       const { campo } = this._campoDaEvento(event);
       if (campo && Array.isArray(campo.voci)) {
         campo.voci.push(nuovaVoceLista());
+        numeraVoci(campo, this._azioniEditor());
         this.segnaDirty();
       }
     },
@@ -1225,6 +1241,7 @@ function ropa30App() {
       const { campo, idx } = this._campoDaEvento(event);
       if (campo && Array.isArray(campo.voci) && idx >= 0 && idx < campo.voci.length) {
         campo.voci.splice(idx, 1);
+        numeraVoci(campo, this._azioniEditor());
         this.segnaDirty();
       }
     },
@@ -1233,6 +1250,7 @@ function ropa30App() {
       if (campo && Array.isArray(campo.righe)) {
         const loc = LOCALI[this.lang] || localeIt;
         campo.righe.push(nuovaRigaGruppo(campo.gruppoTipo, { detail: loc.detail, enums: loc.enums, guida: loc.guida }));
+        numeraVoci(campo, this._azioniEditor());
         this.segnaDirty();
       }
     },
@@ -1240,6 +1258,7 @@ function ropa30App() {
       const { campo, idx } = this._campoDaEvento(event);
       if (campo && Array.isArray(campo.righe) && idx >= 0 && idx < campo.righe.length) {
         campo.righe.splice(idx, 1);
+        numeraVoci(campo, this._azioniEditor());
         this.segnaDirty();
       }
     },

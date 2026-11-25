@@ -18,7 +18,7 @@ import addFormatsModule from 'ajv-formats';
 import localeIt from '../public/locales/it.js';
 import localeEn from '../public/locales/en.js';
 import { createDefaultProcessingActivity } from '../public/js/schema.js';
-import { buildEditModel, applyEditModel, nuovaRigaGruppo, aggiornaVisibilita, trovaPerIdGuida } from '../public/js/editor.js';
+import { buildEditModel, applyEditModel, nuovaRigaGruppo, nuovaVoceLista, aggiornaVisibilita, trovaPerIdGuida, numeraVoci } from '../public/js/editor.js';
 import { buildDettaglio } from '../public/js/detail.js';
 
 const Ajv2020 = Ajv2020Module.default ?? Ajv2020Module;
@@ -150,6 +150,36 @@ const ids = new Set();
 let dup = 0;
 for (const s of m5.sezioni) for (const c of s.campi) { if (ids.has(c.idGuida)) dup++; ids.add(c.idGuida); }
 check('guidance ids are unique', dup === 0);
+
+// ---------------------------------------------------------------------------
+// 6. Names of repeated items and of the add/remove buttons (screen readers)
+// ---------------------------------------------------------------------------
+console.log('6. Names of repeated items and buttons');
+for (const [lang, loc] of [['it', localeIt], ['en', localeEn]]) {
+  const U = loc.ui;
+  const az = { aggiungiVoce: U.editorAggiungiVoce, aggiungiElemento: U.editorAggiungiElemento, rimuovi: U.editorRimuovi };
+  const mm = buildEditModel(clone(rec), { lingue: ['it', 'en'], detail: loc.detail, enums: loc.enums, guida: loc.guida, azioni: az });
+  const campi = mm.sezioni.flatMap((s) => s.campi);
+  const liste = campi.filter((c) => c.isListaBil);
+  const gruppi = campi.filter((c) => c.isGruppi);
+  check(`every list and group has a named add button (${lang})`,
+    liste.every((c) => c.ariaAggiungi === az.aggiungiVoce + ': ' + c.label)
+    && gruppi.every((c) => c.ariaAggiungi === az.aggiungiElemento + ': ' + c.label));
+  check(`list items are numbered, with named remove buttons (${lang})`,
+    liste.every((c) => c.voci.every((v, i) => v.ariaIt === `${c.label}, ${i + 1} (IT)` && v.ariaEn === `${c.label}, ${i + 1} (EN)`
+      && v.ariaRimuovi === `${az.rimuovi}: ${c.label}, ${i + 1}`)));
+  check(`group rows are named groups, with named remove buttons (${lang})`,
+    gruppi.every((c) => c.righe.every((r, i) => r.ariaGruppo === `${c.voceLabel || c.label}, ${i + 1}`
+      && r.ariaRimuovi === `${az.rimuovi}: ${r.ariaGruppo}`)));
+  const fin6 = liste.find((c) => c.chiave === 'finalita');
+  fin6.voci.push(nuovaVoceLista()); fin6.voci.push(nuovaVoceLista()); numeraVoci(fin6, az);
+  fin6.voci.splice(0, 1); numeraVoci(fin6, az);
+  check(`numbering is updated after adding and removing items (${lang})`,
+    fin6.voci.every((v, i) => v.ariaRimuovi.endsWith(', ' + (i + 1))));
+  const ct6 = gruppi.find((c) => c.chiave === 'contitolari');
+  ct6.righe.push(nuovaRigaGruppo('contitolari', { detail: loc.detail, enums: loc.enums, guida: loc.guida })); numeraVoci(ct6, az);
+  check(`new group rows are named (${lang})`, ct6.righe.every((r, i) => r.ariaGruppo.endsWith(', ' + (i + 1))));
+}
 
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

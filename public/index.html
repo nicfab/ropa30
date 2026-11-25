@@ -191,8 +191,8 @@
           <select id="lang-switcher"
                   class="text-sm border border-brand-400 rounded px-2 py-1 bg-white text-brand-900"
                   x-on:change="setLang">
-            <option value="it" x-bind:selected="isItalianSelected">Italiano</option>
-            <option value="en" x-bind:selected="isEnglishSelected">English</option>
+            <option value="it" lang="it" x-bind:selected="isItalianSelected">Italiano</option>
+            <option value="en" lang="en" x-bind:selected="isEnglishSelected">English</option>
           </select>
         </div>
       </div>
@@ -262,15 +262,15 @@
                 <div>
                   <label for="bc-password" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.bcLblPassword">Password</label>
                   <input id="bc-password" type="password" x-model="bcPassword" autocomplete="new-password"
-                         aria-describedby="bc-hint" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
+                         x-bind:aria-describedby="bcPasswordDescrittaDa" x-bind:aria-invalid="bcPasswordAriaInvalid" class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                   <p id="bc-hint" class="mt-1 text-xs text-brand-600" x-text="L.bcMinimo"></p>
-                  <p class="mt-1 text-sm text-danger-600" x-show="bcPasswordCorta" x-text="L.bcErroreCorta"></p>
+                  <p id="bc-errore-corta" class="mt-1 text-sm text-danger-600" x-show="bcPasswordCorta" x-text="L.bcErroreCorta"></p>
                 </div>
                 <div>
                   <label for="bc-conferma" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.bcLblConferma">Conferma password</label>
-                  <input id="bc-conferma" type="password" x-model="bcConferma" autocomplete="new-password"
+                  <input id="bc-conferma" type="password" x-model="bcConferma" autocomplete="new-password" x-bind:aria-describedby="bcConfermaDescrittaDa" x-bind:aria-invalid="bcConfermaAriaInvalid"
                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
-                  <p class="mt-1 text-sm text-danger-600" x-show="bcNonCoincide" x-text="L.bcErroreDiversa"></p>
+                  <p id="bc-errore-diversa" class="mt-1 text-sm text-danger-600" x-show="bcNonCoincide" x-text="L.bcErroreDiversa"></p>
                 </div>
               </div>
               <p class="mt-4 text-sm text-brand-800 bg-warning-500/10 border-l-4 border-warning-500 rounded-r-lg p-2"
@@ -496,9 +496,9 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="f-email" class="block text-sm font-medium text-brand-800 mb-1"><span x-text="L.lblEmail"></span> <span aria-hidden="true">*</span></label>
-                  <input id="f-email" aria-required="true" type="email" x-model="email"
+                  <input id="f-email" aria-required="true" type="email" x-model="email" x-bind:aria-invalid="emailAriaInvalid" x-bind:aria-describedby="emailDescrittaDa"
                          class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
-                  <p class="mt-1 text-sm text-danger-600" x-show="emailNonValida" x-text="L.erroreEmail"></p>
+                  <p id="f-email-errore" class="mt-1 text-sm text-danger-600" x-show="emailNonValida" x-text="L.erroreEmail"></p>
                 </div>
                 <div>
                   <label for="f-pec" class="block text-sm font-medium text-brand-800 mb-1" x-text="L.lblPec"></label>
@@ -566,25 +566,25 @@
               <p class="text-sm text-brand-600 mb-4" x-text="L.hintLingueRegistro"></p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <span class="block text-sm font-medium text-brand-800 mb-2"><span x-text="L.lblLingueRegistro"></span> <span aria-hidden="true">*</span></span>
-                  <div class="flex items-center gap-6">
+                  <span id="lbl-lingue-registro" class="block text-sm font-medium text-brand-800 mb-2"><span x-text="L.lblLingueRegistro"></span> <span aria-hidden="true">*</span></span>
+                  <div class="flex items-center gap-6" role="group" aria-labelledby="lbl-lingue-registro">
                     <label class="inline-flex items-center gap-2 text-brand-800">
                       <input type="checkbox" x-model="regIt" x-on:change="validaLingueRegistro" class="h-4 w-4 accent-brand-700" />
-                      <span>Italiano</span>
+                      <span lang="it">Italiano</span>
                     </label>
                     <label class="inline-flex items-center gap-2 text-brand-800">
                       <input type="checkbox" x-model="regEn" x-on:change="validaLingueRegistro" class="h-4 w-4 accent-brand-700" />
-                      <span>English</span>
+                      <span lang="en">English</span>
                     </label>
                   </div>
-                  <p class="mt-2 text-sm text-danger-600" x-show="nessunaLinguaRegistro" x-text="L.erroreNessunaLingua"></p>
+                  <p class="mt-2 text-sm text-danger-600" role="alert" x-show="nessunaLinguaRegistro" x-text="L.erroreNessunaLingua"></p>
                 </div>
                 <div>
                   <label for="f-principale" class="block text-sm font-medium text-brand-800 mb-2" x-text="L.lblLinguaPrincipale"></label>
                   <select id="f-principale" x-model="regPrincipale"
                           class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900">
-                    <option value="it" x-show="mostraPrincipaleIt">Italiano</option>
-                    <option value="en" x-show="mostraPrincipaleEn">English</option>
+                    <option value="it" lang="it" x-show="mostraPrincipaleIt">Italiano</option>
+                    <option value="en" lang="en" x-show="mostraPrincipaleEn">English</option>
                   </select>
                 </div>
                 <div class="sm:col-span-2">
@@ -819,6 +819,7 @@
                         <button type="button"
                                 x-on:click="creaDaTemplate"
                                 x-bind:data-template-id="tpl.id"
+                                x-bind:aria-label="tpl.ariaAggiungi"
                                 x-bind:disabled="creazioneInCorso"
                                 class="shrink-0 self-center rounded-lg bg-brand-700 px-3 py-1.5 text-sm font-medium text-white
                                        hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -989,7 +990,7 @@
                   <li>
                     <a x-bind:href="sez.ancora"
                        class="inline-block py-1.5 text-brand-600 hover:text-brand-900 hover:underline">
-                      <span x-text="sez.indice"></span><span x-text="sez.titolo"></span>
+                      <span x-text="sez.indice"></span> <span x-text="sez.titolo"></span>
                     </a>
                   </li>
                 </template>
@@ -1122,7 +1123,7 @@
                 <template x-for="(sez, i) in editModel.sezioni" x-bind:key="sez.id">
                   <li>
                     <button type="button" x-bind:data-sez="i" x-on:click="apriEscrollaSezione" class="py-1.5 text-brand-600 hover:text-brand-900 hover:underline">
-                      <span x-text="sez.indice"></span><span x-text="sez.titolo"></span>
+                      <span x-text="sez.indice"></span> <span x-text="sez.titolo"></span>
                     </button>
                   </li>
                 </template>
@@ -1153,22 +1154,22 @@
                             <div x-show="editMostraIt">
                               <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaIt"></label>
                               <template x-if="campo.multilinea">
-                                <textarea rows="3" x-model="campo.valIt" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
+                                <textarea rows="3" x-model="campo.valIt" lang="it" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
                                           class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                               </template>
                               <template x-if="!campo.multilinea">
-                                <input type="text" x-model="campo.valIt" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
+                                <input type="text" x-model="campo.valIt" lang="it" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
                                        class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                               </template>
                             </div>
                             <div x-show="editMostraEn">
                               <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaEn"></label>
                               <template x-if="campo.multilinea">
-                                <textarea rows="3" x-model="campo.valEn" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
+                                <textarea rows="3" x-model="campo.valEn" lang="en" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
                                           class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                               </template>
                               <template x-if="!campo.multilinea">
-                                <input type="text" x-model="campo.valEn" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
+                                <input type="text" x-model="campo.valEn" lang="en" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
                                        class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                               </template>
                             </div>
@@ -1226,22 +1227,22 @@
                                     <div x-show="editMostraIt">
                                       <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaIt"></label>
                                       <template x-if="figlio.multilinea">
-                                        <textarea rows="3" x-model="figlio.valIt" x-bind:aria-label="figlio.ariaIt" x-on:input="segnaDirty"
+                                        <textarea rows="3" x-model="figlio.valIt" lang="it" x-bind:aria-label="figlio.ariaIt" x-on:input="segnaDirty"
                                                   class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                       </template>
                                       <template x-if="!figlio.multilinea">
-                                        <input type="text" x-model="figlio.valIt" x-bind:aria-label="figlio.ariaIt" x-on:input="segnaDirty"
+                                        <input type="text" x-model="figlio.valIt" lang="it" x-bind:aria-label="figlio.ariaIt" x-on:input="segnaDirty"
                                                class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                       </template>
                                     </div>
                                     <div x-show="editMostraEn">
                                       <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaEn"></label>
                                       <template x-if="figlio.multilinea">
-                                        <textarea rows="3" x-model="figlio.valEn" x-bind:aria-label="figlio.ariaEn" x-on:input="segnaDirty"
+                                        <textarea rows="3" x-model="figlio.valEn" lang="en" x-bind:aria-label="figlio.ariaEn" x-on:input="segnaDirty"
                                                   class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                       </template>
                                       <template x-if="!figlio.multilinea">
-                                        <input type="text" x-model="figlio.valEn" x-bind:aria-label="figlio.ariaEn" x-on:input="segnaDirty"
+                                        <input type="text" x-model="figlio.valEn" lang="en" x-bind:aria-label="figlio.ariaEn" x-on:input="segnaDirty"
                                                class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                       </template>
                                     </div>
@@ -1260,19 +1261,19 @@
                                 <div class="flex items-start gap-2">
                                   <div class="grid flex-1 gap-2" x-bind:class="editMostraEn ? 'sm:grid-cols-2' : 'grid-cols-1'">
                                     <div x-show="editMostraIt">
-                                      <input type="text" x-model="voce.valIt" x-bind:aria-label="campo.ariaIt" x-on:input="segnaDirty"
+                                      <input type="text" x-model="voce.valIt" lang="it" x-bind:aria-label="voce.ariaIt" x-on:input="segnaDirty"
                                              x-bind:placeholder="L.editorColonnaIt"
                                              class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                     </div>
                                     <div x-show="editMostraEn">
-                                      <input type="text" x-model="voce.valEn" x-bind:aria-label="campo.ariaEn" x-on:input="segnaDirty"
+                                      <input type="text" x-model="voce.valEn" lang="en" x-bind:aria-label="voce.ariaEn" x-on:input="segnaDirty"
                                              x-bind:placeholder="L.editorColonnaEn"
                                              class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                     </div>
                                   </div>
                                   <button type="button"
                                           x-bind:data-sez="si" x-bind:data-campo="ci" x-bind:data-idx="vi"
-                                          x-on:click="rimuoviVoce" x-bind:aria-label="L.editorRimuovi"
+                                          x-on:click="rimuoviVoce" x-bind:aria-label="voce.ariaRimuovi"
                                           class="shrink-0 rounded-lg border border-brand-300 p-2 text-brand-500 hover:bg-brand-100 hover:text-danger-600">
                                     <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-close" /></svg>
                                   </button>
@@ -1281,7 +1282,7 @@
                             </div>
                             <button type="button"
                                     x-bind:data-sez="si" x-bind:data-campo="ci"
-                                    x-on:click="aggiungiVoce"
+                                    x-on:click="aggiungiVoce" x-bind:aria-label="campo.ariaAggiungi"
                                     class="mt-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
                               <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                               <span x-text="L.editorAggiungiVoce">Aggiungi voce</span>
@@ -1294,11 +1295,11 @@
                             <p x-show="campo.righe.length === 0" class="text-sm text-brand-500 mb-2" x-text="L.editorVuoto"></p>
                             <div class="space-y-3">
                               <template x-for="(riga, ri) in campo.righe" x-bind:key="ri">
-                                <div class="rounded-lg border border-brand-200 bg-brand-50/50 p-3">
+                                <div class="rounded-lg border border-brand-200 bg-brand-50/50 p-3" role="group" x-bind:aria-label="riga.ariaGruppo">
                                   <div class="flex justify-end">
                                     <button type="button"
                                             x-bind:data-sez="si" x-bind:data-campo="ci" x-bind:data-idx="ri"
-                                            x-on:click="rimuoviRiga" x-bind:aria-label="L.editorRimuovi"
+                                            x-on:click="rimuoviRiga" x-bind:aria-label="riga.ariaRimuovi"
                                             class="rounded-lg border border-brand-300 p-1.5 text-brand-500 hover:bg-brand-100 hover:text-danger-600">
                                       <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-close" /></svg>
                                     </button>
@@ -1313,22 +1314,22 @@
                                             <div x-show="editMostraIt">
                                               <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaIt"></label>
                                               <template x-if="sc.multilinea">
-                                                <textarea rows="2" x-model="sc.valIt" x-bind:aria-label="sc.ariaIt" x-on:input="segnaDirty"
+                                                <textarea rows="2" x-model="sc.valIt" lang="it" x-bind:aria-label="sc.ariaIt" x-on:input="segnaDirty"
                                                           class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                               </template>
                                               <template x-if="!sc.multilinea">
-                                                <input type="text" x-model="sc.valIt" x-bind:aria-label="sc.ariaIt" x-on:input="segnaDirty"
+                                                <input type="text" x-model="sc.valIt" lang="it" x-bind:aria-label="sc.ariaIt" x-on:input="segnaDirty"
                                                        class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                               </template>
                                             </div>
                                             <div x-show="editMostraEn">
                                               <label class="block text-xs text-brand-500 mb-0.5" aria-hidden="true" x-text="L.editorColonnaEn"></label>
                                               <template x-if="sc.multilinea">
-                                                <textarea rows="2" x-model="sc.valEn" x-bind:aria-label="sc.ariaEn" x-on:input="segnaDirty"
+                                                <textarea rows="2" x-model="sc.valEn" lang="en" x-bind:aria-label="sc.ariaEn" x-on:input="segnaDirty"
                                                           class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900"></textarea>
                                               </template>
                                               <template x-if="!sc.multilinea">
-                                                <input type="text" x-model="sc.valEn" x-bind:aria-label="sc.ariaEn" x-on:input="segnaDirty"
+                                                <input type="text" x-model="sc.valEn" lang="en" x-bind:aria-label="sc.ariaEn" x-on:input="segnaDirty"
                                                        class="w-full rounded border border-brand-400 bg-white px-3 py-2 text-brand-900" />
                                               </template>
                                             </div>
@@ -1364,7 +1365,7 @@
                             </div>
                             <button type="button"
                                     x-bind:data-sez="si" x-bind:data-campo="ci"
-                                    x-on:click="aggiungiRiga"
+                                    x-on:click="aggiungiRiga" x-bind:aria-label="campo.ariaAggiungi"
                                     class="mt-2 inline-flex items-center gap-2 text-sm rounded-lg border border-brand-300 px-3 py-1.5 text-brand-700 hover:bg-white">
                               <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-plus" /></svg>
                               <span x-text="L.editorAggiungiElemento">Aggiungi elemento</span>
@@ -1476,7 +1477,7 @@
         <div class="flex items-center gap-2">
           <a href="https://nicfab.eu" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 font-semibold text-brand-800 hover:underline">
-            <img src="icons/nicfab-logo.png" alt="nicfab" width="61" height="28"
+            <img src="icons/nicfab-logo.png" alt="" width="61" height="28"
                  class="h-7 w-auto" />
             <span><span x-text="footerAuthor">Realizzato da</span> Nicola Fabiano</span>
           </a>
