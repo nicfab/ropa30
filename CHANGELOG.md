@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-11-25
+
+### Added
+- Indicative assessment, for each processing activity, of the obligation to
+  record it under Art. 30(5): new section of the organisation sheet (persons
+  employed, nature of the organisation) and basis for the designation of the
+  DPO; section 13 of the editor, with the result updated while filling in;
+  result label and filter in the list of activities; section 13 in the detail
+  view, in the printed register and in the XLSX and ODS exports, which can be
+  limited to the mandatory or to the voluntary activities.
+- Support for Art. 30(5) as amended by the Omnibus IV Regulation (procedure
+  2025/0130(COD)): fewer than 1000 persons employed, high risk within the
+  meaning of Art. 35, core activities requiring a DPO under Art. 37(1)(b) or
+  (c), no derogation for public authorities and bodies. It will apply from the
+  date of entry into force, to be set on publication in the Official Journal;
+  until then the text in force applies.
+
+### Changed
+- Data specification 1.1.0: optional fields for the assessment
+  (`obbligoRegistro` and `dpo.baseDesignazione` in the settings,
+  `obbligoRegistrazione` in each processing activity); data valid under version
+  1.0 remains valid.
+- User guide updated.
+
 ## [1.6.1] - 2026-11-25
 
 Archived: DOI [10.5281/zenodo.24529562](https://doi.org/10.5281/zenodo.24529562) ·
@@ -263,6 +287,7 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.7.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.7.0
 [1.6.1]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.6.1
 [1.6.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.6.0
 [1.5.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.5.0

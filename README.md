@@ -59,7 +59,7 @@ to configure, no account to create, no cloud to trust.
   field. Dates use ISO 8601, and the template catalogue uses W3C DCAT / Dublin
   Core terms for versioning (`version`, `issued`, `modified`). Data can be
   exported as JSON, and the data format is documented by a public data
-  specification (JSON Schema, version 1.0): see [`public/schema/v1`](public/schema/v1/README.md).
+  specification (JSON Schema, version 1.1): see [`public/schema/v1`](public/schema/v1/README.md).
 
 - **🌱 Steve Jobs simplicity.** No installation, no account, no configuration
   beyond a short initial setup of the controller's details. Ready-made
@@ -88,9 +88,10 @@ to configure, no account to create, no cloud to trust.
 - Local-first: all data stays in the browser (IndexedDB), with no backend and no external connections
 - Installable, offline-capable Progressive Web App
 - Dark theme, following the operating system setting
+- Indicative assessment, for each processing activity, of the obligation to record it under Art. 30(5), in the text in force and as amended by the Omnibus IV Regulation, with a filter in the list and in the exports
 - Joint controllers for each processing activity (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts, with their representative and DPO where applicable (Art. 30(2)(a))
 - Accessibility towards WCAG 2.2 AA (accessible names, contrast, keyboard focus in dialogs, target size), checked by automated tests, by an axe-core audit of the main screens, by keyboard-only use and by a virtual screen reader: see the [accessibility statement](https://codeberg.org/nicfab/ropa30/wiki/Accessibility)
-- Public data specification, version 1.0 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v1`](public/schema/v1/README.md)
+- Public data specification, version 1.1 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v1`](public/schema/v1/README.md)
 
 ### Roadmap
 

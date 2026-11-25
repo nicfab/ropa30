@@ -64,7 +64,7 @@ nessun account da creare, nessun cloud a cui fidarsi.
   campo. Le date sono in formato ISO 8601 e il catalogo dei modelli usa i
   termini W3C DCAT / Dublin Core per le versioni (`version`, `issued`,
   `modified`). I dati sono esportabili in JSON e il loro formato è documentato
-  da una specifica dei dati pubblica (JSON Schema, versione 1.0): vedi
+  da una specifica dei dati pubblica (JSON Schema, versione 1.1): vedi
   [`public/schema/v1`](public/schema/v1/README.md).
 
 - **🌱 Semplicità "Steve Jobs".** Nessuna installazione, nessun account,
@@ -95,9 +95,10 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Local-first: tutti i dati restano nel browser (IndexedDB), senza backend né connessioni esterne
 - Progressive Web App installabile e utilizzabile offline
 - Tema scuro, che segue l'impostazione del sistema operativo
+- Valutazione indicativa, per ciascun trattamento, dell'obbligo di registrazione (art. 30, par. 5), nel testo vigente e in quello modificato dal Regolamento Omnibus IV, con filtro nell'elenco e negli export
 - Contitolari per ciascun trattamento (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce, con rappresentante e DPO ove applicabili (art. 30, par. 2, lett. a)
 - Accessibilità verso WCAG 2.2 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre, dimensione delle aree cliccabili), verificata da test automatici, da un audit axe-core delle schermate principali, dall'uso con la sola tastiera e da un lettore di schermo virtuale: vedi la [dichiarazione di accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita)
-- Specifica dei dati pubblica, versione 1.0 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v1`](public/schema/v1/README.md)
+- Specifica dei dati pubblica, versione 1.1 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v1`](public/schema/v1/README.md)
 
 ### Roadmap
 
