@@ -89,12 +89,12 @@ to configure, no account to create, no cloud to trust.
 - Installable, offline-capable Progressive Web App
 - Dark theme, following the operating system setting
 - Joint controllers for each processing activity (Art. 30(1)(a)) and, in the processor's record, the controllers on whose behalf the processor acts, with their representative and DPO where applicable (Art. 30(2)(a))
-- Accessibility towards WCAG 2.2 AA (accessible names, contrast, keyboard focus in dialogs, target size), checked by automated tests, by an axe-core audit of the main screens and by keyboard-only use: see the [accessibility statement](https://codeberg.org/nicfab/ropa30/wiki/Accessibility)
+- Accessibility towards WCAG 2.2 AA (accessible names, contrast, keyboard focus in dialogs, target size), checked by automated tests, by an axe-core audit of the main screens, by keyboard-only use and by a virtual screen reader: see the [accessibility statement](https://codeberg.org/nicfab/ropa30/wiki/Accessibility)
 - Public data specification, version 1.0 (JSON Schema 2020-12), with the GDPR reference of each field: [`public/schema/v1`](public/schema/v1/README.md)
 
 ### Roadmap
 
-- [ ] Accessibility: verification with screen readers (see the known limitations in the [accessibility statement](https://codeberg.org/nicfab/ropa30/wiki/Accessibility))
+No open items. Proposals and bug reports are welcome on [Codeberg](https://codeberg.org/nicfab/ropa30/issues).
 
 ---
 

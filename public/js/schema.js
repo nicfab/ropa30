@@ -39,7 +39,7 @@ export const SCHEMA_VERSION = 5;
 // and for backup envelopes). Keep in sync with package.json on each release.
 // EXPORT_FORMAT_VERSION: version of the JSON backup envelope shape; it evolves
 // INDEPENDENTLY from SCHEMA_VERSION (the data shape) and from APP_VERSION.
-export const APP_VERSION = '1.6.0';
+export const APP_VERSION = '1.6.1';
 export const EXPORT_FORMAT_VERSION = 1;
 
 // ============================================================================

@@ -96,12 +96,12 @@ nessun account da creare, nessun cloud a cui fidarsi.
 - Progressive Web App installabile e utilizzabile offline
 - Tema scuro, che segue l'impostazione del sistema operativo
 - Contitolari per ciascun trattamento (art. 30, par. 1, lett. a) e, nel registro del responsabile, titolari per conto dei quali si agisce, con rappresentante e DPO ove applicabili (art. 30, par. 2, lett. a)
-- Accessibilità verso WCAG 2.2 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre, dimensione delle aree cliccabili), verificata da test automatici, da un audit axe-core delle schermate principali e dall'uso con la sola tastiera: vedi la [dichiarazione di accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita)
+- Accessibilità verso WCAG 2.2 AA (nomi accessibili, contrasti, focus da tastiera nelle finestre, dimensione delle aree cliccabili), verificata da test automatici, da un audit axe-core delle schermate principali, dall'uso con la sola tastiera e da un lettore di schermo virtuale: vedi la [dichiarazione di accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita)
 - Specifica dei dati pubblica, versione 1.0 (JSON Schema 2020-12), con il riferimento GDPR di ogni campo: [`public/schema/v1`](public/schema/v1/README.md)
 
 ### Roadmap
 
-- [ ] Accessibilità: verifica con lettori di schermo (vedi i limiti noti nella [dichiarazione di accessibilità](https://codeberg.org/nicfab/ropa30/wiki/Accessibilita))
+Nessuna voce aperta. Proposte e segnalazioni sono benvenute su [Codeberg](https://codeberg.org/nicfab/ropa30/issues).
 
 ---
 

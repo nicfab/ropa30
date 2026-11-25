@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.1] - 2026-11-25
+
+### Fixed
+- Accessibility, following a reading of all screens with a virtual screen
+  reader, in Italian and English: the error messages of the e-mail and password
+  fields are linked to their fields and announced; the register-language
+  checkboxes form a named group; the "Add" buttons of the template catalogue
+  and the "Add" and "Remove" buttons of the editor have distinct names, and
+  repeated items and rows are numbered; the Italian and English fields of the
+  editor declare their language; the section indexes and the author logo are
+  read correctly.
+- The welcome note now lists the e-mail address among the fields required to
+  start; the subtitle of the organisation sheet mentions the representative in
+  the Union and the designated DPO.
+- Italian labels cite GDPR provisions in the Italian form (for example
+  "art. 30, par. 1, lett. a").
+
+### Changed
+- Accessibility statement updated with the screen-reader check; no roadmap
+  items remain open.
+
 ## [1.6.0] - 2026-11-25
 
 Archived: DOI [10.5281/zenodo.24529174](https://doi.org/10.5281/zenodo.24529174) ·
@@ -239,6 +260,7 @@ First public release.
 - Contributing guidelines.
 - Security policy.
 
+[1.6.1]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.6.1
 [1.6.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.6.0
 [1.5.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.5.0
 [1.4.0]: https://codeberg.org/nicfab/ropa30/releases/tag/v1.4.0
