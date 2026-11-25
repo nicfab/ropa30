@@ -33,7 +33,7 @@ import { encryptEnvelope, decryptEnvelope, isEncryptedEnvelope, MIN_PASSWORD_LEN
 import { buildModelloRegistro } from './exporters/registro-common.js';
 import { esportaRegistroXlsx } from './exporters/xlsx.js';
 import { esportaRegistroOds } from './exporters/ods.js';
-import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo, aggiornaVisibilita } from './editor.js';
+import { buildEditModel, applyEditModel, nuovaVoceLista, nuovaRigaGruppo, aggiornaVisibilita, trovaPerIdGuida } from './editor.js';
 
 function ropa30App() {
   const translations    = { it: localeIt.ui,              en: localeEn.ui };
@@ -1076,7 +1076,7 @@ function ropa30App() {
         this.editLingue = Array.isArray(this.editRegistroLingue()) ? this.editRegistroLingue() : ['it'];
         const loc = LOCALI[this.lang] || localeIt;
         this.editModel = buildEditModel(this.editRecord, {
-          lingue: this.editLingue, detail: loc.detail, enums: loc.enums
+          lingue: this.editLingue, detail: loc.detail, enums: loc.enums, guida: loc.guida
         });
         this.editTitolo = this._loc(record.nome) || this.L.sennaNome;
         this.editDirty = false;
@@ -1095,6 +1095,13 @@ function ropa30App() {
       if (this.regIt) out.push('it');
       if (this.regEn) out.push('en');
       return out.length ? out : ['it'];
+    },
+    // Open/close the contextual GDPR guidance of an editor field (button data-guida).
+    toggleGuida(event) {
+      const id = event && event.currentTarget && event.currentTarget.dataset
+        ? event.currentTarget.dataset.guida : '';
+      const c = trovaPerIdGuida(this.editModel, id);
+      if (c) c.guidaAperta = !c.guidaAperta;
     },
     segnaDirty() {
       this.editDirty = true;
@@ -1187,7 +1194,7 @@ function ropa30App() {
       const { campo } = this._campoDaEvento(event);
       if (campo && Array.isArray(campo.righe)) {
         const loc = LOCALI[this.lang] || localeIt;
-        campo.righe.push(nuovaRigaGruppo(campo.gruppoTipo, { detail: loc.detail, enums: loc.enums }));
+        campo.righe.push(nuovaRigaGruppo(campo.gruppoTipo, { detail: loc.detail, enums: loc.enums, guida: loc.guida }));
         this.segnaDirty();
       }
     },

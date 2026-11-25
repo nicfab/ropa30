@@ -135,7 +135,7 @@ function righeDaArray(gruppoTipo, arr, detail, enums, baseLabel) {
 }
 
 // --- buildEditModel: record -> 12-section edit model ---
-export function buildEditModel(record, { lingue, detail, enums }) {
+export function buildEditModel(record, { lingue, detail, enums, guida }) {
   const r = record || {};
   const C = detail.campi;
   const S = detail.sezioni;
@@ -244,7 +244,50 @@ export function buildEditModel(record, { lingue, detail, enums }) {
 
   const model = { sezioni, lingue: Array.isArray(lingue) && lingue.length ? [...lingue] : ['it'] };
   aggiornaVisibilita(model);
+  applicaGuida(model, guida);
   return model;
+}
+
+// --- Contextual GDPR guidance (CSP: plain properties on each control) ---
+// guida: locale map { _pulsante, <key>: text, '<group>.<key>': text }.
+// Each control gets guida (text or ''), haGuida, guidaAperta (toggled by the
+// UI), a unique idGuida (for aria-controls) and ariaGuida (button name).
+let _seqGuida = 0;
+function conGuida(c, testo, pulsante) {
+  c.guida = testo || '';
+  c.haGuida = !!testo;
+  c.guidaAperta = false;
+  c.idGuida = 'guida-' + (++_seqGuida);
+  c.ariaGuida = (pulsante || '') + ': ' + (c.label || '');
+  return c;
+}
+function guidaRiga(riga, gruppoTipo, guida) {
+  const G = guida || {};
+  for (const sc of riga.campi) conGuida(sc, G[gruppoTipo + '.' + sc.chiave], G._pulsante);
+  return riga;
+}
+export function applicaGuida(editModel, guida) {
+  const G = guida || {};
+  for (const sez of editModel.sezioni) {
+    for (const c of sez.campi) {
+      conGuida(c, G[c.chiave], G._pulsante);
+      (c.figli || []).forEach((f) => conGuida(f, G[f.chiave], G._pulsante));
+      (c.righe || []).forEach((r) => guidaRiga(r, c.gruppoTipo, G));
+    }
+  }
+  return editModel;
+}
+// Find a control (top-level, conditional child or group-row field) by idGuida.
+export function trovaPerIdGuida(editModel, id) {
+  if (!editModel || !id) return null;
+  for (const sez of editModel.sezioni) {
+    for (const c of sez.campi) {
+      if (c.idGuida === id) return c;
+      for (const f of (c.figli || [])) if (f.idGuida === id) return f;
+      for (const r of (c.righe || [])) for (const sc of r.campi) if (sc.idGuida === id) return sc;
+    }
+  }
+  return null;
 }
 
 // --- Visibility by type of record (CSP: a plain boolean per control) ---
@@ -300,11 +343,12 @@ export function applyEditModel(record, editModel) {
 export function nuovaVoceLista() {
   return { valIt: '', valEn: '' };
 }
-export function nuovaRigaGruppo(gruppoTipo, { detail, enums, titolo }) {
-  if (gruppoTipo === 'responsabiliEsterni') return rigaResponsabile({}, detail, titolo || '');
-  if (gruppoTipo === 'trasferimentiExtraUE') return rigaTrasferimento({}, detail, enums, titolo || '');
-  if (gruppoTipo === 'unitaOrganizzativa') return rigaUnitaOrganizzativa({}, detail, titolo || '');
-  if (gruppoTipo === 'contitolari') return rigaContitolare({}, detail, titolo || '');
-  if (gruppoTipo === 'titolariPerContoDelQuale') return rigaTitolarePerConto({}, detail, titolo || '');
-  return { rigaTitolo: titolo || '', campi: [] };
+export function nuovaRigaGruppo(gruppoTipo, { detail, enums, titolo, guida }) {
+  let riga = { rigaTitolo: titolo || '', campi: [] };
+  if (gruppoTipo === 'responsabiliEsterni') riga = rigaResponsabile({}, detail, titolo || '');
+  if (gruppoTipo === 'trasferimentiExtraUE') riga = rigaTrasferimento({}, detail, enums, titolo || '');
+  if (gruppoTipo === 'unitaOrganizzativa') riga = rigaUnitaOrganizzativa({}, detail, titolo || '');
+  if (gruppoTipo === 'contitolari') riga = rigaContitolare({}, detail, titolo || '');
+  if (gruppoTipo === 'titolariPerContoDelQuale') riga = rigaTitolarePerConto({}, detail, titolo || '');
+  return guidaRiga(riga, gruppoTipo, guida);
 }

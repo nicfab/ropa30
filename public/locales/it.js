@@ -426,5 +426,32 @@ export default {
       si: 'S\u00ec',
       no: 'No'
     }
+  },
+
+  // ---- Contextual GDPR guidance in the editor (IT) ----
+  // Keys: control key; sub-fields of repeatable groups: '<group>.<key>'.
+  // Fields without an entry show no guidance button.
+  guida: {
+    _pulsante: 'Guida',
+    nome: 'Dai al trattamento un nome breve e riconoscibile, che ne indichi l\u2019attivit\u00e0, per esempio \u00abGestione del personale\u00bb o \u00abNewsletter ai clienti\u00bb. Nel registro del responsabile il nome indica la categoria di trattamenti svolti per conto del titolare (art. 30, par. 2, lett. b).',
+    descrizione: 'Descrivi in poche righe in che cosa consiste il trattamento: quali operazioni si svolgono, con quali strumenti e in quale contesto. Una descrizione chiara rende il registro comprensibile all\u2019autorit\u00e0 di controllo, a cui va messo a disposizione su richiesta (art. 30, par. 4).',
+    tipoRegistro: 'Scegli \u00abTitolare\u00bb se determini tu le finalit\u00e0 e i mezzi del trattamento (art. 4, n. 7); scegli \u00abResponsabile\u00bb se tratti i dati per conto di un titolare (art. 4, n. 8). I due registri hanno contenuti diversi (art. 30, par. 1 e par. 2), e i campi dell\u2019editor si adattano alla scelta.',
+    contitolari: 'Compila solo se determini le finalit\u00e0 e i mezzi di questo trattamento insieme ad altri titolari (art. 26). Indica il nome e i dati di contatto di ciascun contitolare (art. 30, par. 1, lett. a).',
+    'contitolari.riferimentoAccordo': 'L\u2019accordo interno tra contitolari stabilisce le rispettive responsabilit\u00e0, in particolare per l\u2019esercizio dei diritti degli interessati e per le informazioni da fornire loro. Il suo contenuto essenziale va messo a disposizione dell\u2019interessato (art. 26, par. 1 e 2).',
+    titolariPerContoDelQuale: 'Indica ogni titolare per conto del quale svolgi il trattamento, con il nome e i dati di contatto e, ove designati, il suo rappresentante (art. 27) e il suo responsabile della protezione dei dati (art. 30, par. 2, lett. a).',
+    'titolariPerContoDelQuale.riferimentoContratto': 'Il trattamento da parte del responsabile \u00e8 disciplinato da un contratto o da altro atto giuridico che lo vincola al titolare e ne fissa le istruzioni (art. 28, par. 3). Indicane gli estremi, per esempio la data e l\u2019oggetto.',
+    dataInizioTrattamento: 'Facoltativo. La data da cui il trattamento \u00e8 in corso: aiuta a ricostruire la storia del registro e a verificare, per esempio, i tempi di conservazione.',
+    unitaOrganizzativa: 'Facoltativo. L\u2019ufficio o il reparto che svolge il trattamento; se il trattamento \u00e8 condiviso tra pi\u00f9 unit\u00e0, aggiungine una per ciascuna. Permette di filtrare il registro e di esportarne un estratto per unit\u00e0.',
+    codiceUtente: 'Facoltativo. Un codice libero, per esempio \u00abHR-01\u00bb, per collegare il trattamento ad altra documentazione dell\u2019organizzazione.',
+    finalita: 'Indica gli scopi determinati, espliciti e legittimi per cui tratti i dati (art. 5, par. 1, lett. b). Una finalit\u00e0 per riga, formulata in modo specifico: non \u00abgestione dei dati\u00bb, ma \u00abelaborazione delle buste paga\u00bb. \u00c8 contenuto obbligatorio del registro del titolare (art. 30, par. 1, lett. b).',
+    art6: 'Seleziona la condizione di liceit\u00e0 su cui si fonda il trattamento (art. 6, par. 1). Non \u00e8 un contenuto richiesto dall\u2019art. 30, ma documentarla aiuta a dimostrare il rispetto del principio di liceit\u00e0 (art. 5, par. 1, lett. a, e par. 2). Se finalit\u00e0 diverse hanno basi diverse, indicalo nei dettagli.',
+    dettagliArt6: 'Specifica il fondamento concreto: per l\u2019obbligo legale o il compito di interesse pubblico, la norma di riferimento (art. 6, par. 3); per il contratto, il tipo di rapporto; per il consenso, come viene raccolto e documentato (art. 7, par. 1).',
+    liDescrizione: 'Solo se la base giuridica \u00e8 il legittimo interesse (art. 6, par. 1, lett. f). Descrivi l\u2019interesse perseguito dal titolare o da terzi, che deve essere lecito, chiaro e reale. Questa base non si applica ai trattamenti svolti dalle autorit\u00e0 pubbliche nell\u2019esecuzione dei loro compiti.',
+    liGaranzie: 'Le misure adottate per ridurre l\u2019impatto sugli interessati e far prevalere il legittimo interesse, per esempio la minimizzazione dei dati, la pseudonimizzazione o la possibilit\u00e0 di opporsi facilmente (art. 21).',
+    liBilanciamentoEffettuato: 'Indica se hai documentato il bilanciamento tra il legittimo interesse e gli interessi o i diritti e le libert\u00e0 fondamentali degli interessati, tenendo conto delle loro ragionevoli aspettative (considerando 47).',
+    liBilanciamentoRichiesto: 'Segnala se per questo trattamento va svolto il test di bilanciamento. Quando la base giuridica \u00e8 il legittimo interesse, il test serve a dimostrare che su quell\u2019interesse non prevalgono gli interessi o i diritti degli interessati. Il test \u00e8 noto anche come LIA (Legitimate Interests Assessment).',
+    liRiferimento: 'Gli estremi del documento in cui \u00e8 registrato il test, per esempio titolo, data e versione, cos\u00ec da poterlo esibire su richiesta (art. 5, par. 2).',
+    art9: 'Compila solo se tratti categorie particolari di dati: dati relativi alla salute, dati genetici o biometrici, origine razziale o etnica, opinioni politiche, convinzioni religiose o filosofiche, appartenenza sindacale, vita o orientamento sessuale. Il loro trattamento \u00e8 vietato salvo che ricorra una delle condizioni dell\u2019art. 9, par. 2, da indicare in aggiunta alla base giuridica dell\u2019art. 6.',
+    dettagliArt9: 'Specifica il fondamento della condizione scelta: per esempio la norma del diritto dell\u2019Unione o nazionale che autorizza il trattamento (art. 9, par. 2, lett. b, g, h, i), oppure le modalit\u00e0 con cui viene raccolto il consenso esplicito (lett. a). In Italia, per i trattamenti necessari per motivi di interesse pubblico rilevante (lett. g), rileva anche l\u2019art. 2-sexies del Codice in materia di protezione dei dati personali (d.lgs. 196/2003).'
   }
 };

@@ -18,7 +18,7 @@ import addFormatsModule from 'ajv-formats';
 import localeIt from '../public/locales/it.js';
 import localeEn from '../public/locales/en.js';
 import { createDefaultProcessingActivity } from '../public/js/schema.js';
-import { buildEditModel, applyEditModel, nuovaRigaGruppo, aggiornaVisibilita } from '../public/js/editor.js';
+import { buildEditModel, applyEditModel, nuovaRigaGruppo, aggiornaVisibilita, trovaPerIdGuida } from '../public/js/editor.js';
 import { buildDettaglio } from '../public/js/detail.js';
 
 const Ajv2020 = Ajv2020Module.default ?? Ajv2020Module;
@@ -108,6 +108,48 @@ const g = buildDettaglio(out, 'it', { detail: loc.detail, enums: loc.enums }).se
 const sub = g.gruppi[0].campi.map((c) => c.label + '=' + c.value);
 check('detail lists the 5 sub-fields', g.gruppi[0].campi.length === 5, sub.join(' | '));
 check('DPO value shown', sub.includes(loc.detail.campi.tcDpo + '=dpo@cliente.example'));
+
+console.log('5. Contextual GDPR guidance');
+for (const [lang, L] of [['it', localeIt], ['en', localeEn]]) {
+  const G = L.guida || {};
+  const dg = { lingue: ['it', 'en'], detail: L.detail, enums: L.enums, guida: G };
+  const mg = buildEditModel(clone(rec), dg);
+  const chiavi = new Set();
+  for (const sez of mg.sezioni) {
+    for (const c of sez.campi) {
+      chiavi.add(c.chiave);
+      (c.figli || []).forEach((f) => chiavi.add(f.chiave));
+      if (c.isGruppi) nuovaRigaGruppo(c.gruppoTipo, dg).campi.forEach((sc) => chiavi.add(c.gruppoTipo + '.' + sc.chiave));
+    }
+  }
+  const orfane = Object.keys(G).filter((k) => k !== '_pulsante' && !chiavi.has(k));
+  check(`guidance keys match editor fields (${lang})`, orfane.length === 0, orfane.join(', '));
+  check(`guidance button label present (${lang})`, typeof G._pulsante === 'string' && G._pulsante.length > 0);
+  const conTesto = mg.sezioni.flatMap((s) => s.campi).filter((c) => c.haGuida);
+  check(`fields with guidance (${lang}): ${conTesto.length}`, conTesto.length > 0);
+  check(`guidance controls carry id and accessible name (${lang})`,
+    conTesto.every((c) => c.idGuida && c.ariaGuida.startsWith(G._pulsante + ': ' ) && c.guida.length > 20));
+}
+const chiaviIt = Object.keys(localeIt.guida || {}).sort();
+const chiaviEn = Object.keys(localeEn.guida || {}).sort();
+check('same guidance keys in Italian and English', JSON.stringify(chiaviIt) === JSON.stringify(chiaviEn),
+  chiaviIt.filter((k) => !chiaviEn.includes(k)).concat(chiaviEn.filter((k) => !chiaviIt.includes(k))).join(', '));
+const dgi = { lingue: ['it', 'en'], detail: localeIt.detail, enums: localeIt.enums, guida: localeIt.guida };
+const m5 = buildEditModel(clone(rec), dgi);
+const fin = m5.sezioni.flatMap((s) => s.campi).find((c) => c.chiave === 'finalita');
+check('toggle by id opens and closes the guidance', (() => {
+  const c = trovaPerIdGuida(m5, fin.idGuida); if (!c || c.guidaAperta) return false;
+  c.guidaAperta = !c.guidaAperta; const open = fin.guidaAperta === true;
+  c.guidaAperta = !c.guidaAperta; return open && fin.guidaAperta === false;
+})());
+const gc = m5.sezioni[0].campi.find((c) => c.chiave === 'contitolari');
+const rigaNuova = nuovaRigaGruppo('contitolari', dgi);
+const acc = rigaNuova.campi.find((x) => x.chiave === 'riferimentoAccordo');
+check('new group rows get their guidance', acc.haGuida && trovaPerIdGuida({ sezioni: [{ campi: [{ ...gc, righe: [rigaNuova] }] }] }, acc.idGuida) === acc);
+const ids = new Set();
+let dup = 0;
+for (const s of m5.sezioni) for (const c of s.campi) { if (ids.has(c.idGuida)) dup++; ids.add(c.idGuida); }
+check('guidance ids are unique', dup === 0);
 
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

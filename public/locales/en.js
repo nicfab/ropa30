@@ -426,5 +426,32 @@ export default {
       si: 'Yes',
       no: 'No'
     }
+  },
+
+  // ---- Contextual GDPR guidance in the editor (EN) ----
+  // Keys: control key; sub-fields of repeatable groups: '<group>.<key>'.
+  // Fields without an entry show no guidance button.
+  guida: {
+    _pulsante: 'Help',
+    nome: 'Give the processing activity a short, recognisable name that indicates what it is, for example "Personnel management" or "Customer newsletter". In the processor\u2019s record the name indicates the category of processing carried out on behalf of the controller (Art. 30(2)(b)).',
+    descrizione: 'Describe in a few lines what the processing consists of: which operations are carried out, with which tools and in which context. A clear description makes the record understandable to the supervisory authority, to which it must be made available on request (Art. 30(4)).',
+    tipoRegistro: 'Choose "Controller" if you determine the purposes and means of the processing (Art. 4(7)); choose "Processor" if you process the data on behalf of a controller (Art. 4(8)). The two records have different contents (Art. 30(1) and (2)), and the editor fields adapt to your choice.',
+    contitolari: 'Fill in only if you determine the purposes and means of this processing jointly with other controllers (Art. 26). Give the name and contact details of each joint controller (Art. 30(1)(a)).',
+    'contitolari.riferimentoAccordo': 'The arrangement between joint controllers sets out their respective responsibilities, in particular for the exercise of data subjects\u2019 rights and for the information to be provided to them. Its essence must be made available to the data subject (Art. 26(1) and (2)).',
+    titolariPerContoDelQuale: 'List each controller on whose behalf you carry out the processing, with name and contact details and, where designated, its representative (Art. 27) and its data protection officer (Art. 30(2)(a)).',
+    'titolariPerContoDelQuale.riferimentoContratto': 'Processing by a processor is governed by a contract or other legal act that binds it to the controller and sets out the controller\u2019s instructions (Art. 28(3)). Give its details, for example date and subject matter.',
+    dataInizioTrattamento: 'Optional. The date from which the processing has been carried out: it helps to trace the history of the record and to check, for example, retention periods.',
+    unitaOrganizzativa: 'Optional. The office or department that carries out the processing; if it is shared between several units, add one for each. It allows you to filter the record and export an extract per unit.',
+    codiceUtente: 'Optional. A free code, for example "HR-01", to link the processing activity to other documentation of the organisation.',
+    finalita: 'State the specified, explicit and legitimate purposes for which you process the data (Art. 5(1)(b)). One purpose per line, worded specifically: not "data management" but "payroll processing". This is mandatory content of the controller\u2019s record (Art. 30(1)(b)).',
+    art6: 'Select the condition for lawfulness on which the processing is based (Art. 6(1)). It is not required by Art. 30, but documenting it helps to demonstrate compliance with the lawfulness principle (Art. 5(1)(a) and (2)). If different purposes have different bases, explain this in the details.',
+    dettagliArt6: 'Specify the actual ground: for a legal obligation or a task in the public interest, the relevant legal provision (Art. 6(3)); for a contract, the type of relationship; for consent, how it is obtained and recorded (Art. 7(1)).',
+    liDescrizione: 'Only if the legal basis is legitimate interests (Art. 6(1)(f)). Describe the interest pursued by the controller or by a third party, which must be lawful, clearly articulated and real. This basis does not apply to processing carried out by public authorities in the performance of their tasks.',
+    liGaranzie: 'The measures taken to reduce the impact on data subjects so that the legitimate interest prevails, for example data minimisation, pseudonymisation or an easy way to object (Art. 21).',
+    liBilanciamentoEffettuato: 'State whether you have documented the balancing between the legitimate interest and the interests or fundamental rights and freedoms of data subjects, taking into account their reasonable expectations (Recital 47).',
+    liBilanciamentoRichiesto: 'Indicate whether a balancing test is needed for this processing. When the legal basis is legitimate interests, the test is used to demonstrate that the interests or rights of data subjects do not override that interest. The test is also known as a Legitimate Interests Assessment (LIA).',
+    liRiferimento: 'The details of the document in which the test is recorded, for example title, date and version, so that it can be produced on request (Art. 5(2)).',
+    art9: 'Fill in only if you process special categories of data: data concerning health, genetic or biometric data, racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, sex life or sexual orientation. Processing them is prohibited unless one of the conditions in Art. 9(2) applies, to be indicated in addition to the legal basis under Art. 6.',
+    dettagliArt9: 'Specify the ground for the chosen condition: for example the Union or Member State law that authorises the processing (Art. 9(2)(b), (g), (h), (i)), or how explicit consent is obtained (point (a)). In Italy, for processing necessary for reasons of substantial public interest (point (g)), see also Article 2-sexies of the Personal Data Protection Code (Legislative Decree 196/2003).'
   }
 };

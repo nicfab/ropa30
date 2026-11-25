@@ -129,6 +129,10 @@ check('collapsible editor sections expose aria-expanded', /x-on:click="toggleSez
 check('status messages are live regions', /x-text="exportMessage"[^>]*role="status"/.test(html) && /x-text="restoreMessage"[^>]*role="status"/.test(html));
 check('page language is set and follows the UI language', /<html lang="it"[^>]*x-bind:lang="lang"/.test(html));
 check('skip link present', /skipToContent/.test(html));
+const bottoniGuida = [...html.matchAll(/<button\b(?:[^>"']|"[^"]*"|'[^']*')*x-on:click="toggleGuida"(?:[^>"']|"[^"]*"|'[^']*')*>/gs)].map((m) => m[0]);
+check(`guidance buttons found: ${bottoniGuida.length}`, bottoniGuida.length === 3);
+check('guidance buttons expose name, state and controlled region',
+  bottoniGuida.every((b) => /x-bind:aria-label=/.test(b) && /x-bind:aria-expanded=/.test(b) && /x-bind:aria-controls=/.test(b)));
 
 // ---------------------------------------------------------------------------
 // 4. Editor controls carry their accessible names
