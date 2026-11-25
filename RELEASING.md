@@ -6,7 +6,9 @@ repository root, on `main`, with a clean working tree.
 ## 1. Before the release
 
 - [ ] All changes are committed, tested in the browser and pushed to `origin`
-      (Codeberg). The GitHub mirror is updated automatically by Codeberg.
+      (Codeberg). Codeberg pushes `main` and the tags to the GitHub mirror as
+      soon as they arrive (push mirror with "Sync when commits are pushed");
+      `git push github main` remains a harmless fallback.
 - [ ] The release is deployed and verified on https://ropa30.eu (`./deploy.sh`).
 - [ ] Choose the version number following [SemVer](https://semver.org/):
       MAJOR for incompatible changes, MINOR for new compatible features,
@@ -95,7 +97,14 @@ git rev-parse 'vX.Y.Z^{tree}'   # SWHID = swh:1:dir:<this hash>
 
 ## 8. Archived line in the CHANGELOG
 
-- [ ] Under the release heading, add:
+- [ ] Once Zenodo has published the version and the Software Heritage save
+      request has succeeded, run `python3 scripts/archived.py X.Y.Z` (dry run),
+      then again with `--write`. The script reads the version DOI from Zenodo
+      and the snapshot from Software Heritage, checks the directory and the
+      release against the local tag, and writes the line below in the
+      CHANGELOG and the row in the version tables of the wiki
+      (`../ropa30-wiki/Citare-ROPA30.md`, `Citing-ROPA30.md`).
+- [ ] The line written under the release heading has this form:
 
 ```markdown
 Archived: DOI [10.5281/zenodo.NNNNNNNN](https://doi.org/10.5281/zenodo.NNNNNNNN) ·
@@ -103,8 +112,19 @@ SWHID [`swh:1:dir:<hash>`](https://archive.softwareheritage.org/<contextual SWHI
 ```
 
 - [ ] Commit and push: `docs(changelog): DOI and SWHID for release X.Y.Z`.
+- [ ] Wiki: commit, then `git push origin main` and `git push github main:master`
+      (the wiki is a separate repository and is not mirrored).
 
 ## 9. Wrap-up
 
 - [ ] Close the issues addressed by the release, with a comment referencing it.
 - [ ] Update the README (Features, Roadmap) if the release changed them.
+
+## 10. Maintenance
+
+- The Codeberg push mirror authenticates to GitHub with the fine-grained token
+  `codeberg-mirror-ropa30` (Contents: read and write, repository
+  `nicfab/ropa30` only), which **expires on 31 July 2027**. Before then,
+  generate a new token on GitHub and re-create the push mirror in Codeberg
+  (Settings > Repository > Mirror settings) with "Sync when commits are
+  pushed" enabled; the sync settings cannot be changed on an existing mirror.
