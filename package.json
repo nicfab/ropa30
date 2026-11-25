@@ -35,7 +35,8 @@
     "watch:css": "tailwindcss -i src/tailwind.css -o public/css/ropa30.css --watch",
     "serve": "python3 -m http.server 8000 --directory public",
     "dev": "echo 'Run: npm run watch:css (in one terminal) and npm run serve (in another)'",
-    "test:schema": "node tests/schema.test.mjs"
+    "test:schema": "node tests/schema.test.mjs",
+    "test": "node tests/backup-crypto.test.mjs && node tests/schema.test.mjs && node tests/migration.test.mjs && node tests/editor.test.mjs && node tests/xlsx-export.test.mjs"
   },
   "devDependencies": {
     "@alpinejs/csp": "^3.15.12",
